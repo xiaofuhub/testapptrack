@@ -1,0 +1,113 @@
+﻿$PBExportHeader$m_pcmiler.srm
+forward
+global type m_pcmiler from m_sheet
+end type
+type m_insert_stop from menu within m_current
+end type
+type m_delete_stop from menu within m_current
+end type
+type m_clear_trip from menu within m_current
+end type
+type m_div_c02 from menu within m_current
+end type
+type m_calc_trip from menu within m_current
+end type
+end forward
+
+global type m_pcmiler from m_sheet
+end type
+global m_pcmiler m_pcmiler
+
+on m_pcmiler.create
+m_pcmiler=this
+call super::create
+end on
+
+on m_pcmiler.destroy
+call super::destroy
+end on
+
+type m_current from m_sheet`m_current within m_pcmiler
+m_insert_stop m_insert_stop
+m_delete_stop m_delete_stop
+m_clear_trip m_clear_trip
+m_div_c02 m_div_c02
+m_calc_trip m_calc_trip
+end type
+
+on m_current.create
+call super::create
+this.m_insert_stop=create m_insert_stop
+this.m_delete_stop=create m_delete_stop
+this.m_clear_trip=create m_clear_trip
+this.m_div_c02=create m_div_c02
+this.m_calc_trip=create m_calc_trip
+this.Item[UpperBound(this.item)+1]=this.m_insert_stop
+this.Item[UpperBound(this.item)+1]=this.m_delete_stop
+this.Item[UpperBound(this.item)+1]=this.m_clear_trip
+this.Item[UpperBound(this.item)+1]=this.m_div_c02
+this.Item[UpperBound(this.item)+1]=this.m_calc_trip
+end on
+
+on m_current.destroy
+call super::destroy
+destroy(this.m_insert_stop)
+destroy(this.m_delete_stop)
+destroy(this.m_clear_trip)
+destroy(this.m_div_c02)
+destroy(this.m_calc_trip)
+end on
+
+on m_save.create
+call super::create
+this.ToolBarItemName=""
+this.Visible=false
+end on
+
+type m_insert_stop from menu within m_current
+end type
+
+event clicked;parentwindow.function dynamic post wf_insert_stop()
+end event
+
+on m_insert_stop.create
+this.Text="&Insert Stop"
+end on
+
+type m_delete_stop from menu within m_current
+end type
+
+on m_delete_stop.create
+this.Text="Dele&te Stop"
+end on
+
+event clicked;parentwindow.function dynamic post wf_delete_stop()
+end event
+
+type m_clear_trip from menu within m_current
+end type
+
+event clicked;parentwindow.function dynamic post wf_clear_trip()
+end event
+
+on m_clear_trip.create
+this.Text="Cl&ear Trip"
+end on
+
+type m_div_c02 from menu within m_current
+end type
+
+on m_div_c02.create
+this.Text="-"
+end on
+
+type m_calc_trip from menu within m_current
+end type
+
+event clicked;parentwindow.function dynamic post wf_calc_trip()
+end event
+
+on m_calc_trip.create
+this.Text="&Run"
+end on
+

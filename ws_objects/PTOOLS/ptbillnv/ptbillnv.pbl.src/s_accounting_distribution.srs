@@ -1,0 +1,7 @@
+﻿$PBExportHeader$s_accounting_distribution.srs
+global type s_accounting_distribution from structure
+	string		is_account
+	decimal {2}		ic_amount
+	boolean		ib_credit
+end type
+

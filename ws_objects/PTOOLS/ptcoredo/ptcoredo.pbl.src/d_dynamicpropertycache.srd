@@ -1,0 +1,57 @@
+﻿$PBExportHeader$d_dynamicpropertycache.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 1 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=128 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=char(50) update=yes updatewhereclause=yes key=yes name=dynamicproperty_objectname dbname="dynamicproperty.objectname" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=dynamicproperty_containername dbname="dynamicproperty.containername" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=dynamicproperty_username dbname="dynamicproperty.username" )
+ column=(type=long update=yes updatewhereclause=yes name=dynamicproperty_instance dbname="dynamicproperty.instance" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=dynamicproperty_propertylabel dbname="dynamicproperty.propertylabel" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=dynamicproperty_propertyvalue dbname="dynamicproperty.propertyvalue" )
+ column=(type=char(50) updatewhereclause=yes name=dynamicobject_classname dbname="dynamicobject.classname" )
+ column=(type=char(50) updatewhereclause=yes name=dynamicobject_type dbname="dynamicobject.type" )
+ retrieve="  SELECT ~"dynamicproperty~".~"objectname~",   
+         ~"dynamicproperty~".~"containername~",   
+         ~"dynamicproperty~".~"username~",   
+         ~"dynamicproperty~".~"instance~",   
+         ~"dynamicproperty~".~"propertylabel~",   
+         ~"dynamicproperty~".~"propertyvalue~",   
+         ~"dynamicobject~".~"classname~",   
+         ~"dynamicobject~".~"type~"  
+    FROM ~"dynamicobject~",   
+         ~"dynamicproperty~"  
+   WHERE ( ~"dynamicproperty~".~"objectname~" = ~"dynamicobject~".~"name~" ) and  
+				(~"dynamicproperty~".~"username~" = :CurrentUser OR  
+				~"dynamicproperty~".~"username~" IS NULL)" update="dynamicproperty" updatewhere=1 updatekeyinplace=no arguments=(("Target", string),("Parent", string),("CurrentUser", string))  sort="dynamicproperty_objectname A dynamicproperty_instance A dynamicproperty_username A dynamicproperty_propertylabel A dynamicproperty_containername A " )
+text(band=header alignment="2" text="Dynamicproperty
+Objectname" border="0" color="33554432" x="5" y="4" height="120" width="439" html.valueishtml="0"  name=dynamicproperty_objectname_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dynamicproperty
+Containername" border="0" color="33554432" x="466" y="4" height="120" width="439" html.valueishtml="0"  name=dynamicproperty_containername_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dynamicproperty
+Username" border="0" color="33554432" x="937" y="4" height="120" width="425" html.valueishtml="0"  name=dynamicproperty_username_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dynamicproperty
+Instance" border="0" color="33554432" x="1367" y="4" height="120" width="421" html.valueishtml="0"  name=dynamicproperty_instance_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dynamicproperty
+Propertylabel" border="0" color="33554432" x="1792" y="4" height="120" width="439" html.valueishtml="0"  name=dynamicproperty_propertylabel_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dynamicproperty
+Propertyvalue" border="0" color="33554432" x="2258" y="4" height="120" width="439" html.valueishtml="0"  name=dynamicproperty_propertyvalue_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dynamicobject
+Type" border="0" color="33554432" x="3328" y="4" height="120" width="439" html.valueishtml="0"  name=dynamicobject_type_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Dynamicobject
+Classname" border="0" color="33554432" x="2725" y="4" height="120" width="558" html.valueishtml="0"  name=dynamicobject_classname_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="2" tabsequence=10 border="0" color="33554432" x="5" y="4" height="64" width="439" format="[general]" html.valueishtml="0"  name=dynamicproperty_objectname visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="2" tabsequence=20 border="0" color="33554432" x="471" y="8" height="64" width="439" format="[general];NULL" html.valueishtml="0"  name=dynamicproperty_containername visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="2" tabsequence=30 border="0" color="33554432" x="955" y="12" height="64" width="398" format="[general]" html.valueishtml="0"  name=dynamicproperty_username visible="1" edit.limit=8 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=40 border="0" color="33554432" x="1367" y="4" height="64" width="389" format="[general]" html.valueishtml="0"  name=dynamicproperty_instance visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="2" tabsequence=50 border="0" color="33554432" x="1787" y="4" height="64" width="439" format="[general]" html.valueishtml="0"  name=dynamicproperty_propertylabel visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="2" tabsequence=60 border="0" color="33554432" x="2267" y="12" height="64" width="439" format="[general]" html.valueishtml="0"  name=dynamicproperty_propertyvalue visible="1" edit.limit=32000 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=70 border="0" color="33554432" x="3337" y="4" height="64" width="439" format="[general]" html.valueishtml="0"  name=dynamicobject_type visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=80 border="0" color="33554432" x="2729" y="4" height="64" width="558" format="[general]" html.valueishtml="0"  name=dynamicobject_classname visible="1" edit.limit=50 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

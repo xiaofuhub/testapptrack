@@ -1,0 +1,41 @@
+﻿$PBExportHeader$gf_eqref.srf
+global type gf_eqref from function_object
+end type
+
+forward prototypes
+global function string gf_eqref (string eq_type, string eq_ref)
+end prototypes
+
+global function string gf_eqref (string eq_type, string eq_ref);choose case eq_type
+	case "Z"
+		eq_type = "----"
+	case "T"
+		eq_type = "TRAC"
+	case "S"
+		eq_type = "STRT"
+	case "N"
+		eq_type = "VAN"
+	case "V"
+		eq_type = "TRLR"
+	case "F"
+		eq_type = "FLBD"
+	case "R"
+		eq_type = "REFR"
+	case "K"
+		eq_type = "TANK"
+	case "B"
+		eq_type = "RBOX"
+	case "C"
+		eq_type = "CNTN"
+	case "H"
+		eq_type = "CHAS"
+	case else
+		return ""
+end choose
+
+eq_ref = trim(eq_ref)
+if len(eq_ref) > 0 then eq_type += " " + eq_ref + " " else return ""
+
+return eq_type
+end function
+

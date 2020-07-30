@@ -1,0 +1,23 @@
+﻿$PBExportHeader$d_log_deleter.srd
+$PBExportComments$PTLOG.
+release 5;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no )
+header(height=21 color="536870912" )
+summary(height=1 color="536870912" )
+footer(height=1 color="536870912" )
+detail(height=69 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=di_sched_type dbname="driverinfo.di_sched_type" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=dl_id dbname="driver_logs.dl_id" )
+ column=(type=date update=yes updatewhereclause=yes key=yes name=dl_date dbname="driver_logs.dl_date" )
+ column=(type=char(96) update=yes updatewhereclause=yes name=dl_log dbname="driver_logs.dl_log" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=dl_drtot dbname="driver_logs.dl_drtot" )
+ column=(type=long update=yes updatewhereclause=yes name=dl_vios dbname="driver_logs.dl_vios" )
+ column=(type=long update=yes updatewhereclause=yes name=dl_miles dbname="driver_logs.dl_miles" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"driverinfo~" )  TABLE(NAME=~"driver_logs~" ) COLUMN(NAME=~"driverinfo.di_sched_type~") COLUMN(NAME=~"driver_logs.dl_id~") COLUMN(NAME=~"driver_logs.dl_date~") COLUMN(NAME=~"driver_logs.dl_log~") COLUMN(NAME=~"driver_logs.dl_drtot~") COLUMN(NAME=~"driver_logs.dl_vios~") COLUMN(NAME=~"driver_logs.dl_miles~")    JOIN (LEFT=~"driver_logs.dl_id~"    OP =~"=~"RIGHT=~"driverinfo.di_id~" )WHERE(    EXP1 =~"~~~"driverinfo~~~".~~~"di_id~~~"~"   OP =~"=~"    EXP2 =~":driver_id~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"~~~"driver_logs~~~".~~~"dl_date~~~"~"   OP =~"<~"    EXP2 =~":maxdate~" ) ) ARG(NAME = ~"driver_id~" TYPE = number)  ARG(NAME = ~"maxdate~" TYPE = date) " update="driver_logs" updatewhere=1 updatekeyinplace=no arguments=(("driver_id", number),("maxdate", date))  sort="dl_date A " )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="2" color="0" x="14" y="4" height="61" width="330" format="[general]"  name=dl_id edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="2" color="0" x="362" y="4" height="61" width="247" format="m/d/yy"  name=dl_date edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="2" color="0" x="627" y="4" height="61" width="549" format="[general]"  name=dl_log edit.limit=96 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="2" color="0" x="1194" y="4" height="61" width="115" format="[general]"  name=di_sched_type edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="2" color="0" x="1326" y="4" height="61" width="115" format="[general]"  name=dl_vios edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="2" color="0" x="1454" y="4" height="61" width="119" format="[general]"  name=dl_miles edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=0 border="0" color="0" x="1587" y="4" height="61" width="115"  name=dl_drtot  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )

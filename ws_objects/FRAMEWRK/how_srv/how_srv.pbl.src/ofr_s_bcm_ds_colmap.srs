@@ -1,0 +1,7 @@
+﻿$PBExportHeader$ofr_s_bcm_ds_colmap.srs
+global type ofr_s_bcm_ds_colmap from structure
+	string		s_table
+	string		s_column
+	integer		i_key
+end type
+

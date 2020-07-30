@@ -1,0 +1,85 @@
+﻿$PBExportHeader$d_pcreport.srd
+$PBExportComments$copied from log app
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=656 color="553648127" )
+summary(height=0 color="536870912" )
+footer(height=108 color="553648127" )
+detail(height=68 color="553648127"  height.autosize=yes)
+table(column=(type=char(2) updatewhereclause=no name=state dbname="state" )
+ column=(type=char(1) updatewhereclause=no name=toll dbname="toll" )
+ column=(type=char(20) updatewhereclause=no name=direction dbname="direction" )
+ column=(type=char(50) updatewhereclause=no name=road dbname="road" )
+ column=(type=char(7) updatewhereclause=no name=distance dbname="distance" )
+ column=(type=char(7) updatewhereclause=no name=time dbname="time" )
+ column=(type=char(1) updatewhereclause=no name=blank dbname="blank" )
+ column=(type=char(100) updatewhereclause=no name=location dbname="location" )
+ column=(type=char(7) updatewhereclause=no name=d1 dbname="d1" )
+ column=(type=char(7) updatewhereclause=no name=t1 dbname="t1" )
+ column=(type=char(7) updatewhereclause=no name=d2 dbname="d2" )
+ column=(type=char(7) updatewhereclause=no name=t2 dbname="t2" )
+ )
+rectangle(band=header x="5" y="8" height="396" width="3488"  name=r_main brush.hatch="7" brush.color="553648127" pen.style="0" pen.width="9" pen.color="0"  background.mode="2" background.color="0" )
+text(band=header alignment="1" text="AVOID TOLL"border="0" color="0" x="2295" y="128" height="80" width="1161"  name=st_routetag  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="'Printed:  ' + string(today(), 'm/d/yy  h:mm AM/PM')"border="0" color="0" x="37" y="108" height="60" width="928" format="[general]"  name=comp_datetime  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Official Copy"border="2" color="0" x="1166" y="964" height="80" width="1161"  name=st_usertag  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="65535" )
+compute(band=header alignment="0" expression="'Page ' + page() + ' of ' + pageCount()"border="0" color="0" x="37" y="176" height="60" width="928" format="[general]"  name=comp_pages  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Driving Instructions"border="2" color="16777215" x="1211" y="36" height="92" width="1038"  name=st_reportname  font.face="Arial" font.height="-14" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="0" )
+text(band=header alignment="2" text="Route "border="0" color="0" x="37" y="304" height="64" width="3419"  name=st_route  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="1" text="Type Route:"border="0" color="0" x="2565" y="128" height="80" width="430" visible="1~t0"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="1" text="Borders:"border="0" color="0" x="2683" y="212" height="80" width="311" visible="1~t0"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="1" text="text"border="0" color="0" x="2295" y="220" height="80" width="1161"  name=st_borderstag  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="State"border="0" color="0" x="18" y="580" height="60" width="151"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=header x1="0" y1="648" x2="3488" y2="648" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+text(band=header alignment="1" text="Total Hours"border="0" color="0" x="3282" y="512" height="128~t129" width="187~t188"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="1" text="Total Miles"border="0" color="0" x="3045" y="512" height="128~t129" width="187~t188"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="1" text="Leg Hours"border="0" color="0" x="2807" y="512" height="128~t129" width="187~t188"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="1" text="Leg Miles"border="0" color="0" x="2569" y="512" height="128~t129" width="187~t188"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Hours"border="0" color="0" x="1326" y="580" height="60" width="165"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Miles"border="0" color="0" x="1111" y="580" height="60" width="151"  name=st_milestag  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Route"border="0" color="0" x="526" y="580" height="60" width="169"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression="0    /*COMPANY NAME FROM PCREPORT*/"border="0" color="0" x="37" y="40" height="60" width="1120" format="[general]"  name=cf_company_name  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+compute(band=header alignment="1" expression="0   /* MILES AND TIME FROM PCREPORT*/"border="0" color="0" x="2295" y="36" height="80" width="1161" format="[general]"  name=cf_distance_time  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="0" text="Interchange"border="0" color="0" x="1513" y="580" height="60" width="1006"  name=st_intertag  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="1518" y="4" height="52" width="32" format="[general]"  name=blank edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=footer alignment="0" expression="gf_global_str('mileage_provider')"border="0" color="0" x="37" y="52" height="52" width="3433" format="[general]"  name=comp_sumstr  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', rgb(0, 0, 255), 0)
+
+" x="1513~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', integer(describe('st_milestag.x')), integer(describe('st_intertag.x')) )
+
+" y="4" height="52" width="1015~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', 1239, 1015)
+
+" format="[general]"  name=location height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', 700, 400)
+
+"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="0" x="1280" y="4" height="52" width="210" format="[general]"  name=time visible="1~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', 0, 1)
+
+" height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="1" tabsequence=32766 border="0" color="0" x="1051" y="4" height="52" width="210" format="[general]"  name=distance visible="1~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', 0, 1)
+
+" height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="526" y="4" height="52" width="512" format="[general]"  name=road height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="261" y="4" height="52" width="242" format="[general]"  name=direction height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="178" y="4" height="52" width="59" format="[general]"  name=toll height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="0" x="18" y="4" height="52" width="142" format="[general]"  name=state height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="1" tabsequence=32766 border="0" color="0~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', rgb(0, 0, 255), 0)
+
+" x="2546" y="4" height="52" width="210" format="[general]"  name=d1 height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', 700, 400)
+
+"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="1" tabsequence=32766 border="0" color="0~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', rgb(0, 0, 255), 0)
+
+" x="2784" y="4" height="52" width="210" format="[general]"  name=t1 height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', 700, 400)
+
+"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="1" tabsequence=32766 border="0" color="0~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', rgb(0, 0, 255), 0)
+
+" x="3022" y="4" height="52" width="210" format="[general]"  name=d2 height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', 700, 400)
+
+"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="1" tabsequence=32766 border="0" color="0~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', rgb(0, 0, 255), 0)
+
+" x="3259" y="4" height="52" width="210" format="[general]"  name=t2 height.autosize=yes edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-9" font.weight="400~tif ( left(location, 5) = 'Stop ' or left(location, 7) = 'Origin:' or left(location, 5) = 'Dest:', 700, 400)
+
+"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

@@ -1,0 +1,376 @@
+﻿$PBExportHeader$gf_rows_sync.srf
+$PBExportComments$PTCORE.
+global type gf_rows_sync from function_object
+end type
+
+forward prototypes
+global function integer gf_rows_sync (datastore ds_source, datawindow dw_source, datastore ds_target, datawindow dw_target, dwbuffer newrowbuf, boolean all_rows, boolean all_data)
+end prototypes
+
+global function integer gf_rows_sync (datastore ds_source, datawindow dw_source, datastore ds_target, datawindow dw_target, dwbuffer newrowbuf, boolean all_rows, boolean all_data);/*--------------------------------------- Purpose of this Function (Megan wants to know):
+
+
+                             please put a purporse line here
+
+
+----------------------------------------------------------------------------------------*/
+//Explanation of Arguments:
+//
+//newrowbuf:  If a row in the source has no match in any of the target buffers, newrowbuf
+//					indicates which buffer in the target will receive that new row
+//all_rows :  Whether data will be transferred for all rows in the source, or only modified
+//					rows
+//all_data :  If data is to be transferred for a row (as determined by all_rows), all_data
+//					indicates whether the entire row will be copied from the source to replace
+//					the existing row in the target (thus destroying the target's statuses and
+//					original values), or whether data will be transferred on a column-by-column
+//					basis, for modified columns in the source.
+//The possible combinations of all_rows and all_data are:
+//					true, true ; false, true ; false, false
+//The omitted combination - true, false - does not make sense because you are requesting
+//					that data be transferred for non-modified rows, but only for modified
+//					columns -- but there aren't any modified columns in a non-modified row.
+
+long source_prim, source_filt, source_del, target_prim, target_filt, &
+	target_del, source_id, primids[], filtids[], delids[], readloop, &
+	targetrow, workrow, testval, source_rows
+integer bufloop, colcount, markloop
+dwbuffer sourcebuf, targetbuf
+dwitemstatus colstat, rowstat
+any coldata
+n_cst_anyarraysrv lnv_anyarray
+
+if isvalid(ds_source) then
+	source_prim = ds_source.rowcount()
+	source_filt = ds_source.filteredcount()
+	source_del = ds_source.deletedcount()
+	colcount = integer(ds_source.object.datawindow.column.count)
+else
+	source_prim = dw_source.rowcount()
+	source_filt = dw_source.filteredcount()
+	source_del = dw_source.deletedcount()
+	colcount = integer(dw_source.object.datawindow.column.count)
+end if
+
+if isvalid(ds_target) then
+	target_prim = ds_target.rowcount()
+	target_filt = ds_target.filteredcount()
+	target_del = ds_target.deletedcount()
+else
+	target_prim = dw_target.rowcount()
+	target_filt = dw_target.filteredcount()
+	target_del = dw_target.deletedcount()
+end if
+
+testval = source_prim + source_filt + source_del + target_prim + target_filt + &
+	target_del + colcount
+
+if isnull(testval) or source_prim < 0 or source_filt < 0 or source_del < 0 or &
+	target_prim < 0 or target_filt < 0 or target_del < 0 or colcount < 1 then return -1
+
+if source_prim + source_filt + source_del = 0 then return 1
+
+if target_prim > 0 then
+	for readloop = 1 to target_prim
+		if isvalid(ds_target) then
+			primids[readloop] = ds_target.object.data.primary[readloop, 1]
+		else
+			primids[readloop] = dw_target.object.data.primary[readloop, 1]
+		end if
+	next
+
+	if upperbound(primids) <> target_prim then return -1
+end if
+
+if target_filt > 0 then
+	for readloop = 1 to target_filt
+		if isvalid(ds_target) then
+			filtids[readloop] = ds_target.object.data.filter[readloop, 1]
+		else
+			filtids[readloop] = dw_target.object.data.filter[readloop, 1]
+		end if
+	next
+
+	if upperbound(filtids) <> target_filt then return -1
+end if
+
+if target_del > 0 then
+	for readloop = 1 to target_del
+		if isvalid(ds_target) then
+			delids[readloop] = ds_target.object.data.delete[readloop, 1]
+		else
+			delids[readloop] = dw_target.object.data.delete[readloop, 1]
+		end if
+	next
+	
+	if upperbound(delids) <> target_del then return -1
+end if
+
+for bufloop = 1 to 3
+	choose case bufloop
+		case 1
+			source_rows = source_prim
+			sourcebuf = primary!
+		case 2
+			source_rows = source_filt
+			sourcebuf = filter!
+		case 3
+			source_rows = source_del
+			sourcebuf = delete!
+	end choose
+	if source_rows = 0 then continue
+	for readloop = 1 to source_rows
+		if isvalid(ds_source) then
+			rowstat = ds_source.getitemstatus(readloop, 0, sourcebuf)
+			source_id = ds_source.getitemnumber(readloop, 1, sourcebuf, false)
+		else
+			rowstat = dw_source.getitemstatus(readloop, 0, sourcebuf)
+			source_id = dw_source.getitemnumber(readloop, 1, sourcebuf, false)
+		end if
+		if all_rows = false and rowstat = notmodified! and not sourcebuf = delete! &
+			then continue
+		if source_id > 0 then
+			targetrow = 0
+			if target_prim > 0 then &
+				targetrow = lnv_anyarray.of_FindLong(primids, source_id, 1, target_prim)
+			if targetrow > 0 then
+				targetbuf = primary!
+			else
+				if target_filt > 0 then &
+					targetrow = lnv_anyarray.of_FindLong(filtids, source_id, 1, target_filt)
+				if targetrow > 0 then
+					targetbuf = filter!
+				else
+					if target_del > 0 then &
+						targetrow = lnv_anyarray.of_FindLong(delids, source_id, 1, target_del)
+					targetbuf = delete!
+				end if
+			end if
+			if targetrow > 0 then
+				if sourcebuf = delete! and not targetbuf = delete! then
+					target_del ++
+					delids[target_del] = source_id
+					if isvalid(ds_target) then
+						ds_target.rowsmove(targetrow, targetrow, targetbuf, &
+							ds_target, target_del, delete!)
+					else
+						dw_target.rowsmove(targetrow, targetrow, targetbuf, &
+							dw_target, target_del, delete!)
+					end if
+					choose case targetbuf
+						case primary!
+							setnull(primids[targetrow])
+//							if gf_shrink_longs(primids) = target_prim - 1 then target_prim -- &
+//								else return -1
+							if lnv_anyarray.of_GetShrinked(primids, "NULLS") = target_prim - 1 &
+								then target_prim -- else return -1
+						case filter!
+							setnull(filtids[targetrow])
+//							if gf_shrink_longs(filtids) = target_filt - 1 then target_filt -- &
+//								else return -1
+							if lnv_anyarray.of_GetShrinked(filtids, "NULLS") = target_filt - 1 &
+								then target_filt -- else return -1
+					end choose
+					targetrow = target_del
+					targetbuf = delete!
+				end if
+				if all_rows = false and (rowstat = new! or rowstat = notmodified!) &
+					then continue
+				if all_data then
+					if isvalid(ds_source) and isvalid(ds_target) then
+						ds_target.rowsdiscard(targetrow, targetrow, targetbuf)
+						ds_source.rowscopy(readloop, readloop, sourcebuf, &
+							ds_target, targetrow, targetbuf)
+					elseif isvalid(ds_source) then
+						dw_target.rowsdiscard(targetrow, targetrow, targetbuf)
+						ds_source.rowscopy(readloop, readloop, sourcebuf, &
+							dw_target, targetrow, targetbuf)
+					elseif isvalid(ds_target) then
+						ds_target.rowsdiscard(targetrow, targetrow, targetbuf)
+						dw_source.rowscopy(readloop, readloop, sourcebuf, &
+							ds_target, targetrow, targetbuf)
+					else
+						dw_target.rowsdiscard(targetrow, targetrow, targetbuf)
+						dw_source.rowscopy(readloop, readloop, sourcebuf, &
+							dw_target, targetrow, targetbuf)
+					end if
+				elseif rowstat = newmodified! or rowstat = datamodified! then
+					choose case targetbuf
+						case primary!
+							workrow = targetrow
+						case else
+							workrow = target_prim + 1
+							if isvalid(ds_target) then
+								ds_target.rowsmove(targetrow, targetrow, targetbuf, &
+									ds_target, workrow, primary!)
+							else
+								dw_target.rowsmove(targetrow, targetrow, targetbuf, &
+									dw_target, workrow, primary!)
+							end if
+					end choose
+					for markloop = 1 to colcount
+						if isvalid(ds_source) then
+							colstat = ds_source.getitemstatus(readloop, markloop, sourcebuf)
+						else
+							colstat = dw_source.getitemstatus(readloop, markloop, sourcebuf)
+						end if
+						if colstat = notmodified! then continue
+						if isvalid(ds_source) then
+							choose case sourcebuf
+								case primary!
+									coldata = ds_source.object.data.primary[readloop, markloop]
+								case filter!
+									coldata = ds_source.object.data.filter[readloop, markloop]
+								case delete!
+									coldata = ds_source.object.data.delete[readloop, markloop]
+							end choose
+						else
+							choose case sourcebuf
+								case primary!
+									coldata = dw_source.object.data.primary[readloop, markloop]
+								case filter!
+									coldata = dw_source.object.data.filter[readloop, markloop]
+								case delete!
+									coldata = dw_source.object.data.delete[readloop, markloop]
+							end choose
+						end if
+						if isvalid(ds_target) then
+							ds_target.object.data.primary[workrow, markloop] = coldata
+						else
+							dw_target.object.data.primary[workrow, markloop] = coldata
+						end if
+					next
+				
+					choose case targetbuf
+						case filter!, delete!
+							if isvalid(ds_target) then
+								ds_target.rowsmove(workrow, workrow, primary!, &
+									ds_target, targetrow, targetbuf)
+							else
+								dw_target.rowsmove(workrow, workrow, primary!, &
+									dw_target, targetrow, targetbuf)
+							end if
+					end choose
+				end if
+			else
+				workrow = target_prim + 1
+				if isvalid(ds_source) and isvalid(ds_target) then
+					ds_source.rowscopy(readloop, readloop, sourcebuf, &
+						ds_target, workrow, primary!)
+				elseif isvalid(ds_source) then
+					ds_source.rowscopy(readloop, readloop, sourcebuf, &
+						dw_target, workrow, primary!)
+				elseif isvalid(ds_target) then
+					dw_source.rowscopy(readloop, readloop, sourcebuf, &
+						ds_target, workrow, primary!)
+				else
+					dw_source.rowscopy(readloop, readloop, sourcebuf, &
+						dw_target, workrow, primary!)
+				end if
+				if all_data = false then
+					for markloop = 1 to colcount
+						if isvalid(ds_source) then
+							choose case sourcebuf
+								case primary!
+									coldata = ds_source.object.data.primary.original[readloop, markloop]
+								case filter!
+									coldata = ds_source.object.data.filter.original[readloop, markloop]
+								case delete!
+									coldata = ds_source.object.data.delete.original[readloop, markloop]
+							end choose
+						else
+							choose case sourcebuf
+								case primary!
+									coldata = dw_source.object.data.primary.original[readloop, markloop]
+								case filter!
+									coldata = dw_source.object.data.filter.original[readloop, markloop]
+								case delete!
+									coldata = dw_source.object.data.delete.original[readloop, markloop]
+							end choose
+						end if
+						if isvalid(ds_target) then
+							ds_target.object.data.primary[workrow, markloop] = coldata
+						else
+							dw_target.object.data.primary[workrow, markloop] = coldata
+						end if
+					next
+					
+					if isvalid(ds_target) then
+						ds_target.setitemstatus(workrow, 0, primary!, datamodified!)
+						ds_target.setitemstatus(workrow, 0, primary!, notmodified!)
+						if rowstat = new! or rowstat = newmodified! then &
+							ds_target.setitemstatus(workrow, 0, primary!, new!)
+					else
+						dw_target.setitemstatus(workrow, 0, primary!, datamodified!)
+						dw_target.setitemstatus(workrow, 0, primary!, notmodified!)
+						if rowstat = new! or rowstat = newmodified! then &
+							dw_target.setitemstatus(workrow, 0, primary!, new!)
+					end if
+					for markloop = 1 to colcount
+						if isvalid(ds_source) then
+							colstat = ds_source.getitemstatus(readloop, markloop, sourcebuf)
+						else
+							colstat = dw_source.getitemstatus(readloop, markloop, sourcebuf)
+						end if
+						if colstat = notmodified! then continue
+						if isvalid(ds_source) then
+							choose case sourcebuf
+								case primary!
+									coldata = ds_source.object.data.primary[readloop, markloop]
+								case filter!
+									coldata = ds_source.object.data.filter[readloop, markloop]
+								case delete!
+									coldata = ds_source.object.data.delete[readloop, markloop]
+							end choose
+						else
+							choose case sourcebuf
+								case primary!
+									coldata = dw_source.object.data.primary[readloop, markloop]
+								case filter!
+									coldata = dw_source.object.data.filter[readloop, markloop]
+								case delete!
+									coldata = dw_source.object.data.delete[readloop, markloop]
+							end choose
+						end if
+						if isvalid(ds_target) then
+							ds_target.object.data.primary[workrow, markloop] = coldata
+						else
+							dw_target.object.data.primary[workrow, markloop] = coldata
+						end if
+					next
+				
+				end if
+				if sourcebuf = delete! then targetbuf = delete! else targetbuf = newrowbuf
+				choose case targetbuf
+					case primary!
+						target_prim ++
+						primids[target_prim] = source_id
+					case filter!
+						target_filt ++
+						filtids[target_filt] = source_id
+						targetrow = target_filt
+					case delete!
+						target_del ++
+						delids[target_del] = source_id
+						targetrow = target_del
+				end choose
+				choose case targetbuf
+					case filter!, delete!
+						if isvalid(ds_target) then
+							ds_target.rowsmove(workrow, workrow, primary!, &
+								ds_target, targetrow, targetbuf)
+						else
+							dw_target.rowsmove(workrow, workrow, primary!, &
+								dw_target, targetrow, targetbuf)
+						end if
+				end choose
+			end if
+		end if
+	next
+	
+next
+
+
+return 1
+end function
+

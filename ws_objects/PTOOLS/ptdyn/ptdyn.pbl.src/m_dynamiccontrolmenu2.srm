@@ -1,0 +1,1934 @@
+﻿$PBExportHeader$m_dynamiccontrolmenu2.srm
+forward
+global type m_dynamiccontrolmenu2 from m_sheets
+end type
+type m_administratormode from menu within m_current
+end type
+type m_saveusersettings from menu within m_current
+end type
+type m_dash from menu within m_current
+end type
+type m_revertusersettings from menu within m_current
+end type
+type m_refresh from menu within m_current
+end type
+type m_current from m_sheets`m_current within m_dynamiccontrolmenu2
+m_administratormode m_administratormode
+m_saveusersettings m_saveusersettings
+m_dash m_dash
+m_revertusersettings m_revertusersettings
+m_refresh m_refresh
+end type
+end forward
+
+global type m_dynamiccontrolmenu2 from m_sheets
+end type
+global m_dynamiccontrolmenu2 m_dynamiccontrolmenu2
+
+on m_dynamiccontrolmenu2.create
+m_dynamiccontrolmenu2=this
+call super::create
+end on
+
+on m_dynamiccontrolmenu2.destroy
+call super::destroy
+end on
+
+type m_system from m_sheets`m_system within m_dynamiccontrolmenu2
+end type
+
+on m_system.create
+call super::create
+end on
+
+on m_system.destroy
+call super::destroy
+end on
+
+type m_sys_company from m_sheets`m_sys_company within m_system
+end type
+
+on m_sys_company.create
+call super::create
+end on
+
+on m_sys_company.destroy
+call super::destroy
+end on
+
+type m_sys_equip from m_sheets`m_sys_equip within m_system
+end type
+
+on m_sys_equip.create
+call super::create
+end on
+
+on m_sys_equip.destroy
+call super::destroy
+end on
+
+type m_equipmentinfo from m_sheets`m_equipmentinfo within m_sys_equip
+end type
+
+on m_equipmentinfo.create
+call super::create
+end on
+
+on m_equipmentinfo.destroy
+call super::destroy
+end on
+
+type m_generatepostingfile from m_sheets`m_generatepostingfile within m_sys_equip
+end type
+
+on m_generatepostingfile.create
+call super::create
+end on
+
+on m_generatepostingfile.destroy
+call super::destroy
+end on
+
+type m_sys_emp from m_sheets`m_sys_emp within m_system
+end type
+
+on m_sys_emp.create
+call super::create
+end on
+
+on m_sys_emp.destroy
+call super::destroy
+end on
+
+type m_routeinfo from m_sheets`m_routeinfo within m_system
+end type
+
+on m_routeinfo.create
+call super::create
+end on
+
+on m_routeinfo.destroy
+call super::destroy
+end on
+
+type m_zonesetup from m_sheets`m_zonesetup within m_system
+end type
+
+on m_zonesetup.create
+call super::create
+end on
+
+on m_zonesetup.destroy
+call super::destroy
+end on
+
+type m_phonelist from m_sheets`m_phonelist within m_system
+end type
+
+on m_phonelist.create
+call super::create
+end on
+
+on m_phonelist.destroy
+call super::destroy
+end on
+
+type m_importcompanyfile from m_sheets`m_importcompanyfile within m_system
+end type
+
+on m_importcompanyfile.create
+call super::create
+end on
+
+on m_importcompanyfile.destroy
+call super::destroy
+end on
+
+type m_sys_companysearch from m_sheets`m_sys_companysearch within m_system
+end type
+
+on m_sys_companysearch.create
+call super::create
+end on
+
+on m_sys_companysearch.destroy
+call super::destroy
+end on
+
+type m_carriersearch from m_sheets`m_carriersearch within m_system
+end type
+
+on m_carriersearch.create
+call super::create
+end on
+
+on m_carriersearch.destroy
+call super::destroy
+end on
+
+type m_sys_reports from m_sheets`m_sys_reports within m_system
+end type
+
+on m_sys_reports.create
+call super::create
+end on
+
+on m_sys_reports.destroy
+call super::destroy
+end on
+
+type m_sys_reports_viewer from m_sheets`m_sys_reports_viewer within m_sys_reports
+end type
+
+on m_sys_reports_viewer.create
+call super::create
+end on
+
+on m_sys_reports_viewer.destroy
+call super::destroy
+end on
+
+type m_sys_reports_lastfreedate from m_sheets`m_sys_reports_lastfreedate within m_sys_reports
+end type
+
+on m_sys_reports_lastfreedate.create
+call super::create
+end on
+
+on m_sys_reports_lastfreedate.destroy
+call super::destroy
+end on
+
+type m_sys_reports_tir from m_sheets`m_sys_reports_tir within m_sys_reports
+end type
+
+on m_sys_reports_tir.create
+call super::create
+end on
+
+on m_sys_reports_tir.destroy
+call super::destroy
+end on
+
+type m_sys_reports_shipmentcount from m_sheets`m_sys_reports_shipmentcount within m_sys_reports
+end type
+
+on m_sys_reports_shipmentcount.create
+call super::create
+end on
+
+on m_sys_reports_shipmentcount.destroy
+call super::destroy
+end on
+
+type m_2 from m_sheets`m_2 within m_system
+end type
+
+on m_2.create
+call super::create
+end on
+
+on m_2.destroy
+call super::destroy
+end on
+
+type m_addsystemalert from m_sheets`m_addsystemalert within m_2
+end type
+
+on m_addsystemalert.create
+call super::create
+end on
+
+on m_addsystemalert.destroy
+call super::destroy
+end on
+
+type m_4 from m_sheets`m_4 within m_2
+end type
+
+on m_4.create
+call super::create
+end on
+
+on m_4.destroy
+call super::destroy
+end on
+
+type m_3 from m_sheets`m_3 within m_2
+end type
+
+on m_3.create
+call super::create
+end on
+
+on m_3.destroy
+call super::destroy
+end on
+
+type m_div_s01 from m_sheets`m_div_s01 within m_system
+end type
+
+on m_div_s01.create
+call super::create
+end on
+
+on m_div_s01.destroy
+call super::destroy
+end on
+
+type m_setup from m_sheets`m_setup within m_system
+end type
+
+on m_setup.create
+call super::create
+end on
+
+on m_setup.destroy
+call super::destroy
+end on
+
+type m_privileges from m_sheets`m_privileges within m_setup
+end type
+
+on m_privileges.create
+call super::create
+end on
+
+on m_privileges.destroy
+call super::destroy
+end on
+
+type m_sys_settings from m_sheets`m_sys_settings within m_setup
+end type
+
+on m_sys_settings.create
+call super::create
+end on
+
+on m_sys_settings.destroy
+call super::destroy
+end on
+
+type m_notificationsetup from m_sheets`m_notificationsetup within m_setup
+end type
+
+on m_notificationsetup.create
+call super::create
+end on
+
+on m_notificationsetup.destroy
+call super::destroy
+end on
+
+type m_ptmobileusersetup from m_sheets`m_ptmobileusersetup within m_setup
+end type
+
+on m_ptmobileusersetup.create
+call super::create
+end on
+
+on m_ptmobileusersetup.destroy
+call super::destroy
+end on
+
+type m_eventconfirmationrequirements from m_sheets`m_eventconfirmationrequirements within m_setup
+end type
+
+on m_eventconfirmationrequirements.create
+call super::create
+end on
+
+on m_eventconfirmationrequirements.destroy
+call super::destroy
+end on
+
+type m_sys_equipmentleasetypes from m_sheets`m_sys_equipmentleasetypes within m_setup
+end type
+
+on m_sys_equipmentleasetypes.create
+call super::create
+end on
+
+on m_sys_equipmentleasetypes.destroy
+call super::destroy
+end on
+
+type m_sys_equipmentposting from m_sheets`m_sys_equipmentposting within m_setup
+end type
+
+on m_sys_equipmentposting.create
+call super::create
+end on
+
+on m_sys_equipmentposting.destroy
+call super::destroy
+end on
+
+type m_settingsimport from m_sheets`m_settingsimport within m_setup
+end type
+
+on m_settingsimport.create
+call super::create
+end on
+
+on m_settingsimport.destroy
+call super::destroy
+end on
+
+type m_div_s03 from m_sheets`m_div_s03 within m_setup
+end type
+
+on m_div_s03.create
+call super::create
+end on
+
+on m_div_s03.destroy
+call super::destroy
+end on
+
+type m_definitionmanager from m_sheets`m_definitionmanager within m_setup
+end type
+
+on m_definitionmanager.create
+call super::create
+end on
+
+on m_definitionmanager.destroy
+call super::destroy
+end on
+
+type m_sys_printset from m_sheets`m_sys_printset within m_setup
+end type
+
+on m_sys_printset.create
+call super::create
+end on
+
+on m_sys_printset.destroy
+call super::destroy
+end on
+
+type m_managescheduledevents from m_sheets`m_managescheduledevents within m_system
+end type
+
+on m_managescheduledevents.create
+call super::create
+end on
+
+on m_managescheduledevents.destroy
+call super::destroy
+end on
+
+type m_ptevents from m_sheets`m_ptevents within m_managescheduledevents
+end type
+
+on m_ptevents.create
+call super::create
+end on
+
+on m_ptevents.destroy
+call super::destroy
+end on
+
+type m_databasebackup from m_sheets`m_databasebackup within m_managescheduledevents
+end type
+
+on m_databasebackup.create
+call super::create
+end on
+
+on m_databasebackup.destroy
+call super::destroy
+end on
+
+type m_- from m_sheets`m_- within m_managescheduledevents
+end type
+
+on m_-.create
+call super::create
+end on
+
+on m_-.destroy
+call super::destroy
+end on
+
+type m_resetallevents from m_sheets`m_resetallevents within m_managescheduledevents
+end type
+
+on m_resetallevents.create
+call super::create
+end on
+
+on m_resetallevents.destroy
+call super::destroy
+end on
+
+type m_sys_reg from m_sheets`m_sys_reg within m_system
+end type
+
+on m_sys_reg.create
+call super::create
+end on
+
+on m_sys_reg.destroy
+call super::destroy
+end on
+
+type m_sys_rateconfirmationtemplate from m_sheets`m_sys_rateconfirmationtemplate within m_system
+end type
+
+on m_sys_rateconfirmationtemplate.create
+call super::create
+end on
+
+on m_sys_rateconfirmationtemplate.destroy
+call super::destroy
+end on
+
+type m_sys_importdata from m_sheets`m_sys_importdata within m_system
+end type
+
+on m_sys_importdata.create
+call super::create
+end on
+
+on m_sys_importdata.destroy
+call super::destroy
+end on
+
+type m_importedshipmentlog from m_sheets`m_importedshipmentlog within m_system
+end type
+
+on m_importedshipmentlog.create
+call super::create
+end on
+
+on m_importedshipmentlog.destroy
+call super::destroy
+end on
+
+type m_documenttransferhistory from m_sheets`m_documenttransferhistory within m_system
+end type
+
+on m_documenttransferhistory.create
+call super::create
+end on
+
+on m_documenttransferhistory.destroy
+call super::destroy
+end on
+
+type m_div_s02 from m_sheets`m_div_s02 within m_system
+end type
+
+on m_div_s02.create
+call super::create
+end on
+
+on m_div_s02.destroy
+call super::destroy
+end on
+
+type m_sys_clock from m_sheets`m_sys_clock within m_system
+end type
+
+on m_sys_clock.create
+call super::create
+end on
+
+on m_sys_clock.destroy
+call super::destroy
+end on
+
+type m_div_s04 from m_sheets`m_div_s04 within m_system
+end type
+
+on m_div_s04.create
+call super::create
+end on
+
+on m_div_s04.destroy
+call super::destroy
+end on
+
+type m_sys_pcmconn from m_sheets`m_sys_pcmconn within m_system
+end type
+
+on m_sys_pcmconn.create
+call super::create
+end on
+
+on m_sys_pcmconn.destroy
+call super::destroy
+end on
+
+type m_locatorupdate from m_sheets`m_locatorupdate within m_system
+end type
+
+on m_locatorupdate.create
+call super::create
+end on
+
+on m_locatorupdate.destroy
+call super::destroy
+end on
+
+type m_div_s05 from m_sheets`m_div_s05 within m_system
+end type
+
+on m_div_s05.create
+call super::create
+end on
+
+on m_div_s05.destroy
+call super::destroy
+end on
+
+type m_changeuser from m_sheets`m_changeuser within m_system
+end type
+
+on m_changeuser.create
+call super::create
+end on
+
+on m_changeuser.destroy
+call super::destroy
+end on
+
+type m_sys_modulelocks from m_sheets`m_sys_modulelocks within m_system
+end type
+
+on m_sys_modulelocks.create
+call super::create
+end on
+
+on m_sys_modulelocks.destroy
+call super::destroy
+end on
+
+type m_sys_exit from m_sheets`m_sys_exit within m_system
+end type
+
+on m_sys_exit.create
+call super::create
+end on
+
+on m_sys_exit.destroy
+call super::destroy
+end on
+
+type m_rating from m_sheets`m_rating within m_dynamiccontrolmenu2
+end type
+
+on m_rating.create
+call super::create
+end on
+
+on m_rating.destroy
+call super::destroy
+end on
+
+type m_ratelookup from m_sheets`m_ratelookup within m_rating
+end type
+
+on m_ratelookup.create
+call super::create
+end on
+
+on m_ratelookup.destroy
+call super::destroy
+end on
+
+type m_autoratequery from m_sheets`m_autoratequery within m_rating
+end type
+
+on m_autoratequery.create
+call super::create
+end on
+
+on m_autoratequery.destroy
+call super::destroy
+end on
+
+type m_rating_div01 from m_sheets`m_rating_div01 within m_rating
+end type
+
+on m_rating_div01.create
+call super::create
+end on
+
+on m_rating_div01.destroy
+call super::destroy
+end on
+
+type m_zones from m_sheets`m_zones within m_rating
+end type
+
+on m_zones.create
+call super::create
+end on
+
+on m_zones.destroy
+call super::destroy
+end on
+
+type m_ratetables from m_sheets`m_ratetables within m_rating
+end type
+
+on m_ratetables.create
+call super::create
+end on
+
+on m_ratetables.destroy
+call super::destroy
+end on
+
+type m_5 from m_sheets`m_5 within m_rating
+end type
+
+on m_5.create
+call super::create
+end on
+
+on m_5.destroy
+call super::destroy
+end on
+
+type m_codedefaults from m_sheets`m_codedefaults within m_rating
+end type
+
+on m_codedefaults.create
+call super::create
+end on
+
+on m_codedefaults.destroy
+call super::destroy
+end on
+
+type m_billing from m_sheets`m_billing within m_dynamiccontrolmenu2
+end type
+
+on m_billing.create
+call super::create
+end on
+
+on m_billing.destroy
+call super::destroy
+end on
+
+type m_bill_billing from m_sheets`m_bill_billing within m_billing
+end type
+
+on m_bill_billing.create
+call super::create
+end on
+
+on m_bill_billing.destroy
+call super::destroy
+end on
+
+type m_bill_search from m_sheets`m_bill_search within m_billing
+end type
+
+on m_bill_search.create
+call super::create
+end on
+
+on m_bill_search.destroy
+call super::destroy
+end on
+
+type m_bill_company from m_sheets`m_bill_company within m_billing
+end type
+
+on m_bill_company.create
+call super::create
+end on
+
+on m_bill_company.destroy
+call super::destroy
+end on
+
+type m_bill_billtopoints from m_sheets`m_bill_billtopoints within m_billing
+end type
+
+on m_bill_billtopoints.create
+call super::create
+end on
+
+on m_bill_billtopoints.destroy
+call super::destroy
+end on
+
+type m_div_b01 from m_sheets`m_div_b01 within m_billing
+end type
+
+on m_div_b01.create
+call super::create
+end on
+
+on m_div_b01.destroy
+call super::destroy
+end on
+
+type m_bill_graphic_setup from m_sheets`m_bill_graphic_setup within m_billing
+end type
+
+on m_bill_graphic_setup.create
+call super::create
+end on
+
+on m_bill_graphic_setup.destroy
+call super::destroy
+end on
+
+type m_bill_billseq_setup from m_sheets`m_bill_billseq_setup within m_billing
+end type
+
+on m_bill_billseq_setup.create
+call super::create
+end on
+
+on m_bill_billseq_setup.destroy
+call super::destroy
+end on
+
+type m_amounttypesetup from m_sheets`m_amounttypesetup within m_billing
+end type
+
+on m_amounttypesetup.create
+call super::create
+end on
+
+on m_amounttypesetup.destroy
+call super::destroy
+end on
+
+type m_bill_shiptype_setup from m_sheets`m_bill_shiptype_setup within m_billing
+end type
+
+on m_bill_shiptype_setup.create
+call super::create
+end on
+
+on m_bill_shiptype_setup.destroy
+call super::destroy
+end on
+
+type m_bill_validateglar from m_sheets`m_bill_validateglar within m_billing
+end type
+
+on m_bill_validateglar.create
+call super::create
+end on
+
+on m_bill_validateglar.destroy
+call super::destroy
+end on
+
+type m_settle from m_sheets`m_settle within m_dynamiccontrolmenu2
+end type
+
+on m_settle.create
+call super::create
+end on
+
+on m_settle.destroy
+call super::destroy
+end on
+
+type m_setl_settlements from m_sheets`m_setl_settlements within m_settle
+end type
+
+on m_setl_settlements.create
+call super::create
+end on
+
+on m_setl_settlements.destroy
+call super::destroy
+end on
+
+type m_setl_batchmanager from m_sheets`m_setl_batchmanager within m_settle
+end type
+
+on m_setl_batchmanager.create
+call super::create
+end on
+
+on m_setl_batchmanager.destroy
+call super::destroy
+end on
+
+type m_setl_comdata from m_sheets`m_setl_comdata within m_settle
+end type
+
+on m_setl_comdata.create
+call super::create
+end on
+
+on m_setl_comdata.destroy
+call super::destroy
+end on
+
+type m_setl_amountowedsearch from m_sheets`m_setl_amountowedsearch within m_settle
+end type
+
+on m_setl_amountowedsearch.create
+call super::create
+end on
+
+on m_setl_amountowedsearch.destroy
+call super::destroy
+end on
+
+type m_setl_div01 from m_sheets`m_setl_div01 within m_settle
+end type
+
+on m_setl_div01.create
+call super::create
+end on
+
+on m_setl_div01.destroy
+call super::destroy
+end on
+
+type m_setl_amounttypesetup from m_sheets`m_setl_amounttypesetup within m_settle
+end type
+
+on m_setl_amounttypesetup.create
+call super::create
+end on
+
+on m_setl_amounttypesetup.destroy
+call super::destroy
+end on
+
+type m_setl_ratetypesetup from m_sheets`m_setl_ratetypesetup within m_settle
+end type
+
+on m_setl_ratetypesetup.create
+call super::create
+end on
+
+on m_setl_ratetypesetup.destroy
+call super::destroy
+end on
+
+type m_setl_referencetypesetup from m_sheets`m_setl_referencetypesetup within m_settle
+end type
+
+on m_setl_referencetypesetup.create
+call super::create
+end on
+
+on m_setl_referencetypesetup.destroy
+call super::destroy
+end on
+
+type m_setl_divisionsetup from m_sheets`m_setl_divisionsetup within m_settle
+end type
+
+on m_setl_divisionsetup.create
+call super::create
+end on
+
+on m_setl_divisionsetup.destroy
+call super::destroy
+end on
+
+type m_amounttemplatesetup from m_sheets`m_amounttemplatesetup within m_settle
+end type
+
+on m_amounttemplatesetup.create
+call super::create
+end on
+
+on m_amounttemplatesetup.destroy
+call super::destroy
+end on
+
+type m_setl_div02 from m_sheets`m_setl_div02 within m_settle
+end type
+
+on m_setl_div02.create
+call super::create
+end on
+
+on m_setl_div02.destroy
+call super::destroy
+end on
+
+type m_setl_payablesvalidation from m_sheets`m_setl_payablesvalidation within m_settle
+end type
+
+on m_setl_payablesvalidation.create
+call super::create
+end on
+
+on m_setl_payablesvalidation.destroy
+call super::destroy
+end on
+
+type m_setl_payrollvalidation from m_sheets`m_setl_payrollvalidation within m_settle
+end type
+
+on m_setl_payrollvalidation.create
+call super::create
+end on
+
+on m_setl_payrollvalidation.destroy
+call super::destroy
+end on
+
+type m_setl_validateglap from m_sheets`m_setl_validateglap within m_settle
+end type
+
+on m_setl_validateglap.create
+call super::create
+end on
+
+on m_setl_validateglap.destroy
+call super::destroy
+end on
+
+type m_imaging from m_sheets`m_imaging within m_dynamiccontrolmenu2
+end type
+
+on m_imaging.create
+call super::create
+end on
+
+on m_imaging.destroy
+call super::destroy
+end on
+
+type m_scanbatch from m_sheets`m_scanbatch within m_imaging
+end type
+
+on m_scanbatch.create
+call super::create
+end on
+
+on m_scanbatch.destroy
+call super::destroy
+end on
+
+type m_viewunassigned from m_sheets`m_viewunassigned within m_imaging
+end type
+
+on m_viewunassigned.create
+call super::create
+end on
+
+on m_viewunassigned.destroy
+call super::destroy
+end on
+
+type m_-0 from m_sheets`m_-0 within m_imaging
+end type
+
+on m_-0.create
+call super::create
+end on
+
+on m_-0.destroy
+call super::destroy
+end on
+
+type m_imagemodificationlog from m_sheets`m_imagemodificationlog within m_imaging
+end type
+
+on m_imagemodificationlog.create
+call super::create
+end on
+
+on m_imagemodificationlog.destroy
+call super::destroy
+end on
+
+type m_-2 from m_sheets`m_-2 within m_imaging
+end type
+
+on m_-2.create
+call super::create
+end on
+
+on m_-2.destroy
+call super::destroy
+end on
+
+type m_archiving from m_sheets`m_archiving within m_imaging
+end type
+
+on m_archiving.create
+call super::create
+end on
+
+on m_archiving.destroy
+call super::destroy
+end on
+
+type m_imagetypesetup from m_sheets`m_imagetypesetup within m_imaging
+end type
+
+on m_imagetypesetup.create
+call super::create
+end on
+
+on m_imagetypesetup.destroy
+call super::destroy
+end on
+
+type m_logs from m_sheets`m_logs within m_dynamiccontrolmenu2
+end type
+
+on m_logs.create
+call super::create
+end on
+
+on m_logs.destroy
+call super::destroy
+end on
+
+type m_log_entry from m_sheets`m_log_entry within m_logs
+end type
+
+on m_log_entry.create
+call super::create
+end on
+
+on m_log_entry.destroy
+call super::destroy
+end on
+
+type m_log_vios from m_sheets`m_log_vios within m_logs
+end type
+
+on m_log_vios.create
+call super::create
+end on
+
+on m_log_vios.destroy
+call super::destroy
+end on
+
+type m_log_reports from m_sheets`m_log_reports within m_logs
+end type
+
+on m_log_reports.create
+call super::create
+end on
+
+on m_log_reports.destroy
+call super::destroy
+end on
+
+type m_div_l01 from m_sheets`m_div_l01 within m_logs
+end type
+
+on m_div_l01.create
+call super::create
+end on
+
+on m_div_l01.destroy
+call super::destroy
+end on
+
+type m_log_emp from m_sheets`m_log_emp within m_logs
+end type
+
+on m_log_emp.create
+call super::create
+end on
+
+on m_log_emp.destroy
+call super::destroy
+end on
+
+type m_random_list from m_sheets`m_random_list within m_logs
+end type
+
+on m_random_list.create
+call super::create
+end on
+
+on m_random_list.destroy
+call super::destroy
+end on
+
+type m_div_l02 from m_sheets`m_div_l02 within m_logs
+end type
+
+on m_div_l02.create
+call super::create
+end on
+
+on m_div_l02.destroy
+call super::destroy
+end on
+
+type m_log_admin from m_sheets`m_log_admin within m_logs
+end type
+
+on m_log_admin.create
+call super::create
+end on
+
+on m_log_admin.destroy
+call super::destroy
+end on
+
+type m_log_prefs from m_sheets`m_log_prefs within m_logs
+end type
+
+on m_log_prefs.create
+call super::create
+end on
+
+on m_log_prefs.destroy
+call super::destroy
+end on
+
+type m_dispatch from m_sheets`m_dispatch within m_dynamiccontrolmenu2
+end type
+
+on m_dispatch.create
+call super::create
+end on
+
+on m_dispatch.destroy
+call super::destroy
+end on
+
+type m_disp_newship from m_sheets`m_disp_newship within m_dispatch
+end type
+
+on m_disp_newship.create
+call super::create
+end on
+
+on m_disp_newship.destroy
+call super::destroy
+end on
+
+type m_disp_newdispship from m_sheets`m_disp_newdispship within m_dispatch
+end type
+
+on m_disp_newdispship.create
+call super::create
+end on
+
+on m_disp_newdispship.destroy
+call super::destroy
+end on
+
+type m_disp_newcntnship from m_sheets`m_disp_newcntnship within m_dispatch
+end type
+
+on m_disp_newcntnship.create
+call super::create
+end on
+
+on m_disp_newcntnship.destroy
+call super::destroy
+end on
+
+type m_newcdshipment from m_sheets`m_newcdshipment within m_dispatch
+end type
+
+on m_newcdshipment.create
+call super::create
+end on
+
+on m_newcdshipment.destroy
+call super::destroy
+end on
+
+type m_disp_newnrship from m_sheets`m_disp_newnrship within m_dispatch
+end type
+
+on m_disp_newnrship.create
+call super::create
+end on
+
+on m_disp_newnrship.destroy
+call super::destroy
+end on
+
+type m_disp_newbrokship from m_sheets`m_disp_newbrokship within m_dispatch
+end type
+
+on m_disp_newbrokship.create
+call super::create
+end on
+
+on m_disp_newbrokship.destroy
+call super::destroy
+end on
+
+type m_disp_newnrbrokerage from m_sheets`m_disp_newnrbrokerage within m_dispatch
+end type
+
+on m_disp_newnrbrokerage.create
+call super::create
+end on
+
+on m_disp_newnrbrokerage.destroy
+call super::destroy
+end on
+
+type m_disp_newtemplateshipment from m_sheets`m_disp_newtemplateshipment within m_dispatch
+end type
+
+on m_disp_newtemplateshipment.create
+call super::create
+end on
+
+on m_disp_newtemplateshipment.destroy
+call super::destroy
+end on
+
+type m_disp_newtrip from m_sheets`m_disp_newtrip within m_dispatch
+end type
+
+on m_disp_newtrip.create
+call super::create
+end on
+
+on m_disp_newtrip.destroy
+call super::destroy
+end on
+
+type m_div_d01 from m_sheets`m_div_d01 within m_dispatch
+end type
+
+on m_div_d01.create
+call super::create
+end on
+
+on m_div_d01.destroy
+call super::destroy
+end on
+
+type m_disp_itin from m_sheets`m_disp_itin within m_dispatch
+end type
+
+on m_disp_itin.create
+call super::create
+end on
+
+on m_disp_itin.destroy
+call super::destroy
+end on
+
+type m_disp_ship from m_sheets`m_disp_ship within m_dispatch
+end type
+
+on m_disp_ship.create
+call super::create
+end on
+
+on m_disp_ship.destroy
+call super::destroy
+end on
+
+type m_disp_trip from m_sheets`m_disp_trip within m_dispatch
+end type
+
+on m_disp_trip.create
+call super::create
+end on
+
+on m_disp_trip.destroy
+call super::destroy
+end on
+
+type m_1 from m_sheets`m_1 within m_dispatch
+end type
+
+on m_1.create
+call super::create
+end on
+
+on m_1.destroy
+call super::destroy
+end on
+
+type m_div_d02 from m_sheets`m_div_d02 within m_dispatch
+end type
+
+on m_div_d02.create
+call super::create
+end on
+
+on m_div_d02.destroy
+call super::destroy
+end on
+
+type m_disp_shipsum from m_sheets`m_disp_shipsum within m_dispatch
+end type
+
+on m_disp_shipsum.create
+call super::create
+end on
+
+on m_disp_shipsum.destroy
+call super::destroy
+end on
+
+type m_disp_equipsum from m_sheets`m_disp_equipsum within m_dispatch
+end type
+
+on m_disp_equipsum.create
+call super::create
+end on
+
+on m_disp_equipsum.destroy
+call super::destroy
+end on
+
+type m_disp_tripsum from m_sheets`m_disp_tripsum within m_dispatch
+end type
+
+on m_disp_tripsum.create
+call super::create
+end on
+
+on m_disp_tripsum.destroy
+call super::destroy
+end on
+
+type m_disp_reviewedi from m_sheets`m_disp_reviewedi within m_dispatch
+end type
+
+on m_disp_reviewedi.create
+call super::create
+end on
+
+on m_disp_reviewedi.destroy
+call super::destroy
+end on
+
+type m_disp_search from m_sheets`m_disp_search within m_dispatch
+end type
+
+on m_disp_search.create
+call super::create
+end on
+
+on m_disp_search.destroy
+call super::destroy
+end on
+
+type m_div_d03 from m_sheets`m_div_d03 within m_dispatch
+end type
+
+on m_div_d03.create
+call super::create
+end on
+
+on m_div_d03.destroy
+call super::destroy
+end on
+
+type m_disp_company from m_sheets`m_disp_company within m_dispatch
+end type
+
+on m_disp_company.create
+call super::create
+end on
+
+on m_disp_company.destroy
+call super::destroy
+end on
+
+type m_disp_equip from m_sheets`m_disp_equip within m_dispatch
+end type
+
+on m_disp_equip.create
+call super::create
+end on
+
+on m_disp_equip.destroy
+call super::destroy
+end on
+
+type m_disp_emp from m_sheets`m_disp_emp within m_dispatch
+end type
+
+on m_disp_emp.create
+call super::create
+end on
+
+on m_disp_emp.destroy
+call super::destroy
+end on
+
+type m_div_d04 from m_sheets`m_div_d04 within m_dispatch
+end type
+
+on m_div_d04.create
+call super::create
+end on
+
+on m_div_d04.destroy
+call super::destroy
+end on
+
+type m_disp_pcmiler from m_sheets`m_disp_pcmiler within m_dispatch
+end type
+
+on m_disp_pcmiler.create
+call super::create
+end on
+
+on m_disp_pcmiler.destroy
+call super::destroy
+end on
+
+type m_div_d05 from m_sheets`m_div_d05 within m_dispatch
+end type
+
+on m_div_d05.create
+call super::create
+end on
+
+on m_div_d05.destroy
+call super::destroy
+end on
+
+type m_cashadvance from m_sheets`m_cashadvance within m_dispatch
+end type
+
+on m_cashadvance.create
+call super::create
+end on
+
+on m_cashadvance.destroy
+call super::destroy
+end on
+
+type m_-1 from m_sheets`m_-1 within m_dispatch
+end type
+
+on m_-1.create
+call super::create
+end on
+
+on m_-1.destroy
+call super::destroy
+end on
+
+type m_quickview from m_sheets`m_quickview within m_dispatch
+end type
+
+on m_quickview.create
+call super::create
+end on
+
+on m_quickview.destroy
+call super::destroy
+end on
+
+type m_communications from m_sheets`m_communications within m_dynamiccontrolmenu2
+end type
+
+on m_communications.create
+call super::create
+end on
+
+on m_communications.destroy
+call super::destroy
+end on
+
+type m_comm_sendmessage from m_sheets`m_comm_sendmessage within m_communications
+end type
+
+on m_comm_sendmessage.create
+call super::create
+end on
+
+on m_comm_sendmessage.destroy
+call super::destroy
+end on
+
+type m_comm_sendfreeformtext from m_sheets`m_comm_sendfreeformtext within m_communications
+end type
+
+on m_comm_sendfreeformtext.create
+call super::create
+end on
+
+on m_comm_sendfreeformtext.destroy
+call super::destroy
+end on
+
+type m_comm_fleetmap from m_sheets`m_comm_fleetmap within m_communications
+end type
+
+on m_comm_fleetmap.create
+call super::create
+end on
+
+on m_comm_fleetmap.destroy
+call super::destroy
+end on
+
+type m_comm_div01 from m_sheets`m_comm_div01 within m_communications
+end type
+
+on m_comm_div01.create
+call super::create
+end on
+
+on m_comm_div01.destroy
+call super::destroy
+end on
+
+type m_comm_devicesetup from m_sheets`m_comm_devicesetup within m_communications
+end type
+
+on m_comm_devicesetup.create
+call super::create
+end on
+
+on m_comm_devicesetup.destroy
+call super::destroy
+end on
+
+type m_comm_inboundmessages from m_sheets`m_comm_inboundmessages within m_communications
+end type
+
+on m_comm_inboundmessages.create
+call super::create
+end on
+
+on m_comm_inboundmessages.destroy
+call super::destroy
+end on
+
+type m_comm_messagelog from m_sheets`m_comm_messagelog within m_communications
+end type
+
+on m_comm_messagelog.create
+call super::create
+end on
+
+on m_comm_messagelog.destroy
+call super::destroy
+end on
+
+type m_help from m_sheets`m_help within m_dynamiccontrolmenu2
+end type
+
+on m_help.create
+call super::create
+end on
+
+on m_help.destroy
+call super::destroy
+end on
+
+type m_help_soon from m_sheets`m_help_soon within m_help
+end type
+
+on m_help_soon.create
+call super::create
+end on
+
+on m_help_soon.destroy
+call super::destroy
+end on
+
+type m_help_on from m_sheets`m_help_on within m_help
+end type
+
+on m_help_on.create
+call super::create
+end on
+
+on m_help_on.destroy
+call super::destroy
+end on
+
+type m_profittoolsliveconnect from m_sheets`m_profittoolsliveconnect within m_help
+end type
+
+on m_profittoolsliveconnect.create
+call super::create
+end on
+
+on m_profittoolsliveconnect.destroy
+call super::destroy
+end on
+
+type m_div_h01 from m_sheets`m_div_h01 within m_help
+end type
+
+on m_div_h01.create
+call super::create
+end on
+
+on m_div_h01.destroy
+call super::destroy
+end on
+
+type m_help_about from m_sheets`m_help_about within m_help
+end type
+
+on m_help_about.create
+call super::create
+end on
+
+on m_help_about.destroy
+call super::destroy
+end on
+
+type m_current from m_sheets`m_current within m_dynamiccontrolmenu2
+m_administratormode m_administratormode
+m_saveusersettings m_saveusersettings
+m_dash m_dash
+m_revertusersettings m_revertusersettings
+m_refresh m_refresh
+end type
+
+on m_current.create
+call super::create
+this.m_administratormode=create m_administratormode
+this.m_saveusersettings=create m_saveusersettings
+this.m_dash=create m_dash
+this.m_revertusersettings=create m_revertusersettings
+this.m_refresh=create m_refresh
+this.Item[UpperBound(this.Item)+1]=this.m_administratormode
+this.Item[UpperBound(this.Item)+1]=this.m_saveusersettings
+this.Item[UpperBound(this.Item)+1]=this.m_dash
+this.Item[UpperBound(this.Item)+1]=this.m_revertusersettings
+this.Item[UpperBound(this.Item)+1]=this.m_refresh
+end on
+
+on m_current.destroy
+call super::destroy
+destroy(this.m_administratormode)
+destroy(this.m_saveusersettings)
+destroy(this.m_dash)
+destroy(this.m_revertusersettings)
+destroy(this.m_refresh)
+end on
+
+event m_current::clicked;call super::clicked;String	ls_LoggedInUser
+
+ls_LoggedInUser = gnv_app.of_getUserId( )
+
+IF ls_LoggedInUser = "PTADMIN" THEN
+	m_administratormode.Enabled = TRUE
+ELSE
+	m_administratormode.Enabled = FALSE
+END IF
+end event
+
+type m_close from m_sheets`m_close within m_current
+end type
+
+on m_close.create
+call super::create
+end on
+
+on m_close.destroy
+call super::destroy
+end on
+
+type m_window from m_sheets`m_window within m_dynamiccontrolmenu2
+end type
+
+on m_window.create
+call super::create
+end on
+
+on m_window.destroy
+call super::destroy
+end on
+
+type m_win_close from m_sheets`m_win_close within m_window
+end type
+
+on m_win_close.create
+call super::create
+end on
+
+on m_win_close.destroy
+call super::destroy
+end on
+
+type m_win_minimize from m_sheets`m_win_minimize within m_window
+end type
+
+on m_win_minimize.create
+call super::create
+end on
+
+on m_win_minimize.destroy
+call super::destroy
+end on
+
+type m_administratormode from menu within m_current
+end type
+
+event clicked;
+IF parentwindow.triggerEvent( "ue_hasIds" )  = 1 THEN
+	IF This.Checked THEN
+		IF ParentWindow.Dynamic of_SetAdminMode(FALSE) = 1 THEN
+			This.Checked = FALSE
+		END iF
+	ELSE
+		IF ParentWindow.Dynamic of_SetAdminMode(TRUE) = 1 THEN
+			This.Checked = TRUE
+		END IF
+	END IF
+END IF
+	
+end event
+
+on m_administratormode.create
+call super::create
+this.text = "&Admin Mode~tF1"
+this.enabled = false
+this.shortcut = 112
+this.microhelp = "Administrator Mode"
+end on
+
+on m_administratormode.destroy
+call super::destroy
+end on
+
+type m_saveusersettings from menu within m_current
+end type
+
+on m_saveusersettings.create
+call super::create
+this.text = "Save &User Settings~tCtrl+S"
+this.shortcut = 339
+end on
+
+on m_saveusersettings.destroy
+call super::destroy
+end on
+
+event clicked;/***************************************************************************************
+NAME: 			save settings click
+
+ACCESS:			public
+		
+ARGUMENTS: 		
+							none
+
+RETURNS:			none
+	
+DESCRIPTION:  Saves user properties for all the objects of the current window.
+	
+
+
+//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
+REVISION HISTORY : Created By Dan 9-19-05
+	
+
+***************************************************************************************/
+
+n_cst_bso_dynamicobjectmanager lnv_manager
+
+IF parentwindow.triggerEvent( "ue_hasIds" )  = 1 THEN
+	parentwindow.dynamic of_getdynpropmansrvc( lnv_manager )
+
+END IF
+
+IF isValid( lnv_manager ) THEN
+	IF "Window Template" <> string(parentWindow.dynamic of_getObjName()) THEN
+		lnv_manager.of_savesettings()
+	ELSE
+		MessageBox("Save User Settings", "Cannot save user settings on templates", exclamation!)
+	END IF
+ELSE
+	MessageBox("Save Settings", "Error saving user settings")
+END IF
+end event
+
+type m_dash from menu within m_current
+end type
+
+on m_dash.create
+call super::create
+this.text = "-"
+end on
+
+on m_dash.destroy
+call super::destroy
+end on
+
+type m_revertusersettings from menu within m_current
+end type
+
+event clicked;//The following closes the currently active window, and opens a new one with the window
+//definition settings.
+int 		li_result
+String	ls_name
+
+
+n_cst_bso_dynamicobjectmanager lnv_manager			//reference to the outerwindows property manager.
+
+IF parentwindow.triggerEvent( "ue_hasIds" )  = 1 THEN
+	parentwindow.dynamic of_getdynpropmansrvc( lnv_manager )
+	ls_name = parentWindow.dynamic of_getObjName()
+END IF
+
+
+IF isValid( lnv_manager ) THEN
+	
+	IF ls_name <> "Window Template" THEN
+		li_result = messageBox("Revert Settings","Reverting user settings will lose any unsaved data, Continue?", Question!, yesno! )
+	
+		IF li_result = 1 THEN
+			lnv_manager.of_loadWindowDefinition()
+		
+			close(parentwindow)
+			MessageBox("Revert Settings", "To go back to old user settings, close this window and relaunch it.")
+		END IF
+	ELSE
+		MessageBox("Revert Settings", "Cannot Revert Settings on a Template, just relaunch Window Template." )
+	END IF
+ELSE 
+	MessageBox("Revert Settings", "Error: Reverting settings")
+END IF
+end event
+
+on m_revertusersettings.create
+call super::create
+this.text = "Revert User Settings"
+end on
+
+on m_revertusersettings.destroy
+call super::destroy
+end on
+
+type m_refresh from menu within m_current
+end type
+
+event clicked;n_cst_bso_dynamicobjectmanager lnv_manager
+
+IF parentwindow.triggerEvent( "ue_hasIds" )  = 1 THEN
+	parentwindow.dynamic of_getdynpropmansrvc( lnv_manager )
+END IF
+
+IF isValid( lnv_manager ) THEN
+	parentWindow.triggerEvent( "ue_forceRefresh" )
+END IF
+end event
+
+on m_refresh.create
+call super::create
+this.text = "&Refresh~tF5"
+this.shortcut = 116
+end on
+
+on m_refresh.destroy
+call super::destroy
+end on
+

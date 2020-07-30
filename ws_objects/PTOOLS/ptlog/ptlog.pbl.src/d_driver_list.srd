@@ -1,0 +1,46 @@
+﻿$PBExportHeader$d_driver_list.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=em_id dbname="employees.em_id" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=em_fn dbname="employees.em_fn" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=em_mn dbname="employees.em_mn" )
+ column=(type=char(25) update=yes updatewhereclause=yes name=em_ln dbname="employees.em_ln" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=em_ref dbname="employees.em_ref" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=em_status dbname="employees.em_status" )
+ column=(type=long update=yes updatewhereclause=yes name=em_type dbname="employees.em_type" )
+ column=(type=long update=yes updatewhereclause=yes name=em_class dbname="employees.em_class" )
+ column=(type=long updatewhereclause=yes name=di_id dbname="null" )
+ column=(type=long updatewhereclause=yes name=di_available dbname="di_available" )
+ column=(type=long updatewhereclause=yes name=di_division dbname="di_division" )
+ retrieve="  SELECT ~"employees~".~"em_id~",   
+         ~"employees~".~"em_fn~",   
+         ~"employees~".~"em_mn~",   
+         ~"employees~".~"em_ln~",   
+         ~"employees~".~"em_ref~",   
+         ~"employees~".~"em_status~",   
+         ~"employees~".~"em_type~",   
+         ~"employees~".~"em_class~",
+  			convert ( integer, null ) ,
+			convert ( integer, null ) AS ~"di_Available~",
+			convert ( integer, null ) as ~"di_division~"
+    FROM ~"employees~"   
+   WHERE ( ( exists ( select dl_id from driver_logs where dl_id = em_id) ) AND  
+         ( ~"employees~".~"em_id~" > 10000 ) AND  
+         ( ~"employees~".~"em_status~" <> 'D' ) )
+" update="employees" updatewhere=1 updatekeyinplace=no  sort="comp_fullname A " )
+text(band=header alignment="0" text="Name" border="0" color="128" x="46" y="8" height="64" width="155" html.valueishtml="0"  name=em_fn_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Quick Ref." border="0" color="128" x="933" y="8" height="64" width="279" html.valueishtml="0"  name=em_ref_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="em_ln + ', ' + em_fn  + if (len(trim(em_mn)) = 0 or isnull(em_mn), '', ' ' + left(em_mn, 1) )"border="0" color="0" x="46" y="4" height="64" width="832" format="[GENERAL]" html.valueishtml="0"  name=comp_fullname visible="1~tif (em_id = -1, 0 , 1)"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+compute(band=detail alignment="0" expression="em_ref"border="0" color="0" x="933" y="4" height="60" width="311" format="[GENERAL]" html.valueishtml="0"  name=comp_ref visible="1~tif (em_id = -1, 0 , 1)"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="946" y="156" height="60" width="311" format="[general]" html.valueishtml="0"  name=em_type visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="946" y="224" height="60" width="311" format="[general]" html.valueishtml="0"  name=em_class visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="946" y="360" height="60" width="311" format="[general]" html.valueishtml="0"  name=em_id visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+htmltable(border="0" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

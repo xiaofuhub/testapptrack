@@ -1,0 +1,6 @@
+﻿$PBExportHeader$s_longs.srs
+$PBExportComments$PTCORE.  Structure containing an unbounded array of longs.
+global type s_longs from structure
+	long		longar[]
+end type
+

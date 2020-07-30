@@ -1,0 +1,89 @@
+﻿$PBExportHeader$d_tir_equipment.srd
+$PBExportComments$[companyid, start date, end date, equipment type(array) ] Retrieves equipment for a company and its facilities for TIR
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 print.documentname="" print.orientation = 1 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=yes print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(15) updatewhereclause=yes name=eq_ref dbname="eq_ref" )
+ column=(type=long updatewhereclause=yes name=originationsite dbname="originationsite" )
+ column=(type=date updatewhereclause=yes name=originationdate dbname="originationdate" )
+ column=(type=time updatewhereclause=yes name=originationtime dbname="originationtime" )
+ column=(type=long updatewhereclause=yes name=terminationsite dbname="terminationsite" )
+ column=(type=date updatewhereclause=yes name=terminationdate dbname="terminationdate" )
+ column=(type=time updatewhereclause=yes name=terminationtime dbname="terminationtime" )
+ column=(type=long updatewhereclause=yes name=shipment dbname="shipment" )
+ column=(type=long updatewhereclause=yes name=reloadshipment dbname="reloadshipment" )
+ column=(type=timestamp updatewhereclause=yes name=timestamp dbname="timestamp" )
+ column=(type=char(1) updatewhereclause=yes name=origintermloc dbname="origintermloc" )
+ column=(type=char(1) updatewhereclause=yes name=destintermloc dbname="destintermloc" )
+ column=(type=char(1) updatewhereclause=yes name=eq_type dbname="eq_type" )
+ column=(type=char(45) updatewhereclause=yes name=origincompany dbname="origincompany" )
+ column=(type=long updatewhereclause=yes name=origincompanyid dbname="origincompanyid" )
+ column=(type=long updatewhereclause=yes name=origincompanyfacilityid dbname="origincompanyfacilityid" )
+ column=(type=char(15) updatewhereclause=yes name=co_code_name dbname="co_code_name" )
+ column=(type=char(45) updatewhereclause=yes name=terminatecompany dbname="terminatecompany" )
+ column=(type=char(32766) updatewhereclause=no name=computed_note dbname="computed_note" )
+ retrieve="SELECT ~"equipment~".~"eq_ref~",   
+		~"outside_equip~".~"originationsite~",   
+		~"outside_equip~".~"originationdate~",   
+		~"outside_equip~".~"originationtime~",   
+		~"outside_equip~".~"terminationsite~",   
+		~"outside_equip~".~"terminationdate~",  
+		~"outside_equip~".~"terminationtime~",  
+		~"outside_equip~".~"shipment~",  
+		~"outside_equip~".~"reloadshipment~",  
+		~"outside_equip~".~"timestamp~",  
+		~"companies_a~".~"terminationlocation~" as OriginTermLoc,
+		~"companies_b~".~"terminationlocation~" as DestinTermLoc,
+		~"equipment~".~"eq_type~",
+		~"companies_a~".~"co_name~" as origincompany,
+		~"companies_a~".~"co_id~" as origincompanyID,
+		~"companies_a~".~"co_facility_of~" as origincompanyFacilityID,
+		~"companies_a~".~"co_code_name~",
+		~"companies_b~".~"co_name~" as terminatecompany,
+		Convert(Long VarChar,null) AS Computed_Note
+  
+FROM {oj {oj ~"outside_equip~"  LEFT OUTER JOIN ~"companies~" companies_a  ON ~"outside_equip~".~"originationsite~" = ~"companies_a~".~"co_id~"} LEFT OUTER JOIN ~"companies~" companies_b  ON ~"outside_equip~".~"terminationsite~" = ~"companies_b~".~"co_id~"},   
+		~"equipment~"  
+WHERE 
+(~"equipment~".~"eq_status~"='D') 
+AND 
+( ~"equipment~".~"eq_type~" Not in (:asa_ExcludeTypes) ) 
+AND
+( ~"outside_equip~".~"terminationdate~" >= :adt_Start AND  ~"outside_equip~".~"terminationdate~" <= :adt_end ) 
+AND
+( ~"equipment~".~"eq_id~" = ~"outside_equip~".~"oe_id~" ) 
+AND   
+( 
+ (~"outside_equip~".~"originationsite~" is NULL or ~"outside_equip~".~"terminationsite~" is Null )
+ OR
+ (~"outside_equip~".~"originationsite~" in ( SELECT ~"companies~".~"co_id~"
+    FROM ~"companies~"  
+   WHERE ( ~"companies~".~"co_facility_of~" = :an_CoID ) OR  
+         ( ~"companies~".~"co_id~" = :an_CoID ) AND  
+         ( ~"companies~".~"co_status~" = 'K' )  )  
+
+AND  ~"outside_equip~".~"terminationsite~" not in ( SELECT ~"companies~".~"co_id~"
+    FROM ~"companies~"  
+   WHERE ( ~"companies~".~"co_facility_of~" = :an_CoID ) OR  
+         ( ~"companies~".~"co_id~" = :an_CoID ) AND  
+         ( ~"companies~".~"co_status~" = 'K' )  ) 
+ )
+)
+
+" arguments=(("an_CoID", number),("adt_Start", date),("adt_End", date),("asa_ExcludeTypes", stringlist))  sort="originationsite A terminationsite A eq_ref A " )
+text(band=header alignment="0" text="Origin Date"border="6" color="0" x="1399" y="4" height="60" width="357"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="0" text="Term Site"border="6" color="0" x="1765" y="4" height="60" width="987"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="0" text="Term Date"border="6" color="0" x="2761" y="4" height="60" width="274"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="0" text="Notes"border="6" color="0" x="3045" y="4" height="60" width="1298"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="0" text="Equipment"border="6" color="0" x="9" y="4" height="60" width="398"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+text(band=header alignment="0" text="Origin Site"border="6" color="0" x="416" y="4" height="60" width="974"  resizeable=1  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="8" height="56" width="398" format="[general]"  name=eq_ref edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1399" y="8" height="56" width="357" format="[general]"  name=originationdate edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="536870912~tif (  isNull(  originationsite ), rgb( 255, 255, 0),  rgb( 255, 255, 255))" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="2761" y="8" height="56" width="274" format="[general]"  name=terminationdate edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="536870912~tif (  isNull(  terminationsite  ), rgb( 255, 255, 0),  rgb( 255, 255, 255))" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="416" y="8" height="56" width="974" format="[general]"  name=origincompany edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="536870912~tif (  isNull(  originationsite ), rgb( 255, 255, 0),  rgb( 255, 255, 255))" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="1765" y="8" height="56" width="987" format="[general]"  name=terminatecompany edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="536870912~tif (  isNull(  terminationsite ), rgb( 255, 255, 0),  rgb( 255, 255, 255))" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="3045" y="8" height="56" width="1298" format="[general]"  name=computed_note edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

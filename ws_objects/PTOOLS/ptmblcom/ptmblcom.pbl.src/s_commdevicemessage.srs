@@ -1,0 +1,21 @@
+﻿$PBExportHeader$s_commdevicemessage.srs
+$PBExportComments$PTCORE.
+global type s_commdevicemessage from structure
+	string		is_unitid
+	string		is_equipmentref
+	date		id_lastpositiondate
+	time		it_lastpositiontime
+	string		is_lastpositionlocation
+	string		is_lastpositionlat
+	string		is_lastpositionlong
+	long		il_eventid
+	string		is_text
+	string		is_messagetype
+	string		is_outboundtemplate
+	string		is_lastmessagenumber
+	string		is_eventnotes
+	long		il_shipmentid
+	string		is_container
+	string		is_chasis
+end type
+

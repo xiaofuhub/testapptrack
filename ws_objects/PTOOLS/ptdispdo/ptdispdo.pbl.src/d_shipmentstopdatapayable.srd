@@ -1,0 +1,67 @@
+﻿$PBExportHeader$d_shipmentstopdatapayable.srd
+$PBExportComments$Used by n_cst_beo_Itinerary2
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=136 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=shipmentid dbname="disp_ship.ds_id" )
+ column=(type=decimal(7) updatewhereclause=yes name=freightcharges dbname="freightcharges" )
+ column=(type=decimal(17) updatewhereclause=yes name=discount dbname="discount" )
+ column=(type=decimal(16) updatewhereclause=yes name=accessorialcharges dbname="accessorialcharges" )
+ column=(type=decimal(16) updatewhereclause=yes name=totalcharges dbname="totalcharges" )
+ column=(type=decimal(6) updatewhereclause=yes name=totalweight dbname="totalweight" )
+ column=(type=long updatewhereclause=yes name=eventcount dbname="eventcount" )
+ column=(type=long updatewhereclause=yes name=stopcount dbname="stopcount" )
+ column=(type=long updatewhereclause=yes name=excluded dbname="excluded" )
+ column=(type=decimal(2) updatewhereclause=yes name=totalfreightsplits dbname="totalfreightsplits" )
+ retrieve="SELECT disp_ship.ds_id, 
+Avg(disp_ship.ds_lh_totamt - IsNull ( ( SELECT SUM (   ~"disp_items~".~"di_our_itemamt~" )
+															From ~"disp_Items~",
+																	 ~"amounttype~"
+															Where  disp_items.di_shipment_id in ( :ids ) AND
+																		 disp_items.di_item_id NOT IN ( select di_item_id from disp_items where disp_items.di_shipment_id in ( :ids ) AND di_item_type = 'A' ) and
+																		~"disp_items~".~"amounttype~" = ~"amounttype~".~"id~" And
+																		( ~"amounttype~".~"category~" = 2 OR  disp_items.accountingtype = 1 ) 
+																		) , 0 )   )
+																		AS ~"FreightCharges~", 
+Avg(disp_ship.ds_disc_amt) AS ~"Discount~", 
+Avg(disp_ship.ds_ac_totamt) AS ~"AccessorialCharges~", 
+Avg(disp_ship.ds_bill_charge) AS ~"TotalCharges~", 
+Avg(disp_ship.ds_total_weight - IsNull ( ( SELECT SUM (   ~"disp_items~".~"di_our_itemamt~" )
+															From ~"disp_Items~",
+																	 ~"amounttype~"
+															Where  disp_items.di_shipment_id in ( :ids ) AND
+																		 disp_items.di_item_id NOT IN ( select di_item_id from disp_items where disp_items.di_shipment_id in ( :ids ) AND di_item_type = 'A' ) and
+																		~"disp_items~".~"amounttype~" = ~"amounttype~".~"id~" And
+																		( ~"amounttype~".~"category~" = 2 OR  disp_items.accountingtype = 1 ) 
+																		) , 0 )   )
+																	 AS ~"TotalWeight~", 
+Count(*) AS ~"EventCount~", 
+0 AS ~"StopCount~", 
+0 AS ~"Excluded~", 
+Sum(disp_events.de_freightsplit) AS ~"TotalFreightSplits~"
+FROM disp_events, disp_ship 
+WHERE disp_ship.ds_id in (:ids) and disp_ship.ds_id = disp_events.de_shipment_id GROUP BY disp_ship.ds_id ;" arguments=(("Ids", numberlist)) )
+text(band=header alignment="2" text="Freightcharges" border="0" color="0" x="498" y="4" height="64" width="393" html.valueishtml="0"  name=freightcharges_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Discount" border="0" color="0" x="896" y="4" height="64" width="329" html.valueishtml="0"  name=discount_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Eventcount" border="0" color="0" x="1230" y="4" height="64" width="329" html.valueishtml="0"  name=eventcount_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="0" y="4" height="76" width="462" format="[general]" html.valueishtml="0"  name=shipmentid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="1" tabsequence=32766 border="0" color="0" x="498" y="4" height="76" width="329" format="0.0##" html.valueishtml="0"  name=freightcharges visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="0" x="896" y="4" height="76" width="329" format="0.0##" html.valueishtml="0"  name=discount visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="0" x="1230" y="4" height="76" width="329" format="[general]" html.valueishtml="0"  name=eventcount visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="IF ( EventCount > 0, ( IF ( IsNull ( FreightCharges ), 0, FreightCharges ) - IF ( IsNull ( Discount ), 0, Discount ) ) / EventCount, 0 )"border="0" color="0" x="1595" y="4" height="76" width="256" format="[general]" html.valueishtml="0"  name=eventrevenue visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=8 alignment="0" tabsequence=10 border="0" color="0" x="1888" y="4" height="76" width="297" format="[general]" html.valueishtml="0"  name=stopcount visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="IF ( IsNull ( TotalFreightSplits ), Round ( EventRevenue * StopCount, 2 ), 0 )
+/*If there is a value for TotalFreightSplits, stop revenue for this shipment should be computed based on the total of freight splits for events in the range, not based on the even-spread formula used here.  This has to be done outside of this object.  So, for shipments having a TotalFreightSplits value, we zero the StopRevenue value here, so it won't be double-counted.*/"border="0" color="0" x="2217" y="4" height="76" width="306" format="[general]" html.valueishtml="0"  name=stoprevenue visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="2551" y="4" height="76" width="530" format="[general]" html.valueishtml="0"  name=accessorialcharges visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="3109" y="4" height="76" width="530" format="[general]" html.valueishtml="0"  name=totalcharges visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="3666" y="4" height="76" width="530" format="[general]" html.valueishtml="0"  name=totalweight visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="4224" y="4" height="76" width="530" format="[general]" html.valueishtml="0"  name=excluded visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="4786" y="4" height="76" width="530" format="[general]" html.valueishtml="0"  name=totalfreightsplits visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

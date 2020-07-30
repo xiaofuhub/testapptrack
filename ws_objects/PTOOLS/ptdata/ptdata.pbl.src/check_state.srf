@@ -1,0 +1,44 @@
+﻿$PBExportHeader$check_state.srf
+global type check_state from function_object
+end type
+
+forward prototypes
+global function integer check_state (string check_state)
+end prototypes
+
+global function integer check_state (string check_state);/*----------------------------------------------------------------------------------
+Purpose-----------
+  This function returns 1 if sent value is valid state or providence.  
+  This function returns -1 if an invalid stare or providence was sent.
+
+Arguements--------
+	check_state:  state to be verfied
+------------------------------------------------------------------------------------*/
+if len(trim(check_state)) = 0 or isnull(check_state) then return -1
+choose case check_state
+	case "HI"
+		return 0
+	case "AK"
+		return 0
+	case "CA", "NV", "WA", "YK"
+		return 0
+	case "AZ", "CO", "MT", "NM", "UT", "WY", "AB"
+		return 0
+	case "AL", "AR", "IL", "IA", "LA", "MN", "MS", "MO", "OK", &
+		"WI", "MB"
+		return 0
+	case "CT", "DE", "DC", "GA", "ME", "MD", "MA", "NH", &
+		"NJ", "NY", "NC", "OH", "PA", "RI", "SC", "VT", "VA", "WV", "PQ", "QC"
+		return 0
+	case "NB", "NF", "NS", "PE"
+		return 0
+	case "ID", "OR", "BC", "KS", "NE", "ND", "SD", "TX", "SK", "FL", &
+		"IN", "KY", "MI", "TN", "ON", "NT", "MX"
+		return 0
+	case else
+		return -1
+end choose
+
+
+end function
+

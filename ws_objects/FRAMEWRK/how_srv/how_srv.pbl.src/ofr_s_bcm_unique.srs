@@ -1,0 +1,8 @@
+﻿$PBExportHeader$ofr_s_bcm_unique.srs
+global type ofr_s_bcm_unique from structure
+	string		s_name
+	integer		i_attributes
+	string		s_attribute[]
+	string		s_findexpression
+end type
+

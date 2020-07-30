@@ -1,0 +1,27 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "framewrk\\how_srve\\how_srve.pbl" "";
+@end;
+@begin Objects
+ "framewrk\\how_srve\\n_bcm_ds.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_base.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_bcmmgr.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_bcm_init.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_beokey.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_beolog.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_beo_init.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_bcm.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_beo.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_bso.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_database.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_dlk_init.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_dlk.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_collection.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_exception.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_query.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_sso.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_ofrerror.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_txmgr.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_ofrerror_collection.sru" "framewrk\\how_srve\\how_srve.pbl";
+ "framewrk\\how_srve\\n_cst_attribute.sru" "framewrk\\how_srve\\how_srve.pbl";
+@end;

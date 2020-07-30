@@ -1,0 +1,105 @@
+﻿$PBExportHeader$m_fmtpop_ship.srm
+forward
+global type m_fmtpop_ship from menu
+end type
+type m_specify from menu within m_fmtpop_ship
+end type
+type m_billing from menu within m_specify
+end type
+type m_itemamts_bill from menu within m_billing
+end type
+type m_lhacamts_bill from menu within m_billing
+end type
+type m_grandtotal_bill from menu within m_billing
+end type
+type m_billing from menu within m_specify
+m_itemamts_bill m_itemamts_bill
+m_lhacamts_bill m_lhacamts_bill
+m_grandtotal_bill m_grandtotal_bill
+end type
+type m_specify from menu within m_fmtpop_ship
+m_billing m_billing
+end type
+end forward
+
+global type m_fmtpop_ship from menu
+m_specify m_specify
+end type
+global m_fmtpop_ship m_fmtpop_ship
+
+on m_fmtpop_ship.create
+m_fmtpop_ship=this
+this.m_specify=create m_specify
+this.Item[]={this.m_specify}
+end on
+
+on m_fmtpop_ship.destroy
+destroy(this.m_specify)
+end on
+
+type m_specify from menu within m_fmtpop_ship
+m_billing m_billing
+end type
+
+on m_specify.create
+this.Text="Specify"
+this.m_billing=create m_billing
+this.Item[]={this.m_billing}
+end on
+
+on m_specify.destroy
+destroy(this.m_billing)
+end on
+
+type m_billing from menu within m_specify
+m_itemamts_bill m_itemamts_bill
+m_lhacamts_bill m_lhacamts_bill
+m_grandtotal_bill m_grandtotal_bill
+end type
+
+on m_billing.create
+this.Text="&Billing: Specify"
+this.m_itemamts_bill=create m_itemamts_bill
+this.m_lhacamts_bill=create m_lhacamts_bill
+this.m_grandtotal_bill=create m_grandtotal_bill
+this.Item[]={this.m_itemamts_bill, &
+this.m_lhacamts_bill, &
+this.m_grandtotal_bill}
+end on
+
+on m_billing.destroy
+destroy(this.m_itemamts_bill)
+destroy(this.m_lhacamts_bill)
+destroy(this.m_grandtotal_bill)
+end on
+
+type m_itemamts_bill from menu within m_billing
+end type
+
+on clicked;g_tempint = 1
+end on
+
+on m_itemamts_bill.create
+this.Text="&Item Amts."
+end on
+
+type m_lhacamts_bill from menu within m_billing
+end type
+
+on clicked;g_tempint = 2
+end on
+
+on m_lhacamts_bill.create
+this.Text="&Freight/AC Totals"
+end on
+
+type m_grandtotal_bill from menu within m_billing
+end type
+
+on clicked;g_tempint = 3
+end on
+
+on m_grandtotal_bill.create
+this.Text="&Grand Total"
+end on
+

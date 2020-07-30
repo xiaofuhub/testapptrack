@@ -1,0 +1,5 @@
+﻿$PBExportHeader$s_any.srs
+global type s_any from structure
+	any		ia_value
+end type
+

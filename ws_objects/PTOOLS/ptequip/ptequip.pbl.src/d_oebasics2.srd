@@ -1,0 +1,181 @@
+﻿$PBExportHeader$d_oebasics2.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=60 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=176 color="553648127" )
+table(column=(type=long update=yes updatewhereclause=yes name=eq_id dbname="equipment.eq_id" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=intermodalequipment_type dbname="equipment.eq_type" values="[NONE]	Z/TRACTOR	T/STRT TRUCK	S/VAN	N/TRAILER	V/FLATBED	F/REEFER	R/TANKER	K/RAILBOX	B/CHASSIS	H/CONTAINER	C/" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=eq_ref dbname="equipment.eq_ref" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=eq_outside dbname="equipment.eq_outside" values="	F/	T" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=eq_status dbname="equipment.eq_status" )
+ column=(type=decimal(1) update=yes updatewhereclause=yes name=eq_length dbname="equipment.eq_length" )
+ column=(type=decimal(1) update=yes updatewhereclause=yes name=eq_height dbname="equipment.eq_height" )
+ column=(type=long update=yes updatewhereclause=yes name=eq_axles dbname="equipment.eq_axles" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=eq_air dbname="equipment.eq_air" values="	T/	F" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=eq_spec1 dbname="equipment.eq_spec1" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=eq_spec2 dbname="equipment.eq_spec2" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=eq_spec3 dbname="equipment.eq_spec3" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=eq_spec4 dbname="equipment.eq_spec4" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=eq_spec5 dbname="equipment.eq_spec5" )
+ column=(type=long update=yes updatewhereclause=yes name=eq_cur_event dbname="equipment.eq_cur_event" )
+ column=(type=long update=yes updatewhereclause=yes name=eq_next_event dbname="equipment.eq_next_event" )
+ column=(type=long updatewhereclause=yes name=oe_id dbname="outside_equip.oe_id" )
+ column=(type=long updatewhereclause=yes name=oe_from dbname="outside_equip.oe_from" )
+ column=(type=long updatewhereclause=yes name=oe_for dbname="outside_equip.oe_for" )
+ column=(type=char(15) updatewhereclause=yes name=oe_booknum dbname="outside_equip.oe_booknum" )
+ column=(type=datetime updatewhereclause=yes name=oe_out dbname="outside_equip.oe_out" )
+ column=(type=datetime updatewhereclause=yes name=oe_in dbname="outside_equip.oe_in" )
+ column=(type=long updatewhereclause=yes name=oe_orig_event dbname="outside_equip.oe_orig_event" )
+ column=(type=long updatewhereclause=yes name=oe_term_event dbname="outside_equip.oe_term_event" )
+ column=(type=char(1) updatewhereclause=yes name=curev_type dbname="disp_events.de_event_type" )
+ column=(type=long updatewhereclause=yes name=curev_site dbname="disp_events.de_site" )
+ column=(type=date updatewhereclause=yes name=curev_arrdate dbname="disp_events.de_arrdate" )
+ column=(type=time updatewhereclause=yes name=curev_arrtime dbname="disp_events.de_arrtime" )
+ column=(type=time updatewhereclause=yes name=curev_deptime dbname="disp_events.de_deptime" )
+ column=(type=long updatewhereclause=yes name=curev_shipment_id dbname="disp_events.de_shipment_id" )
+ column=(type=char(1) updatewhereclause=yes name=curev_conf dbname="disp_events.de_conf" )
+ column=(type=char(45) updatewhereclause=yes name=curevco_name dbname="null" )
+ column=(type=char(20) updatewhereclause=yes name=curevco_city dbname="null" )
+ column=(type=char(3) updatewhereclause=yes name=curevco_state dbname="null" )
+ column=(type=long updatewhereclause=yes name=curevco_tz dbname="null" values="HWI	0/ALK	1/PAC	2/MTN	3/CTL	4/EST	5/ATL	6/" )
+ column=(type=char(25) updatewhereclause=yes name=curevco_pcm dbname="null" )
+ column=(type=long updatewhereclause=yes name=equipmentlease_fkequipmentleasetype dbname="outside_equip.fkequipmentleasetype" )
+ column=(type=char(32766) updatewhereclause=no name=equipmentlease_user1 dbname="outside_equip.user1" )
+ column=(type=char(32766) updatewhereclause=no name=equipmentlease_user2 dbname="outside_equip.user2" )
+ column=(type=char(32766) updatewhereclause=no name=equipmentlease_notes dbname="outside_equip.notes" )
+ column=(type=long updatewhereclause=yes name=equipmentlease_shipment dbname="outside_equip.shipment" )
+ column=(type=long updatewhereclause=yes name=equipmentlease_originationsite dbname="outside_equip.originationsite" )
+ column=(type=date updatewhereclause=yes name=equipmentlease_originationdate dbname="outside_equip.originationdate" )
+ column=(type=time updatewhereclause=yes name=equipmentlease_originationtime dbname="outside_equip.originationtime" )
+ column=(type=long updatewhereclause=yes name=equipmentlease_terminationsite dbname="outside_equip.terminationsite" )
+ column=(type=date updatewhereclause=yes name=equipmentlease_terminationdate dbname="outside_equip.terminationdate" )
+ column=(type=time updatewhereclause=yes name=equipmentlease_terminationtime dbname="outside_equip.terminationtime" )
+ column=(type=long updatewhereclause=yes name=reloadshipment dbname="outside_equip.reloadshipment" )
+ column=(type=date updatewhereclause=yes name=reloaddate dbname="outside_equip.reloaddate" )
+ column=(type=time updatewhereclause=yes name=reloadtime dbname="outside_equip.reloadtime" )
+ column=(type=date updatewhereclause=yes name=reloadfreetimeexpiredate dbname="outside_equip.reloadfreetimeexpiredate" )
+ column=(type=time updatewhereclause=yes name=reloadfreetimeexpiretime dbname="outside_equip.reloadfreetimeexpiretime" )
+ column=(type=decimal(2) updatewhereclause=yes name=amountbilled dbname="outside_equip.amountbilled" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_notes dbname="equipment.notes" )
+ column=(type=char(30) updatewhereclause=yes name=equipmentleasetype_line dbname="equipmentleasetype.line" )
+ column=(type=char(30) updatewhereclause=yes name=equipmentleasetype_type dbname="equipmentleasetype.type" )
+ column=(type=long updatewhereclause=yes name=equipmentleasetype_freetimestart dbname="equipmentleasetype.freetimestart" )
+ column=(type=char(32766) updatewhereclause=no name=outside_equip_invoicenumber dbname="outside_equip.invoicenumber" )
+ column=(type=date updatewhereclause=yes name=leasefreetimeexpiredate dbname="outside_equip.leasefreetimeexpiredate" )
+ column=(type=time updatewhereclause=yes name=leasefreetimeexpiretime dbname="outside_equip.leasefreetimeexpiretime" )
+ column=(type=date updatewhereclause=yes name=releasedate dbname="outside_equip.releasedate" )
+ column=(type=time updatewhereclause=yes name=releasetime dbname="outside_equip.releasetime" )
+ column=(type=char(1) updatewhereclause=yes name=equipmentpostingstatus_postingstatus dbname="equipmentpostingstatus.postingstatus" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_isocode dbname="equipment.isocode" )
+ column=(type=char(20) updatewhereclause=yes name=gooseneck dbname="gooseneck" values="Goose-neck	1/Goose-neck	0" )
+ column=(type=char(20) updatewhereclause=yes name=height dbname="height" values="Height	-99/8' 00~"	0/8' 06~"	1/> 8' 06~"	2/4' - 4' 03~"	3/4' 03~" - 8'	8/< 4'	9/" )
+ column=(type=char(20) updatewhereclause=yes name=isodescription dbname="isodescription" )
+ retrieve="  SELECT ~"equipment~".~"eq_id~",   
+         ~"equipment~".~"eq_type~",   
+         ~"equipment~".~"eq_ref~",   
+         ~"equipment~".~"eq_outside~",   
+         ~"equipment~".~"eq_status~",   
+         ~"equipment~".~"eq_length~",   
+         ~"equipment~".~"eq_height~",   
+         ~"equipment~".~"eq_axles~",   
+         ~"equipment~".~"eq_air~",   
+         ~"equipment~".~"eq_spec1~",   
+         ~"equipment~".~"eq_spec2~",   
+         ~"equipment~".~"eq_spec3~",   
+         ~"equipment~".~"eq_spec4~",   
+         ~"equipment~".~"eq_spec5~",   
+         ~"equipment~".~"eq_cur_event~",   
+         ~"equipment~".~"eq_next_event~",   
+         ~"outside_equip~".~"oe_id~",   
+         ~"outside_equip~".~"oe_from~",   
+         ~"outside_equip~".~"oe_for~",   
+         ~"outside_equip~".~"oe_booknum~",   
+         ~"outside_equip~".~"oe_out~",   
+         ~"outside_equip~".~"oe_in~",   
+         ~"outside_equip~".~"oe_orig_event~",   
+         ~"outside_equip~".~"oe_term_event~",   
+         ~"disp_events~".~"de_event_type~",   
+         ~"disp_events~".~"de_site~",   
+         ~"disp_events~".~"de_arrdate~",   
+         ~"disp_events~".~"de_arrtime~",   
+         ~"disp_events~".~"de_deptime~",   
+         ~"disp_events~".~"de_shipment_id~",   
+         ~"disp_events~".~"de_conf~",   
+         convert ( char (45), null ),   
+         convert ( char (20), null ),   
+         convert ( char (3), null ),   
+         convert ( integer, null ),   
+         convert ( char (25), null ),   
+         ~"outside_equip~".~"fkequipmentleasetype~",   
+         ~"outside_equip~".~"user1~",   
+         ~"outside_equip~".~"user2~",   
+         ~"outside_equip~".~"notes~",   
+         ~"outside_equip~".~"shipment~",   
+         ~"outside_equip~".~"originationsite~",   
+         ~"outside_equip~".~"originationdate~",   
+         ~"outside_equip~".~"originationtime~",   
+         ~"outside_equip~".~"terminationsite~",   
+         ~"outside_equip~".~"terminationdate~",   
+         ~"outside_equip~".~"terminationtime~",   
+         ~"outside_equip~".~"reloadshipment~",   
+         ~"outside_equip~".~"reloaddate~",   
+         ~"outside_equip~".~"reloadtime~",   
+         ~"outside_equip~".~"reloadfreetimeexpiredate~",   
+         ~"outside_equip~".~"reloadfreetimeexpiretime~",   
+         ~"outside_equip~".~"amountbilled~",   
+         ~"equipment~".~"notes~",   
+         ~"equipmentleasetype~".~"line~",   
+         ~"equipmentleasetype~".~"type~",   
+         ~"equipmentleasetype~".~"freetimestart~",   
+         ~"outside_equip~".~"invoicenumber~",   
+         ~"outside_equip~".~"leasefreetimeexpiredate~",   
+         ~"outside_equip~".~"leasefreetimeexpiretime~",   
+         ~"outside_equip~".~"releasedate~",   
+         ~"outside_equip~".~"releasetime~",   
+         ~"equipmentpostingstatus~".~"postingstatus~",
+ 			~"equipment~".~"isocode~" ,   
+         convert ( char (20), null ) as ~"gooseneck~",   
+         convert ( char (20), null ) as ~"height~",   
+         convert ( char (20), null )as ~"isodescription~"   
+    FROM {oj ~"equipmentpostingstatus~" RIGHT OUTER JOIN ~"equipment~" ON ~"equipmentpostingstatus~".~"equipmentid~" = ~"equipment~".~"eq_id~"}, {oj ~"outside_equip~" RIGHT OUTER JOIN ~"equipment~" ON ~"outside_equip~".~"oe_id~" = ~"equipment~".~"eq_id~" LEFT OUTER JOIN ~"disp_events~" ON ~"equipment~".~"eq_cur_event~" = ~"disp_events~".~"de_id~"}, {oj ~"equipmentleasetype~" RIGHT OUTER JOIN ~"outside_equip~" ON ~"equipmentleasetype~".~"id~" = ~"outside_equip~".~"fkequipmentleasetype~"}  
+   WHERE ~"equipment~".~"eq_status~" = 'K'    
+"  sort="eq_id A " )
+compute(band=header alignment="0" expression="count(eq_ref for all)"border="0" color="128" x="5" y="0" height="56" width="78" format="[general]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="&Number:" border="0" color="0" x="96" y="0" height="60" width="251" html.valueishtml="0"  name=equipment_eq_ref_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Type:" border="0" color="0" x="498" y="0" height="56" width="165" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Len:" border="0" color="0" x="731" y="0" height="52" width="128" html.valueishtml="0"  name=equipment_eq_length_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Notes:" border="0" color="0" x="1056" y="0" height="52" width="192" html.valueishtml="0"  name=intermodalequipment_type_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Axl.:" border="0" color="0" x="901" y="0" height="52" width="128" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+groupbox(band=detail text=""border="6" color="0" x="14" y="4" height="252~tIF (  reloadshipment > 0 , 252,160 )" width="2491"  name=gb_details visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+bitmap(band=detail filename="BackReload.bmp" x="18" y="16" height="64" width="69" border="0"  name=backreload visible="1~tif ( reloadshipment  > 0 ,  1 , 0 )" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="5" color="0" x="498" y="24" height="56" width="210" format="[general]" html.valueishtml="0"  name=intermodalequipment_type visible="1" edit.name="EqLongED" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.nilisnull=yes edit.imemode=0 edit.codetable=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=6 alignment="0" tabsequence=30 border="5" color="0" x="731" y="24" height="56" width="151" format="[general]" html.valueishtml="0"  name=eq_length visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=8 alignment="0" tabsequence=40 border="5" color="0" x="901" y="24" height="56" width="128" format="[general]" html.valueishtml="0" protect="0~tif (( describe ( 'txt_restrict_ind.text' )  = 'T' ) , 1, if ( isnull (  intermodalequipment_type ) or  intermodalequipment_type = 'C', 1, 0 ))"  name=eq_axles visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="1073741824~tif ( describe ( 'txt_restrict_ind.text' )  = 'F' , if ( isnull (  intermodalequipment_type ) or  intermodalequipment_type = 'C', 12632256, 16777215 ) ,if ( isnull ( intermodalequipment_type ) or  intermodalequipment_type = 'C',12632256, 12648447) )
+" )
+bitmap(band=detail filename="frontreload.BMP" x="18" y="32" height="60" width="69" border="0"  name=frontreload visible="1~tif (  reloadshipment > 0 , 1 , 0 )" )
+text(band=detail alignment="1" text="Line/Type" border="0" color="0" x="242" y="92" height="60" width="238" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=55 alignment="0" tabsequence=60 border="5" color="0" x="498" y="100" height="52" width="649" format="[general]" html.valueishtml="0" protect="0~tif (( describe ( 'txt_restrict_ind.text' )  = 'T' ) OR IsNull (  intermodalequipment_type  ), 1, 0 )"  name=equipmentleasetype_line visible="1" dddw.name=d_equipmentlease_dddw dddw.displaycolumn=uniquelinename dddw.datacolumn=id dddw.percentwidth=400 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.nilisnull=yes dddw.imemode=0 dddw.vscrollbar=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="1073741824~tif ( describe ( 'txt_restrict_ind.text' )  = 'F' And Not isnull (   intermodalequipment_type ), 16777215,12648447)
+" )
+text(band=detail alignment="1" text="Reload Date/Time" border="0" color="0" x="18" y="180" height="60" width="453" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=49 alignment="0" tabsequence=70 border="5" color="0" x="498" y="184" height="56" width="219" format="m/d/yy" html.valueishtml="0"  name=reloaddate visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=50 alignment="0" tabsequence=80 border="5" color="0" x="741" y="184" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=reloadtime visible="1" edit.limit=0 edit.case=upper edit.format="h:mm AM/PM" edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=detail alignment="1" text="Ftx:" border="0" color="0" x="1033" y="180" height="60" width="110" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=51 alignment="0" tabsequence=90 border="5" color="0" x="1166" y="184" height="56" width="219" format="m/d/yy" html.valueishtml="0"  name=reloadfreetimeexpiredate visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=52 alignment="0" tabsequence=100 border="5" color="0" x="1408" y="184" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=reloadfreetimeexpiretime visible="1" edit.limit=0 edit.case=upper edit.format="h:mm AM/PM" edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=59 alignment="0" tabsequence=32766 border="0" color="65535~tIF ( IsNull (  equipmentlease_terminationdate  ) , IF ( daysafter (  leasefreetimeexpiredate , TODAY ( ))  >= 1 AND  eq_status ='K', RGB ( 255, 0 , 0 ) ,  IF ( (daysafter(  leasefreetimeexpiredate , TODAY ( ))  = 0 AND  eq_status ='K')  OR   (daysafter(  leasefreetimeexpiredate , TODAY ( ))  = -1 AND  eq_status ='K' ) ,   RGB( 255, 255, 0 ) , 0   ) ) , IF ( DaysAfter (  leasefreetimeexpiredate ,  equipmentlease_terminationdate ) > 0 , RGB ( 128	, 0,0 ) , RGB ( 0,0, 0) ) )" x="23" y="92" height="52" width="201" format="mm/dd/yy" html.valueishtml="0"  name=leasefreetimeexpiredate visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="12632256~tIF ( IsNull (  equipmentlease_terminationdate  ) , IF ( daysafter (  leasefreetimeexpiredate , TODAY ( ))  >= 1 AND  eq_status ='K', RGB ( 255, 255 , 0 )/*RED on Yellow*/ ,  IF ( daysafter(  leasefreetimeexpiredate , TODAY ( ))  = 0 AND  eq_status ='K'  OR   daysafter(  leasefreetimeexpiredate , TODAY ( ))  = -1 AND  eq_status ='K'  ,   RGB( 192, 192,192 )/*YELLOW on grey*/ , RGB ( 192,192, 192) /*BLACK on grey*/   ) ) , IF ( DaysAfter (  leasefreetimeexpiredate ,  equipmentlease_terminationdate ) > 0 , RGB ( 255,255,174 )/*DARK RED on pale yellow*/ , RGB ( 192,192, 192) /*BLACK on grey*/) )" )
+column(band=detail id=56 alignment="0" tabsequence=32766 border="5" color="0" x="1170" y="96" height="56" width="457" format="[general]" html.valueishtml="0"  name=equipmentleasetype_type visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="16777215~t12648447" )
+column(band=detail id=67 alignment="0" tabsequence=130 border="5" color="0" x="1797" y="100" height="52" width="681" format="[general]" html.valueishtml="0"  name=isodescription visible="1" dddw.name=d_isodescriptions dddw.displaycolumn=description dddw.datacolumn=code dddw.percentwidth=300 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=54 alignment="0" tabsequence=50 border="5" color="0" x="1056" y="24" height="56" width="494~tIF (  equipmentpostingstatus_postingstatus = 'H' or  equipmentpostingstatus_postingstatus  = 'N' , 494 , 571 )" format="[general]" html.valueishtml="0"  name=equipment_notes visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=65 alignment="0" tabsequence=110 border="0" color="0" x="1787" y="28" height="52" width="357" format="[general]" html.valueishtml="0"  name=gooseneck visible="1" checkbox.text="Goose-neck" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=66 alignment="0" tabsequence=120 border="5" color="0" x="2171" y="28" height="52" width="302" format="[general]" html.valueishtml="0"  name=height visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.vscrollbar=yes ddlb.useasborder=yes ddlb.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=3 alignment="0" tabsequence=10 border="5" color="0" x="101" y="24" height="56" width="370" format="[general]" html.valueishtml="0"  name=eq_ref visible="1" accelerator="n" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+bitmap(band=detail filename="PLUS.BMP" x="1568" y="28" height="44" width="69" border="0"  name=p_have visible="1~tif (  equipmentpostingstatus_postingstatus = 'H' , 1, 0 )" )
+bitmap(band=detail filename="minus.bmp" x="1568" y="28" height="44" width="69" border="0"  name=p_need visible="1~tif (  equipmentpostingstatus_postingstatus = 'N' , 1, 0 )" )
+text(band=summary alignment="0" text="F" border="0" color="0" x="430" y="8" height="76" width="37" html.valueishtml="0"  name=txt_restrict_ind visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

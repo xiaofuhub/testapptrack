@@ -1,0 +1,30 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptsetlwn\\ptsetlwn.pbl" "";
+@end;
+@begin Objects
+ "ptools\\ptsetlwn\\w_autogen_progress.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_amountowedsplit.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_paysplitmanager.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_entitylist.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_previousadvances.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_amounttemplates.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_refnumtypes.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "PTOOLS\\ptsetlwn\\w_amountowedsearch.srw" "PTOOLS\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_amounttypes.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_amountpaysplitlist.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_amounttypeselection.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_datavalidate.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_batchselection.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_cashadvance.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_settlementbatchmanager.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_transactionmanager.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_colist.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_transaction_selection.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_origindestinationselection.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_rpt_templates.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_importamounts.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_fueltaxinfo.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_tv_amounttemplates.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+ "ptools\\ptsetlwn\\w_ratetypes.srw" "ptools\\ptsetlwn\\ptsetlwn.pbl";
+@end;

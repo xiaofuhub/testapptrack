@@ -1,0 +1,16 @@
+﻿$PBExportHeader$d_amounttemplateentitycomp.srd
+$PBExportComments$companies with entities used to populate treeview
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=char(45) updatewhereclause=yes name=companies_co_name dbname="companies.co_name" )
+ column=(type=long updatewhereclause=yes name=entity_id dbname="entity.id" )
+ retrieve="PBSELECT( VERSION(400) DISTINCT ()TABLE(NAME=~"entity~" )  TABLE(NAME=~"companies~" ) COLUMN(NAME=~"companies.co_name~") COLUMN(NAME=~"entity.id~")    JOIN (LEFT=~"entity.fkcompany~"    OP =~"=~"RIGHT=~"companies.co_id~" )) "  sort="companies_co_name A " )
+text(band=header alignment="2" text="Company"border="0" color="0" x="32" y="4" height="64" width="279"  name=entity_fkemployee_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Entity"border="0" color="0" x="1271" y="8" height="64" width="169"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="27" y="8" height="60" width="1234" format="[general]"  name=companies_co_name edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="1285" y="8" height="60" width="992" format="[general]"  name=entity_id edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

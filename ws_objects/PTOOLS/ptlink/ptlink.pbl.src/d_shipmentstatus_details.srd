@@ -1,0 +1,158 @@
+﻿$PBExportHeader$d_shipmentstatus_details.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=736 color="536870912" )
+table(column=(type=date updatewhereclause=yes name=disp_events_de_arrdate dbname="disp_events.de_arrdate" )
+ column=(type=time updatewhereclause=yes name=disp_events_de_arrtime dbname="disp_events.de_arrtime" )
+ column=(type=date updatewhereclause=yes name=disp_events_de_depdate dbname="disp_events.de_depdate" )
+ column=(type=time updatewhereclause=yes name=disp_events_de_deptime dbname="disp_events.de_deptime" )
+ column=(type=time updatewhereclause=yes name=disp_events_de_appttime dbname="disp_events.de_appttime" )
+ column=(type=date updatewhereclause=yes name=disp_events_de_apptdate dbname="disp_events.de_apptdate" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_id dbname="disp_events.de_id" )
+ column=(type=char(1) updatewhereclause=yes name=event_type dbname="disp_events.de_event_type" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_tractor dbname="disp_events.de_tractor" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_tractor_seq dbname="disp_events.de_tractor_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_trailer dbname="disp_events.de_trailer" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_trailer_seq dbname="disp_events.de_trailer_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_driver dbname="disp_events.de_driver" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_driver_seq dbname="disp_events.de_driver_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_site dbname="disp_events.de_site" )
+ column=(type=char(32766) updatewhereclause=no name=de_apptnum dbname="disp_events.de_apptnum" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_odom dbname="disp_events.de_odom" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_shipment_id dbname="disp_events.de_shipment_id" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_ship_seq dbname="disp_events.de_ship_seq" )
+ column=(type=char(1) updatewhereclause=yes name=disp_events_de_conf dbname="disp_events.de_conf" )
+ column=(type=char(8) updatewhereclause=yes name=disp_events_de_whoconf dbname="disp_events.de_whoconf" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_intsig dbname="disp_events.de_intsig" )
+ column=(type=char(1) updatewhereclause=yes name=disp_events_de_locked dbname="disp_events.de_locked" )
+ column=(type=decimal(2) updatewhereclause=yes name=disp_events_de_gallons dbname="disp_events.de_gallons" )
+ column=(type=decimal(2) updatewhereclause=yes name=disp_events_de_price dbname="disp_events.de_price" )
+ column=(type=char(1) updatewhereclause=yes name=disp_events_de_status dbname="disp_events.de_status" )
+ column=(type=time updatewhereclause=yes name=disp_events_de_duration dbname="disp_events.de_duration" )
+ column=(type=char(32766) updatewhereclause=no name=disp_events_de_note dbname="disp_events.de_note" )
+ column=(type=datetime updatewhereclause=yes name=disp_events_de_eta dbname="disp_events.de_eta" )
+ column=(type=char(150) updatewhereclause=yes name=disp_events_de_multi_list dbname="disp_events.de_multi_list" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_trailer1 dbname="disp_events.de_trailer1" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_trailer1_seq dbname="disp_events.de_trailer1_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_trailer2 dbname="disp_events.de_trailer2" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_trailer2_seq dbname="disp_events.de_trailer2_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_trailer3 dbname="disp_events.de_trailer3" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_trailer3_seq dbname="disp_events.de_trailer3_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_container1 dbname="disp_events.de_container1" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_container1_seq dbname="disp_events.de_container1_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_container2 dbname="disp_events.de_container2" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_container2_seq dbname="disp_events.de_container2_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_container3 dbname="disp_events.de_container3" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_container3_seq dbname="disp_events.de_container3_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_container4 dbname="disp_events.de_container4" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_container4_seq dbname="disp_events.de_container4_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_acteq dbname="disp_events.de_acteq" )
+ column=(type=decimal(12) updatewhereclause=yes name=disp_events_de_acteq_seq dbname="disp_events.de_acteq_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_actpos dbname="disp_events.de_actpos" )
+ column=(type=decimal(2) updatewhereclause=yes name=disp_events_de_freightsplit dbname="disp_events.de_freightsplit" )
+ column=(type=decimal(2) updatewhereclause=yes name=disp_events_de_accesssplit dbname="disp_events.de_accesssplit" )
+ column=(type=long updatewhereclause=yes name=shipment_status_eventid dbname="shipment_status.eventid" )
+ column=(type=long updatewhereclause=yes name=shipment_status_edi_status_id dbname="shipment_status.edi_status_id" )
+ column=(type=long updatewhereclause=yes name=shipment_status_edi_reason_id dbname="shipment_status.edi_reason_id" )
+ column=(type=date updatewhereclause=yes name=shipment_status_status_date dbname="shipment_status.status_date" )
+ column=(type=time updatewhereclause=yes name=shipment_status_status_time dbname="shipment_status.status_time" )
+ column=(type=char(1) updatewhereclause=yes name=shipment_status_processed dbname="shipment_status.processed" )
+ column=(type=long updatewhereclause=yes name=edi_reason_id dbname="edi_status.id" )
+ column=(type=char(4) updatewhereclause=yes name=edi_reason_segmentid dbname="edi_status.segmentid" )
+ column=(type=char(2) updatewhereclause=yes name=edi_reason_referenceid dbname="edi_status.referenceid" )
+ column=(type=char(2) updatewhereclause=yes name=edi_reason_code dbname="edi_status.code" )
+ column=(type=char(60) updatewhereclause=yes name=edi_reason_definition dbname="edi_status.definition" )
+ column=(type=long updatewhereclause=yes name=edi_status_id dbname="edi_status.id" )
+ column=(type=char(4) updatewhereclause=yes name=edi_status_segmentid dbname="edi_status.segmentid" )
+ column=(type=char(2) updatewhereclause=yes name=edi_status_referenceid dbname="edi_status.referenceid" )
+ column=(type=char(2) updatewhereclause=yes name=edi_status_code dbname="edi_status.code" )
+ column=(type=char(60) updatewhereclause=yes name=edi_status_definition dbname="edi_status.definition" )
+ column=(type=char(10) updatewhereclause=yes name=shipment_status_edi_214_code dbname="shipment_status.edi_214_code" )
+ retrieve="  SELECT ~"disp_events~".~"de_arrdate~",   
+         ~"disp_events~".~"de_arrtime~",   
+         ~"disp_events~".~"de_depdate~",   
+         ~"disp_events~".~"de_deptime~",   
+         ~"disp_events~".~"de_appttime~",   
+         ~"disp_events~".~"de_apptdate~",   
+         ~"disp_events~".~"de_id~",   
+         ~"disp_events~".~"de_event_type~",   
+         ~"disp_events~".~"de_tractor~",   
+         ~"disp_events~".~"de_tractor_seq~",   
+         ~"disp_events~".~"de_trailer~",   
+         ~"disp_events~".~"de_trailer_seq~",   
+         ~"disp_events~".~"de_driver~",   
+         ~"disp_events~".~"de_driver_seq~",   
+         ~"disp_events~".~"de_site~",   
+         ~"disp_events~".~"de_apptnum~",   
+         ~"disp_events~".~"de_odom~",   
+         ~"disp_events~".~"de_shipment_id~",   
+         ~"disp_events~".~"de_ship_seq~",   
+         ~"disp_events~".~"de_conf~",   
+         ~"disp_events~".~"de_whoconf~",   
+         ~"disp_events~".~"de_intsig~",   
+         ~"disp_events~".~"de_locked~",   
+         ~"disp_events~".~"de_gallons~",   
+         ~"disp_events~".~"de_price~",   
+         ~"disp_events~".~"de_status~",   
+         ~"disp_events~".~"de_duration~",   
+         ~"disp_events~".~"de_note~",   
+         ~"disp_events~".~"de_eta~",   
+         ~"disp_events~".~"de_multi_list~",   
+         ~"disp_events~".~"de_trailer1~",   
+         ~"disp_events~".~"de_trailer1_seq~",   
+         ~"disp_events~".~"de_trailer2~",   
+         ~"disp_events~".~"de_trailer2_seq~",   
+         ~"disp_events~".~"de_trailer3~",   
+         ~"disp_events~".~"de_trailer3_seq~",   
+         ~"disp_events~".~"de_container1~",   
+         ~"disp_events~".~"de_container1_seq~",   
+         ~"disp_events~".~"de_container2~",   
+         ~"disp_events~".~"de_container2_seq~",   
+         ~"disp_events~".~"de_container3~",   
+         ~"disp_events~".~"de_container3_seq~",   
+         ~"disp_events~".~"de_container4~",   
+         ~"disp_events~".~"de_container4_seq~",   
+         ~"disp_events~".~"de_acteq~",   
+         ~"disp_events~".~"de_acteq_seq~",   
+         ~"disp_events~".~"de_actpos~",   
+         ~"disp_events~".~"de_freightsplit~",   
+         ~"disp_events~".~"de_accesssplit~",   
+         ~"shipment_status~".~"eventid~",   
+         ~"shipment_status~".~"edi_status_id~",   
+         ~"shipment_status~".~"edi_reason_id~",   
+         ~"shipment_status~".~"status_date~",   
+         ~"shipment_status~".~"status_time~",   
+         ~"shipment_status~".~"processed~",   
+         ~"edi_status_b~".~"id~",   
+         ~"edi_status_b~".~"segmentid~",   
+         ~"edi_status_b~".~"referenceid~",   
+         ~"edi_status_b~".~"code~",   
+         ~"edi_status_b~".~"definition~",   
+         ~"edi_status_a~".~"id~",   
+         ~"edi_status_a~".~"segmentid~",   
+         ~"edi_status_a~".~"referenceid~",   
+         ~"edi_status_a~".~"code~",   
+         ~"edi_status_a~".~"definition~",   
+         ~"shipment_status~".~"edi_214_code~"  
+    FROM {oj ~"edi_status~" ~"edi_status_a~" RIGHT OUTER JOIN ~"shipment_status~" ON ~"edi_status_a~".~"id~" = ~"shipment_status~".~"edi_status_id~" LEFT OUTER JOIN ~"edi_status~" ~"edi_status_b~" ON ~"shipment_status~".~"edi_reason_id~" = ~"edi_status_b~".~"id~"}, {oj ~"disp_events~" LEFT OUTER JOIN ~"shipment_status~" ON ~"disp_events~".~"de_id~" = ~"shipment_status~".~"eventid~"}   
+" )
+text(band=detail alignment="0" text="Time:" border="0" color="0" x="370" y="192" height="52" width="165" html.valueishtml="0"  name=t_1 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+button(band=detail text="ETA" filename="" enabled=yes action="0" border="0" color="0" x="677" y="252" height="72" width="192" vtextalign="0" htextalign="0"  name=cb_eta visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=54 alignment="0" tabsequence=40 border="5" color="0" x="379" y="260" height="52" width="229" format="h:mm AM/PM" html.valueishtml="0"  name=shipment_status_status_time visible="1" edit.limit=0 edit.case=upper edit.format="h:mm AM/PM" edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=52 alignment="0" tabsequence=20 border="5" color="0" x="110" y="636" height="52" width="1216" format="[general]" html.valueishtml="0"  name=shipment_status_edi_reason_id visible="1" dddw.name=d_edi_status dddw.displaycolumn=definition dddw.datacolumn=id dddw.percentwidth=100 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+text(band=detail alignment="0" text="Reason:" border="0" color="0" x="110" y="576" height="48" width="210" html.valueishtml="0"  name=t_2 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=detail alignment="0" text="Event Type:" border="0" color="0" x="110" y="20" height="52" width="293" html.valueishtml="0"  name=t_3 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=detail alignment="0" text="Date:" border="0" color="0" x="110" y="192" height="52" width="155" html.valueishtml="0"  name=t_4 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=53 alignment="0" tabsequence=30 border="5" color="0" x="114" y="260" height="52" width="229" format="[general]" html.valueishtml="0"  name=shipment_status_status_date visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Status:" border="0" color="0" x="110" y="400" height="48" width="206" html.valueishtml="0"  name=t_5 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=51 alignment="0" tabsequence=10 border="5" color="0" x="110" y="460" height="52" width="1216" format="[general]" html.valueishtml="0"  name=shipment_status_edi_status_id visible="1" dddw.name=d_edi_status dddw.displaycolumn=definition dddw.datacolumn=id dddw.percentwidth=100 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.nilisnull=yes dddw.imemode=0 dddw.vscrollbar=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="5" color="0" x="110" y="80" height="52" width="334" format="[general]" html.valueishtml="0"  name=event_type visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+text(band=detail alignment="0" text="Event ID:" border="0" color="0" x="535" y="20" height="52" width="270" html.valueishtml="0"  name=t_6 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=50 alignment="0" tabsequence=32766 border="5" color="0" x="535" y="80" height="52" width="334" format="[general]" html.valueishtml="0"  name=shipment_status_eventid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

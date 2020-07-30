@@ -1,0 +1,12 @@
+﻿$PBExportHeader$d_valuesdddw_mod.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=1086381248 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=4 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=60 color="536870912" )
+table(column=(type=char(250) updatewhereclause=no name=initial_value dbname="initial_value" initial=" " )
+ )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554687" x="919" y="4" height="52" width="498" format="[general]"  name=initial_value visible="1~t0" edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1086381248" )
+compute(band=detail alignment="0" expression="initial_value"border="0" color="33554687" x="14" y="4" height="52" width="695" format="[general]"  name=value  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1086381248" )
+compute(band=detail alignment="0" expression="''"border="0" color="33554687" x="722" y="4" height="52" width="183" format="[general]"  name=lookup visible="1~t0"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1086381248" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

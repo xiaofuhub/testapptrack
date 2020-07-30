@@ -1,0 +1,36 @@
+﻿$PBExportHeader$gf_delete_eq.srf
+global type gf_delete_eq from function_object
+end type
+
+forward prototypes
+global subroutine gf_delete_eq (datastore ds_equip, long eqrow)
+end prototypes
+
+global subroutine gf_delete_eq (datastore ds_equip, long eqrow);ds_equip.object.eq_status[eqrow] = "X"
+ds_equip.object.eq_cur_event[eqrow] = null_long
+ds_equip.object.eq_next_event[eqrow] = null_long
+
+ds_equip.object.oe_from[eqrow] = null_long
+ds_equip.object.oe_for[eqrow] = null_long
+ds_equip.object.oe_booknum[eqrow] = null_str
+ds_equip.object.oe_out[eqrow] = null_datetime
+ds_equip.object.oe_in[eqrow] = null_datetime
+ds_equip.object.oe_orig_event[eqrow] = null_long
+ds_equip.object.oe_term_event[eqrow] = null_long
+ds_equip.object.equipmentlease_fkequipmentleasetype[eqrow] = null_long
+
+ds_equip.object.curev_type[eqrow] = null_str
+ds_equip.object.curev_site[eqrow] = null_long
+ds_equip.object.curev_arrdate[eqrow] = null_date
+ds_equip.object.curev_arrtime[eqrow] = null_time
+ds_equip.object.curev_deptime[eqrow] = null_time
+ds_equip.object.curev_shipment_id[eqrow] = null_long
+ds_equip.object.curev_conf[eqrow] = null_str
+
+ds_equip.object.curevco_name[eqrow] = null_str
+ds_equip.object.curevco_city[eqrow] = null_str
+ds_equip.object.curevco_state[eqrow] = null_str
+ds_equip.object.curevco_tz[eqrow] = null_long
+ds_equip.object.curevco_pcm[eqrow] = null_str
+end subroutine
+

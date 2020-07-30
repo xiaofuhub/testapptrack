@@ -1,0 +1,40 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "framewrk\\pfedwsrv\\pfedwsrv.pbl" "";
+@end;
+@begin Objects
+ "framewrk\\pfedwsrv\\w_sortsingle.srw" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dssrv_multitable.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_rowmanager.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_restorerowattrib.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_dropdownsearch.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_multitable.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_querymode.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_rowselection.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_reqcolumn.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\w_sortmulti.srw" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\w_zoom.srw" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\d_valuesdddw_mod.srd" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dssrv.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_linkageattrib.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwobjectattrib.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\u_p_focusindicator.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_zoomattrib.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_filterattrib.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_sortattrib.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\w_filterextended.srw" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\w_restorerow.srw" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\w_filtersimple.srw" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dssrv_report.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dssrv_printpreview.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\w_sortdragdrop.srw" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_filter.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_find.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_linkage.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_report.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_resize.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_sort.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\d_filtersimple_mod.srd" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+ "framewrk\\pfedwsrv\\n_cst_dwsrv_printpreview.sru" "framewrk\\pfedwsrv\\pfedwsrv.pbl";
+@end;

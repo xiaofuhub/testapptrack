@@ -1,0 +1,8 @@
+﻿$PBExportHeader$ofr_s_dlk_updateinfo.srs
+global type ofr_s_dlk_updateinfo from structure
+	string		s_table
+	string		s_owner
+	string		s_qualifiedtable
+	string		s_modify
+end type
+

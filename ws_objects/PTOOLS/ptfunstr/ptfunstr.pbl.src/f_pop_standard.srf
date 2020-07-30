@@ -1,0 +1,657 @@
+﻿$PBExportHeader$f_pop_standard.srf
+global type f_pop_standard from function_object
+end type
+
+forward prototypes
+global function string f_pop_standard (ref string asa_parm_labels[], ref any aaa_parm_values[])
+end prototypes
+
+global function string f_pop_standard (ref string asa_parm_labels[], ref any aaa_parm_values[]);// RDT 11/18/02 changed missingimages to missing documents 
+// RDT 12/05/02 Added VIEWNOTES!
+// RDT 3/12/03  Added PasteImage
+// RDT 4/10-03  Changed array indexs to li_Num_Items
+// RDT 8-13-03  Added AutoRoute 
+// ZMC 11-26-03 Added Multi Shipment Update
+// ZMC 12-11-03 Added Auto Route Repos
+// DEK 1-10-07  Gray out menu items that don't apply to multiple shipments when more then one shipment is selected.
+
+string ls_menu_type, lsa_item_list[], lsa_alias_list[], ls_selected_item, &
+	ls_work, ls_parsed[]
+boolean lba_disabled_list[], lba_checked_list[], lba_invisible_list[]
+long ll_target_id
+integer li_ndx, li_find, li_num_labels, li_num_values, li_num_items
+
+Boolean	lb_multipleIds   //added by dan 1-10-07
+Int	li_Xpos
+Int	li_Ypos
+
+datawindow	ldw_Source
+n_cst_msg lnv_cst_msg
+s_parm lstr_parm
+n_cst_numerical lnv_numerical
+n_cst_LicenseManager	lnv_LicenseManager
+n_cst_Privileges_Events		lnv_Privileges
+
+
+
+li_num_labels = upperbound(asa_parm_labels)
+li_num_values = upperbound(aaa_parm_values)
+
+if lnv_numerical.of_IsNullOrNotPos(li_num_labels) or lnv_numerical.of_IsNullOrNotPos(li_num_values) then return ""
+
+n_cst_anyarraysrv lnv_anyarray
+li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "MENU_TYPE", 1, li_num_labels )
+if li_ndx > 0 and li_num_values >= li_ndx then &
+	ls_menu_type = aaa_parm_values[li_ndx]
+//NOTE: the calling script does not have to specify a MENU_TYPE.  If it doesn't, it
+//should provide the menu items as ADD_ITEM values.
+li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "DATAWINDOW", 1, li_num_labels )
+if li_ndx > 0 and li_num_values >= li_ndx then &
+	ldw_Source = aaa_parm_values[li_ndx]
+
+choose case ls_menu_type
+case "COMPANY"
+	li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "CO_ID", 1, li_num_labels )
+	if li_ndx > 0 and li_num_values >= li_ndx then
+		ll_target_id = aaa_parm_values[li_ndx]
+		if lnv_numerical.of_IsNullOrNotPos(ll_target_id) then return ""
+		//This is so the calling script doesn't have to check the value itself
+	end if
+	li_Num_Items ++ 
+	lsa_item_list [ li_Num_Items ] = "&Details"
+	lsa_alias_list[ li_Num_Items ] = "TABDETAILS!"
+	
+	li_Num_Items ++ 
+	lsa_item_list [ li_Num_Items ] = "&Info Screen"
+	lsa_alias_list[ li_Num_Items ] = "DETAILS!"
+	
+	li_Num_Items ++ 
+	lsa_item_list [ li_Num_Items ] = "&Notes"
+	lsa_alias_list[ li_Num_Items ] = "NOTES!"
+	
+	IF lnv_LicenseManager.of_hasdocumentttansfer( ) THEN
+		li_Num_Items ++ 
+		lsa_item_list [ li_Num_Items ] = "-"
+		lsa_alias_list[ li_Num_Items ] = "-"
+		
+		li_Num_Items ++ 
+		lsa_item_list [ li_Num_Items ] = "View Document Queue"
+		lsa_alias_list[ li_Num_Items ] = "DOCUMENTQUEUE!"
+	END IF
+
+	li_Num_Items ++ 
+	lsa_item_list [ li_Num_Items ] = "-"
+	lsa_alias_list[ li_Num_Items ] = "-"
+	
+	li_Num_Items ++ 
+	lsa_item_list [ li_Num_Items ] = "Add &Alert"
+	lsa_alias_list[ li_Num_Items ] = "ADDALERT!"
+	
+	
+	
+	
+case "SETTLEMENT_STATUS"
+	li_Num_Items ++ 
+	lsa_item_list [ li_Num_Items ] = "Open"
+	lsa_alias_list[ li_Num_Items ] = "OPEN!"
+	
+	li_Num_Items ++ 
+	lsa_item_list [ li_Num_Items ] = "Authorized"
+	lsa_alias_list[ li_Num_Items ] = "AUTHORIZED!"
+	
+	li_Num_Items ++ 
+	lsa_item_list [ li_Num_Items ] = "Audit Req."
+	lsa_alias_list[ li_Num_Items ] = "AUDIT REQUIRED!"
+	
+	li_Num_Items ++ 
+	lsa_item_list [ li_Num_Items ] = "On Hold"
+	lsa_alias_list[ li_Num_Items ] = "ON HOLD!"
+	
+case "PRINT"
+	li_Num_Items ++ 	
+	lsa_item_list [ li_Num_Items ] = "&Print"
+	lsa_alias_list[ li_Num_Items ] = "PRINT!"
+
+case "SHIPMENT_PASS_OPEN", "SHIPMENT_PERFORM_OPEN"
+	///////////added block by dan 1-10-07
+	Long		lla_Targets[]
+	li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "TARGET_IDS", 1, li_num_labels )
+	if li_ndx > 0 and li_num_values >= li_ndx then
+		lla_Targets = aaa_parm_values[li_ndx]
+	end if
+
+	IF upperBound( lla_targets ) > 1 THEN
+		//multiple targets were selected
+		lb_multipleIds = true
+	END IF
+	/////////////////////// end add 1-10-07
+	li_Num_Items ++ 	
+	lsa_item_list [ li_Num_Items ] = "Display &Shipment"
+	lsa_alias_list[ li_Num_Items ] = "DETAILS!"
+
+	///////////added block by dan 1-10-07
+	IF lb_multipleIds THEN
+		asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+		aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "DETAILS!"
+	END IF
+	/////////////////////// end add 1-10-07
+	
+//	lsa_item_list[2] = "Vie&w Invoice"
+//	lsa_alias_list[2] = "INVOICE!"
+
+//	lsa_item_list[3] = "Print Delivery &Receipt"
+//	lsa_alias_list[3] = "DELIVERY_RECEIPT!"
+	li_Num_Items ++ 	
+	lsa_item_list [ li_Num_Items ] = "Generate &Document"
+	lsa_alias_list[ li_Num_Items ] = "DOCUMENT!"
+	
+	IF lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Imaging ) THEN
+		li_Num_Items ++ 	
+		lsa_item_list [ li_Num_Items ] = "&Imaging"
+		lsa_alias_list[ li_Num_Items ] = "IMAGES!"
+		
+	END IF
+	//		lsa_item_list[4] = "&Missing Images"  		// RDT 11/18/02 removed
+	//		lsa_alias_list[4] = "MISSINGIMAGES!"		// RDT 11/18/02 removed
+
+	// RDT 11/18/02 added code block - start
+	IF lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Imaging ) OR &
+		lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Notification ) THEN
+		li_Num_Items ++ 			
+		lsa_item_list [ li_Num_Items ] = "&Missing Documents"
+		lsa_alias_list[ li_Num_Items ] = "MISSINGDOCUMENTS!"
+	END IF
+
+	IF lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Notification ) THEN
+		li_Num_Items ++
+		lsa_item_list [ li_Num_Items ] = "&View Documents"
+		lsa_alias_list[ li_Num_Items ] = "VIEWDOCUMENTS!"
+		///////////added block by dan 1-10-07
+		IF lb_multipleIds THEN
+			asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+			aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "VIEWDOCUMENTS!"
+		END IF
+		/////////////////////// end add 1-10-07
+	END IF
+
+	// RDT 11/18/02 added code block  - end 
+
+	// RDT 12/05/02 added code block  - start
+	li_Num_Items ++
+	lsa_item_list [ li_Num_Items ] = "View &Notes"
+	lsa_alias_list[ li_Num_Items ] = "VIEWNOTES!"
+	// RDT 12/05/02 added code block  - end 
+	
+	///////////added block by dan 1-10-07
+	IF lb_multipleIds THEN
+		asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+		aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "VIEWNOTES!"
+	END IF
+	/////////////////////// end add 1-10-07
+	
+
+	IF lnv_LicenseManager.of_HasAnyEDILicense ( ) THEN
+		li_Num_Items ++ 	
+		lsa_item_list [ li_Num_Items ] = "&EDI Log"
+		lsa_alias_list[ li_Num_Items ] = "EDILOG!"
+		
+		///////////added block by dan 1-10-07
+		IF lb_multipleIds THEN
+			asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+			aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "EDILOG!"
+		END IF
+		/////////////////////// end add 1-10-07
+		
+	END IF
+
+	// RDT 3/12/03  - Start
+	li_Num_Items ++
+	lsa_item_list [ li_Num_Items ] = "P&aste Image "
+	lsa_alias_list[ li_Num_Items ] = "PASTEIMAGE!"
+	// RDT 3/12/03  - End
+	
+	
+	IF ls_Menu_Type = "SHIPMENT_PERFORM_OPEN" THEN
+
+		IF lnv_Privileges.of_Shipment_MakeNonRouted ( ) OR gnv_app.of_getprivsmanager( ).of_useadvancedprivs( ) THEN
+			//We are adding it if the advanced privs are on b.c we do a validation check in the call to of_makenonrouted
+			
+			//Changed from of_HasSysAdminRights to add 3.5.18 in order to give system-setting control --BKW
+			//li_Num_Items = UpperBound ( lsa_Item_List )
+
+			li_Num_Items ++
+			lsa_Item_List [ li_Num_Items ] = "&Convert to Non-Routed"
+			lsa_Alias_List[ li_Num_Items ] = "CONVERT_TO_NONROUTED!"
+
+		END IF
+		
+		
+		String	ls_Dorb
+		
+		String	ls_in
+		Long		ll_Count
+		Boolean	lb_AllowRoute
+		lb_AllowRoute = TRUE
+		
+		li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "TARGET_IDS", 1, li_num_labels )
+		if li_ndx > 0 and li_num_values >= li_ndx then
+			lla_Targets = aaa_parm_values[li_ndx]
+		end if
+		
+		IF UpperBound ( lla_Targets ) > 0 THEN
+			
+			DataStore	lds_Temp
+			lds_Temp = CREATE dataStore
+			lds_Temp.DataObject = "d_dorb_Shipmentlist"
+			lds_Temp.SetTransObject ( SQLCA )
+		
+			
+			lb_AllowRoute =lds_Temp.retrieve( lla_Targets , "D" ) = 0							
+			Commit;
+			Destroy (lds_Temp ) 
+			
+		ELSE
+		
+			li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "TARGET_ID", 1, li_num_labels )
+			if li_ndx > 0 and li_num_values >= li_ndx then
+				ll_target_id = aaa_parm_values[li_ndx]
+			end if
+		
+			If ll_target_id > 0 THEN
+				select ds_dorb into :ls_Dorb from disp_ship where ds_id = :ll_Target_id;
+				Commit;
+				lb_AllowRoute = ls_Dorb <> "D"
+			END IF
+		END IF
+		
+		IF lb_AllowRoute THEN
+			IF NOT lnv_Privileges.of_Allowalteritins( ) THEN
+				lb_AllowRoute = FALSE
+			END IF
+		END IF
+		
+		
+		// RDT 8-13-03 
+		IF lb_AllowRoute THEN
+			li_Num_Items ++
+			lsa_Item_List [ li_Num_Items ] = "A&utoRoute Shipment"
+			lsa_Alias_List[ li_Num_Items ] = "AUTOROUTE_SHIPMENT!"
+			
+			///////////added block by dan 1-10-07
+			IF lb_multipleIds THEN
+				asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+				aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "AUTOROUTE_SHIPMENT!"
+			END IF
+			/////////////////////// end add 1-10-07
+		END IF
+		// RDT 8-13-03 
+
+
+		// ZMC 11-26-03 
+		li_Num_Items ++
+		lsa_Item_List [ li_Num_Items ] = "Multi Shi&pment Update"
+		lsa_Alias_List[ li_Num_Items ] = "MULTI_SHIPMENT_UPDATE!"
+		// ZMC 11-26-03 
+///////TEMP ADD BY DAN, this demonstrates how to disable something in the menu
+//asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+//aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "MULTI_SHIPMENT_UPDATE!"
+///////////////
+
+		// ZMC 12-11-03 
+		IF lb_AllowRoute THEN
+			li_Num_Items ++
+			lsa_Item_List [ li_Num_Items ] = "Aut&o Route Repos"
+			lsa_Alias_List[ li_Num_Items ] = "AUTO_ROUTE_REPOS!"
+		END IF
+		// ZMC 12-11-03
+	
+		//IF lnv_LicenseManager.of_
+			li_Num_Items ++
+			lsa_Item_List [ li_Num_Items ] = "Load Builder"
+			lsa_Alias_List[ li_Num_Items ] = "LOADBUILDER!"
+
+	END IF		
+	
+	IF lnv_LicenseManager.of_hasdocumentttansfer( ) THEN
+		li_Num_Items ++ 
+		lsa_item_list [ li_Num_Items ] = "-"
+		lsa_alias_list[ li_Num_Items ] = "-"
+		
+		li_Num_Items ++ 
+		lsa_item_list [ li_Num_Items ] = "View Document Queue"
+		lsa_alias_list[ li_Num_Items ] = "DOCUMENTQUEUE!"
+		
+		///////////added block by dan 1-10-07
+		IF lb_multipleIds THEN
+			asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+			aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "DOCUMENTQUEUE!"
+		END IF
+		/////////////////////// end add 1-10-07
+		
+		
+		li_Num_Items ++ 
+		lsa_item_list [ li_Num_Items ] = "-"
+		lsa_alias_list[ li_Num_Items ] = "-"
+		
+		
+	END IF
+
+	
+		// ADDED BY DAN 2-5-07 FOR exporting edi 204s, this will probably have to be a different check
+	string	ls_outbound = appeon_constant.cs_transaction_OUTBOUND
+	Long		ll_countOUt
+	IF lnv_licenseManager.of_hasedi204license( ) THEN
+		SELECT COUNT(*)
+		into :ll_countOut
+		FROM ediprofile
+		WHERE transactionset = 204 and in_out = :ls_outbound and Not scac is NULL;
+		
+		CHOOSE CASE SQLCA.sqlcode
+			CASE 0, 100
+				commit;
+			CASE -1
+				rollback;
+		END CHOOSE
+		
+		IF ll_countOut > 0 THEN
+			li_Num_Items ++ 
+			lsa_item_list [ li_Num_Items ] = "-"
+			lsa_alias_list[ li_Num_Items ] = "-"
+			
+			li_Num_Items ++ 
+			lsa_item_list [ li_Num_Items ] = "Post Order (204)..."
+			lsa_alias_list[ li_Num_Items ] = "GENERATE204!"
+		END IF
+	END IF
+	
+	IF lb_multipleIds THEN
+		asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+		aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "GENERATE204!"
+	END IF
+	
+	// ADDED BY DAN 2-5-07 FOR exporting edi 204s, this will probably have to be a different check
+	IF lnv_licenseManager.of_hasedi204license( ) THEN
+		IF ll_countOut > 0 THEN
+			li_Num_Items ++ 
+			lsa_item_list [ li_Num_Items ] = "Post Cancel Order"
+			lsa_alias_list[ li_Num_Items ] = "POSTCANCELORDER!"
+			
+			li_Num_Items ++ 
+			lsa_item_list [ li_Num_Items ] = "-"
+			lsa_alias_list[ li_Num_Items ] = "-"
+		END IF
+	END IF
+	
+	IF lb_multipleIds THEN
+		asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+		aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "POSTCANCELORDER!"
+	END IF
+
+	li_Num_Items ++ 	
+	lsa_item_list [ li_Num_Items ] = "Add &Alert"
+	lsa_alias_list[ li_Num_Items ] = "ADDALERT!"
+	
+	///////////added block by dan 1-10-07
+	IF lb_multipleIds THEN
+		asa_parm_labels[upperBound(asa_parm_labels) + 1] = "DISABLE"
+		aaa_parm_values[upperBound(aaa_parm_Values) +1 ] = "ADDALERT!"
+	END IF
+	/////////////////////// end add 1-10-07
+end choose
+//li_num_items = upperbound(lsa_item_list)
+
+/////ADD BY DAN 1-9-06  only did this because I am adding parms dynamically depending on whether or not i want 
+/////things disabled or enabled
+li_num_labels = upperBound( asa_parm_labels[] )
+li_num_values = upperBound( aaa_parm_values[] )
+//////////////////////////////////End Add
+for li_ndx = 1 to li_num_labels
+	if asa_parm_labels[li_ndx] = "ADD_ITEM" and li_num_values >= li_ndx then
+		ls_work = aaa_parm_values[li_ndx]
+		if len(trim(ls_work)) > 0 then
+			n_cst_string lnv_string
+			lnv_string.of_ParseToArray( ls_work, "~t", ls_parsed )
+			li_num_items ++
+			lsa_item_list[li_num_items] = ls_parsed[1]
+			if upperbound(ls_parsed) >= 2 then
+				lsa_alias_list[li_num_items] = ls_parsed[2]
+			else
+				lsa_alias_list[li_num_items] = ""
+			end if
+		end if
+	ELSEIF Upper ( asa_parm_labels[li_ndx] ) = "XPOS" AND li_num_values >= li_ndx then
+		li_Xpos = Integer ( aaa_parm_values[li_ndx] )
+	ELSEIF Upper ( asa_parm_labels[li_ndx] ) = "YPOS" AND li_num_values >= li_ndx then
+		li_Ypos = Integer ( aaa_parm_values[li_ndx] )
+	end if
+next
+
+if upperbound(lsa_alias_list) < li_num_items then lsa_alias_list[li_num_items] = ""
+
+
+for li_ndx = 1 to li_num_labels
+	choose case asa_parm_labels[li_ndx]
+	case "DISABLE", "CHECK", "HIDE"
+		if li_num_values < li_ndx then continue
+		ls_work = aaa_parm_values[li_ndx]
+		li_find = lnv_anyarray.of_Find( lsa_alias_list, ls_work, 1, li_num_items )
+		if lnv_numerical.of_IsNullOrNotPos(li_find) then &
+			li_find = lnv_anyarray.of_Find( lsa_item_list, ls_work, 1, li_num_items )
+		if li_find > 0 then
+			choose case asa_parm_labels[li_ndx]
+			case "DISABLE"
+				lba_disabled_list[li_find] = true
+			case "CHECK"
+				lba_checked_list[li_find] = true
+			case "HIDE"
+				lba_invisible_list[li_find] = true
+			end choose
+		end if
+	end choose
+next
+
+//for li_ndx = 1 to li_num_labels
+//	if asa_parm_labels[li_ndx] = "DISABLE" and li_num_values >= li_ndx then
+//		ls_work = aaa_parm_values[li_ndx]
+//		li_find = lnv_anyarray.of_Find( lsa_alias_list, ls_work, 1, li_num_items )
+//		if li_find > 0 then
+//			lba_disabled_list[li_find] = true
+//			continue
+//		end if
+//		li_find = lnv_anyarray.of_Find( lsa_item_list, ls_work, 1, li_num_items )
+//		if li_find > 0 then
+//			lba_disabled_list[li_find] = true
+//			continue
+//		end if
+//	end if
+//next
+
+if upperbound(lsa_item_list) > 0 then
+	ls_selected_item = f_popmenu(lsa_item_list, lba_disabled_list, lba_checked_list, &
+		lba_invisible_list ,li_Xpos , li_Ypos )
+end if
+
+if ls_selected_item = "" then return ls_selected_item
+
+li_find = lnv_anyarray.of_Find( lsa_item_list, ls_selected_item, 1, li_num_items )
+
+if li_find > 0 then
+	if len(lsa_alias_list[li_find]) > 0 then
+		ls_selected_item = lsa_alias_list[li_find]
+	else
+		ls_selected_item = upper(substitute(ls_selected_item, "&", ""))
+	end if
+else
+	return ""
+end if
+
+//What we want to do now is back up and make this function forward-compatible with
+//f_process_standard, so the message passed here can simply be forwarded, with the
+//addition of a "REQUEST" parameter.  That will save almost all the script below.
+
+choose case ls_menu_type
+case "COMPANY"
+	if ll_target_id > 0 then
+		choose case ls_selected_item
+		case "TABDETAILS!", "DETAILS!" , "NOTES!"
+
+			lstr_parm.is_label = "TOPIC"
+			lstr_parm.ia_value = "COMPANY!"
+			lnv_cst_msg.of_add_parm(lstr_parm)
+	
+			lstr_parm.is_label = "REQUEST"
+			lstr_parm.ia_value = ls_selected_item
+			lnv_cst_msg.of_add_parm(lstr_parm)
+	
+			lstr_parm.is_label = "TARGET_ID"
+			lstr_parm.ia_value = ll_target_id
+			lnv_cst_msg.of_add_parm(lstr_parm)
+
+			if ls_selected_item = "ADDRESS!" then
+				li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "ADDRESS_TYPE", 1, li_num_labels )
+				if li_ndx > 0 and li_num_values >= li_ndx then
+					lstr_parm.is_label = "ADDRESS_TYPE"
+					lstr_parm.ia_value = aaa_parm_values[li_ndx]
+					lnv_cst_msg.of_add_parm(lstr_parm)
+				end if
+			end if
+
+			f_process_standard(lnv_cst_msg)
+		CASE "ADDALERT!"
+			n_Cst_beo_Company	lnv_Co
+			lnv_Co = CREATE n_cst_beo_Company
+			lnv_Co.of_SetUseCache ( TRUE ) 
+			lnv_Co.of_SetSourceID ( ll_target_id )
+			lnv_Co.of_AddUserAlert ( ) 
+			DESTROY ( lnv_Co )
+			
+		CASE "DOCUMENTQUEUE!"
+			n_cst_bso_Document_Manager	lnv_Docman
+			lnv_DocMan = CREATE n_cst_bso_Document_Manager
+			lnv_DocMan.of_showdocumentqueue(ll_target_id , "COMPANY")
+			DESTROY ( lnv_Docman )
+			
+			
+		end choose
+	end if
+
+
+case "PRINT"
+
+	IF ls_Selected_Item = "PRINT!" THEN
+
+		lstr_parm.is_label = "TOPIC"
+		lstr_parm.ia_value = "PRINT!"
+		lnv_cst_msg.of_add_parm(lstr_parm)
+	
+		for li_ndx = 1 to li_num_labels
+			if asa_parm_labels[li_ndx] = "PRINT_OBJECT" and li_num_values >= li_ndx then
+				lstr_parm.is_label = "PRINT_OBJECT"
+				lstr_parm.ia_value = aaa_parm_values[li_ndx]
+				lnv_cst_msg.of_add_parm(lstr_parm)
+			end if
+		next
+	
+		f_process_standard(lnv_cst_msg)
+
+	END IF
+
+case "SHIPMENT_PASS_OPEN", "SHIPMENT_PERFORM_OPEN"
+
+	if ls_selected_item = "DETAILS!" and ls_menu_type = "SHIPMENT_PASS_OPEN" then &
+		return ls_selected_item
+
+	choose case ls_selected_item
+	case "DETAILS!", "INVOICE!", "DELIVERY_RECEIPT!", "IMAGES!" ,"MISSINGIMAGES!", "DOCUMENT!", &
+		"CONVERT_TO_NONROUTED!", "VIEWDOCUMENTS!", "MISSINGDOCUMENTS!", "VIEWNOTES!", "PASTEIMAGE!", & 
+		"AUTOROUTE_SHIPMENT!", "MULTI_SHIPMENT_UPDATE!","AUTO_ROUTE_REPOS!","EDILOG!" , "ADDALERT!" ,"DOCUMENTQUEUE!",&
+		"POSTCANCELORDER!","GENERATECHANGEORDER!", "LOADBUILDER!", "GENERATE204!"
+		
+		lstr_parm.is_label = "TOPIC"
+		IF ls_selected_item = "DOCUMENT!" THEN
+			lstr_parm.ia_value = n_cst_Constants.cs_ReportTopic_Shipment
+		ELSE
+			lstr_parm.ia_value = "SHIPMENT!"
+		END IF
+		lnv_cst_msg.of_add_parm(lstr_parm)
+
+		lstr_parm.is_label = "REQUEST"
+		lstr_parm.ia_value = ls_selected_item
+		lnv_cst_msg.of_add_parm(lstr_parm)
+
+		li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "TARGET_ID", 1, li_num_labels )
+		if li_ndx > 0 and li_num_values >= li_ndx then
+			lstr_parm.is_label = "TARGET_ID"
+			lstr_parm.ia_value = aaa_parm_values[li_ndx]
+			lnv_cst_msg.of_add_parm(lstr_parm)
+		end if
+		
+		li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "TARGET_IDS", 1, li_num_labels )
+		if li_ndx > 0 and li_num_values >= li_ndx then
+			lstr_parm.is_label = "TARGET_IDS"
+			lstr_parm.ia_value = aaa_parm_values[li_ndx]
+			lnv_cst_msg.of_add_parm(lstr_parm)
+		end if
+
+		li_ndx = lnv_anyarray.of_Find( asa_parm_labels, "MATCHCOLUMN", 1, li_num_labels )
+		if li_ndx > 0 and li_num_values >= li_ndx then
+			lstr_parm.is_label = "MATCHCOLUMN"
+			lstr_parm.ia_value = aaa_parm_values[li_ndx]
+			lnv_cst_msg.of_add_parm(lstr_parm)
+		end if
+
+		IF isvalid ( ldw_Source ) THEN
+			lstr_parm.is_label = "DATAWINDOW"
+			lstr_parm.ia_value = ldw_Source
+			lnv_cst_msg.of_add_parm(lstr_parm)
+		END IF	
+		
+		f_process_standard(lnv_cst_msg)
+
+	end choose
+
+end choose
+
+return ls_selected_item
+
+
+
+///////////////////////////////////////////////////////////////
+//This is how to call the function
+
+//string lsa_parm_labels[]
+//any laa_parm_values[]
+//
+//lsa_parm_labels[1] = "MENU_TYPE"
+//laa_parm_values[1] = "COMPANY"
+//
+//f_pop_standard(lsa_parm_labels, laa_parm_values)
+
+//A more elaborate example
+//string lsa_parm_labels[]
+//any laa_parm_values[]
+//
+//lsa_parm_labels[1] = "MENU_TYPE"
+//laa_parm_values[1] = "COMPANY"
+//
+//lsa_parm_labels[2] = "DISABLE"
+//laa_parm_values[2] = "CONTACTS!"
+//
+//lsa_parm_labels[3] = "CHECK"
+//laa_parm_values[3] = "&Address"
+//
+//lsa_parm_labels[4] = "ADD_ITEM"
+//laa_parm_values[4] = "&Sherlock~tHOLMES!"
+//
+//lsa_parm_labels[5] = "HIDE"
+//laa_parm_values[5] = "DIRECTIONS!"
+//
+//lsa_parm_labels[6] = "CHECK"
+//laa_parm_values[6] = "&Sherlock"
+//
+//lsa_parm_labels[7] = "DISABLE"
+//laa_parm_values[7] = "HOLMES!"
+//
+//f_pop_standard(lsa_parm_labels, laa_parm_values)
+end function
+

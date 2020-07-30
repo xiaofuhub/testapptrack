@@ -1,0 +1,87 @@
+﻿$PBExportHeader$gf_getappvalue.srf
+global type gf_getappvalue from function_object
+end type
+
+forward prototypes
+global function string gf_getappvalue (string as_attribute, integer ai_preventnull)
+end prototypes
+
+global function string gf_getappvalue (string as_attribute, integer ai_preventnull);//The ai_PreventNull flag = 1 will cause the function to return empty string ("") in any situation
+//where it would have otherwise returned null.  This can be useful if the value is going to 
+//be used in assembling a string in a report -- you'll be able to bypass the IsNull logic.
+//An integer was used instead of a boolean because TRUE & FALSE as literals don't work in dw global fn calls.
+
+
+n_cst_LicenseManager	lnv_LicenseManager
+n_cst_String			lnv_String
+
+String	ls_Value, &
+			ls_Work
+
+SetNull ( ls_Value )
+
+CHOOSE CASE Upper ( as_Attribute )
+		
+	CASE "CURRENTUSERID"
+		
+		ls_Value = gnv_App.of_GetUserId ( )
+		
+	CASE "CURRENTUSERNAME"
+		
+		ls_Work = gnv_App.of_GetUserId ( )
+		
+		SELECT String ( em_fn, ' ', em_ln ) INTO :ls_Value FROM employees WHERE em_ref = :ls_Work AND em_status = 'K' ;
+		COMMIT ;
+		
+	CASE "VERSION"
+		
+		ls_Value = gnv_App.of_GetVersion ( )
+		
+	CASE "NAME"
+		
+		ls_Value = gnv_App.of_GetAppName ( )
+		
+	CASE "VERSIONNAME"
+		
+		ls_Value = gnv_App.of_GetAppVersionName ( )
+		
+	CASE "COPYRIGHT"
+		
+		ls_Value = gnv_App.of_GetCopyright ( )
+		
+	CASE "APPLICATIONFOLDER"
+		
+		ls_Value = gnv_App.of_GetApplicationFolder ( )
+		
+	CASE "COPYRIGHTVERSIONNAME"
+		
+		ls_Value = gnv_App.of_GetAppVersionName ( ) + "  " + gnv_App.of_GetCopyright ( )
+		
+	CASE "LICENSEDCOMPANY"
+		
+		ls_Value = lnv_LicenseManager.of_GetLicensedCompany ( )
+		
+	CASE "BASETIMEZONE"
+		
+		ls_Value = lnv_String.of_GetCodeTableDisplayValue ( String ( lnv_LicenseManager.of_GetBaseTimeZone ( ) ), n_cst_Constants.cs_TimeZoneCodeTable )
+
+	CASE "BASETIMEZONECODE"
+		
+		ls_Value = String ( lnv_LicenseManager.of_GetBaseTimeZone ( ) )
+		
+END CHOOSE		
+		
+
+		
+		
+IF ai_PreventNull = 1 THEN
+	
+	IF IsNull ( ls_Value ) THEN
+		ls_Value = ""
+	END IF
+	
+END IF
+
+RETURN ls_Value
+end function
+

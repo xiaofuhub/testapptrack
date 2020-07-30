@@ -1,0 +1,6 @@
+﻿$PBExportHeader$ofr_s_error_collection.srs
+global type ofr_s_error_collection from structure
+	ofr_s_error		s_errors[]
+	integer		i_count
+end type
+

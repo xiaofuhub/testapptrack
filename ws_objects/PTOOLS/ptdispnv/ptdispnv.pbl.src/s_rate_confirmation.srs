@@ -1,0 +1,8 @@
+﻿$PBExportHeader$s_rate_confirmation.srs
+global type s_rate_confirmation from structure
+	datawindow		rc_tripdetail
+	string		rc_template
+	string		rc_pickupdelivery
+	string		rc_tempnumber
+end type
+

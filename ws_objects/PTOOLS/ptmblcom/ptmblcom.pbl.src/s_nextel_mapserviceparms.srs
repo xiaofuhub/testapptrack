@@ -1,0 +1,16 @@
+﻿$PBExportHeader$s_nextel_mapserviceparms.srs
+global type s_nextel_mapserviceparms from structure
+	string		is_servicepath
+	string		is_idlist
+	string		is_groupidlist
+	string		is_start
+	string		is_end
+	integer		ii_hours
+	integer		ii_minutes
+	integer		ii_refresh
+	string		is_lat
+	string		is_lon
+	integer		ii_radius
+	s_co_info		istr_center
+end type
+

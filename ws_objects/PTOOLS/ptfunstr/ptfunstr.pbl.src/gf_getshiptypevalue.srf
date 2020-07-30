@@ -1,0 +1,67 @@
+﻿$PBExportHeader$gf_getshiptypevalue.srf
+global type gf_getshiptypevalue from function_object
+end type
+
+forward prototypes
+global function string gf_getshiptypevalue (long al_shiptypeid, string as_attribute, integer ai_preventnull)
+end prototypes
+
+global function string gf_getshiptypevalue (long al_shiptypeid, string as_attribute, integer ai_preventnull);//This function will instantiate an n_cst_beo_ShipType for the al_ShipTypeId provided, 
+//and then return the results of of_GetValueString for as_Attribute.
+
+//If al_ShipTypeId or as_Attribute are null, or there is a processing problem,
+//the return value will be null.
+
+//The ai_PreventNull flag = 1 will cause the function to return empty string ("") in any situation
+//where it would have otherwise returned null.  This can be useful if the value is going to 
+//be used in assembling a string in a report -- you'll be able to bypass the IsNull logic.
+//An integer was used instead of a boolean because TRUE & FALSE as literals don't work in dw global fn calls.
+
+n_cst_beo_ShipType	lnv_ShipType
+
+String	ls_Value
+SetNull ( ls_Value )
+
+Boolean	lb_Proceed = TRUE
+
+
+IF IsNull ( al_ShipTypeId ) OR IsNull ( as_Attribute ) THEN
+	lb_Proceed = FALSE
+END IF
+
+
+IF lb_Proceed THEN
+	
+	lnv_ShipType = CREATE n_cst_beo_ShipType
+	
+	IF lnv_ShipType.of_SetUseCache ( TRUE ) = 1 THEN
+		//OK
+	ELSE
+		lb_Proceed = FALSE
+	END IF
+	
+END IF
+
+
+IF lb_Proceed THEN
+	
+	lnv_ShipType.of_SetSourceId ( al_ShipTypeId )
+	lnv_ShipType.of_GetValueString ( as_Attribute, ls_Value )
+	
+END IF
+
+
+DESTROY lnv_ShipType
+
+
+IF ai_PreventNull = 1 THEN
+	
+	IF IsNull ( ls_Value ) THEN
+		ls_Value = ""
+	END IF
+	
+END IF
+
+RETURN ls_Value
+end function
+

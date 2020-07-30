@@ -1,0 +1,534 @@
+﻿$PBExportHeader$f_process_standard.srf
+global type f_process_standard from function_object
+end type
+
+forward prototypes
+global subroutine f_process_standard (n_cst_msg anv_cst_msg)
+end prototypes
+
+global subroutine f_process_standard (n_cst_msg anv_cst_msg);// rdt 102602 - added MISSINGDOCUMENTS! and VIEWDOCUMENTS! sections
+// rdt 120502 - added VIEWNOTES! section
+// RDT 3-12-03 - added PASTEIMAGE! section 
+// RDT 4-1-03  - Added PSR processing
+// RDT 8-13-03 - Added Autoroute
+// ZMC 12-1-03 - Multi Shipment Update
+// ZMC 12-11-03 - Auto Route Repos
+// DEK 5-8-2006 - Modified Multishipment Update to check for divisional permissions for the user and filtered them out from the result set
+
+string	ls_topic, &
+			ls_request, &
+			ls_address_type, &
+			ls_Type, &
+			ls_FileName, &
+			ls_Message
+		
+Long		ll_index
+Long		ll_max
+Long		ll_division
+Int		li_targArrayIndex
+S_parm	lnv_parm			
+			
+boolean	lb_UseCustomInvoice
+N_cst_privileges inv_privs
+N_cst_msg 	lnv_newMessage
+n_Cst_beo_Shipment	lnv_Shipment
+N_cst_privsmanager	lnv_privsManager
+lnv_privsManager =  gnv_app.of_getprivsmanager( ) //create N_cst_privsmanager				//will eventaully be a glbl call
+n_cst_ediexportshipmentmanager	lnv_ediexportShipMan
+Long		lla_filteredTargetIds[]
+
+String	ls_scac
+string	ls_dummy
+n_cst_PrintSrvc lnv_PrinSrvc
+lnv_PrinSrvc = CREATE n_cst_PrintSrvc
+
+long ll_target_id, lla_TargetIds[], lla_ShipIds[]//lla_ShipIds found in message object
+n_cst_msg	lnv_Msg
+n_cst_msg	lnv_msg2
+n_cst_msg	lnv_Msg_ship
+s_parm lstr_parm
+s_anys lstr_open
+
+integer li_ndx
+w_MultiShipUpdate lw_MultiShipUpdate
+w_ShipmentListOrder lw_ShipmentListOrder
+w_company lw_company
+w_eq_info lw_eq_info
+w_emp_info lw_emp_info
+w_dispatch lw_dispatch
+w_bill_preview lw_bill_preview
+w_Frame	lw_Frame
+//n_cst_print lnv_cst_print  // commented by zmc - 02-26-04
+n_cst_Billing			lnv_Billing
+n_cst_BillServices	lnv_BillServices
+n_cst_AppServices		lnv_AppServices
+n_cst_bso_ImageManager_Pegasus	lnv_ImageManager
+n_cst_ShipmentManager	lnv_ShipmentManager
+n_cst_bso_Document_Manager	lnv_DocumentManager	// rdt 102602
+//powerobject lpoa_object_list[]		// commented by zmc - 02-26-04	
+PowerObject lpoa_Object					// zmc - 3-1-04
+
+
+n_cst_beo_Shipment	lnva_Shipments[]
+n_cst_bso_Dispatch	lnv_Disp
+
+
+Boolean	lb_Null
+SetNull ( lb_Null )
+
+lw_Frame = lnv_AppServices.of_GetFrame ( )
+
+for li_ndx = 1 to anv_cst_msg.of_get_count()
+	anv_cst_msg.of_get_parm(li_ndx, lstr_parm)
+	choose case lstr_parm.is_label
+	case "TOPIC"
+		ls_topic = lstr_parm.ia_value
+	case "REQUEST"
+		ls_request = lstr_parm.ia_value
+	case "TARGET_ID"
+		ll_target_id = lstr_parm.ia_value
+	CASE "TARGET_IDS"
+		lla_TargetIds = lstr_Parm.ia_Value
+	end choose
+next
+
+choose case ls_topic
+
+case "COMPANY!"
+	if ll_target_id > 0 then
+
+		choose case ls_request
+		case "TABDETAILS!"
+			lstr_Parm.is_Label = "Id"
+			lstr_Parm.ia_Value = ll_target_id
+			lnv_Msg.of_Add_Parm ( lstr_Parm )
+			
+			OpenWithParm ( w_CompanyDetail, lnv_Msg )
+		CASE "NOTES!"
+			lstr_Parm.is_Label = "Id"
+			lstr_Parm.ia_Value = ll_target_id
+			lnv_Msg.of_Add_Parm ( lstr_Parm )
+			
+			lstr_Parm.is_Label = "TAB"
+			lstr_Parm.ia_Value = 4   // Notes tab
+			lnv_Msg.of_Add_Parm ( lstr_Parm )
+			
+			OpenWithParm ( w_CompanyDetail, lnv_Msg )
+			
+		case "DETAILS!"
+			opensheetwithparm(lw_company, ll_target_id, lw_Frame, 0, original!)
+			
+		end choose
+	end if
+
+case "EQUIPMENT!"
+	if ll_target_id > 0 then
+		choose case ls_request
+		case "DETAILS!"
+			opensheetwithparm(lw_eq_info, ll_target_id, lw_Frame, 0, original!)
+		CASE "ADDALERT!"
+			
+		end choose
+	end if
+
+case "EMPLOYEE!"
+	if ll_target_id > 0 then
+		choose case ls_request
+		case "DETAILS!"
+			opensheetwithparm(lw_emp_info, ll_target_id, lw_Frame, 0, original!)
+		CASE "ADDALERT!"
+			n_cst_beo_Employee2	lnv_Employee
+			lnv_Employee = CREATE n_cst_beo_Employee2
+			lnv_Employee.of_SetSourceID ( ll_Target_id ) 
+			lnv_Employee.of_AddUserAlert ( ) 
+			DESTROY ( lnv_Employee ) 
+					
+		end choose
+	end if
+
+case "SHIPMENT!", n_cst_constants.cs_ReportTopic_Shipment
+	if ll_target_id > 0 or upperbound(lla_TargetIds) > 0 then
+		choose case ls_request
+			case "DETAILS!"
+				
+				lstr_Parm.is_Label = "CATEGORY"
+				lstr_Parm.ia_Value = "SHIP"
+				lnv_msg.of_Add_Parm ( lstr_Parm ) 		
+				
+				lstr_Parm.is_Label = "ID"
+				lstr_Parm.ia_Value = ll_target_id
+				lnv_msg.of_Add_Parm ( lstr_Parm ) 
+				
+				lstr_open.anys[1] = "SHIP"
+				lstr_open.anys[2] = ll_target_id
+				opensheetwithparm(lw_dispatch, lnv_msg, lnv_AppServices.of_GetFrame ( ), 0, Layered!)
+				//opensheetwithparm(lw_dispatch, lnv_msg, lw_Frame, 0, original!)
+	
+			case "INVOICE!" //, "DELIVERY_RECEIPT!"
+				lnv_Billing = CREATE n_cst_Billing
+				
+				IF UPPERBOUND (lla_TargetIds) = 0 THEN
+					lla_TargetIds[1] = ll_target_id
+				ELSE
+					
+				END IF
+				
+				//check for manifest
+				lnv_Billing.of_Manifest_Check ( lla_targetids, ls_Type )
+				
+				if ls_type = "MANIFEST!" then
+					//no custom template
+					lstr_open.anys[1] = ls_request
+					lstr_open.anys[2] = ll_target_id
+					openwithparm(lw_bill_preview, lstr_open)
+	
+				else
+					//check for custom invoice setting
+					IF lnv_BillServices.of_UseCustomInvoice ( lb_UseCustomInvoice ) = 0 THEN
+						//user cancelled
+					ELSE
+						
+						IF lb_UseCustomInvoice THEN
+							
+							lnv_BillServices.of_PrintCustomInvoices ( lla_targetids, FALSE )							
+						ELSE
+							
+							lstr_open.anys[1] = ls_request
+							lstr_open.anys[2] = ll_target_id
+							openwithparm(lw_bill_preview, lstr_open)
+	
+						END IF
+						
+					END IF
+					
+				end if
+				
+				destroy lnv_Billing
+				
+			CASE "DELIVERY_RECEIPT!", "DOCUMENT!"
+	//			lnv_BillServices.of_QuickPrint_Delrecs ( lla_TargetIds )
+				
+				lstr_Parm.is_Label = "DOCUMENT"
+				lstr_Parm.ia_Value = n_cst_Constants.cs_Document_DeliveryReceipt
+				anv_cst_msg.of_Add_Parm (lstr_Parm)
+				
+				IF anv_cst_msg.of_get_parm("MATCHCOLUMN", lstr_parm) > 0 THEN
+					//Already have one
+				ELSE
+					lstr_Parm.is_Label = "MATCHCOLUMN"
+					lstr_Parm.ia_Value = "ds_id"
+					anv_cst_msg.of_Add_Parm (lstr_Parm)
+				END IF
+				
+				openWithParm  ( w_DocumentSelection, anv_cst_msg )
+				
+				////// RDT 4-1-03 - Added PSR Process - START
+				
+				//-- MFS 2/7/06 - Added ability to pass shipment ids to message parm
+				//ls_FileName = message.StringParm
+				lnv_msg_ship = Message.PowerObjectParm
+				
+				IF isValid(lnv_Msg_Ship) THEN
+					IF lnv_Msg_ship.of_Get_Parm("TEMPLATE", lstr_Parm) <> 0 THEN
+						ls_FileName = lstr_Parm.ia_Value
+					END IF
+				END IF
+				
+				// check for ".psr" in file name
+				If Upper( Right( ls_FileName , 4 ) ) = ".PSR" Then 
+					anv_cst_msg.of_Reset()				
+					lstr_Parm.is_label = "FILENAME"
+					lstr_Parm.ia_value = ls_FileName 
+					anv_cst_msg.of_Add_Parm( lstr_Parm )
+					
+					IF lnv_msg_ship.of_Get_Parm("SHIPMENTIDS", lstr_Parm) <> 0 THEN
+						lla_ShipIds[] = lstr_Parm.ia_Value
+						lstr_Parm.is_label = "SHIPMENTID"
+						lstr_Parm.ia_value =  lla_ShipIds[]
+						anv_cst_msg.of_Add_Parm( lstr_Parm )
+					ELSE
+						If UpperBound( lla_TargetIds[] ) > 0 Then 
+							lstr_Parm.is_label = "SHIPMENTID"
+							lstr_Parm.ia_value =  lla_TargetIds
+							anv_cst_msg.of_Add_Parm( lstr_Parm )
+						Else
+							lstr_Parm.is_label = "SHIPMENTID"
+							lstr_Parm.ia_value =  {ll_Target_Id}
+							anv_cst_msg.of_Add_Parm( lstr_Parm )
+						End If
+					END IF
+					W_Psr_Viewer	lw_Psr
+					OpenSheetWithParm ( lw_psr, anv_cst_msg, gnv_App.of_GetFrame ( ),0 , Layered! )
+					
+				End If
+				////// RDT 4-1-03 - Added PSR Process - END 			
+	
+			CASE "IMAGES!"
+				lnv_ImageManager = CREATE n_cst_bso_ImageManager_Pegasus
+				
+				IF UpperBound ( lla_TargetIds ) > 0 THEN
+					lnv_ImageManager.of_ViewImages ( "SHIPMENT" , lla_TargetIds , 1)
+	
+				ELSE
+					lnv_ImageManager.of_ViewImages ( "SHIPMENT" , { ll_Target_Id } , 1)
+					
+				END IF
+				
+				DESTROY lnv_ImageManager
+	
+			// RDT 3-12-03 - start
+			CASE "PASTEIMAGE!"
+				lnv_ImageManager = CREATE n_cst_bso_ImageManager_Pegasus
+				IF UpperBound ( lla_TargetIds ) > 1 THEN
+					lnv_ImageManager.of_PasteImage ( lla_TargetIds )
+	
+				ELSE
+					lnv_ImageManager.of_PasteImage ( { ll_Target_Id } )
+					
+				END IF
+			// RDT 3-12-03 - end
+				DESTROY lnv_ImageManager
+				
+			CASE "MISSINGIMAGES!"
+				lnv_ImageManager = CREATE n_cst_bso_ImageManager_Pegasus	
+				IF UpperBound ( lla_TargetIds ) > 0 THEN
+					lnv_ImageManager.of_MissingImageReport (   lla_TargetIds , "SHIPMENT")			
+				
+				ELSE
+					lnv_ImageManager.of_MissingImageReport (   { ll_Target_Id } ,"SHIPMENT")			
+				END IF
+				DESTROY lnv_ImageManager		
+				
+			// rdt 102602 added code - start
+			CASE "MISSINGDOCUMENTS!"
+				lnv_DocumentManager	= CREATE n_cst_bso_Document_Manager		
+				IF UpperBound ( lla_TargetIds ) > 0 THEN
+					lnv_DocumentManager.of_MissingDocumentReport (   lla_TargetIds , "SHIPMENT")						                  
+				ELSE
+					lnv_DocumentManager.of_MissingDocumentReport (   { ll_Target_Id } , "SHIPMENT")	
+				END IF
+				If IsValid( lnv_DocumentManager ) Then DESTROY lnv_DocumentManager	
+	
+			CASE "VIEWDOCUMENTS!"
+				lstr_Parm.is_Label = "SHIPMENTID"
+				IF UpperBound ( lla_TargetIds ) > 0 THEN
+					lstr_Parm.ia_Value = lla_TargetIds 	
+				ELSE
+					lstr_Parm.ia_Value = { ll_Target_Id } 
+				END IF
+				lnv_Msg.of_Add_Parm ( lstr_Parm )
+	
+				OpensheetWithParm( w_Document_Display, lnv_msg, gnv_App.of_GetFrame ( ), 0, LAYERED! )
+			// rdt 102602 added code - end 
+	
+			// rdt 120502 added code - Start
+			CASE "VIEWNOTES!"
+	
+				OpenWithParm( w_NoteShower, anv_cst_msg)
+		
+	
+			CASE "CONVERT_TO_NONROUTED!"
+	
+				IF UpperBound ( lla_TargetIds ) > 0 THEN
+					lnv_ShipmentManager.of_MakeNonRouted ( lla_TargetIds, lb_Null /*Ask whether to confirm events*/ )
+				ELSE
+					lnv_ShipmentManager.of_MakeNonRouted ( { ll_Target_Id }, lb_Null /*Ask whether to confirm events*/ )
+				END IF
+	
+			// RDT 8-13-03 - Start 
+			CASE "AUTOROUTE_SHIPMENT!"
+				IF UpperBound ( lla_TargetIds ) > 1 THEN
+					lnv_ShipmentManager.of_AutoRoute( lla_TargetIds[1] )
+				Else
+					lnv_ShipmentManager.of_AutoRoute( ll_Target_Id )			
+				End If
+			// RDT 8-13-03 - End 
+			
+			// ZMC 12-1-03 - Start 
+		CASE "MULTI_SHIPMENT_UPDATE!"
+				ll_max = upperBound( lla_TargetIds ) 
+				IF ll_max > 0   THEN
+					
+					lnv_Disp = CREATE n_cst_bso_Dispatch
+					lnv_Disp.of_Retrieveshipments( lla_TargetIds )
+					
+					ll_Max = lnv_Disp.of_GetShipments( lla_TargetIds, lnva_Shipments )
+//					Modified for issue 2533
+									
+					//Modified By Dan 5-8-2006 to filter out ids that the user doesn't have permission to update.
+					ls_message = "You do not have sufficient rights to modify some of the shipments.  Only shipments that can be modified will be listed, if any."
+					FOR ll_index = 1 TO ll_max
+						//ll_division = lnv_shipmentmanager.of_getDivision( lla_targetIds[ll_index] )
+						IF lnva_Shipments[ll_index].of_AllowEditBill ( ) THEN
+//						IF lnv_privsManager.of_getUserpermissionfromfn( lnv_privsManager.cs_modifyshipment, ll_division ) = 1 THEN
+							lla_filteredTargetIds[upperBound(lla_filteredTargetIds)+ 1] = lnva_Shipments[ll_index].of_GetID ( ) 
+						END IF
+						Destroy ( lnva_Shipments[ll_index] )
+					NEXT
+					Destroy ( lnv_Disp )
+					
+					
+					//copying over all the parm variables but swapping out the id array with the filtered id array
+					IF upperBound( lla_filteredTargetIds ) < ll_max THEN
+						for li_ndx = 1 to anv_cst_msg.of_get_count()
+							anv_cst_msg.of_get_parm(li_ndx, lstr_parm)
+							lnv_Parm.ia_value = lstr_parm.ia_value
+							lnv_parm.is_label = lstr_parm.is_label
+							
+							choose case lstr_parm.is_label
+							CASE "TARGET_IDS"
+								lnv_parm.is_label = lstr_parm.is_label
+								lnv_Parm.ia_value = lla_filteredTargetIds
+							CASE ELSE
+								lnv_Parm.ia_value = lstr_parm.ia_value
+								lnv_parm.is_label = lstr_parm.is_label
+							end choose
+							lnv_Msg.of_add_parm( lnv_parm)
+						next
+						MessageBox("Multishipment Update", ls_message )
+					ELSE
+						lnv_msg = anv_cst_msg
+					END IF
+				
+					//--------------------------------
+					//IF inv_privs.of_hasentryrights( ) THEN
+					IF upperBound( lla_filteredTargetIds ) > 0 THEN 
+						OpenSheetWithParm(lw_MultiShipUpdate,lnv_Msg,gnv_App.of_GetFrame ( ), 0, Original!)
+					END IF
+					//ELSE
+					//	MessageBox("Multishipment Update", "You do not have sufficient rights")
+					//END IF
+				END IF
+			// ZMC 12-1-03 - End
+		
+			// ZMC 12-11-03 - Start 
+			CASE "AUTO_ROUTE_REPOS!"
+				IF UpperBound ( lla_TargetIds ) > 0 THEN
+					lnv_ShipmentManager.of_OpenShipmentListOrder(lla_TargetIds)
+				END IF
+			// ZMC 12-11-03 - End
+	
+			//NWL 12-12-03
+			CASE "EDILOG!"
+				w_EDILog	lw_EDILog
+				
+				If UpperBound( lla_TargetIds[] ) > 0 Then
+					lstr_Parm.is_label = "SHIPMENTIDS"
+					lstr_Parm.ia_value =  lla_TargetIds
+					lnv_msg.of_Add_Parm( lstr_Parm )
+				Else
+					lstr_Parm.is_label = "SHIPMENTIDS"
+					lstr_Parm.ia_value =  {ll_Target_Id}
+					lnv_msg.of_Add_Parm( lstr_Parm )
+				End If		
+					
+				opensheetwithparm(lw_EDILog, lnv_Msg, gnv_App.of_GetFrame ( ), 0, Original! )
+				
+			CASE "ADDALERT!"
+//				n_Cst_beo_Shipment	lnv_Shipment
+				lnv_Shipment = CREATE n_cst_beo_Shipment
+				lnv_Shipment.of_SetSourceID ( ll_Target_Id ) 
+				lnv_Shipment.of_AddUserAlert ( ) 
+				DESTROY ( lnv_Shipment )
+			CASE "DOCUMENTQUEUE!"
+				n_cst_bso_Document_Manager	lnv_Docman
+				lnv_DocMan = CREATE n_cst_bso_Document_Manager
+				lnv_DocMan.of_showdocumentqueue(ll_target_id , "SHIPMENT")
+				DESTROY ( lnv_Docman )
+				
+			CASE "LOADBUILDER!"
+				DataWindow ldw_Source
+				IF anv_cst_Msg.of_get_Parm ("Datawindow" , lstr_Parm ) > 0 THEN
+					ldw_Source = lstr_parm.ia_value
+				END IF
+				
+				IF ISValid ( ldw_Source  ) THEN
+					ldw_Source.Triggerevent( "ue_Loadbuilder" )
+				END IF
+				CASE "GENERATE204!"	//added by dan 3-5-07
+					lnv_ediexportShipMan = create n_cst_ediexportshipmentmanager
+					lnv_Disp = CREATE n_cst_bso_Dispatch
+					lnv_Disp.of_Retrieveshipments( {ll_target_id} )
+					
+					lnv_Shipment = CREATE n_cst_beo_Shipment
+					lnv_shipment.of_setSource( lnv_disp.of_getshipmentcache( ) )
+					lnv_Shipment.of_SetSourceID ( ll_Target_Id ) 
+					
+					IF lnv_shipment.of_isshiptypebrokerage()/*lnv_shipment.of_getShipmenttype( ) = "BROKERAGE"  lnv_shipment.of_isbrokerage( )*/ AND lnv_shipment.of_isnonrouted( ) THEN
+						OPENWITHPARM( w_getScac, lnv_shipment )
+						IF isvalid( message.powerobjectparm ) THEN
+							IF message.powerobjectparm.classname() = "n_cst_msg"  THEN
+								lnv_msg2 = message.powerobjectparm
+								IF lnv_msg2.of_get_parm( "SCAC", lstr_parm ) > 0 THEN
+									//Messagebox("", string(lstr_parm.ia_value))
+									lnv_ediexportShipMan.of_addshiptopendingexport( ll_target_id, lstr_parm.ia_value, lnv_ediexportShipMan.cs_gen204request_original )
+									lnv_ediexportShipMan.of_update( )
+								END IF
+							END IF
+						END IF
+					ELSE
+						MessageBox("Generate 204", "204 Generations is reserved for nonrouted, brokerage shipments. Action cancelled.")
+					END IF
+					DESTROY ( lnv_Shipment )
+					DESTROY lnv_Disp
+					DESTROY lnv_ediexportShipMan
+					
+				CASE "POSTCANCELORDER!"
+					lnv_ediexportShipMan = create n_cst_ediexportshipmentmanager
+					lnv_Disp = CREATE n_cst_bso_Dispatch
+					lnv_Disp.of_Retrieveshipments( {ll_target_id} )
+					
+					lnv_Shipment = CREATE n_cst_beo_Shipment
+					lnv_shipment.of_setSource( lnv_disp.of_getshipmentcache( ) )
+					lnv_Shipment.of_SetSourceID ( ll_Target_Id ) 
+					
+					IF /*lnv_shipment.of_getShipmenttype( ) = "BROKERAGE"*/lnv_shipment.of_isshiptypebrokerage() AND lnv_shipment.of_isnonrouted( ) THEN
+						//If there is any history of it in there we will cancel it
+						IF lnv_ediexportShipMan.of_getLastshipmentinfo( ll_target_id, ls_scac, ls_dummy) = 1 THEN
+							lnv_ediexportShipMan.of_addshiptopendingexport( ll_target_id, ls_scac, lnv_ediexportShipMan.cs_gen204request_cancel )
+							lnv_ediexportShipMan.of_update( )
+						ELSE
+							Messagebox( "Post Cancel Order", "This shipment has no history in the exported shipments table.  A cancel order cannot be generated." )
+						END IF
+					ELSE
+						MessageBox("Post Cancel Order", "204 Generations is reserved for nonrouted, brokerage shipments. Action cancelled.")
+					END IF
+					DESTROY ( lnv_Shipment )
+					DESTROY lnv_Disp
+					DESTROY lnv_ediexportShipMan
+		end choose // ls_request
+	end if
+	
+CASE "PRINT!"
+	
+	
+//	for li_ndx = 1 to anv_cst_msg.of_get_count() 	// commented by zmc - 02-26-04
+//		anv_cst_msg.of_get_parm(li_ndx, lstr_parm) 	// commented by zmc - 02-26-04
+	IF anv_cst_msg.of_get_parm("PRINT_OBJECT", lstr_parm) <> 0 THEN
+		IF lstr_parm.is_label = "PRINT_OBJECT" THEN
+			lpoa_Object = lstr_parm.ia_Value
+			lnv_PrinSrvc.of_DecideObjectToPrint(lpoa_Object)
+		//lpoa_object_list[upperbound(lpoa_object_list) + 1] = lstr_parm.ia_value // commented by zmc - 2-26-04
+		END IF
+	END IF
+
+//	next // commented by zmc - 2-16-04
+/* 	// commented by zmc - 2-16-04
+	if upperbound(lpoa_object_list) > 0 then
+		lnv_cst_print.of_print_objects(lpoa_object_list, "", "", 1)
+	end if
+*/
+
+END CHOOSE
+
+DESTROY(lnv_PrinSrvc)
+
+////////////
+
+//	if anv_cst_msg.of_get_parm("TARGET_ID", lstr_parm) > 0 then
+//		ll_target_id = lstr_parm.ia_value
+
+
+
+end subroutine
+

@@ -1,0 +1,12 @@
+﻿$PBExportHeader$getddlbindex.srf
+global type getddlbindex from function_object
+end type
+
+forward prototypes
+global function long getddlbindex (dropdownlistbox ddlb_target)
+end prototypes
+
+global function long getddlbindex (dropdownlistbox ddlb_target);//CB_GETCURSEL = WM_USER + 7 = 1024 + 7 = 1031
+return send(handle(ddlb_target), 1031, 0, 0) + 1
+end function
+

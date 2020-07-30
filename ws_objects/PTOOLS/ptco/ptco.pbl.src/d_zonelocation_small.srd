@@ -1,0 +1,18 @@
+﻿$PBExportHeader$d_zonelocation_small.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="553648127" )
+table(column=(type=char(32766) update=yes updatewhereclause=no key=yes name=zonename dbname="zonelocation.zonename" )
+ column=(type=char(32766) update=yes updatewhereclause=no key=yes name=location dbname="zonelocation.location" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=type dbname="zonelocation.type" )
+ column=(type=char(32766) updatewhereclause=no name=display dbname="display" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"zone~" )  TABLE(NAME=~"zonelocation~" ) COLUMN(NAME=~"zonelocation.zonename~") COLUMN(NAME=~"zonelocation.location~") COLUMN(NAME=~"zonelocation.type~") COMPUTE(NAME=~"Convert ( Long Varchar , Null ) As ~~~"Display~~~"~")    JOIN (LEFT=~"zonelocation.zonename~"    OP =~"=~"RIGHT=~"zone.name~" )) " update="zonelocation" updatewhere=1 updatekeyinplace=yes  sort="display A location A " )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="466" y="4" height="56" width="814" format=""  name=location visible="1~tif ( type = 1 , 0, 1 )" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Type"border="6" color="0" x="9" y="8" height="60" width="443"  name=zonelocation_type_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=3 alignment="0" tabsequence=10 border="0" color="0" x="5" y="4" height="56" width="453" format="[general]"  name=type accelerator="L" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no edit.nilisnull=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="2" text="Location"border="6" color="0" x="471" y="8" height="60" width="809"  name=zonelocation_location_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=4 alignment="0" tabsequence=30 border="0" color="0" x="466" y="4" height="56" width="814" format="[general]"  name=display visible="1~tif (  type  = 1 , 1 , 0 )" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autovscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

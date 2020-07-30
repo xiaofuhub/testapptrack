@@ -1,0 +1,20 @@
+﻿$PBExportHeader$gf_getmiles.srf
+global type gf_getmiles from function_object
+end type
+
+forward prototypes
+global function decimal gf_getmiles (string as_origin, string as_destination, integer ai_routetype)
+end prototypes
+
+global function decimal gf_getmiles (string as_origin, string as_destination, integer ai_routetype);//Determines mileage between two points for the specified route type.
+//See gf_calc_miles for a list of valid route types  (currently, 0-4)
+//Can be used in reports.
+
+Decimal	lc_Miles
+Long		ll_Minutes
+
+gf_Calc_Miles ( as_Origin, as_Destination, lc_Miles, ll_Minutes, ai_RouteType )
+
+RETURN lc_Miles
+end function
+

@@ -1,0 +1,70 @@
+﻿$PBExportHeader$d_shiptype_list.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=72 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=st_id dbname="shipment_types.st_id" )
+ column=(type=char(20) updatewhereclause=yes name=st_name dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=st_status dbname="null" values="	K/	D" )
+ column=(type=long updatewhereclause=yes name=st_logo dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_accounting_ar dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_accounting_sales dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=st_default dbname="null" values="	T/	F" )
+ column=(type=char(1) updatewhereclause=yes name=st_brokerage dbname="null" values="	T/	F" )
+ column=(type=char(1) updatewhereclause=yes name=st_expedite dbname="null" values="	T/	F" )
+ column=(type=char(12) updatewhereclause=yes name=st_terms dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_01 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_02 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_03 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_04 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_05 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_accounting_company dbname="null" )
+ column=(type=long updatewhereclause=yes name=st_billing_sequence dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_accounting_accessorialsales dbname="st_accounting_accessorialsales" )
+ column=(type=char(1) updatewhereclause=yes name=st_typeonly dbname="st_typeonly" values="	T/	F" )
+ column=(type=char(1) updatewhereclause=yes name=st_divisiononly dbname="st_divisiononly" values="	T/	F" )
+ column=(type=char(1) updatewhereclause=yes name=intermodal dbname="intermodal" values="	T/	F" )
+ column=(type=char(32766) updatewhereclause=no name=st_dbstring dbname="shipment_types.st_dbstring" )
+ retrieve="  SELECT ~"shipment_types~".~"st_id~",   
+         convert ( char(20), null ), 
+         convert ( char(1), null),   
+         convert ( integer, null ),   
+         convert ( char(45), null ),   
+         convert ( char(45), null ),   
+         convert ( char(1), null),   
+         convert ( char(1), null),   
+         convert ( char(1), null),   
+         convert ( char(12), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( integer, null),   
+         convert ( char(45), null) AS ~"st_accounting_accessorialsales~",
+         convert ( char(1), null) AS ~"st_typeonly~",
+         convert ( char(1), null) AS ~"st_divisiononly~",
+			convert ( char(1), null) AS ~"intermodal~",
+         ~"shipment_types~".~"st_dbstring~"     
+    FROM ~"shipment_types~"   
+" )
+text(band=header alignment="0" text="Display Name"border="0" color="128" x="9" y="4" height="64" width="421"  name=null_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Active"border="0" color="128" x="690" y="4" height="64" width="160"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Brokg"border="0" color="128" x="878" y="4" height="64" width="155"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Default"border="0" color="128" x="1056" y="4" height="64" width="183"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Exp"border="0" color="128" x="1271" y="4" height="64" width="105"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="TypeOnly"border="0" color="128" x="1445" y="4" height="64" width="265"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="8" height="56" width="658" format="[general]"  name=st_name edit.limit=20 edit.case=upper edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="0" text="Div. Only"border="0" color="128" x="1733" y="4" height="64" width="256"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="741" y="8" height="52" width="59" format="[general]"  name=st_status checkbox.text="" checkbox.on="K" checkbox.off="D" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="923" y="8" height="52" width="59" format="[general]"  name=st_brokerage checkbox.text="" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="1115" y="8" height="52" width="59" format="[general]"  name=st_default checkbox.text="" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="1294" y="8" height="52" width="59" format="[general]"  name=st_expedite checkbox.text="" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="1545" y="8" height="52" width="59" format="[general]"  name=st_typeonly checkbox.text="" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="0" x="1824" y="8" height="52" width="59" format="[general]"  name=st_divisiononly checkbox.text="" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="0" text="Intermodal"border="0" color="128" x="2016" y="4" height="64" width="315"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=detail id=21 alignment="0" tabsequence=0 border="0" color="0" x="2144" y="8" height="52" width="59"  name=intermodal checkbox.text="" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

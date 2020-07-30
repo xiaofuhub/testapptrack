@@ -1,0 +1,13 @@
+﻿$PBExportHeader$ofr_s_bcm_class.srs
+global type ofr_s_bcm_class from structure
+	string		s_class
+	boolean		b_registered
+	boolean		b_updateable
+	string		s_classhierarchy[]
+	integer		i_attributes
+	n_cst_attribute		attribute[]
+	integer		i_uniqueconstraints
+	ofr_s_bcm_unique		unique[]
+	n_cst_beo		nv_beolist[]
+end type
+

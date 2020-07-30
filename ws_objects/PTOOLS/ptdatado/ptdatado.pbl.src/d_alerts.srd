@@ -1,0 +1,52 @@
+﻿$PBExportHeader$d_alerts.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 selected.mouse=no )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(32766) updatewhereclause=no name=classname dbname="useralerts.classname" values="Event	n_cst_beo_event/Item	n_cst_beo_item/Company	n_cst_beo_company/Employee	n_cst_beo_employee2/Equipment	n_cst_beo_equipment2/Shipment	n_cst_beo_shipment/System	system/" )
+ column=(type=long updatewhereclause=yes name=sourceid dbname="useralerts.sourceid" )
+ column=(type=char(32766) updatewhereclause=no name=alertmessage dbname="useralerts.alertmessage" )
+ column=(type=char(32766) updatewhereclause=no name=createdby dbname="useralerts.createdby" )
+ column=(type=date updatewhereclause=yes name=createddate dbname="useralerts.createddate" )
+ column=(type=time updatewhereclause=yes name=createdtime dbname="useralerts.createdtime" )
+ column=(type=long update=yes updatewhereclause=yes name=status dbname="useralerts.status" values="Active	1/Inactive	0/" )
+ column=(type=char(45) updatewhereclause=yes name=entity dbname="entity" )
+ column=(type=long updatewhereclause=yes key=yes name=id dbname="useralerts.id" )
+ column=(type=long updatewhereclause=yes name=active_count dbname="active count" )
+ retrieve="  SELECT ~"useralerts~".~"classname~",   
+         ~"useralerts~".~"sourceid~",   
+         ~"useralerts~".~"alertmessage~",   
+         ~"useralerts~".~"createdby~",   
+         ~"useralerts~".~"createddate~",   
+         ~"useralerts~".~"createdtime~",   
+         ~"useralerts~".~"status~",   
+         convert ( char(45), null ) AS ~"Entity~",   
+         ~"useralerts~".~"id~" ,
+			(Select Count ( ~"employeeid~" ) 
+			From ~"joinUserAlert~"
+			Where ~"JoinUserAlert~".~"alertid~" = ~"useralerts~".~"id~" ) as ~"Active Count~" 
+    FROM ~"useralerts~"   
+" update="useralerts" updatewhere=0 updatekeyinplace=no )
+text(band=header alignment="2" text="Entity Type" border="6" color="33554432" x="9" y="8" height="60" width="311" html.valueishtml="0"  name=classname_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Entity" border="6" color="0" x="329" y="8" height="60" width="411" html.valueishtml="0"  name=entity_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="message" border="6" color="33554432" x="750" y="8" height="60" width="1083" html.valueishtml="0"  name=alertmessage_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Created by" border="6" color="33554432" x="1842" y="8" height="60" width="279" html.valueishtml="0"  name=createdby_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Date" border="6" color="33554432" x="2130" y="8" height="60" width="270" html.valueishtml="0"  name=createddate_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Time" border="6" color="33554432" x="2409" y="8" height="60" width="311" html.valueishtml="0"  name=createdtime_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Status" border="6" color="33554432" x="2729" y="8" height="60" width="274" html.valueishtml="0"  name=status_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Active Count" border="6" color="0" x="3013" y="8" height="60" width="329" html.valueishtml="0"  name=active_count_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=1 alignment="2" tabsequence=32766 border="0" color="33554432" x="9" y="4" height="56" width="311" format="[general]" html.valueishtml="0"  name=classname visible="1" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.codetable=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=10 border="0" color="33554432" x="750" y="4" height="56" width="1083" format="[general]" html.valueishtml="0"  name=alertmessage visible="1" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="2" tabsequence=32766 border="0" color="33554432" x="1842" y="4" height="56" width="279" format="[general]" html.valueishtml="0"  name=createdby visible="1" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="2" tabsequence=32766 border="0" color="33554432" x="2130" y="4" height="56" width="270" format="[general]" html.valueishtml="0"  name=createddate visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="2" tabsequence=32766 border="0" color="33554432" x="2409" y="4" height="56" width="311" format="[time]" html.valueishtml="0"  name=createdtime visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="33554432" x="329" y="4" height="56" width="411" format="[general]" html.valueishtml="0"  name=entity visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="2" tabsequence=32766 border="0" color="33554432" x="2729" y="4" height="56" width="274" format="[general]" html.valueishtml="0"  name=status visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0 edit.codetable=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="2" tabsequence=32766 border="0" color="33554432" x="3013" y="4" height="56" width="329" format="[general]" html.valueishtml="0"  name=active_count visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

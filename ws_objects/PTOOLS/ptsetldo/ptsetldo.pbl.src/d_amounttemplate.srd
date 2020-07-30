@@ -1,0 +1,103 @@
+﻿$PBExportHeader$d_amounttemplate.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 selected.mouse=no )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=ref1typeid dbname="amounttemplate.ref1typeid" )
+ column=(type=long updatewhereclause=yes name=ref2typeid dbname="amounttemplate.ref2typeid" )
+ column=(type=long updatewhereclause=yes name=ref3typeid dbname="amounttemplate.ref3typeid" )
+ column=(type=long updatewhereclause=yes name=amounttypeid dbname="amounttemplate.amounttypeid" )
+ column=(type=long updatewhereclause=yes name=ratetypeid dbname="amounttemplate.ratetypeid" )
+ column=(type=char(32767) updatewhereclause=yes name=name dbname="amounttemplate.name" )
+ column=(type=long updatewhereclause=yes name=category dbname="amounttemplate.category" )
+ column=(type=long updatewhereclause=yes name=division dbname="amounttemplate.division" )
+ column=(type=char(32767) updatewhereclause=yes name=generationcondition dbname="amounttemplate.generationcondition" )
+ column=(type=decimal(0) updatewhereclause=yes name=generateifzero dbname="amounttemplate.generateifzero" )
+ column=(type=char(32767) updatewhereclause=yes name=description dbname="amounttemplate.description" )
+ column=(type=char(32767) updatewhereclause=yes name=quantity dbname="amounttemplate.quantity" )
+ column=(type=char(32767) updatewhereclause=yes name=rate dbname="amounttemplate.rate" )
+ column=(type=char(32767) updatewhereclause=yes name=amount dbname="amounttemplate.amount" )
+ column=(type=char(32767) updatewhereclause=yes name=ref1text dbname="amounttemplate.ref1text" )
+ column=(type=char(32767) updatewhereclause=yes name=ref2text dbname="amounttemplate.ref2text" )
+ column=(type=char(32767) updatewhereclause=yes name=ref3text dbname="amounttemplate.ref3text" )
+ column=(type=decimal(0) updatewhereclause=yes name=aggregatecalc dbname="amounttemplate.aggregatecalc" )
+ column=(type=char(32767) updatewhereclause=yes name=splitsby dbname="amounttemplate.splitsby" )
+ column=(type=long updatewhereclause=yes name=type dbname="amounttemplate.type" )
+ column=(type=char(32766) updatewhereclause=no name=selectionfilter dbname="amounttemplate.selectionfilter" )
+ column=(type=long updatewhereclause=yes name=fkentity dbname="amounttemplate.fkentity" )
+ column=(type=long updatewhereclause=yes name=id dbname="amounttemplate.id" )
+ retrieve="  SELECT ~"amounttemplate~".~"ref1typeid~",   
+         ~"amounttemplate~".~"ref2typeid~",   
+         ~"amounttemplate~".~"ref3typeid~",   
+         ~"amounttemplate~".~"amounttypeid~",   
+         ~"amounttemplate~".~"ratetypeid~",   
+         ~"amounttemplate~".~"name~",   
+         ~"amounttemplate~".~"category~",   
+         ~"amounttemplate~".~"division~",   
+         ~"amounttemplate~".~"generationcondition~",   
+         ~"amounttemplate~".~"generateifzero~",   
+         ~"amounttemplate~".~"description~",   
+         ~"amounttemplate~".~"quantity~",   
+         ~"amounttemplate~".~"rate~",   
+         ~"amounttemplate~".~"amount~",   
+         ~"amounttemplate~".~"ref1text~",   
+         ~"amounttemplate~".~"ref2text~",   
+         ~"amounttemplate~".~"ref3text~",   
+         ~"amounttemplate~".~"aggregatecalc~",   
+         ~"amounttemplate~".~"splitsby~",   
+         ~"amounttemplate~".~"type~",   
+         ~"amounttemplate~".~"selectionfilter~",   
+         ~"amounttemplate~".~"fkentity~",   
+         ~"amounttemplate~".~"id~"  
+    FROM ~"amounttemplate~"  
+   WHERE ( ~"amounttemplate~".~"id~" in ( SELECT DISTINCT ~"join_entity_amounttemplate~".~"fkamounttemplate~"  FROM ~"join_entity_amounttemplate~"  WHERE ~"join_entity_amounttemplate~".~"fkentity~" <> :al_EntityID ) ) or 
+         ( ~"amounttemplate~".~"fkentity~" is null or ~"amounttemplate~".~"fkentity~" = :al_entityid)    
+" arguments=(("al_entityid", number))  sort="type A name A " )
+text(band=header alignment="0" text="AmountType" border="6" color="0" x="1330" y="4" height="60" width="398" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Division" border="6" color="0" x="1737" y="4" height="60" width="352" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ratetypeid" border="6" color="0" x="2098" y="4" height="60" width="315" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Quantity" border="6" color="0" x="2423" y="4" height="60" width="270" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Rate" border="6" color="0" x="2702" y="4" height="60" width="247" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Amount" border="6" color="0" x="2958" y="4" height="60" width="315" html.valueishtml="0"  name=t_6 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Generateifzero" border="6" color="0" x="3282" y="4" height="60" width="361" html.valueishtml="0"  name=t_7 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Generationcondition" border="6" color="0" x="3653" y="4" height="60" width="352" html.valueishtml="0"  name=t_8 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Description" border="6" color="0" x="4014" y="4" height="60" width="457" html.valueishtml="0"  name=t_9 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref1typeid" border="6" color="0" x="4480" y="4" height="60" width="320" html.valueishtml="0"  name=t_10 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref1text" border="6" color="0" x="4809" y="4" height="60" width="334" html.valueishtml="0"  name=t_11 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref2typeid" border="6" color="0" x="5152" y="4" height="60" width="315" html.valueishtml="0"  name=t_12 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref2text" border="6" color="0" x="5477" y="4" height="60" width="329" html.valueishtml="0"  name=t_13 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref3typeid" border="6" color="0" x="5815" y="4" height="60" width="315" html.valueishtml="0"  name=t_14 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref3text" border="6" color="0" x="6139" y="4" height="60" width="430" html.valueishtml="0"  name=t_15 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Aggregatecalc" border="6" color="0" x="6578" y="4" height="60" width="206" html.valueishtml="0"  name=t_16 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Splitsby" border="6" color="0" x="6793" y="4" height="60" width="480" html.valueishtml="0"  name=t_17 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Selectionfilter" border="6" color="0" x="7282" y="4" height="60" width="1760" html.valueishtml="0"  name=t_18 visible="1"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Name" border="6" color="0" x="699" y="4" height="60" width="622" html.valueishtml="0"  name=t_19 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Type" border="6" color="0" x="219" y="4" height="60" width="471" html.valueishtml="0"  name=t_20 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1330" y="8" height="64" width="398" format="[general]" html.valueishtml="0"  name=amounttypeid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="1737" y="8" height="64" width="352" format="[general]" html.valueishtml="0"  name=division visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2098" y="8" height="64" width="315" format="[general]" html.valueishtml="0"  name=ratetypeid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="2423" y="8" height="64" width="270" format="[general]" html.valueishtml="0"  name=quantity visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="2702" y="8" height="64" width="247" format="[general]" html.valueishtml="0"  name=rate visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="2958" y="8" height="64" width="315" format="[general]" html.valueishtml="0"  name=amount visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="0" x="3282" y="8" height="64" width="361" format="[general]" html.valueishtml="0"  name=generateifzero visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="3653" y="8" height="64" width="352" format="[general]" html.valueishtml="0"  name=generationcondition visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="4014" y="8" height="64" width="457" format="[general]" html.valueishtml="0"  name=description visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="4480" y="8" height="64" width="320" format="[general]" html.valueishtml="0"  name=ref1typeid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="4809" y="8" height="64" width="334" format="[general]" html.valueishtml="0"  name=ref1text visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="5152" y="8" height="64" width="315" format="[general]" html.valueishtml="0"  name=ref2typeid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="5477" y="8" height="64" width="329" format="[general]" html.valueishtml="0"  name=ref2text visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="5815" y="8" height="64" width="315" format="[general]" html.valueishtml="0"  name=ref3typeid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="6139" y="8" height="64" width="430" format="[general]" html.valueishtml="0"  name=ref3text visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="6578" y="8" height="64" width="206" format="[general]" html.valueishtml="0"  name=aggregatecalc visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="6793" y="8" height="64" width="480" format="[general]" html.valueishtml="0"  name=splitsby visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=21 alignment="0" tabsequence=32766 border="0" color="0" x="7282" y="8" height="64" width="1760" format="[general]" html.valueishtml="0"  name=selectionfilter visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="699" y="8" height="64" width="622" format="[general]" html.valueishtml="0"  name=name visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="0" x="219" y="8" height="64" width="471" format="[general]" html.valueishtml="0"  name=type visible="1" accelerator="v" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+compute(band=detail alignment="0" expression=" if( isNull(  fkentity  ),'Global', '' )"border="0" color="0" x="9" y="8" height="64" width="201" format="[general]" html.valueishtml="0"  name=driver_global_indicator visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

@@ -1,0 +1,427 @@
+﻿$PBExportHeader$m_popups.srm
+$PBExportComments$PTCORE.     Generic popup used by f_popmenu.
+forward
+global type m_popups from menu
+end type
+type m_general from menu within m_popups
+end type
+type m_gen_01 from menu within m_general
+end type
+type m_gen_02 from menu within m_general
+end type
+type m_gen_03 from menu within m_general
+end type
+type m_gen_04 from menu within m_general
+end type
+type m_gen_05 from menu within m_general
+end type
+type m_gen_06 from menu within m_general
+end type
+type m_gen_07 from menu within m_general
+end type
+type m_gen_08 from menu within m_general
+end type
+type m_gen_09 from menu within m_general
+end type
+type m_gen_10 from menu within m_general
+end type
+type m_gen_11 from menu within m_general
+end type
+type m_gen_12 from menu within m_general
+end type
+type m_gen_13 from menu within m_general
+end type
+type m_gen_14 from menu within m_general
+end type
+type m_option15 from menu within m_general
+end type
+type m_option16 from menu within m_general
+end type
+type m_option17 from menu within m_general
+end type
+type m_option18 from menu within m_general
+end type
+type m_option19 from menu within m_general
+end type
+type m_option20 from menu within m_general
+end type
+type m_general from menu within m_popups
+m_gen_01 m_gen_01
+m_gen_02 m_gen_02
+m_gen_03 m_gen_03
+m_gen_04 m_gen_04
+m_gen_05 m_gen_05
+m_gen_06 m_gen_06
+m_gen_07 m_gen_07
+m_gen_08 m_gen_08
+m_gen_09 m_gen_09
+m_gen_10 m_gen_10
+m_gen_11 m_gen_11
+m_gen_12 m_gen_12
+m_gen_13 m_gen_13
+m_gen_14 m_gen_14
+m_option15 m_option15
+m_option16 m_option16
+m_option17 m_option17
+m_option18 m_option18
+m_option19 m_option19
+m_option20 m_option20
+end type
+end forward
+
+global type m_popups from menu
+m_general m_general
+end type
+global m_popups m_popups
+
+type variables
+public:
+integer ii_selected_index
+string is_selected_item
+end variables
+
+on m_popups.create
+m_popups=this
+this.m_general=create m_general
+this.Item[]={this.m_general}
+end on
+
+on m_popups.destroy
+destroy(this.m_general)
+end on
+
+type m_general from menu within m_popups
+m_gen_01 m_gen_01
+m_gen_02 m_gen_02
+m_gen_03 m_gen_03
+m_gen_04 m_gen_04
+m_gen_05 m_gen_05
+m_gen_06 m_gen_06
+m_gen_07 m_gen_07
+m_gen_08 m_gen_08
+m_gen_09 m_gen_09
+m_gen_10 m_gen_10
+m_gen_11 m_gen_11
+m_gen_12 m_gen_12
+m_gen_13 m_gen_13
+m_gen_14 m_gen_14
+m_option15 m_option15
+m_option16 m_option16
+m_option17 m_option17
+m_option18 m_option18
+m_option19 m_option19
+m_option20 m_option20
+end type
+
+on m_general.create
+this.Text="General"
+this.m_gen_01=create m_gen_01
+this.m_gen_02=create m_gen_02
+this.m_gen_03=create m_gen_03
+this.m_gen_04=create m_gen_04
+this.m_gen_05=create m_gen_05
+this.m_gen_06=create m_gen_06
+this.m_gen_07=create m_gen_07
+this.m_gen_08=create m_gen_08
+this.m_gen_09=create m_gen_09
+this.m_gen_10=create m_gen_10
+this.m_gen_11=create m_gen_11
+this.m_gen_12=create m_gen_12
+this.m_gen_13=create m_gen_13
+this.m_gen_14=create m_gen_14
+this.m_option15=create m_option15
+this.m_option16=create m_option16
+this.m_option17=create m_option17
+this.m_option18=create m_option18
+this.m_option19=create m_option19
+this.m_option20=create m_option20
+this.Item[]={this.m_gen_01, &
+this.m_gen_02, &
+this.m_gen_03, &
+this.m_gen_04, &
+this.m_gen_05, &
+this.m_gen_06, &
+this.m_gen_07, &
+this.m_gen_08, &
+this.m_gen_09, &
+this.m_gen_10, &
+this.m_gen_11, &
+this.m_gen_12, &
+this.m_gen_13, &
+this.m_gen_14, &
+this.m_option15, &
+this.m_option16, &
+this.m_option17, &
+this.m_option18, &
+this.m_option19, &
+this.m_option20}
+end on
+
+on m_general.destroy
+destroy(this.m_gen_01)
+destroy(this.m_gen_02)
+destroy(this.m_gen_03)
+destroy(this.m_gen_04)
+destroy(this.m_gen_05)
+destroy(this.m_gen_06)
+destroy(this.m_gen_07)
+destroy(this.m_gen_08)
+destroy(this.m_gen_09)
+destroy(this.m_gen_10)
+destroy(this.m_gen_11)
+destroy(this.m_gen_12)
+destroy(this.m_gen_13)
+destroy(this.m_gen_14)
+destroy(this.m_option15)
+destroy(this.m_option16)
+destroy(this.m_option17)
+destroy(this.m_option18)
+destroy(this.m_option19)
+destroy(this.m_option20)
+end on
+
+type m_gen_01 from menu within m_general
+end type
+
+on m_gen_01.create
+this.Text="Option 01"
+this.Visible=false
+end on
+
+event clicked;g_tempint = 1
+ii_selected_index = 1
+is_selected_item = this.text
+end event
+
+type m_gen_02 from menu within m_general
+end type
+
+on m_gen_02.create
+this.Text="Option 02"
+this.Visible=false
+end on
+
+event clicked;g_tempint = 2
+ii_selected_index = 2
+is_selected_item = this.text
+end event
+
+type m_gen_03 from menu within m_general
+end type
+
+on m_gen_03.create
+this.Text="Option 03"
+this.Visible=false
+end on
+
+event clicked;g_tempint = 3
+ii_selected_index = 3
+is_selected_item = this.text
+end event
+
+type m_gen_04 from menu within m_general
+end type
+
+on m_gen_04.create
+this.Text="Option 04"
+this.Visible=false
+end on
+
+event clicked;g_tempint = 4
+ii_selected_index = 4
+is_selected_item = this.text
+end event
+
+type m_gen_05 from menu within m_general
+end type
+
+on m_gen_05.create
+this.Text="Option 05"
+this.Visible=false
+end on
+
+event clicked;g_tempint = 5
+ii_selected_index = 5
+is_selected_item = this.text
+end event
+
+type m_gen_06 from menu within m_general
+end type
+
+on m_gen_06.create
+this.Text="Option 06"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 6
+is_selected_item = this.text
+end event
+
+type m_gen_07 from menu within m_general
+end type
+
+on m_gen_07.create
+this.Text="Option 07"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 7
+is_selected_item = this.text
+end event
+
+type m_gen_08 from menu within m_general
+end type
+
+on m_gen_08.create
+this.Text="Option 08"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 8
+is_selected_item = this.text
+end event
+
+type m_gen_09 from menu within m_general
+end type
+
+on m_gen_09.create
+this.Text="Option 09"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 9
+is_selected_item = this.text
+end event
+
+type m_gen_10 from menu within m_general
+end type
+
+on m_gen_10.create
+this.Text="Option 10"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 10
+is_selected_item = this.text
+end event
+
+type m_gen_11 from menu within m_general
+end type
+
+on m_gen_11.create
+this.Text="Option 11"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 11
+is_selected_item = this.text
+end event
+
+type m_gen_12 from menu within m_general
+end type
+
+on m_gen_12.create
+this.Text="Option 12"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 12
+is_selected_item = this.text
+end event
+
+type m_gen_13 from menu within m_general
+end type
+
+on m_gen_13.create
+this.Text="Option 13"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 13
+is_selected_item = this.text
+end event
+
+type m_gen_14 from menu within m_general
+end type
+
+on m_gen_14.create
+this.Text="Option 14"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 14
+is_selected_item = this.text
+end event
+
+type m_option15 from menu within m_general
+end type
+
+on m_option15.create
+this.Text="Option 15"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 15
+is_selected_item = this.text
+end event
+
+type m_option16 from menu within m_general
+end type
+
+on m_option16.create
+this.Text="Option 16"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 16
+is_selected_item = this.text
+end event
+
+type m_option17 from menu within m_general
+end type
+
+on m_option17.create
+this.Text="Option 17"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 17
+is_selected_item = this.text
+end event
+
+type m_option18 from menu within m_general
+end type
+
+on m_option18.create
+this.Text="Option 18"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 18
+is_selected_item = this.text
+end event
+
+type m_option19 from menu within m_general
+end type
+
+on m_option19.create
+this.Text="Option 19"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 19
+is_selected_item = this.text
+end event
+
+type m_option20 from menu within m_general
+end type
+
+on m_option20.create
+this.Text="Option 20"
+this.Visible=false
+end on
+
+event clicked;ii_selected_index = 20
+is_selected_item = this.text
+end event
+

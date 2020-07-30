@@ -1,0 +1,17 @@
+﻿$PBExportHeader$d_customviewdefinitions.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=char(32766) updatewhereclause=no name=viewname dbname="customview.viewname" )
+ column=(type=char(32766) updatewhereclause=no name=displayname dbname="customview.displayname" )
+ column=(type=long updatewhereclause=yes name=objectnumber dbname="customview.objectnumber" )
+ column=(type=char(32766) updatewhereclause=no name=objectdefinition dbname="customview.objectdefinition" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"customview~" ) COLUMN(NAME=~"customview.viewname~") COLUMN(NAME=~"customview.displayname~") COLUMN(NAME=~"customview.objectnumber~") COLUMN(NAME=~"customview.objectdefinition~")WHERE(    EXP1 =~"~~~"customview~~~".~~~"viewname~~~"~"   OP =~"=~"    EXP2 =~":ViewName~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"~~~"customview~~~".~~~"displayname~~~"~"   OP =~"=~"    EXP2 =~":DisplayName~" ) ) ORDER(NAME=~"customview.objectnumber~" ASC=yes ) ARG(NAME = ~"ViewName~" TYPE = string)  ARG(NAME = ~"DisplayName~" TYPE = string) " arguments=(("ViewName", string),("DisplayName", string)) )
+text(band=header alignment="0" text="Object #"border="0" color="0" x="9" y="8" height="60" width="238"  name=objectnumber_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Object Definition"border="0" color="0" x="256" y="8" height="60" width="4101"  name=objectdefinition_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="0" x="9" y="8" height="64" width="238" format="[general]"  name=objectnumber edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="256" y="8" height="64" width="4101" format="[general]"  name=objectdefinition edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

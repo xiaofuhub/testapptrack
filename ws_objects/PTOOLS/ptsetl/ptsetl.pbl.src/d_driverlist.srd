@@ -1,0 +1,166 @@
+﻿$PBExportHeader$d_driverlist.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 selected.mouse=no )
+header(height=80 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=id dbname="entity.id" )
+ column=(type=long updatewhereclause=yes name=fkcompany dbname="entity.fkcompany" )
+ column=(type=long updatewhereclause=yes name=fkemployee dbname="entity.fkemployee" )
+ column=(type=char(32766) updatewhereclause=no name=receivablesid dbname="entity.receivablesid" )
+ column=(type=char(32766) updatewhereclause=no name=payablesid dbname="entity.payablesid" )
+ column=(type=char(32766) updatewhereclause=no name=payrollid dbname="entity.payrollid" )
+ column=(type=long updatewhereclause=yes name=division dbname="entity.division" )
+ column=(type=char(32766) updatewhereclause=no name=name dbname="name" )
+ column=(type=char(32766) updatewhereclause=no name=fuelcardfeemarkup dbname="entity.fuelcardfeemarkup" )
+ column=(type=char(15) updatewhereclause=yes name=em_fn dbname="employees.em_fn" )
+ column=(type=char(25) updatewhereclause=yes name=em_ln dbname="employees.em_ln" )
+ column=(type=char(30) updatewhereclause=yes name=batchnumber dbname="transaction.batchnumber" )
+ column=(type=date updatewhereclause=yes name=batchdate dbname="transaction.batchdate" )
+ column=(type=date updatewhereclause=yes name=startdate dbname="transaction.startdate" )
+ column=(type=date updatewhereclause=yes name=enddate dbname="transaction.enddate" )
+ column=(type=decimal(2) updatewhereclause=yes name=taxablegross dbname="transaction.taxablegross" )
+ column=(type=decimal(2) updatewhereclause=yes name=nontaxablegross dbname="transaction.nontaxablegross" )
+ column=(type=decimal(2) updatewhereclause=yes name=pretaxnet dbname="transaction.pretaxnet" )
+ column=(type=char(32766) updatewhereclause=no name=description dbname="transaction.description" )
+ column=(type=long updatewhereclause=yes name=ref1type dbname="transaction.ref1type" )
+ column=(type=char(30) updatewhereclause=yes name=ref1text dbname="transaction.ref1text" )
+ column=(type=long updatewhereclause=yes name=ref2type dbname="transaction.ref2type" )
+ column=(type=char(30) updatewhereclause=yes name=ref2text dbname="transaction.ref2text" )
+ column=(type=long updatewhereclause=yes name=ref3type dbname="transaction.ref3type" )
+ column=(type=char(30) updatewhereclause=yes name=ref3text dbname="transaction.ref3text" )
+ column=(type=char(32766) updatewhereclause=no name=internalnote dbname="transaction.internalnote" )
+ column=(type=char(32766) updatewhereclause=no name=publicnote dbname="transaction.publicnote" )
+ column=(type=char(32766) updatewhereclause=no name=modlog dbname="transaction.modlog" )
+ column=(type=long updatewhereclause=yes name=transaction_status dbname="transaction.status" )
+ column=(type=long updatewhereclause=yes name=transaction_id dbname="transaction.id" )
+ column=(type=long updatewhereclause=yes name=driverinfo_di_type_driver dbname="driverinfo.di_type_driver" )
+ column=(type=decimal(0) updatewhereclause=yes name=unassignedcount dbname="null" )
+ retrieve="  SELECT ~"entity~".~"id~",   
+         ~"entity~".~"fkcompany~",   
+         ~"entity~".~"fkemployee~",   
+         ~"entity~".~"receivablesid~",   
+         ~"entity~".~"payablesid~",   
+         ~"entity~".~"payrollid~",   
+         ~"entity~".~"division~",   
+         Convert ( Long Varchar, Null ) AS Name,   
+         ~"entity~".~"fuelcardfeemarkup~",   
+         ~"employees~".~"em_fn~",   
+         ~"employees~".~"em_ln~",   
+         ~"transaction~".~"batchnumber~",   
+         ~"transaction~".~"batchdate~",   
+         ~"transaction~".~"startdate~",   
+         ~"transaction~".~"enddate~",   
+         ~"transaction~".~"taxablegross~",   
+         ~"transaction~".~"nontaxablegross~",   
+         ~"transaction~".~"pretaxnet~",   
+         ~"transaction~".~"description~",   
+         ~"transaction~".~"ref1type~",   
+         ~"transaction~".~"ref1text~",   
+         ~"transaction~".~"ref2type~",   
+         ~"transaction~".~"ref2text~",   
+         ~"transaction~".~"ref3type~",   
+         ~"transaction~".~"ref3text~",   
+         ~"transaction~".~"internalnote~",   
+         ~"transaction~".~"publicnote~",   
+         ~"transaction~".~"modlog~",
+			~"transaction~".~"status~",
+			~"transaction~".~"id~", 
+			~"driverinfo~".~"di_type_driver~",
+			convert ( numeric(1), null )
+    FROM ~"entity~",   
+         ~"employees~",   
+         ~"driverinfo~",   
+         ~"transaction~"  
+   WHERE ( ~"entity~".~"fkemployee~" = ~"employees~".~"em_id~" ) and  
+         ( ~"transaction~".~"fkentity~" = ~"entity~".~"id~" ) and  
+         ( ~"driverinfo~".~"di_id~" = ~"employees~".~"em_id~" ) and   
+         ( ~"transaction~".~"batchnumber~" = :batchnumber )  and
+			( ~"driverinfo~".~"di_type_driver~" = :drivertype ) and
+			( ~"transaction~".~"batchdate~" = :batchdate )        
+union
+  SELECT ~"entity~".~"id~",   
+         ~"entity~".~"fkcompany~",   
+         ~"entity~".~"fkemployee~",   
+         ~"entity~".~"receivablesid~",   
+         ~"entity~".~"payablesid~",   
+         ~"entity~".~"payrollid~",   
+         ~"entity~".~"division~",   
+         Convert ( Long Varchar, Null ) AS Name,   
+         ~"entity~".~"fuelcardfeemarkup~",   
+         ~"employees~".~"em_fn~",   
+         ~"employees~".~"em_ln~",   
+         convert ( char (1), null ) as text1,   
+         convert ( date, null ) as text2,   
+         convert ( date, null ) as text3,   
+         convert ( date, null ) as text4,   
+         convert ( decimal(2), null ) as text5,   
+         convert ( decimal(2), null ) as text6,   
+         convert ( decimal(2), null ) as text7,   
+         convert ( char (1), null ) as text8,   
+         convert ( integer, null ) as text9,   
+         convert ( char (1), null ) as text10,   
+         convert ( integer, null ) as text11,   
+         convert ( char (1), null ) as text12,   
+         convert ( integer, null ) as text13,   
+         convert ( char (1), null ) as text14,   
+         convert ( char (1), null ) as text15,
+         convert ( char (1), null ) as text16,   
+         convert ( char (1), null ) as text17,
+			convert ( integer, null ) as text18,
+			convert ( integer, null ) as text19, 
+			~"driverinfo~".~"di_type_driver~",
+			convert ( numeric(1), null )
+    FROM ~"entity~",
+			~"employees~",   
+         ~"driverinfo~"  
+   WHERE ( ~"entity~".~"fkemployee~" = ~"employees~".~"em_id~" ) and  
+         ( ~"driverinfo~".~"di_id~" = ~"employees~".~"em_id~" ) and   
+				~"driverinfo~".~"di_type_driver~" = :drivertype and
+				~"entity~".~"id~" not in (  SELECT fkentity   
+  												 FROM transaction  
+												WHERE ~"transaction~".~"batchnumber~" = :batchnumber and
+														~"transaction~".~"batchdate~" = :batchdate)
+" arguments=(("batchnumber", string),("drivertype", number),("batchdate", date))  sort="em_ln A " )
+text(band=header alignment="0" text="Tran.ID" border="6" color="0" x="9" y="8" height="60" width="210" html.valueishtml="0"  name=transaction_id_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Pretax Net" border="6" color="0" x="3259" y="8" height="60" width="315" html.valueishtml="0"  name=pretaxnet_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Description" border="6" color="0" x="3584" y="8" height="60" width="800" html.valueishtml="0"  name=description_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref1type" border="6" color="0" x="4393" y="8" height="60" width="402" html.valueishtml="0"  name=ref1type_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref1text" border="6" color="0" x="4805" y="8" height="60" width="347" html.valueishtml="0"  name=ref1text_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref2type" border="6" color="0" x="5161" y="8" height="60" width="338" html.valueishtml="0"  name=ref2type_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref2text" border="6" color="0" x="5509" y="8" height="60" width="370" html.valueishtml="0"  name=ref2text_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref3type" border="6" color="0" x="5888" y="8" height="60" width="329" html.valueishtml="0"  name=ref3type_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Ref3text" border="6" color="0" x="6226" y="8" height="60" width="352" html.valueishtml="0"  name=ref3text_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Internal Note" border="6" color="0" x="6587" y="8" height="60" width="1083" html.valueishtml="0"  name=internalnote_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Public Note" border="6" color="0" x="7680" y="8" height="60" width="1088" html.valueishtml="0"  name=publicnote_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Modification Log" border="6" color="0" x="8777" y="8" height="60" width="1477" html.valueishtml="0"  name=modlog_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="NonTaxable Gross" border="6" color="0" x="2715" y="8" height="60" width="535" html.valueishtml="0"  name=nontaxablegross_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Status" border="6" color="0" x="229" y="8" height="60" width="366" html.valueishtml="0"  name=transaction_status_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Name" border="6" color="0" x="603" y="8" height="60" width="645" html.valueishtml="0"  name=last_first_name_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Division" border="6" color="0" x="1257" y="8" height="60" width="613" html.valueishtml="0"  name=division_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Batch Number" border="6" color="0" x="1879" y="8" height="60" width="421" html.valueishtml="0"  name=batchnumber_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Taxable Gross" border="6" color="0" x="2309" y="8" height="60" width="398" html.valueishtml="0"  name=taxablegross_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=30 alignment="0" tabsequence=10 border="0" color="0" x="9" y="4" height="60" width="210" format="[general]" html.valueishtml="0"  name=transaction_id visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=29 alignment="0" tabsequence=20 border="0" color="0" x="229" y="8" height="60" width="366" format="[general]" html.valueishtml="0" protect="0~tif( isNull( transaction_status ), 1, 0 )"  name=transaction_status visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+compute(band=detail alignment="0" expression=" em_ln  + ', ' +  em_fn "border="0" color="0~tif(  unassignedcount > 0 , rgb( 255, 0, 0), rgb( 0, 0, 0) )" x="603" y="8" height="60" width="645" format="[general]" html.valueishtml="0"  name=last_first_name visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="1257" y="8" height="60" width="613" format="[general]" html.valueishtml="0"  name=division visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=30 border="0" color="0" x="1879" y="8" height="60" width="421" format="[general]" html.valueishtml="0"  name=batchnumber visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="1" tabsequence=40 border="0" color="0" x="2309" y="8" height="60" width="398" format="##0.00;[red]##0.00;0.00" html.valueishtml="0"  name=taxablegross visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="1" tabsequence=50 border="0" color="0" x="2715" y="8" height="60" width="535" format="##0.00;[red]##0.00;0.00" html.valueishtml="0"  name=nontaxablegross visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="1" tabsequence=60 border="0" color="0" x="3259" y="8" height="60" width="315" format="##0.00;[red]##0.00;0.00" html.valueishtml="0"  name=pretaxnet visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="0" tabsequence=70 border="0" color="0" x="3584" y="8" height="60" width="800" format="[general]" html.valueishtml="0"  name=description visible="1" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=20 alignment="0" tabsequence=80 border="0" color="0" x="4393" y="8" height="60" width="402" format="[general]" html.valueishtml="0"  name=ref1type visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=21 alignment="0" tabsequence=90 border="0" color="0" x="4805" y="8" height="60" width="347" format="[general]" html.valueishtml="0"  name=ref1text visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=22 alignment="0" tabsequence=100 border="0" color="0" x="5161" y="8" height="60" width="338" format="[general]" html.valueishtml="0"  name=ref2type visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="0" tabsequence=110 border="0" color="0" x="5509" y="12" height="60" width="370" format="[general]" html.valueishtml="0"  name=ref2text visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=24 alignment="0" tabsequence=120 border="0" color="0" x="5888" y="8" height="60" width="329" format="[general]" html.valueishtml="0"  name=ref3type visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="0" tabsequence=130 border="0" color="0" x="6226" y="8" height="60" width="352" format="[general]" html.valueishtml="0"  name=ref3text visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=26 alignment="0" tabsequence=140 border="0" color="0" x="6587" y="8" height="60" width="1083" format="[general]" html.valueishtml="0"  name=internalnote visible="1" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="0" tabsequence=150 border="0" color="0" x="7680" y="8" height="60" width="1088" format="[general]" html.valueishtml="0"  name=publicnote visible="1" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=28 alignment="0" tabsequence=160 border="0" color="0" x="8777" y="8" height="60" width="1477" format="[general]" html.valueishtml="0"  name=modlog visible="1" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

@@ -1,0 +1,17 @@
+﻿$PBExportHeader$d_isodescriptions.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=1 )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=56 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=id dbname="equipmentisodescription.id" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=code dbname="equipmentisodescription.code" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=category dbname="equipmentisodescription.category" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=description dbname="equipmentisodescription.description" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"equipmentisodescription~" ) COLUMN(NAME=~"equipmentisodescription.id~") COLUMN(NAME=~"equipmentisodescription.code~") COLUMN(NAME=~"equipmentisodescription.category~") COLUMN(NAME=~"equipmentisodescription.description~")) " update="equipmentisodescription" updatewhere=1 updatekeyinplace=no )
+column(band=detail id=4 alignment="0" tabsequence=10 border="0" color="33554432" x="9" y="0" height="52" width="1742" format="[general]" html.valueishtml="0"  name=description visible="1" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="1" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

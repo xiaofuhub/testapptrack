@@ -1,0 +1,22 @@
+﻿$PBExportHeader$gf_refresh.srf
+$PBExportComments$PTCORE.
+global type gf_refresh from function_object
+end type
+
+forward prototypes
+global function integer gf_refresh (string which_list)
+end prototypes
+
+global function integer gf_refresh (string which_list);n_cst_ShipmentManager	lnv_ShipmentMgr
+
+choose case which_list
+case "SHIP"
+	RETURN lnv_ShipmentMgr.of_RefreshShipments ( FALSE )
+case "TRIP~tSHIP"
+	RETURN lnv_ShipmentMgr.of_RefreshShipments ( TRUE )
+case else
+	return -1
+
+end choose
+end function
+

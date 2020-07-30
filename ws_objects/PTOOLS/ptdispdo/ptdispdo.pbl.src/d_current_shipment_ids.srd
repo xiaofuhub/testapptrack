@@ -1,0 +1,15 @@
+﻿$PBExportHeader$d_current_shipment_ids.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=0 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=cs_id dbname="current_shipments.cs_id" )
+ column=(type=timestamp updatewhereclause=yes name=cs_timestamp dbname="current_shipments.timestamp" )
+ retrieve="  SELECT ~"current_shipments~".~"cs_id~",   
+         ~"current_shipments~".~"timestamp~"  
+    FROM ~"current_shipments~",   
+         ~"disp_ship~"  
+   WHERE ( ~"disp_ship~".~"ds_id~" = ~"current_shipments~".~"cs_id~" )    
+"  sort="cs_id A " )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

@@ -1,0 +1,6 @@
+﻿$PBExportHeader$s_beoarrays.srs
+global type s_beoarrays from structure
+	n_cst_beo_Event		inva_Events[]
+	n_cst_beo_Company		inva_Companies[]
+end type
+

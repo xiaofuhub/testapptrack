@@ -1,0 +1,71 @@
+﻿$PBExportHeader$d_shipmentequipment_forcache.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=136 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=id dbname="equipment.eq_id" )
+ column=(type=char(1) updatewhereclause=yes name=type dbname="equipment.eq_type" )
+ column=(type=char(15) updatewhereclause=yes name=ref dbname="equipment.eq_ref" )
+ column=(type=decimal(1) updatewhereclause=yes name=length dbname="equipment.eq_length" )
+ column=(type=long updatewhereclause=yes name=shipment dbname="outside_equip.shipment" )
+ column=(type=long updatewhereclause=yes name=reloadshipment dbname="outside_equip.reloadshipment" )
+ column=(type=char(30) updatewhereclause=yes name=equipmentleasetype_line dbname="equipmentleasetype.line" )
+ column=(type=char(30) updatewhereclause=yes name=equipmentleasetype_type dbname="equipmentleasetype.type" )
+ column=(type=char(32766) updatewhereclause=no name=notes dbname="equipment.notes" )
+ retrieve="  SELECT ~"equipment~".~"eq_id~",   
+         ~"equipment~".~"eq_type~",   
+         ~"equipment~".~"eq_ref~",   
+         ~"equipment~".~"eq_length~",   
+         ~"outside_equip~".~"shipment~",   
+         ~"outside_equip~".~"reloadshipment~",   
+         ~"equipmentleasetype~".~"line~",   
+         ~"equipmentleasetype~".~"type~",   
+         ~"equipment~".~"notes~"  
+    FROM {oj ~"equipmentleasetype~" RIGHT OUTER JOIN ~"outside_equip~" ON ~"equipmentleasetype~".~"id~" = ~"outside_equip~".~"fkequipmentleasetype~"},   
+         ~"equipment~"  
+   WHERE ( ~"outside_equip~".~"oe_id~" = ~"equipment~".~"eq_id~" ) and  
+         ( ( ~"outside_equip~".~"shipment~" in ( :ala_ShipIds ) ) )
+UNION ALL
+SELECT ~"equipment~".~"eq_id~",   
+         ~"equipment~".~"eq_type~",   
+         ~"equipment~".~"eq_ref~",   
+         ~"equipment~".~"eq_length~",   
+         ~"outside_equip~".~"shipment~",   
+         ~"outside_equip~".~"reloadshipment~",   
+         ~"equipmentleasetype~".~"line~",   
+         ~"equipmentleasetype~".~"type~",   
+         ~"equipment~".~"notes~"  
+    FROM {oj ~"equipmentleasetype~" RIGHT OUTER JOIN ~"outside_equip~" ON ~"equipmentleasetype~".~"id~" = ~"outside_equip~".~"fkequipmentleasetype~"},   
+         ~"equipment~"  
+   WHERE ( ~"outside_equip~".~"oe_id~" = ~"equipment~".~"eq_id~" ) and  
+         ( ( ~"outside_equip~".~"reloadshipment~" in ( :ala_ShipIds ) ) )
+
+" arguments=(("ala_ShipIds", numberlist))  sort="pos ( 'CBKRFTH', type ) A " )
+text(band=header alignment="2" text="Equipment
+Eq Type" border="0" color="33554432" x="9" y="8" height="120" width="274" html.valueishtml="0"  name=equipment_eq_type_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Equipment
+Eq Ref" border="0" color="33554432" x="293" y="8" height="120" width="366" html.valueishtml="0"  name=equipment_eq_ref_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Equipment
+Eq Length" border="0" color="33554432" x="667" y="8" height="120" width="274" html.valueishtml="0"  name=equipment_eq_length_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Outside Equip Shipment" border="0" color="0" x="951" y="4" height="76" width="978" html.valueishtml="0"  name=outside_equip_shipment_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Outside Equip Reloadshipment" border="0" color="0" x="1938" y="4" height="76" width="978" html.valueishtml="0"  name=outside_equip_reloadshipment_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Equipment Eq Id" border="0" color="0" x="2926" y="4" height="76" width="978" html.valueishtml="0"  name=equipment_eq_id_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Equipmentleasetype Line" border="0" color="0" x="3913" y="4" height="76" width="681" html.valueishtml="0"  name=equipmentleasetype_line_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Equipmentleasetype Type" border="0" color="0" x="4603" y="4" height="76" width="681" html.valueishtml="0"  name=equipmentleasetype_type_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Equipment Notes" border="0" color="0" x="5294" y="4" height="76" width="4379" html.valueishtml="0"  name=equipment_notes_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="64" width="274" format="[general]" html.valueishtml="0"  name=type visible="1" edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="293" y="8" height="64" width="366" format="[general]" html.valueishtml="0"  name=ref visible="1" edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=32766 border="0" color="33554432" x="667" y="8" height="64" width="274" format="[general]" html.valueishtml="0"  name=length visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="33554432" x="951" y="0" height="52" width="978" format="[general]" html.valueishtml="0"  name=shipment visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="33554432" x="1938" y="0" height="52" width="978" format="[general]" html.valueishtml="0"  name=reloadshipment visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="2926" y="0" height="52" width="978" format="[general]" html.valueishtml="0"  name=id visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="33554432" x="3913" y="0" height="52" width="681" format="[general]" html.valueishtml="0"  name=equipmentleasetype_line visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="33554432" x="4603" y="0" height="52" width="681" format="[general]" html.valueishtml="0"  name=equipmentleasetype_type visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="33554432" x="5294" y="0" height="52" width="4379" format="[general]" html.valueishtml="0"  name=notes visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

@@ -1,0 +1,4555 @@
+﻿$PBExportHeader$m_base.srm
+$PBExportComments$Base menu from which m_frame and m_sheet are inherited.
+forward
+global type m_base from menu
+end type
+type m_system from menu within m_base
+end type
+type m_sys_company from menu within m_system
+end type
+type m_sys_equip from menu within m_system
+end type
+type m_equipmentinfo from menu within m_sys_equip
+end type
+type m_generatepostingfile from menu within m_sys_equip
+end type
+type m_sys_equip from menu within m_system
+m_equipmentinfo m_equipmentinfo
+m_generatepostingfile m_generatepostingfile
+end type
+type m_sys_emp from menu within m_system
+end type
+type m_routeinfo from menu within m_system
+end type
+type m_zonesetup from menu within m_system
+end type
+type m_phonelist from menu within m_system
+end type
+type m_importcompanyfile from menu within m_system
+end type
+type m_sys_companysearch from menu within m_system
+end type
+type m_carriersearch from menu within m_system
+end type
+type m_sys_reports from menu within m_system
+end type
+type m_sys_reports_viewer from menu within m_sys_reports
+end type
+type m_sys_reports_lastfreedate from menu within m_sys_reports
+end type
+type m_sys_reports_tir from menu within m_sys_reports
+end type
+type m_sys_reports_shipmentcount from menu within m_sys_reports
+end type
+type m_sys_reports from menu within m_system
+m_sys_reports_viewer m_sys_reports_viewer
+m_sys_reports_lastfreedate m_sys_reports_lastfreedate
+m_sys_reports_tir m_sys_reports_tir
+m_sys_reports_shipmentcount m_sys_reports_shipmentcount
+end type
+type m_2 from menu within m_system
+end type
+type m_addsystemalert from menu within m_2
+end type
+type m_4 from menu within m_2
+end type
+type m_3 from menu within m_2
+end type
+type m_2 from menu within m_system
+m_addsystemalert m_addsystemalert
+m_4 m_4
+m_3 m_3
+end type
+type m_div_s01 from menu within m_system
+end type
+type m_setup from menu within m_system
+end type
+type m_privileges from menu within m_setup
+end type
+type m_sys_settings from menu within m_setup
+end type
+type m_notificationsetup from menu within m_setup
+end type
+type m_ptmobileusersetup from menu within m_setup
+end type
+type m_eventconfirmationrequirements from menu within m_setup
+end type
+type m_sys_equipmentleasetypes from menu within m_setup
+end type
+type m_sys_equipmentposting from menu within m_setup
+end type
+type m_settingsimport from menu within m_setup
+end type
+type m_div_s03 from menu within m_setup
+end type
+type m_definitionmanager from menu within m_setup
+end type
+type m_sys_printset from menu within m_setup
+end type
+type m_setup from menu within m_system
+m_privileges m_privileges
+m_sys_settings m_sys_settings
+m_notificationsetup m_notificationsetup
+m_ptmobileusersetup m_ptmobileusersetup
+m_eventconfirmationrequirements m_eventconfirmationrequirements
+m_sys_equipmentleasetypes m_sys_equipmentleasetypes
+m_sys_equipmentposting m_sys_equipmentposting
+m_settingsimport m_settingsimport
+m_div_s03 m_div_s03
+m_definitionmanager m_definitionmanager
+m_sys_printset m_sys_printset
+end type
+type m_managescheduledevents from menu within m_system
+end type
+type m_ptevents from menu within m_managescheduledevents
+end type
+type m_databasebackup from menu within m_managescheduledevents
+end type
+type m_- from menu within m_managescheduledevents
+end type
+type m_resetallevents from menu within m_managescheduledevents
+end type
+type m_managescheduledevents from menu within m_system
+m_ptevents m_ptevents
+m_databasebackup m_databasebackup
+m_- m_-
+m_resetallevents m_resetallevents
+end type
+type m_sys_reg from menu within m_system
+end type
+type m_sys_rateconfirmationtemplate from menu within m_system
+end type
+type m_sys_importdata from menu within m_system
+end type
+type m_importedshipmentlog from menu within m_system
+end type
+type m_documenttransferhistory from menu within m_system
+end type
+type m_div_s02 from menu within m_system
+end type
+type m_sys_clock from menu within m_system
+end type
+type m_div_s04 from menu within m_system
+end type
+type m_sys_pcmconn from menu within m_system
+end type
+type m_locatorupdate from menu within m_system
+end type
+type m_div_s05 from menu within m_system
+end type
+type m_changeuser from menu within m_system
+end type
+type m_sys_modulelocks from menu within m_system
+end type
+type m_sys_exit from menu within m_system
+end type
+type m_system from menu within m_base
+m_sys_company m_sys_company
+m_sys_equip m_sys_equip
+m_sys_emp m_sys_emp
+m_routeinfo m_routeinfo
+m_zonesetup m_zonesetup
+m_phonelist m_phonelist
+m_importcompanyfile m_importcompanyfile
+m_sys_companysearch m_sys_companysearch
+m_carriersearch m_carriersearch
+m_sys_reports m_sys_reports
+m_2 m_2
+m_div_s01 m_div_s01
+m_setup m_setup
+m_managescheduledevents m_managescheduledevents
+m_sys_reg m_sys_reg
+m_sys_rateconfirmationtemplate m_sys_rateconfirmationtemplate
+m_sys_importdata m_sys_importdata
+m_importedshipmentlog m_importedshipmentlog
+m_documenttransferhistory m_documenttransferhistory
+m_div_s02 m_div_s02
+m_sys_clock m_sys_clock
+m_div_s04 m_div_s04
+m_sys_pcmconn m_sys_pcmconn
+m_locatorupdate m_locatorupdate
+m_div_s05 m_div_s05
+m_changeuser m_changeuser
+m_sys_modulelocks m_sys_modulelocks
+m_sys_exit m_sys_exit
+end type
+type m_rating from menu within m_base
+end type
+type m_ratelookup from menu within m_rating
+end type
+type m_autoratequery from menu within m_rating
+end type
+type m_rating_div01 from menu within m_rating
+end type
+type m_zones from menu within m_rating
+end type
+type m_ratetables from menu within m_rating
+end type
+type m_5 from menu within m_rating
+end type
+type m_codedefaults from menu within m_rating
+end type
+type m_rating from menu within m_base
+m_ratelookup m_ratelookup
+m_autoratequery m_autoratequery
+m_rating_div01 m_rating_div01
+m_zones m_zones
+m_ratetables m_ratetables
+m_5 m_5
+m_codedefaults m_codedefaults
+end type
+type m_billing from menu within m_base
+end type
+type m_bill_billing from menu within m_billing
+end type
+type m_bill_search from menu within m_billing
+end type
+type m_bill_company from menu within m_billing
+end type
+type m_bill_billtopoints from menu within m_billing
+end type
+type m_div_b01 from menu within m_billing
+end type
+type m_bill_graphic_setup from menu within m_billing
+end type
+type m_bill_billseq_setup from menu within m_billing
+end type
+type m_amounttypesetup from menu within m_billing
+end type
+type m_bill_shiptype_setup from menu within m_billing
+end type
+type m_bill_validateglar from menu within m_billing
+end type
+type m_billing from menu within m_base
+m_bill_billing m_bill_billing
+m_bill_search m_bill_search
+m_bill_company m_bill_company
+m_bill_billtopoints m_bill_billtopoints
+m_div_b01 m_div_b01
+m_bill_graphic_setup m_bill_graphic_setup
+m_bill_billseq_setup m_bill_billseq_setup
+m_amounttypesetup m_amounttypesetup
+m_bill_shiptype_setup m_bill_shiptype_setup
+m_bill_validateglar m_bill_validateglar
+end type
+type m_settle from menu within m_base
+end type
+type m_setl_settlements from menu within m_settle
+end type
+type m_setl_batchmanager from menu within m_settle
+end type
+type m_setl_comdata from menu within m_settle
+end type
+type m_setl_amountowedsearch from menu within m_settle
+end type
+type m_setl_div01 from menu within m_settle
+end type
+type m_setl_amounttypesetup from menu within m_settle
+end type
+type m_setl_ratetypesetup from menu within m_settle
+end type
+type m_setl_referencetypesetup from menu within m_settle
+end type
+type m_setl_divisionsetup from menu within m_settle
+end type
+type m_amounttemplatesetup from menu within m_settle
+end type
+type m_setl_div02 from menu within m_settle
+end type
+type m_setl_payablesvalidation from menu within m_settle
+end type
+type m_setl_payrollvalidation from menu within m_settle
+end type
+type m_setl_validateglap from menu within m_settle
+end type
+type m_settle from menu within m_base
+m_setl_settlements m_setl_settlements
+m_setl_batchmanager m_setl_batchmanager
+m_setl_comdata m_setl_comdata
+m_setl_amountowedsearch m_setl_amountowedsearch
+m_setl_div01 m_setl_div01
+m_setl_amounttypesetup m_setl_amounttypesetup
+m_setl_ratetypesetup m_setl_ratetypesetup
+m_setl_referencetypesetup m_setl_referencetypesetup
+m_setl_divisionsetup m_setl_divisionsetup
+m_amounttemplatesetup m_amounttemplatesetup
+m_setl_div02 m_setl_div02
+m_setl_payablesvalidation m_setl_payablesvalidation
+m_setl_payrollvalidation m_setl_payrollvalidation
+m_setl_validateglap m_setl_validateglap
+end type
+type m_imaging from menu within m_base
+end type
+type m_scanbatch from menu within m_imaging
+end type
+type m_viewunassigned from menu within m_imaging
+end type
+type m_-0 from menu within m_imaging
+end type
+type m_imagemodificationlog from menu within m_imaging
+end type
+type m_-2 from menu within m_imaging
+end type
+type m_archiving from menu within m_imaging
+end type
+type m_imagetypesetup from menu within m_imaging
+end type
+type m_imaging from menu within m_base
+m_scanbatch m_scanbatch
+m_viewunassigned m_viewunassigned
+m_-0 m_-0
+m_imagemodificationlog m_imagemodificationlog
+m_-2 m_-2
+m_archiving m_archiving
+m_imagetypesetup m_imagetypesetup
+end type
+type m_logs from menu within m_base
+end type
+type m_log_entry from menu within m_logs
+end type
+type m_log_vios from menu within m_logs
+end type
+type m_log_reports from menu within m_logs
+end type
+type m_div_l01 from menu within m_logs
+end type
+type m_log_emp from menu within m_logs
+end type
+type m_random_list from menu within m_logs
+end type
+type m_div_l02 from menu within m_logs
+end type
+type m_log_admin from menu within m_logs
+end type
+type m_log_prefs from menu within m_logs
+end type
+type m_logs from menu within m_base
+m_log_entry m_log_entry
+m_log_vios m_log_vios
+m_log_reports m_log_reports
+m_div_l01 m_div_l01
+m_log_emp m_log_emp
+m_random_list m_random_list
+m_div_l02 m_div_l02
+m_log_admin m_log_admin
+m_log_prefs m_log_prefs
+end type
+type m_dispatch from menu within m_base
+end type
+type m_disp_newship from menu within m_dispatch
+end type
+type m_disp_newdispship from menu within m_dispatch
+end type
+type m_disp_newcntnship from menu within m_dispatch
+end type
+type m_newcdshipment from menu within m_dispatch
+end type
+type m_disp_newnrship from menu within m_dispatch
+end type
+type m_disp_newbrokship from menu within m_dispatch
+end type
+type m_disp_newnrbrokerage from menu within m_dispatch
+end type
+type m_disp_newtemplateshipment from menu within m_dispatch
+end type
+type m_disp_newtrip from menu within m_dispatch
+end type
+type m_div_d01 from menu within m_dispatch
+end type
+type m_disp_itin from menu within m_dispatch
+end type
+type m_disp_ship from menu within m_dispatch
+end type
+type m_disp_trip from menu within m_dispatch
+end type
+type m_1 from menu within m_dispatch
+end type
+type m_div_d02 from menu within m_dispatch
+end type
+type m_disp_shipsum from menu within m_dispatch
+end type
+type m_disp_equipsum from menu within m_dispatch
+end type
+type m_disp_tripsum from menu within m_dispatch
+end type
+type m_disp_reviewedi from menu within m_dispatch
+end type
+type m_disp_search from menu within m_dispatch
+end type
+type m_div_d03 from menu within m_dispatch
+end type
+type m_disp_company from menu within m_dispatch
+end type
+type m_disp_equip from menu within m_dispatch
+end type
+type m_disp_emp from menu within m_dispatch
+end type
+type m_div_d04 from menu within m_dispatch
+end type
+type m_disp_pcmiler from menu within m_dispatch
+end type
+type m_div_d05 from menu within m_dispatch
+end type
+type m_cashadvance from menu within m_dispatch
+end type
+type m_-1 from menu within m_dispatch
+end type
+type m_quickview from menu within m_dispatch
+end type
+type m_dispatch from menu within m_base
+m_disp_newship m_disp_newship
+m_disp_newdispship m_disp_newdispship
+m_disp_newcntnship m_disp_newcntnship
+m_newcdshipment m_newcdshipment
+m_disp_newnrship m_disp_newnrship
+m_disp_newbrokship m_disp_newbrokship
+m_disp_newnrbrokerage m_disp_newnrbrokerage
+m_disp_newtemplateshipment m_disp_newtemplateshipment
+m_disp_newtrip m_disp_newtrip
+m_div_d01 m_div_d01
+m_disp_itin m_disp_itin
+m_disp_ship m_disp_ship
+m_disp_trip m_disp_trip
+m_1 m_1
+m_div_d02 m_div_d02
+m_disp_shipsum m_disp_shipsum
+m_disp_equipsum m_disp_equipsum
+m_disp_tripsum m_disp_tripsum
+m_disp_reviewedi m_disp_reviewedi
+m_disp_search m_disp_search
+m_div_d03 m_div_d03
+m_disp_company m_disp_company
+m_disp_equip m_disp_equip
+m_disp_emp m_disp_emp
+m_div_d04 m_div_d04
+m_disp_pcmiler m_disp_pcmiler
+m_div_d05 m_div_d05
+m_cashadvance m_cashadvance
+m_-1 m_-1
+m_quickview m_quickview
+end type
+type m_communications from menu within m_base
+end type
+type m_comm_sendmessage from menu within m_communications
+end type
+type m_comm_sendfreeformtext from menu within m_communications
+end type
+type m_comm_fleetmap from menu within m_communications
+end type
+type m_comm_div01 from menu within m_communications
+end type
+type m_comm_devicesetup from menu within m_communications
+end type
+type m_comm_inboundmessages from menu within m_communications
+end type
+type m_comm_messagelog from menu within m_communications
+end type
+type m_communications from menu within m_base
+m_comm_sendmessage m_comm_sendmessage
+m_comm_sendfreeformtext m_comm_sendfreeformtext
+m_comm_fleetmap m_comm_fleetmap
+m_comm_div01 m_comm_div01
+m_comm_devicesetup m_comm_devicesetup
+m_comm_inboundmessages m_comm_inboundmessages
+m_comm_messagelog m_comm_messagelog
+end type
+type m_help from menu within m_base
+end type
+type m_help_soon from menu within m_help
+end type
+type m_help_on from menu within m_help
+end type
+type m_profittoolsliveconnect from menu within m_help
+end type
+type m_div_h01 from menu within m_help
+end type
+type m_help_about from menu within m_help
+end type
+type m_help from menu within m_base
+m_help_soon m_help_soon
+m_help_on m_help_on
+m_profittoolsliveconnect m_profittoolsliveconnect
+m_div_h01 m_div_h01
+m_help_about m_help_about
+end type
+global type m_base from menu
+m_system m_system
+m_rating m_rating
+m_billing m_billing
+m_settle m_settle
+m_imaging m_imaging
+m_logs m_logs
+m_dispatch m_dispatch
+m_communications m_communications
+m_help m_help
+end type
+end forward
+
+global type m_base from menu
+m_system m_system
+m_rating m_rating
+m_billing m_billing
+m_settle m_settle
+m_imaging m_imaging
+m_logs m_logs
+m_dispatch m_dispatch
+m_communications m_communications
+m_help m_help
+end type
+global m_base m_base
+
+forward prototypes
+public function integer of_sendmessage (string as_message)
+end prototypes
+
+public function integer of_sendmessage (string as_message);//////////////////////////////////////////////////////////////////////////////
+//
+//   Function:  of_SendMessage
+//
+//   Access:  public
+//
+//   Arguments:      
+//   as_message  message (event notification) to be sent
+//
+//   Returns:  integer
+//    1 = Message successfully sent
+//   -1 = message could not be sent (use debug object for more info)
+//
+//   Description:
+//   Sends a specified message (event notification) to a receiving window 
+//   through the pfc_messagerouter event.
+//
+//   Sequence:
+//   If application is MDI:
+//   1) Active MDI sheet pfc_messagerouter event.
+//   2) MDI Frame Window pfc_messagerouter event.
+//
+//   Application is SWI:
+//   1) ParentWindow pfc_messagerouter event.
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//   Revision History
+//
+//   Version
+//   5.0   Initial version
+//   6.0   Function now calls of_sendMessage on n_cst_menu to consolidate code
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//   Copyright © 1996-1997 Sybase, Inc. and its subsidiaries.  All rights reserved.
+//   Any distribution of the PowerBuilder Foundation Classes (PFC)
+//   source code by other than Sybase, Inc. and its subsidiaries is prohibited.
+//
+//////////////////////////////////////////////////////////////////////////////
+    
+n_cst_menu      lnv_menu
+    
+return lnv_menu.of_sendMessage (this, as_message)
+
+end function
+
+on m_base.create
+m_base=this
+call super::create
+this.m_system=create m_system
+this.m_rating=create m_rating
+this.m_billing=create m_billing
+this.m_settle=create m_settle
+this.m_imaging=create m_imaging
+this.m_logs=create m_logs
+this.m_dispatch=create m_dispatch
+this.m_communications=create m_communications
+this.m_help=create m_help
+this.Item[UpperBound(this.Item)+1]=this.m_system
+this.Item[UpperBound(this.Item)+1]=this.m_rating
+this.Item[UpperBound(this.Item)+1]=this.m_billing
+this.Item[UpperBound(this.Item)+1]=this.m_settle
+this.Item[UpperBound(this.Item)+1]=this.m_imaging
+this.Item[UpperBound(this.Item)+1]=this.m_logs
+this.Item[UpperBound(this.Item)+1]=this.m_dispatch
+this.Item[UpperBound(this.Item)+1]=this.m_communications
+this.Item[UpperBound(this.Item)+1]=this.m_help
+end on
+
+on m_base.destroy
+call super::destroy
+destroy(this.m_system)
+destroy(this.m_rating)
+destroy(this.m_billing)
+destroy(this.m_settle)
+destroy(this.m_imaging)
+destroy(this.m_logs)
+destroy(this.m_dispatch)
+destroy(this.m_communications)
+destroy(this.m_help)
+end on
+
+type m_system from menu within m_base
+m_sys_company m_sys_company
+m_sys_equip m_sys_equip
+m_sys_emp m_sys_emp
+m_routeinfo m_routeinfo
+m_zonesetup m_zonesetup
+m_phonelist m_phonelist
+m_importcompanyfile m_importcompanyfile
+m_sys_companysearch m_sys_companysearch
+m_carriersearch m_carriersearch
+m_sys_reports m_sys_reports
+m_2 m_2
+m_div_s01 m_div_s01
+m_setup m_setup
+m_managescheduledevents m_managescheduledevents
+m_sys_reg m_sys_reg
+m_sys_rateconfirmationtemplate m_sys_rateconfirmationtemplate
+m_sys_importdata m_sys_importdata
+m_importedshipmentlog m_importedshipmentlog
+m_documenttransferhistory m_documenttransferhistory
+m_div_s02 m_div_s02
+m_sys_clock m_sys_clock
+m_div_s04 m_div_s04
+m_sys_pcmconn m_sys_pcmconn
+m_locatorupdate m_locatorupdate
+m_div_s05 m_div_s05
+m_changeuser m_changeuser
+m_sys_modulelocks m_sys_modulelocks
+m_sys_exit m_sys_exit
+end type
+
+on m_system.create
+call super::create
+this.text = "S&ystem"
+this.m_sys_company=create m_sys_company
+this.m_sys_equip=create m_sys_equip
+this.m_sys_emp=create m_sys_emp
+this.m_routeinfo=create m_routeinfo
+this.m_zonesetup=create m_zonesetup
+this.m_phonelist=create m_phonelist
+this.m_importcompanyfile=create m_importcompanyfile
+this.m_sys_companysearch=create m_sys_companysearch
+this.m_carriersearch=create m_carriersearch
+this.m_sys_reports=create m_sys_reports
+this.m_2=create m_2
+this.m_div_s01=create m_div_s01
+this.m_setup=create m_setup
+this.m_managescheduledevents=create m_managescheduledevents
+this.m_sys_reg=create m_sys_reg
+this.m_sys_rateconfirmationtemplate=create m_sys_rateconfirmationtemplate
+this.m_sys_importdata=create m_sys_importdata
+this.m_importedshipmentlog=create m_importedshipmentlog
+this.m_documenttransferhistory=create m_documenttransferhistory
+this.m_div_s02=create m_div_s02
+this.m_sys_clock=create m_sys_clock
+this.m_div_s04=create m_div_s04
+this.m_sys_pcmconn=create m_sys_pcmconn
+this.m_locatorupdate=create m_locatorupdate
+this.m_div_s05=create m_div_s05
+this.m_changeuser=create m_changeuser
+this.m_sys_modulelocks=create m_sys_modulelocks
+this.m_sys_exit=create m_sys_exit
+this.Item[UpperBound(this.Item)+1]=this.m_sys_company
+this.Item[UpperBound(this.Item)+1]=this.m_sys_equip
+this.Item[UpperBound(this.Item)+1]=this.m_sys_emp
+this.Item[UpperBound(this.Item)+1]=this.m_routeinfo
+this.Item[UpperBound(this.Item)+1]=this.m_zonesetup
+this.Item[UpperBound(this.Item)+1]=this.m_phonelist
+this.Item[UpperBound(this.Item)+1]=this.m_importcompanyfile
+this.Item[UpperBound(this.Item)+1]=this.m_sys_companysearch
+this.Item[UpperBound(this.Item)+1]=this.m_carriersearch
+this.Item[UpperBound(this.Item)+1]=this.m_sys_reports
+this.Item[UpperBound(this.Item)+1]=this.m_2
+this.Item[UpperBound(this.Item)+1]=this.m_div_s01
+this.Item[UpperBound(this.Item)+1]=this.m_setup
+this.Item[UpperBound(this.Item)+1]=this.m_managescheduledevents
+this.Item[UpperBound(this.Item)+1]=this.m_sys_reg
+this.Item[UpperBound(this.Item)+1]=this.m_sys_rateconfirmationtemplate
+this.Item[UpperBound(this.Item)+1]=this.m_sys_importdata
+this.Item[UpperBound(this.Item)+1]=this.m_importedshipmentlog
+this.Item[UpperBound(this.Item)+1]=this.m_documenttransferhistory
+this.Item[UpperBound(this.Item)+1]=this.m_div_s02
+this.Item[UpperBound(this.Item)+1]=this.m_sys_clock
+this.Item[UpperBound(this.Item)+1]=this.m_div_s04
+this.Item[UpperBound(this.Item)+1]=this.m_sys_pcmconn
+this.Item[UpperBound(this.Item)+1]=this.m_locatorupdate
+this.Item[UpperBound(this.Item)+1]=this.m_div_s05
+this.Item[UpperBound(this.Item)+1]=this.m_changeuser
+this.Item[UpperBound(this.Item)+1]=this.m_sys_modulelocks
+this.Item[UpperBound(this.Item)+1]=this.m_sys_exit
+end on
+
+on m_system.destroy
+call super::destroy
+destroy(this.m_sys_company)
+destroy(this.m_sys_equip)
+destroy(this.m_sys_emp)
+destroy(this.m_routeinfo)
+destroy(this.m_zonesetup)
+destroy(this.m_phonelist)
+destroy(this.m_importcompanyfile)
+destroy(this.m_sys_companysearch)
+destroy(this.m_carriersearch)
+destroy(this.m_sys_reports)
+destroy(this.m_2)
+destroy(this.m_div_s01)
+destroy(this.m_setup)
+destroy(this.m_managescheduledevents)
+destroy(this.m_sys_reg)
+destroy(this.m_sys_rateconfirmationtemplate)
+destroy(this.m_sys_importdata)
+destroy(this.m_importedshipmentlog)
+destroy(this.m_documenttransferhistory)
+destroy(this.m_div_s02)
+destroy(this.m_sys_clock)
+destroy(this.m_div_s04)
+destroy(this.m_sys_pcmconn)
+destroy(this.m_locatorupdate)
+destroy(this.m_div_s05)
+destroy(this.m_changeuser)
+destroy(this.m_sys_modulelocks)
+destroy(this.m_sys_exit)
+end on
+
+type m_sys_company from menu within m_system
+end type
+
+on m_sys_company.create
+call super::create
+this.text = "C&ompany Info"
+end on
+
+event clicked;w_company cowindow
+opensheetwithparm(cowindow, -1, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_sys_company.destroy
+call super::destroy
+end on
+
+type m_sys_equip from menu within m_system
+m_equipmentinfo m_equipmentinfo
+m_generatepostingfile m_generatepostingfile
+end type
+
+on m_sys_equip.create
+call super::create
+this.text = "E&quipment"
+this.m_equipmentinfo=create m_equipmentinfo
+this.m_generatepostingfile=create m_generatepostingfile
+this.Item[UpperBound(this.Item)+1]=this.m_equipmentinfo
+this.Item[UpperBound(this.Item)+1]=this.m_generatepostingfile
+end on
+
+on m_sys_equip.destroy
+call super::destroy
+destroy(this.m_equipmentinfo)
+destroy(this.m_generatepostingfile)
+end on
+
+type m_equipmentinfo from menu within m_sys_equip
+end type
+
+event clicked;w_eq_info eqwin
+opensheetwithparm(eqwin, 0, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_equipmentinfo.create
+call super::create
+this.text = "E&quipment Info..."
+end on
+
+on m_equipmentinfo.destroy
+call super::destroy
+end on
+
+type m_generatepostingfile from menu within m_sys_equip
+end type
+
+event clicked;n_cst_equipmentposting	lnv_EqPosting
+lnv_EqPosting = CREATE n_cst_equipmentposting
+
+Int	li_WriteReturn
+
+li_WriteReturn = lnv_EqPosting.of_Writefiles( )
+
+IF li_WriteReturn <> 1 THEN
+	MessageBox ( "Equipment Posting", "An error occurred while attempting to generate the Posting File." )
+ELSE
+	MessageBox ( "Equipment Posting", "File generation successful." )
+END IF
+end event
+
+on m_generatepostingfile.create
+call super::create
+this.text = "Generate Posting &File"
+end on
+
+on m_generatepostingfile.destroy
+call super::destroy
+end on
+
+type m_sys_emp from menu within m_system
+end type
+
+event clicked;w_emp_info lw_emp_info
+
+if g_privs.emp[1] = 0 and g_privs.emp[2] = 0 and g_privs.emp[3] = 0 then
+	messagebox("Employee Screen", "Your current user privileges do not allow you to " +&
+	"view employee information.")
+	return
+end if
+
+//Megan was using just one instance, but there didn't seem to be any specific reason
+//opensheet(w_emp_info, w_frame, 0, original!)
+
+opensheetwithparm(lw_emp_info, null_long, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_sys_emp.create
+call super::create
+this.text = "&Employee Info"
+end on
+
+on m_sys_emp.destroy
+call super::destroy
+end on
+
+type m_routeinfo from menu within m_system
+end type
+
+event clicked;w_RouteManager lw_Route
+OpenSheet ( W_RouteManager, gnv_App.of_GetFrame ( ), 0, Layered! )
+
+end event
+
+on m_routeinfo.create
+call super::create
+this.text = "Rou&te Info"
+end on
+
+on m_routeinfo.destroy
+call super::destroy
+end on
+
+type m_zonesetup from menu within m_system
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+n_cst_LicenseManager	lnv_LicenseManager
+
+IF lnv_Privileges.of_HasAdministrativeRights ( ) = TRUE THEN
+//	IF lnv_LicenseManager.of_GetModuleLock ( n_cst_Constants.cs_Module_AutoRating, "E" ) >= 0 THEN
+		w_zonemanager	lw_zone
+		opensheetwithparm(lw_zone, 0, gnv_App.of_GetFrame ( ), 0, Layered!)
+//	END IF
+ELSE
+	MessageBox ( "Zones", lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+
+end event
+
+on m_zonesetup.create
+call super::create
+this.text = "&Zones Setup"
+end on
+
+on m_zonesetup.destroy
+call super::destroy
+end on
+
+type m_phonelist from menu within m_system
+end type
+
+event clicked;if g_privs.emp[1] = 0 then
+	messagebox("Phone List", "Your current user privileges do not allow you to " +&
+	"view the phone list.")
+	return
+end if
+
+open(w_phone_list)
+end event
+
+on m_phonelist.create
+call super::create
+this.text = "P&hone List"
+end on
+
+on m_phonelist.destroy
+call super::destroy
+end on
+
+type m_importcompanyfile from menu within m_system
+end type
+
+event clicked;n_cst_import_Companies	lnv_Import_Companies
+lnv_Import_Companies = CREATE n_cst_Import_Companies
+
+lnv_Import_Companies.of_ImportCompanyFile ( )
+
+
+end event
+
+on m_importcompanyfile.create
+call super::create
+this.text = "Import Company &File"
+end on
+
+on m_importcompanyfile.destroy
+call super::destroy
+end on
+
+type m_sys_companysearch from menu within m_system
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+w_CompanySearch	lw_CompanySearch
+
+IF lnv_Privileges.of_HasAdministrativeRights ( ) = TRUE THEN
+	OpenSheet ( lw_CompanySearch, gnv_App.of_GetFrame ( ), 0, Layered! )
+ELSE
+	Messagebox ( "Company Search", lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+end event
+
+on m_sys_companysearch.create
+call super::create
+this.text = "Company &Search"
+end on
+
+on m_sys_companysearch.destroy
+call super::destroy
+end on
+
+type m_carriersearch from menu within m_system
+end type
+
+event clicked;w_CarrierlaneSearch	lw_CarrierSearch
+
+OpenSheet ( lw_CarrierSearch, gnv_App.of_GetFrame ( ), 0, Layered! )
+end event
+
+on m_carriersearch.create
+call super::create
+this.text = "C&arrier Search"
+end on
+
+on m_carriersearch.destroy
+call super::destroy
+end on
+
+type m_sys_reports from menu within m_system
+m_sys_reports_viewer m_sys_reports_viewer
+m_sys_reports_lastfreedate m_sys_reports_lastfreedate
+m_sys_reports_tir m_sys_reports_tir
+m_sys_reports_shipmentcount m_sys_reports_shipmentcount
+end type
+
+event clicked;//W_Psr_Viewer	lw_Psr
+//OpenSheet ( lw_psr , gnv_App.of_GetFrame ( ) ,0, Layered!  )
+end event
+
+on m_sys_reports.create
+call super::create
+this.text = "Reports"
+this.m_sys_reports_viewer=create m_sys_reports_viewer
+this.m_sys_reports_lastfreedate=create m_sys_reports_lastfreedate
+this.m_sys_reports_tir=create m_sys_reports_tir
+this.m_sys_reports_shipmentcount=create m_sys_reports_shipmentcount
+this.Item[UpperBound(this.Item)+1]=this.m_sys_reports_viewer
+this.Item[UpperBound(this.Item)+1]=this.m_sys_reports_lastfreedate
+this.Item[UpperBound(this.Item)+1]=this.m_sys_reports_tir
+this.Item[UpperBound(this.Item)+1]=this.m_sys_reports_shipmentcount
+end on
+
+on m_sys_reports.destroy
+call super::destroy
+destroy(this.m_sys_reports_viewer)
+destroy(this.m_sys_reports_lastfreedate)
+destroy(this.m_sys_reports_tir)
+destroy(this.m_sys_reports_shipmentcount)
+end on
+
+type m_sys_reports_viewer from menu within m_sys_reports
+end type
+
+event clicked;
+n_cst_msg	lnv_Msg
+s_Parm		lstr_Parm
+
+IF isValid( parentWIndow ) THEN
+	lstr_Parm.is_Label = "CURRENTWIN"
+	lstr_Parm.ia_value = parentWindow.getactiveSheet()
+	lnv_Msg.of_add_parm( lstr_Parm )
+
+
+	//Open Link Dialog box and pass This as the parm to hold the Master
+	IF NOT IsValid ( w_response_loadReports ) THEN
+		OpenWithParm(w_response_loadReports, lnv_Msg )
+	ELSE
+		w_response_loadReports.SetFocus ( )
+		
+	END IF
+	
+END IF
+
+
+//edited out on 11-22-2005 By Dan
+//W_Psr_Viewer	lw_Psr
+//OpenSheet ( lw_psr , gnv_App.of_GetFrame ( ) ,0, Layered!  )
+
+end event
+
+on m_sys_reports_viewer.create
+call super::create
+this.text = "&Viewer"
+end on
+
+on m_sys_reports_viewer.destroy
+call super::destroy
+end on
+
+type m_sys_reports_lastfreedate from menu within m_sys_reports
+end type
+
+event clicked;Date ld_Value
+n_cst_EquipmentManager lnv_EquipmentManager // autoinstantiate
+
+ld_Value = TODAY ( )
+
+lnv_EquipmentManager.of_LastFreeDate( ld_Value )
+
+end event
+
+on m_sys_reports_lastfreedate.create
+call super::create
+this.text = "&Last Free Date"
+end on
+
+on m_sys_reports_lastfreedate.destroy
+call super::destroy
+end on
+
+type m_sys_reports_tir from menu within m_sys_reports
+end type
+
+event clicked;// open the tir window
+open(w_tirselection)
+
+end event
+
+on m_sys_reports_tir.create
+call super::create
+this.text = "&TIR"
+end on
+
+on m_sys_reports_tir.destroy
+call super::destroy
+end on
+
+type m_sys_reports_shipmentcount from menu within m_sys_reports
+end type
+
+on m_sys_reports_shipmentcount.create
+call super::create
+this.text = "&Shipment Count"
+end on
+
+on m_sys_reports_shipmentcount.destroy
+call super::destroy
+end on
+
+event clicked;integer	li_result
+
+date		ld_min, &
+			ld_max
+			
+string	ls_filename
+
+n_cst_msg				lnv_msg
+n_cst_Privileges		lnv_Privileges
+s_Anys					lstr_Result
+n_cst_ModlogReport	lnv_Report
+n_ds						lds_report
+w_date_range			lw_date
+s_parm					lstr_Parm
+
+IF lnv_Privileges.of_HasAdministrativeRights ( ) = TRUE THEN
+	
+	lstr_Parm.is_Label = "OPTIONAL"
+	lstr_Parm.ia_Value = "FALSE"
+	lnv_msg.of_add_Parm ( lstr_Parm )
+	
+	OpenWithParm ( lw_date, lnv_Msg )
+	
+	setpointer(HourGlass!)
+	
+	lstr_result = message.powerobjectparm
+	li_result = lstr_result.anys[1]
+	
+	if li_result = 1 then
+		ld_min = lstr_result.anys[2]
+		ld_max = lstr_result.anys[3]
+		
+		lnv_Report = create n_cst_ModlogReport
+		
+		lnv_report.of_CreateMOdlogReport(ld_min, ld_max, ls_filename)
+		lstr_Parm.is_label = "FILENAME"
+		lstr_Parm.ia_value = ls_filename
+		lnv_Msg.of_Add_Parm( lstr_Parm )
+		
+		W_Psr_Viewer	lw_Psr
+			
+		OpenSheetWithParm ( lw_psr, lnv_msg, gnv_App.of_GetFrame ( ),0 , Layered! )
+		
+		destroy lnv_report
+		
+	end if
+	
+ELSE
+	MessageBox ( "Shipment Count Report", lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+
+
+
+end event
+
+type m_2 from menu within m_system
+m_addsystemalert m_addsystemalert
+m_4 m_4
+m_3 m_3
+end type
+
+on m_2.create
+call super::create
+this.text = "A&lerts"
+this.m_addsystemalert=create m_addsystemalert
+this.m_4=create m_4
+this.m_3=create m_3
+this.Item[UpperBound(this.Item)+1]=this.m_addsystemalert
+this.Item[UpperBound(this.Item)+1]=this.m_4
+this.Item[UpperBound(this.Item)+1]=this.m_3
+end on
+
+on m_2.destroy
+call super::destroy
+destroy(this.m_addsystemalert)
+destroy(this.m_4)
+destroy(this.m_3)
+end on
+
+type m_addsystemalert from menu within m_2
+end type
+
+event clicked;n_cst_AlertManager	lnv_AlertManager
+lnv_AlertManager = CREATE n_cst_AlertManager
+lnv_AlertManager.of_AddSytemalert( )
+DESTROY ( lnv_AlertManager )
+end event
+
+on m_addsystemalert.create
+call super::create
+this.text = "Add &System Alert"
+end on
+
+on m_addsystemalert.destroy
+call super::destroy
+end on
+
+type m_4 from menu within m_2
+end type
+
+on m_4.create
+call super::create
+this.text = "Show &All"
+end on
+
+on m_4.destroy
+call super::destroy
+end on
+
+event clicked;n_cst_AlertManager	lnv_AlertManager
+lnv_AlertManager = CREATE n_cst_AlertManager
+lnv_AlertManager.of_ShowAlertList ( )
+DESTROY ( lnv_AlertManager )
+
+end event
+
+type m_3 from menu within m_2
+end type
+
+on m_3.create
+call super::create
+this.text = "Show &My Alerts"
+end on
+
+on m_3.destroy
+call super::destroy
+end on
+
+event clicked;n_cst_AlertManager	lnv_AlertManager
+lnv_AlertManager = CREATE n_cst_AlertManager
+lnv_AlertManager.of_ShowAlertsForCurrentUser ( )
+DESTROY ( lnv_AlertManager )
+
+end event
+
+type m_div_s01 from menu within m_system
+end type
+
+on m_div_s01.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_s01.destroy
+call super::destroy
+end on
+
+type m_setup from menu within m_system
+m_privileges m_privileges
+m_sys_settings m_sys_settings
+m_notificationsetup m_notificationsetup
+m_ptmobileusersetup m_ptmobileusersetup
+m_eventconfirmationrequirements m_eventconfirmationrequirements
+m_sys_equipmentleasetypes m_sys_equipmentleasetypes
+m_sys_equipmentposting m_sys_equipmentposting
+m_settingsimport m_settingsimport
+m_div_s03 m_div_s03
+m_definitionmanager m_definitionmanager
+m_sys_printset m_sys_printset
+end type
+
+on m_setup.create
+call super::create
+this.text = "Setu&p"
+this.m_privileges=create m_privileges
+this.m_sys_settings=create m_sys_settings
+this.m_notificationsetup=create m_notificationsetup
+this.m_ptmobileusersetup=create m_ptmobileusersetup
+this.m_eventconfirmationrequirements=create m_eventconfirmationrequirements
+this.m_sys_equipmentleasetypes=create m_sys_equipmentleasetypes
+this.m_sys_equipmentposting=create m_sys_equipmentposting
+this.m_settingsimport=create m_settingsimport
+this.m_div_s03=create m_div_s03
+this.m_definitionmanager=create m_definitionmanager
+this.m_sys_printset=create m_sys_printset
+this.Item[UpperBound(this.Item)+1]=this.m_privileges
+this.Item[UpperBound(this.Item)+1]=this.m_sys_settings
+this.Item[UpperBound(this.Item)+1]=this.m_notificationsetup
+this.Item[UpperBound(this.Item)+1]=this.m_ptmobileusersetup
+this.Item[UpperBound(this.Item)+1]=this.m_eventconfirmationrequirements
+this.Item[UpperBound(this.Item)+1]=this.m_sys_equipmentleasetypes
+this.Item[UpperBound(this.Item)+1]=this.m_sys_equipmentposting
+this.Item[UpperBound(this.Item)+1]=this.m_settingsimport
+this.Item[UpperBound(this.Item)+1]=this.m_div_s03
+this.Item[UpperBound(this.Item)+1]=this.m_definitionmanager
+this.Item[UpperBound(this.Item)+1]=this.m_sys_printset
+end on
+
+on m_setup.destroy
+call super::destroy
+destroy(this.m_privileges)
+destroy(this.m_sys_settings)
+destroy(this.m_notificationsetup)
+destroy(this.m_ptmobileusersetup)
+destroy(this.m_eventconfirmationrequirements)
+destroy(this.m_sys_equipmentleasetypes)
+destroy(this.m_sys_equipmentposting)
+destroy(this.m_settingsimport)
+destroy(this.m_div_s03)
+destroy(this.m_definitionmanager)
+destroy(this.m_sys_printset)
+end on
+
+type m_privileges from menu within m_setup
+end type
+
+event clicked;if g_privs.emp[6] = 0 then
+	messagebox("User Privileges", "Your current user privileges do not allow you to " +&
+	"access this screen.")
+	return
+end if
+
+opensheet(w_privileges, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_privileges.create
+call super::create
+this.text = "User Pri&vileges"
+end on
+
+on m_privileges.destroy
+call super::destroy
+end on
+
+type m_sys_settings from menu within m_setup
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+
+IF lnv_Privileges.of_HasSysAdminRights ( ) = FALSE THEN
+	MessageBox ('System Settings', lnv_Privileges.of_GetSysAdminMessage ( ) )
+	Close ( w_Settings )
+ELSE
+	Open ( w_Settings )	
+END IF
+
+
+end event
+
+on m_sys_settings.create
+call super::create
+this.text = "S&ystem Settings"
+end on
+
+on m_sys_settings.destroy
+call super::destroy
+end on
+
+type m_notificationsetup from menu within m_setup
+end type
+
+event clicked;n_cst_Privileges	lnv_Privs
+
+IF lnv_Privs.of_HasAdministrativeRights ( ) THEN
+	Open ( w_notificationSetup )
+ELSE
+	MessageBox ( "Notification Setup", "You are not authorized to perform this function." )
+END IF
+end event
+
+on m_notificationsetup.create
+call super::create
+this.text = "&Notification Setup"
+end on
+
+on m_notificationsetup.destroy
+call super::destroy
+end on
+
+type m_ptmobileusersetup from menu within m_setup
+end type
+
+event clicked;n_cst_privileges	lnv_Privs
+
+IF lnv_Privs.of_hassysadminrights( ) THEN
+		
+	w_ptmc_usersetup	lw_ptmc_usersetup
+
+	OpenSheet ( lw_ptmc_usersetup , gnv_app.of_getframe( ) , 0 , LAYERED! ) 
+
+ELSE
+	MessageBox ('PT Mobile user setup', lnv_Privs.of_GetSysAdminMessage ( ) )
+END IF
+
+
+
+
+
+
+end event
+
+on m_ptmobileusersetup.create
+call super::create
+this.text = "PT &Mobile user setup"
+end on
+
+on m_ptmobileusersetup.destroy
+call super::destroy
+end on
+
+type m_eventconfirmationrequirements from menu within m_setup
+end type
+
+event clicked;n_cst_privileges	lnv_Privs
+
+IF lnv_Privs.of_HasSysAdminRights ( ) THEN
+	n_cst_EventConfirmationOptions	lnv_ECO
+	lnv_ECO = CREATE n_cst_EventConfirmationOptions
+	
+	lnv_ECO.of_OpenWindow ( )
+	
+	DESTROY ( lnv_ECO )
+ELSE
+	MessageBox ( "Event Confirmation Requirements" , lnv_Privs.of_GetRestrictMessage ( ) )
+	
+END IF
+end event
+
+on m_eventconfirmationrequirements.create
+call super::create
+this.text = "&Event Confirmation Requirements"
+end on
+
+on m_eventconfirmationrequirements.destroy
+call super::destroy
+end on
+
+type m_sys_equipmentleasetypes from menu within m_setup
+end type
+
+event clicked;OpenSheet ( w_EquipmentLeaseTypes, gnv_App.of_GetFrame ( ), 0, Layered! )
+
+end event
+
+on m_sys_equipmentleasetypes.create
+call super::create
+this.text = "Equipment Le&ase Types"
+end on
+
+on m_sys_equipmentleasetypes.destroy
+call super::destroy
+end on
+
+type m_sys_equipmentposting from menu within m_setup
+end type
+
+event clicked;
+n_cst_privileges	lnv_Privs
+IF lnv_Privs.of_hasadministrativerights( ) THEN
+
+	Open ( w_PostingRules )
+ELSE
+	MessageBox( "Equipment Posting" , "You must have ADMIN privileges to access this screen." )
+END IF
+end event
+
+on m_sys_equipmentposting.create
+call super::create
+this.text = "E&quipment Posting"
+end on
+
+on m_sys_equipmentposting.destroy
+call super::destroy
+end on
+
+type m_settingsimport from menu within m_setup
+end type
+
+event clicked;n_cst_Privileges	lnv_Privs
+
+IF lnv_Privs.of_HasSysAdminRights ( ) THEN
+	Open ( w_NamedFileImport )
+ELSE
+	MessageBox ( "Settings Import Routine", "You are not authorized to perform this function." )
+END IF
+end event
+
+on m_settingsimport.create
+call super::create
+this.text = "&Settings Import"
+end on
+
+on m_settingsimport.destroy
+call super::destroy
+end on
+
+type m_div_s03 from menu within m_setup
+end type
+
+on m_div_s03.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_s03.destroy
+call super::destroy
+end on
+
+type m_definitionmanager from menu within m_setup
+end type
+
+event clicked;//commented because we aren['t ready for dynamic stuff
+String	ls_currentUser
+
+ls_currentUser = gnv_app.of_getuserid( ) 
+IF ls_currentUser = "PTADMIN" THEN
+	if isvalid(gnv_App.of_GetFrame ( ).getfirstsheet()) then
+		messagebox("Definition Manager", "All open windows must be closed before entering "+&
+			"the Definition Manager.", exclamation!)
+	else
+		IF not ISVALID( w_definitionManager ) THEN
+			Open( w_definitionManager )
+		ELSE
+			w_definitionManager.setFocus()
+		END IF
+	end if
+ELSE
+	messagebox("Definition Manager", "You do not have sufficient rights.", exclamation!)
+END IF
+end event
+
+on m_definitionmanager.create
+call super::create
+this.text = "Definition Manager"
+end on
+
+on m_definitionmanager.destroy
+call super::destroy
+end on
+
+type m_sys_printset from menu within m_setup
+end type
+
+event clicked;PrintSetup ( )
+end event
+
+on m_sys_printset.create
+call super::create
+this.text = "&Printer Setup"
+end on
+
+on m_sys_printset.destroy
+call super::destroy
+end on
+
+type m_managescheduledevents from menu within m_system
+m_ptevents m_ptevents
+m_databasebackup m_databasebackup
+m_- m_-
+m_resetallevents m_resetallevents
+end type
+
+on m_managescheduledevents.create
+call super::create
+this.text = "Manage Scheduled Tasks"
+this.m_ptevents=create m_ptevents
+this.m_databasebackup=create m_databasebackup
+this.m_-=create m_-
+this.m_resetallevents=create m_resetallevents
+this.Item[UpperBound(this.Item)+1]=this.m_ptevents
+this.Item[UpperBound(this.Item)+1]=this.m_databasebackup
+this.Item[UpperBound(this.Item)+1]=this.m_-
+this.Item[UpperBound(this.Item)+1]=this.m_resetallevents
+end on
+
+on m_managescheduledevents.destroy
+call super::destroy
+destroy(this.m_ptevents)
+destroy(this.m_databasebackup)
+destroy(this.m_-)
+destroy(this.m_resetallevents)
+end on
+
+type m_ptevents from menu within m_managescheduledevents
+end type
+
+event clicked;n_cst_Privileges	lnv_Privs
+IF lnv_Privs.of_hassysadminrights( ) THEN
+		
+	Open ( w_MultipleScheduleEdit  )
+	
+ELSE
+	MessageBox ('Profit Tools Tasks', lnv_Privs.of_GetSysAdminMessage ( ) )
+END IF
+end event
+
+on m_ptevents.create
+call super::create
+this.text = "Profit Tools Events..."
+end on
+
+on m_ptevents.destroy
+call super::destroy
+end on
+
+type m_databasebackup from menu within m_managescheduledevents
+end type
+
+event clicked;n_cst_Privileges	lnv_Privs
+IF lnv_Privs.of_hassysadminrights( ) THEN
+	
+	n_cst_EventTask		lnv_Task	
+	n_cst_scheduledata	lnv_Sched
+	lnv_Sched = CREATE n_cst_scheduledata
+	lnv_Task = CREATE n_cst_eventtask_dbBackup
+	lnv_Sched.of_SetEventtask( lnv_Task )
+	//lnv_Sched.of_retrievescheduledata( )
+	
+	OpenWithParm ( w_ScheduleEdit , lnv_Sched  )
+	
+	DESTROY ( lnv_Sched )
+	DESTROY ( lnv_Task )
+ELSE
+	MessageBox ('Scheduled Events', lnv_Privs.of_GetSysAdminMessage ( ) )
+END IF
+
+end event
+
+on m_databasebackup.create
+call super::create
+this.text = "Database Backup"
+end on
+
+on m_databasebackup.destroy
+call super::destroy
+end on
+
+type m_- from menu within m_managescheduledevents
+end type
+
+on m_-.create
+call super::create
+this.text = "-"
+end on
+
+on m_-.destroy
+call super::destroy
+end on
+
+type m_resetallevents from menu within m_managescheduledevents
+end type
+
+event clicked;n_cst_Privileges	lnv_Privs
+n_cst_eventmanager	lnv_Manager
+String	ls_Message
+IF lnv_Privs.of_hasEntryRights( ) THEN
+	lnv_Manager = CREATE n_cst_eventmanager
+	IF lnv_Manager.of_ResetAlltasks( ) <> 1 THEN
+		ls_Message = "An error occurred while resetting events."
+	ELSE
+		ls_Message = "Events were reset successfully."
+	END IF
+	MessageBox(	"Reset Events" , ls_Message )
+	DESTROY ( lnv_Manager )
+ELSE
+	MessageBox ('Reset Events', lnv_Privs.of_Getrestrictmessage( ) )
+
+END IF
+end event
+
+on m_resetallevents.create
+call super::create
+this.text = "Reset All Events"
+end on
+
+on m_resetallevents.destroy
+call super::destroy
+end on
+
+type m_sys_reg from menu within m_system
+end type
+
+event clicked;if isvalid(gnv_App.of_GetFrame ( ).getfirstsheet()) then
+	messagebox("System Registration", "All open windows must be closed before entering "+&
+		"System Registration.", exclamation!)
+else
+	open(w_reg_adjust)
+end if
+end event
+
+on m_sys_reg.create
+call super::create
+this.text = "&Registration"
+end on
+
+on m_sys_reg.destroy
+call super::destroy
+end on
+
+type m_sys_rateconfirmationtemplate from menu within m_system
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+s_rate_confirmation lstr_rc
+
+IF lnv_Privileges.of_EquipmentLeaseType_Setup ( ) = TRUE THEN
+	
+	lstr_rc.rc_template = "TEMPLATE"
+	openwithparm(w_rte,lstr_rc)
+	
+ELSE
+	
+	messagebox("Rate Confirmation Template", lnv_Privileges.of_GetSysAdminMessage ( ) )
+	
+END IF
+
+
+end event
+
+on m_sys_rateconfirmationtemplate.create
+call super::create
+this.text = "Rate &Confirmation Template"
+end on
+
+on m_sys_rateconfirmationtemplate.destroy
+call super::destroy
+end on
+
+type m_sys_importdata from menu within m_system
+end type
+
+event clicked;Integer	li_Return
+n_cst_bso_import	lnv_import
+
+lnv_import = CREATE n_cst_bso_import
+li_Return = lnv_import.of_Import ( )
+
+DESTROY lnv_import
+end event
+
+on m_sys_importdata.create
+call super::create
+this.text = "&Import Data"
+end on
+
+on m_sys_importdata.destroy
+call super::destroy
+end on
+
+type m_importedshipmentlog from menu within m_system
+end type
+
+event clicked;w_ShipImportResults lw_Import
+
+OpenSheetWithParm (lw_Import, 0 ,  gnv_app.of_GetFrame () , 0 , Layered! )
+
+
+end event
+
+on m_importedshipmentlog.create
+call super::create
+this.text = "Imported Shipment Lo&g"
+end on
+
+on m_importedshipmentlog.destroy
+call super::destroy
+end on
+
+type m_documenttransferhistory from menu within m_system
+end type
+
+event clicked;open ( w_documenttransferhistory )
+end event
+
+on m_documenttransferhistory.create
+call super::create
+this.text = "Document Transfer History"
+end on
+
+on m_documenttransferhistory.destroy
+call super::destroy
+end on
+
+type m_div_s02 from menu within m_system
+end type
+
+on m_div_s02.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_s02.destroy
+call super::destroy
+end on
+
+type m_sys_clock from menu within m_system
+end type
+
+on m_sys_clock.create
+call super::create
+this.visible = false
+this.text = "Show Clock"
+end on
+
+event clicked;n_cst_ShipmentManager	lnv_ShipmentManager
+String	ls_CacheFile
+String	ls_TimeStamp
+Boolean	lb_DeleteShipmentCache = FALSE
+
+window	lw_window
+
+//Dan put here temporarily
+//Open(w_userPrivs)
+//Open(w_test)
+//--------
+
+
+
+
+// easter egg to determine if the external function will work as expected.
+IF KeyDown(KeyShift!) AND KeyDown ( KeyControl! ) THEN
+	messageBox( "Application File" , String ( gnv_app.of_getApplicationFile ( ) ) ) 
+	messageBox( "Application Folder" , String ( gnv_app.of_getApplicationFolder ( ) ) ) 
+	messageBox( "Application Ini File" , String ( gnv_app.of_getAppIniFile ( ) ) ) 
+
+//	Easter Egg to deal with timestamp issues if date / time on server got thrown off
+//	This affects shipment summary refresh.
+ELSEIF KeyDown(KeyAlt!) THEN
+
+	SELECT Max("current_shipments"."TimeStamp") INTO :ls_TimeStamp FROM current_shipments ;
+	COMMIT ;
+
+	IF IsNull ( ls_TimeStamp ) THEN
+		ls_TimeStamp = "Null"
+	END IF
+
+	IF MessageBox ( "Current Shipments Timestamp", "The maximum timestamp is " + ls_TimeStamp + "~n" +&
+		"Do you want to reset the timestamps?", Question!, YesNo!, 2 ) = 1 THEN
+
+		UPDATE current_shipments SET cs_event_count = cs_event_count ;
+
+		IF SQLCA.SqlCode = 0 THEN
+			COMMIT ;
+
+			IF MessageBox ( "Update Timestamps", "Update was successful.~n~n" +&
+				"Do you want to delete the shipment summary cache file?", Question!, YesNo!, 1 ) = 1 THEN
+
+				lb_DeleteShipmentCache = TRUE
+
+			END IF
+
+		ELSE
+			ROLLBACK ;
+
+			IF MessageBox ( "Update Timestamps", "Error processing update.  Update was not performed." +&
+				"~n~nDo you want to delete the shipment summary cache file?", Exclamation!, YesNo!, 2 ) = 1 THEN
+
+				lb_DeleteShipmentCache = TRUE
+
+			END IF
+
+		END IF
+
+	ELSEIF MessageBox ( "Shipment Summary Cache File", "Do you want to delete the shipment summary "+&
+		"cache file?", Question!, YesNo!, 2 ) = 1 THEN
+
+		lb_DeleteShipmentCache = TRUE
+	
+	END IF
+
+
+	IF lb_DeleteShipmentCache = TRUE THEN
+	
+		CHOOSE CASE lnv_ShipmentManager.of_GetShipmentCacheFile ( ls_CacheFile )
+		
+		CASE 1
+			IF FileDelete ( ls_CacheFile ) = TRUE THEN
+				MessageBox ( "Delete Shipment Summary Cache File", "Shipment Summary cache file "+&
+					"was successfully deleted." )
+			ELSE
+				MessageBox ( "Delete Shipment Summary Cache File", "Delete failed.  You should delete "+&
+					"the file manually.  The path is ~"" + ls_CacheFile + "~"", Exclamation! )
+			END IF
+		
+		CASE 0
+			//No cache file specified -- nothing to delete.
+			MessageBox ( "Delete Shipment Summary Cache File", "No cache file specified." )
+		
+		CASE -1
+			//Failed to get cache file name.  Not a fatal error, though -- allow processing to proceed.
+			MessageBox ( "Delete Shipment Summary Cache File", "Error getting cache file name.  You should delete "+&
+					"the file manually.", Exclamation! )
+		
+		END CHOOSE
+
+	END IF
+
+
+END IF
+
+
+end event
+
+on m_sys_clock.destroy
+call super::destroy
+end on
+
+type m_div_s04 from menu within m_system
+end type
+
+on m_div_s04.create
+call super::create
+this.visible = false
+this.text = "-"
+end on
+
+on m_div_s04.destroy
+call super::destroy
+end on
+
+type m_sys_pcmconn from menu within m_system
+end type
+
+event clicked;open(w_pcm_connection)
+end event
+
+on m_sys_pcmconn.create
+call super::create
+this.text = "PC*&Miler Connection"
+end on
+
+on m_sys_pcmconn.destroy
+call super::destroy
+end on
+
+type m_locatorupdate from menu within m_system
+end type
+
+on m_locatorupdate.create
+call super::create
+this.text = "Automatic Company Locator Update"
+end on
+
+event clicked;n_cst_import_Companies	lnv_Import_Companies
+lnv_Import_Companies = CREATE n_cst_Import_Companies
+
+if lnv_Import_Companies.of_updatecompanylocators ( ) = -1 then
+	messagebox( "Automatic Company Locator Update", " No companies were updated.")
+else
+	messagebox( "Automatic Company Locator Update", " Company update complete.")
+end if
+
+destroy lnv_import_companies
+
+end event
+
+on m_locatorupdate.destroy
+call super::destroy
+end on
+
+type m_div_s05 from menu within m_system
+end type
+
+on m_div_s05.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_s05.destroy
+call super::destroy
+end on
+
+type m_changeuser from menu within m_system
+end type
+
+event clicked;window checkwin
+n_cst_privsManager	lnv_manager
+checkwin = gnv_App.of_GetFrame ( ).getfirstsheet()
+if isvalid(checkwin) then
+	messagebox("Change User", "All open windows must be closed before changing the " +&
+	"current user.")
+	return
+end if
+
+Window	lw_Frame
+lw_Frame = gnv_App.of_GetFrame ( )
+
+lw_Frame.Visible = False
+
+n_cst_LicenseManager lnv_LicenseManager
+//delete any locked modules
+lnv_LicenseManager.of_DeleteModuleLocks ( )
+
+//Perform User LogIn
+
+IF gnv_App.of_LogonDlg ( ) = 1 THEN
+	//Logon Successful -- Proceed
+	lw_Frame.Post Show ( )
+	gnv_App.of_getalertmanager( ).Post of_Showsystemalerts( )
+	
+	//added by Dan to reset the shared variable on the privs manager
+	lnv_manager = gnv_app.of_getPrivsmanager( )
+	lnv_manager.of_setusedadvancedprivs( )
+	//------------------------------------------------------------
+ELSE
+	gnv_App.Event Trigger pfc_Exit ( )
+	RETURN
+END IF
+end event
+
+on m_changeuser.create
+call super::create
+this.text = "Change &User"
+end on
+
+on m_changeuser.destroy
+call super::destroy
+end on
+
+type m_sys_modulelocks from menu within m_system
+end type
+
+on m_sys_modulelocks.create
+call super::create
+this.text = "Mo&dules in Use"
+end on
+
+event clicked;Open ( w_LicenseStatus )
+end event
+
+on m_sys_modulelocks.destroy
+call super::destroy
+end on
+
+type m_sys_exit from menu within m_system
+end type
+
+event clicked;gnv_app.event pfc_exit()
+
+//close(w_frame)
+end event
+
+on m_sys_exit.create
+call super::create
+this.text = "E&xit~tAlt+F4"
+this.shortcut = 627
+end on
+
+on m_sys_exit.destroy
+call super::destroy
+end on
+
+type m_rating from menu within m_base
+m_ratelookup m_ratelookup
+m_autoratequery m_autoratequery
+m_rating_div01 m_rating_div01
+m_zones m_zones
+m_ratetables m_ratetables
+m_5 m_5
+m_codedefaults m_codedefaults
+end type
+
+on m_rating.create
+call super::create
+this.text = "&Rating"
+this.m_ratelookup=create m_ratelookup
+this.m_autoratequery=create m_autoratequery
+this.m_rating_div01=create m_rating_div01
+this.m_zones=create m_zones
+this.m_ratetables=create m_ratetables
+this.m_5=create m_5
+this.m_codedefaults=create m_codedefaults
+this.Item[UpperBound(this.Item)+1]=this.m_ratelookup
+this.Item[UpperBound(this.Item)+1]=this.m_autoratequery
+this.Item[UpperBound(this.Item)+1]=this.m_rating_div01
+this.Item[UpperBound(this.Item)+1]=this.m_zones
+this.Item[UpperBound(this.Item)+1]=this.m_ratetables
+this.Item[UpperBound(this.Item)+1]=this.m_5
+this.Item[UpperBound(this.Item)+1]=this.m_codedefaults
+end on
+
+on m_rating.destroy
+call super::destroy
+destroy(this.m_ratelookup)
+destroy(this.m_autoratequery)
+destroy(this.m_rating_div01)
+destroy(this.m_zones)
+destroy(this.m_ratetables)
+destroy(this.m_5)
+destroy(this.m_codedefaults)
+end on
+
+type m_ratelookup from menu within m_rating
+end type
+
+event clicked;long lla_ids []
+
+//lla_ids[1]=5
+
+IF IsValid ( w_rate_query ) THEN
+	IF w_Rate_Query.WindowState = MINIMIZED! THEN
+		w_Rate_Query.WindowState = NORMAL!
+	END IF
+	w_Rate_Query.setFocus ( )
+ELSE
+	// Create attrib object
+	n_cst_rate_attribs lnv_attribs
+	
+	// Open response window
+	OpensheetWithParm( w_rate_query, lnv_attribs, gnv_App.of_GetFrame ( ), 0, LAYERED! )
+END IF
+
+end event
+
+on m_ratelookup.create
+call super::create
+this.text = "&Rate List Lookup"
+end on
+
+on m_ratelookup.destroy
+call super::destroy
+end on
+
+type m_autoratequery from menu within m_rating
+end type
+
+event clicked;//n_cst_Privileges	lnv_Privileges
+n_cst_LicenseManager	lnv_LicenseManager
+
+//IF lnv_Privileges.of_HasAdministrativeRights ( ) = TRUE THEN
+	IF lnv_LicenseManager.of_GetModuleLock ( n_cst_Constants.cs_Module_AutoRating, "E" ) >= 0 THEN
+		w_AutoRateQuery lw_autoratequery
+		OpenSheet ( lw_autoratequery, gnv_App.of_GetFrame ( ), 0, Layered! )
+	END IF
+//ELSE
+//	MessageBox ( "Auto Rate Query", lnv_Privileges.of_GetRestrictMessage ( ) )
+//END IF
+
+
+
+
+end event
+
+on m_autoratequery.create
+call super::create
+this.text = "&Auto Rate Lookup"
+end on
+
+on m_autoratequery.destroy
+call super::destroy
+end on
+
+type m_rating_div01 from menu within m_rating
+end type
+
+on m_rating_div01.create
+call super::create
+this.text = "-"
+end on
+
+on m_rating_div01.destroy
+call super::destroy
+end on
+
+type m_zones from menu within m_rating
+end type
+
+on m_zones.create
+call super::create
+this.text = "&Zones Setup"
+end on
+
+event clicked;n_cst_Privileges	lnv_Privileges
+n_cst_LicenseManager	lnv_LicenseManager
+
+IF lnv_Privileges.of_HasAdministrativeRights ( ) = TRUE THEN
+	//IF lnv_LicenseManager.of_GetModuleLock ( n_cst_Constants.cs_Module_AutoRating, "E" ) >= 0 THEN
+		w_zonemanager	lw_zone
+		opensheetwithparm(lw_zone, 0, gnv_App.of_GetFrame ( ), 0, Layered!)
+	//END IF
+ELSE
+	MessageBox ( "Zones", lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+
+end event
+
+on m_zones.destroy
+call super::destroy
+end on
+
+type m_ratetables from menu within m_rating
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+//n_cst_LicenseManager	lnv_LicenseManager
+
+IF lnv_Privileges.of_HasAdministrativeRights ( ) = TRUE THEN
+//	IF lnv_LicenseManager.of_GetModuleLock ( n_cst_Constants.cs_Module_AutoRating, "E" ) >= 0 THEN
+		w_RateTable	lw_RateTable
+		opensheetwithparm(lw_RateTable, 0, gnv_App.of_GetFrame ( ), 0, Layered! )
+//	END IF
+ELSE
+	MessageBox ( "Rate Tables", lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+
+
+end event
+
+on m_ratetables.create
+call super::create
+this.text = "Rate &Tables"
+end on
+
+on m_ratetables.destroy
+call super::destroy
+end on
+
+type m_5 from menu within m_rating
+end type
+
+event clicked;IF isValid( w_importRateing ) THEN
+	w_importRateing.setFocus()
+ELSE
+	open( w_importRateing )
+END IF	
+end event
+
+on m_5.create
+call super::create
+this.text = "&Import Rates..."
+end on
+
+on m_5.destroy
+call super::destroy
+end on
+
+type m_codedefaults from menu within m_rating
+end type
+
+on m_codedefaults.create
+call super::create
+this.text = "&Code Defaults"
+end on
+
+event clicked;
+n_cst_Privileges	lnv_Privileges
+//n_cst_LicenseManager	lnv_LicenseManager
+
+IF lnv_Privileges.of_HasAdministrativeRights ( ) = TRUE THEN
+//	IF lnv_LicenseManager.of_GetModuleLock ( n_cst_Constants.cs_Module_AutoRating, "E" ) >= 0 THEN
+		w_ratetablelist	lw_list
+		open ( lw_list )
+//	END IF
+ELSE
+	MessageBox ( "Rate Code Defaults", lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+
+
+end event
+
+on m_codedefaults.destroy
+call super::destroy
+end on
+
+type m_billing from menu within m_base
+m_bill_billing m_bill_billing
+m_bill_search m_bill_search
+m_bill_company m_bill_company
+m_bill_billtopoints m_bill_billtopoints
+m_div_b01 m_div_b01
+m_bill_graphic_setup m_bill_graphic_setup
+m_bill_billseq_setup m_bill_billseq_setup
+m_amounttypesetup m_amounttypesetup
+m_bill_shiptype_setup m_bill_shiptype_setup
+m_bill_validateglar m_bill_validateglar
+end type
+
+on m_billing.create
+call super::create
+this.text = "&Billing"
+this.m_bill_billing=create m_bill_billing
+this.m_bill_search=create m_bill_search
+this.m_bill_company=create m_bill_company
+this.m_bill_billtopoints=create m_bill_billtopoints
+this.m_div_b01=create m_div_b01
+this.m_bill_graphic_setup=create m_bill_graphic_setup
+this.m_bill_billseq_setup=create m_bill_billseq_setup
+this.m_amounttypesetup=create m_amounttypesetup
+this.m_bill_shiptype_setup=create m_bill_shiptype_setup
+this.m_bill_validateglar=create m_bill_validateglar
+this.Item[UpperBound(this.Item)+1]=this.m_bill_billing
+this.Item[UpperBound(this.Item)+1]=this.m_bill_search
+this.Item[UpperBound(this.Item)+1]=this.m_bill_company
+this.Item[UpperBound(this.Item)+1]=this.m_bill_billtopoints
+this.Item[UpperBound(this.Item)+1]=this.m_div_b01
+this.Item[UpperBound(this.Item)+1]=this.m_bill_graphic_setup
+this.Item[UpperBound(this.Item)+1]=this.m_bill_billseq_setup
+this.Item[UpperBound(this.Item)+1]=this.m_amounttypesetup
+this.Item[UpperBound(this.Item)+1]=this.m_bill_shiptype_setup
+this.Item[UpperBound(this.Item)+1]=this.m_bill_validateglar
+end on
+
+on m_billing.destroy
+call super::destroy
+destroy(this.m_bill_billing)
+destroy(this.m_bill_search)
+destroy(this.m_bill_company)
+destroy(this.m_bill_billtopoints)
+destroy(this.m_div_b01)
+destroy(this.m_bill_graphic_setup)
+destroy(this.m_bill_billseq_setup)
+destroy(this.m_amounttypesetup)
+destroy(this.m_bill_shiptype_setup)
+destroy(this.m_bill_validateglar)
+end on
+
+type m_bill_billing from menu within m_billing
+end type
+
+on m_bill_billing.create
+call super::create
+this.text = "&Billing"
+end on
+
+event clicked;opensheet(w_billing, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_bill_billing.destroy
+call super::destroy
+end on
+
+type m_bill_search from menu within m_billing
+end type
+
+on m_bill_search.create
+call super::create
+this.text = "Sea&rch"
+end on
+
+event clicked;w_search searchwindow
+opensheet(searchwindow, gnv_App.of_GetFrame ( ), 0, layered!)
+end event
+
+on m_bill_search.destroy
+call super::destroy
+end on
+
+type m_bill_company from menu within m_billing
+end type
+
+on m_bill_company.create
+call super::create
+this.text = "C&ompany Info"
+end on
+
+event clicked;if m_system.m_sys_company.enabled and m_system.m_sys_company.visible then &
+	m_system.m_sys_company.event post clicked()
+end event
+
+on m_bill_company.destroy
+call super::destroy
+end on
+
+type m_bill_billtopoints from menu within m_billing
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+
+IF lnv_Privileges.of_HasAdministrativeRights ( ) = TRUE THEN
+	w_billtopoints	lw_list
+	OpenSheet ( lw_list, gnv_App.of_GetFrame ( ), 0, Layered! )
+ELSE
+	MessageBox ( "Billto Origin/Destination Points", lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+
+
+
+
+
+
+
+end event
+
+on m_bill_billtopoints.create
+call super::create
+this.text = "Billto Origin/Destination &Points"
+end on
+
+on m_bill_billtopoints.destroy
+call super::destroy
+end on
+
+type m_div_b01 from menu within m_billing
+end type
+
+on m_div_b01.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_b01.destroy
+call super::destroy
+end on
+
+type m_bill_graphic_setup from menu within m_billing
+end type
+
+event clicked;opensheet(w_graphic_setup, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_bill_graphic_setup.create
+call super::create
+this.text = "&Logo Setup"
+end on
+
+on m_bill_graphic_setup.destroy
+call super::destroy
+end on
+
+type m_bill_billseq_setup from menu within m_billing
+end type
+
+event clicked;opensheet(w_billseq_edit, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_bill_billseq_setup.create
+call super::create
+this.text = "&Invoice Series Setup"
+end on
+
+on m_bill_billseq_setup.destroy
+call super::destroy
+end on
+
+type m_amounttypesetup from menu within m_billing
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+
+IF lnv_Privileges.of_HasSysAdminRights ( ) = TRUE THEN
+	gnv_App.inv_TaskManager.Navigate ( "Entry to EditAmountTypes1" )
+ELSE
+	messagebox("Amount Type Setup", lnv_Privileges.of_GetSysAdminMessage ( ) )
+END IF
+end event
+
+on m_amounttypesetup.create
+call super::create
+this.text = "A&mount Type Setup"
+end on
+
+on m_amounttypesetup.destroy
+call super::destroy
+end on
+
+type m_bill_shiptype_setup from menu within m_billing
+end type
+
+event clicked;OpenSheet ( w_ShipType_Manager, gnv_App.of_GetFrame ( ), 0, Original! )
+end event
+
+on m_bill_shiptype_setup.create
+call super::create
+this.text = "S&hipment Type Setup"
+end on
+
+on m_bill_shiptype_setup.destroy
+call super::destroy
+end on
+
+type m_bill_validateglar from menu within m_billing
+end type
+
+on m_bill_validateglar.create
+call super::create
+this.text = "Validate &GL AR"
+end on
+
+event clicked;
+n_cst_bso_Accountingmanager lnv_AccountingManager 
+lnv_AccountingManager = create n_cst_bso_Accountingmanager 
+
+lnv_AccountingManager.of_ValidateAccounts("R")
+
+Destroy ( lnv_AccountingManager )
+
+end event
+
+on m_bill_validateglar.destroy
+call super::destroy
+end on
+
+type m_settle from menu within m_base
+m_setl_settlements m_setl_settlements
+m_setl_batchmanager m_setl_batchmanager
+m_setl_comdata m_setl_comdata
+m_setl_amountowedsearch m_setl_amountowedsearch
+m_setl_div01 m_setl_div01
+m_setl_amounttypesetup m_setl_amounttypesetup
+m_setl_ratetypesetup m_setl_ratetypesetup
+m_setl_referencetypesetup m_setl_referencetypesetup
+m_setl_divisionsetup m_setl_divisionsetup
+m_amounttemplatesetup m_amounttemplatesetup
+m_setl_div02 m_setl_div02
+m_setl_payablesvalidation m_setl_payablesvalidation
+m_setl_payrollvalidation m_setl_payrollvalidation
+m_setl_validateglap m_setl_validateglap
+end type
+
+on m_settle.create
+call super::create
+this.text = "&Settlements"
+this.m_setl_settlements=create m_setl_settlements
+this.m_setl_batchmanager=create m_setl_batchmanager
+this.m_setl_comdata=create m_setl_comdata
+this.m_setl_amountowedsearch=create m_setl_amountowedsearch
+this.m_setl_div01=create m_setl_div01
+this.m_setl_amounttypesetup=create m_setl_amounttypesetup
+this.m_setl_ratetypesetup=create m_setl_ratetypesetup
+this.m_setl_referencetypesetup=create m_setl_referencetypesetup
+this.m_setl_divisionsetup=create m_setl_divisionsetup
+this.m_amounttemplatesetup=create m_amounttemplatesetup
+this.m_setl_div02=create m_setl_div02
+this.m_setl_payablesvalidation=create m_setl_payablesvalidation
+this.m_setl_payrollvalidation=create m_setl_payrollvalidation
+this.m_setl_validateglap=create m_setl_validateglap
+this.Item[UpperBound(this.Item)+1]=this.m_setl_settlements
+this.Item[UpperBound(this.Item)+1]=this.m_setl_batchmanager
+this.Item[UpperBound(this.Item)+1]=this.m_setl_comdata
+this.Item[UpperBound(this.Item)+1]=this.m_setl_amountowedsearch
+this.Item[UpperBound(this.Item)+1]=this.m_setl_div01
+this.Item[UpperBound(this.Item)+1]=this.m_setl_amounttypesetup
+this.Item[UpperBound(this.Item)+1]=this.m_setl_ratetypesetup
+this.Item[UpperBound(this.Item)+1]=this.m_setl_referencetypesetup
+this.Item[UpperBound(this.Item)+1]=this.m_setl_divisionsetup
+this.Item[UpperBound(this.Item)+1]=this.m_amounttemplatesetup
+this.Item[UpperBound(this.Item)+1]=this.m_setl_div02
+this.Item[UpperBound(this.Item)+1]=this.m_setl_payablesvalidation
+this.Item[UpperBound(this.Item)+1]=this.m_setl_payrollvalidation
+this.Item[UpperBound(this.Item)+1]=this.m_setl_validateglap
+end on
+
+on m_settle.destroy
+call super::destroy
+destroy(this.m_setl_settlements)
+destroy(this.m_setl_batchmanager)
+destroy(this.m_setl_comdata)
+destroy(this.m_setl_amountowedsearch)
+destroy(this.m_setl_div01)
+destroy(this.m_setl_amounttypesetup)
+destroy(this.m_setl_ratetypesetup)
+destroy(this.m_setl_referencetypesetup)
+destroy(this.m_setl_divisionsetup)
+destroy(this.m_amounttemplatesetup)
+destroy(this.m_setl_div02)
+destroy(this.m_setl_payablesvalidation)
+destroy(this.m_setl_payrollvalidation)
+destroy(this.m_setl_validateglap)
+end on
+
+type m_setl_settlements from menu within m_settle
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+w_TransactionManager	lw_TransactionManager
+
+IF lnv_Privileges.of_Settlements_Edit ( ) = TRUE THEN
+	OpenSheet ( lw_TransactionManager, gnv_App.of_GetFrame ( ), 0, Layered! )
+ELSE
+	messagebox("Settlement Window", "Your current user privileges do not allow you to " +&
+	"enter this window.", exclamation!)
+END IF
+end event
+
+on m_setl_settlements.create
+call super::create
+this.text = "&Settlements"
+end on
+
+on m_setl_settlements.destroy
+call super::destroy
+end on
+
+type m_setl_batchmanager from menu within m_settle
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+w_SettlementBatchManager	lw_batch
+
+IF lnv_Privileges.of_Settlements_Edit ( ) = TRUE THEN
+	IF IsValid ( lw_batch ) THEN
+		IF lw_batch.WindowState = MINIMIZED! THEN
+			lw_batch.WindowState = NORMAL!
+		END IF
+		lw_batch.setFocus ( )
+	ELSE
+		Opensheet( lw_batch, gnv_App.of_GetFrame ( ), 0, LAYERED! )
+	END IF
+ELSE
+	messagebox("Settlement Batch Manager", "Your current user privileges do not allow you to " +&
+	"enter this window.", exclamation!)
+END IF
+
+
+end event
+
+on m_setl_batchmanager.create
+call super::create
+this.text = "&Batch Manager"
+end on
+
+on m_setl_batchmanager.destroy
+call super::destroy
+end on
+
+type m_setl_comdata from menu within m_settle
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+
+IF lnv_Privileges.of_FuelCard_Import ( ) = TRUE THEN
+	gnv_App.inv_TaskManager.Navigate ( "Entry to ImportAmounts1" )
+ELSE
+	messagebox("Fuel Card Import", "Your current user privileges do not allow you to " +&
+	"enter this window.", exclamation!)
+END IF
+end event
+
+on m_setl_comdata.create
+call super::create
+this.text = "&Fuel Card Import"
+end on
+
+on m_setl_comdata.destroy
+call super::destroy
+end on
+
+type m_setl_amountowedsearch from menu within m_settle
+end type
+
+event clicked;n_cst_Privileges		lnv_Privileges
+w_AmountOwedSearch	lw_AmountOwedSearch
+
+IF lnv_Privileges.of_HasAdministrativeRights ( ) = TRUE THEN
+	OpenSheet ( lw_AmountOwedSearch, gnv_App.of_GetFrame ( ), 0, Layered! )
+ELSE
+	Messagebox ( "Amount Owed Search", lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+end event
+
+on m_setl_amountowedsearch.create
+call super::create
+this.text = "Amount Owed Sea&rch"
+end on
+
+on m_setl_amountowedsearch.destroy
+call super::destroy
+end on
+
+type m_setl_div01 from menu within m_settle
+end type
+
+on m_setl_div01.create
+call super::create
+this.text = "-"
+end on
+
+on m_setl_div01.destroy
+call super::destroy
+end on
+
+type m_setl_amounttypesetup from menu within m_settle
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+
+IF lnv_Privileges.of_Settlements_Setup ( ) = TRUE THEN
+	gnv_App.inv_TaskManager.Navigate ( "Entry to EditAmountTypes1" )
+ELSE
+	messagebox("Amount Type Setup", lnv_Privileges.of_GetSysAdminMessage ( ) )
+END IF
+end event
+
+on m_setl_amounttypesetup.create
+call super::create
+this.text = "A&mount Type Setup"
+end on
+
+on m_setl_amounttypesetup.destroy
+call super::destroy
+end on
+
+type m_setl_ratetypesetup from menu within m_settle
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+
+IF lnv_Privileges.of_Settlements_Setup ( ) = TRUE THEN
+	gnv_App.inv_TaskManager.Navigate ( "Entry to EditRateTypes1" )
+ELSE
+	messagebox("Rate Type Setup", lnv_Privileges.of_GetSysAdminMessage ( ) )
+END IF
+end event
+
+on m_setl_ratetypesetup.create
+call super::create
+this.text = "R&ate Type Setup"
+end on
+
+on m_setl_ratetypesetup.destroy
+call super::destroy
+end on
+
+type m_setl_referencetypesetup from menu within m_settle
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+
+IF lnv_Privileges.of_Settlements_Setup ( ) = TRUE THEN
+	gnv_App.inv_TaskManager.Navigate ( "Entry to EditRefnumTypes1" )
+ELSE
+	messagebox("Reference Type Setup", lnv_Privileges.of_GetSysAdminMessage ( ) )
+END IF
+end event
+
+on m_setl_referencetypesetup.create
+call super::create
+this.text = "R&eference Type Setup"
+end on
+
+on m_setl_referencetypesetup.destroy
+call super::destroy
+end on
+
+type m_setl_divisionsetup from menu within m_settle
+end type
+
+event clicked;OpenSheet ( w_ShipType_Manager, gnv_App.of_GetFrame ( ), 0, Original! )
+end event
+
+on m_setl_divisionsetup.create
+call super::create
+this.text = "&Division Setup"
+end on
+
+on m_setl_divisionsetup.destroy
+call super::destroy
+end on
+
+type m_amounttemplatesetup from menu within m_settle
+end type
+
+event clicked;// rdt 08-29-02 new TreeVieW window 
+//w_AmountTemplates		lw_AmountTemplates
+//OpenSheetWithParm ( lw_AmountTemplates, 0, &
+//	gnv_App.of_GetFrame ( ), 0, Layered! )
+	
+w_tv_amounttemplates	lw_AmountTemplates
+OpenSheetWithParm ( lw_AmountTemplates, 0, &
+	gnv_App.of_GetFrame ( ), 0, Layered! )
+
+end event
+
+on m_amounttemplatesetup.create
+call super::create
+this.text = "Pa&yables Setup"
+end on
+
+on m_amounttemplatesetup.destroy
+call super::destroy
+end on
+
+type m_setl_div02 from menu within m_settle
+end type
+
+on m_setl_div02.create
+call super::create
+this.text = "-"
+end on
+
+on m_setl_div02.destroy
+call super::destroy
+end on
+
+type m_setl_payablesvalidation from menu within m_settle
+end type
+
+event clicked;SetPointer(HourGlass!)
+Integer	li_Return = 1
+string	ls_acctlink, &
+			ls_MessageTitle
+
+n_cst_acctlink	lnv_cst_acctlink
+n_cst_Settings	lnv_Settings
+
+n_cst_Privileges			lnv_Privileges
+
+ls_MessageTitle = "Vendor Validation"
+
+IF lnv_Privileges.of_Settlements_CreateBatch ( ) THEN
+
+	IF lnv_Settings.of_GetAcctLink ( ls_AcctLink ) = 1 THEN
+	
+		lnv_cst_AcctLink = CREATE USING ls_AcctLink
+		li_Return = lnv_cst_AcctLink.of_validateallentitiesbytype ( "PAYABLES" )
+		
+		IF li_Return = 1 THEN
+			messageBox(ls_MessageTitle, &
+			"Vendor validation completed.", Information!)
+		END IF
+	
+	ELSE // error
+		messageBox(ls_MessageTitle, "An error occurred " + &
+		"while attempting to determine what accounting software " + &
+		"is being used. Please check your System Settings.", StopSign!)
+	END IF
+	
+ELSE
+		MessageBox( ls_MessageTitle , lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+
+IF isvalid ( lnv_cst_acctlink ) THEN
+	destroy lnv_cst_acctlink
+END IF
+end event
+
+on m_setl_payablesvalidation.create
+call super::create
+this.text = "Validate Payables &Vendors"
+end on
+
+on m_setl_payablesvalidation.destroy
+call super::destroy
+end on
+
+type m_setl_payrollvalidation from menu within m_settle
+end type
+
+event clicked;SetPointer(HourGlass!)
+Integer	li_Return = 1
+string	ls_acctlink, &
+			ls_MessageTitle
+
+n_cst_acctlink	lnv_cst_acctlink
+n_cst_Settings	lnv_Settings
+
+n_cst_Privileges			lnv_Privileges
+
+ls_MessageTitle = "Employee Validation"
+
+IF lnv_Privileges.of_Settlements_CreateBatch ( ) THEN
+
+	IF lnv_Settings.of_GetAcctLink ( ls_AcctLink ) = 1 THEN
+		
+		lnv_cst_AcctLink = CREATE USING ls_AcctLink
+		li_Return = lnv_cst_AcctLink.of_validateallentitiesbytype ( "PAYROLL" )
+		
+		IF li_Return = 1 THEN
+			messageBox(ls_MessageTitle, &
+			"Employee validation completed.", Information!)
+		END IF
+	
+	ELSE // error
+		messageBox(ls_MessageTitle, "An error occurred " + &
+		"while attempting to determine what accounting software " + &
+		"is being used. Please check your System Settings.", StopSign!)
+	END IF
+	
+ELSE
+		MessageBox( ls_MessageTitle , lnv_Privileges.of_GetRestrictMessage ( ) )	
+END IF
+
+IF isvalid ( lnv_cst_acctlink ) THEN
+	destroy lnv_cst_acctlink
+END IF
+end event
+
+on m_setl_payrollvalidation.create
+call super::create
+this.text = "Validate Payroll Em&ployees"
+end on
+
+on m_setl_payrollvalidation.destroy
+call super::destroy
+end on
+
+type m_setl_validateglap from menu within m_settle
+end type
+
+on m_setl_validateglap.create
+call super::create
+this.text = "Validate &GL AP"
+end on
+
+event clicked;
+n_cst_bso_Accountingmanager lnv_AccountingManager 
+lnv_AccountingManager = create n_cst_bso_Accountingmanager 
+
+lnv_AccountingManager.of_ValidateAccounts("P")
+
+Destroy ( lnv_AccountingManager )
+
+end event
+
+on m_setl_validateglap.destroy
+call super::destroy
+end on
+
+type m_imaging from menu within m_base
+m_scanbatch m_scanbatch
+m_viewunassigned m_viewunassigned
+m_-0 m_-0
+m_imagemodificationlog m_imagemodificationlog
+m_-2 m_-2
+m_archiving m_archiving
+m_imagetypesetup m_imagetypesetup
+end type
+
+on m_imaging.create
+call super::create
+this.text = "&Imaging"
+this.m_scanbatch=create m_scanbatch
+this.m_viewunassigned=create m_viewunassigned
+this.m_-0=create m_-0
+this.m_imagemodificationlog=create m_imagemodificationlog
+this.m_-2=create m_-2
+this.m_archiving=create m_archiving
+this.m_imagetypesetup=create m_imagetypesetup
+this.Item[UpperBound(this.Item)+1]=this.m_scanbatch
+this.Item[UpperBound(this.Item)+1]=this.m_viewunassigned
+this.Item[UpperBound(this.Item)+1]=this.m_-0
+this.Item[UpperBound(this.Item)+1]=this.m_imagemodificationlog
+this.Item[UpperBound(this.Item)+1]=this.m_-2
+this.Item[UpperBound(this.Item)+1]=this.m_archiving
+this.Item[UpperBound(this.Item)+1]=this.m_imagetypesetup
+end on
+
+on m_imaging.destroy
+call super::destroy
+destroy(this.m_scanbatch)
+destroy(this.m_viewunassigned)
+destroy(this.m_-0)
+destroy(this.m_imagemodificationlog)
+destroy(this.m_-2)
+destroy(this.m_archiving)
+destroy(this.m_imagetypesetup)
+end on
+
+type m_scanbatch from menu within m_imaging
+end type
+
+event clicked;n_cst_bso_ImageManager_pegasus  lnv_Pegasus
+lnv_Pegasus = Create n_cst_bso_ImageManager_pegasus
+
+
+
+lnv_Pegasus.of_UnknownBatch ( ) 
+
+
+
+DESTROY lnv_Pegasus
+end event
+
+on m_scanbatch.create
+call super::create
+this.text = "&Scan Batch"
+end on
+
+on m_scanbatch.destroy
+call super::destroy
+end on
+
+type m_viewunassigned from menu within m_imaging
+end type
+
+event clicked;n_cst_bso_ImageManager_pegasus  lnv_Pegasus
+lnv_Pegasus = Create n_cst_bso_ImageManager_pegasus
+
+
+
+lnv_Pegasus.of_Viewunassignedimages( )
+
+
+
+DESTROY lnv_Pegasus
+end event
+
+on m_viewunassigned.create
+call super::create
+this.text = "View &Unassigned"
+end on
+
+on m_viewunassigned.destroy
+call super::destroy
+end on
+
+type m_-0 from menu within m_imaging
+end type
+
+on m_-0.create
+call super::create
+this.text = "-"
+end on
+
+on m_-0.destroy
+call super::destroy
+end on
+
+type m_imagemodificationlog from menu within m_imaging
+end type
+
+event clicked;IF isValid( w_imageModLog ) THEN
+	w_imageModLog.setFocus()
+	
+ELSE
+	open( w_imageModLog )
+
+END IF
+end event
+
+on m_imagemodificationlog.create
+call super::create
+this.text = "Image &Modification Log"
+end on
+
+on m_imagemodificationlog.destroy
+call super::destroy
+end on
+
+type m_-2 from menu within m_imaging
+end type
+
+on m_-2.create
+call super::create
+this.text = "-"
+end on
+
+on m_-2.destroy
+call super::destroy
+end on
+
+type m_archiving from menu within m_imaging
+end type
+
+event clicked;n_cst_privileges lnv_privileges
+
+IF lnv_privileges.of_HasAdministrativeRights() = TRUE THEN
+	w_imagingsettingsmanager lw_archiving	
+	opensheetwithparm(lw_archiving, 0, gnv_App.of_GetFrame ( ), 0, Original!)
+ELSE
+	MessageBox ( "Archiving", lnv_Privileges.of_GetRestrictMessage ( ) )
+END IF
+end event
+
+on m_archiving.create
+call super::create
+this.text = "&Archiving"
+end on
+
+on m_archiving.destroy
+call super::destroy
+end on
+
+type m_imagetypesetup from menu within m_imaging
+end type
+
+event clicked;open ( W_ImageTypeSetup )
+end event
+
+on m_imagetypesetup.create
+call super::create
+this.text = "&Image Type Setup"
+end on
+
+on m_imagetypesetup.destroy
+call super::destroy
+end on
+
+type m_logs from menu within m_base
+m_log_entry m_log_entry
+m_log_vios m_log_vios
+m_log_reports m_log_reports
+m_div_l01 m_div_l01
+m_log_emp m_log_emp
+m_random_list m_random_list
+m_div_l02 m_div_l02
+m_log_admin m_log_admin
+m_log_prefs m_log_prefs
+end type
+
+on m_logs.create
+call super::create
+this.text = "Driver &Logs"
+this.m_log_entry=create m_log_entry
+this.m_log_vios=create m_log_vios
+this.m_log_reports=create m_log_reports
+this.m_div_l01=create m_div_l01
+this.m_log_emp=create m_log_emp
+this.m_random_list=create m_random_list
+this.m_div_l02=create m_div_l02
+this.m_log_admin=create m_log_admin
+this.m_log_prefs=create m_log_prefs
+this.Item[UpperBound(this.Item)+1]=this.m_log_entry
+this.Item[UpperBound(this.Item)+1]=this.m_log_vios
+this.Item[UpperBound(this.Item)+1]=this.m_log_reports
+this.Item[UpperBound(this.Item)+1]=this.m_div_l01
+this.Item[UpperBound(this.Item)+1]=this.m_log_emp
+this.Item[UpperBound(this.Item)+1]=this.m_random_list
+this.Item[UpperBound(this.Item)+1]=this.m_div_l02
+this.Item[UpperBound(this.Item)+1]=this.m_log_admin
+this.Item[UpperBound(this.Item)+1]=this.m_log_prefs
+end on
+
+on m_logs.destroy
+call super::destroy
+destroy(this.m_log_entry)
+destroy(this.m_log_vios)
+destroy(this.m_log_reports)
+destroy(this.m_div_l01)
+destroy(this.m_log_emp)
+destroy(this.m_random_list)
+destroy(this.m_div_l02)
+destroy(this.m_log_admin)
+destroy(this.m_log_prefs)
+end on
+
+type m_log_entry from menu within m_logs
+end type
+
+on m_log_entry.create
+call super::create
+this.text = "Log E&ntry"
+end on
+
+event clicked;IF NOT gnv_App.of_Getprivsmanager( ).of_Useadvancedprivs( ) THEN
+	if g_privs.log[1] = 0 then
+		messagebox("Log Entry", "Your current user privileges do not allow you to view " +&
+		"driver logs.")
+		return
+	end if
+END IF
+
+
+opensheet(w_log, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_log_entry.destroy
+call super::destroy
+end on
+
+type m_log_vios from menu within m_logs
+end type
+
+on m_log_vios.create
+call super::create
+this.text = "&Violations"
+end on
+
+event clicked;IF NOT gnv_App.of_Getprivsmanager( ).of_Useadvancedprivs( ) THEN
+	if g_privs.log[3] = 0 then
+		messagebox("Violations", "Your current user privileges do not allow you to view " +&
+		"the violation summary screen.")
+		return
+	end if
+END IF
+window checkwin
+integer xval = 1
+
+checkwin = gnv_App.of_GetFrame ( ).getfirstsheet()
+if isvalid(checkwin) then
+	if classname(checkwin) = "w_log_reports" then xval = 1340
+end if
+
+
+//this is a fix
+xval = 1
+opensheetwithparm(w_vios_driver, xval, gnv_App.of_GetFrame ( ), 0, original!)
+
+end event
+
+on m_log_vios.destroy
+call super::destroy
+end on
+
+type m_log_reports from menu within m_logs
+end type
+
+on m_log_reports.create
+call super::create
+this.text = "&Reporting"
+end on
+
+event clicked;if g_privs.log[2] = 0 then
+	messagebox("Reporting", "Your current user privileges do not allow you to access" +&
+	" reports.")
+	return
+end if
+
+
+window checkwin
+s_emp_info curemp
+curemp.em_id = null_long
+
+//checkwin = w_frame.getfirstsheet()
+//if isvalid(checkwin) then
+//	if classname(checkwin) = "w_vios_driver" then
+//		if not isnull(w_vios_driver.cur_driver.em_id) then curemp = w_vios_driver.cur_driver else curemp.em_id = -1
+//		w_vios_driver.x = 1340
+//		w_vios_driver.y = 1
+//	end if 
+//end if
+
+//this is a fix
+curemp.em_id = null_long
+
+opensheetwithparm(w_log_reports, curemp, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_log_reports.destroy
+call super::destroy
+end on
+
+type m_div_l01 from menu within m_logs
+end type
+
+on m_div_l01.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_l01.destroy
+call super::destroy
+end on
+
+type m_log_emp from menu within m_logs
+end type
+
+event clicked;if m_system.m_sys_emp.enabled and m_system.m_sys_emp.visible then &
+	m_system.m_sys_emp.event post clicked()
+end event
+
+on m_log_emp.create
+call super::create
+this.text = "&Employee Info"
+end on
+
+on m_log_emp.destroy
+call super::destroy
+end on
+
+type m_random_list from menu within m_logs
+end type
+
+on m_random_list.create
+call super::create
+this.text = "Random Driver &List"
+end on
+
+event clicked;if g_privs.log[2] = 0 then
+	messagebox("Random Driver List", "Your current user privileges do not allow you to access" +&
+	" this screen.")
+	return
+end if
+
+if isvalid(w_driver_random) then
+	show(w_driver_random)
+	return
+end if
+opensheet(w_driver_random, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_random_list.destroy
+call super::destroy
+end on
+
+type m_div_l02 from menu within m_logs
+end type
+
+on m_div_l02.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_l02.destroy
+call super::destroy
+end on
+
+type m_log_admin from menu within m_logs
+end type
+
+on m_log_admin.create
+call super::create
+this.text = "Log &Administration"
+end on
+
+event clicked;IF NOT gnv_App.of_Getprivsmanager( ).of_Useadvancedprivs( ) THEN
+	if g_privs.log[5] = 1 or g_privs.log[6] = 1 or g_privs.log[7] = 1 then
+	else
+		messagebox("Log Administration", "Your current user privileges do not allow you to " +&
+		"access this screen.")
+		return
+	end if
+END IF
+
+open(w_log_admin)
+
+
+end event
+
+on m_log_admin.destroy
+call super::destroy
+end on
+
+type m_log_prefs from menu within m_logs
+end type
+
+on m_log_prefs.create
+call super::create
+this.text = "User &Preferences"
+end on
+
+event clicked;IF NOT gnv_App.of_Getprivsmanager( ).of_Useadvancedprivs( ) THEN
+	if g_privs.log[3] = 0 then
+		messagebox("User Preferences - (Log Entry)", "Your current user privileges do not "+&
+		"allow you to edit logs.  You therefore do not have access to log entry preference "+&
+		"settings.")
+		return
+	end if
+END IF
+
+open(w_log_settings)
+
+
+end event
+
+on m_log_prefs.destroy
+call super::destroy
+end on
+
+type m_dispatch from menu within m_base
+m_disp_newship m_disp_newship
+m_disp_newdispship m_disp_newdispship
+m_disp_newcntnship m_disp_newcntnship
+m_newcdshipment m_newcdshipment
+m_disp_newnrship m_disp_newnrship
+m_disp_newbrokship m_disp_newbrokship
+m_disp_newnrbrokerage m_disp_newnrbrokerage
+m_disp_newtemplateshipment m_disp_newtemplateshipment
+m_disp_newtrip m_disp_newtrip
+m_div_d01 m_div_d01
+m_disp_itin m_disp_itin
+m_disp_ship m_disp_ship
+m_disp_trip m_disp_trip
+m_1 m_1
+m_div_d02 m_div_d02
+m_disp_shipsum m_disp_shipsum
+m_disp_equipsum m_disp_equipsum
+m_disp_tripsum m_disp_tripsum
+m_disp_reviewedi m_disp_reviewedi
+m_disp_search m_disp_search
+m_div_d03 m_div_d03
+m_disp_company m_disp_company
+m_disp_equip m_disp_equip
+m_disp_emp m_disp_emp
+m_div_d04 m_div_d04
+m_disp_pcmiler m_disp_pcmiler
+m_div_d05 m_div_d05
+m_cashadvance m_cashadvance
+m_-1 m_-1
+m_quickview m_quickview
+end type
+
+on m_dispatch.create
+call super::create
+this.text = "&Dispatch"
+this.m_disp_newship=create m_disp_newship
+this.m_disp_newdispship=create m_disp_newdispship
+this.m_disp_newcntnship=create m_disp_newcntnship
+this.m_newcdshipment=create m_newcdshipment
+this.m_disp_newnrship=create m_disp_newnrship
+this.m_disp_newbrokship=create m_disp_newbrokship
+this.m_disp_newnrbrokerage=create m_disp_newnrbrokerage
+this.m_disp_newtemplateshipment=create m_disp_newtemplateshipment
+this.m_disp_newtrip=create m_disp_newtrip
+this.m_div_d01=create m_div_d01
+this.m_disp_itin=create m_disp_itin
+this.m_disp_ship=create m_disp_ship
+this.m_disp_trip=create m_disp_trip
+this.m_1=create m_1
+this.m_div_d02=create m_div_d02
+this.m_disp_shipsum=create m_disp_shipsum
+this.m_disp_equipsum=create m_disp_equipsum
+this.m_disp_tripsum=create m_disp_tripsum
+this.m_disp_reviewedi=create m_disp_reviewedi
+this.m_disp_search=create m_disp_search
+this.m_div_d03=create m_div_d03
+this.m_disp_company=create m_disp_company
+this.m_disp_equip=create m_disp_equip
+this.m_disp_emp=create m_disp_emp
+this.m_div_d04=create m_div_d04
+this.m_disp_pcmiler=create m_disp_pcmiler
+this.m_div_d05=create m_div_d05
+this.m_cashadvance=create m_cashadvance
+this.m_-1=create m_-1
+this.m_quickview=create m_quickview
+this.Item[UpperBound(this.Item)+1]=this.m_disp_newship
+this.Item[UpperBound(this.Item)+1]=this.m_disp_newdispship
+this.Item[UpperBound(this.Item)+1]=this.m_disp_newcntnship
+this.Item[UpperBound(this.Item)+1]=this.m_newcdshipment
+this.Item[UpperBound(this.Item)+1]=this.m_disp_newnrship
+this.Item[UpperBound(this.Item)+1]=this.m_disp_newbrokship
+this.Item[UpperBound(this.Item)+1]=this.m_disp_newnrbrokerage
+this.Item[UpperBound(this.Item)+1]=this.m_disp_newtemplateshipment
+this.Item[UpperBound(this.Item)+1]=this.m_disp_newtrip
+this.Item[UpperBound(this.Item)+1]=this.m_div_d01
+this.Item[UpperBound(this.Item)+1]=this.m_disp_itin
+this.Item[UpperBound(this.Item)+1]=this.m_disp_ship
+this.Item[UpperBound(this.Item)+1]=this.m_disp_trip
+this.Item[UpperBound(this.Item)+1]=this.m_1
+this.Item[UpperBound(this.Item)+1]=this.m_div_d02
+this.Item[UpperBound(this.Item)+1]=this.m_disp_shipsum
+this.Item[UpperBound(this.Item)+1]=this.m_disp_equipsum
+this.Item[UpperBound(this.Item)+1]=this.m_disp_tripsum
+this.Item[UpperBound(this.Item)+1]=this.m_disp_reviewedi
+this.Item[UpperBound(this.Item)+1]=this.m_disp_search
+this.Item[UpperBound(this.Item)+1]=this.m_div_d03
+this.Item[UpperBound(this.Item)+1]=this.m_disp_company
+this.Item[UpperBound(this.Item)+1]=this.m_disp_equip
+this.Item[UpperBound(this.Item)+1]=this.m_disp_emp
+this.Item[UpperBound(this.Item)+1]=this.m_div_d04
+this.Item[UpperBound(this.Item)+1]=this.m_disp_pcmiler
+this.Item[UpperBound(this.Item)+1]=this.m_div_d05
+this.Item[UpperBound(this.Item)+1]=this.m_cashadvance
+this.Item[UpperBound(this.Item)+1]=this.m_-1
+this.Item[UpperBound(this.Item)+1]=this.m_quickview
+end on
+
+on m_dispatch.destroy
+call super::destroy
+destroy(this.m_disp_newship)
+destroy(this.m_disp_newdispship)
+destroy(this.m_disp_newcntnship)
+destroy(this.m_newcdshipment)
+destroy(this.m_disp_newnrship)
+destroy(this.m_disp_newbrokship)
+destroy(this.m_disp_newnrbrokerage)
+destroy(this.m_disp_newtemplateshipment)
+destroy(this.m_disp_newtrip)
+destroy(this.m_div_d01)
+destroy(this.m_disp_itin)
+destroy(this.m_disp_ship)
+destroy(this.m_disp_trip)
+destroy(this.m_1)
+destroy(this.m_div_d02)
+destroy(this.m_disp_shipsum)
+destroy(this.m_disp_equipsum)
+destroy(this.m_disp_tripsum)
+destroy(this.m_disp_reviewedi)
+destroy(this.m_disp_search)
+destroy(this.m_div_d03)
+destroy(this.m_disp_company)
+destroy(this.m_disp_equip)
+destroy(this.m_disp_emp)
+destroy(this.m_div_d04)
+destroy(this.m_disp_pcmiler)
+destroy(this.m_div_d05)
+destroy(this.m_cashadvance)
+destroy(this.m_-1)
+destroy(this.m_quickview)
+end on
+
+type m_disp_newship from menu within m_dispatch
+end type
+
+event clicked;string	ls_setting, &
+			ls_format
+			
+any		la_setting			
+
+n_cst_settings	lnv_settings
+n_cst_ShipmentManager lnv_ShipmentMgr
+
+
+//check system setting for default
+IF lnv_Settings.of_GetSetting ( 105 , la_Setting ) <> 1 THEN
+	ls_Setting = "DISPATCH!"
+ELSE
+	ls_Setting = string ( la_Setting ) 
+END IF
+	
+CHOOSE CASE ls_Setting
+			
+	CASE "DISPATCH!"			
+		lnv_ShipmentMgr.of_NewShipment ( )
+		
+	CASE "INTERMODAL!"
+		Open ( w_Cntn_Ship )
+		
+	CASE "CROSSDOCK!"
+		lnv_ShipmentMgr.of_NewCrossDockShipment ( )
+		
+	CASE "NONROUTED!"
+		lnv_ShipmentMgr.of_NewNonRoutedShipment ( )
+		
+	CASE "BROKERAGE!"
+		lnv_ShipmentMgr.of_NewBrokerageShipment ( )
+		
+	CASE "NONROUTEDBROKERAGE!"
+		lnv_ShipmentMgr.of_NewNonRoutedBrokerage ( )
+		
+	CASE "TEMPLATE!"
+		S_Parm	lstr_Parm
+		n_cst_Msg	lnv_Msg
+		
+		lstr_Parm.is_Label = "TEMPLATE" 
+		lnv_msg.of_Add_Parm ( lstr_Parm )
+		
+		OpenWithParm ( w_DuplicateWithEquipment, lnv_msg )
+		
+	CASE "3RDPARTYTRIP!"	
+		lnv_ShipmentMgr.of_NewTrip ( )
+		
+END CHOOSE
+
+
+end event
+
+on m_disp_newship.create
+call super::create
+this.visible = false
+this.text = "New Shipment"
+end on
+
+on m_disp_newship.destroy
+call super::destroy
+end on
+
+type m_disp_newdispship from menu within m_dispatch
+end type
+
+on m_disp_newdispship.create
+call super::create
+this.text = "New &Dispatch Shipment"
+end on
+
+event clicked;n_cst_ShipmentManager lnv_ShipmentMgr
+lnv_ShipmentMgr.of_NewShipment ( )
+end event
+
+on m_disp_newdispship.destroy
+call super::destroy
+end on
+
+type m_disp_newcntnship from menu within m_dispatch
+end type
+
+on m_disp_newcntnship.create
+call super::create
+this.text = "New Intermod&al Shipment"
+end on
+
+event clicked;Open ( w_Cntn_Ship )
+end event
+
+on m_disp_newcntnship.destroy
+call super::destroy
+end on
+
+type m_newcdshipment from menu within m_dispatch
+end type
+
+event clicked;n_cst_ShipmentManager	lnv_ShipmentMgr
+lnv_ShipmentMgr.of_NewCrossDockShipment ( )
+end event
+
+on m_newcdshipment.create
+call super::create
+this.text = "New Cross-Doc&k Shipment"
+end on
+
+on m_newcdshipment.destroy
+call super::destroy
+end on
+
+type m_disp_newnrship from menu within m_dispatch
+end type
+
+on m_disp_newnrship.create
+call super::create
+this.text = "New &Non-Routed Shipment"
+end on
+
+event clicked;n_cst_ShipmentManager	lnv_ShipmentMgr
+lnv_ShipmentMgr.of_NewNonRoutedShipment ( )
+end event
+
+on m_disp_newnrship.destroy
+call super::destroy
+end on
+
+type m_disp_newbrokship from menu within m_dispatch
+end type
+
+event clicked;n_cst_ShipmentManager	lnv_ShipmentMgr
+lnv_ShipmentMgr.of_NewBrokerageShipment ( )
+end event
+
+on m_disp_newbrokship.create
+call super::create
+this.text = "New &Brokerage Shipment"
+end on
+
+on m_disp_newbrokship.destroy
+call super::destroy
+end on
+
+type m_disp_newnrbrokerage from menu within m_dispatch
+end type
+
+event clicked;n_cst_ShipmentManager	lnv_ShipmentMgr
+lnv_ShipmentMgr.of_NewNonRoutedBrokerage ( )
+end event
+
+on m_disp_newnrbrokerage.create
+call super::create
+this.text = "New Non-Routed Brokera&ge"
+end on
+
+on m_disp_newnrbrokerage.destroy
+call super::destroy
+end on
+
+type m_disp_newtemplateshipment from menu within m_dispatch
+end type
+
+event clicked;n_cst_Msg	lnv_Msg
+S_Parm	lstr_Parm
+
+lstr_Parm.is_Label = "TEMPLATE" 
+lnv_msg.of_Add_Parm ( lstr_Parm )
+
+OpenWithParm ( w_DuplicateWithEquipment, lnv_msg )
+end event
+
+on m_disp_newtemplateshipment.create
+call super::create
+this.text = "Ne&w Shipment from Template"
+end on
+
+on m_disp_newtemplateshipment.destroy
+call super::destroy
+end on
+
+type m_disp_newtrip from menu within m_dispatch
+end type
+
+on m_disp_newtrip.create
+call super::create
+this.text = "New &3rd Party Trip"
+end on
+
+event clicked;n_cst_ShipmentManager	lnv_ShipmentMgr
+lnv_ShipmentMgr.of_NewTrip ( )
+end event
+
+on m_disp_newtrip.destroy
+call super::destroy
+end on
+
+type m_div_d01 from menu within m_dispatch
+end type
+
+on m_div_d01.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_d01.destroy
+call super::destroy
+end on
+
+type m_disp_itin from menu within m_dispatch
+end type
+
+on m_disp_itin.create
+call super::create
+this.text = "&Itinerary"
+end on
+
+event clicked;Int	li_Type
+n_cst_setting_defaultitinerarybutton	lnv_Setting
+lnv_Setting = CREATE n_cst_setting_defaultitinerarybutton
+
+
+CHOOSE CASE lnv_Setting.of_Getvalue( )
+
+	CASE appeon_constant.cs_Driver
+		li_Type = gc_Dispatch.ci_ItinType_Driver
+		
+	CASE appeon_constant.cs_PowerUnit
+		li_Type = gc_Dispatch.ci_ItinType_PowerUnit
+		
+	CASE appeon_constant.cs_Trailer
+		li_Type = gc_Dispatch.ci_ItinType_TrailerChassis
+		
+	CASE appeon_constant.cs_Container
+		li_Type = gc_Dispatch.ci_ItinType_Container
+		
+	CASE appeon_constant.cs_3rdpartytrip
+		li_Type = gc_Dispatch.ci_ItinType_Trip
+		
+	CASE ELSE
+		li_Type = null_int  //Open to default type selection
+		
+END CHOOSE
+
+s_anys open_parms
+
+open_parms.anys[1] =  li_Type
+open_parms.anys[2] = "ALL_SHIPS"
+open_parms.anys[3] = null_date
+open_parms.anys[4] = null_long
+open_parms.anys[5] = "OPEN"
+
+DESTROY lnv_Setting
+
+openwithparm(w_itin_select, open_parms)
+
+
+end event
+
+on m_disp_itin.destroy
+call super::destroy
+end on
+
+type m_disp_ship from menu within m_dispatch
+end type
+
+on m_disp_ship.create
+call super::create
+this.text = "&Shipment"
+end on
+
+event clicked;s_anys open_parms
+
+open_parms.anys[1] = gc_Dispatch.ci_ItinType_Shipment
+open_parms.anys[2] = "ALL_SHIPS"
+open_parms.anys[3] = null_date
+open_parms.anys[4] = null_long
+open_parms.anys[5] = "OPEN"
+
+openwithparm(w_itin_select, open_parms)
+end event
+
+on m_disp_ship.destroy
+call super::destroy
+end on
+
+type m_disp_trip from menu within m_dispatch
+end type
+
+on m_disp_trip.create
+call super::create
+this.text = "3rd Party &Trip"
+end on
+
+event clicked;s_anys open_parms
+
+open_parms.anys[1] = gc_Dispatch.ci_ItinType_Trip
+open_parms.anys[2] = "ALL_SHIPS"
+open_parms.anys[3] = null_date
+open_parms.anys[4] = null_long
+open_parms.anys[5] = "OPEN"
+
+openwithparm(w_itin_select, open_parms)
+end event
+
+on m_disp_trip.destroy
+call super::destroy
+end on
+
+type m_1 from menu within m_dispatch
+end type
+
+event clicked;n_cst_ShipmentManager lnv_ShipmentManager
+lnv_ShipmentManager.of_AutoRouteRepos()
+
+
+
+
+end event
+
+on m_1.create
+call super::create
+this.text = "Auto Route Repos"
+end on
+
+on m_1.destroy
+call super::destroy
+end on
+
+type m_div_d02 from menu within m_dispatch
+end type
+
+on m_div_d02.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_d02.destroy
+call super::destroy
+end on
+
+type m_disp_shipsum from menu within m_dispatch
+end type
+
+on m_disp_shipsum.create
+call super::create
+this.text = "S&hipment Summary"
+end on
+
+event clicked;w_ShipmentManager	lw_ShipmentManager
+
+OpenSheet ( lw_ShipmentManager, gnv_App.of_GetFrame ( ), 0, Layered! )
+end event
+
+on m_disp_shipsum.destroy
+call super::destroy
+end on
+
+type m_disp_equipsum from menu within m_dispatch
+end type
+
+on m_disp_equipsum.create
+call super::create
+this.text = "Equi&pment Summary"
+end on
+
+event clicked;gnv_App.inv_TaskManager.Navigate ( "Entry to EquipmentSummary1" )
+
+//opensheet(w_equip_summary, gnv_App.of_GetFrame ( ), 0, original!)
+end event
+
+on m_disp_equipsum.destroy
+call super::destroy
+end on
+
+type m_disp_tripsum from menu within m_dispatch
+end type
+
+event clicked;OpenSheet ( w_TripSummary, gnv_App.of_GetFrame ( ), 0, Original! )
+end event
+
+on m_disp_tripsum.create
+call super::create
+this.text = "3rd Part&y Trip Summary"
+end on
+
+on m_disp_tripsum.destroy
+call super::destroy
+end on
+
+type m_disp_reviewedi from menu within m_dispatch
+end type
+
+event clicked;OpenSheet ( w_EdiShipmentReview, gnv_App.of_GetFrame ( ), 0, Layered! )
+end event
+
+on m_disp_reviewedi.create
+call super::create
+this.text = "Re&view EDI Shipments"
+end on
+
+on m_disp_reviewedi.destroy
+call super::destroy
+end on
+
+type m_disp_search from menu within m_dispatch
+end type
+
+event clicked;if m_billing.m_bill_search.enabled and m_billing.m_bill_search.visible then &
+	m_billing.m_bill_search.event post clicked()
+end event
+
+on m_disp_search.create
+call super::create
+this.text = "Sea&rch"
+end on
+
+on m_disp_search.destroy
+call super::destroy
+end on
+
+type m_div_d03 from menu within m_dispatch
+end type
+
+on m_div_d03.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_d03.destroy
+call super::destroy
+end on
+
+type m_disp_company from menu within m_dispatch
+end type
+
+on m_disp_company.create
+call super::create
+this.text = "C&ompany Info"
+end on
+
+event clicked;if m_system.m_sys_company.enabled and m_system.m_sys_company.visible then &
+	m_system.m_sys_company.event post clicked()
+end event
+
+on m_disp_company.destroy
+call super::destroy
+end on
+
+type m_disp_equip from menu within m_dispatch
+end type
+
+on m_disp_equip.create
+call super::create
+this.text = "E&quipment Info"
+end on
+
+event clicked;if m_system.m_sys_equip.enabled and m_system.m_sys_equip.visible then &
+	m_system.m_sys_equip.m_equipmentinfo.event post clicked()
+end event
+
+on m_disp_equip.destroy
+call super::destroy
+end on
+
+type m_disp_emp from menu within m_dispatch
+end type
+
+on m_disp_emp.create
+call super::create
+this.text = "&Employee Info"
+end on
+
+event clicked;if m_system.m_sys_emp.enabled and m_system.m_sys_emp.visible then &
+	m_system.m_sys_emp.event post clicked()
+end event
+
+on m_disp_emp.destroy
+call super::destroy
+end on
+
+type m_div_d04 from menu within m_dispatch
+end type
+
+on m_div_d04.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_d04.destroy
+call super::destroy
+end on
+
+type m_disp_pcmiler from menu within m_dispatch
+end type
+
+on m_disp_pcmiler.create
+call super::create
+this.text = "PC*&Miler Interface"
+end on
+
+event clicked;boolean	lb_pcmilerconnected
+n_cst_licensemanager	lnv_licensemanager
+setpointer(hourglass!)
+if pcms_inst AND (lnv_LicenseManager.of_usepcmilerstreets() or &
+		lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.ci_Module_PCMiler ) ) then
+	if lnv_LicenseManager.of_Getpcmilerserverid() > 0 then
+		lb_pcmilerconnected=true
+	end if
+end if
+
+if lb_pcmilerconnected then
+	opensheet(w_pcmiler, gnv_App.of_GetFrame ( ), 0, original!)
+else
+	if m_system.m_sys_pcmconn.visible and m_system.m_sys_pcmconn.enabled then &
+		m_system.m_sys_pcmconn.event trigger clicked()
+end if
+
+
+end event
+
+on m_disp_pcmiler.destroy
+call super::destroy
+end on
+
+type m_div_d05 from menu within m_dispatch
+end type
+
+on m_div_d05.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_d05.destroy
+call super::destroy
+end on
+
+type m_cashadvance from menu within m_dispatch
+end type
+
+event clicked;open ( w_CashAdvance )
+end event
+
+on m_cashadvance.create
+call super::create
+this.text = "&Cash Advance"
+end on
+
+on m_cashadvance.destroy
+call super::destroy
+end on
+
+type m_-1 from menu within m_dispatch
+end type
+
+on m_-1.create
+call super::create
+this.text = "-"
+end on
+
+on m_-1.destroy
+call super::destroy
+end on
+
+type m_quickview from menu within m_dispatch
+end type
+
+event clicked;//dynamic stuff not meant for check in just yet
+Integer	li_Return
+String 	ls_windowName
+
+n_cst_bso_DynamicObjectManager	lnv_DynamicObjectManager
+
+lnv_DynamicObjectManager = CREATE n_cst_bso_DynamicObjectManager
+
+
+IF not isValid( w_launchWindow ) THEN
+	open( w_launchWindow )
+ELSE
+	w_launchWindow.setFocus()
+END IF
+
+IF NOT isNull(Message.StringParm) THEN
+	ls_windowName = Message.StringParm
+	lnv_DynamicObjectManager.of_setmainwindow( ls_windowName )
+	lnv_DynamicObjectManager.of_initialize()
+END IF
+
+
+end event
+
+on m_quickview.create
+call super::create
+this.text = "&Quick View"
+this.toolbaritemtext = "QUICK VIEW,QUICK VIEW"
+end on
+
+on m_quickview.destroy
+call super::destroy
+end on
+
+type m_communications from menu within m_base
+m_comm_sendmessage m_comm_sendmessage
+m_comm_sendfreeformtext m_comm_sendfreeformtext
+m_comm_fleetmap m_comm_fleetmap
+m_comm_div01 m_comm_div01
+m_comm_devicesetup m_comm_devicesetup
+m_comm_inboundmessages m_comm_inboundmessages
+m_comm_messagelog m_comm_messagelog
+end type
+
+on m_communications.create
+call super::create
+this.text = "Co&mmunications"
+this.m_comm_sendmessage=create m_comm_sendmessage
+this.m_comm_sendfreeformtext=create m_comm_sendfreeformtext
+this.m_comm_fleetmap=create m_comm_fleetmap
+this.m_comm_div01=create m_comm_div01
+this.m_comm_devicesetup=create m_comm_devicesetup
+this.m_comm_inboundmessages=create m_comm_inboundmessages
+this.m_comm_messagelog=create m_comm_messagelog
+this.Item[UpperBound(this.Item)+1]=this.m_comm_sendmessage
+this.Item[UpperBound(this.Item)+1]=this.m_comm_sendfreeformtext
+this.Item[UpperBound(this.Item)+1]=this.m_comm_fleetmap
+this.Item[UpperBound(this.Item)+1]=this.m_comm_div01
+this.Item[UpperBound(this.Item)+1]=this.m_comm_devicesetup
+this.Item[UpperBound(this.Item)+1]=this.m_comm_inboundmessages
+this.Item[UpperBound(this.Item)+1]=this.m_comm_messagelog
+end on
+
+on m_communications.destroy
+call super::destroy
+destroy(this.m_comm_sendmessage)
+destroy(this.m_comm_sendfreeformtext)
+destroy(this.m_comm_fleetmap)
+destroy(this.m_comm_div01)
+destroy(this.m_comm_devicesetup)
+destroy(this.m_comm_inboundmessages)
+destroy(this.m_comm_messagelog)
+end on
+
+type m_comm_sendmessage from menu within m_communications
+end type
+
+event clicked;//////////////////////////////////////////////////////////////////////////////
+//
+//	Description:	If the active window supports communication then
+//						it will have an event named ue_sendoutboundmessage
+//						to process them.
+//					
+//
+// Written by: Norm LeBlanc
+// 		Date: 11/17/00
+//		Version: 3.0.4
+//////////////////////////////////////////////////////////////////////////////
+//
+//	Revision History
+//
+//	Version
+//	
+//////////////////////////////////////////////////////////////////////////////
+
+window lw_ActiveSheet
+
+lw_ActiveSheet = gnv_App.of_GetFrame().GetActiveSheet()
+
+IF IsValid(lw_ActiveSheet) THEN
+
+	lw_ActiveSheet.triggerEvent ("ue_sendoutboundmessage")
+	
+END IF
+
+
+
+
+end event
+
+on m_comm_sendmessage.create
+call super::create
+this.text = "Send &OutBound Message"
+end on
+
+on m_comm_sendmessage.destroy
+call super::destroy
+end on
+
+type m_comm_sendfreeformtext from menu within m_communications
+end type
+
+event clicked;//////////////////////////////////////////////////////////////////////////////
+//
+//	Description:	If the active window supports communication then
+//						it will have an event named ue_sendfreeformmessage
+//						to process them.ELSE the free form window will be opened 
+//						with as much info as possible.
+//					
+//
+// Written by: Rick Zacher
+// 		Date: 11/27/00
+//		Version: 3.0.4
+//////////////////////////////////////////////////////////////////////////////
+//
+//	Revision History
+//
+//	Version
+//	
+//////////////////////////////////////////////////////////////////////////////
+any		la_Path
+String 	ls_FilePath
+Boolean	lb_Continue 
+n_cst_settings lnv_Settings
+n_cst_msg	lnv_msg
+S_Parm		lstr_Parm
+
+window lw_ActiveSheet
+
+lb_Continue = TRUE
+lw_ActiveSheet = gnv_App.of_GetFrame().GetActiveSheet()
+
+IF IsValid(lw_ActiveSheet) THEN
+	CHOOSE CASE UPPER ( lw_ActiveSheet.ClassName ( ) )
+			
+		CASE "W_DISPATCH" 
+		
+			lw_ActiveSheet.triggerEvent ("ue_sendfreeformmessage")	
+			lb_Continue = FALSE
+			
+	END CHOOSE
+	
+END IF
+
+IF lb_Continue THEN
+	
+	long	ll_Devicecount 
+	String	lsa_DeviceList[]
+	Boolean lb_OpenDlg = FALSE
+	String	ls_Device
+	
+	n_cst_bso_Communication_Manager lnv_Communication
+
+	lnv_Communication = CREATE    n_cst_bso_Communication_Manager
+	
+	IF IsValid ( lnv_Communication ) THEN
+		ll_DeviceCount = lnv_Communication.of_GetlicensedDevices ( lsa_DeviceList ) 
+		IF ll_DeviceCount > 0 AND UpperBound (lsa_DeviceList) > 0 THEN
+			ls_Device = lsa_DeviceList[1]
+		END IF
+	END IF
+	
+	IF ll_DeviceCount > 0 THEN
+		
+		lstr_Parm.is_label = "DEVICE"
+		lstr_Parm.ia_Value = ls_Device
+		lnv_Msg.of_Add_Parm ( lstr_Parm )
+		
+		lstr_Parm.is_label = "FREEFORM"
+		lstr_Parm.ia_Value = TRUE
+		lnv_Msg.of_Add_Parm ( lstr_Parm )
+	
+		n_cst_setting_templatespathfolder	lnv_PathSetting
+		lnv_PathSetting = CREATE n_cst_setting_templatespathfolder
+		ls_FilePath = lnv_PathSetting.of_Getvalue( )
+		DESTROY ( lnv_PathSetting )
+		
+		IF Len ( ls_FilePath ) > 0 THEN						
+			lstr_Parm.is_label = "TEMPLATEPATH"
+			lstr_Parm.ia_Value = ls_FilePath
+			lnv_Msg.of_Add_Parm ( lstr_Parm )
+			
+			openWithParm ( w_communication_outbound, lnv_Msg )
+		ELSE
+			MessageBox( "Free Form Message" , "An error occurred while attempting to access the template file path specified in the system settings. Request canceled." )
+		END IF	
+		
+	ELSE
+		MessageBox ("Free Form Message" , "There are no communication devices available." )
+	END IF
+	
+	
+
+END IF
+IF isValid( lnv_Communication ) THEN
+	DESTROY lnv_Communication
+END IF
+
+
+end event
+
+on m_comm_sendfreeformtext.create
+call super::create
+this.text = "Send &Free Form Text"
+end on
+
+on m_comm_sendfreeformtext.destroy
+call super::destroy
+end on
+
+type m_comm_fleetmap from menu within m_communications
+end type
+
+on m_comm_fleetmap.create
+call super::create
+this.visible = false
+this.text = "Display Nextel Fleet Map"
+end on
+
+on m_comm_fleetmap.destroy
+call super::destroy
+end on
+
+event clicked;//Display the Nextel Fleet Map.
+
+n_cst_bso_Communication_Nextel	lnv_Nextel
+s_Nextel_MapServiceParms			lstr_MapParms
+
+
+Integer	li_Return = 1
+
+
+IF li_Return = 1 THEN
+
+	lnv_Nextel = CREATE n_cst_bso_Communication_Nextel
+	lnv_Nextel.of_DisplayPositionMap ( lstr_MapParms )
+	
+END IF
+
+
+DESTROY lnv_Nextel
+end event
+
+type m_comm_div01 from menu within m_communications
+end type
+
+on m_comm_div01.create
+call super::create
+this.text = "-"
+end on
+
+on m_comm_div01.destroy
+call super::destroy
+end on
+
+type m_comm_devicesetup from menu within m_communications
+end type
+
+event clicked;n_cst_Privileges	lnv_Privileges
+IF lnv_Privileges.of_HasSysAdminRights ( ) THEN
+	Opensheet( w_Communication_Manager, gnv_App.of_GetFrame ( ), 0, LAYERED! )
+ELSE
+	MessageBox( "Mobile Communication Setup" ,lnv_Privileges.of_GetSysAdminMessage ( ) )
+END IF
+end event
+
+on m_comm_devicesetup.create
+call super::create
+this.text = "Device &Setup"
+end on
+
+on m_comm_devicesetup.destroy
+call super::destroy
+end on
+
+type m_comm_inboundmessages from menu within m_communications
+end type
+
+event clicked;////////////////////////////////////////////////////////////////////////////////
+//
+//	Description:	This will need to be change to launch the appropriate 
+//						communication object based on the users inbounbd device.
+//					
+//
+// Written by: Norm LeBlanc
+// 		Date: 11/17/00
+//		Version: 3.0.4
+//////////////////////////////////////////////////////////////////////////////
+//
+//	Revision History
+//
+//	Version
+//	
+//////////////////////////////////////////////////////////////////////////////
+String	ls_Device
+String	lsa_DeviceList[], &
+			ls_errormessage
+Long		ll_DeviceCount
+integer	li_return
+Boolean 	lb_OpenDlg = TRUE
+
+
+n_cst_bso_Communication_Manager lnv_Communication
+
+lnv_Communication = CREATE    n_cst_bso_Communication_Manager
+//
+IF IsValid ( lnv_Communication ) THEN
+	ll_DeviceCount = lnv_Communication.of_GetCommunicationDevice ( lsa_DeviceList ,lb_OpenDlg ) 
+	IF ll_DeviceCount > 0 AND UpperBound (lsa_DeviceList) > 0 THEN
+		ls_Device = lsa_DeviceList[1]
+	END IF
+END IF
+
+IF Len ( Trim ( ls_Device ) ) > 0 THEN
+	IF isValid ( gnv_app ) THEN
+		li_return = gnv_app.Event ue_Communication ( ls_Device, ls_errormessage )
+	END IF
+	if li_return = -1 then
+		messagebox("Process Inbound Messages",ls_errormessage)
+	else
+		messagebox("Process Inbound Messages","Process Complete.")
+	end if
+END IF
+//
+
+IF isValid  ( lnv_Communication ) THEN
+	DESTROY lnv_Communication
+END IF
+
+end event
+
+on m_comm_inboundmessages.create
+call super::create
+this.text = "Process &InBound Messages"
+end on
+
+on m_comm_inboundmessages.destroy
+call super::destroy
+end on
+
+type m_comm_messagelog from menu within m_communications
+end type
+
+event clicked;
+n_cst_Msg	lnv_Msg
+S_Parm		lstr_Parm
+
+w_inboundmessages	lw_message
+
+n_cst_bso_Communication_Manager lnv_Communication
+
+lnv_Communication =     CREATE n_cst_bso_Communication_Manager
+
+IF lnv_Communication.of_MessageLog ( lnv_Msg ) = 1 THEN
+	
+	OpensheetWithParm( lw_message, lnv_Msg, gnv_App.of_GetFrame ( ), 0, LAYERED! )
+	
+END IF
+
+DESTROY lnv_Communication
+
+end event
+
+on m_comm_messagelog.create
+call super::create
+this.text = "Message &Log"
+end on
+
+on m_comm_messagelog.destroy
+call super::destroy
+end on
+
+type m_help from menu within m_base
+m_help_soon m_help_soon
+m_help_on m_help_on
+m_profittoolsliveconnect m_profittoolsliveconnect
+m_div_h01 m_div_h01
+m_help_about m_help_about
+end type
+
+on m_help.create
+call super::create
+this.text = "&Help"
+this.shifttoright = true
+this.m_help_soon=create m_help_soon
+this.m_help_on=create m_help_on
+this.m_profittoolsliveconnect=create m_profittoolsliveconnect
+this.m_div_h01=create m_div_h01
+this.m_help_about=create m_help_about
+this.Item[UpperBound(this.Item)+1]=this.m_help_soon
+this.Item[UpperBound(this.Item)+1]=this.m_help_on
+this.Item[UpperBound(this.Item)+1]=this.m_profittoolsliveconnect
+this.Item[UpperBound(this.Item)+1]=this.m_div_h01
+this.Item[UpperBound(this.Item)+1]=this.m_help_about
+end on
+
+on m_help.destroy
+call super::destroy
+destroy(this.m_help_soon)
+destroy(this.m_help_on)
+destroy(this.m_profittoolsliveconnect)
+destroy(this.m_div_h01)
+destroy(this.m_help_about)
+end on
+
+event clicked;window activesheet
+string mtext
+
+activesheet = gnv_app.of_getframe().GetActiveSheet()
+
+IF IsValid(activesheet) THEN
+
+	string	ls_description
+	n_cst_helptopic	lnv_help
+	lnv_help = create n_cst_helptopic
+
+	ls_description = lnv_help.of_GetDescription(activesheet.classname())
+	if len(ls_description) > 0 then
+		mtext = "&Help on " + ls_description
+	   m_help_on.text = mtext
+	end if
+
+	destroy lnv_Help
+	
+ELSE
+
+    // No sheet is active, menu says Close Window
+
+   m_help_on.text = '&Help on Profit Tools'
+
+END IF
+
+end event
+
+type m_help_soon from menu within m_help
+end type
+
+event clicked;string	ls_Directory, &
+			ls_RunCommand			
+
+ls_Directory = gnv_app.of_GetAppDirectory ( )
+
+ls_RunCommand = "winhlp32.exe " + ls_Directory + "\Ptmanual.hlp" 
+
+run ( ls_RunCommand )
+
+end event
+
+on m_help_soon.create
+call super::create
+this.text = "Help &Contents"
+end on
+
+on m_help_soon.destroy
+call super::destroy
+end on
+
+type m_help_on from menu within m_help
+end type
+
+on m_help_on.create
+call super::create
+this.text = "&HelpOn"
+end on
+
+on m_help_on.destroy
+call super::destroy
+end on
+
+event clicked;window activesheet
+
+activesheet = gnv_app.of_getframe().GetActiveSheet()
+
+IF IsValid(activesheet) THEN
+	integer	li_topic
+	string	ls_HelpFile
+	
+	n_cst_helptopic	lnv_help
+	
+	lnv_help = create n_cst_helptopic
+
+	li_topic = lnv_help.of_GetTopic(activesheet.classname())
+	if li_topic > 0 then
+		ls_HelpFile = lnv_help.of_GetHelpFile( )
+		ShowHelp(ls_HelpFile, Topic!, li_topic)
+	end if
+
+	destroy lnv_Help
+	
+END IF
+
+end event
+
+type m_profittoolsliveconnect from menu within m_help
+event create ( )
+event destroy ( )
+end type
+
+on m_profittoolsliveconnect.create
+call super::create
+this.text = "Profit Tools Live Connect"
+end on
+
+on m_profittoolsliveconnect.destroy
+call super::destroy
+end on
+
+event clicked;n_cst_helpTopic lnv_help
+int	li_result
+
+
+lnv_help = create n_cst_helpTopic
+li_result = lnv_help.of_openProfitToolsWebSite()
+IF  li_result <> 1 THEN
+  MessageBox("Error", "Could not open http://www.profittools.net, check your internet connections.")
+END IF
+
+destroy lnv_help
+end event
+
+type m_div_h01 from menu within m_help
+end type
+
+on m_div_h01.create
+call super::create
+this.text = "-"
+end on
+
+on m_div_h01.destroy
+call super::destroy
+end on
+
+type m_help_about from menu within m_help
+end type
+
+event clicked;Open ( w_About_Trucking )
+end event
+
+on m_help_about.create
+call super::create
+this.text = "&Program Info..."
+end on
+
+on m_help_about.destroy
+call super::destroy
+end on
+

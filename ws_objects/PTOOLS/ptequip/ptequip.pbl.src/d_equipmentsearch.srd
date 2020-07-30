@@ -1,0 +1,195 @@
+﻿$PBExportHeader$d_equipmentsearch.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=equipment_eq_id dbname="eq_id" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_type dbname="eq_type" )
+ column=(type=char(15) updatewhereclause=yes name=equipment_ref dbname="eq_ref" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_outside dbname="eq_outside" values="	F/	T" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_status dbname="eq_status" )
+ column=(type=decimal(1) updatewhereclause=yes name=equipment_ength dbname="eq_length" )
+ column=(type=decimal(1) updatewhereclause=yes name=equipment_height dbname="eq_height" )
+ column=(type=long updatewhereclause=yes name=equipment_eq_volume dbname="eq_volume" )
+ column=(type=long updatewhereclause=yes name=equipment_axles dbname="eq_axles" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_air dbname="eq_air" values="	T/	F" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec1 dbname="eq_spec1" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec2 dbname="eq_spec2" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec3 dbname="eq_spec3" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec4 dbname="eq_spec4" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec5 dbname="eq_spec5" )
+ column=(type=long updatewhereclause=yes name=equipment_eq_cur_event dbname="eq_cur_event" )
+ column=(type=long updatewhereclause=yes name=equipment_eq_next_event dbname="eq_next_event" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user1 dbname="user1" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user2 dbname="user2" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user3 dbname="user3" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user4 dbname="user4" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user5 dbname="user5" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_notes dbname="notes" )
+ column=(type=timestamp updatewhereclause=yes name=equipment_timestamp dbname="timestamp" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_id dbname="oe_id" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_from dbname="oe_from" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_for dbname="oe_for" )
+ column=(type=char(15) updatewhereclause=yes name=outside_equip_oe_booknum dbname="oe_booknum" )
+ column=(type=datetime updatewhereclause=yes name=outside_equip_oe_out dbname="oe_out" )
+ column=(type=datetime updatewhereclause=yes name=outside_equip_oe_in dbname="oe_in" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_orig_event dbname="oe_orig_event" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_term_event dbname="oe_term_event" )
+ column=(type=long updatewhereclause=yes name=outside_equip_fkequipmentleasetype dbname="fkequipmentleasetype" )
+ column=(type=char(32766) updatewhereclause=no name=outside_equip_user1 dbname="user1" )
+ column=(type=char(32766) updatewhereclause=no name=outside_equip_user2 dbname="user2" )
+ column=(type=char(32766) updatewhereclause=no name=outside_equip_notes dbname="notes" )
+ column=(type=timestamp updatewhereclause=yes name=outside_equip_timestamp dbname="timestamp" )
+ column=(type=long updatewhereclause=yes name=outside_equip_shipment dbname="shipment" )
+ column=(type=long updatewhereclause=yes name=outside_equip_originationsite dbname="originationsite" )
+ column=(type=date updatewhereclause=yes name=outside_equip_originationdate dbname="originationdate" )
+ column=(type=time updatewhereclause=yes name=outside_equip_originationtime dbname="originationtime" )
+ column=(type=long updatewhereclause=yes name=outside_equip_terminationsite dbname="terminationsite" )
+ column=(type=date updatewhereclause=yes name=outside_equip_terminationdate dbname="terminationdate" )
+ column=(type=time updatewhereclause=yes name=outside_equip_terminationtime dbname="terminationtime" )
+ column=(type=char(30) updatewhereclause=yes name=type dbname="type" )
+ column=(type=long updatewhereclause=yes name=freetimeunits dbname="freetimeunits" )
+ column=(type=long updatewhereclause=yes name=freetimeperiod dbname="freetimeperiod" )
+ column=(type=long updatewhereclause=yes name=chargedperiods dbname="chargedperiods" )
+ column=(type=long updatewhereclause=yes name=firstchargedunits dbname="firstchargedunits" )
+ column=(type=long updatewhereclause=yes name=firstchargedperiod dbname="firstchargedperiod" )
+ column=(type=decimal(2) updatewhereclause=yes name=firstchargedrate dbname="firstchargedrate" )
+ column=(type=long updatewhereclause=yes name=secondchargedunits dbname="secondchargedunits" )
+ column=(type=long updatewhereclause=yes name=secondchargedperiod dbname="secondchargedperiod" )
+ column=(type=decimal(2) updatewhereclause=yes name=secondchargedrate dbname="secondchargedrate" )
+ column=(type=long updatewhereclause=yes name=thirdchargedunits dbname="thirdchargedunits" )
+ column=(type=long updatewhereclause=yes name=thirdchargedperiod dbname="thirdchargedperiod" )
+ column=(type=decimal(2) updatewhereclause=yes name=thirdchargedrate dbname="thirdchargedrate" )
+ column=(type=long updatewhereclause=yes name=fourthchargedunits dbname="fourthchargedunits" )
+ column=(type=long updatewhereclause=yes name=fourthchargedperiod dbname="fourthchargedperiod" )
+ column=(type=decimal(2) updatewhereclause=yes name=fourthchargedrate dbname="fourthchargedrate" )
+ column=(type=char(1) updatewhereclause=yes name=spec1 dbname="spec1" )
+ column=(type=char(1) updatewhereclause=yes name=spec2 dbname="spec2" )
+ column=(type=char(1) updatewhereclause=yes name=spec3 dbname="spec3" )
+ column=(type=char(1) updatewhereclause=yes name=spec4 dbname="spec4" )
+ column=(type=char(1) updatewhereclause=yes name=spec5 dbname="spec5" )
+ column=(type=char(32766) updatewhereclause=no name=user1 dbname="user1" )
+ column=(type=char(32766) updatewhereclause=no name=user2 dbname="user2" )
+ column=(type=char(32766) updatewhereclause=no name=notes dbname="notes" )
+ column=(type=char(30) updatewhereclause=yes name=line dbname="line" )
+ column=(type=long updatewhereclause=yes name=id_line dbname="id" )
+ retrieve="  SELECT ~"equipment~".~"eq_id~",   
+         ~"equipment~".~"eq_type~",   
+         ~"equipment~".~"eq_ref~",   
+         ~"equipment~".~"eq_outside~",   
+         ~"equipment~".~"eq_status~",   
+         ~"equipment~".~"eq_length~",   
+         ~"equipment~".~"eq_height~",   
+         ~"equipment~".~"eq_volume~",   
+         ~"equipment~".~"eq_axles~",   
+         ~"equipment~".~"eq_air~",   
+         ~"equipment~".~"eq_spec1~",   
+         ~"equipment~".~"eq_spec2~",   
+         ~"equipment~".~"eq_spec3~",   
+         ~"equipment~".~"eq_spec4~",   
+         ~"equipment~".~"eq_spec5~",   
+         ~"equipment~".~"eq_cur_event~",   
+         ~"equipment~".~"eq_next_event~",   
+         ~"equipment~".~"user1~",   
+         ~"equipment~".~"user2~",   
+         ~"equipment~".~"user3~",   
+         ~"equipment~".~"user4~",   
+         ~"equipment~".~"user5~",   
+         ~"equipment~".~"notes~",   
+         ~"equipment~".~"timestamp~",   
+         ~"outside_equip~".~"oe_id~",   
+         ~"outside_equip~".~"oe_from~",   
+         ~"outside_equip~".~"oe_for~",   
+         ~"outside_equip~".~"oe_booknum~",   
+         ~"outside_equip~".~"oe_out~",   
+         ~"outside_equip~".~"oe_in~",   
+         ~"outside_equip~".~"oe_orig_event~",   
+         ~"outside_equip~".~"oe_term_event~",   
+         ~"outside_equip~".~"fkequipmentleasetype~",   
+         ~"outside_equip~".~"user1~",   
+         ~"outside_equip~".~"user2~",   
+         ~"outside_equip~".~"notes~",   
+         ~"outside_equip~".~"timestamp~",   
+         ~"outside_equip~".~"shipment~",   
+         ~"outside_equip~".~"originationsite~",   
+         ~"outside_equip~".~"originationdate~",   
+         ~"outside_equip~".~"originationtime~",   
+         ~"outside_equip~".~"terminationsite~",   
+         ~"outside_equip~".~"terminationdate~",   
+         ~"outside_equip~".~"terminationtime~",   
+         ~"equipmentleasetype~".~"type~",   
+         ~"equipmentleasetype~".~"freetimeunits~",   
+         ~"equipmentleasetype~".~"freetimeperiod~",   
+         ~"equipmentleasetype~".~"chargedperiods~",   
+         ~"equipmentleasetype~".~"firstchargedunits~",   
+         ~"equipmentleasetype~".~"firstchargedperiod~",   
+         ~"equipmentleasetype~".~"firstchargedrate~",   
+         ~"equipmentleasetype~".~"secondchargedunits~",   
+         ~"equipmentleasetype~".~"secondchargedperiod~",   
+         ~"equipmentleasetype~".~"secondchargedrate~",   
+         ~"equipmentleasetype~".~"thirdchargedunits~",   
+         ~"equipmentleasetype~".~"thirdchargedperiod~",   
+         ~"equipmentleasetype~".~"thirdchargedrate~",   
+         ~"equipmentleasetype~".~"fourthchargedunits~",   
+         ~"equipmentleasetype~".~"fourthchargedperiod~",   
+         ~"equipmentleasetype~".~"fourthchargedrate~",   
+         ~"equipmentleasetype~".~"spec1~",   
+         ~"equipmentleasetype~".~"spec2~",   
+         ~"equipmentleasetype~".~"spec3~",   
+         ~"equipmentleasetype~".~"spec4~",   
+         ~"equipmentleasetype~".~"spec5~",   
+         ~"equipmentleasetype~".~"user1~",   
+         ~"equipmentleasetype~".~"user2~",   
+         ~"equipmentleasetype~".~"notes~",   
+         ~"equipmentleasetype~".~"line~",   
+         ~"equipmentleasetype~".~"id~"  
+    FROM {oj ~"equipment~"  LEFT OUTER JOIN {oj ~"outside_equip~" LEFT OUTER JOIN ~"equipmentleasetype~"  ON ~"outside_equip~".~"fkequipmentleasetype~" = ~"equipmentleasetype~".~"id~"} ON ~"equipment~".~"eq_id~" = ~"outside_equip~".~"oe_id~"}  
+   WHERE ~"equipment~".~"eq_status~" <> 'X'    
+"  sort="equipment_ref A " )
+text(band=header alignment="2" text="Type"border="0" color="128" x="146" y="8" height="60" width="352"  name=equipment_eq_type_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Unit #"border="0" color="128" x="507" y="8" height="60" width="347"  name=equipment_eq_ref_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Status"border="0" color="128" x="864" y="8" height="60" width="219"  name=equipment_eq_status_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Length"border="0" color="128" x="1093" y="8" height="60" width="219"  name=equipment_eq_length_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Width"border="0" color="128" x="1321" y="8" height="60" width="192"  name=equipment_eq_height_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Axl."border="0" color="128" x="1522" y="8" height="60" width="119"  name=equipment_eq_axles_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Air"border="0" color="128" x="1650" y="8" height="60" width="110"  name=equipment_eq_air_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Notes"border="0" color="128" x="1769" y="8" height="60" width="288"  name=equipment_notes_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="From"border="0" color="128" x="2066" y="8" height="60" width="357"  name=outside_equip_oe_from_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Behalf of"border="0" color="128" x="2432" y="8" height="60" width="325"  name=outside_equip_oe_for_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Booknum"border="0" color="128" x="2766" y="8" height="60" width="343"  name=outside_equip_oe_booknum_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Outside Notes"border="0" color="128" x="3118" y="8" height="60" width="457"  name=outside_equip_notes_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Shipment"border="0" color="128" x="3584" y="8" height="60" width="581"  name=outside_equip_shipment_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Origination site"border="0" color="128" x="4174" y="8" height="60" width="544"  name=outside_equip_originationsite_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Origination date"border="0" color="128" x="4727" y="8" height="60" width="475"  name=outside_equip_originationdate_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Origination time"border="0" color="128" x="5211" y="8" height="60" width="416"  name=outside_equip_originationtime_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Termination site"border="0" color="128" x="5637" y="8" height="60" width="425"  name=outside_equip_terminationsite_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Ours"border="0" color="128" x="9" y="4" height="60" width="128"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="2" text="Termination date"border="0" color="128" x="6071" y="8" height="60" width="480"  name=outside_equip_terminationdate_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Termination time"border="0" color="128" x="6560" y="8" height="60" width="475"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Lease type"border="0" color="128" x="7634" y="8" height="60" width="535"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="2" text="Line"border="0" color="128" x="7045" y="8" height="60" width="581"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="146" y="8" height="64" width="352" format="[general]"  name=equipment_type ddlb.limit=0 ddlb.allowedit=no ddlb.case=upper  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="0" color="0" x="507" y="8" height="64" width="347" format="[general]"  name=equipment_ref edit.limit=15 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=40 border="0" color="0" x="864" y="8" height="64" width="219" format="[general]"  name=equipment_status ddlb.limit=0 ddlb.allowedit=no ddlb.case=any  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=50 border="0" color="0" x="1093" y="8" height="64" width="219" format="[general]"  name=equipment_ength edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="0" tabsequence=60 border="0" color="0" x="1321" y="8" height="64" width="192" format="[general]"  name=equipment_height edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=70 border="0" color="0" x="1522" y="8" height="64" width="119" format="[general]"  name=equipment_axles edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="2" tabsequence=80 border="0" color="0" x="1650" y="8" height="64" width="110" format="[general]"  name=equipment_air checkbox.text="" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=no  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=26 alignment="0" tabsequence=100 border="0" color="0" x="2066" y="8" height="64" width="357" format="[general]"  name=outside_equip_oe_from edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="0" tabsequence=110 border="0" color="0" x="2432" y="8" height="64" width="325" format="[general]"  name=outside_equip_oe_for edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=28 alignment="0" tabsequence=120 border="0" color="0" x="2766" y="8" height="64" width="343" format="[general]"  name=outside_equip_oe_booknum edit.limit=15 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="0" tabsequence=90 border="0" color="0" x="1769" y="8" height="64" width="288" format="[general]"  name=equipment_notes edit.limit=32000 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=36 alignment="0" tabsequence=130 border="0" color="0" x="3118" y="8" height="64" width="457" format="[general]"  name=outside_equip_notes edit.limit=32000 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=38 alignment="0" tabsequence=140 border="0" color="0" x="3584" y="8" height="64" width="581" format="[general]"  name=outside_equip_shipment edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=39 alignment="0" tabsequence=150 border="0" color="0" x="4174" y="8" height="64" width="544" format="[general]"  name=outside_equip_originationsite edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=40 alignment="0" tabsequence=160 border="0" color="0" x="4727" y="8" height="64" width="475" format="[general]"  name=outside_equip_originationdate edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=41 alignment="0" tabsequence=170 border="0" color="0" x="5211" y="8" height="64" width="416" format="[time]"  name=outside_equip_originationtime edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=42 alignment="0" tabsequence=180 border="0" color="0" x="5637" y="8" height="64" width="425" format="[general]"  name=outside_equip_terminationsite edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="2" tabsequence=10 border="0" color="0" x="9" y="8" height="64" width="128" format="[general]"  name=equipment_eq_outside checkbox.text="" checkbox.on="F" checkbox.off="T" checkbox.scale=no checkbox.threed=no  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=70 alignment="0" tabsequence=210 border="0" color="0" x="7045" y="8" height="64" width="581" format="[general]"  name=id_line edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=43 alignment="0" tabsequence=190 border="0" color="0" x="6071" y="8" height="64" width="480" format="[general]"  name=outside_equip_terminationdate edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=44 alignment="0" tabsequence=200 border="0" color="0" x="6560" y="8" height="64" width="475" format="[time]"  name=outside_equip_terminationtime edit.limit=0 edit.case=upper edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=70 alignment="0" tabsequence=220 border="0" color="0" x="7634" y="8" height="64" width="535" format="[general]"  name=id_type edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

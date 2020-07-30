@@ -1,0 +1,18 @@
+﻿$PBExportHeader$d_checklist.srd
+release 5;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no )
+header(height=1 color="536870912" )
+summary(height=1 color="536870912" )
+footer(height=65 color="536870912" )
+detail(height=105 color="553648127"  height.autosize=yes)
+table(column=(type=char(40) updatewhereclause=no name=xx_label_01 dbname="xx_label_01" )
+ column=(type=char(40) updatewhereclause=no name=xx_value_01 dbname="xx_value_01" )
+ column=(type=char(40) updatewhereclause=no name=xx_label_02 dbname="xx_label_02" )
+ column=(type=char(40) updatewhereclause=no name=xx_value_02 dbname="xx_value_02" )
+ )
+line(band=detail x1="2625" y1="96~tif ( getrow() = 1, 296, 96)" x2="3457" y2="96~tif ( getrow() = 1, 296, 96)"  name=ln_02 visible="1~tif ( len ( xx_label_02 ) > 0 or len ( xx_value_02 )  > 0, 1, 0 )" pen.style="0" pen.width="10" pen.color="0"  background.mode="2" background.color="16777215" )
+line(band=detail x1="869" y1="96~tif ( getrow() = 1, 296, 96)" x2="1701" y2="96~tif ( getrow() = 1, 296, 96)"  name=ln_01 visible="1~tif ( len ( xx_label_01 ) > 0 or len ( xx_value_01 )  > 0, 1, 0 )" pen.style="0" pen.width="10" pen.color="0"  background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="869" y="24~tif ( getrow() = 1, 224, 24)" height="77" width="833" format="[general]"  name=xx_value_01 edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Univers Condensed" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="14" y="24~tif ( getrow() = 1, 224, 24)" height="77" width="833" format="[general]"  name=xx_label_01 edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Univers Condensed" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="2625" y="24~tif ( getrow() = 1, 224, 24)" height="77" width="833" format="[general]"  name=xx_value_02 edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Univers Condensed" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="0" x="1770" y="24~tif ( getrow() = 1, 224, 24)" height="77" width="833" format="[general]"  name=xx_label_02 edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Univers Condensed" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )

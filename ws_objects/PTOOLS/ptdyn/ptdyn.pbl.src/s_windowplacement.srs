@@ -1,0 +1,10 @@
+﻿$PBExportHeader$s_windowplacement.srs
+global type s_windowplacement from structure
+	long		length
+	long		flags
+	long		showCmd
+	s_coord		ptMinPosition
+	s_coord		ptMaxPosition
+	s_rect		rcNormalPosition
+end type
+

@@ -1,0 +1,30 @@
+﻿$PBExportHeader$m_equip_sum.srm
+forward
+global type m_equip_sum from m_sheet
+end type
+end forward
+
+global type m_equip_sum from m_sheet
+end type
+global m_equip_sum m_equip_sum
+
+on m_equip_sum.create
+m_equip_sum=this
+call super::create
+end on
+
+on m_equip_sum.destroy
+call super::destroy
+end on
+
+on m_div_c01.create
+call super::create
+this.Visible=false
+end on
+
+on m_save.create
+call super::create
+this.ToolBarItemName=""
+this.Visible=false
+end on
+

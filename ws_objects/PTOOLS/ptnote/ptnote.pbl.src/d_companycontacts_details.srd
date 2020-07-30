@@ -1,0 +1,32 @@
+﻿$PBExportHeader$d_companycontacts_details.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=79741120 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=432 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=id dbname="companycontacts.id" )
+ column=(type=long update=yes updatewhereclause=yes name=companyid dbname="companycontacts.companyid" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=firstname dbname="companycontacts.firstname" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=middlename dbname="companycontacts.middlename" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=lastname dbname="companycontacts.lastname" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=emailaddress dbname="companycontacts.emailaddress" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=status dbname="companycontacts.status" )
+ retrieve="  SELECT ~"companycontacts~".~"id~",   
+         ~"companycontacts~".~"companyid~",   
+         ~"companycontacts~".~"firstname~",   
+         ~"companycontacts~".~"middlename~",   
+         ~"companycontacts~".~"lastname~",   
+         ~"companycontacts~".~"emailaddress~",   
+         ~"companycontacts~".~"status~"  
+    FROM ~"companycontacts~"  
+   WHERE ~"companycontacts~".~"id~" = :al_ID    
+" update="companycontacts" updatewhere=1 updatekeyinplace=no arguments=(("al_ID", number)) )
+text(band=detail alignment="0" text="E-&Mail Address:"border="0" color="0" x="41" y="236" height="52" width="466"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=detail alignment="0" text="&First:"border="0" color="0" x="41" y="20" height="52" width="151"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=6 alignment="0" tabsequence=40 border="5" color="0" x="41" y="312" height="64" width="864" format="[general]"  name=emailaddress accelerator="m" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=10 border="5" color="0" x="41" y="92" height="64" width="649" format="[general]"  name=firstname accelerator="f" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=30 border="5" color="0" x="1399" y="92" height="64" width="704" format="[general]"  name=lastname accelerator="l" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="&Last:"border="0" color="0" x="1399" y="20" height="52" width="146"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=4 alignment="0" tabsequence=20 border="5" color="0" x="782" y="92" height="64" width="526" format="[general]"  name=middlename accelerator="d" edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Mi&ddle:"border="0" color="0" x="782" y="20" height="52" width="219"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

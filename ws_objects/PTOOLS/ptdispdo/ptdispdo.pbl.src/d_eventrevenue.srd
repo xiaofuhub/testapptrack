@@ -1,0 +1,36 @@
+﻿$PBExportHeader$d_eventrevenue.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=84 color="536870912" )
+summary(height=8 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=de_id dbname="disp_events.de_id" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_event_type dbname="disp_events.de_event_type" )
+ column=(type=long update=yes updatewhereclause=yes name=de_site dbname="disp_events.de_site" )
+ column=(type=decimal(2) updatewhereclause=yes name=de_freightsplit dbname="disp_events.de_freightsplit" )
+ column=(type=decimal(2) updatewhereclause=yes name=de_accesssplit dbname="disp_events.de_accesssplit" )
+ column=(type=decimal(1) update=yes updatewhereclause=yes name=leg_miles dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=co_name dbname="null" )
+ retrieve="  SELECT ~"disp_events~".~"de_id~",   
+         ~"disp_events~".~"de_event_type~",   
+         ~"disp_events~".~"de_site~",
+			~"disp_events~".~"de_freightsplit~",
+			~"disp_events~".~"de_accesssplit~",
+         convert ( numeric(6, 1), null ) ,
+         convert ( char(45), null )
+    FROM ~"disp_events~"   
+" update="disp_events" updatewhere=1 updatekeyinplace=no )
+text(band=header alignment="0" text="Event"border="0" color="128" x="14" y="16" height="64" width="169"  name=de_event_type_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Site"border="0" color="128" x="370" y="16" height="64" width="114"  name=co_name_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="1" text="Miles"border="0" color="128" x="1275" y="16" height="64" width="165"  name=leg_miles_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="1" text="Freight"border="0" color="128" x="1659" y="16" height="64" width="206"  name=de_freightsplit_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="1" text="Accessorial"border="0" color="128" x="1929" y="16" height="64" width="343"  name=de_accesssplit_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="14" y="8" height="64" width="343" format="[general]"  name=de_event_type edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="0" tabsequence=32766 border="0" color="0" x="370" y="8" height="64" width="736" format="[general]"  name=co_name edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="0" x="1125" y="8" height="64" width="315" format="[general]"  name=leg_miles edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="1" tabsequence=10 border="5" color="0" x="1472" y="8" height="64" width="393" format="[general]"  name=de_freightsplit edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="1" tabsequence=20 border="5" color="0" x="1879" y="8" height="64" width="393" format="[general]"  name=de_accesssplit edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=summary alignment="1" expression="sum(de_freightsplit for all)"border="0" color="0" x="1458" y="24" height="64" width="393" format="[general]"  name=total_freight  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=summary alignment="1" expression="sum(de_accesssplit for all)"border="0" color="0" x="1865" y="24" height="64" width="393" format="[general]"  name=total_accessorial  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

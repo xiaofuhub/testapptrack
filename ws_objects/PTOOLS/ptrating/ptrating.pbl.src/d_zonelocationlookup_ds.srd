@@ -1,0 +1,13 @@
+﻿$PBExportHeader$d_zonelocationlookup_ds.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=0 color="536870912" )
+table(column=(type=char(32766) updatewhereclause=no name=zone_name dbname="zone.name" )
+ column=(type=char(32766) updatewhereclause=no name=zone_description dbname="zone.description" )
+ column=(type=char(32766) updatewhereclause=no name=zonelocation_zonename dbname="zonelocation.zonename" )
+ column=(type=char(32766) updatewhereclause=no name=zonelocation_location dbname="zonelocation.location" )
+ column=(type=long updatewhereclause=yes name=zonelocation_type dbname="zonelocation.type" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"zone~" )  TABLE(NAME=~"zonelocation~" ) COLUMN(NAME=~"zone.name~") COLUMN(NAME=~"zone.description~") COLUMN(NAME=~"zonelocation.zonename~") COLUMN(NAME=~"zonelocation.location~") COLUMN(NAME=~"zonelocation.type~")    JOIN (LEFT=~"zonelocation.zonename~"    OP =~"=~"RIGHT=~"zone.name~" )) " )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

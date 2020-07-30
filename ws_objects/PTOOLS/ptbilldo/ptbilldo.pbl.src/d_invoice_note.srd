@@ -1,0 +1,12 @@
+﻿$PBExportHeader$d_invoice_note.srd
+$PBExportComments$PTBILL.     Displays the bill note for an invoice.
+release 5;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no )
+header(height=1 color="536870912" )
+summary(height=1 color="536870912" )
+footer(height=1 color="536870912" )
+detail(height=97 color="536870912"  height.autosize=yes)
+table(column=(type=char(32766) updatewhereclause=yes name=ds_bill_comment dbname="disp_ship.ds_bill_comment" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"disp_ship~" ) COLUMN(NAME=~"disp_ship.ds_bill_comment~")WHERE(    EXP1 =~"~~~"disp_ship~~~".~~~"ds_id~~~"~"   OP =~"=~"    EXP2 =~":ship_to_bill~" ) ) ARG(NAME = ~"ship_to_bill~" TYPE = number) " filter="len ( trim ( ds_bill_comment ) ) > 0" arguments=(("ship_to_bill", number)) )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="170" y="28" height="65" width="3297" format="[general]"  name=ds_bill_comment visible="1~tif ( len ( trim ( ds_bill_comment ) ) > 0, 1, 0 )" height.autosize=yes edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="NOTE:"border="0" color="0" x="14" y="28" height="61" width="133"  name=ds_bill_comment_t visible="1~tif ( len ( trim ( ds_bill_comment ) ) > 0, 1, 0 )"  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912"  height.autosize=yes)

@@ -1,0 +1,95 @@
+﻿$PBExportHeader$d_eventconversion.srd
+$PBExportComments$*** IF CHANGING, READ THIS NOTE!!!! ****   DWO used by LicenseManager for converting event data to v3.5.0   Column structure must reflect disp_events  AS IT EXISTED AT v29. (Do not modify later.)  Key update was needed for compressed seq #s
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=0 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=de_id dbname="disp_events.de_id" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_event_type dbname="disp_events.de_event_type" )
+ column=(type=long update=yes updatewhereclause=yes name=de_tractor dbname="disp_events.de_tractor" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_tractor_seq dbname="disp_events.de_tractor_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer dbname="disp_events.de_trailer" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer_seq dbname="disp_events.de_trailer_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_driver dbname="disp_events.de_driver" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_driver_seq dbname="disp_events.de_driver_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_site dbname="disp_events.de_site" )
+ column=(type=date update=yes updatewhereclause=yes name=de_apptdate dbname="disp_events.de_apptdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_appttime dbname="disp_events.de_appttime" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=de_apptnum dbname="disp_events.de_apptnum" )
+ column=(type=date update=yes updatewhereclause=yes name=de_arrdate dbname="disp_events.de_arrdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_arrtime dbname="disp_events.de_arrtime" )
+ column=(type=date update=yes updatewhereclause=yes name=de_depdate dbname="disp_events.de_depdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_deptime dbname="disp_events.de_deptime" )
+ column=(type=long update=yes updatewhereclause=yes name=de_shipment_id dbname="disp_events.de_shipment_id" )
+ column=(type=long update=yes updatewhereclause=yes name=de_ship_seq dbname="disp_events.de_ship_seq" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_conf dbname="disp_events.de_conf" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=de_whoconf dbname="disp_events.de_whoconf" )
+ column=(type=long update=yes updatewhereclause=yes name=de_intsig dbname="disp_events.de_intsig" )
+ column=(type=time update=yes updatewhereclause=yes name=de_duration dbname="disp_events.de_duration" )
+ column=(type=char(150) update=yes updatewhereclause=yes name=de_multi_list dbname="disp_events.de_multi_list" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer1 dbname="disp_events.de_trailer1" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer1_seq dbname="disp_events.de_trailer1_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer2 dbname="disp_events.de_trailer2" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer2_seq dbname="disp_events.de_trailer2_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer3 dbname="disp_events.de_trailer3" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer3_seq dbname="disp_events.de_trailer3_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container1 dbname="disp_events.de_container1" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container1_seq dbname="disp_events.de_container1_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container2 dbname="disp_events.de_container2" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container2_seq dbname="disp_events.de_container2_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container3 dbname="disp_events.de_container3" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container3_seq dbname="disp_events.de_container3_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container4 dbname="disp_events.de_container4" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container4_seq dbname="disp_events.de_container4_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_acteq dbname="disp_events.de_acteq" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_acteq_seq dbname="disp_events.de_acteq_seq" )
+ column=(type=long update=yes updatewhereclause=yes name=de_actpos dbname="disp_events.de_actpos" )
+ retrieve="  SELECT ~"disp_events~".~"de_id~",   
+         ~"disp_events~".~"de_event_type~",   
+         ~"disp_events~".~"de_tractor~",   
+         ~"disp_events~".~"de_tractor_seq~",   
+         ~"disp_events~".~"de_trailer~",   
+         ~"disp_events~".~"de_trailer_seq~",   
+         ~"disp_events~".~"de_driver~",   
+         ~"disp_events~".~"de_driver_seq~",   
+         ~"disp_events~".~"de_site~",   
+         ~"disp_events~".~"de_apptdate~",   
+         ~"disp_events~".~"de_appttime~",
+         ~"disp_events~".~"de_apptnum~",
+         ~"disp_events~".~"de_arrdate~",   
+         ~"disp_events~".~"de_arrtime~",   
+         ~"disp_events~".~"de_depdate~",   
+         ~"disp_events~".~"de_deptime~",   
+         ~"disp_events~".~"de_shipment_id~",   
+         ~"disp_events~".~"de_ship_seq~",   
+         ~"disp_events~".~"de_conf~",   
+         ~"disp_events~".~"de_whoconf~",   
+         ~"disp_events~".~"de_intsig~",   
+         ~"disp_events~".~"de_duration~",   
+         ~"disp_events~".~"de_multi_list~",   
+         ~"disp_events~".~"de_trailer1~",   
+         ~"disp_events~".~"de_trailer1_seq~",   
+         ~"disp_events~".~"de_trailer2~",   
+         ~"disp_events~".~"de_trailer2_seq~",   
+         ~"disp_events~".~"de_trailer3~",   
+         ~"disp_events~".~"de_trailer3_seq~",   
+         ~"disp_events~".~"de_container1~",   
+         ~"disp_events~".~"de_container1_seq~",   
+         ~"disp_events~".~"de_container2~",   
+         ~"disp_events~".~"de_container2_seq~",   
+         ~"disp_events~".~"de_container3~",   
+         ~"disp_events~".~"de_container3_seq~",   
+         ~"disp_events~".~"de_container4~",   
+         ~"disp_events~".~"de_container4_seq~",   
+         ~"disp_events~".~"de_acteq~",   
+         ~"disp_events~".~"de_acteq_seq~",   
+         ~"disp_events~".~"de_actpos~"  
+    FROM ~"disp_events~"   
+" update="disp_events" updatewhere=0 updatekeyinplace=no )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="0" y="0" height="76" width="3511" format="[general]" html.valueishtml="0"  name=de_apptnum visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

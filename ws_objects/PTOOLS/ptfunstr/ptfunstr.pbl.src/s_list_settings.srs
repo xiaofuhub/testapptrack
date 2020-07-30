@@ -1,0 +1,5 @@
+﻿$PBExportHeader$s_list_settings.srs
+global type s_list_settings from structure
+	boolean		b_shiptypes_retrieved
+end type
+

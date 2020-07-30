@@ -1,0 +1,280 @@
+﻿$PBExportHeader$gf_mask_menu.srf
+global type gf_mask_menu from function_object
+end type
+
+forward prototypes
+global subroutine gf_mask_menu (m_base am_target)
+end prototypes
+
+global subroutine gf_mask_menu (m_base am_target);
+Boolean	lb_ContactManager, &
+			lb_OrderEntry, &
+			lb_Billing, &
+			lb_Brokerage, &
+			lb_Dispatch, &
+			lb_LogAudit, &
+			lb_PCMiler, &
+			lb_Settlements, &
+			lb_FuelCard, &
+			lb_Imaging, &
+			lb_RouteManager, &
+			lb_Communications, &  
+			lb_MobileCommunications, &
+			lb_Intouch, &
+			lb_AtRoad, &
+			lb_Qualcomm, &
+			lb_Cadec, &
+			lb_AutoRating,&
+			lb_Notification,&
+			lb_EDI204,&
+			lb_EquipmentPosting, &
+			lb_PTMobileUser, &
+			lb_AnyEdi, &
+			lb_Documenttransfer
+		
+
+Boolean	lb_Admin,&
+			lb_PtAdmin
+
+string	ls_setting, &
+			ls_format
+			
+any		la_setting			
+
+n_cst_settings	lnv_settings
+n_cst_LicenseManager	lnv_LicenseManager
+
+
+//check system setting for default
+IF lnv_Settings.of_GetSetting ( 105 , la_Setting ) <> 1 THEN
+	ls_Setting = ""
+ELSE
+	ls_Setting = string ( la_Setting ) 
+END IF
+	
+CHOOSE CASE ls_Setting
+			
+	CASE "DISPATCH!"			
+		ls_Setting = "NEW SHIP,New Dispatch Shipment"
+		
+	CASE "INTERMODAL!"
+		ls_Setting = "NEW SHIP,New Intermodal Shipment"
+		
+	CASE "CROSSDOCK!"
+		ls_Setting = "NEW SHIP,New Crossdock Shipment"
+		
+	CASE "NONROUTED!"
+		ls_Setting = "NEW SHIP,New Non-Routed Shipment"
+		
+	CASE "BROKERAGE!"
+		ls_Setting = "NEW SHIP,New Brokerage Shipment"
+		
+	CASE "NONROUTEDBROKERAGE!"
+		ls_Setting = "NEW SHIP,New Non-Routed Brokerage Shipment"
+		
+	CASE "TEMPLATE!"
+		ls_Setting = "NEW SHIP,New Shipment From Template"
+		
+	CASE "3RDPARTYTRIP!"	
+		ls_Setting = "NEW SHIP,New 3rd Party Trip"
+		
+	CASE ELSE
+		ls_Setting = "NEW SHIP"
+		
+END CHOOSE
+
+string	ls_productname, &
+			ls_productversion, &
+			ls_pcmiler
+boolean	lb_connected
+
+n_cst_trip	lnv_trip
+n_cst_routing	lnv_routing
+lnv_trip = create n_cst_trip
+
+if lnv_trip.of_isconnected() then
+	if lnv_trip.of_connect(lnv_routing) then
+		if lnv_routing.of_isvalid() then
+			ls_productname=lnv_routing.of_about("ProductName")
+			ls_productversion=lnv_routing.of_about("ProductVersion")
+			if len(ls_productname) > 0 then
+				ls_pcmiler =  ls_productname + ' Version ' + ls_productversion
+			end if
+			lb_connected = true
+		else
+			lb_connected = false
+		end if
+		
+	end if
+else
+	lb_connected = false
+end if
+	
+if not lb_connected then
+	ls_pcmiler = "PCMiler Interface Not Connected"
+end if
+
+destroy lnv_trip
+
+lb_ContactManager = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_ContactManager )
+lb_OrderEntry = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_OrderEntry )
+lb_Billing = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Billing )
+lb_Brokerage = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Brokerage )
+lb_Dispatch = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Dispatch )
+lb_LogAudit = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_LogAudit )
+lb_PCMiler = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_PCMiler )
+lb_Settlements = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Settlements )
+lb_FuelCard = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_FuelCard )
+lb_Imaging = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Imaging )
+lb_RouteManager = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_RouteManager )
+
+lb_Communications = lnv_LicenseManager.of_HasCommunicationsLicense ( )
+lb_MobileCommunications = lnv_LicenseManager.of_HasMobileCommunicationsLicense ( )
+lb_Intouch = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_InTouch )
+lb_AtRoad = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_AtRoad )
+lb_Qualcomm = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Qualcomm )
+lb_Cadec = lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.cs_Module_Cadec )
+
+lb_AutoRating = lnv_LicenseManager.of_HasAutoRatingLicensed ( )
+lb_Notification = lnv_LicenseManager.of_HasNotificationLicense ( )
+lb_EDI204 = lnv_LicenseManager.of_HasEdi204license ( )
+lb_AnyEdi = lnv_licenseManager.of_Hasanyedilicense( )
+
+lb_Documenttransfer = lnv_licenseManager.of_HasDocumentttansfer( )
+
+lb_EquipmentPosting = lnv_LicenseManager.of_hasEquipmentpostinglicense( )
+lb_PTMobileUser = TRUE //lnv_LicenseManager.of_hasNextellicense( )
+
+am_Target.m_Rating.Visible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+am_Target.m_Billing.Visible = lb_Billing OR lb_OrderEntry
+am_Target.m_Settle.Visible = lb_Settlements
+am_Target.m_Logs.Visible = lb_LogAudit
+am_Target.m_Dispatch.Visible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+am_Target.m_Imaging.Visible = lb_Imaging
+
+//System Menu
+
+am_Target.m_System.m_sys_company.Visible = lb_ContactManager OR lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+am_Target.m_System.m_sys_CompanySearch.Visible = lb_ContactManager OR lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+am_Target.m_System.m_sys_equip.Visible = lb_Dispatch
+//am_Target.m_System.m_Sys_Emp.Visible = lb_LogAudit OR lb_Dispatch
+am_Target.m_System.m_RouteInfo.Visible = lb_RouteManager
+am_Target.m_System.m_PhoneList.Visible = lb_LogAudit OR lb_Dispatch
+//am_Target.m_System.m_sys_exportcompanylist.Visible = lb_ContactManager
+am_Target.m_System.m_setup.m_sys_EquipmentLeaseTypes.Visible = lb_Dispatch
+am_Target.m_System.m_sys_RateConfirmationTemplate.Visible = lb_Brokerage
+am_Target.m_System.m_sys_pcmconn.Visible = lb_PCMiler
+am_Target.m_System.m_locatorupdate.Visible = lb_PCMiler
+am_Target.m_System.m_div_s05.Visible = lb_PCMiler
+am_Target.m_System.m_setup.m_eventconfirmationrequirements.Visible = lb_Dispatch
+am_Target.m_System.m_setup.m_notificationsetup.Visible = lb_Notification
+am_Target.m_System.m_importedshipmentlog.Visible = lb_EDI204
+am_Target.m_System.m_carriersearch.Visible = lb_Brokerage
+am_Target.m_System.m_setup.m_sys_EquipmentPosting.Visible = lb_EquipmentPosting
+am_Target.m_System.m_setup.m_PTMobileUserSetup.Visible = lb_PTMobileUser
+am_Target.m_System.m_sys_equip.m_generatepostingfile.Enabled = lb_EquipmentPosting
+am_Target.m_System.m_documentTransferHistory.Visible = lb_documenttransfer
+
+
+// new Reports menu RDT 11/27/02
+am_Target.m_System.m_sys_reports.m_sys_reports_LastFreeDate.Visible = lb_Notification
+am_Target.m_System.m_sys_reports.m_sys_reports_TIR.Visible = lb_Notification
+
+
+
+//Settlements Menu
+
+am_Target.m_Settle.m_Setl_Comdata.Visible = lb_FuelCard
+
+
+// Auto Rating
+//am_Target.m_rating.m_ratetables.Visible = lb_AutoRating
+//am_Target.m_rating.m_autoratequery.Visible = lb_AutoRating
+//am_Target.m_rating.m_rating_div01.Visible = lb_AutoRating
+//am_Target.m_rating.m_zones.Visible = lb_AutoRating
+//am_Target.m_rating.m_codedefaults.Visible = lb_AutoRating
+
+// Communications Menu -- Changed to manipulate visible instead of enabled 2/22/05 BKW
+//		Also, rearranged menu order and added m_Comm_FleetMap and m_Comm_Div01 2/22/05 BKW
+am_Target.m_communications.Visible = lb_Communications
+am_Target.m_communications.m_Comm_SendFreeFormText.Visible = lb_MobileCommunications OR lb_PTMobileUser
+am_Target.m_communications.m_Comm_FleetMap.Visible = lb_PTMobileUser
+am_Target.m_communications.m_Comm_Div01.Visible = lb_MobileCommunications OR lb_PTMobileUser
+am_Target.m_communications.m_Comm_DeviceSetup.Visible = lb_MobileCommunications OR lb_PTMobileUser
+am_Target.m_communications.m_Comm_InBoundMessages.Visible = lb_MobileCommunications
+am_Target.m_communications.m_Comm_MessageLog.Visible = lb_MobileCommunications
+
+
+//Dispatch Menu
+
+am_Target.m_Dispatch.m_Disp_NewDispShip.Visible = lb_Dispatch
+am_Target.m_Dispatch.m_Disp_NewCntnShip.Visible = lb_Dispatch
+am_Target.m_Dispatch.m_NewCDShipment.Visible = lb_Dispatch
+am_Target.m_Dispatch.m_Disp_NewNRShip.Visible = lb_OrderEntry OR lb_Dispatch
+am_Target.m_Dispatch.m_Disp_NewBrokShip.Visible = lb_Brokerage
+am_Target.m_Dispatch.m_Disp_NewNRBrokerage.Visible = lb_Brokerage
+am_Target.m_Dispatch.m_Disp_NewTrip.Visible = lb_Brokerage
+
+am_Target.m_Dispatch.m_Disp_Itin.Visible = lb_Dispatch
+am_Target.m_Dispatch.m_Disp_Ship.Visible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+am_Target.m_Dispatch.m_Disp_Trip.Visible = lb_Brokerage
+
+am_Target.m_Dispatch.m_Disp_ShipSum.Visible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+am_Target.m_Dispatch.m_Disp_EquipSum.Visible = lb_Dispatch
+am_Target.m_Dispatch.m_Disp_TripSum.Visible = lb_Brokerage
+am_Target.m_Dispatch.m_Disp_Search.Visible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+
+am_Target.m_Dispatch.m_Disp_Company.Visible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+am_Target.m_Dispatch.m_Disp_Equip.Visible = lb_Dispatch
+//am_Target.m_Dispatch.m_Disp_Emp.Visible = lb_Dispatch
+
+am_Target.m_Dispatch.m_div_d04.Visible = lb_PCMiler
+am_Target.m_Dispatch.m_Disp_PCMiler.Visible = lb_PCMiler
+
+am_Target.m_Dispatch.m_cashadvance.Visible = lb_Settlements
+am_Target.m_Dispatch.m_div_d05.Visible = am_Target.m_Dispatch.m_cashadvance.Visible
+
+
+am_Target.m_Dispatch.m_disp_ReviewEDI.Visible = lb_EDI204
+
+
+IF Lower ( am_Target.ClassName ( ) ) = Lower ( "m_Frame_Trucking" ) THEN
+
+	m_Frame_Trucking.m_System.m_sys_company.ToolbarItemVisible = lb_ContactManager OR lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+	m_Frame_Trucking.m_dispatch.m_disp_shipsum.ToolbarItemVisible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+	m_Frame_Trucking.m_dispatch.m_disp_equipsum.ToolbarItemVisible = lb_Dispatch
+	m_Frame_Trucking.m_billing.m_bill_search.ToolbarItemVisible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+	
+	m_Frame_Trucking.m_dispatch.m_disp_newship.ToolbarItemVisible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+	m_Frame_Trucking.m_dispatch.m_disp_newship.ToolbarItemtext = ls_Setting
+	
+	m_Frame_Trucking.m_dispatch.m_disp_newcntnship.ToolbarItemVisible = lb_Dispatch
+	m_Frame_Trucking.m_dispatch.m_disp_itin.ToolbarItemVisible = lb_Dispatch
+	m_Frame_Trucking.m_dispatch.m_disp_ship.ToolbarItemVisible = lb_OrderEntry OR lb_Dispatch OR lb_Brokerage
+	m_Frame_Trucking.m_dispatch.m_Disp_PCMiler.ToolbarItemVisible = lb_PCMiler
+	m_Frame_Trucking.m_dispatch.m_Disp_PCMiler.ToolbarItemText = "PC*MILER," + ls_pcmiler
+
+	m_Frame_Trucking.m_System.m_sys_emp.ToolbarItemVisible = TRUE  //lb_LogAudit OR lb_Dispatch
+	m_Frame_Trucking.m_logs.m_log_admin.ToolbarItemVisible = lb_LogAudit AND NOT (lb_OrderEntry OR lb_Dispatch OR lb_Brokerage)
+	m_Frame_Trucking.m_logs.m_log_prefs.ToolbarItemVisible = lb_LogAudit AND NOT (lb_OrderEntry OR lb_Dispatch OR lb_Brokerage)
+	m_Frame_Trucking.m_logs.m_log_entry.ToolbarItemVisible = lb_LogAudit
+	m_Frame_Trucking.m_logs.m_log_vios.ToolbarItemVisible = lb_LogAudit AND NOT (lb_OrderEntry OR lb_Dispatch OR lb_Brokerage)
+	m_Frame_Trucking.m_logs.m_log_reports.ToolbarItemVisible = lb_LogAudit AND NOT (lb_OrderEntry OR lb_Dispatch OR lb_Brokerage)
+
+END IF
+
+
+IF Lower ( am_Target.ClassName ( ) ) = Lower ( "m_Company" ) THEN
+	m_Company.m_Current.m_EDISetup.Visible = lb_AnyEDI
+	m_Company.m_Current.m_EDILog.Visible = lb_AnyEDI
+	m_Company.m_Current.m_div02.Visible = lb_AnyEDI
+	m_Company.m_Current.m_aliaslist.Visible = lb_AnyEDI	
+	
+	m_Company.m_Current.m_DocumentTransfer.Visible = lb_documenttransfer
+	m_Company.m_Current.m_div04.Visible = lb_documenttransfer
+	
+END IF
+
+
+end subroutine
+

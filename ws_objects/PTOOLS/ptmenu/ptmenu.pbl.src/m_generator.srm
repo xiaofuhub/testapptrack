@@ -1,0 +1,53 @@
+﻿$PBExportHeader$m_generator.srm
+forward
+global type m_generator from menu
+end type
+type m_placeholder from menu within m_generator
+end type
+type m_placeholder from menu within m_generator
+end type
+end forward
+
+global type m_generator from menu
+m_placeholder m_placeholder
+end type
+global m_generator m_generator
+
+type variables
+protected:
+n_cst_toolmenu_manager inv_cst_toolmenu_manager
+end variables
+
+forward prototypes
+public function integer mf_set_manager (n_cst_toolmenu_manager anv_cst_toolmenu_manager)
+end prototypes
+
+public function integer mf_set_manager (n_cst_toolmenu_manager anv_cst_toolmenu_manager);inv_cst_toolmenu_manager = anv_cst_toolmenu_manager
+return 1
+end function
+
+on m_generator.create
+m_generator=this
+this.m_placeholder=create m_placeholder
+this.Item[]={this.m_placeholder}
+end on
+
+on m_generator.destroy
+destroy(this.m_placeholder)
+end on
+
+type m_placeholder from menu within m_generator
+end type
+
+on m_placeholder.create
+this.Text="placeholder"
+end on
+
+on m_placeholder.destroy
+end on
+
+event clicked;if isvalid(inv_cst_toolmenu_manager) then
+	inv_cst_toolmenu_manager.of_process_click(this)
+end if
+end event
+

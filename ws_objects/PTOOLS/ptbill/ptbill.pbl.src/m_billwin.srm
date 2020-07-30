@@ -1,0 +1,30 @@
+﻿$PBExportHeader$m_billwin.srm
+forward
+global type m_billwin from m_sheet
+end type
+end forward
+
+global type m_billwin from m_sheet
+end type
+global m_billwin m_billwin
+
+on m_billwin.create
+m_billwin=this
+call super::create
+end on
+
+on m_billwin.destroy
+call super::destroy
+end on
+
+on m_div_c01.create
+call super::create
+this.Visible=false
+end on
+
+on m_save.create
+call super::create
+this.ToolBarItemName=""
+this.Visible=false
+end on
+

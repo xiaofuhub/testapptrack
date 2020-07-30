@@ -1,0 +1,10 @@
+﻿$PBExportHeader$os_toolbar.srs
+global type os_toolbar from structure
+window		w_owner
+	integer		i_barindex
+	boolean		b_visible
+	toolbaralignment		e_alignment
+	string		s_title
+	string		s_displayname
+end type
+

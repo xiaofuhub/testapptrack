@@ -1,0 +1,54 @@
+﻿$PBExportHeader$reltime_ext.srf
+$PBExportComments$PTCORE.
+global type reltime_ext from function_object
+end type
+
+forward prototypes
+global function time reltime_ext (string as_start, long al_offset)
+end prototypes
+
+global function time reltime_ext (string as_start, long al_offset);//Revised in 3.6.00 BKW.  Call to lnv_Datetime was causing a crash in PB8 when called
+//from a dataobject.  Converted the logic to calculate directly rather than using the
+//datetime object.
+
+//Arguments:
+//as_Start	The start time, as a string
+//al_Offset	The number of seconds to add or subtract from the start time.
+
+Time	lt_Start, &
+		lt_Return
+Long	ll_Start, &
+		ll_Total, &
+		ll_Return
+
+if isnull(al_Offset) or isnull(istime(as_Start)) or not istime(as_Start) then
+	setnull( lt_Return )
+ELSE
+
+//	Old code from pre-3.6.00  This was causing a crash when called from dataobject in PB8
+//	lt_Return = lnv_datetime.of_RelativeTime( time(as_Start), al_Offset )
+
+	//Take the starting time, in seconds, add the offset (positive or negative), 
+	//mod by the number of seconds in a day, adjust to a positive equivalent if negative, 
+	//then convert the positive result back to a time.
+
+	lt_Start = Time ( as_Start )
+
+	ll_Start = SecondsAfter ( 00:00:00, lt_Start )
+
+	ll_Total = ll_Start + al_Offset
+
+	ll_Return = Mod ( ll_Total, 86400 )  //86400 is number of seconds in a day
+
+	//If the return is negative, take it off the number of seconds in a full day.
+	IF ll_Return < 0 THEN
+		ll_Return = 86400 + ll_Return  //(ll_Return is negative, so "add" it)
+	END IF
+
+	lt_Return = RelativeTime ( 00:00:00, ll_Return )
+
+end if
+
+RETURN lt_Return
+end function
+

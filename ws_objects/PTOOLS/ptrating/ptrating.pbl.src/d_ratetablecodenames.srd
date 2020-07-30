@@ -1,0 +1,15 @@
+﻿$PBExportHeader$d_ratetablecodenames.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=char(32766) update=yes updatewhereclause=no key=yes name=codename dbname="ratetable.codename" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=name dbname="ratetable.name" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=defaultdescription dbname="ratetable.defaultdescription" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=breakunit dbname="ratetable.breakunit" )
+ column=(type=long update=yes updatewhereclause=yes name=amounttype dbname="ratetable.amounttype" )
+ column=(type=char(1) updatewhereclause=yes name=amounttype_itemtype dbname="amounttype.itemtype" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"ratetable~" )  TABLE(NAME=~"amounttype~" ) COLUMN(NAME=~"ratetable.codename~") COLUMN(NAME=~"ratetable.name~") COLUMN(NAME=~"ratetable.defaultdescription~") COLUMN(NAME=~"ratetable.breakunit~") COLUMN(NAME=~"ratetable.amounttype~") COLUMN(NAME=~"amounttype.itemtype~")    JOIN (LEFT=~"amounttype.id~"    OP =~"=~"RIGHT=~"ratetable.amounttype~"    OUTER2 =~"ratetable.amounttype~" )) " update="ratetable" updatewhere=1 updatekeyinplace=yes filter=" codename <> 'CUSTOM'"  sort="codename A " )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="5" y="4" height="64" width="727" format="[general]"  name=codename edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

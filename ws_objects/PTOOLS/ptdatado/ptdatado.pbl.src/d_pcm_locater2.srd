@@ -1,0 +1,38 @@
+﻿$PBExportHeader$d_pcm_locater2.srd
+$PBExportComments$PTDATA:   (list) Locates PCMiler locater for a company
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=80 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=co_id dbname="companies.co_id" )
+ column=(type=char(9) updatewhereclause=yes name=co_zip dbname="companies.co_zip" )
+ column=(type=long updatewhereclause=yes name=co_tz dbname="companies.co_tz" values="HWI	0/ALK	1/PAC	2/MTN	3/CTL	4/EST	5/ATL	6/" )
+ column=(type=char(25) updatewhereclause=yes name=co_pcm dbname="companies.co_pcm" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"companies~" ) COLUMN(NAME=~"companies.co_id~") COLUMN(NAME=~"companies.co_zip~") COLUMN(NAME=~"companies.co_tz~") COLUMN(NAME=~"companies.co_pcm~")) " )
+text(band=header alignment="0" text="City"border="0" color="128" x="64" y="4" height="64" width="105"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="PCZip"border="0" color="128" x="658" y="4" height="64" width="160"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="PCMiler Locater"border="0" color="128" x="960" y="4" height="64" width="425"  name=st_tag4  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="State"border="0" color="128" x="485" y="4" height="64" width="142"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression="trim( comp_city_fix) "border="0" color="0" x="9" y="4" height="64" width="471" format="[general]"  name=comp_city  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="if( isNumber(left( co_pcm , 1 )), left(co_pcm, 5), ~"~" )
+"border="0" color="0" x="645" y="4" height="64" width="192" format="[general]"  name=comp_zip  font.face="MS Sans Serif" font.height="-8" font.weight="400~tif (left(co_zip, 5) = string(comp_zip), 700, 400)"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="864" y="4" height="64" width="768" format="[general]"  name=co_pcm edit.limit=25 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="837" y="232" height="64" width="329" format="[general]"  name=co_id edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+compute(band=detail alignment="0" expression="if( isNumber(left( co_pcm , 1 )),
+right ( case( right ( trim ( left ( co_pcm , len ( co_pcm ) - 2 ) ) , 1) 
+when ','  then left ( trim ( left ( co_pcm , len (  co_pcm ) - 2 ) ), len (  co_pcm ) - 1 ) 
+else  trim ( left ( co_pcm , len (  co_pcm ) - 2 ) ) ) , len ( case( right ( trim ( left ( co_pcm , len ( co_pcm ) - 2 ) ) , 1) 
+when ','  then left ( trim ( left ( co_pcm , len (  co_pcm ) - 2 ) ), len (  co_pcm ) - 1 ) 
+else  trim ( left ( co_pcm , len (  co_pcm ) - 2 ) ) ) ) - 6 ), 
+case( right ( trim ( left ( co_pcm , len ( co_pcm ) - 2 ) ) , 1) 
+when ','  then left ( trim ( left ( co_pcm , len (  co_pcm ) - 2 ) ), len (  co_pcm ) - 1 ) 
+else  trim ( left ( co_pcm , len (  co_pcm ) - 2 ) ) )
+ )
+
+"border="0" color="0" x="837" y="308" height="64" width="329" format="[general]"  name=comp_city_fix  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="837" y="384" height="64" width="329" format=""  name=co_zip visible="1~t0" edit.limit=0 edit.case=any edit.autoselect=yes edit.nilisnull=yes  font.face="Arial" font.height="-10" font.weight="400~tif (co_zip = string(comp_zip), 700, 400)"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+column(band=detail id=3 alignment="2" tabsequence=32766 border="0~t0" color="0" x="837" y="460" height="64" width="329" format="[general]"  name=co_tz ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.nilisnull=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="15780518" )
+compute(band=detail alignment="0" expression="right(co_pcm, 2)"border="0" color="0" x="512" y="4" height="64" width="91" format="[general]"  name=comp_state  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

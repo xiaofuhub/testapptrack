@@ -1,0 +1,358 @@
+﻿$PBExportHeader$m_log.srm
+forward
+global type m_log from m_sheet
+end type
+type m_calc from menu within m_current
+end type
+type m_log_print from menu within m_current
+end type
+type m_div_c02 from menu within m_current
+end type
+type m_add_vios from menu within m_current
+end type
+type m_receipts from menu within m_current
+end type
+type m_div_c03 from menu within m_current
+end type
+type m_add_next from menu within m_current
+end type
+type m_clear from menu within m_current
+end type
+type m_lost from menu within m_current
+end type
+type m_found from menu within m_current
+end type
+type m_air from menu within m_current
+end type
+type m_div_c04 from menu within m_current
+end type
+type m_insert_log from menu within m_current
+end type
+type m_remove_extra from menu within m_current
+end type
+type m_skipahead from menu within m_current
+end type
+type m_div_c05 from menu within m_current
+end type
+type m_viewcodriver from menu within m_current
+end type
+type m_refreshjumplist from menu within m_current
+end type
+end forward
+
+global type m_log from m_sheet
+end type
+global m_log m_log
+
+on m_log.create
+m_log=this
+call super::create
+end on
+
+on m_log.destroy
+call super::destroy
+end on
+
+type m_current from m_sheet`m_current within m_log
+m_calc m_calc
+m_log_print m_log_print
+m_div_c02 m_div_c02
+m_add_vios m_add_vios
+m_receipts m_receipts
+m_div_c03 m_div_c03
+m_add_next m_add_next
+m_clear m_clear
+m_lost m_lost
+m_found m_found
+m_air m_air
+m_div_c04 m_div_c04
+m_insert_log m_insert_log
+m_remove_extra m_remove_extra
+m_skipahead m_skipahead
+m_div_c05 m_div_c05
+m_viewcodriver m_viewcodriver
+m_refreshjumplist m_refreshjumplist
+end type
+
+on m_current.create
+call super::create
+this.m_calc=create m_calc
+this.m_log_print=create m_log_print
+this.m_div_c02=create m_div_c02
+this.m_add_vios=create m_add_vios
+this.m_receipts=create m_receipts
+this.m_div_c03=create m_div_c03
+this.m_add_next=create m_add_next
+this.m_clear=create m_clear
+this.m_lost=create m_lost
+this.m_found=create m_found
+this.m_air=create m_air
+this.m_div_c04=create m_div_c04
+this.m_insert_log=create m_insert_log
+this.m_remove_extra=create m_remove_extra
+this.m_skipahead=create m_skipahead
+this.m_div_c05=create m_div_c05
+this.m_viewcodriver=create m_viewcodriver
+this.m_refreshjumplist=create m_refreshjumplist
+this.Item[UpperBound(this.item)+1]=this.m_calc
+this.Item[UpperBound(this.item)+1]=this.m_log_print
+this.Item[UpperBound(this.item)+1]=this.m_div_c02
+this.Item[UpperBound(this.item)+1]=this.m_add_vios
+this.Item[UpperBound(this.item)+1]=this.m_receipts
+this.Item[UpperBound(this.item)+1]=this.m_div_c03
+this.Item[UpperBound(this.item)+1]=this.m_add_next
+this.Item[UpperBound(this.item)+1]=this.m_clear
+this.Item[UpperBound(this.item)+1]=this.m_lost
+this.Item[UpperBound(this.item)+1]=this.m_found
+this.Item[UpperBound(this.item)+1]=this.m_air
+this.Item[UpperBound(this.item)+1]=this.m_div_c04
+this.Item[UpperBound(this.item)+1]=this.m_insert_log
+this.Item[UpperBound(this.item)+1]=this.m_remove_extra
+this.Item[UpperBound(this.item)+1]=this.m_skipahead
+this.Item[UpperBound(this.item)+1]=this.m_div_c05
+this.Item[UpperBound(this.item)+1]=this.m_viewcodriver
+this.Item[UpperBound(this.item)+1]=this.m_refreshjumplist
+end on
+
+on m_current.destroy
+call super::destroy
+destroy(this.m_calc)
+destroy(this.m_log_print)
+destroy(this.m_div_c02)
+destroy(this.m_add_vios)
+destroy(this.m_receipts)
+destroy(this.m_div_c03)
+destroy(this.m_add_next)
+destroy(this.m_clear)
+destroy(this.m_lost)
+destroy(this.m_found)
+destroy(this.m_air)
+destroy(this.m_div_c04)
+destroy(this.m_insert_log)
+destroy(this.m_remove_extra)
+destroy(this.m_skipahead)
+destroy(this.m_div_c05)
+destroy(this.m_viewcodriver)
+destroy(this.m_refreshjumplist)
+end on
+
+on m_save.create
+call super::create
+this.Text="Calc and &Save~tCtrl+S"
+this.ToolBarItemText="CALC+SAVE"
+end on
+
+event m_save::clicked;call super::clicked;parentwindow.dynamic post zz_calc_and_save()
+
+
+end event
+
+type m_calc from menu within m_current
+end type
+
+on m_calc.create
+this.Text="Calc &Only~tCtrl+O"
+this.ToolBarItemName="Compute!"
+this.ToolBarItemText="CALC ONLY"
+this.Shortcut=335
+end on
+
+event clicked;w_log.dynamic post zz_calc_only()
+
+end event
+
+type m_log_print from menu within m_current
+end type
+
+on m_log_print.create
+this.Text="&Print...~tCtrl+P"
+this.ToolBarItemName="Report5!"
+this.ToolBarItemText="PRINT"
+this.Shortcut=336
+end on
+
+event clicked;w_log.dynamic post zz_print_options()
+
+end event
+
+type m_div_c02 from menu within m_current
+end type
+
+on m_div_c02.create
+this.Text="-"
+end on
+
+type m_add_vios from menu within m_current
+end type
+
+on m_add_vios.create
+this.Text="Add &Violation"
+this.ToolBarItemName="Insert!"
+this.ToolBarItemText="ADD VIOS"
+end on
+
+event clicked;w_log.dynamic post zz_add_vios()
+
+end event
+
+type m_receipts from menu within m_current
+end type
+
+on m_receipts.create
+this.Text="Enter &Receipts"
+this.ToolBarItemName="Cursor!"
+this.ToolBarItemText="RECEIPTS"
+end on
+
+event clicked;w_log.dynamic post zz_receipts()
+
+end event
+
+type m_div_c03 from menu within m_current
+end type
+
+on m_div_c03.create
+this.Text="-"
+end on
+
+type m_add_next from menu within m_current
+end type
+
+on m_add_next.create
+this.Text="Add &Next Log~tCtrl+N"
+this.ToolBarItemName="lognext.bmp"
+this.ToolBarItemText="ADD NEXT"
+this.Shortcut=334
+end on
+
+event clicked;w_log.dynamic post zz_add_next()
+
+end event
+
+type m_clear from menu within m_current
+end type
+
+on m_clear.create
+this.Text="Cl&ear Log~tCtrl+E"
+this.ToolBarItemName="logclear.bmp"
+this.ToolBarItemText="CLEAR LOG"
+this.Shortcut=325
+end on
+
+event clicked;w_log.dynamic post zz_clear_log()
+
+end event
+
+type m_lost from menu within m_current
+end type
+
+on m_lost.create
+this.Text="&Lost Log"
+this.ToolBarItemName="Watcom!"
+this.ToolBarItemText="LOST LOG"
+end on
+
+event clicked;w_log.dynamic post zz_lost_log()
+
+end event
+
+type m_found from menu within m_current
+end type
+
+on m_found.create
+this.Text="&Found Log"
+this.ToolBarItemName="Custom065!"
+this.ToolBarItemText="FOUND LOG"
+end on
+
+event clicked;w_log.dynamic post zz_found_log()
+
+end event
+
+type m_air from menu within m_current
+end type
+
+on m_air.create
+this.Text="&Air Radius"
+this.ToolBarItemName="lograd.bmp"
+this.ToolBarItemText="AIR RADIUS"
+end on
+
+event clicked;w_log.dynamic  post zz_hundred()
+
+end event
+
+type m_div_c04 from menu within m_current
+end type
+
+on m_div_c04.create
+this.Text="-"
+end on
+
+type m_insert_log from menu within m_current
+end type
+
+on m_insert_log.create
+this.Text="&Insert Omitted Log"
+end on
+
+event clicked;w_log.dynamic post zz_insert_log()
+
+end event
+
+type m_remove_extra from menu within m_current
+end type
+
+on m_remove_extra.create
+this.Text="Remove E&xtra Log"
+end on
+
+event clicked;w_log.dynamic  post delete_log()
+
+end event
+
+type m_skipahead from menu within m_current
+end type
+
+event clicked;w_log.dynamic  post skip_logs()
+
+end event
+
+on m_skipahead.create
+this.Text="S&kip Logs"
+this.ToolBarItemName="none!"
+this.ToolBarItemVisible=false
+end on
+
+type m_div_c05 from menu within m_current
+end type
+
+on m_div_c05.create
+this.Text="-"
+end on
+
+type m_viewcodriver from menu within m_current
+end type
+
+event clicked;w_log.dynamic  post zz_codriver()
+
+end event
+
+on m_viewcodriver.create
+this.Text="Vie&w Codriver's Log"
+this.ToolBarItemName="none!"
+this.ToolBarItemVisible=false
+end on
+
+type m_refreshjumplist from menu within m_current
+end type
+
+event clicked;w_log.dynamic  post refresh_jump()
+
+end event
+
+on m_refreshjumplist.create
+this.Text="Refresh &Jump List"
+this.Visible=false
+end on
+

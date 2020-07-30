@@ -1,0 +1,17 @@
+﻿$PBExportHeader$d_dlkc_join_entity_amounttemplate.srd
+$PBExportComments$AmountTemplate (DataWindow from PBL map PTSetl) //@(*)[57511999|1459]<nosync>
+release 6;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=1 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=88 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=join_entity_amounttemplate_fkentity dbname="join_entity_amounttemplate.fkentity" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=join_entity_amounttemplate_fkamounttem01 dbname="join_entity_amounttemplate.fkamounttemplate" )
+ column=(type=long updatewhereclause=yes name=beo_index dbname="beo_index" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"join_entity_amounttemplate~" ) COLUMN(NAME=~"join_entity_amounttemplate.fkentity~" ) COLUMN(NAME=~"join_entity_amounttemplate.fkamounttemplate~" ) COMPUTE(NAME=~"beo_index=0~" ) ) " update="join_entity_amounttemplate" updatewhere=1 updatekeyinplace=yes )
+text(band=header alignment="0" text="fkEntity"border="0" color="0" x="9" y="8" height="80" width="352"  name=join_entity_amounttemplate_fkentity_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="1" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="fkAmountTemplate"border="0" color="0" x="370" y="8" height="80" width="352"  name=join_entity_amounttemplate_fkamounttem01_t  font.face="Arial" font.height="-8" font.weight="400"  font.family="1" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="0" color="0" x="9" y="4" height="72" width="352" format="[general]"  name=join_entity_amounttemplate_fkentity  tag=";(@HOW1.0@)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="1" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="370" y="4" height="72" width="352" format="[general]"  name=join_entity_amounttemplate_fkamounttem01  tag=";(@HOW1.0@)" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="Arial" font.height="-8" font.weight="400"  font.family="1" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

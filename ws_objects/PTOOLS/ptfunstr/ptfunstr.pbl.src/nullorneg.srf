@@ -1,0 +1,12 @@
+﻿$PBExportHeader$nullorneg.srf
+$PBExportComments$PTCORE.
+global type nullorneg from function_object
+end type
+
+forward prototypes
+global function boolean nullorneg (long test_val)
+end prototypes
+
+global function boolean nullorneg (long test_val);if isnull(test_val) or test_val < 0 then return true else return false
+end function
+

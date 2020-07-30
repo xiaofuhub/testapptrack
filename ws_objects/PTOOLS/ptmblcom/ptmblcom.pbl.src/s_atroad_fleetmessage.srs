@@ -1,0 +1,23 @@
+﻿$PBExportHeader$s_atroad_fleetmessage.srs
+global type s_atroad_fleetmessage from structure
+	string		is_vehiclelabel
+	integer		ii_locnstatus
+	string		is_stopduration
+	string		is_Stop_uom
+	string		is_speed
+	string		is_speed_uom
+	string		is_locn_hdg
+	string		is_locn_lat
+	string		is_locn_lon
+	string		is_locnadrs
+	string		is_locnxstrt
+	string		is_locncity
+	string		is_locnstate
+	string		is_locnzipc
+	string		is_locn_cty
+	string		is_locnctry
+	string		is_locn_lmk
+	string		is_locn_dtg
+	string		is_locn_dtg_uom
+end type
+

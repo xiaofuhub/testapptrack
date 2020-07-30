@@ -1,0 +1,6 @@
+﻿$PBExportHeader$s_parm.srs
+global type s_parm from structure
+	string		is_label
+	any		ia_value
+end type
+

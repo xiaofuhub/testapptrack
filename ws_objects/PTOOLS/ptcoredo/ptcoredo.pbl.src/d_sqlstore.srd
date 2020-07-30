@@ -1,0 +1,3156 @@
+﻿$PBExportHeader$d_sqlstore.srd
+release 9;
+datawindow ( units=0 timer_interval=0 color=16777215 processing=1 print.printername=""  print.documentname=""  print.orientation=0 print.margin.left=110 print.margin.right=110 print.margin.top=96 print.margin.bottom=96 print.paper.size=0 print.paper.source=0 print.canusedefaultprinter=yes grid.lines=0 selected.mouse=yes)
+header(height=68 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=20 color="536870912" )
+detail(height=108 color="553648127"  height.autosize=yes)
+table(column=(type=char(4) updatewhereclause=yes name=ver dbname="ver"  )
+column=(type=char(4) updatewhereclause=yes name=num dbname="num"  )
+column=(type=char(32768) updatewhereclause=yes name=expr dbname="expr"  )
+ sort="ver A, num A"
+)
+text(name=ver_t visible="1" band=header font.charset="204" font.face="MS Sans Serif" font.family="2" font.height="-8" font.pitch="2" font.weight="700" background.mode="1" background.color="536870912" color="0" alignment="2" border="0" x="9" y="8" height="52" width="96" text="Ver" )
+text(name=num_t visible="1" band=header font.charset="204" font.face="MS Sans Serif" font.family="2" font.height="-8" font.pitch="2" font.weight="700" background.mode="1" background.color="536870912" color="0" alignment="2" border="0" x="114" y="8" height="52" width="119" text="Num" )
+text(name=expr_t visible="1" band=header font.charset="204" font.face="MS Sans Serif" font.family="2" font.height="-8" font.pitch="2" font.weight="700" background.mode="1" background.color="536870912" color="0" alignment="2" border="0" x="242" y="8" height="52" width="3511" text="Expr" )
+column(name=ver visible="1" band=detail id=1 x="9" y="8" height="64" width="96" color="0" border="0" alignment="0" format="[general]" edit.focusrectangle=no edit.autohscroll=yes edit.autoselect=yes edit.autovscroll=no edit.case=any edit.codetable=no edit.displayonly=no edit.hscrollbar=no edit.imemode=3 edit.limit=0 edit.password=no edit.vscrollbar=no edit.validatecode=no edit.nilisnull=no edit.required=no criteria.required=no criteria.override_edit=no crosstab.repeat=no background.mode="1" background.color="536870912" font.charset="204" font.face="MS Sans Serif" font.family="2" font.height="-8" font.pitch="2" font.weight="400" tabsequence=10 )
+column(name=num visible="1" band=detail id=2 x="114" y="8" height="64" width="119" color="0" border="0" alignment="0" format="[general]" edit.focusrectangle=no edit.autohscroll=yes edit.autoselect=yes edit.autovscroll=no edit.case=any edit.codetable=no edit.displayonly=no edit.hscrollbar=no edit.imemode=3 edit.limit=0 edit.password=no edit.vscrollbar=no edit.validatecode=no edit.nilisnull=no edit.required=no criteria.required=no criteria.override_edit=no crosstab.repeat=no background.mode="1" background.color="536870912" font.charset="204" font.face="MS Sans Serif" font.family="2" font.height="-8" font.pitch="2" font.weight="400" tabsequence=20 )
+column(name=expr visible="1" height.autosize=yes band=detail id=3 x="242" y="8" height="64" width="3511" color="0" border="0" alignment="0" format="[general]" edit.focusrectangle=no edit.autohscroll=no edit.autoselect=yes edit.autovscroll=yes edit.case=any edit.codetable=no edit.displayonly=no edit.hscrollbar=no edit.imemode=3 edit.limit=0 edit.password=no edit.vscrollbar=yes edit.validatecode=no edit.nilisnull=no edit.required=no criteria.required=no criteria.override_edit=no crosstab.repeat=no background.mode="1" background.color="536870912" font.charset="204" font.face="MS Sans Serif" font.family="2" font.height="-8" font.pitch="2" font.weight="400" tabsequence=30 )
+htmltable(border="0" )
+htmlgen(clientComputedFields="1" clientEvents="1" clientFormatting="0" clientScriptable="0" clientValidation="1" generateJavaScript="1" netscapeLayers="0" netscapelayers="0" encodeSelfLinkArgs="1" )
+export.xml(headGroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0distill.customPostScript="0" xslfop.print="0" )
+
+data("100","01","update edi204profile set autorate = 'No'","100","02","commit","105","01","CREATE TABLE ~"DBA~".~"DynamicDetailArguments~"
+(LinkId integer NOT NULL ,
+MasterColumn varchar(50) NOT NULL ,
+DetailColumn varchar(50) NOT NULL ,
+ArgumentOrder integer NOT NULL )","105","02","CREATE TABLE ~"DBA~".~"DynamicLinkage~"
+(ObjectName varchar(50) NOT NULL ,
+ContainerName varchar(50) NOT NULL ,
+ObjectInstance integer NOT NULL ,
+DetailName varchar(50) NOT NULL ,
+DetailContainer varchar(50) NOT NULL ,
+DetailInstance integer NOT NULL ,
+LinkId integer NOT NULL )","105","03","CREATE TABLE ~"DBA~".~"DynamicLinks~"
+(LinkId integer NOT NULL ,
+ObjectName varchar(50) NOT NULL ,
+DetailName varchar(50) NOT NULL ,
+Style varchar(50) NOT NULL ,
+Description long varchar NULL , 
+PRIMARY KEY (LinkId))","105","04","CREATE TABLE ~"DBA~".~"DynamicMouseOver~"
+(ObjectName varchar(50) NOT NULL ,
+Response varchar(50) NOT NULL ,
+ColumnName varchar(50) NULL ,
+ResponseType varchar(50) NOT NULL ,
+TextExrpression long varchar NULL ,
+LinkId integer NULL)","105","05","CREATE TABLE ~"DBA~".~"DynamicObject~"
+(Name varchar(50) NOT NULL ,
+ClassName varchar(50) NOT NULL ,
+Type varchar(50) NOT NULL ,
+Description long varchar NULL , 
+CONSTRAINT pk_DynamicObject  PRIMARY KEY (Name))","105","06","CREATE TABLE ~"DBA~".~"DynamicProperty~"
+(ObjectName varchar(50) NOT NULL ,
+ContainerName varchar(50) NULL ,
+UserName varchar(8) NULL ,
+Instance integer NULL ,
+PropertyLabel varchar(50) NOT NULL ,
+PropertyValue long varchar NOT NULL)","105","07","CREATE TABLE ~"DBA~".~"AppUser~"
+(ID integer NOT NULL ,
+Ref varchar(8) NOT NULL UNIQUE , 
+CONSTRAINT pk_AppUser  PRIMARY KEY (ID))","105","08","commit","105","09","ALTER TABLE DBA.DynamicDetailArguments
+ADD FOREIGN KEY fk_DynamicLinks (LinkId) 
+REFERENCES DBA.DynamicLinks (LinkId) on update cascade on delete cascade","105","10","ALTER TABLE DBA.DynamicLinkage
+ADD FOREIGN KEY fk_ObjectName_DynamicObject (ObjectName) 
+REFERENCES DBA.DynamicObject (Name) on update cascade on delete cascade","105","11","ALTER TABLE DBA.DynamicLinkage
+ADD FOREIGN KEY fk_DynamicLinks (LinkId) 
+REFERENCES DBA.DynamicLinks (LinkId) on update cascade on delete cascade","105","12","ALTER TABLE DBA.DynamicLinkage
+ADD FOREIGN KEY fk_DetailName_DynamicObject (DetailName) 
+REFERENCES DBA.DynamicObject (Name) on update cascade on delete cascade","105","13","ALTER TABLE DBA.DynamicLinkage
+ADD FOREIGN KEY fk_DetailContainer_DynamicObject (DetailContainer) 
+REFERENCES DBA.DynamicObject (Name) on update cascade on delete cascade","105","14","ALTER TABLE DBA.DynamicLinkage
+ADD FOREIGN KEY fk_ContainerName_dynamicObject (ContainerName) 
+REFERENCES DBA.DynamicObject (Name) on update cascade on delete cascade","105","15","ALTER TABLE DBA.DynamicLinks
+ADD FOREIGN KEY fk_ObjectName_DynamicObject (ObjectName) 
+REFERENCES DBA.DynamicObject (Name) on update cascade on delete cascade","105","16","ALTER TABLE DBA.DynamicLinks
+ADD FOREIGN KEY fk_DetailName_DynamicObject (DetailName) 
+REFERENCES DBA.DynamicObject (Name) on update cascade on delete cascade","105","17","ALTER TABLE DBA.DynamicMouseOver
+ADD FOREIGN KEY fk_ObjectName_DynamicObject (ObjectName) 
+REFERENCES DBA.DynamicObject (Name) on update cascade on delete cascade","105","18","ALTER TABLE DBA.DynamicMouseOver
+ADD FOREIGN KEY fk_LinkId_DynamicLinks (LinkId) 
+REFERENCES DBA.DynamicLinks (LinkId) on delete cascade","105","19","ALTER TABLE DBA.DynamicProperty
+ADD FOREIGN KEY fk_DynamicPropertyObject_DynamicObject (ObjectName) 
+REFERENCES DBA.DynamicObject (Name) on update cascade on delete cascade","105","20","ALTER TABLE DBA.DynamicProperty
+ADD FOREIGN KEY fk_DynamicPropertyContainer_DynamicObject (ContainerName) 
+REFERENCES DBA.DynamicObject (Name) on update cascade on delete cascade","105","21","ALTER TABLE DBA.DynamicProperty
+ADD FOREIGN KEY fk_DynamicPropertyUser_AppUser (UserName) 
+REFERENCES DBA.AppUser (Ref) on update cascade on delete cascade","105","22","CREATE TRIGGER ~"AppUsers~" AFTER UPDATE
+ORDER 1 ON ~"DBA~".~"employees~"
+ REFERENCING OLD AS old_Row NEW AS new_Row
+FOR EACH Row  
+BEGIN
+    
+    declare li_Count integer;   
+
+    IF new_Row.em_ref <> old_Row.em_ref THEN
+        update appuser set ref = new_row.em_ref where id = new_row.em_id;
+    END IF;
+
+    Select count ( id )
+    INTO li_Count
+    FROM AppUser
+    WHERE id = new_Row.em_id;
+
+    IF new_row.em_Status = 'K' AND new_row.em_class <> 1001 AND li_Count = 0 AND new_row.em_ref is not null THEN
+        Insert into Appuser (id, ref) Values ( new_row.em_id, new_row.em_ref );
+    ELSEIF (new_row.em_Status = 'D' OR new_row.em_class = 1001 or new_row.em_ref is null )THEN
+	    Delete from Appuser where id = new_row.em_id;   
+    END IF; 
+END","105","23","CREATE TRIGGER ~"AppUsersDelete~" AFTER DELETE
+ORDER 1 ON ~"DBA~".~"employees~"
+ REFERENCING OLD AS old_Row 
+FOR EACH ROW
+BEGIN
+	Delete from Appuser where id = old_Row.em_id;
+END","105","24","commit","106","01","ALTER Table companyinvoicetransfersettings
+Drop primary key ","106","02","ALTER TABLE companyinvoicetransfersettings 
+MODIFY targetaddress long varchar not null,
+Modify subjectline long varchar, 
+Modify bccaddress long varchar, 
+Modify namingschema char(100), 
+Modify transfermode char(100)","106","03","ALTER TABLE companyinvoicetransfersettings 
+Add Primary Key ( ~"coid~" , ~"targetaddress~" )","106","04","commit","107","01","CREATE TABLE ~"dba~".~"driverdivisions~" (~"di_id~" integer NOT NULL DEFAULT NULL, ~"tmpdivision~" integer NOT NULL DEFAULT NULL , PRIMARY KEY (~"di_id~") , FOREIGN KEY ~"fk_employees_id~" (~"di_id~" ) REFERENCES ~"dba~".~"employees~" ON DELETE CASCADE ) ","107","02","CREATE TABLE ~"dba~".~"privmodulefunction~" (~"modfnid~" integer NOT NULL DEFAULT NULL, ~"module~" long varchar NOT NULL DEFAULT NULL, ~"function~" long varchar NOT NULL DEFAULT NULL, ~"role~" integer NOT NULL DEFAULT NULL, ~"type~" char(1) NOT NULL DEFAULT NULL , PRIMARY KEY (~"modfnid~"));","107","03","CREATE TABLE ~"dba~".~"privuserclass~" (~"privid~" integer NOT NULL DEFAULT NULL, ~"userid~" integer NOT NULL DEFAULT NULL, ~"module~" long varchar NOT NULL DEFAULT NULL, ~"division~" integer NOT NULL DEFAULT NULL, ~"role~" integer NOT NULL DEFAULT NULL , PRIMARY KEY (~"privid~") ,  FOREIGN KEY ~"fk_employees~" (~"userid~" ) REFERENCES ~"dba~".~"employees~" ON DELETE CASCADE ) ;","107","04","CREATE TABLE ~"dba~".~"employee_divisiondefaults~" (~"em_id~" integer NOT NULL DEFAULT NULL, ~"division~" integer NOT NULL DEFAULT NULL, ~"shiptype~" char(255) NOT NULL DEFAULT NULL , PRIMARY KEY (~"em_id~", ~"shiptype~")) ","107","05","CREATE TABLE ~"dba~".~"privfunctionoverride~" (~"privid~" integer NOT NULL DEFAULT NULL, ~"modfnid~" integer NOT NULL DEFAULT NULL, ~"authorized~" char(1) NOT NULL DEFAULT NULL , PRIMARY KEY (~"privid~", ~"modfnid~") , FOREIGN KEY ~"fk_privmodulefunction~" (~"modfnid~" ) REFERENCES ~"dba~".~"privmodulefunction~" ON DELETE CASCADE , FOREIGN KEY ~"fk_privuserclass~" (~"privid~" ) REFERENCES ~"dba~".~"privuserclass~" ON DELETE CASCADE ) ;","107","06","ALTER TABLE ~"dba~".~"driverinfo~"
+ ADD ~"di_division~" smallint DEFAULT NULL","107","07","CREATE TRIGGER ~"DriverInfo_Division~" AFTER UPDATE
+ORDER 1 ON ~"DBA~".~"driverinfo~"
+ REFERENCING OLD AS old_Row NEW AS new_Row
+FOR EACH ROW  WHEN( new_row.di_division <> old_row.di_division ) 
+BEGIN  
+        update Entity set division = new_row.di_division where Fkemployee = new_row.di_id;
+END;","107","08","CREATE TRIGGER ~"Entity_Division~" AFTER UPDATE
+ORDER 1 ON ~"DBA~".~"Entity~"
+REFERENCING OLD AS old_row NEW AS new_row 
+FOR EACH ROW  WHEN( new_row.division <> old_row.division ) 
+BEGIN
+        update DriverInfo set di_division = new_row.division where di_id = new_row.Fkemployee;
+END;","107","09","commit","108","01","CREATE TABLE ~"dba~".~"edi990status~" (~"shipid~" integer NOT NULL DEFAULT NULL, ~"status~" char(10) DEFAULT NULL, ~"userid~" integer NOT NULL DEFAULT NULL, ~"entrydate~" date NOT NULL DEFAULT NULL, ~"entrytime~" time NOT NULL DEFAULT NULL, ~"scac~" char(10) DEFAULT NULL, ~"messagestatus~" integer NOT NULL DEFAULT NULL , PRIMARY KEY (~"shipid~")) ;","108","02","ALTER TABLE ediprofile
+ ADD filenameschema  varchar(100) DEFAULT NULL;","108","03","CREATE PROCEDURE ~"DBA~".~"ptsp_210~"(  )begin  declare ll_TaskID integer;
+
+  declare ll_NextTaskID integer;
+
+  declare li_TaskPrio integer;
+
+  declare ls_Taskname varchar (20);
+
+  set ls_Taskname='210';
+
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname=ls_Taskname;
+
+  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;
+
+    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;
+
+        if li_TaskPrio < 0 THEN        
+
+            Call ptsp_EventTaskProblem_Alert ( );
+
+            Call ptsp_EventTaskProblem_Email ( 'EDI 210' );
+
+        End if;
+
+  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;
+
+    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;
+
+    set ll_nextTaskID=ll_nextTaskID+1;
+
+    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,ls_Taskname,      4,      2,      null);
+
+  end if;
+
+END;","108","04","CREATE PROCEDURE ~"DBA~".~"ptsp_214~"( )begin  declare ll_TaskID integer;
+
+  declare ll_NextTaskID integer;
+
+  declare li_TaskPrio integer;
+
+  declare ls_Taskname varchar (20);
+
+  set ls_Taskname='214';
+
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname=ls_Taskname;
+
+  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;
+
+    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;
+
+        if li_TaskPrio < 0 THEN        
+
+            Call ptsp_EventTaskProblem_Alert ( );
+
+            Call ptsp_EventTaskProblem_Email ( 'EDI 214' );
+
+        End if;
+
+  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;
+
+    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;
+
+    set ll_nextTaskID=ll_nextTaskID+1;
+
+    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,ls_Taskname,      4,      2,      null);
+
+  end if;
+
+END;","108","05","CREATE PROCEDURE ~"DBA~".~"ptsp_990~"(  )begin  declare ll_TaskID integer;
+
+  declare ll_NextTaskID integer;
+
+  declare li_TaskPrio integer;
+
+  declare ls_Taskname varchar (20);
+
+  set ls_Taskname='990';
+
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname=ls_Taskname;
+
+  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;
+
+    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;
+
+        if li_TaskPrio < 0 THEN        
+
+            Call ptsp_EventTaskProblem_Alert ( );
+
+            Call ptsp_EventTaskProblem_Email ( 'EDI 990' );
+
+        End if;
+
+  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;
+
+    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;
+
+    set ll_nextTaskID=ll_nextTaskID+1;
+
+    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,ls_Taskname,      4,      2,      null);
+
+  end if;
+
+END;","108","06","CREATE TABLE ~"dba~".~"errorlog~" (~"id~" integer NOT NULL DEFAULT NULL, ~"message~" long varchar NOT NULL DEFAULT NULL, ~"category~" char(100) DEFAULT NULL, ~"context~" char(100) DEFAULT NULL, ~"urgency~" integer DEFAULT NULL, ~"remedyobject~" varchar(100) DEFAULT NULL , PRIMARY KEY (~"id~")) ;","108","07","CREATE UNIQUE INDEX ~"dynamicerrorlog unique (id)~" ON ~"dba~".~"errorlog~" (~"id~" ) ;","108","08","CREATE TABLE ~"dba~".~"errorlogsourceids~" (~"errorlogid~" integer NOT NULL DEFAULT NULL, ~"sourceid~" integer NOT NULL DEFAULT NULL , PRIMARY KEY (~"errorlogid~", ~"sourceid~") , FOREIGN KEY ~"errorlog~" (~"errorlogid~" ) REFERENCES ~"dba~".~"errorlog~" ON DELETE CASCADE ) ;","108","09","commit","109","01","ALTER TABLE ~"DBA~".~"companyinvoicetransfersettings~" ADD ~"body~" long varchar;","109","02","commit","11","01","create table NextIds
+(
+    ClassId                   integer               not null,
+    NextId                    integer               not null,
+    primary key (ClassId)
+)","11","02","create table RateType
+(
+    Id                   smallint              not null,
+    Name                 varchar(15)           not null,
+    Tag                  long varchar                  ,
+    primary key (Id)
+)","11","03","create table AmountType
+(
+    Id                   smallint              not null,
+    Name                 varchar(15)           not null,
+    Category             smallint              not null,
+    TypicalAmount        smallint              not null,
+    TaxableDefault       numeric(1)            not null,
+    Tag                  long varchar                  ,
+    primary key (Id)
+)","11","04","create table RefnumType
+(
+    Id                   smallint              not null,
+    Name                 varchar(15)           not null,
+    Tag                  long varchar                  ,
+    primary key (Id)
+)","11","05","create table Entity
+(
+    Id                   integer               not null,
+    fkCompany            integer                       ,
+    fkEmployee           integer                       ,
+    primary key (Id)
+)","11","06","create table Transaction
+(
+    Id                   integer               not null,
+    fkEntity             integer                       ,
+    Category             smallint              not null,
+    Type                 smallint              not null,
+    StartDate            date                          ,
+    EndDate              date                          ,
+    TaxableGross         decimal(12,2)         not null,
+    NonTaxableGross      decimal(12,2)         not null,
+    PreTaxNet            decimal(12,2)         not null,
+    FixedAmount          numeric(1)            not null,
+    Status               smallint              not null,
+    ~"Open~"               numeric(1)            not null,
+    DocumentDate         date                          ,
+    DocumentNumber       varchar(30)                   ,
+    Description          long varchar                  ,
+    InternalNote         long varchar                  ,
+    PublicNote           long varchar                  ,
+    Ref1Type             smallint                      ,
+    Ref1Text             varchar(30)                   ,
+    Ref2Type             smallint                      ,
+    Ref2Text             varchar(30)                   ,
+    Ref3Type             smallint                      ,
+    Ref3Text             varchar(30)                   ,
+    ModLog               long varchar                  ,
+    primary key (Id)
+)","11","07","create table AmountOwed
+(
+    Id                   integer               not null,
+    fkTransaction        integer                       ,
+    fkEntity             integer                       ,
+    Category             smallint              not null,
+    Type                 smallint              not null,
+    Division             smallint                      ,
+    StartDate            date                          ,
+    EndDate              date                          ,
+    Amount               decimal(12,2)                 ,
+    Status               smallint              not null,
+    ~"Open~"               numeric(1)            not null,
+    Description          long varchar                  ,
+    InternalNote         long varchar                  ,
+    PublicNote           long varchar                  ,
+    Ref1Type             smallint                      ,
+    Ref1Text             varchar(30)                   ,
+    Ref2Type             smallint                      ,
+    Ref2Text             varchar(30)                   ,
+    Ref3Type             smallint                      ,
+    Ref3Text             varchar(30)                   ,
+    RateType             smallint                      ,
+    Quantity             decimal(20,6)                 ,
+    Rate                 decimal(20,6)                 ,
+    Taxable              numeric(1)            not null,
+    ModLog               long varchar                  ,
+    primary key (Id)
+)","11","08","alter table Transaction
+    add foreign key FK_Transaction_Entity (fkEntity)
+       references Entity (Id) on update restrict on delete cascade","11","09","alter table AmountOwed
+    add foreign key FK_AmtOwed_Transaction (fkTransaction)
+       references Transaction (Id) on update restrict on delete cascade","11","10","alter table AmountOwed
+    add foreign key FK_AmtOwed_Entity (fkEntity)
+       references Entity (Id) on update restrict on delete cascade","11","11","create unique index ndx_Entity_fkCompany on Entity (fkCompany )","11","12","create unique index ndx_Entity_fkEmployee on Entity (fkEmployee )","11","13","commit","11","14","create procedure ~"DBA~".GetNextId(in aClassId integer,out aNextId integer,in aCommit smallint)
+begin
+  set aNextId=null;
+  select NextId into aNextId from ~"DBA~".NextIds where ClassId=aClassId;
+  if aNextId is null then
+    insert into ~"DBA~".NextIds(ClassId,NextId) values(aClassId,2);
+    if sqlcode=0 then
+      set aNextId=1
+    end if
+  else
+    update ~"DBA~".NextIds set NextId=aNextId+1 where ClassId=aClassId and NextId=aNextId;
+    if sqlcode<>0 then
+      set aNextId=null
+    end if
+  end if
+  ;
+  if aCommit<>0 then
+    commit work
+  end if
+end","111","01","ALTER TABLE ~"DBA~".~"driverinfo~" ADD ~"di_dutystatus~" smallint,
+ADD ~"di_dutystatusdatetime~" datetime","111","02","commit;","113","01","ALTER TABLE EDI_transportSettings
+ ADD passive_transfer  integer;","113","02","ALTER TABLE EDI_transportSettings
+ RENAME ~"mode~" to ~"mode_text~" 
+","113","03","commit","114","01","ALTER TABLE Contacts
+Add ct_cellphone varchar(14)","114","02","commit","115","01","ALTER Table companydocumenttransfersettings
+Drop primary key","115","02","ALTER TABLE companydocumenttransfersettings 
+MODIFY targetaddress long varchar not null
+","115","03","ALTER TABLE companydocumenttransfersettings
+Add Primary Key ( ~"coid~" , ~"targetaddress~" )","115","04","ALTER TABLE CommunicationDevice
+ADD DeviceSerialNumber long Varchar","115","05","ALTER TABLE importedshipments
+ADD respondbydate date,
+ADD respondbytime time","115","06","commit","116","01","ALTER TABLE disp_items
+ MODIFY di_our_rate Numeric(10,4) ,
+Modify di_pay_rate Numeric(10,4)","116","02","ALTER TABLE disp_items
+Modify di_our_itemamt Numeric(9,2),
+Modify di_pay_itemamt Numeric(9,2);","116","03","ALTER Table disp_ship
+Modify ds_lh_totamt Numeric(9,2),
+Modify ds_ac_totamt Numeric(9,2),
+Modify ds_bill_charge Numeric(9,2),
+Modify ds_pay_lh_totamt Numeric(9,2),
+Modify ds_pay_ac_totamt Numeric(9,2),
+Modify ds_pay1_totamt Numeric(9,2),
+Modify ds_pay2_totamt Numeric(9,2),
+Modify ds_pay3_totamt Numeric(9,2),
+Modify ds_pay_totamt Numeric(9,2),
+Modify ds_salescom_amt Numeric(9,2);","116","04","commit","117","01","CREATE TABLE ~"dba~".~"operations~" (~"conn_id~" integer NOT NULL DEFAULT NULL, ~"em_id~" integer DEFAULT NULL, ~"conn_appinfo~" long varchar DEFAULT NULL , PRIMARY KEY (~"conn_id~") , FOREIGN KEY ~"employees~" (~"em_id~" ) REFERENCES ~"dba~".~"employees~" ON DELETE CASCADE ) ;","117","02","CREATE EVENT ~"ptev_disconnect~" TYPE ~"Disconnect~"
+HANDLER
+BEGIN
+
+	DELETE FROM operations WHERE conn_id = EVENT_PARAMETER('ConnectionId');
+
+END","117","03","CREATE EVENT ~"ptev_connect~" TYPE ~"Connect~"
+HANDLER
+BEGIN
+
+    DECLARE li_ConnId INTEGER;
+    DECLARE ls_ConnAppInfo LONG VARCHAR;
+
+    SET li_ConnId = CONVERT(INTEGER, EVENT_PARAMETER('ConnectionId'));
+    SET ls_ConnAppInfo = EVENT_PARAMETER('AppInfo');
+
+    INSERT INTO operations (conn_id, conn_appinfo) ON EXISTING UPDATE 
+
+        VALUES (li_ConnId, ls_ConnAppInfo);
+
+END;","117","04","ALTER TABLE ediprofile
+ADD in_out varchar(15)","117","05","UPDATE ~"DBA~".~"ediprofile~" SET in_out = 'INBOUND' WHERE transactionset = 204","117","06","UPDATE ~"DBA~".~"ediprofile~" SET in_out = 'OUTBOUND' WHERE transactionset != 204","117","07","Alter TABLE ediprofile 
+Modify in_out NOT NULL","117","08","ALTER TABLE ediprofile DROP PRIMARY KEY","117","09","ALTER TABLE ediprofile
+ADD PRIMARY KEY (“companyid”, “transactionset”, “in_out”)","117","10","DROP INDEX ndx_scac","117","11","CREATE INDEX ndx_scac
+ON ediprofile ( scac )","117","12","ALTER TABLE edi_transportsettings
+ADD multiGets varchar(1),
+Add multiPuts varchar(1),
+ADD downloadLocation long varchar","117","13","CREATE TABLE ~"dba~".~"exportedshipment~" (~"from_scac~" varchar(15) NOT NULL DEFAULT NULL, ~"to_scac~" varchar(15) NOT NULL DEFAULT NULL, ~"exporteddate~" date DEFAULT NULL, ~"shipid~" integer NOT NULL DEFAULT NULL, ~"status~" char(10) DEFAULT NULL, ~"statusdate~" date DEFAULT NULL, ~"statusreason~" char(10) DEFAULT NULL, ~"processed~" integer DEFAULT NULL, ~"purpose~" varchar(10) DEFAULT NULL, ~"req_date~" date DEFAULT NULL, ~"req_time~" time DEFAULT NULL, ~"groupcontrolnumber~" integer DEFAULT NULL, ~"transactionnumber~" integer DEFAULT NULL, ~"statustime~" time DEFAULT NULL, ~"processeddate~" date DEFAULT NULL, ~"processedtime~" time DEFAULT NULL, ~"edi~" long varchar DEFAULT NULL) ","117","14","CREATE TABLE ~"dba~".~"edipending204out~" (~"shipid~" integer NOT NULL DEFAULT NULL, ~"to_scac~" varchar(15) NOT NULL DEFAULT NULL, ~"purpose~" varchar(10) NOT NULL DEFAULT NULL, ~"req_date~" date NOT NULL DEFAULT NULL, ~"req_time~" time NOT NULL DEFAULT NULL, ~"req_id~" integer NOT NULL DEFAULT NULL , PRIMARY KEY (~"req_id~")) ","117","15","CREATE TABLE ~"dba~".~"edi997profile~" (~"companyid~" integer NOT NULL DEFAULT NULL, ~"pendingfiles~" long varchar DEFAULT NULL, ~"processedfiles~" long varchar DEFAULT NULL , PRIMARY KEY (~"companyid~"))","117","16","CREATE TABLE ~"dba~".~"edi214profile~" (~"companyid~" integer NOT NULL DEFAULT NULL, ~"pendingfiles~" long varchar DEFAULT NULL, ~"processedfiles~" long varchar DEFAULT NULL, ~"confirmevent~" varchar(5) DEFAULT NULL , PRIMARY KEY (~"companyid~"))","117","17","CREATE TABLE ~"dba~".~"edi990profile~" (~"companyid~" integer NOT NULL DEFAULT NULL, ~"pendingfiles~" long varchar DEFAULT NULL, ~"processedfiles~" long varchar DEFAULT NULL , PRIMARY KEY (~"companyid~"))","117","18","CREATE TABLE ~"dba~".~"edi_imported997status~" (~"groupcontrolnumber~" integer NOT NULL DEFAULT NULL, ~"edi~" long varchar DEFAULT NULL, ~"senderscode~" char(15) NOT NULL DEFAULT NULL, ~"processed~" integer DEFAULT NULL, ~"ackgroupcontrolnumber~" integer DEFAULT NULL , PRIMARY KEY (~"groupcontrolnumber~", ~"senderscode~"))","117","19","CREATE TABLE ~"dba~".~"edi_imported214status~" (~"groupcontrol~" integer NOT NULL DEFAULT NULL, ~"transactionnumber~" integer NOT NULL DEFAULT NULL, ~"eventid~" integer DEFAULT NULL, ~"senderscode~" char(15) NOT NULL DEFAULT NULL, ~"eventcode~" char(15) DEFAULT NULL, ~"eventdatetime~" timestamp DEFAULT NULL, ~"processed~" integer DEFAULT NULL , PRIMARY KEY (~"groupcontrol~", ~"transactionnumber~", ~"senderscode~"))","117","20","CREATE PROCEDURE ~"DBA~".~"ptsp_204~"(  )begin  declare ll_TaskID integer;
+
+  declare ll_NextTaskID integer;
+
+  declare li_TaskPrio integer;
+
+  declare ls_Taskname varchar (20);
+
+  set ls_Taskname='204';
+
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname=ls_Taskname;
+
+  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;
+
+    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;
+
+        if li_TaskPrio < 0 THEN        
+
+            Call ptsp_EventTaskProblem_Alert ( );
+
+            Call ptsp_EventTaskProblem_Email ( 'EDI 204' );
+
+        End if;
+
+  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;
+
+    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;
+
+    set ll_nextTaskID=ll_nextTaskID+1;
+
+    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,ls_Taskname,      4,      2,      null);
+
+  end if;
+
+END;","117","21","CREATE PROCEDURE ~"DBA~".~"ptsp_214process~"(  )begin  declare ll_TaskID integer;
+
+  declare ll_NextTaskID integer;
+
+  declare li_TaskPrio integer;
+
+  declare ls_Taskname varchar (20);
+
+  set ls_Taskname='214process';
+
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname=ls_Taskname;
+
+  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;
+
+    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;
+
+        if li_TaskPrio < 0 THEN        
+
+            Call ptsp_EventTaskProblem_Alert ( );
+
+            Call ptsp_EventTaskProblem_Email ( 'EDI 214 Process' );
+
+        End if;
+
+  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;
+
+    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;
+
+    set ll_nextTaskID=ll_nextTaskID+1;
+
+    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,ls_Taskname,      4,      2,      null);
+
+  end if;
+
+END;","117","22","alter table disp_events add BobtailOriginEvent integer","117","23","alter table disp_events add BobtailDestinationEvent integer","117","24","ALTER TABLE Companies
+MODIFY co_bill_acctcode CHAR(25)","117","25","CREATE TABLE ~"dba~".~"batchmetadata_sap~" (~"field_num~" integer NOT NULL DEFAULT NULL, ~"line_type~" varchar(3) NOT NULL DEFAULT NULL, ~"field_name~" long varchar NOT NULL DEFAULT NULL, ~"field_width~" integer NOT NULL DEFAULT NULL, ~"field_status~" char(1) NOT NULL DEFAULT NULL, ~"pad_side~" char(1) NOT NULL DEFAULT NULL, ~"value~" long varchar DEFAULT NULL , PRIMARY KEY (~"field_num~", ~"line_type~")) ","117","26","commit","118","01","ALTER EVENT ~"ptev_connect~" TYPE ~"Connect~"
+HANDLER
+BEGIN
+ 
+    DECLARE li_ConnId INTEGER;
+    DECLARE ls_ConnAppInfo LONG VARCHAR;
+    DECLARE LOCAL TEMPORARY TABLE currentconnections (connid integer);
+ 
+    /*Clear out any orphaned connections*/
+    SELECT NEXT_CONNECTION ( NULL ) INTO li_ConnId;
+ 
+    WHILE li_ConnId IS NOT NULL LOOP
+       INSERT INTO currentconnections (connid) VALUES(li_ConnId);
+       SELECT NEXT_CONNECTION ( li_ConnId ) INTO li_ConnId;
+    END LOOP;
+   
+    DELETE FROM operations WHERE conn_id NOT IN (SELECT * FROM currentconnections);
+ 
+    /*Insert new connection*/
+    SET li_ConnId = CONVERT(INTEGER, EVENT_PARAMETER('ConnectionId'));
+    SET ls_ConnAppInfo = EVENT_PARAMETER('AppInfo');
+ 
+    INSERT INTO operations (conn_id, conn_appinfo) ON EXISTING UPDATE
+        VALUES (li_ConnId, ls_ConnAppInfo);
+ 
+END;","118","02","commit","12","01","create table EquipmentLeaseType
+(
+    Id                    smallint              not null,
+    Line                  varchar(30)           not null,
+    Type                  varchar(30)           not null,
+    FreeTimeUnits         smallint              not null,
+    FreeTimePeriod        smallint              not null,
+    ChargedPeriods        smallint              not null,
+    FirstChargedUnits     smallint                      ,
+    FirstChargedPeriod    smallint                      ,
+    FirstChargedRate      decimal(12,2)                 ,
+    SecondChargedUnits    smallint                      ,
+    SecondChargedPeriod   smallint                      ,
+    SecondChargedRate     decimal(12,2)                 ,
+    ThirdChargedUnits     smallint                      ,
+    ThirdChargedPeriod    smallint                      ,
+    ThirdChargedRate      decimal(12,2)                 ,
+    FourthChargedUnits    smallint                      ,
+    FourthChargedPeriod   smallint                      ,
+    FourthChargedRate     decimal(12,2)                 ,
+    Spec1                 varchar(1)                    ,
+    Spec2                 varchar(1)                    ,
+    Spec3                 varchar(1)                    ,
+    Spec4                 varchar(1)                    ,
+    Spec5                 varchar(1)                    ,
+    User1                 long varchar                  ,
+    User2                 long varchar                  ,
+    Notes                 long varchar                  ,
+    primary key (Id)
+)","12","02","alter table equipment
+    add  User1 long varchar","12","03","alter table equipment
+    add     User2                 long varchar                  ","12","04","alter table equipment
+    add     User3                 long varchar                  ","12","05","alter table equipment
+    add     User4                 long varchar                  ","12","06","alter table equipment
+    add     User5                 long varchar                  ","12","07","alter table equipment
+    add     Notes                 long varchar                  ","12","08","alter table equipment
+    add     timestamp             timestamp                     
+        default TIMESTAMP","12","09","alter table outside_equip
+    add     fkEquipmentLeaseType  smallint                      ","12","10","alter table outside_equip
+    add     User1                 long varchar                  ","12","11","alter table outside_equip
+    add     User2                 long varchar                  ","12","12","alter table outside_equip
+    add     Notes                 long varchar                  ","12","13","alter table outside_equip
+    add     timestamp             timestamp                     
+        default TIMESTAMP","12","14","alter table outside_equip
+    add foreign key FK_EquipmentLease_ELType (fkEquipmentLeaseType)
+       references EquipmentLeaseType (Id) on update restrict on delete restrict","12","15","alter table AmountOwed
+    delete foreign key FK_AmtOwed_Transaction","12","16","alter table AmountOwed
+    add foreign key FK_AmtOwed_Transaction (fkTransaction)
+       references Transaction (Id) on update restrict on delete restrict  CHECK ON COMMIT","12","17","create index ndx_Equipment_Timestamp on equipment (timestamp asc)","12","18","create index ndx_EquipmentLease_Timestamp on outside_equip (timestamp asc)","12","19","commit","120","01","CREATE TABLE ~"DBA~".~"itintemplates~" (~"id~" integer NOT NULL,~"name~" varchar(500) NULL,PRIMARY KEY ( ~"id~" ))
+","120","02","CREATE TABLE ~"dba~".~"itintemplateevents~" (~"id~" integer NOT NULL DEFAULT NULL, ~"event_type~" char(1) NOT NULL DEFAULT NULL, ~"event_site~" integer DEFAULT NULL, ~"event_order~" integer NOT NULL DEFAULT NULL , PRIMARY KEY (~"id~", ~"event_order~") , FOREIGN KEY ~"fk_co_id_companies~" (~"event_site~" ) REFERENCES ~"dba~".~"companies~" ON DELETE CASCADE , FOREIGN KEY ~"fk_id_itintemplates~" (~"id~" ) REFERENCES ~"dba~".~"itintemplates~" ON DELETE CASCADE )","120","03","CREATE TRIGGER ~"newCompanyemail~" AFTER INSERT
+ORDER 1 ON ~"DBA~".~"companies~"
+ REFERENCING NEW AS newCompany 
+FOR EACH ROW /* WHEN( search_condition ) */
+BEGIN
+    
+
+
+    declare ll_Rtn integer;    
+    declare ls_sendEmailSetting varchar(20);
+    declare li_continue integer;
+    declare ls_Sender Long varchar;   
+    declare ls_Recipient Long varchar;    
+    declare ls_Server Long varchar;    
+    declare ls_Message Long varchar;    
+    declare ls_Subject Long varchar;    
+    
+    declare ls_CoName Long varchar;    
+    declare ls_Address1 Long varchar;    
+    declare ls_Address2 Long varchar;    
+    declare ls_City Long varchar;    
+    declare ls_State Long varchar;    
+    declare ls_Zip Long varchar;    
+    declare ls_Phone1 Long varchar;    
+    declare ls_Phone2 Long varchar;    
+    declare ls_Fax Long varchar;    
+    declare ls_BillName Long varchar;    
+    declare ls_BillAddress1 Long varchar;    
+    declare ls_BillAddress2 Long varchar;    
+    declare ls_BillCity Long varchar;    
+    declare ls_BillState Long varchar;    
+    declare ls_BillZip Long varchar;    
+    declare ls_BillPhone1 Long varchar;    
+    declare ls_BillPhone2 Long varchar;
+    declare ls_BillFax Long varchar;
+
+    declare ls_fulladdr1 Long varchar;
+    declare ls_fulladdr2 Long varchar;
+    declare ls_fullBilladdr1 Long varchar;
+    declare ls_fullBilladdr2 Long varchar;
+
+    
+
+
+   SELECT ss_string
+    INTO ls_sendemailsetting
+    FROM system_settings
+    WHERE ss_id = 255;
+
+    //check the system setting to see if we should be sending emails
+    IF ls_sendemailsetting = 'NO!' OR ls_sendemailsetting is NULL THEN
+        //do not send emails
+        set li_continue = 0;
+    ELSE
+        set li_continue = 1;
+    END IF;
+
+    IF li_continue = 1 THEN
+        //get the recipients, they are delimited by ';' which is fine because that is the format we need to send to multiple recipients anyhow.
+        SELECT ss_string
+         INTO ls_Recipient
+         FROM system_settings
+         WHERE ss_id = 256;
+    
+        IF ls_recipient is NULL or length( ls_recipient ) <= 0 THEN
+            set li_continue = 0;
+        END IF;
+    END IF;
+
+    IF li_continue = 1 THEN
+        //set ls_Message = 'The ~"' + as_Event + '~" event has not been executed. Please ensure that the PT Scheduler is running.';    
+        set ls_Subject = 'New company created in Profit Tools';              
+        Select ss_string into ls_Server from system_settings where ss_id = 186;       
+        //Select ss_string into ls_Recipient from system_settings where ss_id = 187;       
+        Select ss_string into ls_Sender from system_settings where ss_id = 188;       
+     
+              
+       
+       
+      --  declare ls_fullBilladdr1 Long varchar;
+       
+--        set ls_fulladdr1 = ls_coName || '~\x0D~\x0A' ||ls_address1 || '~\x0D~\x0A' || ls_address2 || '~\x0D~\x0A'  || ls_city || ','|| ls_state || ' ' || ls_zip || '~\x0D~\x0A' || ls_phone1 ||'~\x0D~\x0A' || ls_phone2;
+--       set ls_fullBillAddr1 = ls_billname|| '~\x0D~\x0A'  ||ls_billaddress1 || '~\x0D~\x0A' || ls_billaddress2 || '~\x0D~\x0A'  || ls_billcity || ','|| ls_billstate || ' ' || ls_billzip || '~\x0D~\x0A' || ls_billphone1 ||'~\x0D~\x0A' || ls_billphone2;
+
+--        set ls_fulladdr1 = NewCompany.co_name || '~\x0D~\x0A' ||NewCompany.co_addr1 || '~\x0D~\x0A' || NewCompany.co_addr2 || '~\x0D~\x0A'  || NewCompany.co_city || ','|| NewCompany.co_state || ' ' || NewCompany.co_zip || '~\x0D~\x0A' || NewCompany.co_phone1 ||'~\x0D~\x0A' || NewCompany.co_phone2 ||'~\x0D~\x0AFax: '||NewCompany.co_fax ;
+ --       set ls_fullBillAddr1 = NewCompany.co_bill_name|| '~\x0D~\x0A'  || NewCompany.co_bill_addr1 || '~\x0D~\x0A' || NewCompany.co_bill_addr2 || '~\x0D~\x0A'  || NewCompany.co_bill_city || ','|| NewCompany.co_bill_state || ' ' || NewCompany.co_bill_zip || '~\x0D~\x0A' || NewCompany.co_bill_phone1 ||'~\x0D~\x0A' || NewCompany.co_bill_phone2 ||'~\x0D~\x0AFax: '||NewCompany.co_bill_fax;
+    
+        // Regular address Info
+        IF NOT (NewCompany.co_name is NULL or length( NewCompany.co_name ) <= 0) THEN    
+            set ls_fulladdr1 = NewCompany.co_name || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT (NewCompany.co_addr1 is NULL or length( NewCompany.co_addr1 ) <= 0) THEN    
+            set ls_fulladdr1 = ls_fulladdr1 || NewCompany.co_addr1 || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT (NewCompany.co_addr2 is NULL or length( NewCompany.co_addr2 ) <= 0 )THEN    
+            set ls_fulladdr1 = ls_fulladdr1 || NewCompany.co_addr2 || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT (NewCompany.co_city is NULL or length( NewCompany.co_city ) <= 0) THEN    
+            set ls_fulladdr1 = ls_fulladdr1 || NewCompany.co_city;
+        END IF;
+
+        IF NOT (NewCompany.co_state is NULL or length( NewCompany.co_state ) <= 0) THEN    
+            set ls_fulladdr1 = ls_fulladdr1 || ', '||NewCompany.co_state;
+        END IF;
+
+        IF NOT (NewCompany.co_zip is NULL or length( NewCompany.co_zip ) <= 0) THEN    
+            set ls_fulladdr1 = ls_fulladdr1 || ' ' || NewCompany.co_zip || '~\x0D~\x0A';
+        ELSE
+            set ls_fulladdr1 = ls_fulladdr1 || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT ( NewCompany.co_phone1 is NULL or length( NewCompany.co_phone1 ) <= 0) THEN    
+            set ls_fulladdr1 = ls_fulladdr1 || 'Phone: ' || NewCompany.co_phone1 || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT (NewCompany.co_phone2 is NULL or length( NewCompany.co_phone2 ) <= 0 )THEN    
+            set ls_fulladdr1 = ls_fulladdr1 || NewCompany.co_phone2 || '~\x0D~\x0A';
+        END IF;
+    
+        IF NOT (NewCompany.co_fax is NULL or length( NewCompany.co_fax ) <= 0) THEN    
+            set ls_fulladdr1 = ls_fulladdr1 ||'Fax: '|| NewCompany.co_fax || '~\x0D~\x0A';
+        END IF;
+
+        //Billing Address Info
+
+        IF NOT (NewCompany.co_bill_name is NULL or length( NewCompany.co_bill_name ) <= 0 )THEN    
+            set ls_fullBillAddr1 = NewCompany.co_bill_name || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT (NewCompany.co_bill_addr1 is NULL or length( NewCompany.co_bill_addr1 ) <= 0) THEN    
+            set ls_fullBillAddr1 = ls_fullBillAddr1 || NewCompany.co_bill_addr1 || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT (NewCompany.co_bill_addr2 is NULL or length( NewCompany.co_bill_addr2 ) <= 0) THEN    
+            set ls_fullBillAddr1 = ls_fullBillAddr1 || NewCompany.co_bill_addr2 || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT (NewCompany.co_bill_city is NULL or length( NewCompany.co_bill_city ) <= 0) THEN    
+            set ls_fullBillAddr1 = ls_fullBillAddr1 || NewCompany.co_bill_city;
+        END IF;
+
+        IF NOT (NewCompany.co_bill_state is NULL or length( NewCompany.co_bill_state ) <= 0) THEN    
+            set ls_fullBillAddr1 = ls_fullBillAddr1 || ', '||NewCompany.co_bill_state;
+        END IF;
+
+        IF NOT (NewCompany.co_bill_zip is NULL or length( NewCompany.co_bill_zip ) <= 0) THEN    
+            set ls_fullBillAddr1 = ls_fullBillAddr1 || ' ' || NewCompany.co_bill_zip || '~\x0D~\x0A';
+        ELSE
+            set ls_fullBillAddr1 = ls_fullBillAddr1 || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT (NewCompany.co_bill_phone1 is NULL or length( NewCompany.co_bill_phone1 ) <= 0) THEN    
+            set ls_fullBillAddr1 = ls_fullBillAddr1 || 'Phone: ' || NewCompany.co_bill_phone1 || '~\x0D~\x0A';
+        END IF;
+
+        IF NOT (NewCompany.co_bill_phone2 is NULL or length( NewCompany.co_bill_phone2 ) <= 0) THEN    
+            set ls_fullBillAddr1 = ls_fullBillAddr1 || NewCompany.co_bill_phone2 || '~\x0D~\x0A';
+        END IF;
+    
+        IF NOT (NewCompany.co_bill_fax is NULL or length( NewCompany.co_bill_fax ) <= 0) THEN    
+            set ls_fullBillAddr1 = ls_fullBillAddr1 ||'Fax: '|| NewCompany.co_bill_fax || '~\x0D~\x0A';
+        END IF;
+
+        set ls_Message = ls_fullAddr1 || '~\x0D~\x0A------------~\x0D~\x0ABILLING ADDRESS~\x0D~\x0A~\x0D~\x0A'|| ls_fullBillAddr1;
+    --    set ls_Message = NewCompany.co_name || '~\x0D~\x0A' || NewCompany.co_addr1 || ' '; 
+     //  MESSAGE ls_Message;
+        //Set ls_Recipient = 'dekay01@hotmail.com;dkimball@profittools.net;dekay01@yahoo.com';  delimit using semicolons for multiple recipients.
+   //     Set ls_Recipient = 'dkimball@profittools.net';
+        IF length ( ls_server )> 0 AND Length ( ls_Recipient ) > 0 AND Length ( ls_Sender ) > 0 THEN         
+            ll_Rtn = CALL xp_startsmtp (smtp_sender = ls_Sender , smtp_server = ls_Server);
+            
+            IF ll_Rtn = 0 THEN
+                ll_Rtn = CALL xp_sendmail(recipient=ls_Recipient, subject=ls_Subject, ~"message~" = ls_Message ); 
+                Message ll_rtn;
+                ll_Rtn =   CALL  xp_stopsmtp ();
+            END IF;
+        END IF;
+    END IF;
+END","120","04","commit","121","01","ALTER PROCEDURE ~"DBA~".~"ptsp_Syncromet~"()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='EQUIPMENTPOSTING';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;    if li_TaskPrio < 0 THEN     Call ptsp_EventTaskProblem_Alert ( );   Call ptsp_EventTaskProblem_Email ( 'Equipment Matching' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'EQUIPMENTPOSTING',      5,      1,      null)  end if end","121","02","Alter Table eventtasks 
+add Machinename char (100)","121","03","commit","122","01","ALTER TRIGGER ~"EventUpdate~".disp_events.EventUpdate after update of de_trailer,de_driver,de_tractor,de_arrdate,de_shipment_id,
+de_conf,de_apptdate,de_appttime,de_arrtime,de_status on DBA.disp_events
+referencing old as OldRow new as NewRow
+for each row
+when(OldRow.de_shipment_id>0 or NewRow.de_shipment_id>0)
+begin
+  if update(de_trailer) or update(de_driver) or update(de_tractor) or update(de_arrdate) or update(de_shipment_id) or update(de_conf) then
+    if OldRow.de_shipment_id=NewRow.de_shipment_id then
+      call DBA.UpdateCurrentShipments(NewRow.de_shipment_id)
+    else
+      if NewRow.de_shipment_id>0 then
+        call DBA.UpdateCurrentShipments(NewRow.de_shipment_id)
+      end if;
+      if OldRow.de_shipment_id>0 then
+        call DBA.UpdateCurrentShipments(OldRow.de_shipment_id)
+      end if
+    end if;
+// DEK 5-30-07  added to update the current employees 
+    if NewRow.de_driver>0 then
+        call DBA.ptsp_UpdateCurrentEmployees(NewRow.de_driver)
+     end if;
+      if OldRow.de_driver>0 then
+        call DBA.ptsp_UpdateCurrentEmployees(OldRow.de_driver)
+      end if
+//////////////////////////
+  else
+    update DBA.current_shipments set cs_event_count=cs_event_count where
+      cs_id=NewRow.de_shipment_id
+  end if
+
+end","122","02","CREATE TABLE ~"dba~".~"current_employees~" (~"ce_id~" integer NOT NULL DEFAULT NULL, ~"lastroutedevent~" timestamp NOT NULL DEFAULT current timestamp , PRIMARY KEY (~"ce_id~") , FOREIGN KEY ~"employees~" (~"ce_id~" ) REFERENCES ~"dba~".~"employees~" ON DELETE CASCADE ) ;","122","03","CREATE PROCEDURE ~"DBA~".~"ptsp_updateCurrentEmployees~"( IN employeeID integer )
+/* RESULT( column_name column_type, ... ) */
+BEGIN
+	delete from DBA.current_employees where ce_id=employeeID;
+    insert into DBA.current_employees(ce_id) values(
+        EmployeeId);
+END","122","04","CREATE TRIGGER ~"NewDriver~" AFTER INSERT
+ORDER 1 ON ~"DBA~".~"driverinfo~"
+REFERENCING NEW AS NewRow
+FOR EACH ROW /* WHEN( NewRow.di_id>0 )*/ 
+BEGIN
+	INSERT
+    INTO current_employees ( ce_id )
+    VALUES ( NewRow.di_id );
+END","122","05","CREATE INDEX ~"ndx_de_driver_de_arrdate~" ON ~"DBA~".~"disp_events~" ( de_driver,de_arrdate );","122","06","commit","13","01","ALTER TABLE system_settings
+DELETE ss_dec ","13","02","ALTER TABLE system_settings 
+ADD ss_dec NUMERIC(30,12) ","14","01","drop procedure ~"DBA~".UpdateCurrentShipments","14","02","create procedure
+~"DBA~".UpdateCurrentShipments(in ShipmentId integer)
+begin
+  declare status char(1);
+  declare dorb char(1);
+  declare event_count integer;
+  declare routed integer;
+  declare assigned integer;
+  declare completed integer;
+  declare noval integer;
+  select ds_status,ds_dorb into status,dorb from ~"DBA~".disp_ship where ds_id=ShipmentId;
+  select ~"count~"(*) into event_count from ~"DBA~".disp_events where de_shipment_id=ShipmentId;
+  if event_count>0 then
+    if dorb='T' then
+      /*
+      Not computing values for non-routed shipments (dorb='D')
+
+      de_ArrDate not null is the routed condition for events routed to equipment.
+      de_Trailer not null is the routed condition for events routed to 3rd party trips (they don't
+      automatically get an arrdate when they're routed like events routed to equipment do.)
+      Note: de_Trailer has nothing to do with a trailer -- it's an old field now being used to hold the 
+      3rd party trip id.
+
+      ~"Routed~" is representing the number of events that have been assigned to something (anything.)
+      ~"Assigned~" is representing the number of events that have been fully assigned, ie. driver, tractor, 
+      and trailer assigned for events routed to equipment.  Only the driver is checked because the event
+      can't be routed and have a driver assigned without the other stuff.  If that condition changed, we
+      could check explicitly, although you'd have to account for things like straight truck routings that
+      don't have a trailer.
+      */
+      select ~"count~"(*) into routed from ~"DBA~".disp_events where de_shipment_id=ShipmentId and(de_arrdate is not null or de_trailer is not null);
+      select ~"count~"(*) into assigned from ~"DBA~".disp_events where de_shipment_id=ShipmentId and(de_driver>0 or de_trailer is not null)
+    end if
+    ;
+    select ~"count~"(*) into completed from ~"DBA~".disp_events where de_shipment_id=ShipmentId and de_conf='T'
+  else
+    set completed=0
+  end if
+  ;
+  delete from ~"DBA~".current_shipments where cs_id=ShipmentId;
+  if status in('K','N','Q','T') or completed<event_count then
+    insert into ~"DBA~".current_shipments(cs_id,cs_event_count,cs_routed,cs_assigned,cs_completed) values(
+      ShipmentId,event_count,routed,assigned,completed)
+  end if
+end","14","03","UPDATE disp_events, disp_ship SET disp_events.de_trailer = null, de_depdate = null 
+
+WHERE disp_events.de_shipment_id = disp_ship.ds_id and disp_ship.ds_dorb = 'B' ","14","04","commit","14","05","UPDATE disp_events, disp_ship SET disp_events.de_trailer = disp_ship.ds_brok_trip  
+WHERE disp_events.de_shipment_id = disp_ship.ds_id and disp_ship.ds_dorb = 'B' 
+and disp_ship.ds_brok_trip > 0 and disp_events.de_trailer_seq > 7000 ","14","06","commit","14","07","UPDATE disp_events SET de_trailer_seq = 0 WHERE de_trailer_seq = 5000 ","14","08","commit","14","09","UPDATE disp_events SET de_trailer_seq = ((de_trailer_seq - 7000) / 5) 
+WHERE de_trailer_seq > 7000 ","14","10","commit","14","11","UPDATE disp_ship SET ds_dorb = 'T' WHERE ds_dorb = 'B' ","14","12","commit","14","13","UPDATE brok_trips SET bt_pmtstatus = 'W' WHERE bt_pmtstatus <> 'K' ","14","14","commit","14","15","UPDATE brok_trips SET bt_eq_type = 'B' WHERE bt_eq_type = 'I'","14","16","commit","14","17","DROP INDEX ~"dba~".~"brok_trips~".~"ndx_bt_tripnum~"","14","18","CREATE  INDEX ~"ndx_trip~"
+        ON ~"dba~".~"disp_events~"
+        (~"de_trailer~")","14","19","commit","15","01","create table AmountTemplate
+(
+    Id                            integer               not null,
+    Ref1TypeId                    smallint                      ,
+    Ref2TypeId                    smallint                      ,
+    Ref3TypeId                    smallint                      ,
+    AmountTypeId                  smallint                      ,
+
+    RateTypeId                    smallint                      ,
+    Name                          varchar(32767)                ,
+    Category                      smallint              not null,
+    Division                      smallint                      ,
+    GenerationCondition           varchar(32767)                ,
+    GenerateIfZero                numeric(1)                    ,
+    Description                   varchar(32767)                ,
+    Quantity                      varchar(32767)                ,
+    Rate                          varchar(32767)                ,
+    Amount                        varchar(32767)                ,
+    Ref1Text                      varchar(32767)                ,
+    Ref2Text                      varchar(32767)                ,
+    Ref3Text                      varchar(32767)                ,
+    primary key (Id)
+)
+","15","02","create table Join_Entity_AmountTemplate
+(
+    fkEntity                      integer               not null,
+    fkAmountTemplate              integer               not null,
+    primary key (fkEntity, fkAmountTemplate)
+)
+","15","03","alter table AmountTemplate
+    add foreign key FK_AmountTemplate_Ref1Type (Ref1TypeId)
+       references RefnumType (Id) on update cascade on delete set null
+","15","04","alter table AmountTemplate
+    add foreign key FK_AmountTemplate_Ref2Type (Ref2TypeId)
+       references RefnumType (Id) on update cascade on delete set null
+","15","05","alter table AmountTemplate
+    add foreign key FK_AmountTemplate_Ref3Type (Ref3TypeId)
+       references RefnumType (Id) on update cascade on delete set null
+","15","06","alter table AmountTemplate
+    add foreign key FK_AmountTemplate_RateType (RateTypeId)
+       references RateType (Id) on update cascade on delete set null
+","15","07","alter table AmountTemplate
+
+
+
+    add foreign key FK_AmountTemplate_AmountType (AmountTypeId)
+       references AmountType (Id) on update cascade on delete set null
+","15","08","alter table Join_Entity_AmountTemplate
+    add foreign key FK_Join_Entitiy_AmtTempl_02 (fkEntity)
+       references Entity (Id) on update restrict on delete cascade
+","15","09","alter table Join_Entity_AmountTemplate
+    add foreign key FK_Join_Entitiy_AmtTempl_01 (fkAmountTemplate)
+       references AmountTemplate (Id) on update restrict on delete cascade
+","15","10","alter table AmountType
+    add     ARAccount                     long varchar                  
+","15","11","alter table AmountType
+    add     SalesAccount                  long varchar                  
+","15","12","alter table AmountType
+    add     APAccount                     long varchar                  
+","15","13","alter table AmountType
+    add     CostAccount                   long varchar                  
+","15","14","alter table Entity
+    add     ReceivablesId                 long varchar                  
+","15","15","alter table Entity
+    add     PayablesId                    long varchar                  
+
+","15","16","alter table Entity
+    add     PayrollId                     long varchar                  
+","15","17","alter table Entity
+    add foreign key FK_Entity_Employee (fkEmployee)
+       references employees (em_id) on update cascade on delete cascade  CHECK ON COMMIT
+","15","18","commit","16","01","create table ImageType
+(
+    Topic     long varchar          not null,
+    Category  long varchar          not null,
+    Type      long varchar          not null,
+    primary key (Topic, Category, Type)
+)
+","16","02","create table AccountMap
+(
+    AmountTypeId                  smallint              not null,
+    Division                      smallint              not null,
+    ARAccount                     long varchar                  ,
+    SalesAccount                  long varchar                  ,
+    APAccount                     long varchar                  ,
+    CostAccount                   long varchar                  ,
+    primary key (AmountTypeId, Division)
+)
+","16","03","alter table AmountType
+    delete ARAccount
+","16","04","alter table AmountType
+    delete SalesAccount
+","16","05","alter table AmountType
+    delete APAccount
+","16","06","alter table AmountType
+    delete CostAccount
+","16","07","alter table Transaction
+    add     Batched                       numeric(1)                    
+","16","08","alter table Transaction
+    add     BatchDate                     date                          
+","16","09","alter table Transaction
+    add     BatchNumber                   varchar(30)                   
+","16","10","alter table AccountMap
+    add foreign key FK_AccountMap_AmountType (AmountTypeId)
+       references AmountType (Id) on update cascade on delete cascade  CHECK ON COMMIT
+","16","11","commit
+","17","01","alter table Entity
+    add     Division                      smallint                      
+","17","02","alter table AccountMap
+    add     PayrollCashAccount            long varchar                  
+","17","03","alter table AccountMap
+    add     PayrollExpenseAccount         long varchar                  
+","17","04","commit
+","18","01","DROP TRIGGER DBA.EventUpdate","18","02","Create trigger
+DBA.EventUpdate after update of de_trailer,de_driver,de_arrdate,de_shipment_id,
+de_conf,de_apptdate,de_appttime,de_arrtime on DBA.disp_events
+referencing old as OldRow new as NewRow
+for each row
+when(OldRow.de_shipment_id>0 or NewRow.de_shipment_id>0)
+begin
+  if update(de_trailer) or update(de_driver) or update(de_arrdate) or update(de_shipment_id) or update(de_conf) then
+    if OldRow.de_shipment_id=NewRow.de_shipment_id then
+      call DBA.UpdateCurrentShipments(NewRow.de_shipment_id)
+    else
+      if NewRow.de_shipment_id>0 then
+        call DBA.UpdateCurrentShipments(NewRow.de_shipment_id)
+      end if;
+      if OldRow.de_shipment_id>0 then
+        call DBA.UpdateCurrentShipments(OldRow.de_shipment_id)
+      end if
+    end if
+  else
+    update DBA.current_shipments set cs_event_count=cs_event_count where
+      cs_id=NewRow.de_shipment_id
+  end if
+end","18","03","commit","19","01","CREATE TABLE modulelicenses
+(module long varchar NOT NULL,
+licensed integer NOT NULL DEFAULT 0,
+
+inuse integer NOT NULL DEFAULT 0,
+CHECK(inuse<=licensed and inuse>=0),
+PRIMARY KEY (module)
+)","19","02","CREATE TABLE modulelocks
+(machinename long varchar NOT NULL,
+module long varchar NOT NULL,
+userid long varchar NOT NULL,
+PRIMARY KEY (machinename, module)
+)","19","03","alter table modulelocks
+    add foreign key fk_modulelocks_modulelicenses (module)
+       references modulelicenses (module) on update cascade on delete cascade
+","19","04","create trigger ~"dba~".modulelocksinsert before insert order 1
+on ~"DBA~".ModuleLocks
+referencing new as newrow
+for each row
+begin
+  update ~"DBA~".modulelicenses set
+    inuse=inuse+1
+    where modulelicenses.module=newrow.module
+end
+","19","05","create trigger ~"dba~".modulelocksdelete after delete order 1
+on ~"DBA~".ModuleLocks
+referencing old as oldrow
+for each row
+begin
+  update ~"DBA~".modulelicenses set
+    inuse=inuse-1
+    where modulelicenses.module=oldrow.module
+end
+","19","06","create procedure ~"DBA~".GetModuleLock(in aComputerName long varchar,in aModuleName long varchar,in aUserId long varchar,out aRetVal integer)
+begin
+  declare lModuleName long varchar;
+  select modulelocks.module into lModuleName
+    from modulelocks
+    where(modulelocks.machinename=aComputerName)
+    and(modulelocks.module=aModuleName)
+    and(modulelocks.userid=aUserId);
+  if sqlcode<>0 then
+    insert into modulelocks(machinename,
+      module,
+      userid) values(aComputerName,aModuleName,aUserId);
+    if sqlcode<>0 then
+      set aRetVal=-1
+    else
+      set aRetVal=1
+    end if
+  else
+    set aRetVal=0
+  end if
+  ;
+  commit work
+end
+","19","07","commit
+","20","01","alter table disp_ship
+    add     ds_parentid                   integer                      
+","20","02","alter table disp_ship
+    add foreign key FK_ParentShipment (ds_parentid)
+       references disp_ship (ds_id) on update cascade on delete set null  CHECK ON COMMIT
+","20","03","commit
+","21","01","CREATE TABLE route
+(id integer NOT NULL,
+routenumber long varchar,
+description long varchar,
+type long varchar,
+PRIMARY KEY (id)
+
+)
+
+","21","02","CREATE TABLE join_route_company
+(routeid integer NOT NULL,
+companyid smallint NOT NULL,
+PRIMARY KEY (routeid, companyid))
+","21","03","alter table join_route_company
+add FOREIGN KEY fk_join_route_company_01 (routeid)
+REFERENCES route (id) on update cascade on delete cascade
+","21","04","alter table join_route_company
+add FOREIGN KEY fk_join_route_company_02 (companyid)
+REFERENCES companies (co_id) on update cascade on delete cascade
+","21","05","CREATE TABLE join_route_equipment
+(routeid integer NOT NULL,
+equipmentid integer NOT NULL,
+PRIMARY KEY (routeid, equipmentid))
+","21","06","alter table join_route_equipment
+add FOREIGN KEY fk_join_route_equipment_01 (routeid)
+REFERENCES route (id) on update cascade on delete cascade
+","21","07","alter table join_route_equipment
+add FOREIGN KEY fk_join_route_equipment_02 (equipmentid)
+REFERENCES equipment (eq_id) on update cascade on delete cascade
+","21","08","commit","22","01","CREATE TABLE communicationdevice
+(id integer NOT NULL,
+type long varchar,
+userrefnumber long varchar,
+unitid long varchar,
+phonenumber long varchar,
+employeeid integer,
+equipmentid integer,
+lastpositionlat long varchar,
+lastpositionlong long varchar,
+lastpositionlocation long varchar,
+lastpositiondate date,
+lastpositiontime time,
+PRIMARY KEY (id)
+)","22","02","ALTER TABLE communicationdevice
+add FOREIGN KEY fk_communicationdevice_employeeid (employeeid)
+REFERENCES employees (em_id) on update cascade on delete cascade
+","22","03","ALTER TABLE communicationdevice
+add FOREIGN KEY fk_communicationid_equipmentid (equipmentid)
+REFERENCES equipment (eq_id) on update cascade on delete cascade
+","22","04","commit","23","01","alter table communicationdevice
+add lastmessagenumber long varchar","23","02","commit","24","01","drop procedure ~"DBA~".UpdateCurrentShipments","24","02","create procedure
+~"DBA~".UpdateCurrentShipments(in ShipmentId integer)
+begin
+  declare status char(1);
+  declare dorb char(1);
+  declare event_count integer;
+  declare routed integer;
+  declare assigned integer;
+  declare completed integer;
+  declare noval integer;
+  select ds_status,ds_dorb into status,dorb from ~"DBA~".disp_ship where ds_id=ShipmentId;
+  if status in('A','C','E') then
+    /*We don't want these statuses to end up in current shipments.  So, we're going to allow
+    completed and event_count to both remain zero.*/
+    set event_count=0
+  else
+    select ~"count~"(*) into event_count from ~"DBA~".disp_events where de_shipment_id=ShipmentId;
+    if event_count>0 then
+      if dorb='T' then
+        /*
+        Not computing values for non-routed shipments (dorb='D')
+
+        de_ArrDate not null is the routed condition for events routed to equipment.
+        de_Trailer not null is the routed condition for events routed to 3rd party trips (they don't
+        automatically get an arrdate when they're routed like events routed to equipment do.)
+        Note: de_Trailer has nothing to do with a trailer -- it's an old field now being used to hold the 
+        3rd party trip id.
+
+        ~"Routed~" is representing the number of events that have been assigned to something (anything.)
+        ~"Assigned~" is representing the number of events that have been fully assigned, ie. driver, tractor, 
+        and trailer assigned for events routed to equipment.  Only the driver is checked because the event
+        can't be routed and have a driver assigned without the other stuff.  If that condition changed, we
+        could check explicitly, although you'd have to account for things like straight truck routings that
+        don't have a trailer.
+        */
+        select ~"count~"(*) into routed from ~"DBA~".disp_events where de_shipment_id=ShipmentId and(de_arrdate is not null or de_trailer is not null);
+        select ~"count~"(*) into assigned from ~"DBA~".disp_events where de_shipment_id=ShipmentId and(de_driver>0 or de_trailer is not null)
+      end if
+      ;
+      select ~"count~"(*) into completed from ~"DBA~".disp_events where de_shipment_id=ShipmentId and de_conf='T'
+    else
+      set completed=0
+    end if
+  end if
+  ;
+  delete from ~"DBA~".current_shipments where cs_id=ShipmentId;
+  if status in('F','H','K','N','Q','T') or completed<event_count then
+    insert into ~"DBA~".current_shipments(cs_id,cs_event_count,cs_routed,cs_assigned,cs_completed) values(
+      ShipmentId,event_count,routed,assigned,completed)
+  end if
+end","24","03","commit","25","01","CREATE  INDEX ~"ndx_shipment_ref1text~"
+        ON ~"dba~".~"disp_ship~"
+        (~"ds_ref1_text~" )","25","02","commit","26","01","alter table companies
+    add     SalesRep                      varchar(30)                      
+","26","02","alter table companies
+    add     DefaultDuration               time                      
+","26","03","alter table companies
+    add     DefaultFreightDescription     long varchar                      
+","26","04","alter table companies
+    add     DispatchInstructions          long varchar                      
+","26","05","alter table companies
+    add     Custom1                       long varchar                      
+","26","06","alter table companies
+    add     Custom2                       long varchar                      
+","26","07","alter table companies
+    add     Custom3                       long varchar                      
+","26","08","alter table companies
+    add     Custom4                       long varchar                      
+","26","09","alter table companies
+    add     Custom5                       long varchar                      
+","26","10","alter table companies
+    add     Custom6                       long varchar                      
+","26","11","alter table companies
+    add     Custom7                       long varchar                      
+","26","12","alter table companies
+    add     Custom8                       long varchar                      
+","26","13","alter table companies
+    add     Custom9                       long varchar                      
+","26","14","alter table companies
+    add     Custom10                      long varchar                      
+","26","15","commit
+","27","01","alter table disp_ship
+    add     Custom1                       long varchar,                      
+    add     Custom2                       long varchar,                      
+    add     Custom3                       long varchar,                      
+    add     Custom4                       long varchar,                      
+    add     Custom5                       long varchar,                      
+    add     Custom6                       long varchar,                      
+    add     Custom7                       long varchar,                      
+    add     Custom8                       long varchar,                      
+    add     Custom9                       long varchar,                      
+    add     Custom10                      long varchar                      
+","27","02","commit
+","28","01","CREATE TABLE paysplit
+(id integer NOT NULL,
+amountid integer,
+eventid integer,
+shipmentid integer,
+paysplit numeric(12,2),
+PRIMARY KEY (id),
+FOREIGN KEY fk_paysplit_amountowed (amountid)
+REFERENCES amountowed (id) ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT,
+FOREIGN KEY fk_paysplit_event (eventid)
+REFERENCES disp_events (de_id) ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT,
+FOREIGN KEY fk_paysplit_shipment (shipmentid)
+REFERENCES disp_ship (ds_id) ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT,
+)
+","28","02","ALTER TABLE disp_events
+add de_freightsplit numeric(12,2),
+add de_accesssplit numeric(12,2)
+","28","03","ALTER TABLE amounttemplate
+add aggregatecalc numeric(1,0),
+add splitsby char(32767)
+","28","04","ALTER TABLE entity
+add fuelcardfeemarkup long varchar
+","28","05","ALTER TABLE amountowed
+ADD driver long varchar, 
+ADD truck long varchar, 
+ADD trailer long varchar, 
+ADD container long varchar, 
+ADD shipment long varchar, 
+ADD trip long varchar 
+","28","06","ALTER TABLE driverinfo
+RENAME di_extra_char_b TO di_team
+","28","07","UPDATE amounttemplate set aggregatecalc = 1
+","28","08","COMMIT","28","09","UPDATE driverinfo SET di_team = 'F'","28","10","COMMIT","29","01","ALTER TABLE amounttemplate
+ADD type smallint,
+ADD SelectionFilter long varchar
+","29","02","update AmountTemplate set type = 4","29","03","COMMIT","29","04","ALTER TABLE companies 
+ADD terminationlocation char(1) default 'F'
+","29","05","UPDATE companies SET terminationlocation = 'F'
+","29","06","COMMIT","29","07","drop procedure ~"DBA~".UpdateCurrentShipments","29","08","create procedure
+~"DBA~".UpdateCurrentShipments(in ShipmentId integer)
+begin
+  declare status char(1);
+  declare dorb char(1);
+  declare event_count integer;
+  declare routed integer;
+  declare assigned integer;
+  declare completed integer;
+  declare noval integer;
+  select ds_status,ds_dorb into status,dorb from ~"DBA~".disp_ship where ds_id=ShipmentId;
+  if status in('A','C','E') then
+    /*We don't want these statuses to end up in current shipments.  So, we're going to allow
+    completed and event_count to both remain zero.*/
+    set event_count=0
+  else
+    select ~"count~"(*) into event_count from ~"DBA~".disp_events where de_shipment_id=ShipmentId;
+    if event_count>0 then
+      if dorb='T' then
+        /*
+        Not computing values for non-routed shipments (dorb='D')
+
+        de_ArrDate not null is the routed condition for events routed to equipment.
+        de_Trailer not null is the routed condition for events routed to 3rd party trips (they don't
+        automatically get an arrdate when they're routed like events routed to equipment do.)
+        Note: de_Trailer has nothing to do with a trailer -- it's an old field now being used to hold the 
+        3rd party trip id.
+
+        ~"Routed~" is representing the number of events that have been assigned to something (anything.)
+        ~"Assigned~" is representing the number of events that have been fully assigned, ie. driver, tractor, 
+        and trailer assigned for events routed to equipment.  Only the driver is checked because the event
+        can't be routed and have a driver assigned without the other stuff.  If that condition changed, we
+        could check explicitly, although you'd have to account for things like straight truck routings that
+        don't have a trailer.
+        */
+        select ~"count~"(*) into routed from ~"DBA~".disp_events where de_shipment_id=ShipmentId and(de_arrdate is not null or de_trailer is not null);
+        select ~"count~"(*) into assigned from ~"DBA~".disp_events where de_shipment_id=ShipmentId and(de_driver>0 or de_tractor>0 or de_trailer is not null)
+      end if
+      ;
+      select ~"count~"(*) into completed from ~"DBA~".disp_events where de_shipment_id=ShipmentId and de_conf='T'
+    else
+      set completed=0
+    end if
+  end if
+  ;
+  delete from ~"DBA~".current_shipments where cs_id=ShipmentId;
+  if status in('F','H','K','N','Q','T') or completed<event_count then
+    insert into ~"DBA~".current_shipments(cs_id,cs_event_count,cs_routed,cs_assigned,cs_completed) values(
+      ShipmentId,event_count,routed,assigned,completed)
+  end if
+end","29","09","COMMIT","29","10","DROP TRIGGER DBA.EventUpdate","29","11","create trigger
+~"DBA~".EventUpdate after update of de_trailer,de_driver,de_tractor,de_arrdate,de_shipment_id,
+de_conf,de_apptdate,de_appttime,de_arrtime on ~"DBA~".disp_events
+referencing old as OldRow new as NewRow
+for each row
+when(OldRow.de_shipment_id>0 or NewRow.de_shipment_id>0)
+begin
+  if update(de_trailer) or update(de_driver) or update(de_tractor) or update(de_arrdate) or update(de_shipment_id) or update(de_conf) then
+    if OldRow.de_shipment_id=NewRow.de_shipment_id then
+      call ~"DBA~".UpdateCurrentShipments(NewRow.de_shipment_id)
+    else
+      if NewRow.de_shipment_id>0 then
+        call ~"DBA~".UpdateCurrentShipments(NewRow.de_shipment_id)
+      end if
+      ;
+      if OldRow.de_shipment_id>0 then
+        call ~"DBA~".UpdateCurrentShipments(OldRow.de_shipment_id)
+      end if
+    end if
+  else
+    update ~"DBA~".current_shipments set cs_event_count=cs_event_count
+      where cs_id=NewRow.de_shipment_id
+  end if
+end","29","12","COMMIT","29","13","UPDATE disp_ship SET ds_dorb = 'X' 
+WHERE ds_id IN (SELECT cs_id FROM current_shipments) AND ds_dorb = 'D'
+","29","14","COMMIT","29","15","UPDATE disp_ship SET ds_dorb = 'D' 
+WHERE ds_id IN (SELECT cs_id FROM current_shipments) AND ds_dorb = 'X'
+","29","16","COMMIT","29","17","UPDATE disp_ship SET ds_dorb = 'Y' 
+WHERE ds_id IN (SELECT cs_id FROM current_shipments) AND ds_dorb = 'T'
+","29","18","COMMIT","29","19","UPDATE disp_ship SET ds_dorb = 'T' 
+WHERE ds_id IN (SELECT cs_id FROM current_shipments) AND ds_dorb = 'Y'
+","29","20","COMMIT","29","21","ALTER TABLE disp_ship 
+ADD MoveType Varchar(30),
+ADD OriginPort Varchar(30),
+ADD DestinationPort Varchar(30),
+ADD Line Varchar(30),
+ADD Vessel Varchar(30),
+ADD Voyage Varchar(30),
+ADD CutoffDate Date,
+ADD CutoffTime Time,
+ADD ArrivalDate Date,
+ADD ArrivalTime Time,
+ADD LastFreeDate Date,
+ADD LastFreeTime Time,
+ADD Booking Varchar(30),
+ADD Seal Varchar(30),
+ADD MasterBL Varchar(30),
+ADD HouseBL Varchar(30),
+ADD ForwarderRef Varchar(30),
+ADD AgentRef Varchar(30),
+ADD Forwarder Integer,
+ADD Agent Integer
+","29","22","alter table outside_equip
+add Shipment integer,
+add OriginationSite integer,
+add OriginationDate date,
+add OriginationTime time, 
+add TerminationSite integer,
+add TerminationDate date,
+add TerminationTime time,
+add foreign key FK_EquipmentLease_Shipment (shipment)
+references disp_ship (ds_id) on update cascade on delete set null","29","23","UPDATE outside_equip, disp_events 
+SET outside_equip.TerminationSite = disp_events.de_site, 
+outside_equip.Shipment = disp_events.de_shipment_id
+WHERE outside_equip.oe_term_event = disp_events.de_id 
+","29","24","COMMIT","29","25","UPDATE outside_equip, disp_events 
+SET outside_equip.TerminationDate = disp_events.de_arrdate,
+outside_equip.TerminationTime = disp_events.de_arrtime
+WHERE outside_equip.oe_term_event = disp_events.de_id and disp_events.de_conf = 'T' 
+","29","26","commit","29","27","UPDATE outside_equip SET outside_equip.oe_term_event = Null 
+WHERE NOT EXISTS ( SELECT de_id FROM disp_events 
+WHERE disp_events.de_id = outside_equip.oe_term_event 
+AND disp_events.de_Conf = 'T' ) 
+","29","28","commit","29","29","UPDATE outside_equip, disp_events 
+SET outside_equip.OriginationSite = disp_events.de_site, 
+outside_equip.Shipment = IF disp_events.de_shipment_id IS NOT Null 
+THEN disp_events.de_shipment_id ELSE outside_equip.Shipment ENDIF
+WHERE outside_equip.oe_orig_event = disp_events.de_id 
+","29","30","commit","29","31","UPDATE outside_equip, disp_events 
+SET outside_equip.OriginationDate = disp_events.de_arrdate,
+outside_equip.OriginationTime = disp_events.de_arrtime
+WHERE outside_equip.oe_orig_event = disp_events.de_id and disp_events.de_conf = 'T' 
+","29","32","commit","29","33","UPDATE outside_equip SET outside_equip.oe_orig_event = Null 
+WHERE NOT EXISTS ( SELECT de_id FROM disp_events 
+WHERE disp_events.de_id = outside_equip.oe_orig_event
+AND disp_events.de_Conf = 'T' ) 
+","29","34","commit","30","01","UPDATE equipment, outside_equip SET equipment.notes = outside_equip.oe_booknum
+WHERE equipment.eq_id = outside_equip.oe_id and outside_equip.oe_booknum is not null
+","30","02","commit","30","03","CREATE INDEX ndx_Shipment_Status ON disp_ship ( ds_status )
+","30","04","CREATE INDEX ndx_Equipment_Ref ON equipment ( eq_ref )
+","31","01","CREATE TABLE edi_status
+(id integer NOT NULL,
+segmentid char(4) NOT NULL,
+referenceid char(2) NOT NULL,
+code char(2) NOT NULL,
+definition char(60) NOT NULL,
+PRIMARY KEY (id))
+","31","02","commit","31","03","CREATE TABLE shipment_status
+(eventid integer NOT NULL,
+edi_214_code varchar(10) NOT NULL,
+edi_status_id integer NOT NULL,
+edi_reason_id integer,
+status_date date,
+status_time time,
+processed char(1),
+PRIMARY KEY (eventid, edi_status_id),
+FOREIGN KEY fk_shipment_status_disp_events (eventid)
+REFERENCES disp_events (de_id) ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT,
+FOREIGN KEY fk_shipment_status_edi_status (edi_status_id)
+REFERENCES edi_status (id) ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT,
+FOREIGN KEY fk_shipment_status_edi_reason (edi_reason_id)
+REFERENCES edi_status (id) ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT)
+","31","04","commit","31","05","ALTER TABLE companies 
+ADD edi210Code Varchar(10),
+ADD Edi214Code Varchar(10);
+","31","06","commit","31","07","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (1,'AT7','01','AF','Carrier Departed Pick-up Loaction with Shipment')
+","31","08","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (2,'AT7','01','AG','Estimated Delivery')
+","31","09","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (3,'AT7','01','CD','Carrier Departed Delivery Location')
+","31","10","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (4,'AT7','01','A3','Shipment Returned to Shipper')
+","31","11","INSERT INTO ~"edi_status~" 
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (5,'AT7','01','A7','Refused by Consignee')
+","31","12","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (6,'AT7','01','SD','Shipment Delayed')
+","31","13","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+
+VALUES (7,'AT7','02','A1','Missed Delivery')
+","31","14","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (8,'AT7','02','A2','Incorrect Address')
+","31","15","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (9,'AT7','02','A5','Unable to Locate')
+","31","16","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (10,'AT7','02','AD','Customer Requested Future Delivery')
+","31","17","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (11,'AT7','02','AI','Mechanical Breakdown')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+","31","18","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (12,'AT7','02','AJ','Other Carrier Related')
+","31","19","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (13,'AT7','02','AK','Damaged, Rewrapped in Hub')
+","31","20","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (14,'AT7','02','AO','Weather or Natural Disaster Related')
+","31","21","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+
+~"code~",   
+~"definition~" )  
+VALUES (15,'AT7','02','AQ','Recipient Unavailable - Delivery Delayed')
+","31","22","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (16,'AT7','02','AW','Past Cut-Off Time')
+","31","23","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (17,'AT7','02','B1','Consignee Closed')
+","31","24","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (18,'AT7','02','B9','Receiving Time Restricted')
+","31","25","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (19,'AT7','02','BG','Other')
+","31","26","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (20,'AT7','02','BS','B01 Refused by Customer')
+","31","27","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (21,'AT7','02','BT','Returned to Shipper')
+","31","28","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (22,'AT7','02','C4','Customer Vacation')
+","31","29","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (23,'AT7','02','C5','Customer Strike')
+","31","30","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (24,'AT7','02','RC','Reconsigned')
+","31","31","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+
+~"definition~" )  
+VALUES (25,'AT7','02','S1','Delivery Shortage')
+","31","32","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (26,'AT7','02','T7','Insufficient Delivery Time')
+","31","33","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (27,'AT7','03','AB','Delivery Appointment Date and/or Time')
+","31","34","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (28,'AT7','03','AC','Estimated Delivery Appointment Date and/or Time')
+","31","35","INSERT INTO ~"edi_status~"  
+( ~"id~",   
+~"segmentid~",   
+~"referenceid~",   
+~"code~",   
+~"definition~" )  
+VALUES (29,'AT7','03','X9','Delivery Appointment Secured on This Date and/or Time')
+","31","36","commit","32","01","ALTER TABLE companies delete edi214code","32","02","ALTER TABLE companies delete edi210code","32","03","commit","32","04","ALTER TABLE companies 
+ADD edi210Code  long varchar,
+ADD edi214Code long varchar","32","05","commit","33","01","ALTER TABLE search_specs 
+MODIFY ss_co Integer NOT NULL,
+MODIFY ss_site_1 Integer NOT NULL,
+MODIFY ss_site_2 Integer NOT NULL","33","02","commit","33","03","ALTER TABLE companies
+DELETE PRIMARY KEY","33","04","drop index companies.ndx_co_facility_of","33","05","ALTER TABLE companies 
+
+MODIFY co_id Integer NOT NULL,
+
+MODIFY co_facility_of Integer","33","06","ALTER TABLE companies
+ADD PRIMARY KEY(co_id)","33","07","create index ndx_co_facility_of on companies (co_facility_of )","33","08","commit","33","09","ALTER TABLE contacts
+DELETE PRIMARY KEY","33","10","ALTER TABLE contacts 
+MODIFY ct_id Integer NOT NULL,
+MODIFY ct_co Integer","33","11","ALTER TABLE contacts
+ADD PRIMARY KEY(ct_id)","33","12","ALTER TABLE contacts
+add foreign key fk_ct_co (ct_co)
+references companies (co_id) on update restrict on delete cascade","33","13","commit","33","14","ALTER TABLE join_route_company
+DELETE PRIMARY KEY","33","15","ALTER TABLE join_route_company 
+MODIFY companyid Integer","33","16","ALTER TABLE join_route_company
+ADD PRIMARY KEY(routeid, companyid)","33","17","ALTER TABLE join_route_company
+add foreign key fk_join_route_company_02 (companyid)
+references companies (co_id) on update cascade on delete cascade","33","18","commit","33","19","ALTER TABLE brok_carriers
+DELETE PRIMARY KEY","33","20","ALTER TABLE brok_carriers 
+MODIFY bc_id Integer NOT NULL","33","21","ALTER TABLE brok_carriers
+ADD PRIMARY KEY(bc_id)","33","22","ALTER TABLE brok_carriers
+add foreign key fk_bc_co (bc_id)
+references companies (co_id) on update restrict on delete cascade","33","23","commit","33","24","ALTER TABLE brok_trips 
+MODIFY bt_carrier_id Integer,
+MODIFY bt_origin_id Integer,
+MODIFY bt_findest_id Integer","33","25","ALTER TABLE brok_trips
+add foreign key fk_bt_bc (bt_carrier_id)
+references brok_carriers (bc_id) on update restrict on delete restrict","33","26","commit","33","27","ALTER TABLE disp_events 
+MODIFY de_site Integer","33","28","commit","33","29","drop index disp_ship.ndx_ds_billto_id","33","30","ALTER TABLE disp_ship 
+MODIFY ds_origin_id Integer,
+MODIFY ds_findest_id Integer,
+MODIFY ds_billto_id Integer","33","31","create index ndx_ds_billto_id on disp_ship (ds_billto_id )","33","32","commit","34","01","ALTER TABLE companies 
+ADD fuelsurcharge numeric(8,4)","34","02","commit","35","01","CREATE TABLE zone
+
+(name long varchar NOT NULL,
+description long varchar,
+
+PRIMARY KEY (name))
+","35","02","CREATE TABLE zonelocation
+(zonename long varchar NOT NULL,
+location long varchar,
+type smallint,
+FOREIGN KEY fk_zone_location (zonename)
+REFERENCES zone(name) on update cascade on delete cascade CHECK ON COMMIT)","35","03","CREATE TABLE ratetable
+(name long varchar NOT NULL,
+breakunit char(1) null,
+PRIMARY KEY (name))","35","04","CREATE TABLE rate
+(ratetablename long varchar NOT NULL,
+customerid integer NOT NULL,
+originzonename long varchar NOT NULL,
+destinationzonename long varchar NOT NULL,
+~"break~" numeric(12,2),
+rate numeric(20,6),
+rateunit char(1) null,
+PRIMARY KEY (ratetablename,customerid,originzonename,destinationzonename,~"break~"),
+FOREIGN KEY fk_ratetable (ratetablename)
+REFERENCES ratetable(name) on update cascade on delete cascade CHECK ON COMMIT, 
+FOREIGN KEY fk_originzone (originzonename)
+REFERENCES zone(name) on update cascade on delete cascade CHECK ON COMMIT,
+FOREIGN KEY fk_destinationzone (destinationzonename)
+REFERENCES zone(name) on update cascade on delete cascade CHECK ON COMMIT) ","35","05","commit","36","01","ALTER TABLE companies 
+ADD requiredimagetypes  long varchar,
+ADD warningimagetypes long varchar,
+ADD printingimagetypes long varchar","36","02","commit","37","01","CREATE INDEX ndx_location ON zonelocation ( location )","37","02","commit","38","01","CREATE TABLE join_route_zones
+(routeid integer NOT NULL,
+zonename long varchar NOT NULL,
+
+
+
+PRIMARY KEY (routeid, zonename))","38","02","alter table join_route_zones
+add FOREIGN KEY fk_join_route_equipment_01 (routeid)
+REFERENCES route (id) on update cascade on delete cascade","38","03","alter table join_route_zones
+add FOREIGN KEY fk_join_route_equipment_02 (zonename)
+REFERENCES zone (name) on update cascade on delete cascade","38","04","commit","39","01","CREATE TABLE CustomView
+(ViewName long varchar NOT NULL,
+DisplayName long varchar NOT NULL,
+ObjectNumber smallint NOT NULL,
+ObjectDefinition long varchar NOT NULL )","39","02","commit","39","03","CREATE UNIQUE INDEX ndx_customview ON customview
+(viewname,
+displayname,
+objectnumber )","39","04","ALTER TABLE disp_ship
+ADD DispatchedBy long varchar,
+ADD AvailableOn date,
+ADD AvailableUntil date","39","05","commit","40","01","ALTER TABLE disp_items
+ADD AmountType smallint","40","02","alter table disp_items
+add foreign key FK_AmountTemplate_AmountType (AmountType)
+references AmountType (Id) on update cascade on delete restrict","40","03","ALTER TABLE disp_ship 
+MODIFY ds_pay1_id Integer","40","04","update disp_ship set ds_pay_format = 'L'","40","05","commit","41","01","DROP TRIGGER DBA.EventUpdate","41","02","create trigger
+DBA.EventUpdate after update of de_trailer,de_driver,de_tractor,de_arrdate,de_shipment_id,
+de_conf,de_apptdate,de_appttime,de_arrtime,de_status on DBA.disp_events
+referencing old as OldRow new as NewRow
+for each row
+when(OldRow.de_shipment_id>0 or NewRow.de_shipment_id>0)
+begin
+  if update(de_trailer) or update(de_driver) or update(de_tractor) or update(de_arrdate) or update(de_shipment_id) or update(de_conf) then
+    if OldRow.de_shipment_id=NewRow.de_shipment_id then
+      call DBA.UpdateCurrentShipments(NewRow.de_shipment_id)
+    else
+      if NewRow.de_shipment_id>0 then
+        call DBA.UpdateCurrentShipments(NewRow.de_shipment_id)
+      end if;
+      if OldRow.de_shipment_id>0 then
+        call DBA.UpdateCurrentShipments(OldRow.de_shipment_id)
+      end if
+    end if
+  else
+    update DBA.current_shipments set cs_event_count=cs_event_count where
+      cs_id=NewRow.de_shipment_id
+  end if
+end","41","03","commit","42","01","ALTER TABLE companies
+ADD statusrequesttemplate long varchar, 
+ADD statusrequestrole long varchar, 
+ADD attachimagetypes long varchar","42","02","create index ndx_edi214code on companies (edi214code )","42","03","commit","42","04","ALTER TABLE disp_ship
+ADD notificationtemplate long varchar, 
+ADD edireference long varchar","42","05","ALTER TABLE disp_events
+ADD eventreference long varchar ","42","06","commit","42","07","ALTER TABLE shipment_status
+DELETE PRIMARY KEY","42","08","ALTER TABLE shipment_status
+
+ADD PRIMARY KEY(eventid, edi_214_code, edi_status_id)","42","09","commit","42","10","CREATE TABLE companycontacts
+(id integer NOT NULL,
+companyid integer,
+firstname long varchar,
+middlename long varchar,
+lastname long varchar,
+emailaddress long varchar NOT NULL,
+status char(1),
+PRIMARY KEY (id),
+FOREIGN KEY fk_companycontact_company (companyid)
+REFERENCES companies(co_id) on update cascade on delete cascade  CHECK ON COMMIT
+)","42","11","commit","42","12","CREATE TABLE datamapping
+(id integer NOT NULL,
+transfertype long varchar NOT NULL,
+direction char(1) NOT NULL,
+companyid integer NOT NULL,
+topic long varchar,
+source long varchar,
+target long varchar,
+PRIMARY KEY (id),
+FOREIGN KEY fk_companies (companyid)
+REFERENCES companies(co_id) on update cascade on delete cascade  CHECK ON COMMIT
+)","42","13","commit","42","14","CREATE TABLE notification
+(id integer NOT NULL,
+shipmentid integer NOT NULL,
+contactid integer,
+PRIMARY KEY (id),
+FOREIGN KEY fk_contactid_companycontactid (contactid)
+REFERENCES companycontacts(id) on update cascade on delete cascade  CHECK ON COMMIT,
+FOREIGN KEY fk_shipmentid_ds_id (shipmentid)
+REFERENCES disp_ship(ds_id) on update cascade on delete cascade  CHECK ON COMMIT
+)","42","15","commit","42","16","CREATE TABLE notificationsettings
+(id integer NOT NULL,
+transfertype long varchar NOT NULL,
+direction char(1) NOT NULL,
+companyid integer NOT NULL,
+action long varchar,
+response long varchar,
+setting long varchar,
+PRIMARY KEY (id),
+FOREIGN KEY fk_companies (companyid)
+REFERENCES companies(co_id) on update cascade on delete cascade  CHECK ON COMMIT
+)","42","17","commit","43","01","ALTER TABLE disp_ship 
+MODIFY ds_ref1_text long varchar,
+MODIFY ds_ref2_text long varchar,
+
+MODIFY ds_ref3_text long varchar,
+MODIFY movetype long varchar,
+MODIFY originport long varchar,
+MODIFY destinationport long varchar,
+MODIFY line long varchar,
+MODIFY vessel long varchar,
+MODIFY voyage long varchar,
+MODIFY booking long varchar,
+MODIFY seal long varchar,
+MODIFY masterbl long varchar,
+MODIFY housebl long varchar,
+MODIFY forwarderref long varchar,
+MODIFY agentref long varchar","43","02","ALTER TABLE search_specs
+MODIFY ss_ref_num long varchar","43","03","alter table notification
+delete foreign key fk_shipmentid_ds_id","43","04","commit","43","05","ALTER TABLE notification
+
+MODIFY shipmentid integer NULL,
+ADD eventid integer NULL","43","06","ALTER TABLE notification
+add foreign key fk_shipmentid_ds_id (shipmentid)
+references disp_ship (ds_id) on update cascade on delete cascade","43","07","ALTER TABLE notification
+add foreign key fk_eventid (eventid)
+references disp_events (de_id) on update cascade on delete cascade","43","08","commit","43","09","CREATE TABLE notificationstatus
+(~"id~" integer NOT NULL,
+~"notificationtopic~" long varchar NOT NULL,
+~"sourceid~" integer NOT NULL,
+~"notificationstatus~" integer NOT NULL,
+~"errorstring~" long varchar  )","43","10","CREATE UNIQUE INDEX ndx_id on notificationstatus (id)","43","11","commit","44","01","alter table datamapping
+delete foreign key fk_companies","44","02","alter table notificationsettings
+delete foreign key fk_companies","44","03","commit","45","01","ALTER TABLE EquipmentLeaseType 
+Add freetimestart smallint NULL,
+Add freetimefriday time NULL,
+Add freetimeholiday	time NULL,
+Add freetimeweekend smallint NULL,
+Add perdiemholiday smallint NULL,
+Add equipmentlength char(12)	NULL,
+Add lineprefix long varchar NULL,
+Add leasestatus integer NULL","45","02","ALTER TABLE Contacts
+Add ct_emailaddress long varchar NULL,
+Add ct_NotifyOnEvent	SmallInt	NULL,
+Add ct_NotifyOnAccNote SmallInt NULL,
+Add ct_NotifyOnAccAuth SmallInt NULL,
+Add ct_NotifyOnShipment	SmallInt	NULL,
+Add ct_NotifyOnLFD SmallInt NULL,
+Add ct_NotifyOnTIR SmallInt NULL","45","03","ALTER TABLE Companies
+Add AccNoteTemplate Long Varchar	NULL,
+Add AccAuthTemplate Long Varchar	NULL,
+Add EventTemplate Long Varchar NULL,
+Add lfdtemplate Long Varchar NULL,
+Add TIRTemplate Long Varchar NULL","45","04","ALTER TABLE disp_ship
+Add EventContacts	Long Varchar NULL,
+Add AccNoteContacts Long Varchar	NULL,
+Add AccAuthContacts Long Varchar	NULL,
+Add LFDContacts Long Varchar NULL,
+Add ShipmentContacts Long Varchar NULL","45","05","COMMIT","46","01","update EquipmentLeaseType set leasestatus = 1
+where leasestatus is Null","46","02","update EquipmentLeaseType set freetimestart = 2
+where freetimestart is Null","46","03","update EquipmentLeaseType set freetimeweekend = 0
+where freetimeweekend is Null","46","04","update EquipmentLeaseType set perdiemholiday = 1
+where perdiemholiday is Null","46","05","commit","47","01","CREATE TABLE customseries
+(topic long varchar NOT NULL,
+code long varchar NOT NULL,
+nextvalue integer,
+limitvalue integer,
+nextstart integer,
+nextlimit integer,
+stringformat long varchar,
+PRIMARY KEY (topic,code)
+)","47","02","commit","47","03","create procedure ~"DBA~".GetCustomSeriesValue(in aTopic long varchar,in aCode long varchar,out aNextValue integer,out aStringFormat long varchar,in aAuto smallint,in aCommit smallint)
+begin
+  set aNextValue=null;
+  set aStringFormat=null;
+  select NextValue,StringFormat into aNextValue,aStringFormat from ~"DBA~".CustomSeries where Topic=aTopic and Code=aCode;
+  if sqlcode=100 and aAuto=1 then
+    insert into ~"DBA~".CustomSeries(Topic,Code,NextValue) values(aTopic,aCode,2);
+    if sqlcode=0 then
+
+      set aNextValue=1
+    end if
+  else
+    update ~"DBA~".CustomSeries set NextValue=aNextValue+1 where Topic=aTopic and Code=aCode and NextValue=aNextValue;
+    if sqlcode<>0 then
+      set aNextValue=null
+    end if
+  end if
+  ;
+  if aCommit<>0 then
+
+    commit work
+  end if
+end","47","04","create trigger
+~"DBA~".CustomSeries.CustomSeriesUpdate before update of NextValue,LimitValue on ~"DBA~".CustomSeries
+referencing old as OldRow new as NewRow
+for each row
+when(NewRow.NextValue>NewRow.LimitValue)
+begin
+  if NewRow.NextStart is not null then
+    set NewRow.NextValue=NewRow.NextStart;
+    set NewRow.LimitValue=NewRow.NextLimit;
+    set NewRow.NextStart=null;
+    set NewRow.NextLimit=null
+  else
+    set NewRow.NextValue=null
+  end if
+end","47","05","commit","48","01","ALTER TABLE companies
+add loadconfirmationtemplate long varchar","48","02","commit","50","05","Update system_settings Set ss_long = 1 where ss_id = 114 and (ss_long = '0' or ss_long Is NULL)","55","01","ALTER TABLE ratetable
+delete primary key","55","02","ALTER TABLE rate
+delete primary key","55","03","ALTER TABLE rate
+delete foreign key fk_originzone","55","04","ALTER TABLE rate
+delete foreign key fk_destinationzone","55","05","commit","55","06","ALTER TABLE ratetable
+RENAME ratetableold","55","07","ALTER TABLE rate
+RENAME rateold","55","08","commit","55","09","ALTER TABLE ratetableold
+add codename long varchar","55","10","update ratetableold set codename = string(number(*))","55","11","ALTER TABLE rateold
+add id integer","55","12","update rateold set id = number(*)","55","13","commit","55","14","CREATE TABLE ratetable
+(codename long varchar NOT NULL,
+name long varchar,
+defaultdescription long varchar,
+breakunit char(1),
+amounttype smallint,
+PRIMARY KEY (codename),
+FOREIGN KEY fk_amounttype ( amounttype)
+REFERENCES amounttype  on update cascade on delete cascade  CHECK ON COMMIT
+)","55","15","insert into ratetable ( codename, name, breakunit )
+select codename, name, breakunit
+from ratetableold","55","16","CREATE TABLE rate
+(id integer NOT NULL,
+codename long varchar,
+ratebreak numeric(12,2) NOT NULL,
+rate numeric(20,6),
+rateunit char(1),
+lastuseddate date,
+category smallint NOT NULL,
+PRIMARY KEY (id)
+)","55","17","insert into rate (id, ratebreak, rate, rateunit, category)
+select id, ~"break~", rate, rateunit, 2
+from rateold","55","18","update rate, ratetableold, rateold
+set rate.codename = ratetableold.codename
+where ratetableold.name = rateold.ratetablename and rate.id = rateold.id","55","19","ALTER TABLE rate
+modify codename long varchar not null,
+add FOREIGN KEY fk_codename_ratetable (codename)
+REFERENCES ratetable  on update cascade on delete cascade  CHECK ON COMMIT;
+","55","20","CREATE TABLE ratedefaults
+(codename long varchar NOT NULL,
+billtoid integer NOT NULL,
+overridedescription long varchar,
+PRIMARY KEY (codename,billtoid),
+FOREIGN KEY fk_codename_ratetable (codename)
+REFERENCES ratetable  on update cascade on delete cascade  CHECK ON COMMIT
+)","55","21","commit","55","22","CREATE TABLE ratelinkbillable
+(rateid integer NOT NULL,
+billtoid integer NOT NULL,
+PRIMARY KEY (rateid,billtoid),
+FOREIGN KEY fk_rate (rateid)
+REFERENCES rate  on update cascade on delete cascade  CHECK ON COMMIT
+)","55","23","insert into ratelinkbillable ( rateid, billtoid ) 
+select id, customerid from rateold","55","24","CREATE TABLE ratelinkorigzone
+(rateid integer NOT NULL,
+zone long varchar NOT NULL,
+PRIMARY KEY (rateid,zone),
+FOREIGN KEY fk_rate (rateid)
+REFERENCES rate  on update cascade on delete cascade  CHECK ON COMMIT,
+FOREIGN KEY fk_origzone_zone (zone)
+REFERENCES zone  on update cascade on delete cascade  CHECK ON COMMIT
+)","55","25","insert into ratelinkorigzone ( rateid, zone )
+select id, originzonename from rateold","55","26","CREATE TABLE ratelinkdestzone
+(rateid integer NOT NULL,
+zone long varchar NOT NULL,
+PRIMARY KEY (rateid,zone),
+FOREIGN KEY fk_rate (rateid)
+
+REFERENCES rate  on update cascade on delete cascade  CHECK ON COMMIT,
+FOREIGN KEY fk_destzone_zone (zone)
+REFERENCES zone  on update cascade on delete cascade  CHECK ON COMMIT
+)","55","27","insert into ratelinkdestzone ( rateid, zone )
+select id, destinationzonename from rateold","55","28","commit","55","29","ALTER table amounttemplate
+
+ADD fkentity integer,
+ADD intervaltype smallint,
+ADD interval long varchar,
+ADD activationdate date,
+ADD targettotal numeric(15,2),
+ADD runningtotal numeric(15,2),
+ADD runningcount integer,
+ADD lastamount numeric(15,2),
+ADD lastdate date,
+ADD firstdate date,
+ADD Custom1 long varchar,
+ADD Custom2 long varchar,
+ADD Custom3 long varchar","55","30","alter table AmountTemplate
+add foreign key FK_entity (fkentity)
+references entity (id) on update cascade on delete cascade  CHECK ON COMMIT","55","31","commit","55","32","update amounttemplate set intervaltype = 0","55","33","update amounttemplate, join_entity_amounttemplate
+set amounttemplate.fkentity = join_entity_amounttemplate.fkentity
+where amounttemplate.id = join_entity_amounttemplate.fkamounttemplate","55","34","delete join_entity_amounttemplate","55","35","ALTER table amounttype
+ADD itemtype char(1),
+ADD Surcharge char(1)","55","36","commit","55","37","drop table companycontacts","55","38","insert into nextids ( classid, nextid )
+select 14, count(*) + 1 from ratetable","55","39","insert into nextids ( classid, nextid )
+select 15, count(*) + 1 from rate","55","40","commit","56","01","INSERT INTO ratetable
+(codename,
+name,
+defaultdescription,
+breakunit,
+amounttype)
+VALUES
+('CUSTOM',
+'CUSTOM',
+'This is used by the application to designate custom entered rates.',
+null,
+null)","56","02","commit","56","03","ALTER TABLE companies
+add ratetablelist long varchar","56","04","ALTER TABLE disp_items
+add RateCodename long varchar,
+add LastRatedBy long varchar,
+add Taglist long varchar,
+add EventFlag long varchar,
+add Note long varchar,
+add AccountingType char(1)","56","05","ALTER TABLE amountowed
+add RateCodename long varchar,
+add LastModifiedBy long varchar,
+add originzone long varchar,
+add destinationzone long varchar,
+add billtoid integer","56","06","ALTER TABLE NotificationStatus 
+add DocumentType long varchar","56","07","commit","56","08","ALTER TABLE disp_ship
+ADD prenotedate date,
+ADD prenotetime time,
+ADD prenoteby long varchar,
+ADD prenoteuser long varchar, 
+ADD etadate date,
+ADD etatime time,
+ADD etaby long varchar,
+ADD etauser long varchar,
+ADD arrivedby long varchar,
+
+ADD arriveduser long varchar,
+ADD groundeddate date,
+ADD groundedtime time,
+ADD groundedby long varchar,
+ADD groundeduser long varchar,
+ADD pickupnumber long varchar,
+ADD pickupnumberby long varchar,
+ADD pickupnumberuser long varchar,
+ADD bookingnumberby long varchar,
+ADD bookingnumberuser long varchar,
+ADD releasedate date,
+ADD releasetime time,
+ADD releaseby long varchar,
+ADD releaseuser long varchar,
+ADD lfdby long varchar,
+ADD lfduser long varchar,
+ADD pickupbydate date,
+ADD pickupbytime time,
+ADD pickupbyby long varchar,
+ADD pickupbyuser long varchar,
+ADD delbydate date,
+ADD delbytime time,
+ADD delbyby long varchar,
+ADD delbyuser long varchar,
+ADD cutoffby long varchar,
+ADD cutoffuser long varchar,
+ADD emptyatcustomerdate date,
+ADD emptyatcustomertime time,
+ADD emptyatcustomerby long varchar,
+ADD emptyatcustomeruser long varchar,
+ADD loadedatcustomerdate date,
+ADD loadedatcustomertime time,
+ADD loadedatcustomerby long varchar,
+ADD loadedatcustomeruser long varchar,
+ADD railbillnumber long varchar,
+ADD railbillnumberuser long varchar,
+ADD railbilleddate date,
+ADD railbilledby long varchar,
+ADD railbilleduser long varchar,
+ADD movecode char(1)","56","09","ALTER TABLE outside_equip
+ADD reloadshipment integer,
+ADD reloaddate date,
+ADD reloadtime time,
+ADD reloadfreetimeexpiredate date,
+ADD reloadfreetimeexpiretime time,
+ADD notifydate date,
+ADD notifytime time,
+ADD amountbilled numeric(8,2),
+ADD invoicenumber long varchar","56","10","ALTER TABLE disp_events
+add Routable char(1)","56","11","alter table disp_items
+delete foreign key FK_AmountTemplate_AmountType","56","12","alter table disp_items
+add foreign key FK_AmountTemplate_AmountType (AmountType)
+references AmountType (Id) on update cascade on delete restrict check on commit","56","13","commit","56","14","alter table amounttype
+add sendnotification char(1)","56","15","update amounttype set sendnotification = 'F'","56","16","update disp_items set accountingtype = 3","56","17","commit","57","01","ALTER TABLE outside_equip
+DELETE notifydate,
+DELETE notifytime","57","02","commit","57","03","ALTER TABLE outside_equip
+ADD leasefreetimeexpiredate date,
+ADD leasefreetimeexpiretime time,
+ADD releasedate date,
+ADD releasetime time","57","04","commit","57","05","create function ~"dba~".GetShipmentFTE(in ShipmentId integer)
+
+returns date
+begin
+  declare FTE date;
+  select Min(leasefreetimeexpiredate) into FTE from ~"dba~".equipment,~"dba~".outside_equip
+    where(Shipment=ShipmentId or ReloadShipment=ShipmentId) and eq_type<>'H' and eq_id=oe_id;
+  %Exclude chassis because chassis rental charges start immediately and what we want is the 
+  %free time expiration on the container or rail box.  The value will be returned whether or
+  %not the equipment is still active.
+  return FTE
+end","57","06","commit","58","01","UPDATE system_settings SET ss_id = ss_long, ss_long = 0
+WHERE ss_long in (123,124,125,140,141)","58","02","DELETE FROM nextids WHERE classid = 17","58","03","commit","58","04","CREATE INDEX ndx_shipment_ref2text ON disp_ship (ds_ref2_text)","58","05","CREATE INDEX ndx_shipment_ref3text ON disp_ship (ds_ref3_text)","58","06","commit","59","01","INSERT INTO system_settings
+(ss_id,
+ss_uid,
+ss_long,
+ss_char,
+ss_string,
+ss_date,
+ss_dec)
+VALUES
+(14,
+0,
+0,
+null,
+
+null,
+null,
+null)","59","02","commit","59","03","Update system_settings Set ss_long = ss_Long/60 where ss_id = 114","59","04","commit","59","05","Update system_settings Set ss_long = 1 where ss_id = 114 and (ss_long = '0' or ss_long Is NULL)","59","06","update amounttype set sendnotification = 0 where sendnotification is null","59","07","commit","60","01","ALTER TABLE companies
+add NotificationEventOrigin long varchar,
+ADD NotificationEventDestination long varchar","60","02","ALTER TABLE disp_events
+add EventContacts long varchar","60","03","commit","61","01","ALTER TABLE disp_events
+add HideOnBill char(1)","61","02","commit","62","01","UPDATE companies
+SET notificationeventorigin = 'H,M,P',
+notificationeventdestination = 'D,R,N'
+WHERE companies.co_id in 
+(SELECT contacts.ct_co
+FROM companies,
+contacts
+WHERE	( contacts.ct_co = companies.co_id ) and
+(contacts.ct_notifyonevent = '1'  ) and
+(companies.notificationeventorigin is null and companies.notificationeventdestination is null) )","62","02","commit","63","01","CREATE TABLE billtopoints
+(id integer NOT NULL,
+origin integer NOT NULL,
+destination integer NOT NULL,
+PRIMARY KEY (origin, destination),
+FOREIGN KEY fk_billto_companies (id)
+REFERENCES companies on update cascade on delete cascade CHECK ON COMMIT,
+FOREIGN KEY fk_origin_companies(origin)
+REFERENCES companies on update cascade on delete cascade CHECK ON COMMIT,
+FOREIGN KEY fk_destination_companies(destination)
+REFERENCES companies on update cascade on delete cascade CHECK ON COMMIT)","63","02","commit","63","03","ALTER TABLE modulelocks
+DELETE PRIMARY KEY","63","04","ALTER TABLE modulelocks
+ADD PRIMARY KEY(machinename, module,userid)","63","05","commit","63","06","CREATE TABLE carrierlanes
+(id integer NOT NULL,
+carrier integer NOT NULL,
+origin long varchar,
+destination long varchar,
+PRIMARY KEY (id),
+FOREIGN KEY fk_carrierlanes_bk (carrier)
+REFERENCES companies ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT,
+FOREIGN KEY fk_carrierorigin_zone (origin)
+REFERENCES zone ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT,
+FOREIGN KEY fk_carrierdestination_zone (destination)
+REFERENCES zone ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT)","63","07","commit","64","01","CREATE INDEX ndx_sourceid ON notificationstatus ( sourceid )","64","02","CREATE INDEX ndx_topic ON notificationstatus ( notificationtopic )","64","03","CREATE INDEX ndx_type ON notificationstatus ( documenttype )","64","04","commit","65","01","ALTER TABLE driver_logs
+ADD ~"dl_restart~" char(1)","65","02","commit","70","01","CREATE TABLE imagearchive
+(volumenumberid integer NOT NULL,
+startshipmentid integer,
+endshipmentid integer,
+deletedfromcurrent smallint,
+notes long varchar,
+PRIMARY KEY (volumenumberid)
+)","70","02","Alter table disp_events
+add importReference integer","70","03","CREATE TABLE edi
+(id integer NOT NULL,
+transactionset integer,
+sourceid integer,
+source long varchar,
+company integer,
+processeddate date,
+processedtime time,
+errormessage long varchar,
+PRIMARY KEY (id)
+)","70","04","CREATE INDEX ndx_setdatetime ON edi (processeddate, processedtime )","70","05","CREATE TABLE edistatus
+(ediid integer NOT NULL,
+status long varchar,
+reason long varchar,
+statusdate date,
+statustime time,
+PRIMARY KEY (ediid),
+FOREIGN KEY fk_edi_edistatus (ediid)
+REFERENCES edi  ON UPDATE CASCADE ON DELETE CASCADE CHECK ON COMMIT
+)","70","06","CREATE TABLE ediprofile
+(companyid integer NOT NULL,
+transactionset integer NOT NULL,
+template long varchar,
+shipmentrole long varchar,
+scac long varchar,
+folder long varchar,
+createmessage long varchar,
+PRIMARY KEY (companyid, transactionset),
+FOREIGN KEY fk_ediprofile_company (companyid)
+REFERENCES companies ON UPDATE CASCADE ON DELETE CASCADE
+)","70","07","CREATE UNIQUE INDEX ndx_scac ON ediprofile (scac )","70","08","CREATE TABLE edistatusprofile 
+(companyid integer NOT NULL,
+transactionset integer NOT NULL,
+eventtype long varchar NOT NULL,
+sitetype long varchar NOT NULL,
+action long varchar NOT NULL,
+status long varchar,
+movecode char(1),
+statusrole long varchar,
+PRIMARY KEY (companyid, transactionset, eventtype, sitetype, action),
+FOREIGN KEY fk_edistatusprofile_company (companyid)
+REFERENCES companies ON UPDATE CASCADE ON DELETE CASCADE
+)","70","09","CREATE TABLE edi204profile
+(companyid integer NOT NULL,
+allowupdates char(1),
+allowcancel char(1),
+emailerrors char(1),
+emailaddress long varchar,
+importtypes long varchar,
+exporttypes long varchar,
+onewaytypes long varchar,
+PRIMARY KEY (companyid),
+FOREIGN KEY fk_edi204profile (companyid)
+REFERENCES companies ON UPDATE CASCADE ON DELETE CASCADE
+)","70","10","CREATE TABLE edipending
+(transactionset integer NOT NULL,
+sourceid integer NOT NULL,
+source long varchar NOT NULL,
+action long varchar NOT NULL,
+status long varchar,
+reason long varchar,
+statusdate date,
+statustime time,
+
+PRIMARY KEY (transactionset, sourceid, source, action)
+)","70","11","commit","71","01","ALTER TABLE edistatusprofile 
+DELETE PRIMARY KEY","71","02","commit","72","01","ALTER TABLE disp_events
+ADD earliestDate date,
+ADD earliestTime time,
+ADD latestDate date,
+ADD latestTime time","72","02","commit","73","01","ALTER TABLE edistatusprofile
+ADD additionalstatus long varchar,
+ADD minuteoffset smallint","73","02","commit","75","01","ALTER TABLE disp_events
+modify de_apptnum long varchar","75","02","ALTER TABLE brok_carriers
+ADD BondExpirationDate date","75","03","CREATE TABLE referencelist
+(referenceid integer NOT NULL,
+referencename long varchar NOT NULL,
+referencecategory long varchar NOT NULL,
+systemdefined char(1) NOT NULL,
+PRIMARY KEY (referenceid)
+)","75","04","CREATE TABLE join_dispship_arbatch
+(dispshipid integer NOT NULL,
+arbatchid integer NOT NULL,
+PRIMARY KEY (dispshipid, arbatchid),
+FOREIGN KEY fk_join_dispship_arbatch_01 (dispshipid)
+REFERENCES disp_ship  on update cascade on delete cascade CHECK ON COMMIT
+)","75","05","ALTER TABLE companies
+ADD fuelsurchargetype long varchar","75","06","update companies set fuelsurchargetype = 'PERCENTAGE!' where fuelsurcharge > 0","75","07","INSERT INTO system_settings
+(ss_id, ss_uid, ss_long, ss_char, ss_string, ss_date, ss_dec)  
+VALUES (171, 0, null, null, 'PERCENTAGE', null, null)","75","08","INSERT INTO system_settings
+(ss_id, ss_uid, ss_long, ss_char, ss_string, ss_date, ss_dec)  
+VALUES (172, 0, null, null, 'PERCENTAGE', null, null)","75","09","CREATE TABLE equipmentapportion
+(equipmentid integer NOT NULL,
+state char(2) NOT NULL,
+PRIMARY KEY (equipmentid, state),
+FOREIGN KEY fk_equipment_apportion (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","10","CREATE TABLE equipmentauxiliarydevice
+(equipmentid integer NOT NULL,
+device long varchar NOT NULL,
+code long varchar,
+PRIMARY KEY (equipmentid, device),
+FOREIGN KEY fk_equipment_mobiledevice (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","11","CREATE TABLE equipmentcompartment
+(equipmentid integer NOT NULL,
+id long varchar NOT NULL,
+capacity numeric(6,3),
+FOREIGN KEY fk_equipment_equipmentcompartment (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","12","CREATE TABLE equipmentdescription
+(equipmentid integer NOT NULL,
+description long varchar,
+doortype long varchar,
+floortype long varchar,
+construction long varchar,
+dischargetype long varchar,
+sleeper numeric(1,0),
+FOREIGN KEY fk_equipment_equipmentdescription (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","13","CREATE TABLE equipmentdimensions
+(equipmentid integer NOT NULL,
+insideheight numeric(3,0),
+insidewidth numeric(3,0),
+doorheight numeric(3,0),
+doorwidth numeric(3,0),
+frontdecklength numeric(3,0),
+reardecklength numeric(3,0),
+welllength numeric(3,0),
+FOREIGN KEY fk_equipment_equipmentdimensions (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","14","CREATE TABLE equipmentextendeddata
+(equipmentid integer NOT NULL,
+unitnumber long varchar,
+legalowner long varchar,
+year char(4),
+make long varchar,
+color long varchar,
+vin long varchar,
+tiresize long varchar,
+rimtype long varchar,
+tareweight numeric(6,0),
+outofservicedate date,
+outofservicetime time,
+inservicedate date,
+inservicetime time,
+outofservicereason long varchar,
+fleetdesignation long varchar,
+gvw numeric(6,0),
+
+FOREIGN KEY fk_equipment_extendeddata (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","15","CREATE TABLE equipmentextras
+(equipmentid integer NOT NULL,
+liftgate numeric(1,0),
+sidedoor numeric(1,0),
+etrack numeric(1,0),
+logisticsposts numeric(1,0),
+logisticsbars numeric(2,0),
+straps numeric(2,0),
+loadbars numeric(2,0),
+chains numeric(2,0),
+binders numeric(2,0),
+tarp long varchar,
+powersource long varchar,
+FOREIGN KEY fk_equipment_equipmentextras (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","16","CREATE TABLE equipmentpermit
+(equipmentid integer NOT NULL,
+description long varchar NOT NULL,
+permitnumber long varchar,
+
+
+expirationdate date,
+PRIMARY KEY (equipmentid, description),
+FOREIGN KEY fk_equipment_permit (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","17","CREATE TABLE equipmentpurchased
+(equipmentid integer NOT NULL,
+purchasemileage numeric(7,0),
+purchasedate date,
+purchasefrom long varchar,
+currentmileage numeric(7,0),
+mileageasof date,
+FOREIGN KEY fk_equipment_equipmentpurchased (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","18","CREATE TABLE equipmentregistration
+(equipmentid integer NOT NULL,
+licensenumber long varchar,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+licensestate char(2),
+annualinspectiondateissued date,
+annualinspectiondateexpiration date,
+registrationclass long varchar,
+registrationcombination long varchar,
+registrationeffectivedate date,
+registrationexpirationdate date,
+FOREIGN KEY fk_equipment_extendeddata (equipmentid )
+REFERENCES dba.equipment on update cascade on delete cascade CHECK ON COMMIT
+)","75","19","CREATE TABLE importedshipments
+
+(senderscode char(15) NOT NULL,
+groupcontrolnumber integer NOT NULL,
+transactioncontrolnumber integer NOT NULL,
+status char(10), statusreason char(10),
+shipmentid integer,
+filecontents long varchar NOT NULL,
+PRIMARY KEY (senderscode, groupcontrolnumber, transactioncontrolnumber),
+FOREIGN KEY fk_shipmentid (shipmentid )
+REFERENCES dba.disp_ship on update cascade on delete cascade CHECK ON COMMIT
+)","75","20","ALTER TABLE edi_status
+modify code char (3)","75","21","ALTER TABLE employees
+ADD em_cellphone char(14)","75","22","ALTER TABLE DriverInfo
+ADD di_Fleet long Varchar","75","23","drop procedure ~"DBA~".UpdateCurrentShipments","75","24","create procedure
+~"DBA~".UpdateCurrentShipments(in ShipmentId integer)
+begin
+  declare status char(1);
+  declare dorb char(1);
+  declare event_count integer;
+  declare routed integer;
+  declare assigned integer;
+  declare completed integer;
+  declare noval integer;
+  select ds_status,ds_dorb into status,dorb from ~"DBA~".disp_ship where ds_id=ShipmentId;
+  if status in('A','C','E','F','D') then
+    /*We don't want these statuses to end up in current shipments.  So, we're going to allow
+    completed and event_count to both remain zero.*/
+    set event_count=0
+  else
+    select ~"count~"(*) into event_count from ~"DBA~".disp_events where de_shipment_id=ShipmentId;
+    if event_count>0 then
+      if dorb='T' then
+        /*
+        Not computing values for non-routed shipments (dorb='D')
+
+        de_ArrDate not null is the routed condition for events routed to equipment.
+        de_Trailer not null is the routed condition for events routed to 3rd party trips (they don't
+        automatically get an arrdate when they're routed like events routed to equipment do.)
+        Note: de_Trailer has nothing to do with a trailer -- it's an old field now being used to hold the 
+        3rd party trip id.
+
+        ~"Routed~" is representing the number of events that have been assigned to something (anything.)
+        ~"Assigned~" is representing the number of events that have been fully assigned, ie. driver, tractor, 
+        and trailer assigned for events routed to equipment.  Only the driver is checked because the event
+        can't be routed and have a driver assigned without the other stuff.  If that condition changed, we
+        could check explicitly, although you'd have to account for things like straight truck routings that
+        don't have a trailer.
+        */
+
+        select ~"count~"(*) into routed from ~"DBA~".disp_events where de_shipment_id=ShipmentId and(de_arrdate is not null or de_trailer is not null);
+        select ~"count~"(*) into assigned from ~"DBA~".disp_events where de_shipment_id=ShipmentId and(de_driver>0 or de_tractor>0 or de_trailer is not null)
+      end if
+      ;
+      select ~"count~"(*) into completed from ~"DBA~".disp_events where de_shipment_id=ShipmentId and de_conf='T'
+    else
+      set completed=0
+    end if
+  end if
+  ;
+
+  delete from ~"DBA~".current_shipments where cs_id=ShipmentId;
+  if status in('H','K','N','Q','T') or completed<event_count then
+    insert into ~"DBA~".current_shipments(cs_id,cs_event_count,cs_routed,cs_assigned,cs_completed) values(
+      ShipmentId,event_count,routed,assigned,completed)
+  end if
+end","75","25","ALTER TABLE brok_carriers
+Add signedcontract char(1),
+ADD contractdate date, 
+ADD holdharmless char(1), 
+ADD holdharmlessdate date,
+ADD creditapplication char(1),
+ADD creditstatus char(10), 
+
+ADD workmanscarrier char(30),
+ADD workmanspolicynumber char(20), 
+
+ADD workmansamount integer, 
+ADD workmansexpiration date","75","26","UPDATE brok_carriers SET signedcontract = 'F', holdharmless = 'F', creditapplication = 'F'","75","27","ALTER TABLE edipending
+Add company integer","75","28","ALTER TABLE edipending 
+DELETE PRIMARY KEY","75","29","ALTER TABLE edistatusprofile 
+Add reason long varchar","75","30","update edistatusprofile set reason = 'NS'","75","31","ALTER TABLE equipmentcompartment
+ADD PRIMARY KEY(equipmentid, id)","75","32","CREATE INDEX ndx_importedshipments_shipmentid ON importedshipments (shipmentid)","75","33","commit","76","01","update companies set fuelsurchargetype = 'PERCENTAGE' where fuelsurchargetype ='PERCENTAGE!'","76","02","commit","77","01","update system_settings set ss_string = 'PERCENTAGE' where ss_id = 172 and ss_string = 'PERCENTAGE!'","77","02","update system_settings set ss_string = 'PERMILE' where ss_id = 172 and ss_string = 'PERMILE!'","77","03","update system_settings set ss_string = NULL where ss_id = 131","77","04","commit","78","01","update system_settings set ss_string = NULL where ss_id = 28","78","02","commit","79","01","ALTER TABLE equipmentcompartment
+modify capacity numeric(8,3)","79","02","commit","80","01","Create table tempequip ( te_id integer, te_origdate date, te_termdate date , te_status char(1))","80","02","Insert into tempequip  (te_id )  select eq_id from equipment where eq_outside = 'T' 
+and not exists ( select oe_id from outside_equip where oe_id = eq_id)","80","03","commit","80","04","Update tempequip set te_origdate = (Select min ( de_arrdate) from disp_events 
+where de_arrdate > '2004-01-01' and
+(de_container1 = te_id or 
+de_container2 = te_id or 
+de_container3 = te_id or 
+de_container4 = te_id or 
+de_trailer1 = te_id or 
+de_trailer2 = te_id or 
+de_trailer3 = te_id) and de_conf = 'T')","80","05","commit","80","06","Update tempequip set te_termdate =
+(Select max ( de_arrdate) from disp_events , companies 
+where de_arrdate > '2004-01-01' and de_site = co_id and terminationlocation = 'T' and 
+(de_container1 = te_id or 
+de_container2 = te_id or 
+de_container3 = te_id or 
+de_container4 = te_id or 
+de_trailer1 = te_id or 
+de_trailer2 = te_id or 
+de_trailer3 = te_id) and de_conf = 'T')","80","07","commit","80","08","Update tempequip set te_status = 'D' where te_origdate is not null and te_termdate is not null","80","09","commit","80","10","insert into outside_equip ( oe_id, originationdate, terminationdate ) 
+select te_id, te_origdate, te_termdate from tempequip","80","11","commit","80","12","update equipment, tempequip
+set eq_status = 'D'
+
+where eq_id = te_id and te_status = 'D'","80","13","commit","80","14","drop table tempequip","80","15","commit","85","01","ALTER TABLE companies
+ADD PaymentTerms long varchar","85","02","ALTER TABLE disp_ship
+ADD PaymentTerms long varchar","85","03","Alter Table EQUIPMENT
+Add isocode long varchar","85","04","Alter Table EquipmentLeaseType
+Add scac char(10),
+Add enableposting char(1),
+Add yourscac char(10)","85","05","CREATE TABLE equipmentisodescription
+(id integer NOT NULL,
+code varchar(10),
+category varchar(10) NOT NULL,
+description long varchar NOT NULL,
+PRIMARY KEY (id)
+)","85","06","CREATE TABLE equipmentpostingstatus
+(equipmentid integer NOT NULL,
+postingstatus char(1),
+PRIMARY KEY (equipmentid),
+
+FOREIGN KEY fk_equipment (equipmentid)
+REFERENCES equipment on update cascade on delete cascade
+)","85","07","CREATE INDEX index_postingstatus ON equipmentpostingstatus (postingstatus)","85","08","CREATE TABLE equipmentpostingrulescompany
+(companyid integer NOT NULL,
+excludeifbillto integer,
+overridelocation integer,
+PRIMARY KEY (companyid),
+FOREIGN KEY fk_coid (companyid)
+REFERENCES companies on update cascade on delete cascade
+)","85","09","commit","85","10","ALTER TABLE paysplit
+ADD itemtype char(1)","85","11","CREATE TABLE useralerts
+(id integer NOT NULL,
+classname long varchar,
+
+sourceid integer,
+alertmessage long varchar NOT NULL,
+
+usergroup integer,
+createdby long varchar,
+createddate date,
+createdtime time,
+status tinyint,
+PRIMARY KEY (id)
+)","85","12","CREATE INDEX index_classid ON useralerts (classname , sourceid )","85","13","CREATE INDEX index_status ON useralerts (status DESC)","85","14","commit","85","15","CREATE TABLE eventtasks
+(taskid integer NOT NULL,
+eventtaskname long varchar NOT NULL,
+taskpriority integer NOT NULL,
+taskweight integer NOT NULL,
+processingstatus integer,
+PRIMARY KEY (taskid)
+)","85","16","CREATE PROCEDURE ~"DBA~".ptsp_204Import()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='204import';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;        if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'EDI 204 Import' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'204import',      3,      2,      null)  end if end;","85","17","CREATE PROCEDURE ~"DBA~".ptsp_204Process()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='204process';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;     if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'EDI 204 Process' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'204process',      2,      4,      null)  end if end;","85","18","CREATE PROCEDURE ~"DBA~".ptsp_NextelSync(  )begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='NEXTELSYNC';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;     if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'PT Mobile Direct' );     End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'NEXTELSYNC',      3,      1,      null)  end if end;","85","19","CREATE PROCEDURE ~"DBA~".ptsp_Syncromet()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='SYNCROMET';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;    if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'SynchroMet Equipment Matching' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'SYNCROMET',      5,      1,      null)  end if end;","85","20","commit","85","21","CREATE TABLE companyalias
+(context integer NOT NULL,
+contextcompanyid long varchar NOT NULL,
+ptcoid integer NOT NULL,
+PRIMARY KEY (context, contextcompanyid, ptcoid)
+)","85","22","ALTER TABLE edi204profile
+Add itemmatchingsegment char(3),
+Add itemmatchingelement char(3)","85","23","INSERT INTO equipmentisodescription ( id,code,category,description )
+VALUES ( 1,0,0, 'General Purpose Ctr - Open 1/both ends' )","85","24","INSERT INTO equipmentisodescription ( id,code,category,description )
+VALUES ( 2,1,0, 'General Purpose Ctr - Open 1/both ends + 1/both sides' )","85","25","INSERT INTO equipmentisodescription ( id,code,category,description )
+VALUES ( 3,2,0, 'General Purpose Ctr - Open 1/both ends + 1/both sides part' )","85","26","INSERT INTO equipmentisodescription ( id,code,category,description )
+VALUES ( 4,3,0, 'General Purpose Ctr - Open 1/both ends + roof' )","85","27","INSERT INTO equipmentisodescription ( id,code,category,description )
+VALUES ( 5,4,0, 'General Purpose Ctr - Open 1/both ends + 1/both sides + roof' )","85","28","INSERT INTO equipmentisodescription ( id,code,category,description )
+VALUES ( 6,50,5, 'Open top Ctr - open 1/both ends')","85","29","INSERT INTO equipmentisodescription ( id,code,category,description )
+VALUES ( 7,51,5, 'Open top Ctr - open 1/both ends + removable top' )","85","30","INSERT INTO equipmentisodescription ( id,code,category,description )
+VALUES ( 8,52,5, 'Open top Ctr - open 1/both ends + 1/both sides' )","85","31","INSERT INTO equipmentisodescription ( id,code,category,description )
+VALUES ( 9,53,5, 'Open top Ctr - open 1/both ends + 1/both sides + removable top' )","85","32","commit","86","01","ALTER TABLE importedshipments
+ADD processed integer","86","02","Update importedshipments set processed = 1","86","03","CREATE PROCEDURE ~"DBA~".ptsp_EventTaskProblem_Email(in as_Event Long varchar )BEGIN	declare ll_Rtn integer;    declare ls_Sender Long varchar;    declare ls_Recipient Long varchar;    declare ls_Server Long varchar;    declare ls_Message Long varchar;    declare ls_Subject Long varchar;    set ls_Message = 'The ~"' + as_Event + '~" event has not been executed. Please ensure that the PT Scheduler is running.';    set ls_Subject = ' ATTENTION --- Event Scheduler';              Select ss_string into ls_Server from system_settings where ss_id = 186;       Select ss_string into ls_Recipient from system_settings where ss_id = 187;       Select ss_string into ls_Sender from system_settings where ss_id = 188;       IF length ( ls_server )> 0 AND Length ( ls_Recipient ) > 0 AND Length ( ls_Sender ) > 0 THEN         ll_Rtn = CALL xp_startsmtp (smtp_sender = ls_Sender ,                            smtp_server = ls_Server);         IF ll_Rtn = 0 THEN          	ll_Rtn  = CALL xp_sendmail(recipient=ls_Recipient,              subject=ls_Subject,              ~"message~" = ls_Message );            ll_Rtn =   CALL  xp_stopsmtp ();         END IF;    END IF;END;","86","04","commit","87","01","CREATE PROCEDURE ~"DBA~".ptsp_AtRoad()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='ATROAD';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;        if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'AtRoad Messaging' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'ATROAD',      3,      1,      null)  end if end;","87","02","CREATE PROCEDURE ~"DBA~".ptsp_Cadec()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='CADEC';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;     if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'Cadec Messaging' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'CADEC',      3,      1,      null)  end if end;","87","03","CREATE PROCEDURE ~"DBA~".ptsp_Intouch(  )begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='INTOUCH';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;     if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'Intouch Messaging' );     End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'INTOUCH',      3,      1,      null)  end if end;","87","04","CREATE PROCEDURE ~"DBA~".ptsp_Qualcomm()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='QUALCOMM';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;    if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'Qualcomm Messaging' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'QUALCOMM',      3,      1,      null)  end if end;","87","05","commit","88","01","Alter Table edi204profile 
+Add ediversion Varchar( 20 )","88","02","CREATE TABLE edimappingfiles 
+(id integer NOT NULL, 
+company integer NOT NULL , 
+transactionset integer NOT NULL, 
+mappingfile long varchar
+)","88","03","Alter Table ediprofile add fileformat varchar (10) ","88","04","CREATE TABLE joinuseralert
+(employeeid integer NOT NULL ,
+alertid integer NOT NULL ,
+displaycount integer,
+
+FOREIGN KEY fk_useralert (alertid) 
+REFERENCES useralerts on update cascade ON DELETE CASCADE ,
+FOREIGN KEY fk_employeeid (employeeid ) 
+REFERENCES employees on update cascade ON DELETE CASCADE ,
+ primary key( employeeid, alertid )
+)","88","05","CREATE INDEX ndx_joinuseralert_employeeid ON joinuseralert (employeeid )","88","06","CREATE PROCEDURE ~"DBA~".~"ptsp_StatusRequests~"()
+begin
+  declare ll_TaskID integer;
+  declare ll_NextTaskID integer;
+  declare li_TaskPrio integer;
+  declare ls_Taskname varchar (20);
+  set ls_Taskname='statusrequests';
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,
+    li_TaskPrio from eventtasks
+    where eventtasks.eventtaskname=ls_Taskname;
+  if ll_TaskID>0 then
+    set li_TaskPrio=li_TaskPrio-1;
+    update eventtasks set
+      taskpriority=li_TaskPrio
+      where eventtasks.taskid=ll_TaskID;
+    
+    if li_TaskPrio < 0 THEN
+        Call ptsp_EventTaskProblem_Email ( 'Process Status Requests' );
+    End if;
+  else
+    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID
+      from eventtasks;
+    if ll_nexttaskid is null then
+      set ll_nexttaskid=0
+    end if
+    ;
+    set ll_nextTaskID=ll_nextTaskID+1;
+    insert into eventtasks(taskid,
+      eventtaskname,
+      taskpriority,
+      taskweight,
+      processingstatus) values(
+      ll_NextTaskID,ls_Taskname,
+      3,
+      2,
+      null)
+  end if
+end","88","07","CREATE PROCEDURE ~"DBA~".~"ptsp_PendingNotifications~"()
+begin
+  declare ll_TaskID integer;
+  declare ll_NextTaskID integer;
+  declare li_TaskPrio integer;
+  declare ls_Taskname varchar (20);
+  set ls_Taskname='pendingnotifications';
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,
+    li_TaskPrio from eventtasks
+    where eventtasks.eventtaskname=ls_Taskname;
+  if ll_TaskID>0 then
+    set li_TaskPrio=li_TaskPrio-1;
+    update eventtasks set
+      taskpriority=li_TaskPrio
+      where eventtasks.taskid=ll_TaskID;
+    
+    if li_TaskPrio < 0 THEN
+        Call ptsp_EventTaskProblem_Email ( 'Process Pending Notifications' );
+    End if;
+  else
+    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID
+      from eventtasks;
+    if ll_nexttaskid is null then
+      set ll_nexttaskid=0
+    end if
+    ;
+    set ll_nextTaskID=ll_nextTaskID+1;
+    insert into eventtasks(taskid,
+      eventtaskname,
+      taskpriority,
+      taskweight,
+      processingstatus) values(
+      ll_NextTaskID,ls_Taskname,
+      3,
+      2,
+      null)
+  end if
+end","88","08","INSERT INTO referencelist  
+( referenceid,   
+referencename,   
+referencecategory,   
+systemdefined )  
+VALUES ( 34,   
+'PERMIT #',   
+'REFERENCETYPE',   
+  'Y' ) ","88","09","UPDATE equipmentisodescription 
+Set code = '00' where id = 1","88","10","UPDATE equipmentisodescription 
+Set code = '01' where id = 2","88","11","UPDATE equipmentisodescription 
+Set code = '02' where id = 3","88","12","UPDATE equipmentisodescription 
+Set code = '03' where id = 4","88","13","UPDATE equipmentisodescription 
+Set code = '04' where id = 5","88","14","CREATE TRIGGER ~"removeInactiveAlerts~" AFTER UPDATE OF ~"status~"
+ORDER 1 ON ~"DBA~".~"useralerts~"
+REFERENCING OLD AS oldRow NEW AS newRow
+FOR EACH ROW  WHEN( newRow.status=0 )
+BEGIN
+Delete from joinuseralert where alertid = newrow.id;
+END;","88","15","CREATE TRIGGER ~"reactivateAlert~" AFTER UPDATE OF ~"status~"
+ORDER 2 ON ~"DBA~".~"useralerts~"
+
+REFERENCING OLD AS oldRow NEW AS newRow
+FOR EACH ROW  WHEN( newrow.status = 1 ) 
+BEGIN
+
+ INSERT INTO joinuseralert (~"employeeid~", ~"alertid~")
+ select em_id , newrow.id
+      from employees
+      where em_class <> 1001 and em_id not in (select employeeid from joinuseralert where alertid = newrow.id)
+END;","88","16","commit","89","1","CREATE TABLE companydocumentmapping 
+(targetcompanyid integer NOT NULL DEFAULT NULL, 
+targetcompanydocument varchar(50) NOT NULL DEFAULT NULL, 
+ptdocument varchar(50) NOT NULL DEFAULT NULL, 
+send char(1) DEFAULT NULL, 
+holdtransfer char(1) DEFAULT NULL,
+PRIMARY KEY (targetcompanyid, targetcompanydocument, ptdocument) , 
+FOREIGN KEY fk_CompanyDocMapping (targetcompanyid ) REFERENCES dba.companies ON DELETE CASCADE )","89","2","CREATE TABLE companydocumenttransfersettings 
+(coid integer NOT NULL DEFAULT NULL,
+targetaddress char(50) NOT NULL DEFAULT NULL, 
+
+userid char(50) DEFAULT NULL,
+password char(50) DEFAULT NULL,
+namingschema char(100) DEFAULT NULL, 
+multipageallowed char(1) DEFAULT NULL,
+compression char(50) DEFAULT NULL, 
+transfermode char(50) DEFAULT NULL,
+subjectline char(100) DEFAULT NULL,
+daystokeepactive integer DEFAULT NULL ,
+PRIMARY KEY (coid, targetaddress) , 
+FOREIGN KEY fk_company (coid ) REFERENCES dba.companies ON DELETE CASCADE )","89","3","CREATE TABLE documenttransferhistory 
+(id integer NOT NULL DEFAULT NULL, 
+company integer NOT NULL DEFAULT NULL,
+ documenttype char(50) NOT NULL DEFAULT NULL, 
+ source integer NOT NULL DEFAULT NULL, 
+ filename char(50) NOT NULL DEFAULT NULL, 
+ pagecount integer DEFAULT NULL, 
+ datesent date NOT NULL DEFAULT NULL , 
+ PRIMARY KEY (id) , 
+ FOREIGN KEY fk_tranferhistorycompanies (company ) REFERENCES dba.companies ON DELETE CASCADE )","89","4","CREATE TABLE transferdocumentqueue 
+(id integer NOT NULL DEFAULT NULL,
+targetcompany integer NOT NULL DEFAULT NULL,
+documenttype varchar(50) NOT NULL DEFAULT NULL,
+sourceid integer NOT NULL DEFAULT NULL, 
+holdtransfer char(1) DEFAULT NULL, 
+datesubmitted date DEFAULT NULL, 
+timesubmitted time DEFAULT NULL, 
+addedby char(50) DEFAULT NULL, 
+expirationdate date DEFAULT NULL ,
+PRIMARY KEY (id) , 
+FOREIGN KEY fk_TransferQueueCompany (targetcompany ) REFERENCES dba.companies ON DELETE CASCADE )","89","5","CREATE INDEX ~"ndx_edilog~" ON edi ( company ,transactionset )","89","6","CREATE PROCEDURE ~"DBA~".~"ptsp_Documenttransfer~"()begin  declare ll_TaskID integer;
+  declare ll_NextTaskID integer;
+  declare li_TaskPrio integer;
+  declare ls_Taskname varchar (20);
+  set ls_Taskname='documenttransfer';
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname=ls_Taskname;
+  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;
+    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;
+        if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'Document Transfer' );
+    End if;
+  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;
+    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;
+    set ll_nextTaskID=ll_nextTaskID+1;
+    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,ls_Taskname,      3,      2,      null);
+  end if;
+end;","89","7","commit","90","01","alter table edi204profile
+modify ediversion char (30)","90","02","commit","91","01","alter table edi204profile
+add pendingfiles long varchar DEFAULT NULL,
+add processedfiles long varchar DEFAULT NULL","91","02","CREATE INDEX ~"ndx_company_edihistory~" ON ~"DBA~".~"edi~" ( transactionset )","91","03","CREATE INDEX ~"ndx_Processed~" ON ~"DBA~".~"importedshipments~" ( processed )
+","91","04","commit","92","01","update disp_Items set di_pay_itemamt = 0 where di_pay_itemamt is null","92","02","update disp_Items set di_pay_rate = 0 where di_Pay_rate is null","92","03","commit","93","01","CREATE TABLE windowstate
+ (windowname char(50) NOT NULL DEFAULT NULL, 
+  xposition integer DEFAULT NULL,
+  yposition integer DEFAULT NULL, 
+  width integer DEFAULT NULL, 
+  height integer DEFAULT NULL, 
+  state char(10) DEFAULT NULL,
+  userid integer NOT NULL DEFAULT NULL, 
+  instance integer NOT NULL DEFAULT NULL,
+  active bit DEFAULT NULL , 
+  PRIMARY KEY (windowname, userid, instance)) ","93","02","update disp_Items set di_pay_itemamt = 0 where di_pay_itemamt is null","93","03","update disp_Items set di_pay_rate = 0 where di_Pay_rate is null","93","04","commit","94","01","CREATE PROCEDURE ~"DBA~".~"ptsp_322~"()begin  declare ll_TaskID integer;
+  declare ll_NextTaskID integer;
+  declare li_TaskPrio integer;
+  declare ls_Taskname varchar (20);
+  set ls_Taskname='322';
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname=ls_Taskname;
+  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;
+    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;
+        if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Email ( 'EDI 322' );
+    End if;
+  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;
+    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;
+    set ll_nextTaskID=ll_nextTaskID+1;
+    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,ls_Taskname,      4,      2,      null);
+  end if;
+end;","94","02","CREATE TABLE edi322status
+(eventid integer NOT NULL DEFAULT NULL, 
+status char(10) DEFAULT NULL, 
+userid integer NOT NULL DEFAULT NULL,
+entrydate date NOT NULL DEFAULT NULL,
+entrytime time NOT NULL DEFAULT NULL, 
+messagestatus integer NOT NULL DEFAULT NULL,
+sourceco integer NOT NULL DEFAULT NULL ,
+PRIMARY KEY (eventid) ,
+FOREIGN KEY fk_disp_events (eventid ) REFERENCES disp_events ON DELETE CASCADE )","94","03","alter table disp_events 
+MODIFY de_trailer integer","94","04","commit","95","01","alter table equipmentleasetype add dayofinterchangecounts integer ","95","02","DROP INDEX ndx_joinuseralert_employeeid ","95","03","commit","96","01","CREATE PROCEDURE ~"DBA~".~"ptsp_EventTaskProblem_Alert~"(  )
+
+BEGIN
+
+    declare li_Return Integer;
+
+    declare ls_Message varchar (200);
+
+    declare ll_NextAlertID integer; 
+
+    declare ll_targetUser integer;
+
+    Declare li_activeCount integer;
+
+    Declare li_PossibleCount Integer;
+
+   
+
+/* add the message to the db*/
+
+    Set li_Return = 1;
+
+    Set ls_Message = 'The Database is having problems executing scheduled tasks. Please notify the system administrator.';
+
+
+
+
+
+Select Count (distinct (~"ss_uid~") )
+
+into    li_activeCount
+
+from ~"system_settings~", ~"UserAlerts~" 
+
+where ss_id = 202 and ss_uid in (Select ~"employeeid~" from ~"joinuseralert~" , ~"Useralerts~" where ~"classname~" = 'DATABASE ALERT' AND id = alertid  );
+
+
+
+Select Count ( ~"ss_uid~" ) 
+
+into li_PossibleCount 
+
+From System_Settings
+
+Where ss_id = 202;
+
+
+
+
+
+
+
+IF li_PossibleCount <> li_ActiveCount THEN
+
+    CALL GetNextID ( 20/*user alert class*/ , ll_NextAlertID, 1/*commit = true*/ );
+
+    
+
+    INSERT INTO ~"useralerts~"  
+
+             ( ~"id~",   
+
+               ~"classname~",   
+
+               ~"sourceid~",   
+
+               ~"alertmessage~",   
+
+               ~"usergroup~" ,
+
+    		   ~"createdby~",
+
+    		   ~"createddate~",
+
+    		   ~"createdtime~",
+
+    		   ~"status~"	)  
+
+    VALUES ( ll_NextAlertID,   
+
+             'DATABASE ALERT',   
+
+              null,   
+
+              ls_Message,   
+
+              null,
+
+    		 'SYSTEM',
+
+    		  today(),
+
+    		  now(),
+
+              1 )  ;
+
+  
+
+        IF sqlcode <>  0 THEN
+
+            Set li_Return = -1;
+
+        ELSE
+
+
+
+
+        INSERT INTO ~"joinuseralert~"
+
+        Select distinct (~"ss_uid~") AS ~"employeeid~", ll_NextAlertId AS ~"alertid~", null as ~"displaycount~"
+
+         from ~"system_settings~", ~"UserAlerts~" 
+
+
+            where ss_id = 202 and ss_uid not in (Select ~"employeeid~" from ~"joinuseralert~" , ~"Useralerts~" where ~"classname~" = 'DATABASE ALERT' AND id = alertid  );
+
+
+
+            IF sqlcode <>  0 THEN
+
+                Set li_Return = -1;
+
+            END IF
+
+        END IF;
+
+
+END IF;
+
+
+
+IF li_Return = 1 THEN
+
+
+    Commit;
+
+ELSE
+
+    Rollback;
+
+END IF
+
+
+
+END;","96","02","ALTER PROCEDURE ~"DBA~".~"ptsp_204Import~"()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='204import';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;        if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Alert ( );Call ptsp_EventTaskProblem_Email ( 'EDI 204 Import' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'204import',      3,      2,      null)  end if end;
+","96","03","ALTER PROCEDURE ~"DBA~".~"ptsp_204Process~"()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='204process';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;     if li_TaskPrio < 0 THEN       Call ptsp_EventTaskProblem_Alert ( ); Call ptsp_EventTaskProblem_Email ( 'EDI 204 Process' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'204process',      2,      4,      null)  end if end;
+","96","04","ALTER  PROCEDURE ~"DBA~".~"ptsp_322~"()begin  declare ll_TaskID integer;
+
+  declare ll_NextTaskID integer;
+
+  declare li_TaskPrio integer;
+
+  declare ls_Taskname varchar (20);
+
+  set ls_Taskname='322';
+
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname=ls_Taskname;
+
+  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;
+
+    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;
+
+        if li_TaskPrio < 0 THEN        
+
+            Call ptsp_EventTaskProblem_Alert ( );
+
+            Call ptsp_EventTaskProblem_Email ( 'EDI 322' );
+
+        End if;
+
+  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;
+
+    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;
+
+    set ll_nextTaskID=ll_nextTaskID+1;
+
+    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,ls_Taskname,      4,      2,      null);
+
+  end if;
+
+end;","96","05","ALTER  PROCEDURE ~"DBA~".~"ptsp_AtRoad~"()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='ATROAD';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;        if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Alert ( );Call ptsp_EventTaskProblem_Email ( 'AtRoad Messaging' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'ATROAD',      3,      1,      null)  end if end;
+","96","06","ALTER  PROCEDURE ~"DBA~".~"ptsp_Cadec~"()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='CADEC';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;     if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Alert ( ); Call ptsp_EventTaskProblem_Email ( 'Cadec Messaging' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'CADEC',      3,      1,      null)  end if end;
+","96","07","ALTER  PROCEDURE ~"DBA~".~"ptsp_Documenttransfer~"()begin  declare ll_TaskID integer;
+
+  declare ll_NextTaskID integer;
+
+  declare li_TaskPrio integer;
+
+  declare ls_Taskname varchar (20);
+
+  set ls_Taskname='documenttransfer';
+
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname=ls_Taskname;
+
+  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;
+
+    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;
+
+        if li_TaskPrio < 0 THEN        
+
+            Call ptsp_EventTaskProblem_Alert ( );
+
+            Call ptsp_EventTaskProblem_Email ( 'Document Transfer' );
+
+        End if;
+
+  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;
+
+    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;
+
+    set ll_nextTaskID=ll_nextTaskID+1;
+
+    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,ls_Taskname,      3,      2,      null);
+
+  end if;
+
+end;","96","08","ALTER  PROCEDURE ~"DBA~".~"ptsp_Intouch~"(  )begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='INTOUCH';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;     if li_TaskPrio < 0 THEN        Call ptsp_EventTaskProblem_Alert ( );Call ptsp_EventTaskProblem_Email ( 'Intouch Messaging' );     End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'INTOUCH',      3,      1,      null)  end if end;
+","96","09","ALTER  PROCEDURE ~"DBA~".~"ptsp_NextelSync~"(  )begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='NEXTELSYNC';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;     if li_TaskPrio < 0 THEN      Call ptsp_EventTaskProblem_Alert ( );  Call ptsp_EventTaskProblem_Email ( 'PT Mobile Direct' );     End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'NEXTELSYNC',      3,      1,      null)  end if end;
+","96","10","ALTER  PROCEDURE ~"DBA~".~"ptsp_PendingNotifications~"()
+
+begin
+
+  declare ll_TaskID integer;
+
+  declare ll_NextTaskID integer;
+
+  declare li_TaskPrio integer;
+
+  declare ls_Taskname varchar (20);
+
+  set ls_Taskname='pendingnotifications';
+
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,
+
+    li_TaskPrio from eventtasks
+
+    where eventtasks.eventtaskname=ls_Taskname;
+
+  if ll_TaskID>0 then
+
+    set li_TaskPrio=li_TaskPrio-1;
+
+    update eventtasks set
+
+      taskpriority=li_TaskPrio
+
+      where eventtasks.taskid=ll_TaskID;
+
+    
+
+    if li_TaskPrio < 0 THEN
+
+        Call ptsp_EventTaskProblem_Alert ( );
+
+        Call ptsp_EventTaskProblem_Email ( 'Process Pending Notifications' );
+
+    End if;
+
+  else
+
+    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID
+
+      from eventtasks;
+
+    if ll_nexttaskid is null then
+
+      set ll_nexttaskid=0
+
+    end if
+
+    ;
+
+    set ll_nextTaskID=ll_nextTaskID+1;
+
+    insert into eventtasks(taskid,
+
+      eventtaskname,
+
+      taskpriority,
+
+      taskweight,
+
+      processingstatus) values(
+
+      ll_NextTaskID,ls_Taskname,
+
+      3,
+
+      2,
+
+      null)
+
+  end if
+
+end;","96","11","ALTER  PROCEDURE ~"DBA~".~"ptsp_Qualcomm~"()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='QUALCOMM';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;    if li_TaskPrio < 0 THEN       Call ptsp_EventTaskProblem_Alert ( ); Call ptsp_EventTaskProblem_Email ( 'Qualcomm Messaging' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'QUALCOMM',      3,      1,      null)  end if end;
+","96","12","ALTER  PROCEDURE ~"DBA~".~"ptsp_StatusRequests~"()
+
+begin
+
+  declare ll_TaskID integer;
+
+  declare ll_NextTaskID integer;
+
+  declare li_TaskPrio integer;
+
+  declare ls_Taskname varchar (20);
+
+  set ls_Taskname='statusrequests';
+
+  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,
+
+    li_TaskPrio from eventtasks
+
+    where eventtasks.eventtaskname=ls_Taskname;
+
+  if ll_TaskID>0 then
+
+    set li_TaskPrio=li_TaskPrio-1;
+
+    update eventtasks set
+
+      taskpriority=li_TaskPrio
+
+      where eventtasks.taskid=ll_TaskID;
+
+    
+
+    if li_TaskPrio < 0 THEN
+
+        Call ptsp_EventTaskProblem_Alert ( );
+
+        Call ptsp_EventTaskProblem_Email ( 'Process Status Requests' );
+
+    End if;
+
+  else
+
+    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID
+
+      from eventtasks;
+
+    if ll_nexttaskid is null then
+
+      set ll_nexttaskid=0
+
+    end if
+
+    ;
+
+    set ll_nextTaskID=ll_nextTaskID+1;
+
+    insert into eventtasks(taskid,
+
+      eventtaskname,
+
+      taskpriority,
+
+      taskweight,
+
+      processingstatus) values(
+
+      ll_NextTaskID,ls_Taskname,
+
+      3,
+
+      2,
+
+      null)
+
+  end if
+
+end;","96","13","ALTER  PROCEDURE ~"DBA~".~"ptsp_Syncromet~"()begin  declare ll_TaskID integer;  declare ll_NextTaskID integer;  declare li_TaskPrio integer;  select eventtasks.taskid,eventtasks.taskpriority into ll_TaskID,    li_TaskPrio from eventtasks    where eventtasks.eventtaskname='SYNCROMET';  if ll_TaskID>0 then    set li_TaskPrio=li_TaskPrio-1;    update eventtasks set      taskpriority=li_TaskPrio      where eventtasks.taskid=ll_TaskID;    if li_TaskPrio < 0 THEN     Call ptsp_EventTaskProblem_Alert ( );   Call ptsp_EventTaskProblem_Email ( 'SynchroMet Equipment Matching' );    End if;  else    select ~"Max~"(eventtasks.taskid) into ll_NextTaskID      from eventtasks;    if ll_nexttaskid is null then      set ll_nexttaskid=0    end if    ;    set ll_nextTaskID=ll_nextTaskID+1;    insert into eventtasks(taskid,      eventtaskname,      taskpriority,      taskweight,      processingstatus) values(      ll_NextTaskID,'SYNCROMET',      5,      1,      null)  end if end;
+","96","14","Commit","97","01","ALTER TABLE edistatusprofile
+ADD needsStopIndicator smallint NULL","97","02","Update edistatusprofile set needsStopIndicator = 0","97","03","commit","98","01","CREATE TABLE ~"DBA~".~"companyinvoicetransfersettings~" (
+~"coid~" integer NOT NULL,
+~"targetaddress~" char(50) NOT NULL,
+~"subjectline~" char(100) NULL,
+~"namingschema~" char(100) NULL,
+~"transfermode~" char(50) NULL,
+~"bccaddress~" char(50) NULL,
+PRIMARY KEY ( ~"coid~", ~"targetaddress~" )
+)","98","02","CREATE TABLE ~"DBA~".~"companyinvoicemapping~" (
+~"targetcompanyid~" integer NOT NULL,
+~"targetcompanydocument~" varchar(50) NOT NULL,
+~"ptdocument~" varchar(50) NOT NULL,
+~"namingschema~" char(100) NULL,
+PRIMARY KEY ( ~"targetcompanyid~", ~"targetcompanydocument~", ~"ptdocument~" )
+)","98","03","Alter Table companies
+Add EmailInvoice char(1) NULL","98","04","commit","99","01","CREATE TABLE ~"dba~".~"openshipments~" (~"userid~" integer NOT NULL DEFAULT NULL, ~"shipid~" integer NOT NULL DEFAULT NULL, ~"username~" long varchar NOT NULL DEFAULT NULL, ~"machinename~" long varchar NOT NULL DEFAULT NULL, ~"openorder~" integer DEFAULT NULL, ~"handle~" integer NOT NULL DEFAULT NULL, ~"framehandle~" integer NOT NULL DEFAULT NULL , PRIMARY KEY (~"userid~", ~"shipid~", ~"machinename~", ~"framehandle~") , FOREIGN KEY ~"fk_employees~" (~"userid~" ) REFERENCES ~"dba~".~"employees~" ON DELETE CASCADE ) ","99","02","CREATE INDEX ~"ndx_opendshipments_shipid~" ON ~"dba~".~"openshipments~" (~"shipid~" )","99","03","Alter Table edi204profile Add autorate char(5) NULL","99","04","Alter Table ediprofile Add SefFilePath long varchar NULL","99","05","Alter Table ediprofile Add RemotePaths long varchar NULL","99","06","Alter Table ediprofile Add deleteRemotely Integer NULL","99","07","CREATE TABLE ~"dba~".~"disp_itemlinkfscrate~" (~"rate~" numeric(20,6) NOT NULL DEFAULT NULL, ~"di_itemfsc_id~" integer NOT NULL DEFAULT NULL, ~"type~" long varchar NOT NULL DEFAULT NULL , PRIMARY KEY (~"di_itemfsc_id~") , FOREIGN KEY ~"disp_items~" (~"di_itemfsc_id~" ) REFERENCES ~"dba~".~"disp_items~" ON DELETE CASCADE ) ","99","08","CREATE TABLE ~"dba~".~"edi_transportsettings~" (~"co_id~" integer NOT NULL DEFAULT NULL, ~"mode~" integer DEFAULT NULL, ~"port~" integer DEFAULT NULL, ~"userid~" char(50) DEFAULT NULL, ~"password~" char(50) DEFAULT NULL, ~"timeout~" integer DEFAULT NULL, ~"protocol~" char(5) DEFAULT NULL, ~"address~" long varchar DEFAULT NULL , PRIMARY KEY (~"co_id~")) ","99","09","CREATE TABLE ~"dba~".~"imagemods~" (~"modid~" integer NOT NULL DEFAULT NULL, ~"category~" long varchar NOT NULL DEFAULT NULL, ~"type~" long varchar NOT NULL DEFAULT NULL, ~"topic~" long varchar NOT NULL DEFAULT NULL, ~"moddescription~" long varchar NOT NULL DEFAULT NULL, ~"moddate~" timestamp NOT NULL DEFAULT NULL, ~"user~" long varchar NOT NULL DEFAULT NULL)","99","10","CREATE INDEX ~"indx_imagemodlog_date~" ON ~"dba~".~"imagemods~" (~"moddate~" )","99","11","ALTER TABLE join_dispship_arbatch ADD
+validated char(1)","99","12","commit",)

@@ -1,0 +1,24 @@
+﻿$PBExportHeader$d_shipment_fte_primary.srd
+$PBExportComments$Used in n_cst_ShipmentManager.of_PopulateExtendedShipmentData, to load shipment free time expiration.
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=4 color="536870912" )
+footer(height=4 color="536870912" )
+detail(height=16 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=ds_id dbname="disp_ship.ds_id" )
+ column=(type=date updatewhereclause=yes name=freetimeexpiration dbname="outside_equip.leasefreetimeexpiredate" )
+ retrieve="  SELECT ~"DBA~".~"disp_ship~".~"ds_id~",   
+         ~"outside_equip~".~"leasefreetimeexpiredate~"  
+    FROM ~"DBA~".~"disp_ship~",   
+         ~"equipment~",   
+         ~"outside_equip~"  
+   WHERE ( ~"outside_equip~".~"oe_id~" = ~"equipment~".~"eq_id~" ) and  
+         ( ~"outside_equip~".~"shipment~" = ~"DBA~".~"disp_ship~".~"ds_id~" ) and  
+         ( (  ~"ds_id~" IN ( :ala_shipments  ) ) AND  
+         ( ~"equipment~".~"eq_type~" <> 'H'  ) )    
+" arguments=(("ala_Shipments", numberlist)) )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

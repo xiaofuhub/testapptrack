@@ -1,0 +1,17 @@
+﻿$PBExportHeader$d_companybycontacts.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=1 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=1 grid.columnmove=no selected.mouse=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=companies_co_id dbname="companies.co_id" )
+ column=(type=char(45) updatewhereclause=yes name=companies_co_name dbname="companies.co_name" )
+ column=(type=long updatewhereclause=yes name=contacts_ct_co dbname="contacts.ct_co" )
+ column=(type=char(32766) updatewhereclause=no name=role dbname="role" )
+ column=(type=long updatewhereclause=yes name=companychecked dbname="companychecked" initial="1" values="	1/	0" )
+ retrieve="PBSELECT( VERSION(400) DISTINCT ()TABLE(NAME=~"companies~" )  TABLE(NAME=~"contacts~" ) COLUMN(NAME=~"companies.co_id~") COLUMN(NAME=~"companies.co_name~") COLUMN(NAME=~"contacts.ct_co~") COMPUTE(NAME=~"Convert ( long varchar , null ) as ~~~"role~~~"~") COMPUTE(NAME=~"Convert ( integer , null ) as ~~~"CompanyChecked~~~"~")    JOIN (LEFT=~"contacts.ct_co~"    OP =~"=~"RIGHT=~"companies.co_id~" )WHERE(    EXP1 =~"( ( ~~~"contacts~~~".~~~"ct_id~~~"~"   OP =~"in~"    EXP2 =~"( :ala_ContactIds ) ) )~" ) ) ARG(NAME = ~"ala_ContactIds~" TYPE = numberlist) " arguments=(("ala_ContactIds", numberlist)) )
+text(band=header alignment="0" text="Role"border="0" color="0" x="1166" y="20" height="56" width="654"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1166" y="4" height="60" width="654" format="[general]"  name=role edit.limit=0 edit.case=any edit.autoselect=yes edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="128" y="4" height="60" width="1029" format="[general]"  name=companies_co_name edit.limit=45 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=5 alignment="2" tabsequence=10 border="0" color="0" x="9" y="4" height="60" width="110" format="[general]"  name=companychecked checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

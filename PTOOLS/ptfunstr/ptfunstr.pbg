@@ -1,0 +1,41 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptfunstr\\ptfunstr.pbl" "";
+@end;
+@begin Objects
+ "ptools\\ptfunstr\\gf_rows_sync.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_getshiptypevalue.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\substitute.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\nullornotpos.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_find_emp.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_parm.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_eq_info.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_global_str.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_any.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_anys.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_coname_index.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_emp_info.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_mask_menu.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_priv_dw.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_emp_info.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_refresh.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\getddlbindex.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\reltime_ext.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_eq_info.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_secondsafter.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_date_return.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_getappvalue.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_class_info.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\f_popmenu.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_mapping.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "PTOOLS\\ptfunstr\\f_pop_standard.srf" "PTOOLS\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_toolmenu.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_privs.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_multiselect.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\f_process_standard.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\gf_getcompanyvalue.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_longs.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_strings.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\s_list_settings.srs" "ptools\\ptfunstr\\ptfunstr.pbl";
+ "ptools\\ptfunstr\\nullorneg.srf" "ptools\\ptfunstr\\ptfunstr.pbl";
+@end;

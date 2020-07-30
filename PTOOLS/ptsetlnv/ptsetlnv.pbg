@@ -1,0 +1,42 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptsetlnv\\ptsetlnv.pbl" "";
+@end;
+@begin Objects
+ "ptools\\ptsetlnv\\n_cst_dlkc_join_entity_amounttemplate.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_bso_importmanager_tch.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_dlkc_accountmap.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "PTOOLS\\ptsetlnv\\n_cst_beo_accountmap.sru" "PTOOLS\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_taskmanager_editamounttypes.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_taskmanager_editrefnumtypes.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_taskmanager_containertest.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_taskmanager_editratetypes.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_dlkc_entity.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_dlkc_amountowed.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_dlkc_amounttype.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_dlkc_refnumtype.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_taskmanager_importamounts.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_beo_entity.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_dlkc_transaction.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_beo_refnumtype.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_dlkc_ratetype.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_beo_amountowed.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_beo_amounttype.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_beo_transaction.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_dlkc_amounttemplate.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_beo_ratetype.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_presentation_amounttemplate.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_bso_fueltax.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_beo_amounttemplate.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_bso_importmanager.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_eventblock.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_bso_transactionmanager.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_beo_join_entity_amounttemplate.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_presentation_transaction.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_bso_importmanager_comdata.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_bso_importmanager_tchek.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_presentation_amountowed.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_presentation_amounttype.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_presentation_refnumtype.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+ "ptools\\ptsetlnv\\n_cst_presentation_ratetype.sru" "ptools\\ptsetlnv\\ptsetlnv.pbl";
+@end;

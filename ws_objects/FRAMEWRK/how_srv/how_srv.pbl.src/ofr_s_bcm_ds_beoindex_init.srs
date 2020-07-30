@@ -1,0 +1,5 @@
+﻿$PBExportHeader$ofr_s_bcm_ds_beoindex_init.srs
+global type ofr_s_bcm_ds_beoindex_init from structure
+	long		beo_index
+end type
+

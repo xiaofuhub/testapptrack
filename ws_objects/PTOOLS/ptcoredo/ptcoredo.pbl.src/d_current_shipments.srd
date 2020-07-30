@@ -1,0 +1,423 @@
+﻿$PBExportHeader$d_current_shipments.srd
+$PBExportComments$**d_shipmentlist_xxxx, plus 4 others with SAME STRUCTURE: d_bill_list, d_shipmentcache, d_current_shipments, d_shipmentlistcustom.**
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=4 color="553648127" )
+table(column=(type=long updatewhereclause=yes name=ds_id dbname="disp_ship.ds_id" )
+ column=(type=char(15) updatewhereclause=yes name=ds_pronum dbname="disp_ship.ds_pronum" )
+ column=(type=long updatewhereclause=yes name=ds_origin_id dbname="disp_ship.ds_origin_id" )
+ column=(type=long updatewhereclause=yes name=ds_findest_id dbname="disp_ship.ds_findest_id" )
+ column=(type=long updatewhereclause=yes name=ds_billto_id dbname="disp_ship.ds_billto_id" )
+ column=(type=long updatewhereclause=yes name=ds_pay1_id dbname="disp_ship.ds_pay1_id" )
+ column=(type=long updatewhereclause=yes name=ds_total_miles dbname="disp_ship.ds_total_miles" )
+ column=(type=long updatewhereclause=yes name=ds_total_weight dbname="disp_ship.ds_total_weight" )
+ column=(type=char(1) updatewhereclause=yes name=ds_hazmat dbname="disp_ship.ds_hazmat" )
+ column=(type=char(1) updatewhereclause=yes name=ds_expedite dbname="disp_ship.ds_expedite" )
+ column=(type=decimal(2) updatewhereclause=yes name=ds_bill_charge dbname="disp_ship.ds_bill_charge" )
+ column=(type=decimal(2) updatewhereclause=yes name=ds_pay_totamt dbname="disp_ship.ds_pay_totamt" )
+ column=(type=char(1) updatewhereclause=yes name=ds_status dbname="disp_ship.ds_status" )
+ column=(type=long updatewhereclause=yes name=ds_brok_trip dbname="disp_ship.ds_brok_trip" )
+ column=(type=long updatewhereclause=yes name=ds_intsig dbname="disp_ship.ds_intsig" )
+ column=(type=char(1) updatewhereclause=yes name=ds_dorb dbname="disp_ship.ds_dorb" )
+ column=(type=char(1) updatewhereclause=yes name=ds_pay_format dbname="disp_ship.ds_pay_format" )
+ column=(type=date updatewhereclause=yes name=ds_ship_date dbname="disp_ship.ds_ship_date" )
+ column=(type=long updatewhereclause=yes name=ds_ref1_type dbname="disp_ship.ds_ref1_type" )
+ column=(type=char(32766) updatewhereclause=yes name=ds_ref1_text dbname="disp_ship.ds_ref1_text" )
+ column=(type=char(45) updatewhereclause=yes name=billto_name dbname="billto_name" )
+ column=(type=char(45) updatewhereclause=yes name=origin_name dbname="origin_name" )
+ column=(type=char(20) updatewhereclause=yes name=origin_city dbname="origin_city" )
+ column=(type=char(3) updatewhereclause=yes name=origin_state dbname="origin_state" )
+ column=(type=char(45) updatewhereclause=yes name=findest_name dbname="findest_name" )
+ column=(type=char(20) updatewhereclause=yes name=findest_city dbname="findest_city" )
+ column=(type=char(3) updatewhereclause=yes name=findest_state dbname="findest_state" )
+ column=(type=long updatewhereclause=yes name=event_count dbname="current_shipments.event_count" )
+ column=(type=long updatewhereclause=yes name=routed dbname="current_shipments.routed" )
+ column=(type=long updatewhereclause=yes name=assigned dbname="current_shipments.assigned" )
+ column=(type=long updatewhereclause=yes name=completed dbname="current_shipments.completed" )
+ column=(type=char(32766) updatewhereclause=yes name=cs_timestamp dbname="cs_timestamp" )
+ column=(type=long updatewhereclause=yes name=cc_nextevent_id dbname="cc_nextevent_id" )
+ column=(type=char(1) updatewhereclause=yes name=cc_nextevent_type dbname="cc_nextevent_type" )
+ column=(type=long updatewhereclause=yes name=cc_nextevent_site dbname="cc_nextevent_site" )
+ column=(type=char(45) updatewhereclause=yes name=cc_nextevent_company dbname="cc_nextevent_company" )
+ column=(type=char(20) updatewhereclause=yes name=cc_nextevent_city dbname="cc_nextevent_city" )
+ column=(type=char(3) updatewhereclause=yes name=cc_nextevent_state dbname="cc_nextevent_state" )
+ column=(type=char(30) updatewhereclause=yes name=cc_nextevent_location dbname="cc_nextevent_location" )
+ column=(type=date updatewhereclause=yes name=cc_nextevent_date dbname="cc_nextevent_date" )
+ column=(type=time updatewhereclause=yes name=cc_nextevent_time dbname="cc_nextevent_time" )
+ column=(type=long updatewhereclause=yes name=cc_equip_id dbname="cc_equip_id" )
+ column=(type=char(1) updatewhereclause=yes name=cc_equip_type dbname="cc_equip_type" )
+ column=(type=char(15) updatewhereclause=yes name=cc_equip_ref dbname="cc_equip_ref" )
+ column=(type=char(45) updatewhereclause=yes name=cc_equip_description dbname="cc_equip_description" )
+ column=(type=long updatewhereclause=yes name=cc_curevent_id dbname="cc_curevent_id" )
+ column=(type=char(1) updatewhereclause=yes name=cc_curevent_type dbname="cc_curevent_type" )
+ column=(type=long updatewhereclause=yes name=cc_curevent_site dbname="cc_curevent_site" )
+ column=(type=char(45) updatewhereclause=yes name=cc_curevent_company dbname="cc_curevent_company" )
+ column=(type=char(20) updatewhereclause=yes name=cc_curevent_city dbname="cc_curevent_city" )
+ column=(type=char(3) updatewhereclause=yes name=cc_curevent_state dbname="cc_curevent_state" )
+ column=(type=char(30) updatewhereclause=yes name=cc_curevent_location dbname="cc_curevent_location" )
+ column=(type=date updatewhereclause=yes name=cc_curevent_date dbname="cc_curevent_date" )
+ column=(type=time updatewhereclause=yes name=cc_curevent_time dbname="cc_curevent_time" )
+ column=(type=long updatewhereclause=yes name=ds_ship_type dbname="disp_ship.ds_ship_type" )
+ column=(type=date updatewhereclause=yes name=cc_origin_date dbname="cc_origin_date" )
+ column=(type=time updatewhereclause=yes name=cc_origin_time dbname="cc_origin_time" )
+ column=(type=date updatewhereclause=yes name=cc_findest_date dbname="cc_findest_date" )
+ column=(type=time updatewhereclause=yes name=cc_findest_time dbname="cc_findest_time" )
+ column=(type=char(1) updatewhereclause=yes name=cc_origin_conf dbname="cc_origin_conf" )
+ column=(type=char(1) updatewhereclause=yes name=cc_findest_conf dbname="cc_findest_conf" )
+ column=(type=char(30) updatewhereclause=yes name=billto_salesrep dbname="billto_salesrep" )
+ column=(type=char(32766) updatewhereclause=no name=custom1 dbname="disp_ship.custom1" )
+ column=(type=char(32766) updatewhereclause=no name=custom2 dbname="disp_ship.custom2" )
+ column=(type=char(32766) updatewhereclause=no name=custom3 dbname="disp_ship.custom3" )
+ column=(type=char(32766) updatewhereclause=no name=custom4 dbname="disp_ship.custom4" )
+ column=(type=char(32766) updatewhereclause=no name=custom5 dbname="disp_ship.custom5" )
+ column=(type=char(32766) updatewhereclause=no name=custom6 dbname="disp_ship.custom6" )
+ column=(type=char(32766) updatewhereclause=no name=custom7 dbname="disp_ship.custom7" )
+ column=(type=char(32766) updatewhereclause=no name=custom8 dbname="disp_ship.custom8" )
+ column=(type=char(32766) updatewhereclause=no name=custom9 dbname="disp_ship.custom9" )
+ column=(type=char(32766) updatewhereclause=no name=custom10 dbname="disp_ship.custom10" )
+ column=(type=char(32766) updatewhereclause=yes name=movetype dbname="disp_ship.movetype" )
+ column=(type=char(32766) updatewhereclause=yes name=originport dbname="disp_ship.originport" )
+ column=(type=char(32766) updatewhereclause=yes name=destinationport dbname="disp_ship.destinationport" )
+ column=(type=char(32766) updatewhereclause=yes name=line dbname="disp_ship.line" )
+ column=(type=char(32766) updatewhereclause=yes name=vessel dbname="disp_ship.vessel" )
+ column=(type=char(32766) updatewhereclause=yes name=voyage dbname="disp_ship.voyage" )
+ column=(type=date updatewhereclause=yes name=cutoffdate dbname="disp_ship.cutoffdate" )
+ column=(type=time updatewhereclause=yes name=cutofftime dbname="disp_ship.cutofftime" )
+ column=(type=date updatewhereclause=yes name=arrivaldate dbname="disp_ship.arrivaldate" )
+ column=(type=time updatewhereclause=yes name=arrivaltime dbname="disp_ship.arrivaltime" )
+ column=(type=date updatewhereclause=yes name=lastfreedate dbname="disp_ship.lastfreedate" )
+ column=(type=time updatewhereclause=yes name=lastfreetime dbname="disp_ship.lastfreetime" )
+ column=(type=long updatewhereclause=yes name=ds_ref2_type dbname="disp_ship.ds_ref2_type" )
+ column=(type=char(32766) updatewhereclause=yes name=ds_ref2_text dbname="disp_ship.ds_ref2_text" )
+ column=(type=long updatewhereclause=yes name=ds_ref3_type dbname="disp_ship.ds_ref3_type" )
+ column=(type=char(32766) updatewhereclause=yes name=ds_ref3_text dbname="disp_ship.ds_ref3_text" )
+ column=(type=char(40) updatewhereclause=yes name=ds_equip_req dbname="disp_ship.ds_equip_req" )
+ column=(type=decimal(2) updatewhereclause=yes name=ds_lh_totamt dbname="disp_ship.ds_lh_totamt" )
+ column=(type=decimal(2) updatewhereclause=yes name=ds_ac_totamt dbname="disp_ship.ds_ac_totamt" )
+ column=(type=decimal(2) updatewhereclause=yes name=ds_pay_lh_totamt dbname="disp_ship.ds_pay_lh_totamt" )
+ column=(type=decimal(2) updatewhereclause=yes name=ds_pay_ac_totamt dbname="disp_ship.ds_pay_ac_totamt" )
+ column=(type=date updatewhereclause=yes name=ds_bill_date dbname="disp_ship.ds_bill_date" )
+ column=(type=long updatewhereclause=yes name=ds_parentid dbname="disp_ship.ds_parentid" )
+ column=(type=char(32766) updatewhereclause=yes name=booking dbname="disp_ship.booking" )
+ column=(type=char(32766) updatewhereclause=yes name=seal dbname="disp_ship.seal" )
+ column=(type=char(32766) updatewhereclause=yes name=masterbl dbname="disp_ship.masterbl" )
+ column=(type=char(32766) updatewhereclause=yes name=housebl dbname="disp_ship.housebl" )
+ column=(type=char(32766) updatewhereclause=yes name=forwarderref dbname="disp_ship.forwarderref" )
+ column=(type=char(32766) updatewhereclause=yes name=agentref dbname="disp_ship.agentref" )
+ column=(type=long updatewhereclause=yes name=forwarder dbname="disp_ship.forwarder" )
+ column=(type=long updatewhereclause=yes name=agent dbname="disp_ship.agent" )
+ column=(type=char(32766) updatewhereclause=no name=dispatchedby dbname="disp_ship.dispatchedby" )
+ column=(type=date updatewhereclause=yes name=availableon dbname="disp_ship.availableon" )
+ column=(type=date updatewhereclause=yes name=availableuntil dbname="disp_ship.availableuntil" )
+ column=(type=decimal(3) updatewhereclause=yes name=shipment_totalpieces dbname="shipment_totalpieces" )
+ column=(type=char(45) updatewhereclause=yes name=carrier_name dbname="carrier_name" )
+ column=(type=decimal(1) updatewhereclause=yes name=item1_miles dbname="item1_miles" )
+ column=(type=char(10) updatewhereclause=yes name=item1_ratetype dbname="item1_ratetype" )
+ column=(type=decimal(4) updatewhereclause=yes name=item1_rate dbname="item1_rate" )
+ column=(type=decimal(2) updatewhereclause=yes name=item1_charges dbname="item1_charges" )
+ column=(type=char(10) updatewhereclause=yes name=item1_payratetype dbname="item1_payratetype" )
+ column=(type=decimal(4) updatewhereclause=yes name=item1_payrate dbname="item1_payrate" )
+ column=(type=decimal(2) updatewhereclause=yes name=item1_payables dbname="item1_payables" )
+ column=(type=char(5) updatewhereclause=yes name=nextevent_assigned dbname="nextevent_assigned" )
+ column=(type=char(5) updatewhereclause=yes name=nextevent_dispatched dbname="nextevent_dispatched" )
+ column=(type=char(5) updatewhereclause=yes name=nextevent_arrived dbname="nextevent_arrived" )
+ column=(type=char(15) updatewhereclause=yes name=nextevent2_type dbname="nextevent2_type" )
+ column=(type=long updatewhereclause=yes name=nextevent2_siteid dbname="nextevent2_siteid" )
+
+ column=(type=char(45) updatewhereclause=yes name=nextevent2_site dbname="nextevent2_site" )
+ column=(type=char(20) updatewhereclause=yes name=nextevent2_city dbname="nextevent2_city" )
+ column=(type=char(3) updatewhereclause=yes name=nextevent2_state dbname="nextevent2_state" )
+ column=(type=date updatewhereclause=yes name=nextevent2_date dbname="nextevent2_date" )
+ column=(type=time updatewhereclause=yes name=nextevent2_time dbname="nextevent2_time" )
+ column=(type=char(5) updatewhereclause=yes name=nextevent2_assigned dbname="nextevent2_assigned" )
+ column=(type=char(15) updatewhereclause=yes name=nextevent3_type dbname="nextevent3_type" )
+ column=(type=long updatewhereclause=yes name=nextevent3_siteid dbname="nextevent3_siteid" )
+ column=(type=char(45) updatewhereclause=yes name=nextevent3_site dbname="nextevent3_site" )
+ column=(type=char(20) updatewhereclause=yes name=nextevent3_city dbname="nextevent3_city" )
+ column=(type=char(3) updatewhereclause=yes name=nextevent3_state dbname="nextevent3_state" )
+ column=(type=date updatewhereclause=yes name=nextevent3_date dbname="nextevent3_date" )
+ column=(type=time updatewhereclause=yes name=nextevent3_time dbname="nextevent3_time" )
+ column=(type=char(5) updatewhereclause=yes name=nextevent3_assigned dbname="nextevent3_assigned" )
+ column=(type=char(15) updatewhereclause=yes name=nextevent4_type dbname="nextevent4_type" )
+ column=(type=long updatewhereclause=yes name=nextevent4_siteid dbname="nextevent4_siteid" )
+ column=(type=char(45) updatewhereclause=yes name=nextevent4_site dbname="nextevent4_site" )
+ column=(type=char(20) updatewhereclause=yes name=nextevent4_city dbname="nextevent4_city" )
+ column=(type=char(3) updatewhereclause=yes name=nextevent4_state dbname="nextevent4_state" )
+ column=(type=date updatewhereclause=yes name=nextevent4_date dbname="nextevent4_date" )
+ column=(type=time updatewhereclause=yes name=nextevent4_time dbname="nextevent4_time" )
+ column=(type=char(5) updatewhereclause=yes name=nextevent4_assigned dbname="nextevent4_assigned" )
+ column=(type=date updatewhereclause=yes name=prenotedate dbname="disp_ship.prenotedate" )
+ column=(type=time updatewhereclause=yes name=prenotetime dbname="disp_ship.prenotetime" )
+ column=(type=char(32766) updatewhereclause=no name=prenoteby dbname="disp_ship.prenoteby" )
+ column=(type=date updatewhereclause=yes name=etadate dbname="disp_ship.etadate" )
+ column=(type=time updatewhereclause=yes name=etatime dbname="disp_ship.etatime" )
+ column=(type=date updatewhereclause=yes name=groundeddate dbname="disp_ship.groundeddate" )
+ column=(type=time updatewhereclause=yes name=groundedtime dbname="disp_ship.groundedtime" )
+ column=(type=char(32766) updatewhereclause=no name=pickupnumber dbname="disp_ship.pickupnumber" )
+ column=(type=date updatewhereclause=yes name=releasedate dbname="disp_ship.releasedate" )
+ column=(type=time updatewhereclause=yes name=releasetime dbname="disp_ship.releasetime" )
+ column=(type=date updatewhereclause=yes name=pickupbydate dbname="disp_ship.pickupbydate" )
+ column=(type=time updatewhereclause=yes name=pickupbytime dbname="disp_ship.pickupbytime" )
+ column=(type=date updatewhereclause=yes name=delbydate dbname="disp_ship.delbydate" )
+ column=(type=time updatewhereclause=yes name=delbytime dbname="disp_ship.delbytime" )
+ column=(type=date updatewhereclause=yes name=emptyatcustomerdate dbname="disp_ship.emptyatcustomerdate" )
+ column=(type=time updatewhereclause=yes name=emptyatcustomertime dbname="disp_ship.emptyatcustomertime" )
+ column=(type=date updatewhereclause=yes name=loadedatcustomerdate dbname="disp_ship.loadedatcustomerdate" )
+ column=(type=time updatewhereclause=yes name=loadedatcustomertime dbname="disp_ship.loadedatcustomertime" )
+ column=(type=char(32766) updatewhereclause=no name=railbillnumber dbname="disp_ship.railbillnumber" )
+ column=(type=date updatewhereclause=yes name=railbilleddate dbname="disp_ship.railbilleddate" )
+ column=(type=char(1) updatewhereclause=yes name=movecode dbname="disp_ship.movecode" )
+ column=(type=char(32766) updatewhereclause=no name=pickupbyby dbname="disp_ship.pickupbyby" )
+ column=(type=char(32766) updatewhereclause=no name=delbyby dbname="disp_ship.delbyby" )
+ column=(type=date updatewhereclause=yes name=freetimeexpiration dbname="freetimeexpiration" )
+ column=(type=char(1) updatewhereclause=yes name=nextevent_powerunit_type dbname="nextevent_powerunit_type" )
+ column=(type=char(15) updatewhereclause=yes name=nextevent_powerunit_number dbname="nextevent_powerunit_number" )
+ column=(type=char(1) updatewhereclause=yes name=nextevent_trailer_type dbname="nextevent_trailer_type" )
+ column=(type=char(15) updatewhereclause=yes name=nextevent_trailer_number dbname="nextevent_trailer_number" )
+ column=(type=char(1) updatewhereclause=yes name=nextevent_container_type dbname="nextevent_container_type" )
+ column=(type=char(15) updatewhereclause=yes name=nextevent_container_number dbname="nextevent_container_number" )
+ column=(type=char(15) updatewhereclause=yes name=nextevent_driver_firstname dbname="nextevent_driver_firstname" )
+ column=(type=char(25) updatewhereclause=yes name=nextevent_driver_lastname dbname="nextevent_driver_lastname" )
+ column=(type=char(8) updatewhereclause=yes name=nextevent_driver_codename dbname="nextevent_driver_codename" )
+ column=(type=date updatewhereclause=yes name=shipment_datepickedup dbname="shipment_datepickedup" )
+ column=(type=time updatewhereclause=yes name=shipment_timepickedup dbname="shipment_timepickedup" )
+ column=(type=date updatewhereclause=yes name=shipment_datedelivered dbname="shipment_datedelivered" )
+ column=(type=time updatewhereclause=yes name=shipment_timedelivered dbname="shipment_timedelivered" )
+ column=(type=datetime updatewhereclause=yes name=shipment_pickupby dbname="shipment_pickupby" )
+ column=(type=datetime updatewhereclause=yes name=shipment_delby dbname="shipment_delby" )
+ column=(type=datetime updatewhereclause=yes name=shipment_cutoff dbname="shipment_cutoff" )
+ column=(type=datetime updatewhereclause=yes name=shipment_lastfree dbname="shipment_lastfree" )
+ column=(type=datetime updatewhereclause=yes name=shipment_fte dbname="shipment_fte" )
+ column=(type=datetime updatewhereclause=yes name=shipment_earliestdeadline dbname="shipment_earliestdeadline" )
+ column=(type=datetime updatewhereclause=yes name=shipment_earliestfreightdeadline dbname="shipment_earliestfreightdeadline" )
+ column=(type=char(10) updatewhereclause=yes name=shipment_earliestfreightdeadlinetype dbname="shipment_earliestfreightdeadlinetype" )
+ column=(type=char(10) updatewhereclause=yes name=shipment_earliestfreedeadlinetype dbname="shipment_earliestfreedeadlinetype" )
+ column=(type=char(10) updatewhereclause=yes name=shipment_needsloadedempty dbname="shipment_needsloadedempty" )
+ column=(type=datetime updatewhereclause=yes name=shipment_earliestfreedeadline dbname="shipment_earliestfreedeadline" )
+ column=(type=char(10) updatewhereclause=yes name=linkedeq1type dbname="linkedeq1type" )
+ column=(type=char(10) updatewhereclause=yes name=linkedeq2type dbname="linkedeq2type" )
+ column=(type=decimal(2) updatewhereclause=yes name=linkedeq1length dbname="linkedeq1length" )
+ column=(type=decimal(2) updatewhereclause=yes name=linkedeq2length dbname="linkedeq2length" )
+ column=(type=char(20) updatewhereclause=yes name=linkedeq1ref dbname="linkedeq1ref" )
+ column=(type=char(20) updatewhereclause=yes name=linkedeq2ref dbname="linkedeq2ref" )
+ column=(type=char(30) updatewhereclause=yes name=linkedeq1leaseline dbname="linkedeq1leaseline" )
+ column=(type=char(30) updatewhereclause=yes name=linkedeq1leasetype dbname="linkedeq1leasetype" )
+ column=(type=char(30) updatewhereclause=yes name=linkedeq2leaseline dbname="linkedeq2leaseline" )
+ column=(type=char(30) updatewhereclause=yes name=linkedeq2leasetype dbname="linkedeq2leasetype" )
+ column=(type=char(30) updatewhereclause=yes name=linkedeq1notes dbname="linkedeq1notes" )
+ column=(type=char(30) updatewhereclause=yes name=linkedeq2notes dbname="linkedeq2notes" )
+ column=(type=long updatewhereclause=yes name=hasshipmentnotes dbname="hasshipmentnotes" )
+ retrieve="  SELECT ~"disp_ship~".~"ds_id~",   
+         ~"disp_ship~".~"ds_pronum~",   
+         ~"disp_ship~".~"ds_origin_id~",   
+         ~"disp_ship~".~"ds_findest_id~",   
+         ~"disp_ship~".~"ds_billto_id~",   
+         ~"disp_ship~".~"ds_pay1_id~",   
+         ~"disp_ship~".~"ds_total_miles~",   
+         ~"disp_ship~".~"ds_total_weight~",   
+         ~"disp_ship~".~"ds_hazmat~",   
+         ~"disp_ship~".~"ds_expedite~",   
+         ~"disp_ship~".~"ds_bill_charge~",   
+         ~"disp_ship~".~"ds_pay_totamt~",   
+         ~"disp_ship~".~"ds_status~",   
+         ~"disp_ship~".~"ds_brok_trip~",   
+         ~"disp_ship~".~"ds_intsig~",   
+         ~"disp_ship~".~"ds_dorb~",   
+         ~"disp_ship~".~"ds_pay_format~",   
+         ~"disp_ship~".~"ds_ship_date~",   
+         ~"disp_ship~".~"ds_ref1_type~",   
+         ~"disp_ship~".~"ds_ref1_text~",   
+         convert ( char(45), null ) AS ~"Billto_Name~",   
+         convert ( char(45), null ) AS ~"Origin_Name~",   
+         convert ( char(20), null ) AS ~"Origin_City~",   
+         convert ( char(3), null ) AS ~"Origin_State~",   
+         convert ( char(45), null ) AS ~"Findest_Name~",   
+         convert ( char(20), null ) AS ~"Findest_City~",   
+         convert ( char(3), null ) AS ~"Findest_State~",   
+         ~"current_shipments~".~"cs_event_count~" AS ~"Event_Count~",   
+         ~"current_shipments~".~"cs_routed~" AS ~"Routed~",   
+         ~"current_shipments~".~"cs_assigned~" AS ~"Assigned~",   
+         ~"current_shipments~".~"cs_completed~" AS ~"Completed~",   
+         upper ( ~"current_shipments~".~"timestamp~" ) AS ~"cs_timestamp~",   
+         convert ( integer, null ) AS ~"cc_NextEvent_Id~",   
+         convert ( char(1), null ) AS ~"cc_NextEvent_Type~",   
+         convert ( integer, null ) AS ~"cc_NextEvent_Site~",   
+         convert ( char(45), null ) AS ~"cc_NextEvent_Company~",   
+         convert ( char(20), null ) AS ~"cc_NextEvent_City~",   
+         convert ( char(3), null ) AS ~"cc_NextEvent_State~",   
+         convert ( char(30), null ) AS ~"cc_NextEvent_Location~",   
+         convert ( date, null ) AS ~"cc_NextEvent_Date~",   
+         convert ( time, null ) AS ~"cc_NextEvent_Time~",   
+         convert ( integer, null ) AS ~"cc_Equip_Id~",   
+         convert ( char(1), null ) AS ~"cc_Equip_Type~",   
+         convert ( char(15), null ) AS ~"cc_Equip_Ref~",   
+         convert ( char(45), null ) AS ~"cc_Equip_Description~",   
+         convert ( integer, null ) AS ~"cc_CurEvent_Id~",   
+         convert ( char(1), null ) AS ~"cc_CurEvent_Type~",   
+         convert ( integer, null ) AS ~"cc_CurEvent_Site~",   
+         convert ( char(45), null ) AS ~"cc_CurEvent_Company~",   
+         convert ( char(20), null ) AS ~"cc_CurEvent_City~",   
+         convert ( char(3), null ) AS ~"cc_CurEvent_State~",   
+         convert ( char(30), null ) AS ~"cc_CurEvent_Location~",   
+         convert ( date, null ) AS ~"cc_CurEvent_Date~",   
+         convert ( time, null ) AS ~"cc_CurEvent_Time~",   
+         ~"disp_ship~".~"ds_ship_type~",   
+         convert ( date, null ) AS ~"cc_Origin_Date~",   
+         convert ( time, null ) AS ~"cc_Origin_Time~",   
+         convert ( date, null ) AS ~"cc_Findest_Date~",   
+         convert ( time, null ) AS ~"cc_Findest_Time~",   
+         convert ( char(1), null ) AS ~"cc_Origin_Conf~",   
+         convert ( char(1), null ) AS ~"cc_Findest_Conf~",  
+         convert ( char(30), null )  AS ~"Billto_SalesRep~",  
+         ~"disp_ship~".~"custom1~",   
+         ~"disp_ship~".~"custom2~",   
+         ~"disp_ship~".~"custom3~",   
+         ~"disp_ship~".~"custom4~",   
+         ~"disp_ship~".~"custom5~",   
+         ~"disp_ship~".~"custom6~",   
+         ~"disp_ship~".~"custom7~",   
+         ~"disp_ship~".~"custom8~",   
+         ~"disp_ship~".~"custom9~",   
+         ~"disp_ship~".~"custom10~",  
+         ~"disp_ship~".~"movetype~",
+         ~"disp_ship~".~"originport~",
+         ~"disp_ship~".~"destinationport~",
+         ~"disp_ship~".~"line~",
+         ~"disp_ship~".~"vessel~",
+         ~"disp_ship~".~"voyage~",
+         ~"disp_ship~".~"cutoffdate~",
+         ~"disp_ship~".~"cutofftime~",
+         ~"disp_ship~".~"arrivaldate~",
+         ~"disp_ship~".~"arrivaltime~",
+         ~"disp_ship~".~"lastfreedate~",
+         ~"disp_ship~".~"lastfreetime~",
+         ~"disp_ship~".~"ds_ref2_type~",
+         ~"disp_ship~".~"ds_ref2_text~",
+         ~"disp_ship~".~"ds_ref3_type~",
+         ~"disp_ship~".~"ds_ref3_text~", 
+         ~"disp_ship~".~"ds_equip_req~",  
+         ~"disp_ship~".~"ds_lh_totamt~",  
+         ~"disp_ship~".~"ds_ac_totamt~",  
+         ~"disp_ship~".~"ds_pay_lh_totamt~",  
+         ~"disp_ship~".~"ds_pay_ac_totamt~",  
+         ~"disp_ship~".~"ds_bill_date~",  
+         ~"disp_ship~".~"ds_parentid~",  
+         ~"disp_ship~".~"booking~",  
+         ~"disp_ship~".~"seal~",  
+         ~"disp_ship~".~"masterbl~",  
+         ~"disp_ship~".~"housebl~",  
+         ~"disp_ship~".~"forwarderref~",  
+         ~"disp_ship~".~"agentref~",  
+         ~"disp_ship~".~"forwarder~",
+         ~"disp_ship~".~"agent~",
+         ~"disp_ship~".~"dispatchedby~",  
+         ~"disp_ship~".~"availableon~",  
+         ~"disp_ship~".~"availableuntil~",  
+         convert ( numeric(9,3), null ) AS ~"Shipment_TotalPieces~",   
+         convert ( char(45), null ) AS ~"Carrier_Name~",   
+         convert ( numeric(5,1), null ) AS ~"Item1_Miles~",   
+         convert ( char(10), null ) AS ~"Item1_RateType~",   
+         convert ( numeric(9,4), null ) AS ~"Item1_Rate~",   
+         convert ( numeric(8,2), null ) AS ~"Item1_Charges~",   
+         convert ( char(10), null ) AS ~"Item1_PayRateType~",   
+         convert ( numeric(9,4), null ) AS ~"Item1_PayRate~",   
+         convert ( numeric(8,2), null ) AS ~"Item1_Payables~",   
+         convert ( char(5), null ) AS ~"NextEvent_Assigned~",   
+         convert ( char(5), null ) AS ~"NextEvent_Dispatched~",   
+         convert ( char(5), null ) AS ~"NextEvent_Arrived~",   
+         convert ( char(15), null ) AS ~"NextEvent2_Type~",   
+         convert ( integer, null ) AS ~"NextEvent2_SiteId~",   
+         convert ( char(45), null ) AS ~"NextEvent2_Site~",   
+         convert ( char(20), null ) AS ~"NextEvent2_City~",   
+         convert ( char(3), null ) AS ~"NextEvent2_State~",   
+         convert ( date, null ) AS ~"NextEvent2_Date~",   
+         convert ( time, null ) AS ~"NextEvent2_Time~",   
+         convert ( char(5), null ) AS ~"NextEvent2_Assigned~",   
+         convert ( char(15), null ) AS ~"NextEvent3_Type~",   
+         convert ( integer, null ) AS ~"NextEvent3_SiteId~",   
+         convert ( char(45), null ) AS ~"NextEvent3_Site~",   
+         convert ( char(20), null ) AS ~"NextEvent3_City~",   
+         convert ( char(3), null ) AS ~"NextEvent3_State~",   
+         convert ( date, null ) AS ~"NextEvent3_Date~",   
+         convert ( time, null ) AS ~"NextEvent3_Time~",   
+         convert ( char(5), null ) AS ~"NextEvent3_Assigned~",   
+         convert ( char(15), null ) AS ~"NextEvent4_Type~",   
+         convert ( integer, null ) AS ~"NextEvent4_SiteId~",   
+         convert ( char(45), null ) AS ~"NextEvent4_Site~",   
+         convert ( char(20), null ) AS ~"NextEvent4_City~",   
+         convert ( char(3), null ) AS ~"NextEvent4_State~",   
+         convert ( date, null ) AS ~"NextEvent4_Date~",   
+         convert ( time, null ) AS ~"NextEvent4_Time~",   
+         convert ( char(5), null ) AS ~"NextEvent4_Assigned~",   
+         ~"disp_ship~".~"prenotedate~",  
+         ~"disp_ship~".~"prenotetime~",  
+         ~"disp_ship~".~"prenoteby~",  
+         ~"disp_ship~".~"etadate~",  
+         ~"disp_ship~".~"etatime~",  
+         ~"disp_ship~".~"groundeddate~",  
+         ~"disp_ship~".~"groundedtime~",  
+         ~"disp_ship~".~"pickupnumber~",  
+         ~"disp_ship~".~"releasedate~",  
+         ~"disp_ship~".~"releasetime~",  
+         ~"disp_ship~".~"pickupbydate~",  
+         ~"disp_ship~".~"pickupbytime~",  
+         ~"disp_ship~".~"delbydate~",  
+         ~"disp_ship~".~"delbytime~",  
+         ~"disp_ship~".~"emptyatcustomerdate~",  
+         ~"disp_ship~".~"emptyatcustomertime~",  
+         ~"disp_ship~".~"loadedatcustomerdate~",  
+         ~"disp_ship~".~"loadedatcustomertime~",  
+         ~"disp_ship~".~"railbillnumber~",  
+         ~"disp_ship~".~"railbilleddate~",  
+         ~"disp_ship~".~"movecode~",  
+         ~"disp_ship~".~"pickupbyby~", 
+         ~"disp_ship~".~"delbyby~", 
+			convert ( date, null ) AS ~"FreeTimeExpiration~", 
+         convert ( char(1), null ) AS ~"NextEvent_PowerUnit_Type~", 
+         convert ( char(15), null ) AS ~"NextEvent_PowerUnit_Number~", 
+         convert ( char(1), null ) AS ~"NextEvent_Trailer_Type~", 
+         convert ( char(15), null ) AS ~"NextEvent_Trailer_Number~", 
+         convert ( char(1), null ) AS ~"NextEvent_Container_Type~", 
+         convert ( char(15), null ) AS ~"NextEvent_Container_Number~", 
+         convert ( char(15), null ) AS ~"NextEvent_Driver_FirstName~", 
+         convert ( char(25), null ) AS ~"NextEvent_Driver_LastName~", 
+         convert ( char(8), null ) AS ~"NextEvent_Driver_CodeName~", 
+         convert ( date, null ) AS ~"Shipment_DatePickedUp~", 
+         convert ( time, null ) AS ~"Shipment_TimePickedUp~", 
+         convert ( date, null ) AS ~"Shipment_DateDelivered~", 
+         convert ( time, null ) AS ~"Shipment_TimeDelivered~",
+			convert ( datetime, null ) AS ~"Shipment_pickupby~" ,
+			convert ( datetime, null ) AS ~"Shipment_Delby~",
+			convert ( datetime, null ) AS ~"Shipment_Cutoff~",
+			convert ( datetime, null ) AS ~"Shipment_Lastfree~",
+			Convert ( DateTime, Null ) AS ~"Shipment_FTE~",
+			convert ( datetime, null ) AS	~"shipment_earliestdeadline~",
+			convert ( datetime, null ) AS	~"shipment_earliestfreightdeadline~",
+			convert ( char(10), null ) AS ~"shipment_earliestfreightdeadlinetype~",
+			convert ( char(10), null ) AS ~"shipment_earliestfreedeadlinetype~",
+			convert ( char(10), null ) AS ~"shipment_needsloadedempty~",
+			convert ( datetime, null ) AS ~"shipment_earliestfreedeadline~",
+			Convert ( char(10), null ) AS ~"LinkedEq1Type~",
+			Convert ( char(10), null ) AS ~"LinkedEq2Type~",
+			convert ( numeric(4,2), null ) AS ~"LinkedEq1Length~",
+			convert ( numeric(4,2), null ) AS ~"LinkedEq2Length~",
+			Convert ( char(20), null ) AS ~"LinkedEq1Ref~",
+			Convert ( char(20), null ) AS ~"LinkedEq2Ref~",
+			Convert ( char(30), null ) AS ~"LinkedEq1LeaseLine~",
+			Convert ( char(30), null ) AS ~"LinkedEq1LeaseType~",
+			Convert ( char(30), null ) AS ~"LinkedEq2LeaseLine~",
+			Convert ( char(30), null ) AS ~"LinkedEq2LeaseType~",
+			Convert ( char(30), null ) AS ~"LinkedEq1Notes~",
+			Convert ( char(30), null ) AS ~"LinkedEq2Notes~",
+			Convert ( Integer , IF Length ( ds_ship_comment )>0 THEN 1 ELSE 0 ENDIF ) AS ~"HasShipmentNotes~" 
+    FROM ~"current_shipments~",   
+         ~"disp_ship~"  
+   WHERE ( ~"disp_ship~".~"ds_id~" = ~"current_shipments~".~"cs_id~" )    
+" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

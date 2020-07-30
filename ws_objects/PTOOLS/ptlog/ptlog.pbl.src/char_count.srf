@@ -1,0 +1,37 @@
+﻿$PBExportHeader$char_count.srf
+global type char_count from function_object
+end type
+
+forward prototypes
+global function integer char_count (string source_str, string match_str)
+end prototypes
+
+global function integer char_count (string source_str, string match_str);/* Send this string a source string and this function will return the number of 
+times the match string occurs in the source string
+
+Note:  for the time being, the match string can only have a length of one */
+
+source_str = trim(source_str)
+match_str = trim(match_str)
+
+if isnull(source_str) or len(trim(source_str)) = 0 then return 0
+if isnull(match_str) or len(trim(match_str)) = 0 then return 0
+if len(match_str) <> 1 then return 0
+
+integer looplen, lcv, totcount
+looplen = len(source_str)
+
+for lcv = 1 to looplen
+	if mid(source_str, lcv, 1) = match_str then totcount ++
+next
+
+return totcount
+
+ 
+
+
+
+
+
+end function
+

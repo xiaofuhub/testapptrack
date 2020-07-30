@@ -1,0 +1,15 @@
+﻿$PBExportHeader$d_ind_classes.srd
+$PBExportComments$for privileges
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=ss_id dbname="system_settings.ss_id" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=ss_uid dbname="system_settings.ss_uid" )
+ column=(type=long update=yes updatewhereclause=yes name=ss_long dbname="system_settings.ss_long" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"system_settings~" ) COLUMN(NAME=~"system_settings.ss_id~") COLUMN(NAME=~"system_settings.ss_uid~") COLUMN(NAME=~"system_settings.ss_long~")WHERE(    EXP1 =~"~~~"system_settings~~~".~~~"ss_uid~~~"~"   OP =~"=~"    EXP2 =~":em_id~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"( ~~~"system_settings~~~".~~~"ss_id~~~"~"   OP =~"between~"    EXP2 =~"9000 and 9999~"    LOGIC =~"or~" ) WHERE(    EXP1 =~"~~~"system_settings~~~".~~~"ss_id~~~"~"   OP =~"between~"    EXP2 =~"19000 and 19999 ~"    LOGIC =~"or~" ) WHERE(    EXP1 =~"~~~"system_settings~~~".~~~"ss_id~~~"~"   OP =~"between~"    EXP2 =~"29000 and 29999~"    LOGIC =~"or~" ) WHERE(    EXP1 =~"~~~"system_settings~~~".~~~"ss_id~~~"~"   OP =~"between~"    EXP2 =~"39000 and 39999 )~" ) ) ARG(NAME = ~"em_id~" TYPE = number) " update="system_settings" updatewhere=1 updatekeyinplace=no arguments=(("em_id", number))  sort="ss_id A " )
+column(band=detail id=2 alignment="1" tabsequence=20 border="0" color="0" x="14" y="8" height="64" width="293" format="[general]"  name=ss_uid edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=10 border="0" color="0" x="325" y="8" height="64" width="293" format="[general]"  name=ss_id edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="1" tabsequence=30 border="0" color="0" x="635" y="8" height="64" width="293" format="[general]"  name=ss_long edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

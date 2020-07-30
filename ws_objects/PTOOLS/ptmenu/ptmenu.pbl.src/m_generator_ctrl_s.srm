@@ -1,0 +1,31 @@
+﻿$PBExportHeader$m_generator_ctrl_s.srm
+forward
+global type m_generator_ctrl_s from m_generator_ctrl
+end type
+end forward
+
+global type m_generator_ctrl_s from m_generator_ctrl
+end type
+global m_generator_ctrl_s m_generator_ctrl_s
+
+on m_generator_ctrl_s.create
+m_generator_ctrl_s=this
+call super::create
+end on
+
+on m_generator_ctrl_s.destroy
+call super::destroy
+end on
+
+on m_placeholder.create
+call super::create
+this.MergeOption=Exclude!
+end on
+
+on m_shortcut.create
+call super::create
+this.Text="shortcut~tCtrl+S"
+this.MergeOption=Exclude!
+this.Shortcut=339
+end on
+

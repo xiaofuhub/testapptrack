@@ -1,0 +1,20 @@
+﻿$PBExportHeader$gf_secondsafter.srf
+global type gf_secondsafter from function_object
+end type
+
+forward prototypes
+global function long gf_secondsafter (datetime adt_start, datetime adt_end)
+end prototypes
+
+global function long gf_secondsafter (datetime adt_start, datetime adt_end);//Wrap of the PFC of_SecondsAfter function, for use in external reports.
+//This PFC function allows datetime parameters, whereas the PB system function 
+//allows only time parameters.
+
+n_cst_DateTime	lnv_DateTime
+Long	ll_Result
+
+ll_Result = lnv_DateTime.of_SecondsAfter ( adt_Start, adt_End )
+
+RETURN ll_Result
+end function
+

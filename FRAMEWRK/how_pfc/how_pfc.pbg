@@ -1,0 +1,18 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "framewrk\\how_pfc\\how_pfc.pbl" "";
+@end;
+@begin Objects
+ "framewrk\\how_pfc\\task_n_cst_winsrv_pfclinkages.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\ofr_n_ds.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\ofr_u_dw.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\ofr_n_tr.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\task_u_pfccbcancel.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\appmanager_how_pfc.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\app_how_pfc.sra" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\ofr_w_master.srw" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\ofr_n_cst_pfctxsrv.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\task_n_cst_pfcparameters.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\task_u_pfccbok.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+ "framewrk\\how_pfc\\task_n_cst_dwsrv_linkage.sru" "framewrk\\how_pfc\\how_pfc.pbl";
+@end;

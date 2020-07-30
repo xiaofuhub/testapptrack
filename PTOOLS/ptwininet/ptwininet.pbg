@@ -1,0 +1,13 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptwininet\\ptwininet.pbl" "";
+@end;
+@begin Objects
+ "ptools\\ptwininet\\n_cst_winsrv_shell32.sru" "ptools\\ptwininet\\ptwininet.pbl";
+ "ptools\\ptwininet\\finddata.srs" "ptools\\ptwininet\\ptwininet.pbl";
+ "ptools\\ptwininet\\filetime.srs" "ptools\\ptwininet\\ptwininet.pbl";
+ "PTOOLS\\ptwininet\\d_errors.srd" "PTOOLS\\ptwininet\\ptwininet.pbl";
+ "ptools\\ptwininet\\n_cst_wininet32.sru" "ptools\\ptwininet\\ptwininet.pbl";
+ "ptools\\ptwininet\\n_cst_wininet_ftp.sru" "ptools\\ptwininet\\ptwininet.pbl";
+ "ptools\\ptwininet\\n_cst_wininet_http.sru" "ptools\\ptwininet\\ptwininet.pbl";
+@end;

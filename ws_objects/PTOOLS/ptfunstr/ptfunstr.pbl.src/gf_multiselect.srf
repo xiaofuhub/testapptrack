@@ -1,0 +1,82 @@
+﻿$PBExportHeader$gf_multiselect.srf
+$PBExportComments$PTCORE.     Performs Ctrl and Shift Click processing on a datawindow.
+global type gf_multiselect from function_object
+end type
+
+forward prototypes
+global function integer gf_multiselect (datawindow dw_clicked, integer clrow)
+end prototypes
+
+global function integer gf_multiselect (datawindow dw_clicked, integer clrow);Boolean	lb_HighlightBox, &
+			lb_AnySelected
+
+boolean shiftpress, ctrlpress, isclrowsel, iscurrowsel
+shiftpress = keydown(keyshift!)
+ctrlpress = keydown(keycontrol!)
+
+Long	ll_CurrentRow, &
+		ll_Row, &
+		ll_SelectedCount
+
+if clrow < 1 then
+	dw_clicked.selectrow(0, false)
+//	if numrows > 0 then
+//		dw_clicked.setrow(integer(dw_clicked.describe("datawindow.firstrowonpage")))
+//	end if
+	return 0
+end if
+
+ll_CurrentRow = dw_clicked.getrow()
+isclrowsel = dw_clicked.isselected(clrow)
+iscurrowsel = dw_clicked.isselected(ll_CurrentRow)
+
+IF dw_Clicked.Describe ( "r_hlt.name" ) = "r_hlt" THEN
+	lb_HighlightBox = TRUE
+END IF
+
+IF dw_Clicked.GetSelectedRow ( 0 ) > 0 THEN
+	lb_AnySelected = TRUE
+END IF
+
+dw_Clicked.SetRedraw ( FALSE )
+
+if ctrlpress = false then dw_clicked.selectrow(0, false)
+
+IF lb_AnySelected = FALSE THEN
+
+	if ll_CurrentRow = clrow then
+		dw_clicked.selectrow(clrow, true)
+		ll_SelectedCount = 1
+		GOTO Cleanup
+	elseif shiftpress or ctrlpress then
+		dw_clicked.selectrow(ll_CurrentRow, true)
+		iscurrowsel = true
+	end if
+
+END IF
+
+if shiftpress and ll_CurrentRow > 0 then
+	for ll_Row = min(clrow, ll_CurrentRow) to max(clrow, ll_CurrentRow)
+		dw_clicked.selectrow(ll_Row, iscurrowsel)
+	next
+elseif ctrlpress and isclrowsel then
+	dw_clicked.selectrow(clrow, false)
+elseif ctrlpress or lb_HighlightBox = FALSE then
+	dw_clicked.selectrow(clrow, true)
+end if
+
+ll_SelectedCount = -1
+ll_Row = 0
+
+DO
+
+	ll_SelectedCount ++
+	ll_Row = dw_Clicked.GetSelectedRow ( ll_Row )
+
+LOOP WHILE ll_Row > 0
+
+Cleanup:
+dw_Clicked.SetRedraw ( TRUE )
+RETURN ll_SelectedCount
+end function
+

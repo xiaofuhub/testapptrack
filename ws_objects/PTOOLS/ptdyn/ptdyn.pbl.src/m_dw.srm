@@ -1,0 +1,657 @@
+﻿$PBExportHeader$m_dw.srm
+$PBExportComments$Extension DataWindow menu class
+forward
+global type m_dw from pfc_m_dw
+end type
+type m_dash14 from menu within m_table
+end type
+type m_sort from menu within m_table
+end type
+type m_filter from menu within m_table
+end type
+type m_find from menu within m_table
+end type
+type m_print from menu within m_table
+end type
+type m_export from menu within m_table
+end type
+type m_dash15 from menu within m_table
+end type
+type m_link from menu within m_table
+end type
+type m_applylink from menu within m_table
+end type
+type m_dwproperties from menu within m_table
+end type
+type m_dash16 from menu within m_table
+end type
+type m_savedefinition from menu within m_table
+end type
+type m_savedefinitionas from menu within m_table
+end type
+type m_dash17 from menu within m_table
+end type
+type m_removeobject from menu within m_table
+end type
+type m_tabpage from menu within m_table
+end type
+type m_dash18 from menu within m_table
+end type
+type m_removerow from menu within m_table
+end type
+type m_clearwatchlist from menu within m_table
+end type
+type m_table from pfc_m_dw`m_table within m_dw
+m_dash14 m_dash14
+m_sort m_sort
+m_filter m_filter
+m_find m_find
+m_print m_print
+m_export m_export
+m_dash15 m_dash15
+m_link m_link
+m_applylink m_applylink
+m_dwproperties m_dwproperties
+m_dash16 m_dash16
+m_savedefinition m_savedefinition
+m_savedefinitionas m_savedefinitionas
+m_dash17 m_dash17
+m_removeobject m_removeobject
+m_tabpage m_tabpage
+m_dash18 m_dash18
+m_removerow m_removerow
+m_clearwatchlist m_clearwatchlist
+end type
+end forward
+
+global type m_dw from pfc_m_dw
+end type
+global m_dw m_dw
+
+on m_dw.create
+m_dw=this
+call super::create
+end on
+
+on m_dw.destroy
+call super::destroy
+end on
+
+type m_table from pfc_m_dw`m_table within m_dw
+m_dash14 m_dash14
+m_sort m_sort
+m_filter m_filter
+m_find m_find
+m_print m_print
+m_export m_export
+m_dash15 m_dash15
+m_link m_link
+m_applylink m_applylink
+m_dwproperties m_dwproperties
+m_dash16 m_dash16
+m_savedefinition m_savedefinition
+m_savedefinitionas m_savedefinitionas
+m_dash17 m_dash17
+m_removeobject m_removeobject
+m_tabpage m_tabpage
+m_dash18 m_dash18
+m_removerow m_removerow
+m_clearwatchlist m_clearwatchlist
+end type
+
+on m_table.create
+call super::create
+this.m_dash14=create m_dash14
+this.m_sort=create m_sort
+this.m_filter=create m_filter
+this.m_find=create m_find
+this.m_print=create m_print
+this.m_export=create m_export
+this.m_dash15=create m_dash15
+this.m_link=create m_link
+this.m_applylink=create m_applylink
+this.m_dwproperties=create m_dwproperties
+this.m_dash16=create m_dash16
+this.m_savedefinition=create m_savedefinition
+this.m_savedefinitionas=create m_savedefinitionas
+this.m_dash17=create m_dash17
+this.m_removeobject=create m_removeobject
+this.m_tabpage=create m_tabpage
+this.m_dash18=create m_dash18
+this.m_removerow=create m_removerow
+this.m_clearwatchlist=create m_clearwatchlist
+this.Item[UpperBound(this.Item)+1]=this.m_dash14
+this.Item[UpperBound(this.Item)+1]=this.m_sort
+this.Item[UpperBound(this.Item)+1]=this.m_filter
+this.Item[UpperBound(this.Item)+1]=this.m_find
+this.Item[UpperBound(this.Item)+1]=this.m_print
+this.Item[UpperBound(this.Item)+1]=this.m_export
+this.Item[UpperBound(this.Item)+1]=this.m_dash15
+this.Item[UpperBound(this.Item)+1]=this.m_link
+this.Item[UpperBound(this.Item)+1]=this.m_applylink
+this.Item[UpperBound(this.Item)+1]=this.m_dwproperties
+this.Item[UpperBound(this.Item)+1]=this.m_dash16
+this.Item[UpperBound(this.Item)+1]=this.m_savedefinition
+this.Item[UpperBound(this.Item)+1]=this.m_savedefinitionas
+this.Item[UpperBound(this.Item)+1]=this.m_dash17
+this.Item[UpperBound(this.Item)+1]=this.m_removeobject
+this.Item[UpperBound(this.Item)+1]=this.m_tabpage
+this.Item[UpperBound(this.Item)+1]=this.m_dash18
+this.Item[UpperBound(this.Item)+1]=this.m_removerow
+this.Item[UpperBound(this.Item)+1]=this.m_clearwatchlist
+end on
+
+on m_table.destroy
+call super::destroy
+destroy(this.m_dash14)
+destroy(this.m_sort)
+destroy(this.m_filter)
+destroy(this.m_find)
+destroy(this.m_print)
+destroy(this.m_export)
+destroy(this.m_dash15)
+destroy(this.m_link)
+destroy(this.m_applylink)
+destroy(this.m_dwproperties)
+destroy(this.m_dash16)
+destroy(this.m_savedefinition)
+destroy(this.m_savedefinitionas)
+destroy(this.m_dash17)
+destroy(this.m_removeobject)
+destroy(this.m_tabpage)
+destroy(this.m_dash18)
+destroy(this.m_removerow)
+destroy(this.m_clearwatchlist)
+end on
+
+type m_cut from pfc_m_dw`m_cut within m_table
+end type
+
+on m_cut.create
+call super::create
+end on
+
+on m_cut.destroy
+call super::destroy
+end on
+
+type m_copy from pfc_m_dw`m_copy within m_table
+end type
+
+on m_copy.create
+call super::create
+end on
+
+on m_copy.destroy
+call super::destroy
+end on
+
+type m_paste from pfc_m_dw`m_paste within m_table
+end type
+
+on m_paste.create
+call super::create
+end on
+
+on m_paste.destroy
+call super::destroy
+end on
+
+type m_selectall from pfc_m_dw`m_selectall within m_table
+end type
+
+on m_selectall.create
+call super::create
+end on
+
+on m_selectall.destroy
+call super::destroy
+end on
+
+type m_dash11 from pfc_m_dw`m_dash11 within m_table
+end type
+
+on m_dash11.create
+call super::create
+end on
+
+on m_dash11.destroy
+call super::destroy
+end on
+
+type m_insert from pfc_m_dw`m_insert within m_table
+end type
+
+on m_insert.create
+call super::create
+end on
+
+on m_insert.destroy
+call super::destroy
+end on
+
+type m_addrow from pfc_m_dw`m_addrow within m_table
+end type
+
+on m_addrow.create
+call super::create
+end on
+
+on m_addrow.destroy
+call super::destroy
+end on
+
+type m_delete from pfc_m_dw`m_delete within m_table
+end type
+
+on m_delete.create
+call super::create
+end on
+
+on m_delete.destroy
+call super::destroy
+end on
+
+type m_restorerow from pfc_m_dw`m_restorerow within m_table
+end type
+
+on m_restorerow.create
+call super::create
+end on
+
+on m_restorerow.destroy
+call super::destroy
+end on
+
+type m_dash12 from pfc_m_dw`m_dash12 within m_table
+end type
+
+on m_dash12.create
+call super::create
+end on
+
+on m_dash12.destroy
+call super::destroy
+end on
+
+type m_columns from pfc_m_dw`m_columns within m_table
+end type
+
+on m_columns.create
+call super::create
+end on
+
+on m_columns.destroy
+call super::destroy
+end on
+
+type m_functions from pfc_m_dw`m_functions within m_table
+end type
+
+on m_functions.create
+call super::create
+end on
+
+on m_functions.destroy
+call super::destroy
+end on
+
+type m_operators from pfc_m_dw`m_operators within m_table
+end type
+
+on m_operators.create
+call super::create
+end on
+
+on m_operators.destroy
+call super::destroy
+end on
+
+type m_values from pfc_m_dw`m_values within m_table
+end type
+
+on m_values.create
+call super::create
+end on
+
+on m_values.destroy
+call super::destroy
+end on
+
+type m_dash13 from pfc_m_dw`m_dash13 within m_table
+end type
+
+on m_dash13.create
+call super::create
+end on
+
+on m_dash13.destroy
+call super::destroy
+end on
+
+type m_debug from pfc_m_dw`m_debug within m_table
+end type
+
+on m_debug.create
+call super::create
+end on
+
+on m_debug.destroy
+call super::destroy
+end on
+
+type m_properties from pfc_m_dw`m_properties within m_table
+end type
+
+on m_properties.create
+call super::create
+this.enabled = true
+end on
+
+on m_properties.destroy
+call super::destroy
+end on
+
+type m_dash14 from menu within m_table
+end type
+
+on m_dash14.create
+call super::create
+this.text = "-"
+end on
+
+on m_dash14.destroy
+call super::destroy
+end on
+
+type m_sort from menu within m_table
+end type
+
+on m_sort.create
+call super::create
+this.text = "&Sort ..."
+end on
+
+event clicked;idw_parent.TriggerEvent( "pfc_sortdlg" )
+end event
+
+on m_sort.destroy
+call super::destroy
+end on
+
+type m_filter from menu within m_table
+end type
+
+on m_filter.create
+call super::create
+this.text = "F&ilter ..."
+end on
+
+event clicked;idw_parent.TriggerEvent( "pfc_filterdlg" )
+end event
+
+on m_filter.destroy
+call super::destroy
+end on
+
+type m_find from menu within m_table
+end type
+
+on m_find.create
+call super::create
+this.text = "Fin&d ..."
+end on
+
+event clicked;idw_parent.TriggerEvent( "pfc_finddlg" )
+end event
+
+on m_find.destroy
+call super::destroy
+end on
+
+type m_print from menu within m_table
+end type
+
+on m_print.create
+call super::create
+this.text = "&Print ..."
+end on
+
+event clicked;idw_parent.TriggerEvent( "pfc_print" )
+end event
+
+on m_print.destroy
+call super::destroy
+end on
+
+type m_export from menu within m_table
+end type
+
+on m_export.create
+call super::create
+this.text = "&Export ..."
+end on
+
+event clicked;idw_Parent.TriggerEvent( "ue_Export" )
+end event
+
+on m_export.destroy
+call super::destroy
+end on
+
+type m_dash15 from menu within m_table
+end type
+
+on m_dash15.create
+call super::create
+this.visible = false
+this.text = "-"
+end on
+
+on m_dash15.destroy
+call super::destroy
+end on
+
+type m_link from menu within m_table
+end type
+
+event clicked;idw_parent.dynamic event ue_LinkDialog()
+end event
+
+on m_link.create
+call super::create
+this.visible = false
+this.text = "Define Lin&k"
+end on
+
+on m_link.destroy
+call super::destroy
+end on
+
+type m_applylink from menu within m_table
+end type
+
+event clicked;idw_parent.dynamic event ue_ApplyLinkDialog()
+end event
+
+on m_applylink.create
+call super::create
+this.visible = false
+this.text = "Appl&y Link"
+end on
+
+on m_applylink.destroy
+call super::destroy
+end on
+
+type m_dwproperties from menu within m_table
+end type
+
+event clicked;idw_Parent.Dynamic Event ue_PropertiesDialog()
+end event
+
+on m_dwproperties.create
+call super::create
+this.visible = false
+this.text = "P&roperties"
+end on
+
+on m_dwproperties.destroy
+call super::destroy
+end on
+
+type m_dash16 from menu within m_table
+end type
+
+on m_dash16.create
+call super::create
+this.visible = false
+this.text = "-"
+end on
+
+on m_dash16.destroy
+call super::destroy
+end on
+
+type m_savedefinition from menu within m_table
+end type
+
+event clicked;idw_Parent.Dynamic Event ue_SaveDefinition()
+end event
+
+on m_savedefinition.create
+call super::create
+this.visible = false
+this.text = "Save Object Definition"
+end on
+
+on m_savedefinition.destroy
+call super::destroy
+end on
+
+type m_savedefinitionas from menu within m_table
+end type
+
+event clicked;idw_Parent.Dynamic Event ue_SaveDefinitionAs()
+end event
+
+on m_savedefinitionas.create
+call super::create
+this.visible = false
+this.text = "Save Object Definition As"
+end on
+
+on m_savedefinitionas.destroy
+call super::destroy
+end on
+
+type m_dash17 from menu within m_table
+end type
+
+on m_dash17.create
+call super::create
+this.visible = false
+this.text = "-"
+end on
+
+on m_dash17.destroy
+call super::destroy
+end on
+
+type m_removeobject from menu within m_table
+end type
+
+event clicked;W_Master 	lw_Parent
+Integer		li_Result
+String		ls_message 
+string 		ls_parent
+String		ls_objName
+
+ls_objName = idw_Parent.Dynamic of_GetObjName()
+ls_parent = idw_Parent.Dynamic of_getParentName()
+IF ls_objName <> "DataWindow Template" THEN
+	ls_message = "Removing '" + ls_objName + "' will cause all matching instances on '"+ls_parent + "' to be removed on the next save definition of '"+ls_parent+"'."
+ELSE
+	ls_message = ""
+END IF
+li_Result = MessageBox("Remove Object", ls_message+ "~r~nAre you sure you want to remove '" +ls_objName + "' ?", &
+				Question!, YesNo!, 2)
+IF li_Result = 1 THEN
+	lw_Parent = This.ParentWindow
+	lw_Parent.Event ue_RemoveObject(idw_Parent)
+END IF
+end event
+
+on m_removeobject.create
+call super::create
+this.visible = false
+this.text = "Remove Object"
+end on
+
+on m_removeobject.destroy
+call super::destroy
+end on
+
+type m_tabpage from menu within m_table
+end type
+
+on m_tabpage.create
+call super::create
+this.visible = false
+this.text = "Tab Page"
+end on
+
+on m_tabpage.destroy
+call super::destroy
+end on
+
+event clicked;idw_Parent.Dynamic Event ue_TabDialog()
+end event
+
+type m_dash18 from menu within m_table
+end type
+
+on m_dash18.create
+call super::create
+this.text = "-"
+end on
+
+on m_dash18.destroy
+call super::destroy
+end on
+
+type m_removerow from menu within m_table
+end type
+
+on m_removerow.create
+call super::create
+this.visible = false
+this.text = "Remove Row"
+end on
+
+on m_removerow.destroy
+call super::destroy
+end on
+
+event clicked;idw_parent.triggerEvent("ue_removeRowFromFilter")
+
+
+end event
+
+type m_clearwatchlist from menu within m_table
+end type
+
+on m_clearwatchlist.create
+call super::create
+this.visible = false
+this.text = "Clear Watch List"
+end on
+
+on m_clearwatchlist.destroy
+call super::destroy
+end on
+
+event clicked;idw_parent.triggerEvent("ue_clearWatchlist")
+
+end event
+

@@ -1,0 +1,36 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptnote\\ptnote.pbl" "";
+@end;
+@begin Objects
+ "ptools\\ptnote\\d_companycontacts_details.srd" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\n_cst_bso_email_manager_ptserver.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\n_cst_bso_email_manager.sru" "ptools\\ptnote\\ptnote.pbl";
+ "PTOOLS\\ptnote\\d_attachimages.srd" "PTOOLS\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_dw_notification_shipment.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\n_cst_contactmanager.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_cst_notification_company_settings.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\n_cst_emailmessage.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\w_contactlist.srw" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\d_notificationrecipients.srd" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_dw_attachimages.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_cst_tabpg_company_notification.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\d_notificationsettings.srd" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\w_selectcontactcompany.srw" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_dw_notificationrecipients.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\d_notificationstatus.srd" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\d_notification.srd" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\n_cst_bso_notification_manager.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\w_notificationsetup.srw" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\n_cst_messagedata.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_dw_companiesbycontacts.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_dw_companycontact_detail.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\w_contactselect.srw" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_tabpg_shipment_notification.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\d_companycontacts_list.srd" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\d_companiesonshipment.srd" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_dw_companycontacts_list.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\u_cst_shipment_notification.sru" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\w_shipmentnotification.srw" "ptools\\ptnote\\ptnote.pbl";
+ "ptools\\ptnote\\d_companybycontacts.srd" "ptools\\ptnote\\ptnote.pbl";
+@end;

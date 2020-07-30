@@ -1,0 +1,182 @@
+﻿$PBExportHeader$d_outsideequip_list.srd
+$PBExportComments$PTCORE.  The equipment spec and status list.
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=eq_id dbname="equipment.eq_id" )
+ column=(type=char(1) updatewhereclause=yes name=eq_type dbname="equipment.eq_type" values="---- 	Z/TRAC	T/STRT	S/VAN	N/TRLR	V/FLBD	F/REFR	R/TANK	K/RBOX	B/CHAS	H/CNTN	C/" )
+ column=(type=char(15) updatewhereclause=yes name=eq_ref dbname="equipment.eq_ref" )
+ column=(type=char(1) updatewhereclause=yes name=eq_outside dbname="equipment.eq_outside" values="	F/	T" )
+ column=(type=char(1) updatewhereclause=yes name=eq_status dbname="equipment.eq_status" )
+ column=(type=decimal(1) updatewhereclause=yes name=eq_length dbname="equipment.eq_length" )
+ column=(type=decimal(1) updatewhereclause=yes name=eq_height dbname="equipment.eq_height" )
+ column=(type=long updatewhereclause=yes name=eq_axles dbname="equipment.eq_axles" )
+ column=(type=char(1) updatewhereclause=yes name=eq_air dbname="equipment.eq_air" values="	T/	F" )
+ column=(type=char(1) updatewhereclause=yes name=eq_spec1 dbname="equipment.eq_spec1" )
+ column=(type=char(1) updatewhereclause=yes name=eq_spec2 dbname="equipment.eq_spec2" )
+ column=(type=char(1) updatewhereclause=yes name=eq_spec3 dbname="equipment.eq_spec3" )
+ column=(type=char(1) updatewhereclause=yes name=eq_spec4 dbname="equipment.eq_spec4" )
+ column=(type=char(1) updatewhereclause=yes name=eq_spec5 dbname="equipment.eq_spec5" )
+ column=(type=long updatewhereclause=yes name=eq_cur_event dbname="equipment.eq_cur_event" )
+ column=(type=long updatewhereclause=yes name=eq_next_event dbname="equipment.eq_next_event" )
+ column=(type=long updatewhereclause=yes key=yes name=oe_id dbname="outside_equip.oe_id" )
+ column=(type=long update=yes updatewhereclause=yes name=oe_from dbname="outside_equip.oe_from" )
+ column=(type=long update=yes updatewhereclause=yes name=oe_for dbname="outside_equip.oe_for" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=oe_booknum dbname="outside_equip.oe_booknum" )
+ column=(type=datetime update=yes updatewhereclause=yes name=oe_out dbname="outside_equip.oe_out" )
+ column=(type=datetime update=yes updatewhereclause=yes name=oe_in dbname="outside_equip.oe_in" )
+ column=(type=long update=yes updatewhereclause=yes name=oe_orig_event dbname="outside_equip.oe_orig_event" )
+ column=(type=long update=yes updatewhereclause=yes name=oe_term_event dbname="outside_equip.oe_term_event" )
+ column=(type=char(1) updatewhereclause=yes name=curev_type dbname="disp_events.de_event_type" )
+ column=(type=long updatewhereclause=yes name=curev_site dbname="disp_events.de_site" )
+ column=(type=date updatewhereclause=yes name=curev_arrdate dbname="disp_events.de_arrdate" )
+ column=(type=time updatewhereclause=yes name=curev_arrtime dbname="disp_events.de_arrtime" )
+ column=(type=time updatewhereclause=yes name=curev_deptime dbname="disp_events.de_deptime" )
+ column=(type=long updatewhereclause=yes name=curev_shipment_id dbname="disp_events.de_shipment_id" )
+ column=(type=char(1) updatewhereclause=yes name=curev_conf dbname="disp_events.de_conf" )
+ column=(type=char(45) updatewhereclause=yes name=curevco_name dbname="null" )
+ column=(type=char(20) updatewhereclause=yes name=curevco_city dbname="null" )
+ column=(type=char(3) updatewhereclause=yes name=curevco_state dbname="null" )
+ column=(type=long updatewhereclause=yes name=curevco_tz dbname="null" values="HWI	0/ALK	1/PAC	2/MTN	3/CTL	4/EST	5/ATL	6/" )
+ column=(type=char(25) updatewhereclause=yes name=curevco_pcm dbname="null" )
+ column=(type=long updatewhereclause=yes name=equipmentlease_fkequipmentleasetype dbname="outside_equip.fkequipmentleasetype" )
+ column=(type=char(32766) updatewhereclause=no name=equipmentlease_user1 dbname="outside_equip.user1" )
+ column=(type=char(32766) updatewhereclause=no name=equipmentlease_user2 dbname="outside_equip.user2" )
+ column=(type=char(32766) updatewhereclause=no name=equipmentlease_notes dbname="outside_equip.notes" )
+ column=(type=long updatewhereclause=yes name=equipmentlease_shipment dbname="outside_equip.shipment" )
+ column=(type=long updatewhereclause=yes name=equipmentlease_originationsite dbname="outside_equip.originationsite" )
+ column=(type=date updatewhereclause=yes name=equipmentlease_originationdate dbname="outside_equip.originationdate" )
+ column=(type=time updatewhereclause=yes name=equipmentlease_originationtime dbname="outside_equip.originationtime" )
+ column=(type=long updatewhereclause=yes name=equipmentlease_terminationsite dbname="outside_equip.terminationsite" )
+ column=(type=date updatewhereclause=yes name=equipmentlease_terminationdate dbname="outside_equip.terminationdate" )
+ column=(type=time updatewhereclause=yes name=equipmentlease_terminationtime dbname="outside_equip.terminationtime" )
+ column=(type=long update=yes updatewhereclause=yes name=reloadshipment dbname="outside_equip.reloadshipment" )
+ column=(type=date update=yes updatewhereclause=yes name=reloaddate dbname="outside_equip.reloaddate" )
+ column=(type=time update=yes updatewhereclause=yes name=reloadtime dbname="outside_equip.reloadtime" )
+ column=(type=date update=yes updatewhereclause=yes name=reloadfreetimeexpiredate dbname="outside_equip.reloadfreetimeexpiredate" )
+ column=(type=time update=yes updatewhereclause=yes name=reloadfreetimeexpiretime dbname="outside_equip.reloadfreetimeexpiretime" )
+ column=(type=decimal(2) updatewhereclause=yes name=amountbilled dbname="outside_equip.amountbilled" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_notes dbname="equipment.notes" )
+ column=(type=char(30) updatewhereclause=yes name=equipmentleasetype_line dbname="equipmentleasetype.line" )
+ column=(type=char(30) updatewhereclause=yes name=equipmentleasetype_type dbname="equipmentleasetype.type" )
+ column=(type=long updatewhereclause=yes name=equipmentleasetype_freetimestart dbname="equipmentleasetype.freetimestart" )
+ column=(type=char(32766) updatewhereclause=no name=outside_equip_invoicenumber dbname="outside_equip.invoicenumber" )
+ column=(type=date update=yes updatewhereclause=yes name=leasefreetimeexpiredate dbname="outside_equip.leasefreetimeexpiredate" )
+ column=(type=time update=yes updatewhereclause=yes name=leasefreetimeexpiretime dbname="outside_equip.leasefreetimeexpiretime" )
+ column=(type=date updatewhereclause=yes name=releasedate dbname="outside_equip.releasedate" )
+ column=(type=time updatewhereclause=yes name=releasetime dbname="outside_equip.releasetime" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_status_postingstatus dbname="equipmentpostingstatus.postingstatus" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_isocode dbname="equipment.isocode" )
+ column=(type=char(20) updatewhereclause=yes name=null dbname="null" )
+ column=(type=char(20) updatewhereclause=yes name=null dbname="null" )
+ column=(type=char(20) updatewhereclause=yes name=null dbname="null" )
+ retrieve="  SELECT ~"equipment~".~"eq_id~",   
+         ~"equipment~".~"eq_type~",   
+         ~"equipment~".~"eq_ref~",   
+         ~"equipment~".~"eq_outside~",   
+         ~"equipment~".~"eq_status~",   
+         ~"equipment~".~"eq_length~",   
+         ~"equipment~".~"eq_height~",   
+         ~"equipment~".~"eq_axles~",   
+         ~"equipment~".~"eq_air~",   
+         ~"equipment~".~"eq_spec1~",   
+         ~"equipment~".~"eq_spec2~",   
+         ~"equipment~".~"eq_spec3~",   
+         ~"equipment~".~"eq_spec4~",   
+         ~"equipment~".~"eq_spec5~",   
+         ~"equipment~".~"eq_cur_event~",   
+         ~"equipment~".~"eq_next_event~",   
+         ~"outside_equip~".~"oe_id~",   
+         ~"outside_equip~".~"oe_from~",   
+         ~"outside_equip~".~"oe_for~",   
+         ~"outside_equip~".~"oe_booknum~",   
+         ~"outside_equip~".~"oe_out~",   
+         ~"outside_equip~".~"oe_in~",   
+         ~"outside_equip~".~"oe_orig_event~",   
+         ~"outside_equip~".~"oe_term_event~",   
+         ~"disp_events~".~"de_event_type~",   
+         ~"disp_events~".~"de_site~",   
+         ~"disp_events~".~"de_arrdate~",   
+         ~"disp_events~".~"de_arrtime~",   
+         ~"disp_events~".~"de_deptime~",   
+         ~"disp_events~".~"de_shipment_id~",   
+         ~"disp_events~".~"de_conf~",   
+         convert ( char (45), null ),   
+         convert ( char (20), null ),   
+         convert ( char (3), null ),   
+         convert ( integer, null ),   
+         convert ( char (25), null ),   
+         ~"outside_equip~".~"fkequipmentleasetype~",   
+         ~"outside_equip~".~"user1~",   
+         ~"outside_equip~".~"user2~",   
+         ~"outside_equip~".~"notes~",   
+         ~"outside_equip~".~"shipment~",   
+         ~"outside_equip~".~"originationsite~",   
+         ~"outside_equip~".~"originationdate~",   
+         ~"outside_equip~".~"originationtime~",   
+         ~"outside_equip~".~"terminationsite~",   
+         ~"outside_equip~".~"terminationdate~",   
+         ~"outside_equip~".~"terminationtime~",   
+         ~"outside_equip~".~"reloadshipment~",   
+         ~"outside_equip~".~"reloaddate~",   
+         ~"outside_equip~".~"reloadtime~",   
+         ~"outside_equip~".~"reloadfreetimeexpiredate~",   
+         ~"outside_equip~".~"reloadfreetimeexpiretime~",    
+         ~"outside_equip~".~"amountbilled~",   
+         ~"equipment~".~"notes~",   
+         ~"equipmentleasetype~".~"line~",   
+         ~"equipmentleasetype~".~"type~",   
+         ~"equipmentleasetype~".~"freetimestart~",   
+         ~"outside_equip~".~"invoicenumber~" ,
+			~"outside_equip~".~"leasefreetimeexpiredate~",
+			~"outside_equip~".~"leasefreetimeexpiretime~" ,
+		 	~"outside_equip~".~"releasedate~" ,
+			~"outside_equip~".~"releasetime~",
+			~"equipmentpostingstatus~".~"postingstatus~" ,
+		   ~"equipment~".~"isocode~",
+convert ( char (20), null ) ,
+convert ( char (20), null ),
+convert ( char (20), null )   
+    FROM {oj ~"equipmentpostingstatus~" RIGHT OUTER JOIN ~"equipment~" ON ~"equipmentpostingstatus~".~"equipmentid~" = ~"equipment~".~"eq_id~"},
+			{oj ~"equipment~"  LEFT OUTER JOIN {oj ~"outside_equip~" LEFT OUTER JOIN ~"equipmentleasetype~" 
+		 			ON ~"outside_equip~".~"fkequipmentleasetype~" = ~"equipmentleasetype~".~"id~"} 
+					 ON ~"equipment~".~"eq_id~" = ~"outside_equip~".~"oe_id~"},
+			{oj ~"equipment~"  LEFT OUTER JOIN ~"disp_events~"
+				  ON ~"equipment~".~"eq_cur_event~" = ~"disp_events~".~"de_id~"}
+   WHERE ~"equipment~".~"eq_status~" = 'K'" update="outside_equip" updatewhere=1 updatekeyinplace=no  sort="pos ( 'TSNVFRKBCH', eq_type ) A eq_ref A " )
+text(band=header alignment="2" text="Ref. #" border="0" color="128" x="338" y="8" height="64" width="155" html.valueishtml="0"  name=eq_ref_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Type" border="0" color="128" x="174" y="8" height="64" width="128" html.valueishtml="0"  name=eq_type_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Ours" border="0" color="128" x="9" y="8" height="64" width="133" html.valueishtml="0"  name=eq_outside_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Ln." border="0" color="128" x="809" y="8" height="64" width="82" html.valueishtml="0"  name=eq_length_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Ax." border="0" color="128" x="1042" y="8" height="64" width="91" html.valueishtml="0"  name=eq_axles_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Air" border="0" color="128" x="1161" y="8" height="64" width="73" html.valueishtml="0"  name=eq_air_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="W." border="0" color="128" x="928" y="8" height="64" width="78" html.valueishtml="0"  name=eq_height_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="1" text="Arr." border="0" color="128" x="3086" y="8" height="64" width="101" html.valueishtml="0"  name=curev_arrtime_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="1" text="Dep." border="0" color="128" x="3237" y="8" height="64" width="123" html.valueishtml="0"  name=curev_deptime_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="1" text="T.Z." border="0" color="128" x="3392" y="8" height="64" width="101" html.valueishtml="0"  name=curevco_tz_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="1" text="Date" border="0" color="128" x="2889" y="8" height="64" width="123" html.valueishtml="0"  name=curev_arrdate_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Location" border="0" color="128" x="2245" y="8" height="64" width="224" html.valueishtml="0"  name=comp_curev_loc_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="M/R Event" border="0" color="128" x="1280" y="8" height="64" width="283" html.valueishtml="0"  name=curev_type_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Most Recent Site" border="0" color="128" x="1586" y="8" height="64" width="503" html.valueishtml="0"  name=curevco_name_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="174" y="8" height="52" width="137" format="[general]" html.valueishtml="0"  name=eq_type visible="1" edit.name="EqTypeED" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0 edit.codetable=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="338" y="8" height="52" width="421" format="[general]" html.valueishtml="0"  name=eq_ref visible="1" edit.limit=15 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="1" tabsequence=32766 border="0" color="0" x="809" y="8" height="52" width="82" format="#" html.valueishtml="0"  name=eq_length visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="46" y="8" height="52" width="55" format="[general]" html.valueishtml="0"  name=eq_outside visible="1" checkbox.text="" checkbox.on="F" checkbox.off="T" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="0" x="1170" y="8" height="52" width="55" format="[general]" html.valueishtml="0"  name=eq_air visible="1" checkbox.text="" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="2" tabsequence=32766 border="0" color="0" x="1042" y="8" height="52" width="91" format="[general]" html.valueishtml="0"  name=eq_axles visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="0" x="919" y="8" height="52" width="87" format="#" html.valueishtml="0"  name=eq_height visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=32 alignment="0" tabsequence=32766 border="0" color="0" x="1582" y="8" height="52" width="635" format="[general]" html.valueishtml="0"  name=curevco_name visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="0" color="0" x="1280" y="8" height="52" width="274" format="[general]" html.valueishtml="0"  name=curev_type visible="1" edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=28 alignment="1" tabsequence=32766 border="0" color="0" x="3035" y="8" height="52" width="151" format="h:mma/p" html.valueishtml="0"  name=curev_arrtime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=29 alignment="1" tabsequence=32766 border="0" color="0" x="3209" y="8" height="52" width="151" format="h:mma/p" html.valueishtml="0"  name=curev_deptime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=35 alignment="0" tabsequence=32766 border="0" color="0" x="3383" y="8" height="52" width="110" format="[general]" html.valueishtml="0"  name=curevco_tz visible="1" edit.name="TimeZoneED" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0 edit.codetable=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="1" tabsequence=32766 border="0" color="0" x="2880" y="8" height="52" width="133" format="m/d" html.valueishtml="0"  name=curev_arrdate visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="if ( len ( trim ( curevco_city ) ) > 0, trim ( curevco_city ), '' ) + if ( len ( curevco_state ) > 0, ', ' + curevco_state, '' )"border="0" color="0" x="2245" y="8" height="52" width="608" format="[general]" html.valueishtml="0"  name=comp_curev_loc visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

@@ -1,0 +1,12 @@
+﻿$PBExportHeader$s_atroad_outbmsgsresp.srs
+global type s_atroad_outbmsgsresp from structure
+	string		is_respCode
+	string		is_respDesc
+	string		is_vehLabel
+	string		is_sendStat
+	string		is_mesgDate
+	string		is_mesgTime
+	string		is_mesgTimeZone
+	string		is_origMesg
+end type
+

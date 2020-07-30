@@ -1,0 +1,10 @@
+﻿$PBExportHeader$os_sheet.srs
+global type os_sheet from structure
+		window		w_obj
+	windowstate		e_state
+	integer		i_width
+	integer		i_height
+	integer		i_x
+	integer		i_y
+end type
+

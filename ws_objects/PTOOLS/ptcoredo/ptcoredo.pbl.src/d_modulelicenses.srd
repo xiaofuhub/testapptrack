@@ -1,0 +1,18 @@
+﻿$PBExportHeader$d_modulelicenses.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=char(32766) updatewhereclause=no name=module dbname="modulelicenses.module" )
+ column=(type=long updatewhereclause=yes name=licensed dbname="modulelicenses.licensed" )
+ column=(type=long updatewhereclause=yes name=inuse dbname="modulelicenses.inuse" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"modulelicenses~" ) COLUMN(NAME=~"modulelicenses.module~") COLUMN(NAME=~"modulelicenses.licensed~") COLUMN(NAME=~"modulelicenses.inuse~")) " )
+text(band=header alignment="0" text="Number Licensed"border="0" color="128" x="667" y="4" height="64" width="489"  name=licensed_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Number In Use"border="0" color="128" x="1230" y="4" height="64" width="443"  name=inuse_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="2" tabsequence=32766 border="0" color="0" x="667" y="4" height="64" width="494" format="[general]"  name=licensed edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.displayonly=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="2" tabsequence=32766 border="0" color="0" x="1230" y="4" height="64" width="457" format="[general]"  name=inuse edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.displayonly=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+text(band=header alignment="0" text="Module"border="0" color="128" x="14" y="4" height="64" width="466"  name=module_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="14" y="4" height="64" width="608" format="[general]"  name=module edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.displayonly=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

@@ -1,0 +1,19 @@
+﻿$PBExportHeader$d_pcmiles.srd
+$PBExportComments$PTCORE:  global datastore for most used miles and minutes
+release 5;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no )
+header(height=1 color="536870912" )
+summary(height=1 color="536870912" )
+footer(height=1 color="536870912" )
+detail(height=85 color="536870912" )
+table(column=(type=char(30) updatewhereclause=no name=orig dbname="orig" )
+ column=(type=char(30) updatewhereclause=no name=dest dbname="dest" )
+ column=(type=decimal(1) updatewhereclause=no name=miles dbname="miles" )
+ column=(type=long updatewhereclause=no name=minutes dbname="minutes" )
+ column=(type=number updatewhereclause=no name=route_type dbname="route_type" )
+ )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="449" y="4" height="77" width="412" format="[general]"  name=dest edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=30 border="0" color="0" x="883" y="4" height="77" width="412" format="[general]"  name=miles edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=40 border="0" color="0" x="1317" y="4" height="77" width="412" format="[general]"  name=minutes edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="1751" y="4" height="77" width="412" format="[general]"  name=route_type edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=10 border="0" color="0" x="14" y="4" height="77" width="412" format="[general]"  name=orig edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )

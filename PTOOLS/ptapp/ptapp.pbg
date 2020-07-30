@@ -1,0 +1,8 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptapp\\ptapp.pbl" "";
+@end;
+@begin Objects
+ "ptools\\ptapp\\proj_trucking.srj" "ptools\\ptapp\\ptapp.pbl";
+ "PTOOLS\\ptapp\\app_trucking.sra" "PTOOLS\\ptapp\\ptapp.pbl";
+@end;

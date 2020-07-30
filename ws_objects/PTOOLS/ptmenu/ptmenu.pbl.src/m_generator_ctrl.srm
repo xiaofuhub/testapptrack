@@ -1,0 +1,49 @@
+﻿$PBExportHeader$m_generator_ctrl.srm
+forward
+global type m_generator_ctrl from m_generator
+end type
+type m_shortcut from menu within m_placeholder
+end type
+end forward
+
+global type m_generator_ctrl from m_generator
+end type
+global m_generator_ctrl m_generator_ctrl
+
+on m_generator_ctrl.create
+m_generator_ctrl=this
+call super::create
+end on
+
+on m_generator_ctrl.destroy
+call super::destroy
+end on
+
+type m_placeholder from m_generator`m_placeholder within m_generator_ctrl
+m_shortcut m_shortcut
+end type
+
+on m_placeholder.create
+call super::create
+this.MergeOption=Exclude!
+this.m_shortcut=create m_shortcut
+this.Item[UpperBound(this.item)+1]=this.m_shortcut
+end on
+
+on m_placeholder.destroy
+call super::destroy
+destroy(this.m_shortcut)
+end on
+
+type m_shortcut from menu within m_placeholder
+end type
+
+event clicked;if isvalid(inv_cst_toolmenu_manager) then
+	inv_cst_toolmenu_manager.of_process_click(this)
+end if
+end event
+
+on m_shortcut.create
+this.Text="shortcut"
+end on
+

@@ -1,0 +1,16 @@
+﻿$PBExportHeader$s_mapping.srs
+$PBExportComments$PTCORE.
+global type s_mapping from structure
+	string		typemap
+	datawindow		dw_source
+	datastore		ds_source
+	long		valid_tripid
+	integer		xpos
+	integer		ypos
+	string		typeroute
+	string		hubs
+	string		borders
+	string		layername
+	n_cst_beo		inva_beolist[]
+end type
+

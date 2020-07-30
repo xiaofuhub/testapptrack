@@ -1,0 +1,79 @@
+﻿$PBExportHeader$d_equipmentlease_dddw_unfiltered.srd
+$PBExportComments$Version that shows deactivated types in the dropdown list.
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="553648127~tIF ( LeaseStatus = 0, 12632256, 16777215 )" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=id dbname="equipmentleasetype.id" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=line dbname="equipmentleasetype.line" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=type dbname="equipmentleasetype.type" )
+ column=(type=long update=yes updatewhereclause=yes name=freetimeunits dbname="equipmentleasetype.freetimeunits" )
+ column=(type=long update=yes updatewhereclause=yes name=freetimeperiod dbname="equipmentleasetype.freetimeperiod" )
+ column=(type=long update=yes updatewhereclause=yes name=chargedperiods dbname="equipmentleasetype.chargedperiods" )
+ column=(type=long update=yes updatewhereclause=yes name=firstchargedunits dbname="equipmentleasetype.firstchargedunits" )
+ column=(type=long update=yes updatewhereclause=yes name=firstchargedperiod dbname="equipmentleasetype.firstchargedperiod" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=firstchargedrate dbname="equipmentleasetype.firstchargedrate" )
+ column=(type=long update=yes updatewhereclause=yes name=secondchargedunits dbname="equipmentleasetype.secondchargedunits" )
+ column=(type=long update=yes updatewhereclause=yes name=secondchargedperiod dbname="equipmentleasetype.secondchargedperiod" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=secondchargedrate dbname="equipmentleasetype.secondchargedrate" )
+ column=(type=long update=yes updatewhereclause=yes name=thirdchargedunits dbname="equipmentleasetype.thirdchargedunits" )
+ column=(type=long update=yes updatewhereclause=yes name=thirdchargedperiod dbname="equipmentleasetype.thirdchargedperiod" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=thirdchargedrate dbname="equipmentleasetype.thirdchargedrate" )
+ column=(type=long update=yes updatewhereclause=yes name=fourthchargedunits dbname="equipmentleasetype.fourthchargedunits" )
+ column=(type=long update=yes updatewhereclause=yes name=fourthchargedperiod dbname="equipmentleasetype.fourthchargedperiod" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=fourthchargedrate dbname="equipmentleasetype.fourthchargedrate" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=spec1 dbname="equipmentleasetype.spec1" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=spec2 dbname="equipmentleasetype.spec2" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=spec3 dbname="equipmentleasetype.spec3" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=spec4 dbname="equipmentleasetype.spec4" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=spec5 dbname="equipmentleasetype.spec5" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=user1 dbname="equipmentleasetype.user1" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=user2 dbname="equipmentleasetype.user2" )
+ column=(type=char(341) updatewhereclause=yes name=uniquelinename dbname="uniquelinename" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=lineprefix dbname="equipmentleasetype.lineprefix" )
+ column=(type=char(12) update=yes updatewhereclause=yes name=equipmentlength dbname="equipmentleasetype.equipmentlength" )
+ column=(type=long update=yes updatewhereclause=yes name=leasestatus dbname="equipmentleasetype.leasestatus" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=notes dbname="equipmentleasetype.notes" )
+ column=(type=long update=yes updatewhereclause=yes name=freetimestart dbname="equipmentleasetype.freetimestart" )
+ retrieve="  SELECT ~"equipmentleasetype~".~"id~",   
+         ~"equipmentleasetype~".~"line~",   
+         ~"equipmentleasetype~".~"type~",   
+         ~"equipmentleasetype~".~"freetimeunits~",   
+         ~"equipmentleasetype~".~"freetimeperiod~",   
+         ~"equipmentleasetype~".~"chargedperiods~",   
+         ~"equipmentleasetype~".~"firstchargedunits~",   
+         ~"equipmentleasetype~".~"firstchargedperiod~",   
+         ~"equipmentleasetype~".~"firstchargedrate~",   
+         ~"equipmentleasetype~".~"secondchargedunits~",   
+         ~"equipmentleasetype~".~"secondchargedperiod~",   
+         ~"equipmentleasetype~".~"secondchargedrate~",   
+         ~"equipmentleasetype~".~"thirdchargedunits~",   
+         ~"equipmentleasetype~".~"thirdchargedperiod~",   
+         ~"equipmentleasetype~".~"thirdchargedrate~",   
+         ~"equipmentleasetype~".~"fourthchargedunits~",   
+         ~"equipmentleasetype~".~"fourthchargedperiod~",   
+         ~"equipmentleasetype~".~"fourthchargedrate~",   
+         ~"equipmentleasetype~".~"spec1~",   
+         ~"equipmentleasetype~".~"spec2~",   
+         ~"equipmentleasetype~".~"spec3~",   
+         ~"equipmentleasetype~".~"spec4~",   
+         ~"equipmentleasetype~".~"spec5~",   
+         ~"equipmentleasetype~".~"user1~",   
+         ~"equipmentleasetype~".~"user2~",   
+         Line + Space( 300 ) + String(id) AS UniqueLineName,   
+         ~"equipmentleasetype~".~"lineprefix~",   
+         ~"equipmentleasetype~".~"equipmentlength~",   
+         ~"equipmentleasetype~".~"leasestatus~",   
+         ~"equipmentleasetype~".~"notes~",   
+         ~"equipmentleasetype~".~"freetimestart~"  
+    FROM ~"equipmentleasetype~"   
+" update="equipmentleasetype" updatewhere=1 updatekeyinplace=no  sort="leasestatus D line A type A " )
+column(band=detail id=2 alignment="0" tabsequence=10 border="0" color="0" x="9" y="4" height="64" width="695" format="[general]" html.valueishtml="0"  name=line visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="0" color="0" x="727" y="4" height="64" width="645" format="[general]" html.valueishtml="0"  name=type visible="1" edit.limit=30 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=30 alignment="0" tabsequence=30 border="0" color="0" x="1394" y="4" height="64" width="1120" format="[general]" html.valueishtml="0"  name=notes visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

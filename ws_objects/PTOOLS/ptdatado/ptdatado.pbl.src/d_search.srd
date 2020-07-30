@@ -1,0 +1,87 @@
+﻿$PBExportHeader$d_search.srd
+$PBExportComments$PTDATA.
+release 9;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=496 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes name=ss_id dbname="ss_id" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=ss_type dbname="ss_type" initial="SE" values="TRIPS	T/SHIPMENTS	SE/DISPATCH SHIPMENTS	SD/BROKERAGE SHIPMENTS	SB/" )
+ column=(type=char(30) update=yes updatewhereclause=yes name=ss_name dbname="ss_name" initial="[NEW SEARCH]" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=ss_status dbname="ss_status" initial="Z" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=ss_ref_type dbname="ss_ref_type" initial="ds_id" values="SHIPMENT #	ds_id/INVOICE #	ds_pronum/REF # 1, 2, & 3	ref123/BOOKING #	booking/SEAL #	seal/LINE ITEM BL	di_blnum/MBL // MAWB	masterbl/HBL // HAWB	housebl/VESSEL	vessel/VOYAGE	voyage/PORT OF ORIGIN	originport/PORT OF DEST	destinationport/MOVE TYPE	movetype/PICKUP #	pickupnumber/RAILBILL #	railbillnumber/PRENOTE BY	prenoteby/DISPATCHED BY	dispatchedby/FORWARDER REF	forwarderref/AGENT REF	agentref/EDI REF	edireference/SHIP NOTE	ds_ship_comment/BILL NOTE	ds_bill_comment/EQUIP REQ	ds_equip_req/TRLR-CHASSIS	trailerchassis/" )
+ column=(type=char(32766) update=yes updatewhereclause=yes name=ss_ref_num dbname="ss_ref_num" )
+ column=(type=long update=yes updatewhereclause=yes name=ss_co dbname="ss_co" )
+ column=(type=char(2) update=yes updatewhereclause=yes name=ss_site_type dbname="ss_site_type" initial="PD" values="Search For Reverse Routing Also	PP/Search For Reverse Routing Also	PD" )
+ column=(type=long update=yes updatewhereclause=yes name=ss_site_1 dbname="ss_site_1" )
+ column=(type=long update=yes updatewhereclause=yes name=ss_site_2 dbname="ss_site_2" )
+ column=(type=char(50) update=yes updatewhereclause=yes name=ss_date_type dbname="ss_date_type" initial="ds_bill_date" values="BILL DATE	ds_bill_date/SHIP DATE	ds_ship_date/MOVE DATE	MOVEDATE/ORDER DATE	PRENOTEDATE/READY DATE	ETADATE/PRENOTE	prenotedate/ETA DATE	etadate/ARRIVED	arrivaldate/GROUNDED	groundeddate/RELEASED	releasedate/LFD-STORAGE	lastfreedate/MT AT CUST	emptyatcustomerdate/LD AT CUST	loadedatcustomerdate/CUTOFF	cutoffdate/RAIL BILLED	railbilleddate/" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=ss_range_type dbname="ss_range_type" initial="Z" values=" 	Z/OR EARLIER	E/OR LATER	L/THROUGH	T/" )
+ column=(type=date update=yes updatewhereclause=yes name=ss_date_1 dbname="ss_date_1" validation="1 = 2" )
+ column=(type=date update=yes updatewhereclause=yes name=ss_date_2 dbname="ss_date_2" validation="1 = 2" )
+ column=(type=char(45) updatewhereclause=yes name=co_name dbname="co_name" )
+ column=(type=char(45) updatewhereclause=yes name=site_1_name dbname="site_1_name" )
+ column=(type=char(45) updatewhereclause=yes name=site_2_name dbname="site_2_name" )
+ column=(type=long updatewhereclause=yes name=ss_ship_type dbname="ss_ship_type" initial="0" values="[ANY TYPE]	0/" )
+ column=(type=char(50) updatewhereclause=yes name=ss_trip_ref_type dbname="ss_trip_ref_type" initial="bt_id" values="TRIP #	bt_id/CARRIER TRIP #	bt_tripnum/" )
+ column=(type=char(20) updatewhereclause=yes name=ss_site_1_type dbname="ss_site_1_type" initial="ORIG_DEST" values="ORIGIN	ORIG_DEST/ANY PU	EVENT/" )
+ column=(type=char(20) updatewhereclause=yes name=ss_site_2_type dbname="ss_site_2_type" initial="ORIG_DEST" values="DEST	ORIG_DEST/ANY DEL	EVENT/" )
+ column=(type=char(50) updatewhereclause=yes name=ss_co2_type dbname="ss_co2_type" initial="ds_pay1_id" values="CARRIER	ds_pay1_id/FWDR	forwarder/AGENT	agent/" )
+ column=(type=long updatewhereclause=yes name=ss_co2 dbname="ss_co2" )
+ column=(type=char(45) updatewhereclause=yes name=co2_name dbname="co2_name" )
+ column=(type=char(45) updatewhereclause=yes name=ss_ref_num2 dbname="ss_ref_num2" )
+ retrieve="  SELECT convert(smallint, null) AS ~"ss_id~",   
+         convert(char(2), null) AS ~"ss_type~",   
+         convert(char(30), null) AS ~"ss_name~",   
+         convert(char(1), null) AS ~"ss_status~",   
+         convert(char(50), null) AS ~"ss_ref_type~",   
+         convert(long varchar, null) AS ~"ss_ref_num~",   
+         convert(integer, null) AS ~"ss_co~",   
+         convert(char(2), null) AS ~"ss_site_type~",   
+         convert(integer, null) AS ~"ss_site_1~",   
+         convert(integer, null) AS ~"ss_site_2~",   
+         convert(char(50), null) AS ~"ss_date_type~",   
+         convert(char(1), null) AS ~"ss_range_type~",   
+         convert(date, null) AS ~"ss_date_1~",   
+         convert(date, null) AS ~"ss_date_2~",   
+         convert(char(45), null) AS ~"co_name~",   
+         convert(char(45), null) AS ~"site_1_name~",   
+         convert(char(45), null) AS ~"site_2_name~",   
+         convert(integer, null) AS ~"ss_ship_type~", 
+         convert(char(50), null) AS ~"ss_trip_ref_type~", 
+         convert(char(20), null) AS ~"ss_site_1_type~", 
+         convert(char(20), null) AS ~"ss_site_2_type~", 
+         convert(char(50), null) AS ~"ss_co2_type~", 
+         convert(integer, null) AS ~"ss_co2~", 
+         convert(char(45), null) AS ~"co2_name~",
+			convert(char(45), null) AS ~"ss_ref_num2~"
+    FROM ~"dummy~"    
+" )
+compute(band=detail alignment="1" expression="if ( ss_type = 'T', 'Carrier:', 'Bill To:' )"border="0" color="0" x="1870" y="12" height="64" width="261" format="[GENERAL]" html.valueishtml="0"  name=comp_co_label visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=22 alignment="0" tabsequence=130 border="5" color="0" x="1842" y="112" height="64" width="288" format="[general]" html.valueishtml="0"  name=ss_co2_type visible="1~tif ( ss_type = 'T', 0, 1 )" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.useasborder=yes ddlb.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=19 alignment="0" tabsequence=30 border="5" color="0" x="32" y="112" height="64" width="553" format="[general]" html.valueishtml="0"  name=ss_trip_ref_type visible="1~tif ( ss_type = 'T', 1, 0)" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.useasborder=yes ddlb.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=20 alignment="0" tabsequence=150 border="5" color="0" x="1842" y="212" height="64" width="288" format="[general]" html.valueishtml="0"  name=ss_site_1_type visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.useasborder=yes ddlb.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=13 alignment="0" tabsequence=70 border="5" color="0" x="617" y="212" height="64" width="233" format="m/d/yy" html.valueishtml="0"  name=ss_date_1 visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="TRIP DATE" border="5" color="0" x="32" y="212" height="64" width="553" html.valueishtml="0"  name=t_1 visible="1~tif ( ss_type = 'T', 1, 0 )"  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=12 alignment="0" tabsequence=80 border="5" color="0" x="923" y="212" height="64" width="430" format="[general]" html.valueishtml="0"  name=ss_range_type visible="1" ddlb.limit=1 ddlb.allowedit=no ddlb.case=any ddlb.useasborder=yes ddlb.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=21 alignment="0" tabsequence=170 border="5" color="0" x="1842" y="312" height="64" width="288" format="[general]" html.valueishtml="0"  name=ss_site_2_type visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.useasborder=yes ddlb.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=18 alignment="0" tabsequence=110 border="5" color="0" x="617" y="312" height="64" width="736" format="[general]" html.valueishtml="0"  name=ss_ship_type visible="1~tif ( ss_type = 'T', 0, 1 )" ddlb.limit=0 ddlb.sorted=yes ddlb.allowedit=no ddlb.case=any ddlb.vscrollbar=yes ddlb.useasborder=yes ddlb.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="5" color="0" x="617" y="12" height="64" width="736" format="[general]" html.valueishtml="0"  name=ss_type visible="1" ddlb.limit=2 ddlb.allowedit=no ddlb.case=any ddlb.useasborder=yes ddlb.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=20 border="5" color="0" x="32" y="112" height="64" width="553" format="[general]" html.valueishtml="0"  name=ss_ref_type visible="1~tif ( ss_type = 'T', 0, 1)" ddlb.limit=1 ddlb.allowedit=no ddlb.case=any ddlb.vscrollbar=yes ddlb.useasborder=yes ddlb.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="Search for:" border="0" color="0" x="297" y="12" height="64" width="288" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=15 alignment="0" tabsequence=120 border="5" color="0" x="2162" y="12" height="64" width="855" format="[general]" html.valueishtml="0"  name=co_name visible="1" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=24 alignment="0" tabsequence=140 border="5" color="0" x="2162" y="112" height="64" width="855" format="[general]" html.valueishtml="0"  name=co2_name visible="1~tif ( ss_type = 'T', 0, 1 )" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=16 alignment="0" tabsequence=160 border="5" color="0" x="2162" y="212" height="64" width="855" format="[general]" html.valueishtml="0"  name=site_1_name visible="1" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=190 border="0" color="0" x="2062" y="408" height="64" width="960" format="[general]" html.valueishtml="0"  name=ss_site_type visible="1" checkbox.text="Search For Reverse Routing Also" checkbox.on="PP" checkbox.off="PD" checkbox.lefttext=yes checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=17 alignment="0" tabsequence=180 border="5" color="0" x="2162" y="312" height="64" width="855" format="[general]" html.valueishtml="0"  name=site_2_name visible="1" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=40 border="5" color="0" x="617" y="112" height="64" width="736" format="[general]" html.valueishtml="0"  name=ss_ref_num visible="1" edit.limit=15 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="-" border="0" color="0" x="1371" y="104" height="72" width="23" html.valueishtml="0"  name=t_3 visible="1~tif(  ss_ref_type in ('ds_id', 'ds_pronum'), 1, 0 )"  font.face="Arial" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=14 alignment="0" tabsequence=90 border="5" color="0" x="1413" y="212" height="64" width="306" format="m/d/yy" html.valueishtml="0" protect="0~tif ( ss_range_type = 'T', 0, 1 )"  name=ss_date_2 visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="12632256~tif ( ss_range_type = 'T', 16777215, 12632256 )" )
+column(band=detail id=25 alignment="0" tabsequence=50 border="5" color="0" x="1413" y="112" height="64" width="306" format="[general]" html.valueishtml="0" protect="0~tif( isnull( ss_ref_num ) or len(trim( ss_ref_num)) = 0 , 1, 0 )"  name=ss_ref_num2 visible="1~tif(  ss_ref_type in ('ds_id', 'ds_pronum'), 1, 0 )" edit.limit=15 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="12632256~tif( isnull( ss_ref_num ) or len(trim( ss_ref_num)) = 0 , 12632256,  16777215)" )
+column(band=detail id=11 alignment="0" tabsequence=60 border="5" color="0" x="32" y="212" height="64" width="553" format="[general]" html.valueishtml="0"  name=ss_date_type visible="1~tif ( ss_type = 'T', 0, 1 )" ddlb.limit=1 ddlb.allowedit=no ddlb.case=any ddlb.vscrollbar=yes ddlb.useasborder=yes ddlb.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=100 border="5" color="0" x="32" y="312" height="64" width="549" format="[general]" html.valueishtml="0"  name=ss_status visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Univers Condensed" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

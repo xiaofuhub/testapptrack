@@ -1,0 +1,14 @@
+﻿$PBExportHeader$s_emp_info.srs
+$PBExportComments$PTCORE.
+global type s_emp_info from structure
+	long		em_id
+	string		em_fn
+	string		em_mn
+	string		em_ln
+	string		em_ref
+	string		em_status
+	integer		em_type
+	integer		em_class
+	date		di_Date
+end type
+

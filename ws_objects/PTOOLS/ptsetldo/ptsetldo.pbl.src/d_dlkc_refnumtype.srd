@@ -1,0 +1,18 @@
+﻿$PBExportHeader$d_dlkc_refnumtype.srd
+$PBExportComments$RefnumType (DataWindow from PBL map PTSetl) //@(*)[70821555|660]<nosync>
+release 6;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=1 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=88 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=number update=yes updatewhereclause=yes key=yes name=refnumtype_id dbname="refnumtype.id" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=refnumtype_name dbname="refnumtype.name" )
+ column=(type=char(32767) update=yes updatewhereclause=yes name=refnumtype_tag dbname="refnumtype.tag" )
+ column=(type=long updatewhereclause=yes name=beo_index dbname="beo_index" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"refnumtype~" ) COLUMN(NAME=~"refnumtype.id~" ) COLUMN(NAME=~"refnumtype.name~" ) COLUMN(NAME=~"refnumtype.tag~" ) COMPUTE(NAME=~"beo_index=0~" ) ) " update="RefnumType" updatewhere=1 updatekeyinplace=yes )
+column(band=detail id=2 alignment="0" tabsequence=10 border="0" color="0" x="9" y="4" height="64" width="530" format="[general]"  name=refnumtype_name  tag=";(@HOW1.0@)" edit.limit=15 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="1" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="0" color="0" x="549" y="4" height="64" width="530" format="[general]"  name=refnumtype_tag  tag=";(@HOW1.0@)" edit.limit=32000 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="1" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=header alignment="0" text="Name"border="0" color="128" x="9" y="8" height="68" width="530"  name=refnumtype_name_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="1" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Tag"border="0" color="128" x="549" y="8" height="68" width="530"  name=refnumtype_tag_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

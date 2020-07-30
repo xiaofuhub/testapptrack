@@ -1,0 +1,21 @@
+﻿$PBExportHeader$d_billseq_list.srd
+release 5;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no )
+header(height=1 color="536870912" )
+summary(height=1 color="536870912" )
+footer(height=1 color="536870912" )
+detail(height=69 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=bs_id dbname="billing_sequences.bs_id" )
+ column=(type=char(20) updatewhereclause=yes name=bs_name dbname="null" initial="[NEW SEQUENCE]" )
+ column=(type=char(15) updatewhereclause=yes name=bs_definition dbname="null" validation="match ( gettext(), '^[^#]*[#]+[^#]*$' ) or isnull ( gettext() )" )
+ column=(type=long updatewhereclause=yes name=bs_next dbname="billing_sequences.bs_next" validation="long ( gettext() ) > 0 or isnull(gettext())" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=bs_dbstring dbname="billing_sequences.bs_dbstring" )
+ retrieve="  SELECT ~"billing_sequences~".~"bs_id~",   
+         convert(char(20), null),   
+         convert(char(15), null),   
+         ~"billing_sequences~".~"bs_next~",   
+         ~"billing_sequences~".~"bs_dbstring~"  
+    FROM ~"billing_sequences~"   
+" update="billing_sequences" updatewhere=1 updatekeyinplace=no  sort="bs_name A bs_id A " )
+column(band=detail id=2 alignment="0" tabsequence=10 border="0" color="0" x="19" y="8" height="57" width="659" format="[general]"  name=bs_name edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="0" color="0" x="714" y="8" height="57" width="535" format="[general]"  name=bs_definition edit.limit=15 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )

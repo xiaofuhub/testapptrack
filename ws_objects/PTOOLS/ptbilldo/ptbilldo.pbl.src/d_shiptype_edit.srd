@@ -1,0 +1,90 @@
+﻿$PBExportHeader$d_shiptype_edit.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=80269524 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=1152 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=st_id dbname="shipment_types.st_id" )
+ column=(type=char(20) updatewhereclause=yes name=st_name dbname="null" initial="[NEW SHIPMENT TYPE]" )
+ column=(type=char(1) updatewhereclause=yes name=st_status dbname="null" initial="K" values="Active 	K/Active 	D" )
+ column=(type=long updatewhereclause=yes name=st_logo dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_accounting_ar dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_accounting_sales dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=st_default dbname="null" values="Default 	T/Default 	F" )
+ column=(type=char(1) updatewhereclause=yes name=st_brokerage dbname="null" values="Brokerage 	T/Brokerage 	F" )
+ column=(type=char(1) updatewhereclause=yes name=st_expedite dbname="null" values="Expedite 	T/Expedite 	F" )
+ column=(type=char(12) updatewhereclause=yes name=st_terms dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_01 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_02 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_03 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_04 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_remit_05 dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_accounting_company dbname="null" )
+ column=(type=long updatewhereclause=yes name=st_billing_sequence dbname="null" )
+ column=(type=char(45) updatewhereclause=yes name=st_accounting_accessorialsales dbname="st_accounting_accessorialsales" )
+ column=(type=char(1) updatewhereclause=yes name=st_typeonly dbname="st_typeonly" values="Bill//Ship Only	T/Bill//Ship Only	F" )
+ column=(type=char(1) updatewhereclause=yes name=st_divisiononly dbname="st_divisiononly" values="Payable//Settlement Only	T/Payable//Settlement Only	F" )
+ column=(type=char(1) updatewhereclause=yes name=intermodal dbname="intermodal" values="Intermodal	T/Intermodal	F" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=st_dbstring dbname="shipment_types.st_dbstring" )
+ retrieve="  SELECT ~"shipment_types~".~"st_id~",   
+         convert ( char(20), null ), 
+         convert ( char(1), null),   
+         convert ( integer, null ),   
+         convert ( char(45), null ),   
+         convert ( char(45), null ),   
+         convert ( char(1), null),   
+         convert ( char(1), null),   
+         convert ( char(1), null),   
+         convert ( char(12), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( char(45), null),   
+         convert ( integer, null),   
+         convert ( char(45), null) AS ~"st_accounting_accessorialsales~",
+         convert ( char(1), null) AS ~"st_typeonly~",
+         convert ( char(1), null) AS ~"st_divisiononly~",
+			convert ( char(1), null) AS ~"intermodal~",
+         ~"shipment_types~".~"st_dbstring~"     
+    FROM ~"shipment_types~"   
+" update="shipment_types" updatewhere=0 updatekeyinplace=no  sort="st_name A st_id A " )
+text(band=detail alignment="2" text="General / Billing Settings" border="5" color="128" x="23" y="20" height="64" width="2414" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Display Name:" border="0" color="0" x="37" y="132" height="64" width="411" html.valueishtml="0"  name=null_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="(1):" border="0" color="0" x="1289" y="132" height="64" width="87" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=50 border="5" color="0" x="1399" y="136" height="56" width="1038" format="[general]" html.valueishtml="0"  name=st_remit_01 visible="1" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="Billing Logo:" border="0" color="0" x="123" y="220" height="64" width="325" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="1" tabsequence=20 border="5" color="0" x="471" y="224" height="56" width="658" format="[general]" html.valueishtml="0"  name=st_logo visible="1" dddw.name=d_graphic_definitions dddw.displaycolumn=gd_name dddw.datacolumn=gd_id dddw.percentwidth=100 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="(2):" border="0" color="0" x="1289" y="224" height="64" width="87" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=60 border="5" color="0" x="1399" y="224" height="56" width="1038" format="[general]" html.valueishtml="0"  name=st_remit_02 visible="1" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="Invoice # Series:" border="0" color="0" x="14" y="312" height="64" width="434" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="REMIT" border="0" color="0" x="1129" y="356" height="64" width="178" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0"font.escapement="0~t900"  background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="(3):" border="0" color="0" x="1289" y="312" height="64" width="87" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=70 border="5" color="0" x="1399" y="312" height="56" width="1038" format="[general]" html.valueishtml="0"  name=st_remit_03 visible="1" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="(4):" border="0" color="0" x="1289" y="400" height="64" width="87" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=80 border="5" color="0" x="1399" y="400" height="56" width="1038" format="[general]" html.valueishtml="0"  name=st_remit_04 visible="1" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="(5):" border="0" color="0" x="1289" y="484" height="64" width="87" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=90 border="5" color="0" x="1399" y="488" height="56" width="1038" format="[general]" html.valueishtml="0"  name=st_remit_05 visible="1" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="5" color="0" x="471" y="136" height="56" width="658" format="[general]" html.valueishtml="0"  name=st_name visible="1" edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="Posting Company:" border="0" color="0" x="37" y="620" height="64" width="539" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=100 border="5" color="0" x="41" y="708" height="56" width="1147" format="[general]" html.valueishtml="0"  name=st_accounting_company visible="1" edit.limit=45 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="2" text="Status / Category Settings" border="5" color="128" x="41" y="868" height="64" width="1147" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="2" text="Shipment Type Settings" border="5" color="128" x="1289" y="868" height="64" width="1147" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Payment Terms:" border="0" color="0" x="9" y="400" height="64" width="439" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="SysId:" border="0" color="0" x="261" y="496" height="64" width="187" html.valueishtml="0"  name=t_14 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="471" y="500" height="56" width="320" format="" html.valueishtml="0"  name=st_id visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=20 alignment="0" tabsequence=120 border="0" color="0" x="590" y="976" height="64" width="626" format="[general]" html.valueishtml="0"  name=st_divisiononly visible="1" checkbox.text="Payable/Settlement Only" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=8 alignment="0" tabsequence=140 border="0" color="0" x="1376" y="976" height="64" width="370" format="[general]" html.valueishtml="0"  name=st_brokerage visible="1" checkbox.text="Brokerage " checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=7 alignment="0" tabsequence=160 border="0" color="0" x="1989" y="976" height="64" width="297" format="[general]" html.valueishtml="0"  name=st_default visible="1" checkbox.text="Default " checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=9 alignment="0" tabsequence=170 border="0" color="0" x="1989" y="1060" height="64" width="352" format="[general]" html.valueishtml="0"  name=st_expedite visible="1" checkbox.text="Expedite " checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=21 alignment="0" tabsequence=150 border="0" color="0" x="1376" y="1060" height="64" width="389" format="[general]" html.valueishtml="0"  name=intermodal visible="1" checkbox.text="Intermodal" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=19 alignment="0" tabsequence=110 border="0" color="0" x="37" y="976" height="64" width="480" format="[general]" html.valueishtml="0"  name=st_typeonly visible="1" checkbox.text="Bill/Ship Only" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=3 alignment="0" tabsequence=130 border="0" color="0" x="37" y="1060" height="64" width="297" format="[general]" html.valueishtml="0"  name=st_status visible="1" checkbox.text="Active " checkbox.on="K" checkbox.off="D" checkbox.scale=no checkbox.threed=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="80269524" )
+column(band=detail id=17 alignment="0" tabsequence=30 border="5" color="0" x="471" y="312" height="56" width="658" format="[general]" html.valueishtml="0"  name=st_billing_sequence visible="1" dddw.name=d_billseq_list dddw.displaycolumn=bs_name dddw.datacolumn=bs_id dddw.percentwidth=200 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=yes dddw.case=any dddw.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=10 alignment="0" tabsequence=40 border="5" color="0" x="471" y="400" height="56" width="658" format="[general]" html.valueishtml="0"  name=st_terms visible="1" edit.limit=12 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

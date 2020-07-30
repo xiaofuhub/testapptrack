@@ -1,0 +1,41 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "framewrk\\how_srv\\how_srv.pbl" "";
+@end;
+@begin Objects
+ "framewrk\\how_srv\\ofr_n_cst_ofrerror_collection.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_s_bcm_ds_colmap.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_s_bcm_ds_datacol.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_s_bcm_tableowner.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\d_log_bcm.srd" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\d_log_beo.srd" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_s_bcm_class.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_s_bcm_ds_beoindex_init.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_bcm_ds.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_bcm_init.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_database.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_beo_init.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_bcmmgr.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_beokey.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_beolog.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_s_bcm_unique.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_collection.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_s_dlk_updateinfo.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_exception.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_dlk_init.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\s_bcmreference.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_base.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_bcm.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_beo.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_bso.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_dlk.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_ofrerror.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_sso.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_s_error.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_attribute.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_query.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_n_cst_txmgr.sru" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\w_beolog.srw" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\ofr_s_error_collection.srs" "framewrk\\how_srv\\how_srv.pbl";
+ "framewrk\\how_srv\\d_ofrexceptions.srd" "framewrk\\how_srv\\how_srv.pbl";
+@end;

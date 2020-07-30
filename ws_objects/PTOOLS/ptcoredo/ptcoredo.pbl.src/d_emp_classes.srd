@@ -1,0 +1,28 @@
+﻿$PBExportHeader$d_emp_classes.srd
+$PBExportComments$for privileges
+release 5;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no )
+header(height=1 color="536870912" )
+summary(height=5 color="536870912" )
+footer(height=1 color="536870912" )
+detail(height=61 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=class_id dbname="system_settings.ss_id" )
+ column=(type=char(32766) updatewhereclause=no name=class_name dbname="system_settings.ss_string" )
+ column=(type=long updatewhereclause=yes name=priv_item dbname="system_settings.ss_id" )
+ column=(type=long updatewhereclause=yes name=priv_val dbname="system_settings.ss_long" )
+ retrieve="  SELECT ~"system_settings_a~".~"ss_id~",   
+         ~"system_settings_a~".~"ss_string~",   
+         ~"system_settings_b~".~"ss_id~",   
+         ~"system_settings_b~".~"ss_long~"  
+    FROM ~"system_settings~" ~"system_settings_a~",   
+         ~"system_settings~" ~"system_settings_b~"  
+   WHERE ( ~"system_settings_a~".~"ss_id~" = (~"system_settings_b~".~"ss_uid~" * -1) ) and  
+         ( ( ~"system_settings_a~".~"ss_id~" > 1000 ) AND  
+         ( ~"system_settings_a~".~"ss_id~" <= 1500 ) ) AND  
+         ~"system_settings_b~".~"ss_uid~" < 0    
+"  sort="class_id A priv_item A " )
+group(level=1 header.height=73 trailer.height=1 by=("class_id" ) header.color="536870912" trailer.color="536870912" )
+column(band=header.1 id=1 alignment="1" tabsequence=32766 border="0" color="128" x="19" y="4" height="65" width="165" format="[general]"  name=class_id edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=header.1 id=2 alignment="0" tabsequence=32766 border="0" color="128" x="220" y="4" height="65" width="549" format="[general]"  name=class_name edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=20 border="0" color="0" x="435" y="4" height="57" width="165" format="[general]"  name=priv_val edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=10 border="0" color="0" x="220" y="4" height="57" width="165" format="[general]"  name=priv_item edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )

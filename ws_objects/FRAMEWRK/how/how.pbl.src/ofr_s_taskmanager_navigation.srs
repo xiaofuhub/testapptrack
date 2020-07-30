@@ -1,0 +1,19 @@
+﻿$PBExportHeader$ofr_s_taskmanager_navigation.srs
+global type ofr_s_taskmanager_navigation from structure
+	string		name
+	string		sourcename
+	string		destinationname
+	integer		windowtype
+	boolean		isentry
+	boolean		isexit
+	boolean		issourcesubtask
+	boolean		issubtaskmodal
+	boolean		isdestinationsubtask
+	boolean		activatetarget
+	boolean		closesource
+	boolean		reuseopenwindows
+	string		taskparametermap[]
+	string		parameter[]
+	integer		mapcount
+end type
+

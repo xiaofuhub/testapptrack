@@ -1,0 +1,37 @@
+﻿$PBExportHeader$d_companyimages.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=264 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=char(32766) updatewhereclause=no name=type dbname="imagetype.type" )
+ column=(type=char(32766) updatewhereclause=no name=category dbname="imagetype.category" )
+ column=(type=char(32766) updatewhereclause=no name=topic dbname="imagetype.topic" )
+ column=(type=long updatewhereclause=yes name=required dbname="required" values="	1/	0/	-1" )
+ column=(type=long updatewhereclause=yes name=warning dbname="warning" values="	1/	0/	-1" )
+ column=(type=long updatewhereclause=yes name=printwithbills dbname="printwithbills" values="	1/	0/	-1" )
+ retrieve="  SELECT ~"imagetype~".~"type~",   
+         ~"imagetype~".~"category~",   
+         ~"imagetype~".~"topic~" ,
+			CONVERT ( Integer ,Null ) as required,
+			CONVERT ( Integer ,Null ) as warning,
+			CONVERT ( Integer ,Null ) as printwithbills
+    FROM ~"imagetype~"   
+" )
+line(band=header x1="27" y1="136" x2="2144" y2="136"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Image Type" border="0" color="0" x="453" y="56" height="64" width="347" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Print" border="0" color="0" x="265" y="32" height="64" width="137" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0"font.escapement="0~t450"  background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Warn" border="0" color="0" x="137" y="32" height="64" width="160" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0"font.escapement="0~t450"  background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Req." border="0" color="0" x="23" y="32" height="64" width="137" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0"font.escapement="0~t450"  background.mode="2" background.color="12632256" )
+column(band=detail id=4 alignment="0" tabsequence=10 border="0" color="0" x="55" y="16" height="52" width="59" format="[general]" html.valueishtml="0"  name=required visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.other="-1" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=5 alignment="0" tabsequence=20 border="0" color="0" x="174" y="16" height="52" width="59" format="[general]" html.valueishtml="0"  name=warning visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.other="-1" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=6 alignment="0" tabsequence=30 border="0" color="0" x="293" y="16" height="52" width="59" format="[general]" html.valueishtml="0"  name=printwithbills visible="1" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.other="-1" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="5" color="0" x="448" y="12" height="52" width="745" format="[general]" html.valueishtml="0"  name=type visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no edit.nilisnull=yes edit.imemode=0 edit.displayonly=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="5" color="0" x="1234" y="12" height="52" width="416" format="[general]" html.valueishtml="0"  name=topic visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="1691" y="12" height="52" width="448" format="[general]" html.valueishtml="0"  name=category visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

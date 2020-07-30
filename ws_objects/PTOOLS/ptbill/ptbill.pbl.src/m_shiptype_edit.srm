@@ -1,0 +1,53 @@
+﻿$PBExportHeader$m_shiptype_edit.srm
+$PBExportComments$This is being used by 3 windows: w_shiptype_edit, w_graphic_setup, and w_billseq_edit.
+forward
+global type m_shiptype_edit from m_sheet
+end type
+type m_new from menu within m_current
+end type
+end forward
+
+global type m_shiptype_edit from m_sheet
+end type
+global m_shiptype_edit m_shiptype_edit
+
+on m_shiptype_edit.create
+m_shiptype_edit=this
+call super::create
+end on
+
+on m_shiptype_edit.destroy
+call super::destroy
+end on
+
+type m_current from m_sheet`m_current within m_shiptype_edit
+m_new m_new
+end type
+
+on m_current.create
+call super::create
+this.m_new=create m_new
+this.Item[UpperBound(this.item)+1]=this.m_new
+end on
+
+on m_current.destroy
+call super::destroy
+destroy(this.m_new)
+end on
+
+event m_save::clicked;call super::clicked;parentwindow.post dynamic wf_save_request()
+end event
+
+type m_new from menu within m_current
+end type
+
+event clicked;parentwindow.post dynamic wf_new()
+end event
+
+on m_new.create
+this.Text="&New~tCtrl+N"
+this.ToolBarItemName="CreateTable5!"
+this.ToolBarItemText="NEW"
+this.Shortcut=334
+end on
+

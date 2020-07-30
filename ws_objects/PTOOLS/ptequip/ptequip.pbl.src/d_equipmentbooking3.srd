@@ -1,0 +1,148 @@
+﻿$PBExportHeader$d_equipmentbooking3.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=4 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=equipment_eq_id dbname="equipment.eq_id" )
+ column=(type=char(15) updatewhereclause=yes name=equipment_eq_ref dbname="equipment.eq_ref" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_type dbname="equipment.eq_type" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_outside dbname="equipment.eq_outside" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_status dbname="equipment.eq_status" )
+ column=(type=decimal(1) updatewhereclause=yes name=equipment_eq_length dbname="equipment.eq_length" )
+ column=(type=decimal(1) updatewhereclause=yes name=equipment_eq_height dbname="equipment.eq_height" )
+ column=(type=long updatewhereclause=yes name=equipment_eq_volume dbname="equipment.eq_volume" )
+ column=(type=long updatewhereclause=yes name=equipment_eq_axles dbname="equipment.eq_axles" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_air dbname="equipment.eq_air" values="	T/	F" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec1 dbname="equipment.eq_spec1" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec2 dbname="equipment.eq_spec2" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec3 dbname="equipment.eq_spec3" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec4 dbname="equipment.eq_spec4" )
+ column=(type=char(1) updatewhereclause=yes name=equipment_eq_spec5 dbname="equipment.eq_spec5" )
+ column=(type=long updatewhereclause=yes name=equipment_eq_cur_event dbname="equipment.eq_cur_event" )
+ column=(type=long updatewhereclause=yes name=equipment_eq_next_event dbname="equipment.eq_next_event" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user1 dbname="equipment.user1" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user2 dbname="equipment.user2" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user3 dbname="equipment.user3" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user4 dbname="equipment.user4" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_user5 dbname="equipment.user5" )
+ column=(type=char(32766) updatewhereclause=no name=equipment_notes dbname="equipment.notes" )
+ column=(type=timestamp updatewhereclause=yes name=equipment_timestamp dbname="equipment.timestamp" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_id dbname="outside_equip.oe_id" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_from dbname="outside_equip.oe_from" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_for dbname="outside_equip.oe_for" )
+ column=(type=char(15) updatewhereclause=yes name=outside_equip_oe_booknum dbname="outside_equip.oe_booknum" )
+ column=(type=datetime updatewhereclause=yes name=outside_equip_oe_out dbname="outside_equip.oe_out" )
+ column=(type=datetime updatewhereclause=yes name=outside_equip_oe_in dbname="outside_equip.oe_in" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_orig_event dbname="outside_equip.oe_orig_event" )
+ column=(type=long updatewhereclause=yes name=outside_equip_oe_term_event dbname="outside_equip.oe_term_event" )
+ column=(type=long updatewhereclause=yes name=lease_type dbname="outside_equip.fkequipmentleasetype" )
+ column=(type=char(32766) updatewhereclause=no name=template dbname="template" )
+ column=(type=char(32766) updatewhereclause=no name=outside_equip_user1 dbname="outside_equip.user1" )
+ column=(type=char(32766) updatewhereclause=no name=outside_equip_user2 dbname="outside_equip.user2" )
+ column=(type=char(32766) updatewhereclause=no name=outside_equip_notes dbname="outside_equip.notes" )
+ column=(type=timestamp updatewhereclause=yes name=outside_equip_timestamp dbname="outside_equip.timestamp" )
+ column=(type=char(32766) updatewhereclause=no name=leasedfrom_name dbname="leasedfrom_name" )
+ column=(type=char(32766) updatewhereclause=no name=onbehalfof_name dbname="onbehalfof_name" )
+ column=(type=char(32766) updatewhereclause=no name=importexport dbname="importexport" values="Import	I/Export	E/" )
+ column=(type=char(32766) updatewhereclause=no name=servicetype dbname="servicetype" )
+ column=(type=long updatewhereclause=yes name=terminal_name dbname="terminal_name" )
+ column=(type=long updatewhereclause=yes name=pier dbname="pier" )
+ column=(type=long updatewhereclause=yes name=customer_id dbname="customer_id" )
+ column=(type=long updatewhereclause=yes name=ramp dbname="ramp" )
+ column=(type=long updatewhereclause=yes name=yard dbname="yard" )
+ column=(type=long updatewhereclause=yes name=pool dbname="pool" )
+ column=(type=long updatewhereclause=yes name=depot dbname="depot" )
+ column=(type=long updatewhereclause=yes name=dock dbname="dock" )
+ column=(type=char(20) updatewhereclause=yes name=freightservice dbname="freightservice" )
+ column=(type=char(32766) updatewhereclause=no name=freightdescription dbname="freightdescription" )
+ column=(type=long updatewhereclause=yes name=shipment_ref2type dbname="ref2label" )
+ column=(type=char(32766) updatewhereclause=no name=ref2text dbname="ref2text" )
+ column=(type=long updatewhereclause=yes name=shipment_ref3type dbname="ref3label" )
+ column=(type=char(32766) updatewhereclause=no name=ref3text dbname="ref3text" )
+ retrieve="  SELECT ~"equipment~".~"eq_id~",   
+         ~"equipment~".~"eq_ref~",   
+         ~"equipment~".~"eq_type~",   
+         ~"equipment~".~"eq_outside~",   
+         ~"equipment~".~"eq_status~",   
+         ~"equipment~".~"eq_length~",   
+         ~"equipment~".~"eq_height~",   
+         ~"equipment~".~"eq_volume~",   
+         ~"equipment~".~"eq_axles~",   
+         ~"equipment~".~"eq_air~",   
+         ~"equipment~".~"eq_spec1~",   
+         ~"equipment~".~"eq_spec2~",   
+         ~"equipment~".~"eq_spec3~",   
+         ~"equipment~".~"eq_spec4~",   
+         ~"equipment~".~"eq_spec5~",   
+         ~"equipment~".~"eq_cur_event~",   
+         ~"equipment~".~"eq_next_event~",   
+         ~"equipment~".~"user1~",   
+         ~"equipment~".~"user2~",   
+         ~"equipment~".~"user3~",   
+         ~"equipment~".~"user4~",   
+         ~"equipment~".~"user5~",   
+         ~"equipment~".~"notes~",   
+         ~"equipment~".~"timestamp~",   
+         ~"outside_equip~".~"oe_id~",   
+         ~"outside_equip~".~"oe_from~",   
+         ~"outside_equip~".~"oe_for~",   
+         ~"outside_equip~".~"oe_booknum~",   
+         ~"outside_equip~".~"oe_out~",   
+         ~"outside_equip~".~"oe_in~",   
+         ~"outside_equip~".~"oe_orig_event~",   
+         ~"outside_equip~".~"oe_term_event~",   
+         ~"outside_equip~".~"fkequipmentleasetype~",   
+         Convert ( Long Varchar, Null ) AS ~"Template~",   
+         ~"outside_equip~".~"user1~",   
+         ~"outside_equip~".~"user2~",   
+         ~"outside_equip~".~"notes~",   
+         ~"outside_equip~".~"timestamp~",   
+         Convert ( Long Varchar, Null ) AS ~"LeasedFrom_Name~",   
+         Convert ( Long Varchar, Null ) AS ~"OnBehalfOf_Name~",   
+         Convert ( Long Varchar, Null ) AS ~"ImportExport~",   
+         Convert ( Long Varchar, Null ) AS ~"ServiceType~",   
+         Convert ( Integer, Null ) AS ~"Terminal_Name~",   
+         Convert ( Integer, Null ) AS ~"Pier~",   
+         Convert ( Integer , Null ) AS ~"Customer_id~",   
+         Convert ( Integer, Null ) AS ~"Ramp~",   
+         Convert ( Integer, Null ) AS ~"Yard~",   
+         Convert ( Integer, Null ) AS ~"Pool~",   
+         Convert ( Integer, Null ) AS ~"Depot~",   
+         Convert ( Integer, Null ) AS ~"Dock~",   
+         Convert ( Char(20), Null ) AS ~"FreightService~",   
+         Convert ( Long Varchar, Null ) AS ~"FreightDescription~",
+ Convert ( Integer, Null ) AS ~"Ref2Label~",  
+  Convert ( Long Varchar, Null ) AS ~"Ref2Text~", 
+ Convert ( Integer, Null ) AS ~"Ref3Label~",  
+ Convert ( Long Varchar, Null ) AS ~"Ref3Text~"     
+    FROM ~"equipment~",   
+         ~"outside_equip~"  
+   WHERE ( ~"outside_equip~".~"oe_id~" = ~"equipment~".~"eq_id~" )    
+" )
+text(band=header alignment="2" text="Type" border="0" color="128" x="9" y="8" height="60" width="306" html.valueishtml="0"  name=equipment_eq_type_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Ref #" border="0" color="128" x="325" y="8" height="60" width="439" html.valueishtml="0"  name=equipment_eq_ref_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Lease Line" border="0" color="128" x="773" y="8" height="60" width="475" html.valueishtml="0"  name=outside_equip_fkequipmentleasetype_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Lease Type" border="0" color="128" x="1257" y="8" height="60" width="411" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Length" border="0" color="128" x="1678" y="8" height="60" width="302" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="2" text="Width" border="0" color="128" x="1989" y="8" height="60" width="329" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Ref 2 label" border="0" color="128" x="2327" y="8" height="60" width="503" html.valueishtml="0"  name=ref2label_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Ref 2 text" border="0" color="128" x="2839" y="8" height="60" width="480" html.valueishtml="0"  name=ref2text_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Ref 3 label" border="0" color="128" x="3328" y="8" height="60" width="512" html.valueishtml="0"  name=ref3label_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Ref 3 text" border="0" color="128" x="3849" y="8" height="60" width="567" html.valueishtml="0"  name=ref3text_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=3 alignment="0" tabsequence=10 border="0" color="0" x="9" y="0" height="60" width="306" format="[general]" html.valueishtml="0"  name=equipment_type visible="1" edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=20 border="0" color="0" x="325" y="0" height="60" width="439" format="[general]" html.valueishtml="0"  name=equipment_eq_ref visible="1" edit.limit=15 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )
+column(band=detail id=33 alignment="0" tabsequence=30 border="0" color="0" x="773" y="0" height="60" width="475" format="[general]" html.valueishtml="0"  name=outside_equip_fkequipmentleasetype visible="1" dddw.name=d_equipmentlease_dddw dddw.displaycolumn=uniquelinename dddw.datacolumn=id dddw.percentwidth=250 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0 dddw.vscrollbar=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=33 alignment="0" tabsequence=32766 border="0" color="0" x="1257" y="0" height="60" width="411" format="" html.valueishtml="0"  name=lease_type visible="1" dddw.name=d_equipmentlease_dddw dddw.displaycolumn=type dddw.datacolumn=id dddw.percentwidth=100 dddw.lines=0 dddw.limit=0 dddw.allowedit=no dddw.useasborder=no dddw.case=any dddw.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=40 border="0" color="0" x="1678" y="0" height="60" width="302" format="[general]" html.valueishtml="0"  name=equipment_eq_length visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=7 alignment="0" tabsequence=50 border="0" color="0" x="1989" y="0" height="60" width="329" format="[general]" html.valueishtml="0"  name=equipment_eq_height visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=53 alignment="0" tabsequence=60 border="0" color="0" x="2327" y="0" height="60" width="503" format="[general]" html.valueishtml="0"  name=shipment_ref2type visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.vscrollbar=yes ddlb.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=55 alignment="0" tabsequence=80 border="0" color="0" x="3328" y="0" height="60" width="512" format="[general]" html.valueishtml="0"  name=shipment_ref3type visible="1" ddlb.limit=0 ddlb.allowedit=no ddlb.case=any ddlb.vscrollbar=yes ddlb.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=56 alignment="0" tabsequence=90 border="0" color="0" x="3849" y="0" height="60" width="567" format="[general]" html.valueishtml="0" protect="0~tif (  shipment_ref3type > 0 , 0 , 1 )"  name=ref3text visible="1" edit.limit=0 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="536870912~tif (   shipment_ref3type  >  0  ,  RGB ( 255,255, 255) ,  RGB ( 192, 192, 192) )" )
+column(band=detail id=54 alignment="0" tabsequence=70 border="0" color="0" x="2839" y="0" height="60" width="480" format="[general]" html.valueishtml="0" protect="0~tif (  shipment_ref2type > 0 , 0 , 1 )"  name=ref2text visible="1" edit.limit=0 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="536870912~tif (   shipment_ref2type  >  0  ,  RGB ( 255,255, 255) ,  RGB ( 192, 192, 192) )" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

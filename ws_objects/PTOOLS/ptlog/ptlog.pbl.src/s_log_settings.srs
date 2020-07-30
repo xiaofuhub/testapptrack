@@ -1,0 +1,12 @@
+﻿$PBExportHeader$s_log_settings.srs
+global type s_log_settings from structure
+	long		emp_id
+	boolean		setup
+	integer		autosave
+	integer		autonext
+	integer		autoprint
+	integer		numcop
+	integer		printsign
+	integer		entermiles
+end type
+

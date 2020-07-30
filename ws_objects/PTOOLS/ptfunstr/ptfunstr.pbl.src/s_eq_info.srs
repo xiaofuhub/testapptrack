@@ -1,0 +1,32 @@
+﻿$PBExportHeader$s_eq_info.srs
+$PBExportComments$PTCORE.
+global type s_eq_info from structure
+	long		eq_id
+	string		eq_type
+	string		eq_ref
+	string		eq_outside
+	string		eq_status
+	decimal {1}	eq_length
+	decimal {1}	eq_height
+	long		eq_volume
+	integer		eq_axles
+	string		eq_air
+	string		eq_spec1
+	string		eq_spec2
+	string		eq_spec3
+	string		eq_spec4
+	string		eq_spec5
+	long		eq_cur_event
+	long		eq_next_event
+	long		oe_from
+	long		oe_for
+	string		oe_booknum
+	datetime		oe_out
+	datetime		oe_in
+	long		oe_orig_event
+	long		oe_term_event
+	string		from_name
+	string		for_name
+	long		fkequipmentleasetype
+end type
+

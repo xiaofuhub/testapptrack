@@ -1,0 +1,10 @@
+﻿$PBExportHeader$d_datapad.srd
+release 6;
+datawindow(units=1 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 24 print.margin.right = 24 print.margin.top = 24 print.margin.bottom = 24 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=611 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=0 color="536870912" )
+table(column=(type=char(10) updatewhereclause=no name=dummy dbname="dummy" )
+ )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

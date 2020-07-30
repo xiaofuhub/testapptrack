@@ -1,0 +1,43 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptdisp\\ptdisp.pbl" "";
+@end;
+@begin Objects
+ "PTOOLS\\ptdisp\\gf_eqref.srf" "PTOOLS\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_shipmentitemlist.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_neweventtemplate.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_itinerarytemplates.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_eventrouting_clipboard.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_eventrouting.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_multievent.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_eventrouting_details.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_eventrouting_shipment.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_shipmentstatuslist_dd.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\gf_local_eq.srf" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_tabpg_shipinfo.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_shipment.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_tab_newevents.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_tabpg_intermodalbilling.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_itemdetails.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_shipinfo.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\m_dispwin.srm" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_tabpg_extendedintermodal.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_shipitin.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_shipmentdetail.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_tab_shipmentdetail.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_itemlist.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\m_fmtpop_ship.srm" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_intermodalheader.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_tabpg_intermodalshipinfo.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_tabpg_extendedshipmentinfo.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_eventlist.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_newevent.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_eventdetail.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_eventlist.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_intermodalshipment.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_intermodalshipinfo.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_tab_intermodalshipment.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_eventrouting_assignments.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_cst_itemlisttotals.sru" "ptools\\ptdisp\\ptdisp.pbl";
+ "ptools\\ptdisp\\u_dw_shipmentlist.sru" "ptools\\ptdisp\\ptdisp.pbl";
+@end;

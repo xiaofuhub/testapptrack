@@ -1,0 +1,28 @@
+﻿$PBExportHeader$f_log_minmax.srf
+global type f_log_minmax from function_object
+end type
+
+forward prototypes
+global function long f_log_minmax (decimal avg_mph)
+end prototypes
+
+global function long f_log_minmax (decimal avg_mph);long retcolor
+
+if nullornotpos(avg_mph) then 
+elseif not isvalid(w_log) then 
+elseif isnull(w_log.minmph) or isnull(w_log.maxmph) then 
+elseif avg_mph > w_log.maxmph then
+	retcolor = rgb(255, 0, 0)
+elseif avg_mph < w_log.minmph then 
+	retcolor = rgb(255, 0, 0)
+else
+end if
+
+return retcolor
+
+
+
+
+
+end function
+

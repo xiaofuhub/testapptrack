@@ -1,0 +1,14 @@
+﻿$PBExportHeader$s_accounting_transaction.srs
+global type s_accounting_transaction from structure
+	string		is_document_number
+	date		id_document_date
+	decimal {2}	ic_document_amount
+	string		is_company_name
+	string		is_company_code
+	string		is_payment_terms
+	date		id_payment_due
+	s_accounting_distribution		istra_distributions[]
+	string		isa_tmps[]
+	s_referencenumber		istra_referencenumbers[]
+end type
+

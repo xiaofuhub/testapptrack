@@ -1,0 +1,11 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "framewrk\\how_pfe\\how_pfe.pbl" "";
+@end;
+@begin Objects
+ "framewrk\\how_pfe\\n_ds.sru" "framewrk\\how_pfe\\how_pfe.pbl";
+ "framewrk\\how_pfe\\n_cst_dwsrv_linkage.sru" "framewrk\\how_pfe\\how_pfe.pbl";
+ "framewrk\\how_pfe\\u_dw.sru" "framewrk\\how_pfe\\how_pfe.pbl";
+ "framewrk\\how_pfe\\n_tr.sru" "framewrk\\how_pfe\\how_pfe.pbl";
+ "framewrk\\how_pfe\\w_master.srw" "framewrk\\how_pfe\\how_pfe.pbl";
+@end;

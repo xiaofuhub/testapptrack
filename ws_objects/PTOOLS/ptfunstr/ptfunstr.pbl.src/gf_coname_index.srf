@@ -1,0 +1,88 @@
+﻿$PBExportHeader$gf_coname_index.srf
+$PBExportComments$PTCORE.     Generates search indices from a company name or search string.
+global type gf_coname_index from function_object
+end type
+
+forward prototypes
+global function integer gf_coname_index (string coname, ref string xon_1, ref string xon_2)
+end prototypes
+
+global function integer gf_coname_index (string coname, ref string xon_1, ref string xon_2);xon_1 = ""
+xon_2 = ""
+
+coname = upper(trim(coname))
+if len(coname) < 1 or isnull(coname) then return 0
+
+char workchar
+string workstr, holdstr
+integer workloop, whatson
+
+workstr = trim(left(coname, 3))
+if workstr = "MR" or workstr = "MR." or workstr = "DR" or workstr = "DR." then
+	coname = trim(replace(coname, 1, len(workstr), ""))
+	if len(coname) < 1 then return 0
+end if
+
+workstr = trim(left(coname, 4))
+if workstr = "THE" or workstr = "MRS" or workstr = "MRS." then
+	coname = trim(replace(coname, 1, len(workstr), ""))
+	if len(coname) < 1 then return 0
+end if
+
+workstr = ""
+whatson = 1
+
+for workloop = 1 to len(coname)
+	workchar = mid(coname, workloop, 1)
+	if match(workchar, "[A-Z0-9]") then
+		workstr += string(workchar)
+		if len(workstr) > 2 and len(xon_1) > 0 then whatson = 2
+	elseif workchar = "'" then 
+		continue
+	else
+		if len(workstr) > 0 then
+			if len(xon_1) > 0 and (workstr = "CO" or workstr = "INC" or workstr = "CORP" &
+				or workstr = "LTD" or workstr = "COMPANY" or workstr = "INCORPORATED" &
+				or workstr = "CORPORATION") then
+					workstr = workstr
+			elseif whatson = 1 then
+				xon_1 += workstr
+				if len(workstr) > 2 then whatson = 2
+			else
+				if len(workstr) < 3 then
+					if len(workstr) > len(holdstr) then holdstr = workstr
+				else
+					exit
+				end if
+			end if
+			workstr = ""
+		end if
+	end if
+next
+
+if whatson = 2 and (workstr = "CO" or workstr = "INC" or workstr = "CORP" &
+	or workstr = "LTD" or workstr = "COMPANY" or workstr = "INCORPORATED" &
+	or workstr = "CORPORATION") then workstr = ""
+
+if len(workstr) > 0 then
+	if whatson = 2 then
+		if len(workstr) > len(holdstr) then xon_2 = workstr else xon_2 = holdstr
+	else
+		xon_1 += workstr
+	end if
+elseif len(holdstr) > 0 then
+	xon_2 = holdstr
+end if
+
+xon_1 = left(xon_1, 6)
+xon_2 = left(xon_2, 6)
+
+if len(xon_1) = 0 then
+	return 0
+elseif len(xon_2) = 0 then
+	return 1
+else
+	return 2
+end if
+end function
+

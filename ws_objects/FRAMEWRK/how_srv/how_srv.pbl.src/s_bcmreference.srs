@@ -1,0 +1,38 @@
+﻿$PBExportHeader$s_bcmreference.srs
+global type s_bcmreference from structure
+	n_cst_bcm		nv_bcm
+	blob		blb_bcm
+	long		l_bcm_index
+	string		s_bcm_class
+	string		s_dlk_class
+	string		s_query
+	string		s_beo_class[]
+	blob		blb_view
+	string		s_reqclass[]
+	string		s_reqattribute[]
+	long		l_reqbeoindex[]
+	string		s_col_name[]
+	string		s_col_class[]
+	string		s_col_attribute[]
+	string		s_col_datatype[]
+	string		s_col_relatedclass[]
+	string		s_col_relatedattribute[]
+	string		s_col_relationshipname[]
+	integer		i_colmaps[]
+	string		s_col_table[]
+	string		s_col_column[]
+	integer		i_col_key[]
+	long		l_next_beo_index
+	integer		i_beoindexcolumn
+	long		l_rows
+	string		s_dwsyntax
+	string		s_originalbuffer
+	integer		i_rowstatus[]
+	boolean		b_colstatus[]
+	any		a_coldata[]
+	integer		i_delrowstatus[]
+	any		a_deletedbuffer
+	blob		blb_changes
+	blob		blb_originalbuffer
+end type
+

@@ -1,0 +1,6 @@
+﻿$PBExportHeader$u_test.srs
+global type u_test from structure
+	string		as_id
+	string		as_name
+end type
+

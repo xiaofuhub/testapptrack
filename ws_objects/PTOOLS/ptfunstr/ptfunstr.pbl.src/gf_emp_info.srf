@@ -1,0 +1,156 @@
+﻿$PBExportHeader$gf_emp_info.srf
+$PBExportComments$PTCORE.
+global type gf_emp_info from function_object
+end type
+
+forward prototypes
+global function long gf_emp_info (datastore ds_local, string find_name, string find_type, ref s_emp_info ems)
+end prototypes
+
+global function long gf_emp_info (datastore ds_local, string find_name, string find_type, ref s_emp_info ems);datastore ds_source
+n_cst_numerical lnv_numerical
+n_cst_anyarraysrv lnv_anyarray
+long sourcerow, global_rows, local_rows
+
+global_rows = gds_emp.rowcount()
+if isvalid(ds_local) then local_rows = ds_local.rowcount()
+
+if isnull(find_name) and isnull(find_type) then
+	if ems.em_id > 0 then
+		if local_rows > 0 then &
+			sourcerow = ds_local.find("em_id = " + string(ems.em_id), 1, local_rows)
+		if sourcerow > 0 then
+			ds_source = ds_local
+		else
+			sourcerow = gf_find_emp(ems.em_id)
+			if sourcerow > 0 then ds_source = gds_emp else return sourcerow
+		end if
+	else
+		return -1
+	end if
+else
+	long local_ids[], foundrow, foundid, numlocal, numtotal
+	string findstr, msgstr, fn, ln, typestr
+	integer pos1, pos2, name_len, fn_len, ln_len
+	if integer(find_type) = 2 then typestr = "driver" else typestr = "employee"
+	find_name = trim(find_name)
+	name_len = len(find_name)
+	msgstr = "The name you have entered is invalid.~n~nPlease retry."
+	if lnv_numerical.of_IsNullOrNotPos(name_len) then goto notify
+	if left(find_name, 1) = "/" then
+		find_name = trim(replace(find_name, 1, 1, ""))
+		name_len = len(find_name)
+
+		//The following line was revised 11/24/98 by Brian
+		//The normal quote order was reversed to allow searching for refs with apostrophes
+		if name_len > 0 then findstr = 'em_ref = "' + find_name + '"' else goto notify
+
+	else
+		pos1 = pos(find_name, ",")
+		pos2 = pos(find_name, " ")
+		if pos1 > 0 then
+			fn = trim(mid(find_name, pos1 + 1))
+			ln = trim(left(find_name, pos1 - 1))
+		elseif pos2 > 0 then
+			fn = trim(left(find_name, pos2 - 1))
+			ln = trim(mid(find_name, pos2 + 1))
+		else
+			ln = find_name
+		end if
+		fn_len = len(fn)
+		ln_len = len(ln)
+		if (ln_len < 1) or (fn_len < 1 and (pos1 > 0 or pos2 > 0)) then goto notify
+
+		//The following 2 lines were revised 11/24/98 by Brian
+		//The normal quote order was reversed to allow searching for names with apostrophes
+		findstr = 'em_ln = "' + ln + '"'
+		if fn_len > 0 then findstr += ' and em_fn = "' + fn + '"'
+
+	end if
+	if isnumber(find_type) then
+		if integer(find_type) = 2 then 
+			findstr += " and not isnull(di_id)"
+		end if
+	end if
+	if local_rows > 0 then
+		do
+			foundrow = ds_local.find(findstr, foundrow + 1, local_rows)
+			if foundrow > 0 then
+				numlocal ++
+				local_ids[numlocal] = ds_local.object.em_id[foundrow]
+				sourcerow = foundrow
+			end if
+		loop while foundrow > 0 and foundrow < local_rows
+		numtotal = numlocal
+		foundrow = 0
+	end if
+	if global_rows > 0 then
+		do
+			foundrow = gds_emp.find(findstr, foundrow + 1, global_rows)
+			if foundrow > 0 then
+				foundid = gds_emp.object.em_id[foundrow]
+				if numlocal > 0 then
+					if lnv_anyarray.of_FindLong(local_ids, foundid, 1, numlocal) > 0 then continue
+				end if
+				numtotal ++
+				sourcerow = foundrow
+			end if
+		loop while foundrow > 0 and foundrow < global_rows
+	end if
+	if numtotal = 1 then
+		if numlocal = 1 then ds_source = ds_local else ds_source = gds_emp
+	else
+		if numtotal > 1 then
+			//This assumes that since more than one match was found, it wasn't a code name srch
+			msgstr = "There is more than one " + typestr + " with that name.  Please "
+			if fn_len < 1 then msgstr += "include the first name as well, or "
+			msgstr += "use the selection list instead."
+//-----------------------------------------------------
+			s_emp_Info temp_emp
+			temp_emp.em_ln = ln
+			temp_emp.em_fn = fn
+			if isnumber(find_type) then 
+				if integer(find_type) = 2 then 
+					temp_emp.em_type = 2
+				end if
+			end if
+			openwithparm(w_emp_list, temp_emp)
+			temp_emp = message.powerobjectparm
+			if not isnull(temp_emp.em_id) then
+				temp_emp = message.powerobjectparm
+				ems.em_id = temp_emp.em_id
+				ems.em_fn = temp_emp.em_fn
+				ems.em_ln = temp_emp.em_ln
+				ems.em_ref = temp_emp.em_ref
+				ems.em_status = temp_emp.em_status
+				ems.em_type = temp_emp.em_type
+				ems.em_class = temp_emp.em_class
+				return 1
+			else
+				return -1
+			end if
+//-------------------------------------------------------------------------------------
+		else
+			msgstr = "Could not find an active " + typestr + " with that name.  You may "+&
+				"need to edit your entry, or refresh the " + typestr + " list."
+		end if
+		goto notify
+	end if
+end if
+
+ems.em_id = ds_source.object.em_id[sourcerow]
+ems.em_fn = ds_source.object.em_fn[sourcerow]
+ems.em_ln = ds_source.object.em_ln[sourcerow]
+ems.em_ref = ds_source.object.em_ref[sourcerow]
+ems.em_status = ds_source.object.em_status[sourcerow]
+ems.em_type = ds_source.object.em_type[sourcerow]
+ems.em_class = ds_source.object.em_class[sourcerow]
+
+return 1
+
+notify:
+typestr = replace(typestr, 1, 1, upper(left(typestr, 1)))
+messagebox(typestr + " Selection", msgstr, exclamation!)
+return numtotal
+end function
+

@@ -1,0 +1,6 @@
+﻿$PBExportHeader$s_coord.srs
+global type s_coord from structure
+	long		x
+	long		y
+end type
+

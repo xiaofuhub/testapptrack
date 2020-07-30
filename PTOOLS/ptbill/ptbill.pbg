@@ -1,0 +1,23 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptbill\\ptbill.pbl" "";
+@end;
+@begin Objects
+ "ptools\\ptbill\\u_tab_shiptype_manager.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_tabpg_shiptype_edit.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_bills.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_dw_acctmap.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_dw_bill_manifest.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_tabpg_acctmap.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_tab_sap.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_tabpg_armap.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_billseq_edit.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_graphic_setup.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_tabpg_sap.sru" "ptools\\ptbill\\ptbill.pbl";
+ "PTOOLS\\ptbill\\m_billwin.srm" "PTOOLS\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_dw_armap.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\w_batchsapmapping.srw" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_dw_shiptype_edit.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\u_dw_shiptype_list.sru" "ptools\\ptbill\\ptbill.pbl";
+ "ptools\\ptbill\\m_shiptype_edit.srm" "ptools\\ptbill\\ptbill.pbl";
+@end;

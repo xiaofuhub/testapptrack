@@ -1,0 +1,109 @@
+﻿$PBExportHeader$f_log_settings.srf
+global type f_log_settings from function_object
+end type
+
+forward prototypes
+global function integer f_log_settings (ref string failnote, ref s_log_settings settings)
+end prototypes
+
+global function integer f_log_settings (ref string failnote, ref s_log_settings settings);string retpart, ls_UserId
+
+ls_UserId = gnv_App.of_GetUserId ( )
+
+select em_id into :settings.emp_id from employees where em_ref = :ls_UserId ;
+retpart = "em/code"
+if sqlca.sqlcode <> 0 then
+	goto rollitback
+else
+	commit ;
+end if
+
+//--------------------------------------------------------------------------
+retpart = "11001"
+select ss_long	into :settings.autoprint
+	from system_settings where ss_uid = :settings.emp_id and ss_id = 11001 ;
+if sqlca.sqlcode = 0 then
+	commit ;
+	settings.setup = true
+elseif sqlca.sqlcode = 100 then
+	commit ;
+	goto notsetup
+else
+	goto rollitback
+end if
+//--------------------------------------------------------------------------
+retpart = "11001"
+select ss_long	into :settings.autosave	
+	from system_settings where ss_uid = :settings.emp_id and ss_id = 11001 ;
+if sqlca.sqlcode = 0 then
+	commit ;
+else
+	goto rollitback
+end if
+//--------------------------------------------------------------------------
+retpart = "11002"
+select ss_long	into :settings.autonext	
+	from system_settings where ss_uid = :settings.emp_id and ss_id = 11002 ;
+
+if sqlca.sqlcode = 0 then
+	commit ;
+else
+	goto rollitback
+end if
+//--------------------------------------------------------------------------
+retpart = "11003"
+select ss_long	into :settings.printsign	
+	from system_settings where ss_uid = :settings.emp_id and ss_id = 11003 ;
+
+if sqlca.sqlcode = 0 then
+	commit ;
+else
+	goto rollitback
+end if
+//--------------------------------------------------------------------------
+retpart = "11004"
+select ss_long	into :settings.entermiles	
+	from system_settings where ss_uid = :settings.emp_id and ss_id = 11004 ;
+
+if sqlca.sqlcode = 0 then
+	commit ;
+else
+	goto rollitback
+end if
+
+//--------------------------------------------------------------------------
+retpart = "11005"
+select ss_long	into :settings.numcop	
+	from system_settings where ss_uid = :settings.emp_id and ss_id = 11005 ;
+
+if sqlca.sqlcode = 0 then
+	commit ;
+else
+	goto rollitback
+end if
+
+//no autoprinting for this version
+settings.autoprint = 0
+return 0
+
+//----------------------------------------------------------------------------
+rollitback:
+	failnote = "Could note retrieve user settings from the database.  (" +&
+	string(retpart) + ")~n" + sqlca.sqlerrtext
+	rollback ;
+	return -1
+
+notsetup:
+	settings.autoprint = 0
+	settings.autosave = 0
+	settings.autonext = 0
+	settings.printsign = 0
+	settings.entermiles = 0
+	settings.numcop = 1
+	settings.setup = false
+	return 0
+
+
+
+end function
+

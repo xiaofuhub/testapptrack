@@ -1,0 +1,30 @@
+﻿$PBExportHeader$d_tir_contacts.srd
+$PBExportComments$[Company ID] Retrieves all TIR contacts for company
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=88 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=char(15) updatewhereclause=yes name=contacts_ct_fn dbname="contacts.ct_fn" )
+ column=(type=char(25) updatewhereclause=yes name=contacts_ct_ln dbname="contacts.ct_ln" )
+ column=(type=long updatewhereclause=yes name=ct_co dbname="contacts.ct_co" )
+ column=(type=char(32766) updatewhereclause=no name=ct_emailaddress dbname="contacts.ct_emailaddress" )
+ column=(type=long updatewhereclause=yes name=ct_notifyontir dbname="contacts.ct_notifyontir" )
+ retrieve="  SELECT DISTINCT ~"contacts~".~"ct_fn~",   
+         ~"contacts~".~"ct_ln~",   
+         ~"contacts~".~"ct_co~",   
+         ~"contacts~".~"ct_emailaddress~",   
+         ~"contacts~".~"ct_notifyontir~"  
+    FROM ~"contacts~"  
+   WHERE ( ~"contacts~".~"ct_co~" = :al_CompanyId ) AND  
+         ( ~"contacts~".~"ct_notifyontir~" = 1)    
+" arguments=(("al_CompanyId", number)) )
+text(band=header alignment="0" text="Company"border="0" color="0" x="14" y="12" height="60" width="279"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=header alignment="0" text="contact"border="0" color="0" x="398" y="12" height="60" width="210"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+text(band=header alignment="0" text="Address"border="0" color="0" x="1349" y="12" height="60" width="242"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1090519039" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="14" y="8" height="56" width="361" format="[general]"  name=ct_co edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+compute(band=detail alignment="0" expression="Trim(contacts_ct_fn)+ ~" ~"+ Trim( contacts_ct_ln) "border="0" color="0" x="398" y="8" height="56" width="937" format="[general]"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1349" y="8" height="56" width="1161" format="[general]"  name=ct_emailaddress edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="2523" y="8" height="52" width="329" format="[general]"  name=ct_notifyontir edit.limit=0 edit.case=any edit.autoselect=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

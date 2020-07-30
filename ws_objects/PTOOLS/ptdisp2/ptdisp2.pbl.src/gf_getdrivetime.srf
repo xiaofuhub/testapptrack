@@ -1,0 +1,46 @@
+﻿$PBExportHeader$gf_getdrivetime.srf
+global type gf_getdrivetime from function_object
+end type
+
+forward prototypes
+global function decimal gf_getdrivetime (string as_origin, string as_destination, integer ai_routetype, integer ai_timetype)
+end prototypes
+
+global function decimal gf_getdrivetime (string as_origin, string as_destination, integer ai_routetype, integer ai_timetype);//Determines drive time between two points for the specified route type.
+//See gf_calc_miles for a list of valid route types  (currently, 0-4)
+//Can be used in reports.
+
+//ai_TimeType can have values 0 (minutes) or 1 (hours)  Hours will be rounded to 2 decimal places.
+
+Decimal	lc_Miles, &
+			lc_DriveTime
+Long		ll_Minutes
+
+CHOOSE CASE ai_TimeType
+		
+CASE 0, 1  //OK, recognized
+	
+	gf_Calc_Miles ( as_Origin, as_Destination, lc_Miles, ll_Minutes, ai_RouteType )
+	
+	CHOOSE CASE ai_TimeType
+			
+	CASE 0
+		
+		lc_DriveTime = ll_Minutes
+		
+	CASE 1
+		
+		lc_DriveTime = Round ( ll_Minutes / 60, 2 )
+		
+	END CHOOSE
+	
+CASE ELSE
+	
+	SetNull ( lc_DriveTime )
+	
+END CHOOSE
+
+
+RETURN lc_DriveTime
+end function
+

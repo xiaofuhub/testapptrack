@@ -1,0 +1,9 @@
+﻿$PBExportHeader$s_outboundmessage.srs
+global type s_outboundmessage from structure
+	string		is_topic
+	string		is_template
+	string		is_device
+	long		il_destination
+	string		is_text
+end type
+

@@ -1,0 +1,32 @@
+﻿$PBExportHeader$d_companyfind.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=92 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=96 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=co_id dbname="companies.co_id" )
+ column=(type=char(45) update=yes updatewhereclause=yes name=co_name dbname="companies.co_name" )
+ column=(type=char(45) update=yes updatewhereclause=yes name=co_addr1 dbname="companies.co_addr1" )
+ column=(type=char(45) update=yes updatewhereclause=yes name=co_addr2 dbname="companies.co_addr2" )
+ column=(type=char(20) update=yes updatewhereclause=yes name=co_city dbname="companies.co_city" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=co_state dbname="companies.co_state" )
+ column=(type=char(9) update=yes updatewhereclause=yes name=co_zip dbname="companies.co_zip" )
+ retrieve="  SELECT ~"companies~".~"co_id~",   
+         ~"companies~".~"co_name~",   
+         ~"companies~".~"co_addr1~",   
+         ~"companies~".~"co_addr2~",   
+         ~"companies~".~"co_city~",   
+         ~"companies~".~"co_state~",   
+         ~"companies~".~"co_zip~"  
+    FROM ~"companies~"  
+   WHERE ( ~"companies~".~"co_name~" = :as_Name ) AND  
+         ( Trim (~"companies~".~"co_zip~" )= :as_Zip )    
+" update="companies" updatewhere=1 updatekeyinplace=no arguments=(("as_Name", string),("as_Zip", string)) )
+column(band=detail id=1 alignment="0" tabsequence=0 border="0" color="0" x="9" y="12" height="76" width="370" html.valueishtml="0"  name=co_id visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Co Id" border="0" color="0" x="5" y="4" height="76" width="375" html.valueishtml="0"  name=co_id_t visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

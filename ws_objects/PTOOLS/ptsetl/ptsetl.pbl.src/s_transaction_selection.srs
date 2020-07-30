@@ -1,0 +1,15 @@
+﻿$PBExportHeader$s_transaction_selection.srs
+global type s_transaction_selection from structure
+	string		s_transactionids
+	long		la_transactionids[]
+	integer		i_status
+	date		d_startdate
+	date		d_enddate
+	string		s_entityname
+	long		l_entityid
+	string		s_entitytype
+	boolean		b_havedata
+	string		s_unbatched
+	string		s_BatchNumber
+end type
+

@@ -1,0 +1,6 @@
+﻿$PBExportHeader$s_strings.srs
+$PBExportComments$PTCORE.     Structure containing an unbounded array of strings.
+global type s_strings from structure
+	string		strar[]
+end type
+

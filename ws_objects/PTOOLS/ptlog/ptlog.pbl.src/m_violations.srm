@@ -1,0 +1,69 @@
+﻿$PBExportHeader$m_violations.srm
+forward
+global type m_violations from m_sheet
+end type
+type m_div_c02 from menu within m_current
+end type
+type m_deleteviolation from menu within m_current
+end type
+end forward
+
+global type m_violations from m_sheet
+end type
+global m_violations m_violations
+
+on m_violations.create
+m_violations=this
+call super::create
+end on
+
+on m_violations.destroy
+call super::destroy
+end on
+
+type m_current from m_sheet`m_current within m_violations
+m_div_c02 m_div_c02
+m_deleteviolation m_deleteviolation
+end type
+
+on m_current.create
+call super::create
+this.m_div_c02=create m_div_c02
+this.m_deleteviolation=create m_deleteviolation
+this.Item[UpperBound(this.item)+1]=this.m_div_c02
+this.Item[UpperBound(this.item)+1]=this.m_deleteviolation
+end on
+
+on m_current.destroy
+call super::destroy
+destroy(this.m_div_c02)
+destroy(this.m_deleteviolation)
+end on
+
+event m_save::clicked;call super::clicked;w_vios_driver.dynamic post zz_save_changes()
+
+end event
+
+type m_div_c02 from menu within m_current
+end type
+
+on m_div_c02.create
+this.Text="-"
+end on
+
+type m_deleteviolation from menu within m_current
+end type
+
+on m_deleteviolation.create
+this.Text="&Delete Violation"
+this.ToolBarItemName="DeleteRow!"
+this.ToolBarItemText="DELETE"
+end on
+
+on m_deleteviolation.destroy
+end on
+
+event clicked;w_vios_driver.dynamic post zz_delete_vios()
+
+end event
+

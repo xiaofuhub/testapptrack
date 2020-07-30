@@ -1,0 +1,21 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "framewrk\\how\\how.pbl" "";
+@end;
+@begin Objects
+ "framewrk\\how\\task_n_cst_winsrv_linkages.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\task_u_cbcancel.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\task_d_nav_list.srd" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\task_u_cbnavigate.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\task_u_cbok.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\ofr_n_cst_bommgr.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\ofr_s_taskmanager_navigation.srs" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\task_n_cst_parameters.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\task_w_nav_list.srw" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\task_n_cst_navigation.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\ofr_n_cst_uilink.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\ofr_s_parameters_map.srs" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\task_n_cst_taskmanager.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\ofr_n_cst_uilink_dw.sru" "framewrk\\how\\how.pbl";
+ "framewrk\\how\\ofr_n_cst_txsrv.sru" "framewrk\\how\\how.pbl";
+@end;

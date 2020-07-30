@@ -1,0 +1,54 @@
+﻿$PBExportHeader$f_popmenu.srf
+global type f_popmenu from function_object
+end type
+
+forward prototypes
+global function string f_popmenu (readonly string asa_item_list[], readonly boolean aba_disabled_list[], readonly boolean aba_checked_list[], readonly boolean aba_invisible_list[], integer ai_XPos, integer ai_Ypos)
+end prototypes
+
+global function string f_popmenu (readonly string asa_item_list[], readonly boolean aba_disabled_list[], readonly boolean aba_checked_list[], readonly boolean aba_invisible_list[], integer ai_XPos, integer ai_Ypos);m_popups lm_pop
+integer li_setloop
+string ls_selected_item
+n_cst_AppServices	lnv_AppServices
+Integer	li_PointerX, li_PointerY
+n_cst_numerical lnv_numerical
+
+if lnv_numerical.of_IsNullOrNotPos(upperbound(asa_item_list)) then return ""
+
+//w_frame.wf_create_popup(lm_pop)
+lm_pop = create m_popups
+
+for li_setloop = 1 to min(upperbound(asa_item_list), upperbound(lm_pop.m_general.item))
+	lm_pop.m_general.item[li_setloop].text = asa_item_list[li_setloop]
+	if upperbound(aba_disabled_list) >= li_setloop then &
+		lm_pop.m_general.item[li_setloop].enabled = not aba_disabled_list[li_setloop]
+	if upperbound(aba_checked_list) >= li_setloop then &
+		lm_pop.m_general.item[li_setloop].checked = aba_checked_list[li_setloop]
+	if upperbound(aba_invisible_list) >= li_setloop then
+		lm_pop.m_general.item[li_setloop].visible = not aba_invisible_list[li_setloop]
+	else
+		lm_pop.m_general.item[li_setloop].visible = true
+	end if
+next
+
+
+IF lnv_AppServices.of_GetPointerPosition ( li_PointerX, li_PointerY ) = 1 THEN
+
+	IF ai_XPos <> 0 THEN
+		li_PointerX = ai_XPos
+	END IF
+	
+	IF ai_Ypos <> 0 THEN
+		li_PointerY = ai_Ypos
+	END IF
+		
+
+	lm_pop.m_general.popmenu ( li_PointerX, li_PointerY )
+	ls_selected_item = lm_pop.is_selected_item
+	destroy lm_pop
+
+END IF
+
+return ls_selected_item
+end function
+

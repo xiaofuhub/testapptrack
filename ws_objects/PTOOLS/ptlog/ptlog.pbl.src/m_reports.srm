@@ -1,0 +1,76 @@
+﻿$PBExportHeader$m_reports.srm
+forward
+global type m_reports from m_sheet
+end type
+type m_print from menu within m_current
+end type
+type m_preview from menu within m_current
+end type
+end forward
+
+global type m_reports from m_sheet
+end type
+global m_reports m_reports
+
+on m_reports.create
+m_reports=this
+call super::create
+end on
+
+on m_reports.destroy
+call super::destroy
+end on
+
+type m_current from m_sheet`m_current within m_reports
+m_print m_print
+m_preview m_preview
+end type
+
+on m_current.create
+call super::create
+this.m_print=create m_print
+this.m_preview=create m_preview
+this.Item[UpperBound(this.item)+1]=this.m_print
+this.Item[UpperBound(this.item)+1]=this.m_preview
+end on
+
+on m_current.destroy
+call super::destroy
+destroy(this.m_print)
+destroy(this.m_preview)
+end on
+
+on m_save.create
+call super::create
+this.ToolBarItemName=""
+this.ToolBarItemText=""
+this.Visible=false
+this.Enabled=false
+end on
+
+type m_print from menu within m_current
+end type
+
+on m_print.create
+this.Text="&Print~tCtrl+P"
+this.ToolBarItemName="Report5!"
+this.ToolBarItemText="PRINT"
+this.Shortcut=336
+end on
+
+event clicked;parentwindow.function dynamic post zz_print_request()
+end event
+
+type m_preview from menu within m_current
+end type
+
+on m_preview.create
+this.Text="Pre&view"
+this.ToolBarItemName="Form!"
+this.ToolBarItemText="PREVIEW"
+end on
+
+event clicked;parentwindow.function dynamic post zz_print_preview()
+
+end event
+

@@ -1,0 +1,49 @@
+﻿$PBExportHeader$substitute.srf
+global type substitute from function_object
+end type
+
+forward prototypes
+global function string substitute (string target, string oldval, string newval)
+end prototypes
+
+global function string substitute (string target, string oldval, string newval);// ches //
+//n_cst_string lnv_string
+//return lnv_string.of_Substitute( target, oldval, newval )
+// ches //
+
+integer oldlen, newlen, targpos = 1 //POS MALFUNCTIONS IF TARGPOS STARTS OFF AS 0
+
+//The following two conditons allow the function to be used as a way of setting a default
+//value if none exists.  For example, substitute(target, null_str, "F") will replace a
+//null value with F.  Otherwise, it leaves the target string untouched.
+if isnull(oldval) then
+	if isnull(target) then return newval else return target
+elseif oldval = "" then
+	if target = "" then return newval else return target
+end if
+
+//The following condition means that substitue(target, "A", null_str) will return null
+//only if target = "A", not if target merely contains "A".
+if isnull(newval) then
+	if target = oldval then return newval else return target
+end if
+
+if isnull(target) then return target
+
+if oldval = newval then return target
+
+oldlen = len(oldval)
+newlen = len(newval)
+
+do
+	targpos = pos(target, oldval, targpos)
+	if targpos > 0 then
+		target = replace(target, targpos, oldlen, newval)
+		targpos += newlen
+	end if
+loop while targpos > 0
+
+return target
+
+end function
+

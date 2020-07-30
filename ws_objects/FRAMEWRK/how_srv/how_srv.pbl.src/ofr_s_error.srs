@@ -1,0 +1,15 @@
+﻿$PBExportHeader$ofr_s_error.srs
+global type ofr_s_error from structure
+	integer		i_errortype
+	long		l_errornumber
+	boolean		b_warning
+	string		s_errormessage
+	string		s_class
+	string		s_attribute
+	integer		l_beoindex
+	long		l_sqldbcode
+	string		s_sqlerrtext
+	string		s_sqlsyntax
+	long		l_bcmindex
+end type
+

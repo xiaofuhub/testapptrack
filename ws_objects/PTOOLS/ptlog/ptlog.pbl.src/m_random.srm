@@ -1,0 +1,77 @@
+﻿$PBExportHeader$m_random.srm
+forward
+global type m_random from m_sheet
+end type
+type m_generate from menu within m_current
+end type
+type m_print from menu within m_current
+end type
+end forward
+
+global type m_random from m_sheet
+end type
+global m_random m_random
+
+on m_random.create
+m_random=this
+call super::create
+end on
+
+on m_random.destroy
+call super::destroy
+end on
+
+type m_current from m_sheet`m_current within m_random
+m_generate m_generate
+m_print m_print
+end type
+
+on m_current.create
+call super::create
+this.m_generate=create m_generate
+this.m_print=create m_print
+this.Item[UpperBound(this.item)+1]=this.m_generate
+this.Item[UpperBound(this.item)+1]=this.m_print
+end on
+
+on m_current.destroy
+call super::destroy
+destroy(this.m_generate)
+destroy(this.m_print)
+end on
+
+on m_save.create
+call super::create
+this.Text="Calc and &Save~tCtrl+S"
+this.ToolBarItemText="CALC+SAVE"
+this.Visible=false
+this.ToolBarItemVisible=false
+end on
+
+type m_generate from menu within m_current
+end type
+
+on m_generate.create
+this.Text="&Generate"
+this.ToolBarItemName="Regenerate!"
+this.ToolBarItemText="GENERATE"
+end on
+
+event clicked;w_driver_random.dynamic post zz_generate()
+
+end event
+
+type m_print from menu within m_current
+end type
+
+on m_print.create
+this.Text="&Print~tCtrl+P"
+this.ToolBarItemName="Report5!"
+this.ToolBarItemText="PRINT"
+this.Shortcut=336
+end on
+
+event clicked;w_driver_random.dynamic post zz_print()
+
+end event
+

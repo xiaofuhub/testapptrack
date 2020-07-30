@@ -1,0 +1,15 @@
+﻿$PBExportHeader$gf_local_eq.srf
+global type gf_local_eq from function_object
+end type
+
+forward prototypes
+global function long gf_local_eq (long eq_id, any dx_equip)
+end prototypes
+
+global function long gf_local_eq (long eq_id, any dx_equip);//**This entire function has been relocated to n_cst_EquipmentManager.  This global is being 
+//retained as a legacy wrapper.
+
+n_cst_EquipmentManager lnv_EquipmentMgr
+RETURN lnv_EquipmentMgr.of_Local_Eq ( eq_id, dx_equip )
+end function
+

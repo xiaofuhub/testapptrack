@@ -1,0 +1,9 @@
+﻿$PBExportHeader$os_updcharacteristics.srs
+global type os_updcharacteristics from structure
+string		s_updatetable
+	integer		i_whereoption
+	boolean		b_keyupdateinplace
+	string		s_updatecolumns[]
+	string		s_keycolumns[]
+end type
+

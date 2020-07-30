@@ -1,0 +1,269 @@
+﻿$PBExportHeader$d_itin_diag.srd
+$PBExportComments$One of 6 with same structure.
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 grid.columnmove=no selected.mouse=no )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=60 color="536870912" )
+table(column=(type=long updatewhereclause=yes key=yes name=de_id dbname="disp_events.de_id" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_event_type dbname="disp_events.de_event_type" )
+ column=(type=long update=yes updatewhereclause=yes name=de_tractor dbname="disp_events.de_tractor" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_tractor_seq dbname="disp_events.de_tractor_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer dbname="disp_events.de_trailer" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer_seq dbname="disp_events.de_trailer_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_driver dbname="disp_events.de_driver" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_driver_seq dbname="disp_events.de_driver_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_site dbname="disp_events.de_site" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=de_apptnum dbname="disp_events.de_apptnum" )
+ column=(type=long update=yes updatewhereclause=yes name=de_odom dbname="disp_events.de_odom" )
+ column=(type=long update=yes updatewhereclause=yes name=de_shipment_id dbname="disp_events.de_shipment_id" )
+ column=(type=long update=yes updatewhereclause=yes name=de_ship_seq dbname="disp_events.de_ship_seq" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_conf dbname="disp_events.de_conf" initial="F" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=de_whoconf dbname="disp_events.de_whoconf" )
+ column=(type=long update=yes updatewhereclause=yes name=de_intsig dbname="disp_events.de_intsig" initial="1" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_locked dbname="disp_events.de_locked" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_gallons dbname="disp_events.de_gallons" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_price dbname="disp_events.de_price" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_status dbname="disp_events.de_status" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=de_note dbname="disp_events.de_note" )
+ column=(type=char(150) update=yes updatewhereclause=yes name=de_multi_list dbname="disp_events.de_multi_list" )
+ column=(type=date update=yes updatewhereclause=yes name=de_apptdate dbname="disp_events.de_apptdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_appttime dbname="disp_events.de_appttime" )
+ column=(type=date update=yes updatewhereclause=yes name=de_arrdate dbname="disp_events.de_arrdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_arrtime dbname="disp_events.de_arrtime" )
+ column=(type=date update=yes updatewhereclause=yes name=de_depdate dbname="disp_events.de_depdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_deptime dbname="disp_events.de_deptime" )
+ column=(type=time update=yes updatewhereclause=yes name=de_duration dbname="disp_events.de_duration" initial="00:30" )
+ column=(type=datetime update=yes updatewhereclause=yes name=de_eta dbname="disp_events.de_eta" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer1 dbname="disp_events.de_trailer1" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer1_seq dbname="disp_events.de_trailer1_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer2 dbname="disp_events.de_trailer2" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer2_seq dbname="disp_events.de_trailer2_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer3 dbname="disp_events.de_trailer3" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer3_seq dbname="disp_events.de_trailer3_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container1 dbname="disp_events.de_container1" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container1_seq dbname="disp_events.de_container1_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container2 dbname="disp_events.de_container2" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container2_seq dbname="disp_events.de_container2_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container3 dbname="disp_events.de_container3" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container3_seq dbname="disp_events.de_container3_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container4 dbname="disp_events.de_container4" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container4_seq dbname="disp_events.de_container4_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_acteq dbname="disp_events.de_acteq" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_acteq_seq dbname="disp_events.de_acteq_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_actpos dbname="disp_events.de_actpos" initial="0" )
+ column=(type=char(45) updatewhereclause=yes name=co_name dbname="companies.co_name" )
+ column=(type=char(20) updatewhereclause=yes name=co_city dbname="companies.co_city" )
+ column=(type=char(3) updatewhereclause=yes name=co_state dbname="companies.co_state" )
+ column=(type=char(9) updatewhereclause=yes name=co_zip dbname="companies.co_zip" )
+ column=(type=long updatewhereclause=yes name=co_tz dbname="companies.co_tz" values="HWI	0/ALK	1/PAC	2/MTN	3/CTL	4/EST	5/ATL	6/" )
+ column=(type=char(25) updatewhereclause=yes name=co_pcm dbname="companies.co_pcm" )
+ column=(type=char(5) updatewhereclause=yes name=cc_depstr dbname="null" )
+ column=(type=char(5) updatewhereclause=yes name=cc_arrstr dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=driv_fn dbname="null" )
+ column=(type=char(25) updatewhereclause=yes name=driv_ln dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=driv_ref dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=trac_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=trac_ref dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=trlr1_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=trlr1_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=trlr1_length dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=trlr2_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=trlr2_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=trlr2_length dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=trlr3_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=trlr3_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=trlr3_length dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=cntn1_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=cntn1_length dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=cntn2_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=cntn2_length dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=cntn3_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=cntn3_length dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=cntn4_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=cntn4_length dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=acteq_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=acteq_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=acteq_length dbname="null" )
+ column=(type=decimal(1) updatewhereclause=yes name=leg_miles dbname="null" )
+ column=(type=long updatewhereclause=yes name=leg_mins dbname="null" )
+ column=(type=long updatewhereclause=yes name=interch dbname="null" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_freightsplit dbname="disp_events.de_freightsplit" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_accesssplit dbname="disp_events.de_accesssplit" )
+ column=(type=char(15) updatewhereclause=yes name=containermap dbname="containermap" )
+ column=(type=char(32766) updatewhereclause=no name=companies_dispatchinstructions dbname="companies.dispatchinstructions" )
+ column=(type=char(32766) updatewhereclause=no name=disp_events_eventreference dbname="disp_events.eventreference" )
+ column=(type=char(1) updatewhereclause=yes name=disp_events_routable dbname="disp_events.routable" )
+ column=(type=char(32766) updatewhereclause=no name=disp_events_eventcontacts dbname="disp_events.eventcontacts" )
+ column=(type=char(1) updatewhereclause=yes name=disp_events_hideonbill dbname="disp_events.hideonbill" )
+ column=(type=long updatewhereclause=yes name=disp_events_importreference dbname="disp_events.importreference" )
+ column=(type=date updatewhereclause=yes name=disp_events_earliestdate dbname="disp_events.earliestdate" )
+ column=(type=time updatewhereclause=yes name=disp_events_earliesttime dbname="disp_events.earliesttime" )
+ column=(type=date updatewhereclause=yes name=disp_events_latestdate dbname="disp_events.latestdate" )
+ column=(type=time updatewhereclause=yes name=disp_events_latesttime dbname="disp_events.latesttime" )
+ column=(type=long updatewhereclause=yes name=disp_events_bobtailoriginevent dbname="disp_events.bobtailoriginevent" )
+ column=(type=long updatewhereclause=yes name=disp_events_bobtaildestinationevent dbname="disp_events.bobtaildestinationevent" )
+ retrieve="  SELECT ~"disp_events~".~"de_id~",   
+         ~"disp_events~".~"de_event_type~",   
+         ~"disp_events~".~"de_tractor~",   
+         ~"disp_events~".~"de_tractor_seq~",   
+         ~"disp_events~".~"de_trailer~",   
+         ~"disp_events~".~"de_trailer_seq~",   
+         ~"disp_events~".~"de_driver~",   
+         ~"disp_events~".~"de_driver_seq~",   
+         ~"disp_events~".~"de_site~",  
+         ~"disp_events~".~"de_apptnum~",    
+         ~"disp_events~".~"de_odom~",   
+         ~"disp_events~".~"de_shipment_id~",   
+         ~"disp_events~".~"de_ship_seq~",   
+         ~"disp_events~".~"de_conf~",   
+         ~"disp_events~".~"de_whoconf~",   
+         ~"disp_events~".~"de_intsig~",   
+         ~"disp_events~".~"de_locked~",   
+         ~"disp_events~".~"de_gallons~",   
+         ~"disp_events~".~"de_price~",   
+         ~"disp_events~".~"de_status~",   
+         ~"disp_events~".~"de_note~",   
+         ~"disp_events~".~"de_multi_list~",   
+         ~"disp_events~".~"de_apptdate~",   
+         ~"disp_events~".~"de_appttime~",   
+         ~"disp_events~".~"de_arrdate~",   
+         ~"disp_events~".~"de_arrtime~",   
+         ~"disp_events~".~"de_depdate~",   
+         ~"disp_events~".~"de_deptime~",   
+         ~"disp_events~".~"de_duration~",   
+         ~"disp_events~".~"de_eta~",   
+         ~"disp_events~".~"de_trailer1~",   
+         ~"disp_events~".~"de_trailer1_seq~",   
+         ~"disp_events~".~"de_trailer2~",   
+         ~"disp_events~".~"de_trailer2_seq~",   
+         ~"disp_events~".~"de_trailer3~",   
+         ~"disp_events~".~"de_trailer3_seq~",   
+         ~"disp_events~".~"de_container1~",   
+         ~"disp_events~".~"de_container1_seq~",   
+         ~"disp_events~".~"de_container2~",   
+         ~"disp_events~".~"de_container2_seq~",   
+         ~"disp_events~".~"de_container3~",   
+         ~"disp_events~".~"de_container3_seq~",   
+         ~"disp_events~".~"de_container4~",   
+         ~"disp_events~".~"de_container4_seq~",   
+         ~"disp_events~".~"de_acteq~",   
+         ~"disp_events~".~"de_acteq_seq~",   
+         ~"disp_events~".~"de_actpos~",   
+         ~"companies~".~"co_name~",   
+         ~"companies~".~"co_city~",   
+         ~"companies~".~"co_state~",   
+         ~"companies~".~"co_zip~",   
+         ~"companies~".~"co_tz~",   
+         ~"companies~".~"co_pcm~",   
+         convert ( char(5), null ),   
+         convert ( char(5), null ),   
+         convert ( char(15), null ),   
+         convert ( char(25), null ),   
+         convert ( char(15), null ),   
+         convert ( char(1), null ),   
+         convert ( char(15), null ),   
+         convert ( char(1), null ),   
+         convert ( char(15), null ),   
+         convert ( integer, null ),   
+         convert ( char(1), null ),   
+         convert ( char(15), null ),   
+         convert ( integer, null ),   
+         convert ( char(1), null ),   
+         convert ( char(15), null ),   
+         convert ( integer, null ),   
+         convert ( char(15), null ),   
+         convert ( integer, null ),   
+         convert ( char(15), null ),   
+         convert ( integer, null ),   
+         convert ( char(15), null ),   
+         convert ( integer, null ),   
+         convert ( char(15), null ),   
+         convert ( integer, null ),   
+         convert ( char(1), null ),   
+         convert ( char(15), null ),   
+         convert ( integer, null ),   
+         convert ( numeric(6, 1), null ),   
+         convert ( integer, null ),   
+         convert ( integer, null ),   
+         ~"disp_events~".~"de_freightsplit~",   
+         ~"disp_events~".~"de_accesssplit~",   			 
+			convert ( char(15), null ) AS ~"containermap~",   
+         ~"companies~".~"dispatchinstructions~"  ,
+			~"disp_events~".~"eventreference~" ,
+ 			~"disp_events~".~"routable~",
+			~"disp_events~".~"eventcontacts~",
+			~"disp_events~".~"hideonbill~",
+			~"disp_events~".~"importreference~",
+			~"disp_events~".~"earliestdate~",   
+         ~"disp_events~".~"earliesttime~",   
+         ~"disp_events~".~"latestdate~",   
+         ~"disp_events~".~"latesttime~" ,
+			~"disp_events~".~"BobtailOriginEvent~"  ,
+			~"disp_events~".~"BobtailDestinationEvent~"   
+    FROM {oj ~"disp_events~"  LEFT OUTER JOIN ~"companies~"  ON ~"disp_events~".~"de_site~" = ~"companies~".~"co_id~"}  
+   WHERE ( ~"disp_events~".~"de_arrdate~" between :min_date and :max_date ) AND  
+         ( ~"disp_events~".~"de_driver~" = :retrid )    
+" update="disp_events" updatewhere=2 updatekeyinplace=no arguments=(("retrid", number),("min_date", date),("max_date", date)) )
+text(band=header alignment="0" text="De Id" border="0" color="0" x="9" y="4" height="52" width="146" html.valueishtml="0"  name=t_1 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="De Event Type" border="0" color="0" x="165" y="4" height="52" width="50" html.valueishtml="0"  name=t_2 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="De Arrdate" border="0" color="0" x="224" y="4" height="52" width="197" html.valueishtml="0"  name=t_3 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="DS" border="0" color="0" x="549" y="4" height="52" width="178" html.valueishtml="0"  name=t_4 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="TrS" border="0" color="0" x="855" y="4" height="52" width="183" html.valueishtml="0"  name=t_5 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="T1" border="0" color="0" x="1047" y="4" height="52" width="110" html.valueishtml="0"  name=t_6 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="T1S" border="0" color="0" x="1166" y="4" height="52" width="183" html.valueishtml="0"  name=t_7 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="T2" border="0" color="0" x="1358" y="4" height="52" width="82" html.valueishtml="0"  name=t_8 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="T2S" border="0" color="0" x="1449" y="4" height="52" width="101" html.valueishtml="0"  name=t_9 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="T3" border="0" color="0" x="1559" y="4" height="52" width="82" html.valueishtml="0"  name=t_10 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="T3S" border="0" color="0" x="1650" y="4" height="52" width="101" html.valueishtml="0"  name=t_11 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="D" border="0" color="0" x="430" y="4" height="52" width="110" html.valueishtml="0"  name=t_12 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Tr" border="0" color="0" x="736" y="4" height="52" width="110" html.valueishtml="0"  name=t_13 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="C1" border="0" color="0" x="1760" y="4" height="52" width="82" html.valueishtml="0"  name=t_14 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="C1S" border="0" color="0" x="1851" y="4" height="52" width="101" html.valueishtml="0"  name=t_15 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="C2" border="0" color="0" x="1961" y="4" height="52" width="82" html.valueishtml="0"  name=t_16 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="C2S" border="0" color="0" x="2053" y="4" height="52" width="101" html.valueishtml="0"  name=t_17 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="C3" border="0" color="0" x="2162" y="4" height="52" width="82" html.valueishtml="0"  name=t_18 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="C3S" border="0" color="0" x="2254" y="4" height="52" width="101" html.valueishtml="0"  name=t_19 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="C4" border="0" color="0" x="2363" y="4" height="52" width="82" html.valueishtml="0"  name=t_20 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="C4S" border="0" color="0" x="2455" y="4" height="52" width="101" html.valueishtml="0"  name=t_21 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Aeq" border="0" color="0" x="2565" y="4" height="52" width="110" html.valueishtml="0"  name=t_22 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="AeqS" border="0" color="0" x="2683" y="4" height="52" width="183" html.valueishtml="0"  name=t_23 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="ActP" border="0" color="0" x="2875" y="4" height="52" width="110" html.valueishtml="0"  name=t_24 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="ML" border="0" color="0" x="2994" y="4" height="52" width="238" html.valueishtml="0"  name=t_25 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="Trip" border="0" color="0" x="3241" y="4" height="52" width="151" html.valueishtml="0"  name=t_26 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="TripS" border="0" color="0" x="3401" y="4" height="52" width="160" html.valueishtml="0"  name=t_27 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=header alignment="0" text="CMap" border="0" color="0" x="3570" y="4" height="52" width="334" html.valueishtml="0"  name=t_28 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="4" height="52" width="146" format="[general]" html.valueishtml="0"  name=de_id visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="165" y="4" height="52" width="50" format="[general]" html.valueishtml="0"  name=de_event_type visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="0" color="0" x="224" y="4" height="52" width="197" format="m/d/yy h:mm:ss" html.valueishtml="0"  name=de_arrdate visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="0" x="549" y="4" height="52" width="178" format="[general]" html.valueishtml="0"  name=de_driver_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="855" y="4" height="52" width="183" format="[general]" html.valueishtml="0"  name=de_tractor_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=32 alignment="0" tabsequence=32766 border="0" color="0" x="1166" y="4" height="52" width="183" format="[general]" html.valueishtml="0"  name=de_trailer1_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=33 alignment="1" tabsequence=32766 border="0" color="0" x="1358" y="4" height="52" width="82" format="[general]" html.valueishtml="0"  name=de_trailer2 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=34 alignment="0" tabsequence=32766 border="0" color="0" x="1449" y="4" height="52" width="101" format="[general]" html.valueishtml="0"  name=de_trailer2_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=35 alignment="1" tabsequence=32766 border="0" color="0" x="1559" y="4" height="52" width="82" format="[general]" html.valueishtml="0"  name=de_trailer3 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=36 alignment="0" tabsequence=32766 border="0" color="0" x="1650" y="4" height="52" width="101" format="[general]" html.valueishtml="0"  name=de_trailer3_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=7 alignment="1" tabsequence=32766 border="0" color="0" x="430" y="4" height="52" width="110" format="[general]" html.valueishtml="0"  name=de_driver visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="1" tabsequence=32766 border="0" color="0" x="736" y="4" height="52" width="110" format="[general]" html.valueishtml="0"  name=de_tractor visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=37 alignment="1" tabsequence=32766 border="0" color="0" x="1760" y="4" height="52" width="82" format="[general]" html.valueishtml="0"  name=de_container1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=38 alignment="0" tabsequence=32766 border="0" color="0" x="1851" y="4" height="52" width="101" format="[general]" html.valueishtml="0"  name=de_container1_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=39 alignment="1" tabsequence=32766 border="0" color="0" x="1961" y="4" height="52" width="82" format="[general]" html.valueishtml="0"  name=de_container2 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=40 alignment="0" tabsequence=32766 border="0" color="0" x="2053" y="4" height="52" width="101" format="[general]" html.valueishtml="0"  name=de_container2_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=41 alignment="1" tabsequence=32766 border="0" color="0" x="2162" y="4" height="52" width="82" format="[general]" html.valueishtml="0"  name=de_container3 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=42 alignment="0" tabsequence=32766 border="0" color="0" x="2254" y="4" height="52" width="101" format="[general]" html.valueishtml="0"  name=de_container3_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=43 alignment="1" tabsequence=32766 border="0" color="0" x="2363" y="4" height="52" width="82" format="[general]" html.valueishtml="0"  name=de_container4 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=44 alignment="0" tabsequence=32766 border="0" color="0" x="2455" y="4" height="52" width="101" format="[general]" html.valueishtml="0"  name=de_container4_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=45 alignment="1" tabsequence=32766 border="0" color="0" x="2565" y="4" height="52" width="110" format="[general]" html.valueishtml="0"  name=de_acteq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=46 alignment="0" tabsequence=32766 border="0" color="0" x="2683" y="4" height="52" width="183" format="[general]" html.valueishtml="0"  name=de_acteq_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=31 alignment="1" tabsequence=32766 border="0" color="0" x="1047" y="4" height="52" width="110" format="[general]" html.valueishtml="0"  name=de_trailer1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=47 alignment="1" tabsequence=32766 border="0" color="0" x="2875" y="4" height="52" width="110" format="[general]" html.valueishtml="0"  name=de_actpos visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="0" color="0" x="2994" y="4" height="52" width="238" format="[general]" html.valueishtml="0"  name=de_multi_list visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="3241" y="4" height="52" width="151" format="[general]" html.valueishtml="0"  name=de_trailer visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="3401" y="4" height="52" width="160" format="[general]" html.valueishtml="0"  name=de_trailer_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=86 alignment="0" tabsequence=32766 border="0" color="0" x="3570" y="4" height="52" width="334" format="[general]" html.valueishtml="0"  name=containermap visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

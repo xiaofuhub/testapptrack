@@ -1,0 +1,13 @@
+﻿$PBExportHeader$d_log_miss_nest.srd
+$PBExportComments$PTLOG:  (report nest) missing log dates
+release 5;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no rows_per_detail = 3 )
+header(height=1 color="536870912" )
+summary(height=5 color="536870912" )
+footer(height=1 color="536870912" )
+detail(height=61 color="536870912" )
+table(column=(type=date updatewhereclause=yes name=dl_date dbname="driver_logs.dl_date" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"driver_logs~" ) COLUMN(NAME=~"driver_logs.dl_date~")WHERE(    EXP1 =~"~~~"driver_logs~~~".~~~"dl_id~~~"~"   OP =~"=~"    EXP2 =~":the_id~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"~~~"driver_logs~~~".~~~"dl_date~~~"~"   OP =~"<~"    EXP2 =~":edate~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"~~~"driver_logs~~~".~~~"dl_date~~~"~"   OP =~">=~"    EXP2 =~":bdate~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"~~~"driver_logs~~~".~~~"dl_log~~~"~"   OP =~"=~"    EXP2 =~"'555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555' ~" ) ) ARG(NAME = ~"bdate~" TYPE = date)  ARG(NAME = ~"edate~" TYPE = date)  ARG(NAME = ~"the_id~" TYPE = number) " arguments=(("bdate", date),("edate", date),("the_id", number))  sort="dl_date A " )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="517" y="4" height="53" width="238" format="m/d/yy" row_in_detail=3  name=dl_date_3 edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="261" y="4" height="53" width="238" format="m/d/yy" row_in_detail=2  name=dl_date_2 edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="1" tabsequence=32766 border="0" color="0" x="5" y="4" height="53" width="238" format="m/d/yy" row_in_detail=1  name=dl_date_1 edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="553648127" )

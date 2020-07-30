@@ -1,0 +1,48 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "framewrk\\pfcutil\\pfcutil.pbl" "";
+@end;
+@begin Objects
+ "framewrk\\pfcutil\\pfc_n_cst_dwpropertyattrib.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvcalculator.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvcalendar2.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvmultitable.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvquerymode.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvreqcolumn.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvrowmanager.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_w_dwpropertyservices.srw" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\d_dwproperty_linkageargs.srd" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_w_sqlspyinspect.srw" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\d_sqlspyprint.srd" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\d_dwproperty_multitable.srd" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\d_dwproperty_services.srd" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\d_dwproperty_srvresize.srd" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\d_dwproperty_srvcal.srd" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvdropdownsearch.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\d_dwproperty_dates.srd" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvprintpreview.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvrowselection.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\d_debuglog.srd" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_n_cst_debug.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_w_debuglog.srw" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_n_cst_sqlspy.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tab_dwproperty.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_w_sqlspy.srw" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tab_dwproperty_srv.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_base.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_w_dwproperty.srw" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_n_cst_propertyattrib.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_buffers.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvfind.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvsort.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_status.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_services.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvfilter.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvreport.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvresize.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvsyntax.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvcalendar.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvlinkage.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_u_tabpg_dwproperty_srvlinkage2.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+ "framewrk\\pfcutil\\pfc_n_cst_dwsrv_property.sru" "framewrk\\pfcutil\\pfcutil.pbl";
+@end;

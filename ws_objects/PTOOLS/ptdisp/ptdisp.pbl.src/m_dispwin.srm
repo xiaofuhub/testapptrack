@@ -1,0 +1,27 @@
+﻿$PBExportHeader$m_dispwin.srm
+forward
+global type m_dispwin from m_sheet
+end type
+end forward
+
+global type m_dispwin from m_sheet
+end type
+global m_dispwin m_dispwin
+
+on m_dispwin.create
+m_dispwin=this
+call super::create
+end on
+
+on m_dispwin.destroy
+call super::destroy
+end on
+
+on m_save.create
+call super::create
+this.ToolBarItemName=""
+end on
+
+event m_save::clicked;call super::clicked;parentwindow.post dynamic save_request()
+end event
+

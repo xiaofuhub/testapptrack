@@ -1,0 +1,12 @@
+﻿$PBExportHeader$d_graphic_definitions.srd
+release 5;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no )
+header(height=1 color="536870912" )
+summary(height=1 color="536870912" )
+footer(height=1 color="536870912" )
+detail(height=65 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=gd_id dbname="graphic_definitions.gd_id" )
+ column=(type=char(32766) updatewhereclause=no name=gd_name dbname="graphic_definitions.gd_name" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=gd_dbstring dbname="graphic_definitions.gd_dbstring" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"graphic_definitions~" ) COLUMN(NAME=~"graphic_definitions.gd_id~") COLUMN(NAME=~"graphic_definitions.gd_name~") COLUMN(NAME=~"graphic_definitions.gd_dbstring~")) " update="graphic_definitions" updatewhere=1 updatekeyinplace=no  sort="gd_name A " )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="10" y="4" height="57" width="1354" format="[general]"  name=gd_name edit.limit=32000 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )

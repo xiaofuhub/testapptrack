@@ -1,0 +1,323 @@
+﻿$PBExportHeader$d_eventdetail.srd
+$PBExportComments$One of 6 with same structure.
+release 9;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=848 color="536870912" )
+table(column=(type=long updatewhereclause=yes key=yes name=de_id dbname="disp_events.de_id" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_event_type dbname="disp_events.de_event_type" )
+ column=(type=long update=yes updatewhereclause=yes name=de_tractor dbname="disp_events.de_tractor" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_tractor_seq dbname="disp_events.de_tractor_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer dbname="disp_events.de_trailer" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer_seq dbname="disp_events.de_trailer_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_driver dbname="disp_events.de_driver" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_driver_seq dbname="disp_events.de_driver_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_site dbname="disp_events.de_site" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=de_apptnum dbname="disp_events.de_apptnum" )
+ column=(type=long update=yes updatewhereclause=yes name=de_odom dbname="disp_events.de_odom" )
+ column=(type=long update=yes updatewhereclause=yes name=de_shipment_id dbname="disp_events.de_shipment_id" )
+ column=(type=long update=yes updatewhereclause=yes name=de_ship_seq dbname="disp_events.de_ship_seq" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_conf dbname="disp_events.de_conf" initial="F" values="CONFIRM COMPL.	T/CONFIRM COMPL.	F" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=de_whoconf dbname="disp_events.de_whoconf" )
+ column=(type=long update=yes updatewhereclause=yes name=de_intsig dbname="disp_events.de_intsig" initial="1" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_locked dbname="disp_events.de_locked" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_gallons dbname="disp_events.de_gallons" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_price dbname="disp_events.de_price" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_status dbname="disp_events.de_status" values="DISPATCHED	T/DISPATCHED	F" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=de_note dbname="disp_events.de_note" )
+ column=(type=char(150) update=yes updatewhereclause=yes name=de_multi_list dbname="disp_events.de_multi_list" )
+ column=(type=date update=yes updatewhereclause=yes name=de_apptdate dbname="disp_events.de_apptdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_appttime dbname="disp_events.de_appttime" )
+ column=(type=date update=yes updatewhereclause=yes name=de_arrdate dbname="disp_events.de_arrdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_arrtime dbname="disp_events.de_arrtime" )
+ column=(type=date update=yes updatewhereclause=yes name=de_depdate dbname="disp_events.de_depdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_deptime dbname="disp_events.de_deptime" )
+ column=(type=time update=yes updatewhereclause=yes name=de_duration dbname="disp_events.de_duration" initial="00:30" )
+ column=(type=datetime update=yes updatewhereclause=yes name=de_eta dbname="disp_events.de_eta" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer1 dbname="disp_events.de_trailer1" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer1_seq dbname="disp_events.de_trailer1_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer2 dbname="disp_events.de_trailer2" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer2_seq dbname="disp_events.de_trailer2_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_trailer3 dbname="disp_events.de_trailer3" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_trailer3_seq dbname="disp_events.de_trailer3_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container1 dbname="disp_events.de_container1" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container1_seq dbname="disp_events.de_container1_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container2 dbname="disp_events.de_container2" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container2_seq dbname="disp_events.de_container2_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container3 dbname="disp_events.de_container3" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container3_seq dbname="disp_events.de_container3_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_container4 dbname="disp_events.de_container4" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_container4_seq dbname="disp_events.de_container4_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_acteq dbname="disp_events.de_acteq" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_acteq_seq dbname="disp_events.de_acteq_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_actpos dbname="disp_events.de_actpos" initial="0" )
+ column=(type=char(45) updatewhereclause=yes name=co_name dbname="companies.co_name" )
+ column=(type=char(20) updatewhereclause=yes name=co_city dbname="companies.co_city" )
+ column=(type=char(3) updatewhereclause=yes name=co_state dbname="companies.co_state" )
+ column=(type=char(9) updatewhereclause=yes name=co_zip dbname="companies.co_zip" )
+ column=(type=long updatewhereclause=yes name=co_tz dbname="companies.co_tz" values="HWI	0/ALK	1/PAC	2/MTN	3/CTL	4/EST	5/ATL	6/" )
+ column=(type=char(25) updatewhereclause=yes name=co_pcm dbname="companies.co_pcm" )
+ column=(type=char(5) updatewhereclause=yes name=cc_depstr dbname="null" )
+ column=(type=char(5) updatewhereclause=yes name=cc_arrstr dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=driv_fn dbname="null" )
+ column=(type=char(25) updatewhereclause=yes name=driv_ln dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=driv_ref dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=trac_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=trac_ref dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=trlr1_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=trlr1_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=trlr1_length dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=trlr2_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=trlr2_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=trlr2_length dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=trlr3_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=trlr3_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=trlr3_length dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=cntn1_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=cntn1_length dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=cntn2_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=cntn2_length dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=cntn3_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=cntn3_length dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=cntn4_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=cntn4_length dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=acteq_type dbname="null" )
+ column=(type=char(15) updatewhereclause=yes name=acteq_ref dbname="null" )
+ column=(type=long updatewhereclause=yes name=acteq_length dbname="null" )
+ column=(type=decimal(1) updatewhereclause=yes name=leg_miles dbname="null" )
+ column=(type=long updatewhereclause=yes name=leg_mins dbname="null" )
+ column=(type=long updatewhereclause=yes name=interch dbname="null" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_freightsplit dbname="disp_events.de_freightsplit" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_accesssplit dbname="disp_events.de_accesssplit" )
+ column=(type=char(15) updatewhereclause=yes name=containermap dbname="containermap" )
+ column=(type=char(32766) updatewhereclause=no name=companies_dispatchinstructions dbname="companies.dispatchinstructions" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=disp_events_eventreference dbname="disp_events.eventreference" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=disp_events_routable dbname="disp_events.routable" )
+ column=(type=char(32766) updatewhereclause=no name=disp_events_eventcontacts dbname="disp_events.eventcontacts" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=disp_events_hideonbill dbname="disp_events.hideonbill" )
+ column=(type=long update=yes updatewhereclause=yes name=disp_events_importreference dbname="disp_events.importreference" )
+ column=(type=date update=yes updatewhereclause=yes name=disp_events_earliestdate dbname="disp_events.earliestdate" )
+ column=(type=time update=yes updatewhereclause=yes name=disp_events_earliesttime dbname="disp_events.earliesttime" )
+ column=(type=date update=yes updatewhereclause=yes name=disp_events_latestdate dbname="disp_events.latestdate" )
+ column=(type=time update=yes updatewhereclause=yes name=disp_events_latesttime dbname="disp_events.latesttime" )
+ column=(type=long update=yes updatewhereclause=yes name=disp_events_bobtailoriginevent dbname="disp_events.bobtailoriginevent" )
+ column=(type=long update=yes updatewhereclause=yes name=disp_events_bobtaildestinationevent dbname="disp_events.bobtaildestinationevent" )
+ retrieve="SELECT  ~"disp_events~".~"de_id~" ,
+           ~"disp_events~".~"de_event_type~" ,
+           ~"disp_events~".~"de_tractor~" ,
+           ~"disp_events~".~"de_tractor_seq~" ,
+           ~"disp_events~".~"de_trailer~" ,
+           ~"disp_events~".~"de_trailer_seq~" ,
+           ~"disp_events~".~"de_driver~" ,
+           ~"disp_events~".~"de_driver_seq~" ,
+           ~"disp_events~".~"de_site~" ,
+           ~"disp_events~".~"de_apptnum~" ,
+           ~"disp_events~".~"de_odom~" ,
+           ~"disp_events~".~"de_shipment_id~" ,
+           ~"disp_events~".~"de_ship_seq~" ,
+           ~"disp_events~".~"de_conf~" ,
+           ~"disp_events~".~"de_whoconf~" ,
+           ~"disp_events~".~"de_intsig~" ,
+           ~"disp_events~".~"de_locked~" ,
+           ~"disp_events~".~"de_gallons~" ,
+           ~"disp_events~".~"de_price~" ,
+           ~"disp_events~".~"de_status~" ,
+           ~"disp_events~".~"de_note~" ,
+           ~"disp_events~".~"de_multi_list~" ,
+           ~"disp_events~".~"de_apptdate~" ,
+           ~"disp_events~".~"de_appttime~" ,
+           ~"disp_events~".~"de_arrdate~" ,
+           ~"disp_events~".~"de_arrtime~" ,
+           ~"disp_events~".~"de_depdate~" ,
+           ~"disp_events~".~"de_deptime~" ,
+           ~"disp_events~".~"de_duration~" ,
+           ~"disp_events~".~"de_eta~" ,
+           ~"disp_events~".~"de_trailer1~" ,
+           ~"disp_events~".~"de_trailer1_seq~" ,
+           ~"disp_events~".~"de_trailer2~" ,
+           ~"disp_events~".~"de_trailer2_seq~" ,
+           ~"disp_events~".~"de_trailer3~" ,
+           ~"disp_events~".~"de_trailer3_seq~" ,
+           ~"disp_events~".~"de_container1~" ,
+           ~"disp_events~".~"de_container1_seq~" ,
+           ~"disp_events~".~"de_container2~" ,
+           ~"disp_events~".~"de_container2_seq~" ,
+           ~"disp_events~".~"de_container3~" ,
+           ~"disp_events~".~"de_container3_seq~" ,
+           ~"disp_events~".~"de_container4~" ,
+           ~"disp_events~".~"de_container4_seq~" ,
+           ~"disp_events~".~"de_acteq~" ,
+           ~"disp_events~".~"de_acteq_seq~" ,
+           ~"disp_events~".~"de_actpos~" ,
+           ~"companies~".~"co_name~" ,
+           ~"companies~".~"co_city~" ,
+           ~"companies~".~"co_state~" ,
+           ~"companies~".~"co_zip~" ,
+           ~"companies~".~"co_tz~" ,
+           ~"companies~".~"co_pcm~" ,
+           convert ( char(5),
+ null ),
+           convert ( char(5),
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( char(25),
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( char(1),
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( char(1),
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( integer,
+ null ),
+           convert ( char(1),
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( integer,
+ null ),
+           convert ( char(1),
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( integer,
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( integer,
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( integer,
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( integer,
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( integer,
+ null ),
+           convert ( char(1),
+ null ),
+           convert ( char(15),
+ null ),
+           convert ( integer,
+ null ),
+           convert ( numeric(6,
+ 1),
+ null ),
+           convert ( integer,
+ null ),
+           convert ( integer,
+ null ),
+           ~"disp_events~".~"de_freightsplit~" ,
+           ~"disp_events~".~"de_accesssplit~" ,
+           convert ( char(15),
+ null ) AS ~"containermap~",
+           ~"companies~".~"dispatchinstructions~" ,
+           ~"disp_events~".~"eventreference~" ,
+           ~"disp_events~".~"routable~" ,
+           ~"disp_events~".~"eventcontacts~" ,
+           ~"disp_events~".~"hideonbill~" ,
+           ~"disp_events~".~"importreference~" ,
+           ~"disp_events~".~"earliestdate~" ,
+           ~"disp_events~".~"earliesttime~" ,
+           ~"disp_events~".~"latestdate~" ,
+           ~"disp_events~".~"latesttime~"  ,
+			  ~"disp_events~".~"BobtailOriginEvent~"  ,
+				~"disp_events~".~"BobtailDestinationEvent~"  
+        FROM {oj ~"disp_events~" LEFT OUTER JOIN ~"companies~" ON ~"disp_events~".~"de_site~" = ~"companies~".~"co_id~"}     
+        WHERE ( ~"disp_events~".~"de_shipment_id~" = :ship_to_display )   " update="disp_events" updatewhere=2 updatekeyinplace=no arguments=(("ship_to_display", number)) )
+text(band=detail alignment="0" text="Window :" border="0" color="0" x="69" y="304" height="64" width="238" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=detail alignment="1" text="De Gallons:" border="0" color="0" x="210" y="1380" height="64" width="311" html.valueishtml="0"  name=de_gallons_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="( co_tz - comp_tz_home ) * 3600"border="0" color="0" x="1051" y="988" height="52" width="206" format="[general]" html.valueishtml="0"  name=comp_tz_adj visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=30 alignment="0" tabsequence=32766 border="5" color="0" x="1106" y="1244" height="56" width="219" format="[shortdate] [time]" html.valueishtml="0"  name=de_eta visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="De Odom:" border="0" color="0" x="242" y="1132" height="64" width="270" html.valueishtml="0"  name=de_odom_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="1" tabsequence=32766 border="5" color="0" x="539" y="1384" height="56" width="329" format="[general]" html.valueishtml="0"  name=de_gallons visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="1" text="De Price:" border="0" color="0" x="937" y="1380" height="64" width="247" html.valueishtml="0"  name=de_price_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="1" tabsequence=32766 border="5" color="0" x="1202" y="1384" height="56" width="329" format="[general]" html.valueishtml="0"  name=de_price visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=58 alignment="1" tabsequence=32766 border="0" color="0" x="1742" y="1392" height="44" width="238" format="[general]" html.valueishtml="0"  name=driv_ref visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=55 alignment="0" tabsequence=32766 border="0" color="0" x="1618" y="984" height="52" width="229" format="[general]" html.valueishtml="0"  name=cc_arrstr visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=81 alignment="0" tabsequence=32766 border="0" color="0" x="1888" y="984" height="52" width="229" format="[general]" html.valueishtml="0"  name=leg_miles visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=82 alignment="0" tabsequence=32766 border="0" color="0" x="2176" y="984" height="52" width="229" format="[general]" html.valueishtml="0"  name=leg_mins visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=83 alignment="0" tabsequence=32766 border="0" color="0" x="2450" y="984" height="52" width="229" format="[general]" html.valueishtml="0"  name=interch visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=54 alignment="0" tabsequence=32766 border="0" color="0" x="1330" y="984" height="52" width="229" format="[general]" html.valueishtml="0"  name=cc_depstr visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=11 alignment="1" tabsequence=32766 border="5" color="0" x="530" y="1136" height="56" width="329" format="[general]" html.valueishtml="0"  name=de_odom visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="27" y1="856" x2="2734" y2="856"  name=l_1 visible="1" pen.style="0" pen.width="9" pen.color="0"  background.mode="2" background.color="16777215" )
+bitmap(band=detail filename="PackNoAddr.bmp" x="2080" y="12" height="64" width="73" border="5"  name=p_notificationnoaddr visible="1~t0" )
+text(band=detail alignment="1" text="By:" border="0" color="0" x="2203" y="104" height="64" width="91" html.valueishtml="0"  name=de_whoconf_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="5" color="0" x="2318" y="108" height="56" width="407" format="[general]" html.valueishtml="0" protect="0~t1"  name=de_whoconf visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="12632256~tif ( de_conf = 'T', 12648447, 12632256 )" )
+text(band=detail alignment="1" text="TMP# :" border="0" color="0" x="1403" y="12" height="64" width="192" html.valueishtml="0"  name=t_3 visible="1~tif ( de_shipment_id > 0, 1, 0 )"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="string ( de_shipment_id, '0000' )"border="5" color="0" x="1614" y="16" height="56" width="302" format="[general]" html.valueishtml="0"  name=comp_tempnum visible="1~tif ( de_shipment_id > 0, 1, 0 )"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+bitmap(band=detail filename="PackRed.bmp" x="2080" y="12" height="64" width="73" border="5"  name=p_notificationerror visible="1~t0" )
+bitmap(band=detail filename="PackGreen.bmp" x="2080" y="12" height="64" width="73" border="5"  name=p_notificationsuccess visible="1~t0" )
+bitmap(band=detail filename="PackYellow.bmp" x="2080" y="12" height="64" width="73" border="5"  name=p_notificationactive visible="1~t0" )
+bitmap(band=detail filename="PackWhite.bmp" x="2080" y="12" height="64" width="73" border="5"  name=p_notificationnone visible="1~t0" )
+bitmap(band=detail filename="pcm.bmp" x="201" y="92" height="84" width="101" border="0"  name=p_pcm visible="1~tif ( len ( co_pcm ) > 0, 1, 0 )" )
+bitmap(band=detail filename="nopcm.bmp" x="201" y="92" height="84" width="101" border="0"  name=p_nopcm visible="1~tif ( len ( co_pcm ) > 0, 0, 1 )" )
+text(band=detail alignment="1" text="Arrived:" border="0" color="0" x="119" y="684" height="64" width="197" html.valueishtml="0"  name=de_arrdate_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Scheduled:" border="0" color="0" x="18" y="588" height="64" width="297" html.valueishtml="0"  name=de_apptdate_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Departed:" border="0" color="0" x="59" y="764" height="64" width="256" html.valueishtml="0"  name=de_depdate_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="0" text="" border="5" color="0" x="1403" y="492" height="328" width="1321" html.valueishtml="0"  name=st_disp_box visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+bitmap(band=detail filename="2wheels.bmp" x="1774" y="664" height="16" width="41" border="0"  name=p_wheels visible="1~tif ( de_tractor > 0 and trac_type = 'T', 1, 0 )" )
+bitmap(band=detail filename="trac.bmp" x="1719" y="632" height="48" width="55" border="0"  name=p_trac visible="1~tif ( de_tractor > 0 and trac_type = 'T', 1, 0 )" )
+bitmap(band=detail filename="driv.bmp" x="1641~tif ( pos ( 'OF', de_event_type ) > 0, 1596, 1642 )" y="616" height="64" width="32" border="0"  name=p_driv visible="1~tif ( de_driver > 0, 1, 0 )" )
+compute(band=detail alignment="2" expression="gf_eqref ( 'C', cntn1_ref ) + gf_eqref ( 'C', cntn2_ref ) + gf_eqref ( 'C', cntn3_ref ) + gf_eqref ( 'C', cntn4_ref ) + if ( pos ( 'MN', de_event_type ) > 0 and de_acteq > 0, '**' + gf_eqref ( 'C', acteq_ref ), '' )"border="0" color="0" x="1417" y="752" height="52" width="1289" format="[general]" html.valueishtml="0"  name=cntn_label visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="2" expression="gf_eqref ( trlr1_type, trlr1_ref ) + gf_eqref ( trlr2_type, trlr2_ref ) + gf_eqref ( trlr3_type, trlr3_ref ) + if ( pos ( 'HR', de_event_type ) > 0 and de_acteq > 0, '**' + gf_eqref ( acteq_type, acteq_ref ), '' )"border="0" color="0" x="1417" y="688" height="56" width="1289" format="[general]" html.valueishtml="0"  name=trlr_label visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="2" expression="'3rd Party Trip ' + String ( de_Trailer, '0000' )"border="0" color="0" x="1417" y="620" height="60" width="1298" format="[general]" html.valueishtml="0"  name=cf_tripdisplay visible="1~tIF ( NOT IsNull ( de_Trailer ), 1, 0 )"  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=48 alignment="0" tabsequence=10 border="5" color="0" x="334" y="16" height="56" width="1033" format="[general]" html.valueishtml="0"  name=co_name visible="1" edit.limit=30 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=49 alignment="0" tabsequence=32766 border="5" color="0" x="334" y="108" height="56" width="585" format="[general]" html.valueishtml="0"  name=co_city visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+column(band=detail id=26 alignment="1" tabsequence=130 border="5" color="0" x="590" y="684" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=de_arrtime visible="1" edit.limit=0 edit.case=upper edit.format="h:mm AM/PM" edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="1" expression="case ( secondsafter ( 00:00:00, de_arrtime ) + comp_tz_adj when is < 0 then relativedate ( de_arrdate, -1 ) when is > 86400 then relativedate ( de_arrdate, 1 ) else de_arrdate )"border="5" color="0" x="873" y="684" height="56" width="219" format="m/d/yy" html.valueishtml="0"  name=comp_loc_arrdate visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+compute(band=detail alignment="1" expression="reltime_ext ( string ( de_arrtime ), comp_tz_adj )"border="5" color="0" x="1120" y="684" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=comp_loc_arrtime visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+compute(band=detail alignment="1" expression="reltime_ext ( string ( de_appttime ), comp_tz_adj )"border="5" color="0" x="1120" y="592" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=comp_loc_appttime visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+compute(band=detail alignment="1" expression="case ( secondsafter ( 00:00:00, de_appttime ) + comp_tz_adj when is < 0 then relativedate ( de_apptdate, -1 ) when is > 86400 then relativedate ( de_apptdate, 1 ) else de_apptdate )"border="5" color="0" x="873" y="592" height="56" width="219" format="m/d/yy" html.valueishtml="0"  name=comp_loc_apptdate visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+column(band=detail id=52 alignment="0" tabsequence=32766 border="5" color="0" x="1120" y="516" height="56" width="219" format="[general]" html.valueishtml="0"  name=co_tz visible="1" edit.name="TimeZoneED" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0 edit.codetable=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+compute(band=detail alignment="0" expression="case ( comp_tz_home when 0 then 'HWI' when 1 then 'ALK' when 2 then 'PAC' when 3 then 'MTN' when 4 then 'CTL' when 5 then 'EST' when 6 then 'ATL' )"border="5" color="0" x="590" y="516" height="56" width="219" format="[general]" html.valueishtml="0"  name=comp_tz_home_display visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+text(band=detail alignment="1" text="Local:" border="0" color="128" x="914" y="512" height="64" width="178" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Base:" border="0" color="128" x="398" y="512" height="64" width="160" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="Duration:" border="0" color="0" x="891" y="204" height="64" width="238" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=20 border="5" color="0" x="338" y="208" height="56" width="498" format="[general]" html.valueishtml="0"  name=de_apptnum visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="1" expression="case ( secondsafter ( 00:00:00, de_deptime ) + comp_tz_adj when is < 0 then relativedate ( comp_depdate, -1 ) when is > 86400 then relativedate ( comp_depdate, 1 ) else comp_depdate )"border="5" color="0" x="873" y="764" height="56" width="219" format="m/d/yy" html.valueishtml="0"  name=comp_loc_depdate visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+compute(band=detail alignment="1" expression="reltime_ext ( string ( de_deptime ), comp_tz_adj )"border="5" color="0" x="1120" y="764" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=comp_loc_deptime visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+column(band=detail id=28 alignment="1" tabsequence=140 border="5" color="0" x="590" y="764" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=de_deptime visible="1" edit.limit=0 edit.case=upper edit.format="h:mm AM/PM" edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=24 alignment="1" tabsequence=110 border="5" color="0" x="590" y="592" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=de_appttime visible="1" edit.limit=0 edit.case=upper edit.format="h:mm AM/PM" edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=23 alignment="1" tabsequence=100 border="5" color="0" x="338" y="592" height="56" width="224" format="m/d/yy" html.valueishtml="0"  name=de_apptdate visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=25 alignment="1" tabsequence=120 border="5" color="0" x="338" y="684" height="56" width="224" format="m/d/yy" html.valueishtml="0"  name=de_arrdate visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="1" expression="if ( de_arrtime > de_deptime, relativedate ( de_arrdate, 1 ), de_arrdate )"border="5" color="0" x="338" y="764" height="56" width="224" format="m/d/yy" html.valueishtml="0"  name=comp_depdate visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="29425663~tif ( not isnull ( de_arrdate ), 12648447, 12632256 )" )
+column(band=detail id=29 alignment="1" tabsequence=30 border="5" color="0" x="1143" y="208" height="56" width="219" format="h:mm" html.valueishtml="0"  name=de_duration visible="1" edit.limit=0 edit.case=upper edit.format="h:mm" edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=50 alignment="0" tabsequence=32766 border="5" color="0" x="951" y="108" height="56" width="123" format="[general]" html.valueishtml="0"  name=co_state visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+column(band=detail id=51 alignment="0" tabsequence=32766 border="5" color="0" x="1102" y="108" height="56" width="261" format="@@@@@-@@@@~tif ( pos ( 'AB BC MB NB NF NT NS ON PE PQ QC SK YK MX', trim ( co_state ) ) > 0, ~"~", if ( len ( righttrim ( co_zip ) ) > 5, ~"@@@@@-@@@@~", ~"@@@@@~" ) )" html.valueishtml="0"  name=co_zip visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+column(band=detail id=20 alignment="0" tabsequence=80 border="5" color="0" x="329" y="420" height="52" width="471" format="[general]" html.valueishtml="0"  name=de_status visible="0~t0" checkbox.text="DISPATCHED" checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=88 alignment="0" tabsequence=90 border="5" color="0" x="859" y="416" height="52" width="503" format="[general]" html.valueishtml="0"  name=disp_events_eventreference visible="0~tIF ( len (  disp_events_eventreference ) > 0 , 1 , 0 )" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text="To" border="0" color="0" x="818" y="308" height="52" width="64" html.valueishtml="0"  name=t_7 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=detail alignment="1" text="Appt # :" border="0" color="0" x="105" y="200" height="64" width="210" html.valueishtml="0"  name=de_apptnum_t visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=detail alignment="1" text="&&" border="0" color="0" x="110" y="260" height="48" width="101" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=21 alignment="0" tabsequence=160 border="5" color="0" x="1403" y="208" height="156" width="1321" format="[general]" html.valueishtml="0"  name=de_note visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=no edit.nilisnull=yes edit.imemode=0 edit.vscrollbar=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+text(band=detail alignment="0" text=" / Signature :" border="0" color="0" x="1623" y="124" height="64" width="375" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+button(band=detail text="Notes" filename="" enabled=yes action="0" border="0" color="0" x="1399" y="120" height="72" width="219" vtextalign="0" htextalign="0"  name=cb_notes visible="1"  resizeable=1  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=95 alignment="0" tabsequence=60 border="5" color="0" x="901" y="304" height="56" width="219" format="m/d/yy" html.valueishtml="0"  name=disp_events_latestdate visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=96 alignment="0" tabsequence=70 border="5" color="0" x="1147" y="304" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=disp_events_latesttime visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="1" expression="'EventID: ' + String ( de_id )"border="0" color="0" x="2267" y="504" height="52" width="425" format="[general]" html.valueishtml="0"  name=cf_eventid visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression="gf_eqref ( trac_type, trac_ref )"border="0" color="0" x="1719" y="552" height="56" width="526" format="[general]" html.valueishtml="0"  name=trac_label visible="1~tif ( de_tractor > 0, 1, 0 )"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=57 alignment="1" tabsequence=32766 border="0" color="0" x="1417" y="552" height="52" width="261" format="[general]" html.valueishtml="0"  name=driv_ln visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=56 alignment="1" tabsequence=32766 border="0" color="0" x="1417" y="500" height="52" width="261" format="[general]" html.valueishtml="0"  name=driv_fn visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=92 alignment="2" tabsequence=170 border="5" color="0" x="23" y="108" height="56" width="64" format="[general]" html.valueishtml="0"  name=disp_events_importreference visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=14 alignment="0" tabsequence=150 border="5" color="0" x="2203" y="16" height="56" width="521" format="[general]" html.valueishtml="0"  name=de_conf visible="1" checkbox.text="CONFIRM COMPL." checkbox.on="T" checkbox.off="F" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=93 alignment="0" tabsequence=40 border="5" color="0" x="338" y="304" height="56" width="219" format="m/d/yy" html.valueishtml="0"  name=disp_events_earliestdate visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=94 alignment="0" tabsequence=50 border="5" color="0" x="581" y="304" height="56" width="219" format="h:mm AM/PM" html.valueishtml="0"  name=disp_events_earliesttime visible="1" edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=88 alignment="0" tabsequence=180 border="0" color="0" x="69" y="28" height="40" width="123" format="[general]" html.valueishtml="0"  name=disp_events_eventreference_1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0 edit.displayonly=yes  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="5" color="0" x="23" y="16" height="56" width="279" format="[general]" html.valueishtml="0"  name=de_event_type visible="1" edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+compute(band=footer alignment="0" expression="5"border="0" color="0" x="379" y="24" height="52" width="183" format="[general]" html.valueishtml="0"  name=comp_tz_home visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

@@ -1,0 +1,83 @@
+﻿$PBExportHeader$gf_getcompanyvalue.srf
+global type gf_getcompanyvalue from function_object
+end type
+
+forward prototypes
+global function string gf_getcompanyvalue (long al_companyid, string as_attribute, integer ai_preventnull)
+end prototypes
+
+global function string gf_getcompanyvalue (long al_companyid, string as_attribute, integer ai_preventnull);//This function will instantiate an n_cst_beo_Company for the al_CompanyId provided, 
+//and then return the results of of_GetValueString for as_Attribute.
+
+//If al_CompanyId or as_Attribute are null, or there is a processing problem,
+//the return value will be null.
+
+//The ai_PreventNull flag = 1 will cause the function to return empty string ("") in any situation
+//where it would have otherwise returned null.  This can be useful if the value is going to 
+//be used in assembling a string in a report -- you'll be able to bypass the IsNull logic.
+//An integer was used instead of a boolean because TRUE & FALSE as literals don't work in dw global fn calls.
+
+n_cst_beo_Company	lnv_Company
+
+String	ls_Value
+SetNull ( ls_Value )
+
+Boolean	lb_Proceed = TRUE
+
+
+IF IsNull ( al_CompanyId ) OR IsNull ( as_Attribute ) THEN
+	lb_Proceed = FALSE
+END IF
+
+
+//Setting the company beo to use the cache does not force the company to load in the cache.
+//The company beo logic assumes the company is already in the cache, for performance reasons.
+//Therefore, we need to force the company requested to be in the cache before using the beo.
+//We do not need to force a refresh of the company if it is already there, however.
+
+IF lb_Proceed THEN
+	
+	IF gnv_cst_Companies.of_Cache ( al_CompanyId, FALSE /*Do not force refresh*/ ) = 1 THEN
+		//OK
+	ELSE
+		lb_Proceed = FALSE
+	END IF
+	
+END IF
+
+
+IF lb_Proceed THEN
+	
+	lnv_Company = CREATE n_cst_beo_Company
+	
+	IF lnv_Company.of_SetUseCache ( TRUE ) = 1 THEN
+		//OK
+	ELSE
+		lb_Proceed = FALSE
+	END IF
+	
+END IF
+
+
+IF lb_Proceed THEN
+	
+	lnv_Company.of_SetSourceId ( al_CompanyId )
+	lnv_Company.of_GetValueString ( as_Attribute, ls_Value )
+	
+END IF
+
+
+DESTROY lnv_Company
+
+
+IF ai_PreventNull = 1 THEN
+	
+	IF IsNull ( ls_Value ) THEN
+		ls_Value = ""
+	END IF
+	
+END IF
+
+RETURN ls_Value
+end function
+

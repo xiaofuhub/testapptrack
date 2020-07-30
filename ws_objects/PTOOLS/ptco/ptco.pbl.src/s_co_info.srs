@@ -1,0 +1,29 @@
+﻿$PBExportHeader$s_co_info.srs
+$PBExportComments$PTCORE.     Company Info structure.
+global type s_co_info from structure
+	long		co_id
+	string		co_name
+	string		co_addr1
+	string		co_addr2
+	string		co_city
+	string		co_state
+	string		co_zip
+	string		co_usnon
+	string		co_country
+	string		co_bill_same
+	string		co_bill_name
+	string		co_bill_addr1
+	string		co_bill_addr2
+	string		co_bill_city
+	string		co_bill_state
+	string		co_bill_zip
+	string		co_bill_usnon
+	string		co_bill_country
+	string		co_bill_acctcode
+	string		co_status
+	long		co_facility_of
+	integer		co_tz
+	string		co_pcm
+	string		co_allow_billing
+end type
+

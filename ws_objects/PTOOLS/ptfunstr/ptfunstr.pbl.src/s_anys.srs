@@ -1,0 +1,6 @@
+﻿$PBExportHeader$s_anys.srs
+$PBExportComments$PTCORE.  Structure containing an unbounded array of anys.
+global type s_anys from structure
+	any		anys[]
+end type
+

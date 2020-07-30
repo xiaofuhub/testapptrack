@@ -1,0 +1,10 @@
+﻿$PBExportHeader$s_leginfo.srs
+global type s_leginfo from structure
+	real		legmiles
+	real		totmiles
+	real		legcost
+	real		totcost
+	real		leghours
+	real		tothours
+end type
+

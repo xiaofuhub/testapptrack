@@ -1,0 +1,53 @@
+﻿$PBExportHeader$d_communication_device.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=1 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no grid.lines=0 )
+header(height=80 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=92 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=id dbname="communicationdevice.id" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=type dbname="communicationdevice.type" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=userrefnumber dbname="communicationdevice.userrefnumber" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=unitid dbname="communicationdevice.unitid" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=phonenumber dbname="communicationdevice.phonenumber" )
+ column=(type=long update=yes updatewhereclause=yes name=employeeid dbname="communicationdevice.employeeid" )
+ column=(type=long update=yes updatewhereclause=yes name=equipmentid dbname="communicationdevice.equipmentid" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=lastpositionlat dbname="communicationdevice.lastpositionlat" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=lastpositionlong dbname="communicationdevice.lastpositionlong" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=lastpositionlocation dbname="communicationdevice.lastpositionlocation" )
+ column=(type=date update=yes updatewhereclause=yes name=lastpositiondate dbname="communicationdevice.lastpositiondate" )
+ column=(type=time update=yes updatewhereclause=yes name=lastpositiontime dbname="communicationdevice.lastpositiontime" )
+ column=(type=char(8) updatewhereclause=yes name=employee dbname="compute_0013" )
+ column=(type=char(9) updatewhereclause=yes name=equipment dbname="compute_0014" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=lastmessagenumber dbname="communicationdevice.lastmessagenumber" )
+ retrieve="  SELECT ~"communicationdevice~".~"id~",   
+         ~"communicationdevice~".~"type~",   
+         ~"communicationdevice~".~"userrefnumber~",   
+         ~"communicationdevice~".~"unitid~",   
+         ~"communicationdevice~".~"phonenumber~",   
+         ~"communicationdevice~".~"employeeid~",   
+         ~"communicationdevice~".~"equipmentid~",   
+         ~"communicationdevice~".~"lastpositionlat~",   
+         ~"communicationdevice~".~"lastpositionlong~",   
+         ~"communicationdevice~".~"lastpositionlocation~",   
+         ~"communicationdevice~".~"lastpositiondate~",   
+         ~"communicationdevice~".~"lastpositiontime~",
+convert (long varchar , 'employee' ) ,
+convert (long varchar , 'equipment' ),
+			~"communicationdevice~".~"lastmessagenumber~"
+			
+    FROM ~"communicationdevice~"   
+" update="communicationdevice" updatewhere=1 updatekeyinplace=no )
+text(band=header alignment="2" text="Type"border="0" color="128" x="9" y="8" height="60" width="498"  name=type_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Employee"border="0" color="128" x="517" y="8" height="60" width="434"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Equipment"border="0" color="128" x="960" y="8" height="60" width="498"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=header alignment="2" text="Userrefnumber"border="0" color="128" x="1467" y="8" height="60" width="402"  name=userrefnumber_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Unitid"border="0" color="128" x="1879" y="8" height="60" width="265"  name=unitid_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Phonenumber"border="0" color="128" x="2153" y="8" height="60" width="430"  name=phonenumber_t  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="0" color="0" x="9" y="8" height="64" width="498" format="[general]"  name=type ddlb.limit=0 ddlb.allowedit=no ddlb.case=any  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="517" y="8" height="64" width="434" format="[general]"  name=employee edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="960" y="8" height="64" width="498" format="[general]"  name=equipment edit.limit=0 edit.case=any edit.autoselect=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="0" color="0" x="1467" y="8" height="64" width="402" format="[general]"  name=userrefnumber edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=30 border="0" color="0" x="1879" y="8" height="64" width="265" format="[general]"  name=unitid edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=40 border="0" color="0" x="2153" y="8" height="64" width="430" format="[general]"  name=phonenumber edit.limit=32000 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

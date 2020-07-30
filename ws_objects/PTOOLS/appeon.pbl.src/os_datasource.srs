@@ -1,0 +1,18 @@
+﻿$PBExportHeader$os_datasource.srs
+global type os_datasource from structure
+string		s_datawindow
+	n_ds		ds_obj
+	n_tr		tr_obj
+	string		s_labelcolumn
+	string		s_retrieveargs
+	boolean		b_recursive
+	integer		i_pictureindex
+	string		s_pictureindexcol
+	integer		i_selectedpictureindex
+	string		s_selectedpictureindexcol
+	integer		i_statepictureindex
+	string		s_statepictureindexcol
+	integer		i_overlaypictureindex
+	string		s_overlaypictureindexcol
+end type
+

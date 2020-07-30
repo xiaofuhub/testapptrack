@@ -1,0 +1,6 @@
+﻿$PBExportHeader$os_transentry.srs
+global type os_transentry from structure
+	n_tr		tr_object
+	boolean		b_used
+end type
+

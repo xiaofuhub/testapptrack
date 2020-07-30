@@ -1,0 +1,131 @@
+﻿$PBExportHeader$m_sheets.srm
+forward
+global type m_sheets from m_base
+end type
+type m_current from menu within m_sheets
+end type
+type m_close from menu within m_current
+end type
+type m_current from menu within m_sheets
+m_close m_close
+end type
+type m_window from menu within m_sheets
+end type
+type m_win_close from menu within m_window
+end type
+type m_win_minimize from menu within m_window
+end type
+type m_window from menu within m_sheets
+m_win_close m_win_close
+m_win_minimize m_win_minimize
+end type
+end forward
+
+global type m_sheets from m_base
+m_current m_current
+m_window m_window
+end type
+global m_sheets m_sheets
+
+on m_sheets.create
+m_sheets=this
+call super::create
+this.m_current=create m_current
+this.m_window=create m_window
+this.Item[UpperBound(this.item)+1]=this.m_current
+this.Item[UpperBound(this.item)+1]=this.m_window
+end on
+
+on m_sheets.destroy
+call super::destroy
+destroy(this.m_current)
+destroy(this.m_window)
+end on
+
+type m_current from menu within m_sheets
+m_close m_close
+end type
+
+on m_current.create
+this.Text="&Current"
+this.m_close=create m_close
+this.Item[]={this.m_close}
+end on
+
+on m_current.destroy
+destroy(this.m_close)
+end on
+
+type m_close from menu within m_current
+end type
+
+on m_close.create
+this.Text="&Close~tCtrl+F4"
+this.Shortcut=371
+end on
+
+event clicked;close(parentwindow)
+end event
+
+type m_window from menu within m_sheets
+m_win_close m_win_close
+m_win_minimize m_win_minimize
+end type
+
+on m_window.create
+this.Text="&Window"
+this.m_win_close=create m_win_close
+this.m_win_minimize=create m_win_minimize
+this.Item[]={this.m_win_close, &
+this.m_win_minimize}
+end on
+
+on m_window.destroy
+destroy(this.m_win_close)
+destroy(this.m_win_minimize)
+end on
+
+type m_win_close from menu within m_window
+end type
+
+on m_win_close.create
+this.Text="&Close All"
+end on
+
+event clicked;of_SendMessage ("pfc_closeall")
+
+//window loopwin
+//loopwin = w_frame.getfirstsheet()
+//
+//do while isvalid(loopwin)
+//	if close(loopwin) = -1 then exit
+//	loopwin = w_frame.getfirstsheet()
+//loop
+end event
+
+type m_win_minimize from menu within m_window
+end type
+
+on m_win_minimize.create
+this.Text="&Minimize All"
+this.Visible=false
+end on
+
+event clicked;of_SendMessage ("pfc_minimizeall")
+
+
+//integer winloop
+//window loopwin, winarray[]
+//
+//loopwin = w_frame.getfirstsheet()
+//
+//do while isvalid(loopwin)
+//	winarray[upperbound(winarray) + 1] = loopwin
+//	loopwin = w_frame.getnextsheet(loopwin)
+//loop
+//
+//for winloop = 1 to upperbound(winarray)
+//	winarray[winloop].windowstate = minimized!
+//next
+end event
+

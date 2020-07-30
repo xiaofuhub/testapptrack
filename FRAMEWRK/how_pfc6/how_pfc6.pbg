@@ -1,0 +1,12 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "framewrk\\how_pfc6\\how_pfc6.pbl" "";
+@end;
+@begin Objects
+ "framewrk\\how_pfc6\\ofr_n_cst_lvsrv_datasource.sru" "framewrk\\how_pfc6\\how_pfc6.pbl";
+ "framewrk\\how_pfc6\\ofr_n_cst_tvsrv_levelsource.sru" "framewrk\\how_pfc6\\how_pfc6.pbl";
+ "framewrk\\how_pfc6\\ofr_u_lvs.sru" "framewrk\\how_pfc6\\how_pfc6.pbl";
+ "framewrk\\how_pfc6\\ofr_u_tvs.sru" "framewrk\\how_pfc6\\how_pfc6.pbl";
+ "framewrk\\how_pfc6\\ofr_n_cst_uilink_lvs.sru" "framewrk\\how_pfc6\\how_pfc6.pbl";
+ "framewrk\\how_pfc6\\ofr_n_cst_uilink_tvs.sru" "framewrk\\how_pfc6\\how_pfc6.pbl";
+@end;

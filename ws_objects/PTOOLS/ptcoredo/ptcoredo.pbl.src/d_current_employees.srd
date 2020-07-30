@@ -1,0 +1,248 @@
+﻿$PBExportHeader$d_current_employees.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 2 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no print.columns=2 print.columns.width=1800 )
+header(height=80 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=148 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=disp_events_de_id dbname="employees.de_id" )
+ column=(type=long updatewhereclause=yes name=employees_em_id dbname="employees.em_id" )
+ column=(type=long updatewhereclause=yes name=employees_em_type dbname="employees_em_type" )
+ column=(type=char(1) updatewhereclause=yes name=employees_em_status dbname="employees_em_status" )
+ column=(type=long updatewhereclause=yes name=events dbname="events" )
+ column=(type=char(8) updatewhereclause=yes name=employees_em_ref dbname="employees.em_ref" )
+ column=(type=char(25) updatewhereclause=yes name=employees_em_ln dbname="employees.em_ln" )
+ column=(type=char(15) updatewhereclause=yes name=employees_em_fn dbname="employees.em_fn" )
+ column=(type=char(14) updatewhereclause=yes name=employees_em_tele dbname="employees.em_tele" )
+ column=(type=char(14) updatewhereclause=yes name=employees_em_cellphone dbname="employees.em_cellphone" )
+ column=(type=long updatewhereclause=yes name=companies_co_id dbname="employees.co_id" )
+ column=(type=char(45) updatewhereclause=yes name=companies_co_name dbname="employees.co_name" )
+ column=(type=char(45) updatewhereclause=yes name=companies_co_addr1 dbname="employees.co_addr1" )
+ column=(type=char(20) updatewhereclause=yes name=companies_co_city dbname="employees.co_city" )
+ column=(type=char(3) updatewhereclause=yes name=companies_co_state dbname="employees.co_state" )
+ column=(type=char(15) updatewhereclause=yes name=companies_co_code_name dbname="employees.co_code_name" )
+ column=(type=char(1) updatewhereclause=yes name=companies_terminationlocation dbname="employees.terminationlocation" )
+ column=(type=char(25) updatewhereclause=yes name=companies_co_pcm dbname="employees.co_pcm" )
+ column=(type=char(1) updatewhereclause=yes name=disp_events_de_event_type dbname="employees.de_event_type" )
+ column=(type=date updatewhereclause=yes name=disp_events_de_arrdate dbname="employees.de_arrdate" )
+ column=(type=time updatewhereclause=yes name=disp_events_de_arrtime dbname="employees.de_arrtime" )
+ column=(type=char(1) updatewhereclause=yes name=disp_events_de_conf dbname="employees.de_conf" )
+ column=(type=char(8) updatewhereclause=yes name=disp_events_de_whoconf dbname="employees.de_whoconf" )
+ column=(type=decimal(10) updatewhereclause=yes name=disp_events_de_driver_seq dbname="employees.de_driver_seq" )
+ column=(type=long updatewhereclause=yes name=disp_events_de_shipment_id dbname="employees.de_shipment_id" )
+ column=(type=time updatewhereclause=yes name=disp_events_de_deptime dbname="employees.de_deptime" )
+ column=(type=char(1) updatewhereclause=yes name=disp_ship_ds_hazmat dbname="employees.ds_hazmat" )
+ column=(type=char(1) updatewhereclause=yes name=disp_ship_ds_expedite dbname="employees.ds_expedite" )
+ column=(type=char(1) updatewhereclause=yes name=disp_ship_ds_status dbname="employees.ds_status" )
+ column=(type=char(32766) updatewhereclause=no name=disp_ship_ds_ref1_text dbname="employees.ds_ref1_text" )
+ column=(type=char(32766) updatewhereclause=no name=disp_ship_movetype dbname="employees.movetype" )
+ column=(type=date updatewhereclause=yes name=disp_ship_cutoffdate dbname="employees.cutoffdate" )
+ column=(type=time updatewhereclause=yes name=disp_ship_cutofftime dbname="employees.cutofftime" )
+ column=(type=date updatewhereclause=yes name=disp_ship_lastfreedate dbname="employees.lastfreedate" )
+ column=(type=time updatewhereclause=yes name=disp_ship_lastfreetime dbname="employees.lastfreetime" )
+ column=(type=char(32766) updatewhereclause=no name=disp_ship_booking dbname="employees.booking" )
+ column=(type=char(32766) updatewhereclause=yes name=disp_ship_pickupnumber dbname="employees.pickupnumber" )
+ column=(type=date updatewhereclause=yes name=disp_ship_pickupbydate dbname="employees.pickupbydate" )
+ column=(type=time updatewhereclause=yes name=disp_ship_pickupbytime dbname="employees.pickupbytime" )
+ column=(type=char(32766) updatewhereclause=no name=disp_ship_pickupbyby dbname="employees.pickupbyby" )
+ column=(type=date updatewhereclause=yes name=disp_ship_delbydate dbname="employees.delbydate" )
+ column=(type=time updatewhereclause=yes name=disp_ship_delbytime dbname="employees.delbytime" )
+ column=(type=char(32766) updatewhereclause=no name=disp_ship_delbyby dbname="employees.delbyby" )
+ column=(type=char(32766) updatewhereclause=no name=disp_ship_railbillnumber dbname="employees.railbillnumber" )
+ column=(type=char(1) updatewhereclause=yes name=disp_ship_movecode dbname="employees.movecode" )
+ column=(type=char(40) updatewhereclause=yes name=disp_ship_ds_equip_req dbname="employees.ds_equip_req" )
+ column=(type=char(15) updatewhereclause=yes name=equipment_eq_ref dbname="employees.eq_ref" )
+ column=(type=long updatewhereclause=yes name=driverinfo_di_type_driver dbname="driverinfo.di_type_driver" )
+ column=(type=char(32766) updatewhereclause=no name=driverinfo_di_fleet dbname="driverinfo.di_fleet" )
+ column=(type=long updatewhereclause=yes name=driverinfo_di_division dbname="driverinfo.di_division" )
+ column=(type=datetime updatewhereclause=yes name=current_employees_lastroutedevent dbname="lastroutedevent" )
+ retrieve="SELECT ~"DBA~".~"disp_events~".~"de_id~",   
+         ~"DBA~".~"employees~".~"em_id~",   
+	Convert ( integer, Null ) AS employees_em_type,
+	Convert ( CHAR(1), Null ) AS employees_em_status,
+	Convert ( integer, Null ) AS events,
+         ~"DBA~".~"employees~".~"em_ref~",   
+         ~"DBA~".~"employees~".~"em_ln~",   
+         ~"DBA~".~"employees~".~"em_fn~",   
+         ~"DBA~".~"employees~".~"em_tele~",   
+         ~"DBA~".~"employees~".~"em_cellphone~",   
+         ~"DBA~".~"companies~".~"co_id~",   
+         ~"DBA~".~"companies~".~"co_name~",   
+         ~"DBA~".~"companies~".~"co_addr1~",   
+         ~"DBA~".~"companies~".~"co_city~",   
+         ~"DBA~".~"companies~".~"co_state~",   
+         ~"DBA~".~"companies~".~"co_code_name~",   
+         ~"DBA~".~"companies~".~"terminationlocation~",   
+         ~"DBA~".~"companies~".~"co_pcm~",   
+         ~"DBA~".~"disp_events~".~"de_event_type~",   
+         ~"DBA~".~"disp_events~".~"de_arrdate~",   
+         ~"DBA~".~"disp_events~".~"de_arrtime~",   
+         ~"DBA~".~"disp_events~".~"de_conf~",   
+         ~"DBA~".~"disp_events~".~"de_whoconf~",   
+         ~"DBA~".~"disp_events~".~"de_driver_seq~",   
+         ~"DBA~".~"disp_events~".~"de_shipment_id~",   
+         ~"DBA~".~"disp_events~".~"de_deptime~",   
+         ~"DBA~".~"disp_ship~".~"ds_hazmat~",   
+         ~"DBA~".~"disp_ship~".~"ds_expedite~",   
+         ~"DBA~".~"disp_ship~".~"ds_status~",   
+         ~"DBA~".~"disp_ship~".~"ds_ref1_text~",   
+         ~"DBA~".~"disp_ship~".~"movetype~",   
+         ~"DBA~".~"disp_ship~".~"cutoffdate~",   
+         ~"DBA~".~"disp_ship~".~"cutofftime~",   
+         ~"DBA~".~"disp_ship~".~"lastfreedate~",   
+         ~"DBA~".~"disp_ship~".~"lastfreetime~",   
+         ~"DBA~".~"disp_ship~".~"booking~",   
+         ~"DBA~".~"disp_ship~".~"pickupnumber~",   
+         ~"DBA~".~"disp_ship~".~"pickupbydate~",   
+         ~"DBA~".~"disp_ship~".~"pickupbytime~",   
+         ~"DBA~".~"disp_ship~".~"pickupbyby~",   
+         ~"DBA~".~"disp_ship~".~"delbydate~",   
+         ~"DBA~".~"disp_ship~".~"delbytime~",   
+         ~"DBA~".~"disp_ship~".~"delbyby~",   
+         ~"DBA~".~"disp_ship~".~"railbillnumber~",   
+         ~"DBA~".~"disp_ship~".~"movecode~",   
+         ~"DBA~".~"disp_ship~".~"ds_equip_req~",   
+         ~"DBA~".~"equipment~".~"eq_ref~",   
+         ~"driverinfo~".~"di_type_driver~",   
+         ~"driverinfo~".~"di_fleet~",   
+         ~"driverinfo~".~"di_division~",   
+         ~"current_employees~".~"lastroutedevent~"  
+    from(DBA.companies right outer
+	 join DBA.disp_events on DBA.companies.co_id = DBA.disp_events.de_site)
+	,(DBA.disp_ship right outer join DBA.disp_events on DBA.disp_ship.ds_id = DBA.disp_events.de_shipment_id),
+	(DBA.equipment right outer join DBA.disp_events on DBA.equipment.eq_id = DBA.disp_events.de_tractor),
+(DBA.current_employees right outer join DBA.employees on current_employees.ce_id = DBA.employees.em_id),
+DBA.driverinfo 
+   WHERE ( ~"DBA~".~"employees~".~"em_id~" = ~"DBA~".~"disp_events~".~"de_driver~" ) and  
+         ( ~"driverinfo~".~"di_id~" = ~"DBA~".~"employees~".~"em_id~" ) and  
+         ( ( ~"DBA~".~"disp_events~".~"de_arrdate~" >= today() ) )  
+UNION
+SELECT   Convert ( integer, Null ) AS disp_events_de_id,
+	 ~"DBA~".~"employees~".~"em_id~",   
+	~"DBA~".~"employees~".~"em_type~",   
+         ~"DBA~".~"employees~".~"em_status~",   
+         ( select count ( de_id ) from disp_events where de_arrdate = TODAY() and de_driver = em_id ) as ~"Events~",   
+         ~"DBA~".~"employees~".~"em_ref~",
+         ~"DBA~".~"employees~".~"em_ln~",   
+         ~"DBA~".~"employees~".~"em_fn~", 
+         ~"DBA~".~"employees~".~"em_tele~",   
+         ~"DBA~".~"employees~".~"em_cellphone~",
+	 Convert ( integer, Null ) AS companies_co_id,
+	 Convert ( Char(45), Null ) AS companies_co_name,
+	 Convert ( Char(45), Null ) AS companies_co_addr1,
+	 Convert ( Char(20), Null ) AS companies_co_city,
+	 Convert ( Char(3), Null ) AS companies_co_state,
+	 Convert ( Char(15), Null ) AS companies_co_code_name,
+	 Convert ( Char(1), Null ) AS companies_terminationlocation,
+	 Convert ( Char(25), Null ) AS companies_co_pcm,
+	 Convert ( Char(1), Null ) AS disp_events_De_event_type,
+	 Convert ( DATE, Null ) AS disp_events_arrDATE, 
+	 Convert ( TIME, Null ) AS disp_events_arrTime ,
+	 Convert ( char(1), Null ) AS disp_events_de_conf,
+	 Convert ( char(8), Null ) AS disp_events_de_who_conf,
+	 Convert ( dec(20), Null ) AS disp_events_de_driver_seq,
+	 Convert ( integer, Null ) AS disp_events_de_shipment_id,
+	 Convert ( TIME, Null ) AS disp_events_de_deptime,
+	 Convert ( CHAR(1), Null ) AS disp_ship_ds_hazmat,
+	 Convert ( CHAR(1), Null ) AS disp_ship_ds_expidite,
+	 Convert ( CHAR(1), Null ) AS disp_ship_ds_status,
+	 Convert ( CHAR(32766), Null ) AS disp_ship_ref1_text,
+	 Convert ( CHAR(32766), Null ) AS disp_ship_movetype,
+	 Convert ( DATE, Null ) AS disp_ship_cutoffDATE, 
+	 Convert ( TIME, Null ) AS disp_ship_cutoffTime ,
+	 Convert ( DATE, Null ) AS disp_ship_lastfreeDATE, 
+	 Convert ( TIME, Null ) AS disp_ship_lastfreeTime ,
+	 Convert ( CHAR(32766), Null ) AS disp_ship_booking, 
+	 Convert ( CHAR(32766), Null ) AS disp_ship_pickupnumber,
+	 Convert ( DATE, Null ) AS disp_ship_pickupbyDATE, 
+	 Convert ( TIME, Null ) AS disp_ship_pickupbyTime ,
+	 Convert ( CHAR(32766), Null ) AS disp_ship_pickupbyby ,
+	 Convert ( DATE, Null ) AS disp_ship_delbyDATE, 
+	 Convert ( TIME, Null ) AS disp_ship_delbyTime ,
+	 Convert ( CHAR(32766), Null ) AS disp_ship_delbyby ,
+	 Convert ( CHAR(32766), Null ) AS disp_ship_railbillnumber , 
+	 Convert ( CHAR(1), Null ) AS disp_ship_movecode ,
+	 Convert ( CHAR(40), Null ) AS disp_ship_ds_eq_req,  
+ 	 Convert ( CHAR(15), Null ) AS equipment_eq_ref, 
+	 ~"driverinfo~".~"di_type_driver~", 
+	 ~"driverinfo~".~"di_fleet~",   
+         ~"driverinfo~".~"di_division~" , 
+	 Convert ( timestamp, Null ) AS lastroutedevent 
+    FROM ~"DBA~".~"employees~",   
+         ~"driverinfo~"  
+   WHERE ( ~"DBA~".~"employees~".~"em_id~" = ~"driverinfo~".~"di_id~" ) and  
+         ( ( NOT exists (select de_id from disp_events where de_arrdate = TODAY() and de_driver = em_id and em_status = 'K') ) OR  
+         ( NOT exists (select de_id from disp_events where de_arrdate = TODAY() and de_driver = em_id and em_status = 'K' and de_conf = 'F') ) )    
+
+"  sort="employees_em_ln A employees_em_fn A employees_em_id A disp_events_de_arrdate A disp_events_de_driver_seq A " )
+group(level=1 header.height=92 trailer.height=0 by=("employees_em_ref" ) header.color="536870912" trailer.color="536870912" )
+text(band=header alignment="0" text="Last" border="0" color="0" x="9" y="8" height="60" width="201" html.valueishtml="0"  name=employees_em_ln_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="First" border="0" color="0" x="247" y="8" height="60" width="114" html.valueishtml="0"  name=employees_em_fn_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Unit" border="0" color="0" x="407" y="8" height="60" width="155" html.valueishtml="0"  name=equipment_eq_ref_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="1073741824" )
+text(band=header alignment="1" text="Evts" border="0" color="0" x="585" y="8" height="60" width="114" html.valueishtml="0"  name=cf_events_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="1073741824" )
+text(band=header alignment="1" text="Lds" border="0" color="0" x="722" y="8" height="60" width="114" html.valueishtml="0"  name=cf_loads_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Next" border="0" color="0" x="905" y="8" height="60" width="251" html.valueishtml="0"  name=cf_first_city_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="1073741824" )
+text(band=header alignment="0" text="Last" border="0" color="0" x="1211" y="8" height="60" width="123" html.valueishtml="0"  name=cf_last_city_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="1073741824" )
+line(band=header.1 x1="0" y1="0" x2="1486" y2="0"  name=l_2 visible="1" pen.style="0" pen.width="5" pen.color="10789024"  background.mode="2" background.color="1073741824" )
+compute(band=header.1 alignment="0" expression="first ( companies_co_id for group 1 distinct companies_co_city )"border="0" color="0" x="855" y="12" height="48" width="5" format="[General]" html.valueishtml="0"  name=compute_2  tag="Restrict=Stop;RestrictColType=Id" visible="0"  font.face="MS Sans Serif" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="first ( IF ( employees_em_id[1] = employees_em_id, companies_co_id[1], 0 ) for group 1 distinct companies_co_city )"border="0" color="0" x="878" y="12" height="48" width="5" format="[General]" html.valueishtml="0"  name=compute_7  tag="Restrict=Stop;RestrictColType=Id" visible="0"  font.face="MS Sans Serif" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=header.1 id=7 alignment="0" tabsequence=32766 border="0" color="0" x="9" y="12" height="64" width="261" format="[general]" html.valueishtml="0"  name=employees_em_ln visible="1" edit.limit=25 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="Left ( employees_em_fn, 1 )"border="0" color="0" x="302" y="12" height="60" width="59" format="[GENERAL]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="1" expression="Count ( disp_events_de_id for group 1 )"border="0" color="0" x="581" y="12" height="60" width="119" format="[GENERAL]" html.valueishtml="0"  name=cf_events visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="1" expression="Count ( disp_events_de_id for group 1 distinct disp_events_de_shipment_id ) - sum ( cf_count for group 1 )"border="0" color="0" x="718" y="12" height="60" width="119" format="[GENERAL]" html.valueishtml="0"  name=cf_loads visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="first ( IF ( employees_em_id[1] = employees_em_id, IF ( companies_terminationlocation[1] = 'T', companies_co_name[1], companies_co_city[1] ), '' ) for group 1 distinct companies_co_city )"border="0" color="0" x="905" y="40" height="36" width="261" format="[GENERAL]" html.valueishtml="0"  name=compute_4 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="first ( IF ( companies_terminationlocation = 'T', companies_co_name, companies_co_city ) for group 1 distinct companies_co_city )"border="0" color="0" x="905" y="0" height="36" width="261" format="[GENERAL]" html.valueishtml="0"  name=cf_first_city visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+line(band=header.1 x1="1184" y1="0" x2="1184" y2="80"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="10789024"  background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="last ( IF ( companies_terminationlocation = 'T', companies_co_name, companies_co_city ) for group 1 distinct companies_co_city )"border="0" color="0" x="1211" y="40" height="36" width="261" format="[GENERAL]" html.valueishtml="0"  name=cf_last_city visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="last ( IF ( employees_em_id[-1] = employees_em_id, companies_co_id[-1], 0 ) for group 1 distinct companies_co_city )"border="0" color="0" x="1193" y="12" height="48" width="5" format="[General]" html.valueishtml="0"  name=pedning_events  tag="Restrict=Stop;RestrictColType=Id" visible="0"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="last ( companies_co_id for group 1 distinct companies_co_city )"border="0" color="0" x="1481" y="12" height="48" width="5" format="[General]" html.valueishtml="0"  name=compute_9  tag="Restrict=End Route;RestrictColType=Id" visible="0"  font.face="MS Sans Serif" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=header.1 alignment="0" expression="last ( IF ( employees_em_id[-1] = employees_em_id, IF ( companies_terminationlocation[-1] = 'T', companies_co_name[-1], companies_co_city[-1] ), '' ) for group 1 distinct companies_co_city )"border="0" color="0" x="1211" y="0" height="36" width="261" format="[GENERAL]" html.valueishtml="0"  name=compute_5 visible="1"  font.face="Arial" font.height="-7" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="if ( disp_events_de_event_type = 'O' or  disp_events_de_event_type ='F', 1, 0 )"border="0" color="0" x="398" y="8" height="52" width="183" format="[GENERAL]" html.valueishtml="0"  name=cf_count visible="0"  font.face="MS Sans Serif" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=51 alignment="0" tabsequence=32766 border="0" color="0" x="1486" y="0" height="60" width="667" format="[shortdate] [time]" html.valueishtml="0"  name=current_employees_lastroutedevent visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="0" y="16" height="76" width="768" format="[general]" html.valueishtml="0"  name=employees_em_id visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="2153" y="0" height="60" width="992" format="[general]" html.valueishtml="0"  name=disp_events_de_id visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="3145" y="0" height="60" width="992" format="[general]" html.valueishtml="0"  name=employees_em_type visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="4137" y="0" height="60" width="23" format="[general]" html.valueishtml="0"  name=employees_em_status visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="0" x="4160" y="0" height="60" width="992" format="[general]" html.valueishtml="0"  name=events visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=32766 border="0" color="0" x="5152" y="0" height="60" width="992" format="[general]" html.valueishtml="0"  name=companies_co_id visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="0" x="6144" y="0" height="60" width="1038" format="[general]" html.valueishtml="0"  name=companies_co_name visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="0" x="7182" y="0" height="60" width="1038" format="[general]" html.valueishtml="0"  name=companies_co_addr1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="0" x="8219" y="0" height="60" width="462" format="[general]" html.valueishtml="0"  name=companies_co_city visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="8681" y="0" height="60" width="69" format="[general]" html.valueishtml="0"  name=companies_co_state visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=16 alignment="0" tabsequence=32766 border="0" color="0" x="8750" y="0" height="60" width="347" format="[general]" html.valueishtml="0"  name=companies_co_code_name visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=17 alignment="0" tabsequence=32766 border="0" color="0" x="9097" y="0" height="60" width="23" format="[general]" html.valueishtml="0"  name=companies_terminationlocation visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=18 alignment="0" tabsequence=32766 border="0" color="0" x="9120" y="0" height="60" width="576" format="[general]" html.valueishtml="0"  name=companies_co_pcm visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=19 alignment="0" tabsequence=32766 border="0" color="0" x="9696" y="0" height="60" width="23" format="[general]" html.valueishtml="0"  name=disp_events_de_event_type visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=20 alignment="0" tabsequence=32766 border="0" color="0" x="9719" y="0" height="60" width="233" format="[general]" html.valueishtml="0"  name=disp_events_de_arrdate visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=21 alignment="0" tabsequence=32766 border="0" color="0" x="9952" y="0" height="60" width="183" format="[time]" html.valueishtml="0"  name=disp_events_de_arrtime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=22 alignment="0" tabsequence=32766 border="0" color="0" x="10135" y="0" height="60" width="23" format="[general]" html.valueishtml="0"  name=disp_events_de_conf visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="0" color="0" x="10158" y="0" height="60" width="187" format="[general]" html.valueishtml="0"  name=disp_events_de_whoconf visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="0" color="0" x="10345" y="0" height="60" width="992" format="[general]" html.valueishtml="0"  name=disp_events_de_driver_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=25 alignment="0" tabsequence=32766 border="0" color="0" x="11337" y="0" height="60" width="992" format="[general]" html.valueishtml="0"  name=disp_events_de_shipment_id visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=26 alignment="0" tabsequence=32766 border="0" color="0" x="12329" y="0" height="60" width="183" format="[time]" html.valueishtml="0"  name=disp_events_de_deptime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=27 alignment="0" tabsequence=32766 border="0" color="0" x="12512" y="0" height="60" width="23" format="[general]" html.valueishtml="0"  name=disp_ship_ds_hazmat visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=28 alignment="0" tabsequence=32766 border="0" color="0" x="12535" y="0" height="60" width="23" format="[general]" html.valueishtml="0"  name=disp_ship_ds_expedite visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=29 alignment="0" tabsequence=32766 border="0" color="0" x="12558" y="0" height="60" width="23" format="[general]" html.valueishtml="0"  name=disp_ship_ds_status visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=30 alignment="0" tabsequence=32766 border="0" color="0" x="12581" y="0" height="60" width="5760" format="[general]" html.valueishtml="0"  name=disp_ship_ds_ref1_text visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=31 alignment="0" tabsequence=32766 border="0" color="0" x="18341" y="0" height="60" width="5760" format="[general]" html.valueishtml="0"  name=disp_ship_movetype visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=32 alignment="0" tabsequence=32766 border="0" color="0" x="24101" y="0" height="60" width="233" format="[general]" html.valueishtml="0"  name=disp_ship_cutoffdate visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=33 alignment="0" tabsequence=32766 border="0" color="0" x="24334" y="0" height="60" width="187" format="[time]" html.valueishtml="0"  name=disp_ship_cutofftime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=34 alignment="0" tabsequence=32766 border="0" color="0" x="24521" y="0" height="60" width="233" format="[general]" html.valueishtml="0"  name=disp_ship_lastfreedate visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=35 alignment="0" tabsequence=32766 border="0" color="0" x="24754" y="0" height="60" width="183" format="[time]" html.valueishtml="0"  name=disp_ship_lastfreetime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=36 alignment="0" tabsequence=32766 border="0" color="0" x="24937" y="0" height="60" width="5760" format="[general]" html.valueishtml="0"  name=disp_ship_booking visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=37 alignment="0" tabsequence=32766 border="0" color="0" x="30697" y="0" height="60" width="992" format="[general]" html.valueishtml="0"  name=disp_ship_pickupnumber visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=38 alignment="0" tabsequence=32766 border="0" color="0" x="31689" y="0" height="60" width="233" format="[general]" html.valueishtml="0"  name=disp_ship_pickupbydate visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=39 alignment="0" tabsequence=32766 border="0" color="0" x="31922" y="0" height="60" width="183" format="[time]" html.valueishtml="0"  name=disp_ship_pickupbytime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=40 alignment="0" tabsequence=32766 border="0" color="0" x="32105" y="0" height="60" width="5760" format="[general]" html.valueishtml="0"  name=disp_ship_pickupbyby visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=41 alignment="0" tabsequence=32766 border="0" color="0" x="37865" y="0" height="60" width="233" format="[general]" html.valueishtml="0"  name=disp_ship_delbydate visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=42 alignment="0" tabsequence=32766 border="0" color="0" x="38098" y="0" height="60" width="183" format="[time]" html.valueishtml="0"  name=disp_ship_delbytime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=43 alignment="0" tabsequence=32766 border="0" color="0" x="38281" y="0" height="60" width="5760" format="[general]" html.valueishtml="0"  name=disp_ship_delbyby visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=44 alignment="0" tabsequence=32766 border="0" color="0" x="44041" y="0" height="60" width="5760" format="[general]" html.valueishtml="0"  name=disp_ship_railbillnumber visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=45 alignment="0" tabsequence=32766 border="0" color="0" x="49801" y="0" height="60" width="23" format="[general]" html.valueishtml="0"  name=disp_ship_movecode visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=46 alignment="0" tabsequence=32766 border="0" color="0" x="49824" y="0" height="60" width="919" format="[general]" html.valueishtml="0"  name=disp_ship_ds_equip_req visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=47 alignment="0" tabsequence=32766 border="0" color="0" x="50743" y="0" height="60" width="347" format="[general]" html.valueishtml="0"  name=equipment_eq_ref visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

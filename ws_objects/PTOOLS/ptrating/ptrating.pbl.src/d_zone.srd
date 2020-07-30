@@ -1,0 +1,25 @@
+﻿$PBExportHeader$d_zone.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=96 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=84 color="536870912" )
+table(column=(type=char(32766) update=yes updatewhereclause=no key=yes name=name dbname="zone.name" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=description dbname="zone.description" )
+ column=(type=long updatewhereclause=yes name=include dbname="include" values="	1/	0" )
+ retrieve="  SELECT ~"zone~".~"name~",   
+         ~"zone~".~"description~" ,
+			Convert ( integer , null ) as include 
+    FROM ~"zone~"   
+" update="zone" updatewhere=1 updatekeyinplace=yes  sort="name A " )
+text(band=header alignment="0" text="Name" border="0" color="128" x="142" y="16" height="60" width="174" html.valueishtml="0"  name=name_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Description" border="0" color="128" x="782" y="16" height="60" width="338" html.valueishtml="0"  name=description_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=10 border="0" color="0" x="37" y="12" height="48" width="55" format="[general]" html.valueishtml="0"  name=include visible="1~t0" checkbox.text="" checkbox.on="1" checkbox.off="0" checkbox.scale=no checkbox.threed=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=20 border="5" color="0" x="142" y="12" height="52" width="599" format="[general]" html.valueishtml="0"  name=name visible="1" accelerator="Z" edit.limit=32000 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=30 border="5" color="0" x="782" y="12" height="52" width="1038" format="[general]" html.valueishtml="0"  name=description visible="1" edit.limit=32000 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

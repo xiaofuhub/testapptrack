@@ -1,0 +1,143 @@
+﻿$PBExportHeader$d_interactive_itin.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+header(height=84 color="536870912" )
+summary(height=8 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=de_id dbname="disp_events.de_id" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=de_event_type dbname="disp_events.de_event_type" )
+ column=(type=long update=yes updatewhereclause=yes name=de_driver dbname="disp_events.de_driver" )
+ column=(type=decimal(12) update=yes updatewhereclause=yes name=de_driver_seq dbname="disp_events.de_driver_seq" initial="0" )
+ column=(type=long update=yes updatewhereclause=yes name=de_site dbname="disp_events.de_site" )
+ column=(type=long update=yes updatewhereclause=yes name=de_shipment_id dbname="disp_events.de_shipment_id" )
+ column=(type=long update=yes updatewhereclause=yes name=de_ship_seq dbname="disp_events.de_ship_seq" )
+ column=(type=char(32766) updatewhereclause=no name=de_note dbname="disp_events.de_note" )
+ column=(type=date update=yes updatewhereclause=yes name=de_apptdate dbname="disp_events.de_apptdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_appttime dbname="disp_events.de_appttime" )
+ column=(type=date update=yes updatewhereclause=yes name=de_arrdate dbname="disp_events.de_arrdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_arrtime dbname="disp_events.de_arrtime" )
+ column=(type=date update=yes updatewhereclause=yes name=de_depdate dbname="disp_events.de_depdate" )
+ column=(type=time update=yes updatewhereclause=yes name=de_deptime dbname="disp_events.de_deptime" )
+ column=(type=char(45) updatewhereclause=yes name=co_name dbname="companies.co_name" )
+ column=(type=char(20) updatewhereclause=yes name=co_city dbname="companies.co_city" )
+ column=(type=char(3) updatewhereclause=yes name=co_state dbname="companies.co_state" )
+ column=(type=char(9) updatewhereclause=yes name=co_zip dbname="companies.co_zip" )
+ column=(type=long updatewhereclause=yes name=co_tz dbname="companies.co_tz" values="HWI	0/ALK	1/PAC	2/MTN	3/CTL	4/EST	5/ATL	6/" )
+ column=(type=char(25) updatewhereclause=yes name=co_pcm dbname="companies.co_pcm" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_freightsplit dbname="disp_events.de_freightsplit" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=de_accesssplit dbname="disp_events.de_accesssplit" )
+ column=(type=char(5) updatewhereclause=yes name=cc_depstr dbname="null" )
+ column=(type=char(5) updatewhereclause=yes name=cc_arrstr dbname="null" )
+ column=(type=decimal(1) updatewhereclause=yes name=leg_miles dbname="null" )
+ column=(type=long updatewhereclause=yes name=leg_mins dbname="null" )
+ column=(type=char(8) updatewhereclause=yes name=bracket_type dbname="null" )
+ column=(type=char(1) updatewhereclause=yes name=lockblock dbname="null" )
+ column=(type=decimal(1) updatewhereclause=yes name=paysplit dbname="null" )
+ column=(type=decimal(0) updatewhereclause=yes name=processcount dbname="null" initial="0" )
+ column=(type=char(1) updatewhereclause=yes name=accessorial_indicator dbname="null" )
+ column=(type=decimal(0) updatewhereclause=yes name=accessorialcount dbname="null" )
+ column=(type=char(32766) updatewhereclause=yes name=shipmenttype dbname="null" )
+ column=(type=long updatewhereclause=yes name=eventcount dbname="eventcount" )
+ retrieve="  SELECT ~"disp_events~".~"de_id~",   
+         ~"disp_events~".~"de_event_type~",   
+         ~"disp_events~".~"de_driver~",   
+         ~"disp_events~".~"de_driver_seq~",   
+         ~"disp_events~".~"de_site~",   
+         ~"disp_events~".~"de_shipment_id~",   
+         ~"disp_events~".~"de_ship_seq~",   
+         ~"disp_events~".~"de_note~",   
+         ~"disp_events~".~"de_apptdate~",   
+         ~"disp_events~".~"de_appttime~",   
+         ~"disp_events~".~"de_arrdate~",   
+         ~"disp_events~".~"de_arrtime~",   
+         ~"disp_events~".~"de_depdate~",   
+         ~"disp_events~".~"de_deptime~",   
+         ~"companies~".~"co_name~",   
+         ~"companies~".~"co_city~",   
+         ~"companies~".~"co_state~",   
+         ~"companies~".~"co_zip~",   
+         ~"companies~".~"co_tz~",   
+         ~"companies~".~"co_pcm~",   
+         ~"disp_events~".~"de_freightsplit~",   
+         ~"disp_events~".~"de_accesssplit~",
+         convert ( char(5), null ),   
+         convert ( char(5), null ),   
+         convert ( numeric(6, 1), null ),   
+         convert ( integer, null ),   
+			convert ( char(8), null ),
+			convert ( char(1), null ), 
+			convert ( numeric(6, 1), null ),
+			convert ( numeric(1), null ),
+			convert ( char(1), null ),
+			convert ( numeric(1), null ),
+			convert ( long varchar, null) ,
+			convert ( integer, null ) AS ~"EventCount~" 	 
+						
+    FROM {oj ~"disp_events~"  LEFT OUTER JOIN ~"companies~"  ON ~"disp_events~".~"de_site~" = ~"companies~".~"co_id~"} 
+   WHERE ( ~"disp_events~".~"de_arrdate~" between :min_date and :max_date ) AND  
+         ( ~"disp_events~".~"de_driver~" = :retrid )    
+" arguments=(("retrid", number),("min_date", date),("max_date", date)) )
+group(level=1 header.height=60 trailer.height=92 by=("de_arrdate" ) header.color="536870912" trailer.color="536870912" )
+text(band=header alignment="1" text="Tmp #  " border="6" color="0" x="9" y="12" height="60" width="251" html.valueishtml="0"  name=t_2 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Shipment Type" border="6" color="0" x="279" y="12" height="60" width="553" html.valueishtml="0"  name=t_11 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Seq" border="6" color="0" x="850" y="12" height="60" width="101" html.valueishtml="0"  name=t_12 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Event" border="6" color="0" x="969" y="12" height="60" width="279" html.valueishtml="0"  name=t_3 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Site" border="6" color="0" x="1266" y="12" height="60" width="699" html.valueishtml="0"  name=t_4 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Miles" border="6" color="0" x="2555" y="12" height="60" width="178" html.valueishtml="0"  name=t_6 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Time" border="6" color="0" x="2752" y="12" height="60" width="151" html.valueishtml="0"  name=t_7 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Arrive" border="6" color="0" x="2921" y="12" height="60" width="197" html.valueishtml="0"  name=t_8 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Depart" border="6" color="0" x="3136" y="12" height="60" width="210" html.valueishtml="0"  name=t_9 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="F" border="6" color="0" x="3365" y="12" height="60" width="82" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="A" border="6" color="0" x="3465" y="12" height="60" width="82" html.valueishtml="0"  name=t_10 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Location" border="6" color="0" x="1984" y="12" height="60" width="553" html.valueishtml="0"  name=t_5 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Event Count" border="6" color="0" x="3566" y="12" height="60" width="375" html.valueishtml="0"  name=t_13 visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=header.1 id=11 alignment="0" tabsequence=32766 border="0" color="0" x="14" y="4" height="52" width="288" format="mm/dd/yy" html.valueishtml="0"  name=de_arrdate visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=header.1 x1="3451" y1="0" x2="3451" y2="80"  name=l_1 visible="1~tif( bracket_type in ('BOTTOM',  'NONE') , 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="23" y1="0" x2="23" y2="24"  name=l_2 visible="1~tif( bracket_type in ( 'BOTTOM' ) , 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="23" y1="0" x2="23" y2="80"  name=l_3 visible="1~tif( bracket_type in ( 'NONE') , 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="23" y1="8" x2="23" y2="68"  name=l_4 visible="1~tif( bracket_type in ( 'TOP', 'BOTTOM', 'TOPANDBOTTOM' ) , 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="23" y1="68" x2="23" y2="92"  name=l_5 visible="1~tif( bracket_type in ( 'TOP' ) , 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+compute(band=detail alignment="0" expression="comp_tz_shift * ( co_tz - comp_tz_home ) * 3600"border="0" color="0" x="2080" y="260" height="52" width="174" format="[general]" html.valueishtml="0"  name=comp_tz_adj visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=24 alignment="0" tabsequence=32766 border="0" color="0" x="2272" y="260" height="52" width="174" format="[general]" html.valueishtml="0"  name=cc_arrstr visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=23 alignment="0" tabsequence=32766 border="0" color="0" x="2469" y="260" height="52" width="174" format="[general]" html.valueishtml="0"  name=cc_depstr visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+column(band=detail id=28 alignment="0" tabsequence=32766 border="0" color="0" x="2949" y="192" height="52" width="119" format="[general]" html.valueishtml="0"  name=lockblock visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="27" y1="64" x2="73" y2="64"  name=bottom_line_left visible="1~tif( bracket_type in ( 'BOTTOM', 'TOPANDBOTTOM' ), 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="27" y1="4" x2="73" y2="4"  name=top_left_line visible="1~tif( left(  bracket_type, 3 ) in ( 'TOP' ), 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="0" x="59" y="8" height="52" width="201" format="[general]" html.valueishtml="0"  name=de_shipment_id visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="1073741824~tif(  processcount > 0, rgb(192,192,192), rgb(255,255,255) )
+" )
+column(band=detail id=33 alignment="0" tabsequence=32766 border="0" color="0" x="279" y="8" height="52" width="553" format="[general]" html.valueishtml="0"  name=shipmenttype visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="16777215~tif(  processcount > 0, rgb(192,192,192), rgb(255,255,255) )" )
+column(band=detail id=7 alignment="2" tabsequence=32766 border="0" color="0" x="841" y="8" height="52" width="110" format="[general]" html.valueishtml="0"  name=de_ship_seq visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="16777215~tif(  processcount > 0, rgb(192,192,192), rgb(255,255,255) )" )
+bitmap(band=detail filename="FullNote.bmp" x="3557" y="8" height="56" width="73" border="0"  name=p_note visible="1~tif( len(trim( de_note ) ) > 0 , 1, 0 )" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="960" y="8" height="52" width="293" format="[general]" html.valueishtml="0"  name=de_event_type visible="1" accelerator="e" edit.limit=1 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="16777215~tif(  processcount > 0, rgb(192,192,192), rgb(255,255,255) )" )
+compute(band=detail alignment="0" expression="if ( len ( trim ( co_city ) ) > 0, trim ( co_city ), '' ) + if ( len ( co_state ) > 0, ', ' + co_state, '' )"border="0" color="0" x="1975" y="8" height="52" width="567" format="[general]" html.valueishtml="0"  name=comp_loc visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="16777215~tif(  processcount > 0, rgb(192,192,192), rgb(255,255,255) )" )
+column(band=detail id=25 alignment="1" tabsequence=32766 border="0" color="0" x="2551" y="8" height="52" width="187" format="[general]" html.valueishtml="0"  name=leg_miles visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="1073741824~tif(  processcount > 0, rgb(192,192,192), rgb(255,255,255) )" )
+compute(band=detail alignment="1" expression="if ( isnull ( leg_mins ), 'N.A.', string ( int ( leg_mins / 60 ) ) + ':' + string ( mod ( leg_mins, 60 ), '00' ) )"border="0" color="0" x="2747" y="8" height="52" width="160" format="[general]" html.valueishtml="0"  name=comp_leg_time visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="1073741824~tif(  processcount > 0, rgb(192,192,192), rgb(255,255,255) )" )
+column(band=detail id=12 alignment="1" tabsequence=32766 border="0" color="0~tif( secondsafter( de_arrtime ,  de_deptime ) > 7200, rgb(255, 255, 255), rgb(0, 0, 0) )
+
+" x="2917" y="8" height="52" width="206" format="hh:mm" html.valueishtml="0"  name=de_arrtime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="1073741824~tcase( secondsafter( de_arrtime ,  de_deptime ) when is > 7200 then rgb(255, 0, 0) when is > 3600 then rgb(255, 255, 0) else if(  processcount > 0, rgb(192,192,192), rgb(255,255,255) ))
+" )
+column(band=detail id=14 alignment="1" tabsequence=32766 border="0" color="0~tif( secondsafter( de_arrtime ,  de_deptime ) > 7200, rgb(255, 255, 255), rgb(0, 0, 0) )
+
+" x="3131" y="8" height="52" width="219" format="hh:mm" html.valueishtml="0"  name=de_deptime visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="1073741824~tcase( secondsafter( de_arrtime ,  de_deptime ) when is > 7200 then rgb(255, 0, 0) when is > 3600 then rgb(255, 255, 0) else if(  processcount > 0, rgb(192,192,192), rgb(255,255,255) ))
+" )
+line(band=detail x1="3451" y1="0" x2="3451" y2="24"  name=l_6 visible="1~tif( bracket_type in ( 'BOTTOM' ) , 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="3451" y1="0" x2="3451" y2="80"  name=right_line_none visible="1~tif( bracket_type in ( 'NONE') , 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="3451" y1="8" x2="3451" y2="68"  name=l_7 visible="1~tif( bracket_type in ( 'TOP', 'BOTTOM', 'TOPANDBOTTOM' ) , 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="3451" y1="64" x2="3451" y2="88"  name=l_8 visible="1~tif( bracket_type in ( 'TOP' ) , 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="3410" y1="64" x2="3456" y2="64"  name=bottom_line_right visible="1~tif( bracket_type in ( 'BOTTOM', 'TOPANDBOTTOM' ), 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="3410" y1="4" x2="3456" y2="4"  name=top_right_line visible="1~tif( left(  bracket_type, 3 ) in ( 'TOP' ), 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+column(band=detail id=30 alignment="1" tabsequence=32766 border="0" color="0" x="3360" y="8" height="52" width="78" format="[general]" html.valueishtml="0"  name=processcount visible="1~tif( processcount  > 0 , 1, 0 )" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="16777215~tif(  processcount > 0, rgb(192,192,192), rgb(255,255,255) )" )
+column(band=detail id=32 alignment="2" tabsequence=32766 border="0" color="0~tif(  accessorial_indicator = 'A' , rgb(255, 0, 0), rgb(0, 0, 0) )" x="3465" y="8" height="52" width="73" format="[general]" html.valueishtml="0"  name=accessorialcount visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+line(band=detail x1="69" y1="4" x2="3419" y2="4"  name=toplockline visible="1~tif( lockblock = 'Y'and left(  bracket_type, 3 ) in ( 'TOP' ), 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+line(band=detail x1="69" y1="64" x2="3419" y2="64"  name=bottomlockline visible="1~tif( lockblock = 'Y' and bracket_type in ( 'BOTTOM', 'TOPANDBOTTOM' ), 1, 0 )" pen.style="0" pen.width="5" pen.color="8388608~tif(isSelected(),rgb(255,255,255), rgb(0,0,128) )"  background.mode="2" background.color="79741120" )
+column(band=detail id=15 alignment="0" tabsequence=32766 border="0" color="0" x="1262" y="8" height="52" width="704" format="[general]" html.valueishtml="0"  name=co_name visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="0" background.color="16777215~tif(  processcount > 0, rgb(192,192,192), rgb(255,255,255) )" )
+column(band=detail id=34 alignment="0" tabsequence=32766 border="0" color="0" x="3657" y="8" height="52" width="288" format="[general]" html.valueishtml="0"  name=eventcount visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=footer alignment="0" expression="5"border="0" color="0" x="1294" y="52" height="76" width="256" format="[general]" html.valueishtml="0"  name=comp_tz_home visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+text(band=footer alignment="0" text="1" border="0" color="0" x="923" y="64" height="76" width="37" html.valueishtml="0"  name=st_tz_shift visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+compute(band=footer alignment="0" expression="integer ( describe ( 'st_tz_shift.text' ) )"border="0" color="0" x="1911" y="112" height="76" width="256" format="[general]" html.valueishtml="0"  name=comp_tz_shift visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

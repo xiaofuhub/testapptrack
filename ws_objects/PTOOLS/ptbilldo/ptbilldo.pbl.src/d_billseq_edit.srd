@@ -1,0 +1,28 @@
+﻿$PBExportHeader$d_billseq_edit.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=76 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=88 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=bs_id dbname="billing_sequences.bs_id" )
+ column=(type=char(20) updatewhereclause=yes name=bs_name dbname="null" initial="[NEW INVOICE SERIES]" )
+ column=(type=char(15) updatewhereclause=yes name=bs_definition dbname="null" validation="match ( gettext(), '^[^#]*[#]+[^#]*$' ) or isnull ( gettext() )" )
+ column=(type=long update=yes updatewhereclause=yes name=bs_next dbname="billing_sequences.bs_next" validation="long ( gettext() ) > 0 or isnull(gettext())" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=bs_dbstring dbname="billing_sequences.bs_dbstring" )
+ retrieve="  SELECT ~"billing_sequences~".~"bs_id~",   
+         convert(char(20), null),   
+         convert(char(15), null),   
+         ~"billing_sequences~".~"bs_next~",   
+         ~"billing_sequences~".~"bs_dbstring~"  
+    FROM ~"billing_sequences~"   
+" update="billing_sequences" updatewhere=1 updatekeyinplace=no  sort="bs_name A bs_id A " )
+text(band=header alignment="0" text="Definition"border="0" color="128" x="709" y="4" height="64" width="242"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Next # Value"border="0" color="128" x="1280" y="4" height="64" width="343"  name=bs_next_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Next Invoice #"border="0" color="128" x="1664" y="4" height="64" width="370"  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="0" text="Invoice Series Name"border="0" color="128" x="14" y="4" height="64" width="539"  name=null_t  font.face="Arial" font.height="-10" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=10 border="5" color="0" x="18" y="8" height="56" width="658" format="[general]"  name=bs_name edit.limit=20 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=30 border="5" color="0" x="1285" y="8" height="56" width="334" format="[general]"  name=bs_next edit.limit=0 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=20 border="5" color="0" x="713" y="8" height="56" width="535" format="[general]"  name=bs_definition edit.limit=15 edit.case=upper edit.focusrectangle=no edit.autoselect=yes edit.nilisnull=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression="if ( isnull ( bs_definition ) or isnull ( bs_next ), '', replace ( substitute ( bs_definition, '#', '' ), pos ( bs_definition, '#' ), 0, string ( bs_next, fill ( '0', len ( bs_definition ) - len ( substitute ( bs_definition, '#', '' ) ) ) + '#' ) ) )"border="5" color="0" x="1664" y="8" height="56" width="535" format="[general]"  name=comp_next_invoice  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="29425663" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

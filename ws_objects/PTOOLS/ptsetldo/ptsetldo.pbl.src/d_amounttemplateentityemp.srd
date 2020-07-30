@@ -1,0 +1,19 @@
+﻿$PBExportHeader$d_amounttemplateentityemp.srd
+$PBExportComments$employees with entities used to populate treeview
+release 9;
+datawindow(units=2 timer_interval=60000 color=1073741824 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 250 print.margin.right = 250 print.margin.top = 250 print.margin.bottom = 250 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=yes print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no )
+summary(height=10 color="536870912" )
+footer(height=20 color="536870912" )
+detail(height=208 color="536870912" )
+table(column=(type=char(15) updatewhereclause=yes name=employees_em_fn dbname="employees.em_fn" )
+ column=(type=char(25) updatewhereclause=yes name=employees_em_ln dbname="employees.em_ln" )
+ column=(type=long update=yes updatewhereclause=yes key=yes name=entity_id dbname="entity.id" )
+ column=(type=char(1) updatewhereclause=yes name=employees_em_status dbname="employees.em_status" )
+ retrieve="PBSELECT( VERSION(400) DISTINCT ()TABLE(NAME=~"entity~" )  TABLE(NAME=~"employees~" ) COLUMN(NAME=~"employees.em_fn~") COLUMN(NAME=~"employees.em_ln~") COLUMN(NAME=~"entity.id~") COLUMN(NAME=~"employees.em_status~")    JOIN (LEFT=~"employees.em_id~"    OP =~"=~"RIGHT=~"entity.fkemployee~" )) " update="entity" updatewhere=0 updatekeyinplace=no  sort="employees_em_ln A " )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="72" y="31" height="156" width="697" format="[general]" html.valueishtml="0"  name=entity_id visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression=" employees_em_ln +~", ~" + employees_em_fn "border="0" color="0" x="843" y="31" height="156" width="2458" format="[general]" html.valueishtml="0"  name=employee_name visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

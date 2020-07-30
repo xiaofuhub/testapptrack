@@ -1,0 +1,133 @@
+﻿$PBExportHeader$gf_calc_miles.srf
+$PBExportComments$PTCORE:  function to find miles and duration (see d_pcmilies)
+global type gf_calc_miles from function_object
+end type
+
+forward prototypes
+global function integer gf_calc_miles (string orig, string dest, ref decimal miles, ref long minutes, integer route_type)
+end prototypes
+
+global function integer gf_calc_miles (string orig, string dest, ref decimal miles, ref long minutes, integer route_type);/* Purpose:  this function will find the miles and minutes between two locations.  
+		It will first search the gds_pcmiles and then ask Pcmiler.
+
+	Arguments:
+		orig - origin
+		dest - destination
+		miles - (in dec form) by REF to manipulate the miles
+		minutes - (long) by REF to manipulate minutes
+		route_type - the way the user wants to calculate the route
+
+	Return Values
+		 1 = great!, the function worked
+		-1 = bad!, the function failed
+
+FYI:--------route types 
+calc_practical = 0
+calc_shortest = 1
+calc_national = 2
+calc_avoidtoll = 3
+calc_air = 4  
+----------------------------------------------------------------------------*/  
+integer	li_return = 1
+setnull(miles)
+setnull(minutes)
+boolean	lb_pcmilerconnected
+n_cst_licensemanager	lnv_licensemanager
+if pcms_inst AND (lnv_LicenseManager.of_usepcmilerstreets() or &
+		lnv_LicenseManager.of_GetLicensed ( n_cst_Constants.ci_Module_PCMiler ) ) then
+	if lnv_LicenseManager.of_Getpcmilerserverid() > 0 then
+		lb_pcmilerconnected=true
+	end if
+end if
+
+if lb_pcmilerconnected then
+	//continue
+else
+	return -1
+end if
+
+if isnull(orig) or len(trim(orig)) = 0 then return -1
+if isnull(dest) or len(trim(dest)) = 0 then return -1
+
+if orig = dest then
+	miles = 0.0
+	minutes = 0
+	return 1
+end if
+
+if isnull(route_type) or route_type < 0 or route_type > 4 then route_type = 0
+
+long foundrow
+
+foundrow = gds_pcmiles.find("orig = '" + upper(orig) + "' and dest = '" + upper(dest) +&
+	"' and route_type = " + string(route_type), 1, gds_pcmiles.rowcount())
+
+if foundrow > 0 then 
+	miles = gds_pcmiles.getitemnumber(foundrow, "miles")
+	minutes = gds_pcmiles.getitemnumber(foundrow, "minutes")
+	return 1
+end if
+
+
+/*
+	Replaced all direct calls to pcms functions with functions on routing object.
+	n_cst_trip determines correct routing object
+*/
+n_cst_trip	lnv_trip
+n_cst_routing	lnv_routing
+lnv_trip = create n_cst_trip
+
+if lnv_trip.of_connect(lnv_routing) then
+	if lnv_routing.of_isvalid() then
+		//ok
+	else
+		li_return = -1
+	end if
+else
+	li_return = -1
+end if
+
+if li_return = 1 then
+	if lnv_routing.of_validplacename(orig) then
+		//ok
+	else
+		li_return = -1
+	end if
+	if lnv_routing.of_validplacename(dest) then
+		//ok
+	else
+		li_return = -1
+	end if
+end if
+
+if li_return = 1 then
+	
+	long		ll_temp_minutes
+	decimal	lc_temp_miles
+
+	lnv_routing.of_calculate( orig, dest, lc_temp_miles, ll_temp_minutes, long(route_type))
+	
+	if lc_temp_miles < 0 or ll_temp_minutes < 0 or isnull(lc_temp_miles) or isnull(ll_temp_minutes) then
+		return -1
+	else
+		miles = lc_temp_miles
+		minutes = ll_temp_minutes
+	end if
+	
+	foundrow = gds_pcmiles.insertrow(0)
+	if foundrow > 0 then
+		gds_pcmiles.setitem(foundrow, "miles", miles)
+		gds_pcmiles.setitem(foundrow, "minutes", minutes)
+		gds_pcmiles.setitem(foundrow, "orig", upper(orig))
+		gds_pcmiles.setitem(foundrow, "dest", upper(dest))
+		gds_pcmiles.setitem(foundrow, "route_type", route_type)
+	end if
+end if
+
+if isvalid(lnv_trip) then
+	destroy lnv_trip
+end if
+
+return li_return
+end function
+

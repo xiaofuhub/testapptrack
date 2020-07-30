@@ -1,0 +1,10 @@
+﻿$PBExportHeader$s_date_return.srs
+$PBExportComments$PTCORE:  structure for w_choose_day window
+global type s_date_return from structure
+	date		mindate
+	string		tag
+	integer		xpos
+	integer		ypos
+	date		maxdate
+end type
+

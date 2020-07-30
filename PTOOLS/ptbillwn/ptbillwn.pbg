@@ -1,0 +1,19 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptbillwn\\ptbillwn.pbl" "";
+@end;
+@begin Objects
+ "PTOOLS\\ptbillwn\\w_acct_batchnum.srw" "PTOOLS\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_acct_cos_sync.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_setting_billingcopydefaults.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_billseq_edit.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_graphic_setup.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_acct_logon.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_bill_copies.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_billing.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_bill_preview.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_invoicedate.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_billtopoints.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_billquickprint.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+ "ptools\\ptbillwn\\w_shiptype_manager.srw" "ptools\\ptbillwn\\ptbillwn.pbl";
+@end;

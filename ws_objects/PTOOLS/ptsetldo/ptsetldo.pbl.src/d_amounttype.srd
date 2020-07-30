@@ -1,0 +1,17 @@
+﻿$PBExportHeader$d_amounttype.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=long update=yes updatewhereclause=yes key=yes name=id dbname="amounttype.id" )
+ column=(type=char(15) update=yes updatewhereclause=yes name=amounttype dbname="amounttype.name" )
+ column=(type=long update=yes updatewhereclause=yes name=category dbname="amounttype.category" )
+ column=(type=long update=yes updatewhereclause=yes name=typicalamount dbname="amounttype.typicalamount" )
+ column=(type=decimal(0) update=yes updatewhereclause=yes name=taxabledefault dbname="amounttype.taxabledefault" )
+ column=(type=char(32766) update=yes updatewhereclause=no name=tag dbname="amounttype.tag" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=itemtype dbname="amounttype.itemtype" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=surcharge dbname="amounttype.surcharge" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"amounttype~" ) COLUMN(NAME=~"amounttype.id~") COLUMN(NAME=~"amounttype.name~") COLUMN(NAME=~"amounttype.category~") COLUMN(NAME=~"amounttype.typicalamount~") COLUMN(NAME=~"amounttype.taxabledefault~") COLUMN(NAME=~"amounttype.tag~") COLUMN(NAME=~"amounttype.itemtype~") COLUMN(NAME=~"amounttype.surcharge~")) " update="amounttype" updatewhere=1 updatekeyinplace=no  sort="amounttype A " )
+column(band=detail id=2 alignment="0" tabsequence=10 border="5" color="0" x="18" y="8" height="56" width="718" format="[general]"  name=amounttype edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

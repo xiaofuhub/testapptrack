@@ -1,0 +1,10 @@
+﻿$PBExportHeader$d_spin.srd
+release 6;
+datawindow(units=0 timer_interval=0 color=79741120 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=88 color="536870912" )
+table(column=(type=number updatewhereclause=yes name=increment dbname="increment" validationmsg="~"Value must be greater than 5 and less than 300~"" )
+ )
+column(band=detail id=1 alignment="1" tabsequence=10 border="5" color="0" x="18" y="12" height="64" width="201" format="[general]"  name=increment editmask.spin=yes editmask.mask="####" editmask.spinrange="5~~300" editmask.spinincr=1 editmask.focusrectangle=no  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

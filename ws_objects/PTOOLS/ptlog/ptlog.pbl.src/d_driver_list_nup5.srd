@@ -1,0 +1,45 @@
+﻿$PBExportHeader$d_driver_list_nup5.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=0 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no rows_per_detail = 5 )
+header(height=116 color="536870912" )
+summary(height=28 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="553648127" )
+table(column=(type=long updatewhereclause=yes name=employees_em_id dbname="employees.em_id" )
+ column=(type=char(15) updatewhereclause=yes name=employees_em_fn dbname="employees.em_fn" )
+ column=(type=char(15) updatewhereclause=yes name=employees_em_mn dbname="employees.em_mn" )
+ column=(type=char(25) updatewhereclause=yes name=employees_em_ln dbname="employees.em_ln" )
+ column=(type=char(8) updatewhereclause=yes name=employees_em_ref dbname="employees.em_ref" )
+ column=(type=char(1) updatewhereclause=yes name=employees_em_status dbname="employees.em_status" )
+ column=(type=long updatewhereclause=yes name=employees_em_type dbname="employees.em_type" )
+ column=(type=long updatewhereclause=yes name=employees_em_class dbname="employees.em_class" )
+ column=(type=long updatewhereclause=yes name=driverinfo_di_id dbname="driverinfo.di_id" )
+ column=(type=long updatewhereclause=yes name=di_available dbname="di_available" )
+ column=(type=long updatewhereclause=yes name=di_division dbname="di_division" )
+ retrieve="  SELECT ~"employees~".~"em_id~",   
+         ~"employees~".~"em_fn~",   
+         ~"employees~".~"em_mn~",   
+         ~"employees~".~"em_ln~",   
+         ~"employees~".~"em_ref~",   
+         ~"employees~".~"em_status~",   
+         ~"employees~".~"em_type~",   
+         ~"employees~".~"em_class~",   
+         ~"driverinfo~".~"di_id~"  ,
+			convert ( integer, null ) AS ~"di_Available~",
+			convert ( integer, null ) AS ~"di_division~"  
+    FROM ~"driverinfo~",   
+         ~"employees~"  
+   WHERE ( ~"employees~".~"em_id~" = ~"driverinfo~".~"di_id~" ) and  
+         ( ( ~"employees~".~"em_status~" = 'K' ) )    
+" )
+text(band=header alignment="0" text="Pool of Drivers" border="0" color="33554432" x="32" y="12" height="80" width="517" html.valueishtml="0"  name=st_tag visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression=" employees_em_ln[2 ] + ', ' +  employees_em_fn [2] + if (isnull( employees_em_mn [ 2 ] ) or len(trim( employees_em_mn [ 2 ] )) = 0, '', ' ' + left(  employees_em_mn [ 2 ], 1) )"border="0" color="33554432" x="1403" y="4" height="56" width="677" format="[general]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression=" employees_em_ln[ 3 ] + ', ' +  employees_em_fn [3] + if (isnull( employees_em_mn [ 3 ] ) or len(trim( employees_em_mn [ 3 ] )) = 0, '', ' ' + left(  employees_em_mn [3 ], 1) )"border="0" color="33554432" x="2089" y="4" height="56" width="677" format="[general]" html.valueishtml="0"  name=compute_2 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression=" employees_em_ln[4 ] + ', ' +  employees_em_fn [4] + if (isnull( employees_em_mn [ 4 ] ) or len(trim( employees_em_mn [ 4 ] )) = 0, '', ' ' + left(  employees_em_mn [4 ], 1) )"border="0" color="33554432" x="2779" y="4" height="56" width="677" format="[general]" html.valueishtml="0"  name=compute_3 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression=" employees_em_ln[ 0 ] + ', ' +  employees_em_fn [0] + if (isnull( employees_em_mn [ 0 ] ) or len(trim( employees_em_mn [ 0 ] )) = 0, '', ' ' + left(  employees_em_mn [ 0 ], 1) )"border="0" color="33554432" x="32" y="4" height="56" width="677" format="[general]" html.valueishtml="0"  name=comp_name visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression=" employees_em_ln[1 ] + ', ' +  employees_em_fn [1] + if (isnull( employees_em_mn [ 1 ] ) or len(trim( employees_em_mn [ 1 ] )) = 0, '', ' ' + left(  employees_em_mn [ 1 ], 1) )"border="0" color="33554432" x="718" y="4" height="56" width="677" format="[general]" html.valueishtml="0"  name=compute_4 visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="0" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

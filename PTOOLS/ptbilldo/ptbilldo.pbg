@@ -1,0 +1,33 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "ptools\\ptbilldo\\ptbilldo.pbl" "";
+@end;
+@begin Objects
+ "PTOOLS\\ptbilldo\\d_acct_cos.srd" "PTOOLS\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_checklist.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_acctmap.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_graphic_definitions.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_sap_dh.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_labels.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_armap.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_bill_manifest.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_batchmetadata_sap.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_billseq_edit.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_invoice_equip.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_invoice_items.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_invoice_itin.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_bill_manifest_portrait.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_billseq_list.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_invoice.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_bill_manifiest_items.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_billingbatchreport.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_invoice_note.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_manifestcheck.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_ext_accounts.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_manifestids.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_empty.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_billtopoints.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_ext_glvalidation.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_intro_letter.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+ "ptools\\ptbilldo\\d_shiptype_edit.srd" "ptools\\ptbilldo\\ptbilldo.pbl";
+@end;

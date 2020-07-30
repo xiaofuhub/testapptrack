@@ -1,0 +1,6 @@
+﻿$PBExportHeader$s_referencenumber.srs
+global type s_referencenumber from structure
+	string		is_type
+	string		is_value
+end type
+

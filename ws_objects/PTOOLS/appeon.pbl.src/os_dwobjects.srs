@@ -1,0 +1,10 @@
+﻿$PBExportHeader$os_dwobjects.srs
+global type os_dwobjects from structure
+	string		s_id
+	string		s_type
+	string		s_value
+	integer		i_width
+	integer		i_bordertype
+	integer		i_gapwidth
+end type
+

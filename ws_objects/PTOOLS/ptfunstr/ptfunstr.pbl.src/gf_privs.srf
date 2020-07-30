@@ -1,0 +1,24 @@
+﻿$PBExportHeader$gf_privs.srf
+global type gf_privs from function_object
+end type
+
+forward prototypes
+global function integer gf_privs (long priv_item)
+end prototypes
+
+global function integer gf_privs (long priv_item);n_cst_numerical lnv_numerical
+if lnv_numerical.of_IsNullOrNotPos(priv_item) then return 0
+
+integer lcv
+for lcv = 1 to gds_privs.rowcount()
+	if gds_privs.getitemnumber(lcv, "priv_item") = priv_item then &
+		return gds_privs.getitemnumber(lcv, "priv_val")
+next
+
+messagebox("PW", "You sent a value that hasn't been set up in the system settings table." +&
+				"This is value you sent:  " + string(priv_item))
+return 0
+
+
+end function
+

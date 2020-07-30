@@ -1,0 +1,9 @@
+﻿$PBExportHeader$s_class_info.srs
+$PBExportComments$holds user privileges
+global type s_class_info from structure
+	long		emp[7]
+	long		log[8]
+	long		settle[9]
+	long		l_customerhold
+end type
+

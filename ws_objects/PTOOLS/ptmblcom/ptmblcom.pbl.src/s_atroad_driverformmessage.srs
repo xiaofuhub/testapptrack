@@ -1,0 +1,28 @@
+﻿$PBExportHeader$s_atroad_driverformmessage.srs
+global type s_atroad_driverformmessage from structure
+	string		is_vehiclelabel
+	string		is_textmesg
+	string		is_fillindata
+	integer		ii_locnstatus
+	string		is_stopduration
+	string		is_speed
+	string		is_speed_uom
+	string		is_direction
+	string		is_mesgdate
+	string		is_mesgtime
+	string		is_mesgtimezone
+	string		is_locn_lat
+	string		is_locn_lon
+	string		is_bldgnumber
+	string		is_streetname
+	string		is_cityname
+	string		is_stateabrv
+	string		is_zipcode
+	string		is_crossstrt
+	string		is_countyname
+	string		is_countryname
+	string		is_customerlmk
+	string		is_formfielddata[]
+	string		is_formname
+end type
+

@@ -1,0 +1,46 @@
+﻿$PBExportHeader$gf_priv_dw.srf
+global type gf_priv_dw from function_object
+end type
+
+forward prototypes
+global function long gf_priv_dw (long privitem, string prop_type)
+end prototypes
+
+global function long gf_priv_dw (long privitem, string prop_type);long nopriv, priv
+nopriv = rgb(128, 128, 128)
+choose case lower(prop_type)
+	case "back"
+		priv = rgb(255, 255, 255)
+		// when in Rome... 
+		IF gnv_app.of_getprivsmanager( ).of_useAdvancedprivs( ) THEN
+			RETURN Priv
+		END IF
+		
+	case "text"
+		priv = 0
+		// when in Rome... 
+		IF gnv_app.of_getprivsmanager( ).of_useAdvancedprivs( ) THEN
+			RETURN Priv
+		END IF
+	case "protect"
+		priv = 0
+		nopriv = 1
+		
+		// when in Rome... 
+		IF gnv_app.of_getprivsmanager( ).of_useAdvancedprivs( ) THEN
+			RETURN Priv
+		END IF
+				
+end choose
+
+choose case privitem
+	case is < 10000
+		if g_privs.emp[privitem - 9000] = 0 then return nopriv else	return priv
+	case is < 20000
+		if g_privs.log[privitem - 19000] = 0 then return nopriv else return priv
+	case else  //This shouldn't happen
+		return nopriv
+end choose
+
+end function
+

@@ -1,0 +1,801 @@
+﻿$PBExportHeader$m_rte.srm
+$PBExportComments$RichPad menu
+forward
+global type m_rte from menu
+end type
+type m_file from menu within m_rte
+end type
+type m_new from menu within m_file
+end type
+type m_open from menu within m_file
+end type
+type m_save from menu within m_file
+end type
+type m_saveas from menu within m_file
+end type
+type m_--- from menu within m_file
+end type
+type m_print from menu within m_file
+end type
+type m_printsetup from menu within m_file
+end type
+type m_---1 from menu within m_file
+end type
+type m_exit from menu within m_file
+end type
+type m_file from menu within m_rte
+m_new m_new
+m_open m_open
+m_save m_save
+m_saveas m_saveas
+m_--- m_---
+m_print m_print
+m_printsetup m_printsetup
+m_---1 m_---1
+m_exit m_exit
+end type
+type m_edit from menu within m_rte
+end type
+type m_undo from menu within m_edit
+end type
+type m_undo1 from menu within m_edit
+end type
+type m_edit11 from menu within m_edit
+end type
+type m_edit111 from menu within m_edit
+end type
+type m_paste from menu within m_edit
+end type
+type m_delete from menu within m_edit
+end type
+type m_deleteselectedfield from menu within m_edit
+end type
+type m_--1 from menu within m_edit
+end type
+type m_selectall from menu within m_edit
+end type
+type m_timedate from menu within m_edit
+end type
+type m_headersfooters from menu within m_edit
+end type
+type m_edit from menu within m_rte
+m_undo m_undo
+m_undo1 m_undo1
+m_edit11 m_edit11
+m_edit111 m_edit111
+m_paste m_paste
+m_delete m_delete
+m_deleteselectedfield m_deleteselectedfield
+m_--1 m_--1
+m_selectall m_selectall
+m_timedate m_timedate
+m_headersfooters m_headersfooters
+end type
+type m_insert from menu within m_rte
+end type
+type m_ratefield from menu within m_insert
+end type
+type m_tempnumber from menu within m_ratefield
+end type
+type m_tripdate from menu within m_ratefield
+end type
+type m_carriertripnumber from menu within m_ratefield
+end type
+type m_driver from menu within m_ratefield
+end type
+type m_equipmentnumbert1 from menu within m_ratefield
+end type
+type m_equipmenttype from menu within m_ratefield
+end type
+type m_chassisnumber from menu within m_ratefield
+end type
+type m_originid from menu within m_ratefield
+end type
+type m_destinationid from menu within m_ratefield
+end type
+type m_miles1 from menu within m_ratefield
+end type
+type m_status1 from menu within m_ratefield
+end type
+type m_totalweight1 from menu within m_ratefield
+end type
+type m_internalnote1 from menu within m_ratefield
+end type
+type m_payablestotal1 from menu within m_ratefield
+end type
+type m_carriername1 from menu within m_ratefield
+end type
+type m_ratefield from menu within m_insert
+m_tempnumber m_tempnumber
+m_tripdate m_tripdate
+m_carriertripnumber m_carriertripnumber
+m_driver m_driver
+m_equipmentnumbert1 m_equipmentnumbert1
+m_equipmenttype m_equipmenttype
+m_chassisnumber m_chassisnumber
+m_originid m_originid
+m_destinationid m_destinationid
+m_miles1 m_miles1
+m_status1 m_status1
+m_totalweight1 m_totalweight1
+m_internalnote1 m_internalnote1
+m_payablestotal1 m_payablestotal1
+m_carriername1 m_carriername1
+end type
+type m_logo from menu within m_insert
+end type
+type m_document from menu within m_insert
+end type
+type m_insert from menu within m_rte
+m_ratefield m_ratefield
+m_logo m_logo
+m_document m_document
+end type
+type m_search from menu within m_rte
+end type
+type m_find from menu within m_search
+end type
+type m_findnext from menu within m_search
+end type
+type m_replace from menu within m_search
+end type
+type m_search from menu within m_rte
+m_find m_find
+m_findnext m_findnext
+m_replace m_replace
+end type
+end forward
+
+global type m_rte from menu
+m_file m_file
+m_edit m_edit
+m_insert m_insert
+m_search m_search
+end type
+global m_rte m_rte
+
+on m_rte.create
+m_rte=this
+this.m_file=create m_file
+this.m_edit=create m_edit
+this.m_insert=create m_insert
+this.m_search=create m_search
+this.Item[]={this.m_file, &
+this.m_edit, &
+this.m_insert, &
+this.m_search}
+end on
+
+on m_rte.destroy
+destroy(this.m_file)
+destroy(this.m_edit)
+destroy(this.m_insert)
+destroy(this.m_search)
+end on
+
+type m_file from menu within m_rte
+m_new m_new
+m_open m_open
+m_save m_save
+m_saveas m_saveas
+m_--- m_---
+m_print m_print
+m_printsetup m_printsetup
+m_---1 m_---1
+m_exit m_exit
+end type
+
+on m_file.create
+this.Text="&File"
+this.m_new=create m_new
+this.m_open=create m_open
+this.m_save=create m_save
+this.m_saveas=create m_saveas
+this.m_---=create m_---
+this.m_print=create m_print
+this.m_printsetup=create m_printsetup
+this.m_---1=create m_---1
+this.m_exit=create m_exit
+this.Item[]={this.m_new, &
+this.m_open, &
+this.m_save, &
+this.m_saveas, &
+this.m_---, &
+this.m_print, &
+this.m_printsetup, &
+this.m_---1, &
+this.m_exit}
+end on
+
+on m_file.destroy
+destroy(this.m_new)
+destroy(this.m_open)
+destroy(this.m_save)
+destroy(this.m_saveas)
+destroy(this.m_---)
+destroy(this.m_print)
+destroy(this.m_printsetup)
+destroy(this.m_---1)
+destroy(this.m_exit)
+end on
+
+type m_new from menu within m_file
+end type
+
+on m_new.create
+this.Text="&New"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_new()
+end event
+
+type m_open from menu within m_file
+end type
+
+on m_open.create
+this.Text="&Open..."
+end on
+
+event clicked;ParentWindow.Post Dynamic of_open('')
+end event
+
+type m_save from menu within m_file
+end type
+
+on m_save.create
+this.Text="&Save"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_save()
+end event
+
+type m_saveas from menu within m_file
+end type
+
+on m_saveas.create
+this.Text="Save &As..."
+end on
+
+event clicked;ParentWindow.Post Dynamic of_saveas()
+end event
+
+type m_--- from menu within m_file
+end type
+
+on m_---.create
+this.Text="-"
+end on
+
+type m_print from menu within m_file
+end type
+
+on m_print.create
+this.Text="&Print"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_print()
+end event
+
+type m_printsetup from menu within m_file
+end type
+
+event clicked;PrintSetup()
+end event
+
+on m_printsetup.create
+this.Text="Print Se&tup..."
+end on
+
+type m_---1 from menu within m_file
+end type
+
+on m_---1.create
+this.Text="-"
+end on
+
+type m_exit from menu within m_file
+end type
+
+on m_exit.create
+this.Text="E&xit"
+this.MenuItemType=MenuItemTypeExit!
+end on
+
+event clicked;close(ParentWindow)
+end event
+
+type m_edit from menu within m_rte
+m_undo m_undo
+m_undo1 m_undo1
+m_edit11 m_edit11
+m_edit111 m_edit111
+m_paste m_paste
+m_delete m_delete
+m_deleteselectedfield m_deleteselectedfield
+m_--1 m_--1
+m_selectall m_selectall
+m_timedate m_timedate
+m_headersfooters m_headersfooters
+end type
+
+on m_edit.create
+this.Text="&Edit"
+this.m_undo=create m_undo
+this.m_undo1=create m_undo1
+this.m_edit11=create m_edit11
+this.m_edit111=create m_edit111
+this.m_paste=create m_paste
+this.m_delete=create m_delete
+this.m_deleteselectedfield=create m_deleteselectedfield
+this.m_--1=create m_--1
+this.m_selectall=create m_selectall
+this.m_timedate=create m_timedate
+this.m_headersfooters=create m_headersfooters
+this.Item[]={this.m_undo, &
+this.m_undo1, &
+this.m_edit11, &
+this.m_edit111, &
+this.m_paste, &
+this.m_delete, &
+this.m_deleteselectedfield, &
+this.m_--1, &
+this.m_selectall, &
+this.m_timedate, &
+this.m_headersfooters}
+end on
+
+on m_edit.destroy
+destroy(this.m_undo)
+destroy(this.m_undo1)
+destroy(this.m_edit11)
+destroy(this.m_edit111)
+destroy(this.m_paste)
+destroy(this.m_delete)
+destroy(this.m_deleteselectedfield)
+destroy(this.m_--1)
+destroy(this.m_selectall)
+destroy(this.m_timedate)
+destroy(this.m_headersfooters)
+end on
+
+event selected;Boolean	lb_CanUndo, lb_ShowHF
+lb_CanUndo = ParentWindow.Dynamic of_canundo()
+m_undo.Enabled = lb_CanUndo
+
+end event
+
+type m_undo from menu within m_edit
+end type
+
+on m_undo.create
+this.Text="&Undo"
+this.ToolBarItemName="Undo!"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_undo()
+end event
+
+type m_undo1 from menu within m_edit
+end type
+
+on m_undo1.create
+this.Text="-"
+end on
+
+type m_edit11 from menu within m_edit
+end type
+
+on m_edit11.create
+this.Text="Cu&t"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_cut()
+end event
+
+type m_edit111 from menu within m_edit
+end type
+
+on m_edit111.create
+this.Text="&Copy"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_copy()
+end event
+
+type m_paste from menu within m_edit
+end type
+
+on m_paste.create
+this.Text="&Paste"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_paste()
+end event
+
+type m_delete from menu within m_edit
+end type
+
+on m_delete.create
+this.Text="&Delete"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_delete()
+end event
+
+type m_deleteselectedfield from menu within m_edit
+end type
+
+event clicked;ParentWindow.Post Dynamic of_deletedatafield()
+end event
+
+on m_deleteselectedfield.create
+this.Text="Delete Selected &Field"
+end on
+
+type m_--1 from menu within m_edit
+end type
+
+on m_--1.create
+this.Text="-"
+end on
+
+type m_selectall from menu within m_edit
+end type
+
+on m_selectall.create
+this.Text="Select &All"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_selectall()
+end event
+
+type m_timedate from menu within m_edit
+end type
+
+on m_timedate.create
+this.Text="T&ime/Date"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_timedate()
+end event
+
+type m_headersfooters from menu within m_edit
+end type
+
+event clicked;ParentWindow.Post Dynamic of_showhf(False)
+end event
+
+on m_headersfooters.create
+this.Text="&Show Headers/Footers"
+end on
+
+type m_insert from menu within m_rte
+m_ratefield m_ratefield
+m_logo m_logo
+m_document m_document
+end type
+
+on m_insert.create
+this.Text="&Insert"
+this.m_ratefield=create m_ratefield
+this.m_logo=create m_logo
+this.m_document=create m_document
+this.Item[]={this.m_ratefield, &
+this.m_logo, &
+this.m_document}
+end on
+
+on m_insert.destroy
+destroy(this.m_ratefield)
+destroy(this.m_logo)
+destroy(this.m_document)
+end on
+
+type m_ratefield from menu within m_insert
+m_tempnumber m_tempnumber
+m_tripdate m_tripdate
+m_carriertripnumber m_carriertripnumber
+m_driver m_driver
+m_equipmentnumbert1 m_equipmentnumbert1
+m_equipmenttype m_equipmenttype
+m_chassisnumber m_chassisnumber
+m_originid m_originid
+m_destinationid m_destinationid
+m_miles1 m_miles1
+m_status1 m_status1
+m_totalweight1 m_totalweight1
+m_internalnote1 m_internalnote1
+m_payablestotal1 m_payablestotal1
+m_carriername1 m_carriername1
+end type
+
+on m_ratefield.create
+this.Text="&Rate Field"
+this.m_tempnumber=create m_tempnumber
+this.m_tripdate=create m_tripdate
+this.m_carriertripnumber=create m_carriertripnumber
+this.m_driver=create m_driver
+this.m_equipmentnumbert1=create m_equipmentnumbert1
+this.m_equipmenttype=create m_equipmenttype
+this.m_chassisnumber=create m_chassisnumber
+this.m_originid=create m_originid
+this.m_destinationid=create m_destinationid
+this.m_miles1=create m_miles1
+this.m_status1=create m_status1
+this.m_totalweight1=create m_totalweight1
+this.m_internalnote1=create m_internalnote1
+this.m_payablestotal1=create m_payablestotal1
+this.m_carriername1=create m_carriername1
+this.Item[]={this.m_tempnumber, &
+this.m_tripdate, &
+this.m_carriertripnumber, &
+this.m_driver, &
+this.m_equipmentnumbert1, &
+this.m_equipmenttype, &
+this.m_chassisnumber, &
+this.m_originid, &
+this.m_destinationid, &
+this.m_miles1, &
+this.m_status1, &
+this.m_totalweight1, &
+this.m_internalnote1, &
+this.m_payablestotal1, &
+this.m_carriername1}
+end on
+
+on m_ratefield.destroy
+destroy(this.m_tempnumber)
+destroy(this.m_tripdate)
+destroy(this.m_carriertripnumber)
+destroy(this.m_driver)
+destroy(this.m_equipmentnumbert1)
+destroy(this.m_equipmenttype)
+destroy(this.m_chassisnumber)
+destroy(this.m_originid)
+destroy(this.m_destinationid)
+destroy(this.m_miles1)
+destroy(this.m_status1)
+destroy(this.m_totalweight1)
+destroy(this.m_internalnote1)
+destroy(this.m_payablestotal1)
+destroy(this.m_carriername1)
+end on
+
+type m_tempnumber from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("tempnumber")
+
+end event
+
+on m_tempnumber.create
+this.Text="Temp Numbe&r"
+end on
+
+type m_tripdate from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_TripDate")
+
+end event
+
+on m_tripdate.create
+this.Text="&TripDate"
+end on
+
+type m_carriertripnumber from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_CarrierTripNumber")
+
+end event
+
+on m_carriertripnumber.create
+this.Text="&CarrierTripNumber"
+end on
+
+type m_driver from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_driver")
+
+end event
+
+on m_driver.create
+this.Text="&Driver"
+end on
+
+type m_equipmentnumbert1 from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_EquipmentNumber")
+
+end event
+
+on m_equipmentnumbert1.create
+this.Text="E&quipmentNumber"
+end on
+
+type m_equipmenttype from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_EquipmentType")
+
+end event
+
+on m_equipmenttype.create
+this.Text="&EquipmentType"
+end on
+
+type m_chassisnumber from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_ChassisNumber")
+
+end event
+
+on m_chassisnumber.create
+this.Text="Cha&ssisNumber"
+end on
+
+type m_originid from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_OriginId")
+
+end event
+
+on m_originid.create
+this.Text="&OriginId"
+end on
+
+type m_destinationid from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_DestinationId")
+
+end event
+
+on m_destinationid.create
+this.Text="Desti&nationId"
+end on
+
+type m_miles1 from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_Miles")
+
+end event
+
+on m_miles1.create
+this.Text="&Miles"
+end on
+
+type m_status1 from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_Status")
+
+end event
+
+on m_status1.create
+this.Text="Stat&us"
+end on
+
+type m_totalweight1 from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_totalWeight")
+
+end event
+
+on m_totalweight1.create
+this.Text="Total&Weight"
+end on
+
+type m_internalnote1 from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_InternalNote")
+
+end event
+
+on m_internalnote1.create
+this.Text="&InternalNote"
+end on
+
+type m_payablestotal1 from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_PayablesTotal")
+
+end event
+
+on m_payablestotal1.create
+this.Text="&PayablesTotal"
+end on
+
+type m_carriername1 from menu within m_ratefield
+end type
+
+event clicked;ParentWindow.Post Dynamic of_insert_datafield("trip_CarrierName")
+
+end event
+
+on m_carriername1.create
+this.Text="CarrierN&ame"
+end on
+
+type m_logo from menu within m_insert
+end type
+
+on m_logo.create
+this.Text="&Bitmap"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_insert_picture()
+
+end event
+
+type m_document from menu within m_insert
+end type
+
+on m_document.create
+this.Text="&Insert Text File"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_insertdocument()
+end event
+
+type m_search from menu within m_rte
+m_find m_find
+m_findnext m_findnext
+m_replace m_replace
+end type
+
+on m_search.create
+this.Text="&Search"
+this.m_find=create m_find
+this.m_findnext=create m_findnext
+this.m_replace=create m_replace
+this.Item[]={this.m_find, &
+this.m_findnext, &
+this.m_replace}
+end on
+
+on m_search.destroy
+destroy(this.m_find)
+destroy(this.m_findnext)
+destroy(this.m_replace)
+end on
+
+type m_find from menu within m_search
+end type
+
+on m_find.create
+this.Text="&Find..."
+end on
+
+event clicked;ParentWindow.Post Dynamic of_find()
+end event
+
+type m_findnext from menu within m_search
+end type
+
+on m_findnext.create
+this.Text="Find &Next"
+end on
+
+event clicked;ParentWindow.Post Dynamic of_findnext()
+end event
+
+type m_replace from menu within m_search
+end type
+
+event clicked;ParentWindow.Post Dynamic of_replace()
+end event
+
+on m_replace.create
+this.Text="&Replace..."
+end on
+

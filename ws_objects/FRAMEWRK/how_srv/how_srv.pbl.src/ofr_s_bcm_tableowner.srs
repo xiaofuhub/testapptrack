@@ -1,0 +1,6 @@
+﻿$PBExportHeader$ofr_s_bcm_tableowner.srs
+global type ofr_s_bcm_tableowner from structure
+	string		s_table
+	string		s_owner
+end type
+

@@ -1,0 +1,15 @@
+﻿$PBExportHeader$s_toolmenu.srs
+global type s_toolmenu from structure
+	string		s_name
+	boolean		b_enabled
+	boolean		b_toolbutton
+	u_cst_toolbutton		uo_toolbutton
+	string		s_toolbutton_picture
+	string		s_toolbutton_text
+	boolean		b_toolbutton_visible
+	boolean		b_menuitem
+	menu		m_menuitem
+	string		s_menuitem_text
+	boolean		b_menuitem_visible
+end type
+

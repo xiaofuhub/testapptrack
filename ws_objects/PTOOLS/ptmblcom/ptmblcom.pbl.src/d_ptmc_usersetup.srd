@@ -1,0 +1,52 @@
+﻿$PBExportHeader$d_ptmc_usersetup.srd
+release 9;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=1 HTMLDW=no print.printername="" print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.canusedefaultprinter=yes print.prompt=no print.buttons=no print.preview.buttons=no print.cliptext=no print.overrideprintjob=no print.collate=yes hidegrayline=no grid.lines=0 )
+header(height=76 color="536870912" )
+summary(height=88 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=employees_em_id dbname="employees.em_id" )
+ column=(type=char(15) updatewhereclause=yes name=employees_em_fn dbname="employees.em_fn" )
+ column=(type=char(25) updatewhereclause=yes name=employees_em_ln dbname="employees.em_ln" )
+ column=(type=char(8) updatewhereclause=yes name=employees_em_ref dbname="employees.em_ref" )
+ column=(type=char(1) updatewhereclause=yes name=employees_em_status dbname="employees.em_status" values="Active	K/Deactivated	D/" )
+ column=(type=char(32766) updatewhereclause=no name=driverinfo_di_fleet dbname="driverinfo.di_fleet" )
+ column=(type=char(4) updatewhereclause=yes name=last4digits dbname="last4digits" )
+ column=(type=long updatewhereclause=yes name=sysuserperm_user_id dbname="sysuserperm.user_id" )
+ column=(type=char(128) updatewhereclause=yes name=mobileuid dbname="sysuserperm.mobileuid" validation="Pos ( gettext(), ';' ) = 0" validationmsg="'UID cannot contain a semicolon.'" )
+ column=(type=char(32766) updatewhereclause=no name=sysuserperm_remarks dbname="sysuserperm.remarks" )
+ column=(type=char(128) updatewhereclause=yes name=mobilepwd dbname="mobilepassword" )
+ retrieve="  SELECT ~"employees~".~"em_id~",   
+         ~"employees~".~"em_fn~",   
+         ~"employees~".~"em_ln~",   
+         ~"employees~".~"em_ref~",   
+         ~"employees~".~"em_status~",   
+         ~"driverinfo~".~"di_fleet~",   
+			Right ( ~"employees~".~"em_ss~", 4 ) AS ~"Last4Digits~", 
+         ~"sys~".~"sysuserperm~".~"user_id~",   
+         ~"sys~".~"sysuserperm~".~"user_name~" AS ~"MobileUID~",   
+         ~"sys~".~"sysuserperm~".~"remarks~",  
+			Convert ( Char(128), null ) AS ~"MobilePassword~" 
+    FROM {oj ~"driverinfo~" LEFT OUTER JOIN ~"sys~".~"sysuserperm~" ON ~"sys~".~"sysuserperm~".~"remarks~" like '%EmpId=' || ~"driverinfo~".~"di_id~" },   
+         ~"employees~"  
+   WHERE ( ~"employees~".~"em_id~" = ~"driverinfo~".~"di_id~" AND ~"employees~".~"em_status~" = 'K' )    
+"  sort="employees_em_ln A employees_em_fn A employees_em_ref A " )
+text(band=header alignment="0" text="Last" border="6" color="33554432" x="9" y="8" height="60" width="489" html.valueishtml="0"  name=employees_em_ln_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="First" border="6" color="33554432" x="507" y="8" height="60" width="439" html.valueishtml="0"  name=employees_em_fn_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Code" border="6" color="33554432" x="955" y="8" height="60" width="402" html.valueishtml="0"  name=employees_em_ref_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Mobile UID" border="6" color="33554432" x="1989" y="8" height="60" width="375" html.valueishtml="0"  name=mobileuid_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Mobile PWD" border="6" color="33554432" x="2373" y="8" height="60" width="389" html.valueishtml="0"  name=mobilepwd_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Fleet" border="6" color="33554432" x="1367" y="8" height="60" width="613" html.valueishtml="0"  name=driverinfo_di_fleet_t visible="1"  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="33554432" x="9" y="8" height="60" width="489" format="[general]" html.valueishtml="0"  name=employees_em_ln visible="1" edit.limit=25 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="507" y="8" height="60" width="439" format="[general]" html.valueishtml="0"  name=employees_em_fn visible="1" edit.limit=15 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="955" y="8" height="60" width="402" format="[general]" html.valueishtml="0"  name=employees_em_ref visible="1" edit.limit=8 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=10 border="0" color="33554432" x="1989" y="8" height="60" width="375" format="[general]" html.valueishtml="0"  name=mobileuid visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="0" tabsequence=20 border="0" color="33554432" x="2373" y="8" height="60" width="389" format="[general]" html.valueishtml="0"  name=mobilepwd visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=32766 border="0" color="33554432" x="1367" y="0" height="64" width="613" format="[general]" html.valueishtml="0"  name=driverinfo_di_fleet visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="MS Sans Serif" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=summary alignment="0" expression="count(mobileuid for all)"border="0" color="33554432" x="1989" y="4" height="64" width="375" format="[general]" html.valueishtml="0"  name=compute_1 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=summary alignment="0" text="Mobile User Count:" border="0" color="0" x="1367" y="4" height="64" width="613" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-10" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" encodeselflinkargs="1" netscapelayers="0" )
+export.xml(headgroups="1" includewhitespace="0" metadatatype=0 savemetadata=0 )
+import.xml()
+export.pdf(method=0 distill.custompostscript="0" xslfop.print="0" )

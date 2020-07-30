@@ -1,0 +1,75 @@
+﻿$PBExportHeader$d_eventsforshipmentcache.srd
+$PBExportComments$Loads event information during shipment summary retrieval.
+release 6;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=0 color="536870912" )
+table(column=(type=long updatewhereclause=yes name=de_id dbname="de_id" )
+ column=(type=char(1) updatewhereclause=yes name=de_event_type dbname="de_event_type" )
+ column=(type=long updatewhereclause=yes name=de_site dbname="de_site" )
+ column=(type=date updatewhereclause=yes name=de_apptdate dbname="de_apptdate" )
+ column=(type=time updatewhereclause=yes name=de_appttime dbname="de_appttime" )
+ column=(type=date updatewhereclause=yes name=de_arrdate dbname="de_arrdate" )
+ column=(type=time updatewhereclause=yes name=de_arrtime dbname="de_arrtime" )
+ column=(type=time updatewhereclause=yes name=de_deptime dbname="de_deptime" )
+ column=(type=long updatewhereclause=yes name=de_shipment_id dbname="de_shipment_id" )
+ column=(type=long updatewhereclause=yes name=de_ship_seq dbname="de_ship_seq" )
+ column=(type=char(1) updatewhereclause=yes name=de_conf dbname="de_conf" )
+ column=(type=long updatewhereclause=yes name=de_driver dbname="de_driver" )
+ column=(type=long updatewhereclause=yes name=de_tractor dbname="de_tractor" )
+ column=(type=long updatewhereclause=yes name=de_trailer1 dbname="de_trailer1" )
+ column=(type=long updatewhereclause=yes name=de_container1 dbname="de_container1" )
+ column=(type=long updatewhereclause=yes name=de_trailer dbname="de_trailer" )
+ column=(type=char(1) updatewhereclause=yes name=de_status dbname="de_status" )
+ column=(type=char(1) updatewhereclause=yes name=routable dbname="routable" )
+ column=(type=char(45) updatewhereclause=yes name=co_name dbname="co_name" )
+ column=(type=char(20) updatewhereclause=yes name=co_city dbname="co_city" )
+ column=(type=char(3) updatewhereclause=yes name=co_state dbname="co_state" )
+ column=(type=char(9) updatewhereclause=yes name=co_zip dbname="co_zip" )
+ column=(type=char(15) updatewhereclause=yes name=co_code_name dbname="co_code_name" )
+ column=(type=char(15) updatewhereclause=yes name=driver_fn dbname="driver_fn" )
+ column=(type=char(25) updatewhereclause=yes name=driver_ln dbname="driver_ln" )
+ column=(type=char(8) updatewhereclause=yes name=driver_ref dbname="driver_ref" )
+ column=(type=char(1) updatewhereclause=yes name=tractor_type dbname="tractor_type" )
+ column=(type=char(15) updatewhereclause=yes name=tractor_ref dbname="tractor_ref" )
+ column=(type=char(1) updatewhereclause=yes name=trailer_type dbname="trailer_type" )
+ column=(type=char(15) updatewhereclause=yes name=trailer_ref dbname="trailer_ref" )
+ column=(type=char(1) updatewhereclause=yes name=container_type dbname="container_type" )
+ column=(type=char(15) updatewhereclause=yes name=container_ref dbname="container_ref" )
+ retrieve="  SELECT ~"disp_events~".~"de_id~",   
+         ~"disp_events~".~"de_event_type~",   
+         ~"disp_events~".~"de_site~",   
+         ~"disp_events~".~"de_apptdate~",   
+         ~"disp_events~".~"de_appttime~",   
+         ~"disp_events~".~"de_arrdate~",   
+         ~"disp_events~".~"de_arrtime~",   
+         ~"disp_events~".~"de_deptime~",   
+         ~"disp_events~".~"de_shipment_id~",   
+         ~"disp_events~".~"de_ship_seq~",   
+         ~"disp_events~".~"de_conf~",   
+         ~"disp_events~".~"de_driver~",   
+         ~"disp_events~".~"de_tractor~",   
+         ~"disp_events~".~"de_trailer1~",   
+         ~"disp_events~".~"de_container1~",   
+         ~"disp_events~".~"de_trailer~", 
+         ~"disp_events~".~"de_status~",   
+         ~"disp_events~".~"routable~",
+         ~"companies~".~"co_name~",   
+         ~"companies~".~"co_city~",   
+         ~"companies~".~"co_state~",   
+         ~"companies~".~"co_zip~",   
+         ~"companies~".~"co_code_name~",   
+         ~"employees~".~"em_fn~" AS ~"Driver_FN~",   
+         ~"employees~".~"em_ln~" AS ~"Driver_LN~",   
+         ~"employees~".~"em_ref~" AS ~"Driver_Ref~",   
+         ~"equipment_a~".~"eq_type~" AS ~"Tractor_Type~",   
+         ~"equipment_a~".~"eq_ref~" AS ~"Tractor_Ref~",   
+         ~"equipment_b~".~"eq_type~" AS ~"Trailer_Type~",   
+         ~"equipment_b~".~"eq_ref~" AS ~"Trailer_Ref~",   
+         ~"equipment_c~".~"eq_type~" AS ~"Container_Type~",   
+         ~"equipment_c~".~"eq_ref~" AS ~"Container_Ref~"  
+    FROM {oj {oj {oj {oj {oj ~"disp_events~"  LEFT OUTER JOIN ~"companies~"  ON ~"disp_events~".~"de_site~" = ~"companies~".~"co_id~"} LEFT OUTER JOIN ~"employees~"  ON ~"disp_events~".~"de_driver~" = ~"employees~".~"em_id~"} LEFT OUTER JOIN ~"equipment~" equipment_a  ON ~"disp_events~".~"de_tractor~" = ~"equipment_a~".~"eq_id~"} LEFT OUTER JOIN ~"equipment~" equipment_b  ON ~"disp_events~".~"de_trailer1~" = ~"equipment_b~".~"eq_id~"} LEFT OUTER JOIN ~"equipment~" equipment_c  ON ~"disp_events~".~"de_container1~" = ~"equipment_c~".~"eq_id~"}  
+   WHERE ~"disp_events~".~"de_shipment_id~" in ( :ShipmentIds )    
+" arguments=(("ShipmentIds", numberlist)) )
+htmltable(border="1" cellpadding="0" cellspacing="0" generatecss="no" nowrap="yes")

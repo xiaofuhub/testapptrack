@@ -1,0 +1,49 @@
+﻿$PBExportHeader$gf_find_emp.srf
+$PBExportComments$PTCORE.
+global type gf_find_emp from function_object
+end type
+
+forward prototypes
+global function long gf_find_emp (long find_id)
+end prototypes
+
+global function long gf_find_emp (long find_id);n_cst_numerical lnv_numerical
+if lnv_numerical.of_IsNullOrNotPos(find_id) then return 0
+
+long foundrow
+
+foundrow = gds_emp.find("em_id = " + string(find_id), 1, gds_emp.rowcount())
+if foundrow > 0 then return foundrow
+
+s_emp_info ems
+select em_id, em_fn, em_ln, em_ref, em_status, em_type, em_class
+into :ems.em_id, :ems.em_fn, :ems.em_ln, :ems.em_ref, :ems.em_status, :ems.em_type, :ems.em_class
+from employees where em_id = :find_id ;
+
+choose case sqlca.sqlcode
+	case -1
+		rollback ;
+		return -1
+	case 100
+		commit ;
+		return 0
+	case else
+		commit ;
+end choose
+
+foundrow = gds_emp.insertrow(0)
+
+if foundrow > 0 then
+	gds_emp.object.em_id[foundrow] = ems.em_id
+	gds_emp.object.em_fn[foundrow] = ems.em_fn
+	gds_emp.object.em_ln[foundrow] = ems.em_ln
+	gds_emp.object.em_ref[foundrow] = ems.em_ref
+	gds_emp.object.em_status[foundrow] = ems.em_status
+	gds_emp.object.em_type[foundrow] = ems.em_type
+	gds_emp.object.em_class[foundrow] = ems.em_class
+	return foundrow
+else
+	return -1
+end if
+end function
+

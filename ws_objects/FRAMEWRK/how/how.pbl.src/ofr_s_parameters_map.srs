@@ -1,0 +1,12 @@
+﻿$PBExportHeader$ofr_s_parameters_map.srs
+global type ofr_s_parameters_map from structure
+	string		mode
+	string		sourcename
+	string		sourcetype
+	datawindow		sourcecontrol
+	string		destinationname
+	string		destinationtype
+	datawindow		destinationcontrol
+	boolean		isexpression
+end type
+

@@ -1,0 +1,17 @@
+Save Format v3.0(19990112)
+@begin Libraries
+ "framewrk\\how_ext\\how_ext.pbl" "";
+@end;
+@begin Objects
+ "framewrk\\how_ext\\n_cst_winsrv_linkages.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\u_cbcancel.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\u_cbnavigate.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\n_cst_bommgr.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\n_cst_parameters.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\n_cst_uilink.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\n_cst_navigation.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\u_cbok.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\n_cst_uilink_dw.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\n_cst_taskmanager.sru" "framewrk\\how_ext\\how_ext.pbl";
+ "framewrk\\how_ext\\n_cst_txsrv.sru" "framewrk\\how_ext\\how_ext.pbl";
+@end;
