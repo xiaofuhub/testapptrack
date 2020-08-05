@@ -3,6 +3,7 @@ Save Format v3.0(19990112)
 @end;
 @begin Targets
  0 "PTOOLS\\ptapp\\app_trucking.pbt";
+ 1 "genapp3.pbt";
 @end;
-DefaultTarget "PTOOLS\\ptapp\\app_trucking.pbt";
-DefaultRemoteTarget "PTOOLS\\ptapp\\app_trucking.pbt";
+DefaultTarget "genapp3.pbt";
+DefaultRemoteTarget "genapp3.pbt";
