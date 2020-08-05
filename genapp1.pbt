@@ -3,3 +3,4 @@ appname "genapp1";
 applib "genapp1.pbl";
 liblist "genapp1.pbl";
 type "pb";
+
